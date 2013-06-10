@@ -1,0 +1,3 @@
+When connected to the DayzMod public hive database, HiveExt may collect non-personally-identifying information about your server such as network addresses.
+This is done for anti-cheat and statistic-gathering purposes.
+If you do not agree, do not connect to the official public hive database.
