@@ -46,4 +46,4 @@ Directories
 Bugs/Issues
 -----------
 
-- Please report any bugs/issues by submitting a Issue [here] (https://dev-heaven.net/projects/dayz/issues).
+- Please report any bugs/issues by submitting a Issue [here] (https://github.com/DayZMod/DayZ/issues).
