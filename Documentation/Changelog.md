@@ -2,6 +2,66 @@
 DayZ Mod Changelog
 ============
 
+Version 1.7.7.1
+---------------
+
+* Releasedate 18 June 2013
+
+
+Affected addons:
+* dayz_anim
+* dayz_code
+* dayz_communityassets
+
+Serverside affected addons:
+* dayz_server (server admins only)
+* Mission (server admins only) (Prerequisites) Downloaded from http://www.silentspy.net/utility/dayz/mission-generator/
+* BattlEye-Filters (server admins only)
+* SQL Files (server admins only)
+
+
+	Changes:
+
+	    * [FIXED] - Crashsite loot spawn fixed.
+	    * [FIXED] - LOS should now reset correct.
+	    * [FIXED] - Updated Chopper Repair system to include hull and missiles.
+	    * [FIXED] - Blood transfusion should now work properly.
+	    * [FIXED] - Zeds can knock you unconscious again.
+	    * [FIXED] - Issue with built items not display properly over the network.
+	    * [FIXED] - Changing clothes while in a gear menu of a pile/vehicle/tent will no longer crash your game.
+	    * [FIXED] - Fixed duplication of mags via combining/converting and duplication of tents/built items.
+	    * [FIXED] - 100% damaged vehicles do not respawn anymore.
+	    * [FIXED] - Added check to make sure no one is within 30 meters of zed spawning.
+	    * [FIXED] - Fixed bandit detection for kills and humanity changes.
+	    * [FIXED] - Fixed an issue where you wouldn't be able to pick up any loot.
+	    * [FIXED] - Fixed an issue where bandaging an other player wouldn't bandage them.
+	    * [FIXED] - Added a range check to zed attacks, no more 5-10m hits. (We Hope)
+	    * [FIXED] - Fixed issue where your player's body would be deleted if aborting too quickly.
+	    * [FIXED] - Shadow LODs on soda cans.
+	    * [FIXED] - Zeds full scale dmg has been readded.
+	    
+	    * [UPDATED] - Color saturation starts to fade out at blood level 9000
+	    * [UPDATED] - Rest to provide a 1% chance to cure infection (Can only be done once every 5 mins)
+	    * [UPDATED] - Zed will now attack again while prone with animation.
+	    * [UPDATED] - Updated tackle animations to an actual stumble/trip animation for back, left and right of player (holding a pistol remains unchanged). Players hit from the front will be stopped in their tracks.
+	    * [UPDATED] - Reported bike damage is divided by 10.
+	    * [UPDATED] - Much quicker login/loading.
+	    * [UPDATED] - More reliable loot spawns.
+	    * [UPDATED] - Infection rates are much lower (based on #zeds attacking you) viral zeds have 4x greater infection rates
+	    * [UPDATED] - player knockdown by zeds should be less common.
+	    * [UPDATED] - SUV has been unbanned and readded under SUV_DZ Server admins must update there database.
+	    * [UPDATED] - fishing_Boat speed update from 15 to 45.
+	    * [UPDATED] - SQL files for private database users Included all hitpoints and inventory systems.
+	    * [UPDATED] - Updated pMain to now include extra setting --execute="call pMain(serverinstance) example.  --execute="call pMain(1) would spawn all vehicles for instance 1
+	    * [UPDATED] - Zed Target system updated to include movement speed changes. aboue 10m = full speed, aboue 2.2m and below 10m = Approch speed, below 2.2 = attack speed.
+	    * [UPDATED] - Attack system updated to include LOS & Angle of attack checks as the animation is run to make sure player is only damaged/knockdown if they meet both conditions.
+	    * [UPDATED] - RoadBlocks/Trash should now spawn quicker based on the current speed of the player.
+		
+	    Both removed so we can debug fps issues:	
+	    * [REMOVED] - Wild Zeds while we try to debug issues with FPS.
+	    * [REMOVED] - Zeds will no longer spawn while in vehicles.
+
+______________________
 Version 1.7.7
 ---------------
 
@@ -401,19 +461,19 @@ Serverside affected addons:
 		* [UPDATED] - Backpacks updated. (https://github.com/R4Z0R49/DayZMod/wiki/Backpacks)
 		* [UPDATED] - Animal Meat reset. 6(cow),4(goat),4(sheep),4(boar),2(Hen),1(Rabbit)
 		* [UPDATED] - Epeen monitor moved to scroll lock key and work started on moving to diary
-		* [UDDATED] - Massive cleanup remove all useless files.
+		* [UPDATED] - Massive cleanup remove all useless files.
 		* [UPDATED] - Redone all public EH's
-		* [UPDTAED] - Combat/zombie logout + anti-duping overhaul - (https://github.com/R4Z0R49/DayZMod/commit/44321a6856f5fd2d5544d1293c2450f9b2df6fbd)
+		* [UPDATED] - Combat/zombie logout + anti-duping overhaul - (https://github.com/R4Z0R49/DayZMod/commit/44321a6856f5fd2d5544d1293c2450f9b2df6fbd)
 		* [UPDATED] - String tables to include = English, German, Russian, Spanish, Dutch, French
 		* [UPDATED] - All base class's have been updated to match the dayz removal proc's (weapons)
 
-		* [Fixed] - Zeds hearing should now be fixed.
-		* [Fixed] - Temperature icon color now ranges from iceblue (cold) to red (hot)
-		* [Fixed] - German Tranlations updated.
-		* [Fixed] - mi17 gunner seat is now fixed (you no longer stand outside)
-		* [Fixed] - Bloodbag glitch fixed.
-		* [Fixed] - UH1Y_DZ animation issues.
-		* [Fixed] - Infection is now fixed loss of blood 3 per sec (will not drop below 3k blood)
+		* [FIXED] - Zeds hearing should now be fixed.
+		* [FIXED] - Temperature icon color now ranges from iceblue (cold) to red (hot)
+		* [FIXED] - German Tranlations updated.
+		* [FIXED] - Mi17 gunner seat is now fixed. (you no longer stand outside)
+		* [FIXED] - Bloodbag glitch fixed.
+		* [FIXED] - UH1Y_DZ animation issues.
+		* [FIXED] - Infection is now fixed loss of blood 3 per sec (will not drop below 3k blood)
 		* [FIXED] - Epeen monitor animation should now work correct without the fps drop.
 		* [FIXED] - DZ_Czech_Vest_Puch backpack class config. (Warning Message: No entry 'bin\config.bin/CfgMagazines.DZ_Czech_Vest_Puch'.)
 		* [FIXED] - Variable spelling mistakes should be corrected now.
