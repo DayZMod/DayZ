@@ -3,7 +3,7 @@
 -- Server version:               5.6.10 - MySQL Community Server (GPL)
 -- Server OS:                    Win64
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-06-17 04:04:28
+-- Date/time:                    2013-03-01 22:49:11
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -20,9 +20,9 @@ CREATE TABLE IF NOT EXISTS `Object_CLASSES` (
   PRIMARY KEY (`Classname`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- Dumping data for table test.Object_CLASSES: 58 rows
+-- Dumping data for table test.Object_CLASSES: 54 rows
 /*!40000 ALTER TABLE `Object_CLASSES` DISABLE KEYS */;
-INSERT INTO `Object_CLASSES` (`Classname`, `Chance`, `MaxNum`, `Damage`, `Type`) VALUES
+INSERT IGNORE INTO `Object_CLASSES` (`Classname`, `Chance`, `MaxNum`, `Damage`, `Type`) VALUES
 	('ATV_CZ_EP1', '0.70', 6, '0.05000', 'atv'),
 	('car_hatchback', '0.73', 3, '0.05000', 'car'),
 	('datsun1_civil_3_open', '0.75', 3, '0.05000', 'car'),
@@ -53,7 +53,7 @@ INSERT INTO `Object_CLASSES` (`Classname`, `Chance`, `MaxNum`, `Damage`, `Type`)
 	('SkodaGreen', '0.68', 1, '0.05000', 'car'),
 	('Smallboat_1', '0.59', 2, '0.05000', 'mediumboat'),
 	('Smallboat_2', '0.59', 2, '0.05000', 'mediumboat'),
-	('SUV_DZ', '0.59', 1, '0.05000', 'car'),
+	('SUV_TK_CIV_EP1', '0.59', 1, '0.05000', 'car'),
 	('TentStorage', '0.59', 0, '0.05000', 'tent'),
 	('TT650_Ins', '0.72', 1, '0.05000', 'motorcycle'),
 	('TT650_TK_CIV_EP1', '0.72', 1, '0.05000', 'motorcycle'),
@@ -78,9 +78,7 @@ INSERT INTO `Object_CLASSES` (`Classname`, `Chance`, `MaxNum`, `Damage`, `Type`)
 	('hilux1_civil_3_open_EP1', '0.59', 3, '0', 'car'),
 	('LandRover_CZ_EP1', '0.59', 3, '0', 'car'),
 	('HMMWV', '0.21', 2, '0', 'car'),
-	('MH6J_DZ', '0.48', 1, '0.05000', 'helicopter'),
-	('StashSmall', '0', 0, '0', 'StashSmall'),
-	('StashMedium', '0', 0, '0', 'StashMedium');
+	('MH6J_DZ', '0.48', 1, '0.05000', 'helicopter');
 /*!40000 ALTER TABLE `Object_CLASSES` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

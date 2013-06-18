@@ -3,7 +3,7 @@
 -- Server version:               5.6.10 - MySQL Community Server (GPL)
 -- Server OS:                    Win64
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-06-17 04:04:28
+-- Date/time:                    2013-03-01 22:49:12
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -36,29 +36,27 @@ BEGIN
 			AND Classname != 'Hedgehog_DZ'
 			AND Classname != 'Wire_cat1'
 			AND Classname != 'Sandbag1_DZ'
-			AND Classname != 'TrapBear'
-			AND Classname != 'StashSmall'
-			AND Classname != 'StashMedium';
+			AND Classname != 'TrapBear';
 
-#remove tents/stash's whose owner has been dead for four days
+#remove tents whose owner has been dead for four days
 	DELETE
 		FROM Object_DATA
-		USING Object_DATA, character_data
-		WHERE Object_DATA.Classname = 'TentStorage' or Object_DATA.Classname = 'StashSmall' or Object_DATA.Classname = 'StashMedium'
-			AND Object_DATA.CharacterID = character_data.CharacterID
-			AND character_data.Alive = 0
-			AND DATE(character_data.last_updated) < CURDATE() - INTERVAL 4 DAY;
+		USING Object_DATA, Character_DATA
+		WHERE Object_DATA.Classname = 'TentStorage'
+			AND Object_DATA.CharacterID = Character_DATA.CharacterID
+			AND Character_DATA.Alive = 0
+			AND DATE(Character_DATA.last_updated) < CURDATE() - INTERVAL 4 DAY;
 
 #remove empty tents older than seven days
 	DELETE
 		FROM Object_DATA
-		WHERE Classname = 'TentStorage' or Classname = 'StashSmall' or Classname = 'StashMedium'
+		WHERE Classname = 'TentStorage'
 			AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
 			AND Inventory = '[[[],[]],[[],[]],[[],[]]]';
 	
 	DELETE
 		FROM Object_DATA
-		WHERE Classname = 'TentStorage' or Classname = 'StashSmall' or Classname = 'StashMedium'
+		WHERE Classname = 'TentStorage'
 			AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
 			AND Inventory = '[]';		
 
