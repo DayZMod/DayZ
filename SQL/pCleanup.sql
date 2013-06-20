@@ -41,11 +41,11 @@ BEGIN
 			AND Classname != 'StashMedium';
 
 	DELETE
-		FROM Object_DATA USING Object_DATA, character_data
+		FROM Object_DATA USING Object_DATA, Character_DATA
 		WHERE (Object_DATA.Classname = 'TentStorage' OR Object_DATA.Classname = 'StashSmall' OR Object_DATA.Classname = 'StashMedium')
-			AND Object_DATA.CharacterID = character_data.CharacterID
-			AND character_data.Alive = 0
-			AND DATE(character_data.last_updated) < CURDATE() - INTERVAL 4 DAY;
+			AND Object_DATA.CharacterID = Character_DATA.CharacterID
+			AND Character_DATA.Alive = 0
+			AND DATE(Character_DATA.last_updated) < CURDATE() - INTERVAL 4 DAY;
 
 
 	DELETE
