@@ -30,13 +30,10 @@ Branches
 - **Release_1.7.7.1** Released: 18/June/13 **Latest Version**<br>
 **[Public Files](https://github.com/DayZMod/DayZ/tree/Release_1.7.7.1)**<br>
 **[BattlEye-Filters](https://github.com/DayZMod/Battleye-Filters/tree/Release_1.7.7.1)**<br>
-**[Source Code](https://github.com/DayZMod/DayZ-Source/tree/Release_1.7.7.1)**<br>
 
 - **Release_1.7.7** Released: 10/June/13<br>
 **[Public Files](https://github.com/DayZMod/DayZ/tree/Release_1.7.7)**<br>
 **[BattlEye-Filters](https://github.com/DayZMod/Battleye-Filters/tree/Release_1.7.7)**<br>
-**[Source Code](https://github.com/DayZMod/DayZ-Source/tree/Release_1.7.7)**<br>
-
 
 
 Directories
