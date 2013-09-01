@@ -1,4 +1,4 @@
-![DayZ Logo](http://i.imgur.com/V5FEm.png)
+![DayZ Logo](http://stuff.skaronator.com/20130823120139172.png)
 
 Official DayZMod Community Project
 ==================================
