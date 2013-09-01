@@ -1,7 +1,5 @@
 ![DayZ Logo](http://stuff.skaronator.com/20130823120139172.png)
 
-Official DayZMod Community Project
-==================================
 
 Current Version
 ==================================
