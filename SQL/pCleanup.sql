@@ -1,9 +1,9 @@
 -- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Server version:               5.6.10 - MySQL Community Server (GPL)
--- Server OS:                    Win64
--- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2013-06-17 04:04:28
+-- Host:						 127.0.0.1
+-- Server version:			   5.6.10 - MySQL Community Server (GPL)
+-- Server OS:					Win64
+-- HeidiSQL version:			 7.0.0.4053
+-- Date/time:					2013-06-17 04:04:28
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -41,19 +41,16 @@ BEGIN
 			AND Classname != 'StashMedium';
 
 	DELETE
-		FROM Object_DATA USING Object_DATA, Character_DATA
-		WHERE (Object_DATA.Classname = 'TentStorage' OR Object_DATA.Classname = 'StashSmall' OR Object_DATA.Classname = 'StashMedium')
-			AND Object_DATA.CharacterID = Character_DATA.CharacterID
-			AND Character_DATA.Alive = 0
-			AND DATE(Character_DATA.last_updated) < CURDATE() - INTERVAL 4 DAY;
-
-
-	DELETE
 		FROM Object_DATA
-		WHERE (Classname = 'TentStorage' OR Classname = 'StashSmall' OR Classname = 'StashMedium')
-			AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
-			AND Inventory = '[[[],[]],[[],[]],[[],[]]]';
-
+		USING Object_DATA, Character_DATA
+		WHERE Object_DATA.Classname IN ('TentStorage','StashSmall','StashMedium')
+			AND Object_DATA.CharacterID = Character_DATA.CharacterID
+			AND Object_DATA.Inventory IN('[[[],[]],[[],[]],[[],[]]]','[]')
+			AND (
+			(Character_DATA.Alive = 0 AND DATE(Character_DATA.last_updated) < CURDATE() - INTERVAL 4 DAY)
+			OR
+			(Character_DATA.Alive = 1 AND DATE(Character_DATA.last_updated) < CURDATE() - INTERVAL 7 DAY)
+			);
 
 	DELETE
 		FROM Object_DATA

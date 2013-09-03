@@ -44,7 +44,9 @@ BEGIN
 			AND Classname != 'Wire_cat1'				#exclude wirecat
 			AND Classname != 'Sandbag1_DZ'			#exclude Sanbag
 			AND Classname != 'TrapBear'			#exclude trap
-			AND Classname != 'TentStorage';		#exclude TentStorage
+			AND Classname != 'TentStorage'		#exclude TentStorage
+			AND Classname != 'StashSmall'		#exclude StashSmall
+			AND Classname != 'StashMedium';		#exclude StashMedium
 
 		WHILE (iNumVehExisting < iVehSpawnMax) DO		#loop until maximum amount of vehicles is reached
 
@@ -81,7 +83,9 @@ BEGIN
 							AND Classname != 'Wire_cat1'				#exclude wirecat
 							AND Classname != 'Sandbag1_DZ'			#exclude Sanbag
 							AND Classname != 'TrapBear'			#exclude trap
-							AND Classname != 'TentStorage';		#exclude TentStorage
+							AND Classname != 'TentStorage'		#exclude TentStorage
+							AND Classname != 'StashSmall'		#exclude StashSmall
+							AND Classname != 'StashMedium';		#exclude StashMedium
 		
 					#update number of same class already spawned
 					SELECT COUNT(*) 
