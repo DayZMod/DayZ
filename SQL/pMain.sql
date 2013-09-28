@@ -43,7 +43,7 @@ BEGIN
 			AND Classname != 'Hedgehog_DZ'			#exclude hedgehog
 			AND Classname != 'Wire_cat1'				#exclude wirecat
 			AND Classname != 'Sandbag1_DZ'			#exclude Sanbag
-			AND Classname != 'TrapBear'			#exclude trap
+			AND Classname != 'BearTrap_DZ'			#exclude trap
 			AND Classname != 'TentStorage';		#exclude TentStorage
 
 		WHILE (iNumVehExisting < iVehSpawnMax) DO		#loop until maximum amount of vehicles is reached
@@ -51,7 +51,7 @@ BEGIN
 			#select a random vehicle class
 			SELECT Classname, Chance, MaxNum, Damage
 				INTO @rsClassname, @rsChance, @rsMaxNum, @rsDamage
-				FROM Object_CLASSES ORDER BY RAND() LIMIT 1;
+				FROM object_classes ORDER BY RAND() LIMIT 1;
 
 			#count number of same class already spawned
 			SELECT COUNT(*) 
@@ -66,7 +66,7 @@ BEGIN
 				
 					INSERT INTO Object_DATA (ObjectUID, Instance, Classname, Damage, CharacterID, Worldspace, Inventory, Hitpoints, Fuel, Datestamp)
 						SELECT ObjectUID, sInstance, Classname, RAND(@rsDamage), '0', Worldspace, Inventory, Hitpoints, RAND(1), SYSDATE() 
-							FROM Object_SPAWNS 
+							FROM object_spawns 
 							WHERE Classname = @rsClassname 
 								AND NOT ObjectUID IN (select objectuid from Object_DATA where instance = sInstance)
 							ORDER BY RAND()
@@ -80,7 +80,7 @@ BEGIN
 							AND Classname != 'Hedgehog_DZ'			#exclude hedgehog
 							AND Classname != 'Wire_cat1'				#exclude wirecat
 							AND Classname != 'Sandbag1_DZ'			#exclude Sanbag
-							AND Classname != 'TrapBear'			#exclude trap
+							AND Classname != 'BearTrap_DZ'			#exclude trap
 							AND Classname != 'TentStorage';		#exclude TentStorage
 		
 					#update number of same class already spawned

@@ -59,7 +59,7 @@ INSERT INTO `Object_SPAWNS` (`ObjectUID`, `Classname`, `Worldspace`, `Inventory`
 	(90063662, 'Old_bike_TK_CIV_EP1', '[155,[12158.999,3468.7563,0]]', '[]', '[]', '', NULL),
 	(88190045, 'Old_bike_TK_INS_EP1', '[250,[11984.01,3835.9231,0]]', '[]', '[]', '', NULL),
 	(70759242, 'Old_bike_TK_CIV_EP1', '[255,[10153.068,2219.3547,0]]', '[]', '[]', '', NULL),
-	(89226080, 'UH1H_DZ', '[60,[11279.154,4296.0205,0]]', '[[[], []], [["ItemSodaCoke"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
+	(89226080, 'UH1H_DZ2', '[60,[11279.154,4296.0205,0]]', '[[[], []], [["ItemSodaMtngreen","ItemSodaMtngreenEmpty"], [1, 2]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
 	(33852678, 'UH1H_DZ', '[133,[4211.8789,10735.168,0]]', '[[[], []], [["ItemSodaCoke"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
 	(1585150, 'UH1H_DZ', '[52,[6874.0503,11432.864,0]]', '[[[], []], [["ItemSodaCoke"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),
 	(6367723, 'UH1H_DZ', '[58,[10571.7,2220.3101,0.0015564]]', '[[[], []], [["ItemSodaCoke"], [5]], [[], []]]', '[["motor",1],["elektronika",1],["mala vrtule",1],["velka vrtule",1]]', '', NULL),

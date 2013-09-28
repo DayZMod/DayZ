@@ -36,30 +36,31 @@ BEGIN
 			AND Classname != 'Hedgehog_DZ'
 			AND Classname != 'Wire_cat1'
 			AND Classname != 'Sandbag1_DZ'
-			AND Classname != 'TrapBear'
+			AND Classname != 'BearTrap_DZ'
 			AND Classname != 'StashSmall'
 			AND Classname != 'StashMedium';
 
-	DELETE
-		FROM Object_DATA USING Object_DATA, Character_DATA
-		WHERE (Object_DATA.Classname = 'TentStorage' OR Object_DATA.Classname = 'StashSmall' OR Object_DATA.Classname = 'StashMedium')
-			AND Object_DATA.CharacterID = Character_DATA.CharacterID
-			AND Character_DATA.Alive = 0
-			AND DATE(Character_DATA.last_updated) < CURDATE() - INTERVAL 4 DAY;
-
-
+#remove tents/stash's whose owner has been dead for four days
 	DELETE
 		FROM Object_DATA
-		WHERE (Classname = 'TentStorage' OR Classname = 'StashSmall' OR Classname = 'StashMedium')
+		USING Object_DATA, character_data
+		WHERE Object_DATA.Classname = 'TentStorage' or Object_DATA.Classname = 'StashSmall' or Object_DATA.Classname = 'StashMedium'
+			AND Object_DATA.CharacterID = character_data.CharacterID
+			AND character_data.Alive = 0
+			AND DATE(character_data.last_updated) < CURDATE() - INTERVAL 4 DAY;
+
+#remove empty tents older than seven days
+	DELETE
+		FROM Object_DATA
+		WHERE Classname = 'TentStorage' or Classname = 'StashSmall' or Classname = 'StashMedium'
 			AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
 			AND Inventory = '[[[],[]],[[],[]],[[],[]]]';
-
-
+	
 	DELETE
 		FROM Object_DATA
-		WHERE (Classname = 'TentStorage' OR Classname = 'StashSmall' OR Classname = 'StashMedium')
+		WHERE Classname = 'TentStorage' or Classname = 'StashSmall' or Classname = 'StashMedium'
 			AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
-			AND Inventory = '[]';
+			AND Inventory = '[]';		
 
 #remove barbed wire older than two days
 	DELETE
@@ -82,7 +83,7 @@ BEGIN
 #remove Bear Traps older than five days
 	DELETE
 		FROM Object_DATA
-		WHERE Classname = 'TrapBear'
+		WHERE Classname = 'BearTrap_DZ'
 			AND DATE(last_updated) < CURDATE() - INTERVAL 5 DAY;
 
 END//
