@@ -3,13 +3,18 @@
 
 Current Version
 ==================================
- - 1.7.7.1
+ - 1.8
  
 Files updated
 ------------
- - Dayz_code
+ - Dayz
  - Dayz_anim
+ - Dayz_code
  - Dayz_communityassets
+ - dayz_sfx
+ - st_bunnyhop
+ - st_collision
+ - st_evasive
  - Dayz_server (server admins only)
  - Mission (server admins only) (Prerequisites)
  - SQL Files (server admins only)
@@ -25,7 +30,12 @@ Requirements
 Branches
 --------
 
-- **Release_1.7.7.1** Released: 18/June/13 **Latest Version**<br>
+- **Release_1.8** Released: 14/Sept/13 **Latest Version**<br>
+**[Public Files](https://github.com/DayZMod/DayZ/tree/Release_1.8)**<br>
+**[BattlEye-Filters](https://github.com/DayZMod/Battleye-Filters/tree/Release_1.8)**<br>
+
+
+- **Release_1.7.7.1** Released: 18/June/13<br>
 **[Public Files](https://github.com/DayZMod/DayZ/tree/Release_1.7.7.1)**<br>
 **[BattlEye-Filters](https://github.com/DayZMod/Battleye-Filters/tree/Release_1.7.7.1)**<br>
 
@@ -37,6 +47,7 @@ Branches
 Directories
 -----------
 
+ - **Assets** - New Assets Stuff
  - **BattlEye-Filters** - Current Filters for BattlEye
  - **Binaries** - Hive dlls
  - **Documentation** - Changelog & Credits and Suggestions
