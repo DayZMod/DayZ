@@ -2,6 +2,140 @@
 DayZ Mod Changelog
 ============
 
+VERSION 1.8.0.0  
+---------------
+
+* 16-Sep-2013 - Release Date 
+
+Affected Addons/New Addons::
+
+Client: 
+
+* dayz  
+* dayz_anim  
+* dayz_code  
+* dayz_communityassets  
+* dayz_sfx  
+* st_bunnyhop - *NEW* Very Special Thanks to Dslyecxi of Shack Tactical for allowing us include it with DayZ! 
+* st_collision - *NEW* Very Special Thanks to Dslyecxi of Shack Tactical for allowing us include it with DayZ! 
+* st_evasive - *NEW* Very Special Thanks to Dslyecxi of Shack Tactical for allowing us include it with DayZ! 
+
+Server: 
+
+* dayz_server (server admins only) 
+* mission (server admins only) (Prerequisites) Downloaded from http://www.silentspy.net/utility/dayz/mission-generator/ 
+* BattEye Filters (server admins only) 
+* SQL Files (server admins only)
+
+    Changes:
+	
+		* [NEW] - Feature - "In Combat" System - (Disconnect in x seconds has been removed. Combat icon has been removed. Countdown is now on the abort button itself)
+		* [NEW] - Feature - BattlEye Log - Suspicious weapons, kills with local vehicles and one shot kills
+		* [NEW] - Feature - Gear Menu - Player/Vehicle/Body Inventory System completely redesigned
+		* [NEW] - Feature - Gear/Inventory Menu -Carry Slot has been added to Player Inventory (Allows quick switching between melee, primary, and secondary weapons)
+		* [NEW] - Feature - HUD (Blood, Eat, Drink, Icons + Audio/Visual Alert Level Icons).
+		* [NEW] - Feature - Map - Unused Aram Menus Removed
+		* [NEW] - Feature - Plants model antihack
+		* [NEW] - Feature - Real Time Visual Placement of "Deployables" (You can now see tents, stash, camo nets, tanktraps, sandbags, wirefence in world before you build them)
+		* [NEW] - Feature - Simplified Settings for Server Admins
+		* [NEW] - Feature - Spawn selection Screen - (Balota, Berenzino, Cherno, Elektro, Kamenka, Solnichniy and Random) Server admins can choose to enable/disable. (Default: disabled)
+		* [NEW] - Item - Backpacks have a new sound on opening.
+		* [NEW] - Item - Camo net - will be removed within 24 hours of owner’s death
+		* [NEW] - Item - Camo net (Helicrash, Military) - Can be deployed to help camouflage a vehicle from Helicopters while parked)
+		* [NEW] - Item - Compass is now twice as big.
+		* [NEW] - Item - Crafted Medical. (Makeshift Bandage, Makeshift Splint (Wood), Makeshift Splint (Metal), Bloodbag (Transfusion Ready))
+		* [NEW] - Item - Crafted Traps. (Punji Trap, Tripwire (Cans), Tripwire (Flare), Tripwire (Smoke), Tripwire (Grenade), Bear Trap (Grenade), Bear Trap (Flare), Bear Trap (Smoke))
+		* [NEW] - Item - Fishing Pole - From DayZ Epoch (Saltwater fishing only must have fishing pole) Big Thanks to [VB]AWOL and Paul Tomany!
+		* [NEW] - Item - Twinkies (cake snack) 1 New melee weapon, New fish models, Many new crafting models.
+		* [NEW] - Loot - Beartrap Re-added to loot tables. (More information in "[FIXED]")
+		* [NEW] - Loot - Hospital - Medbox1 added to Building Loot
+		* [NEW] - Loot - Infected Camps - Medbox1 and FoodBox0 added to Building loot
+		* [NEW] - Loot Positions - (Land_a_stationhouse, (FIreStation) Land_HouseV2_04_interier (Residential  House), Land_Mil_Barracks_i (Barracks), Land_SS_hangar (Aircraft Hangers))
+		* [NEW] - Mechanic - Camo Nets will be removed 24 hours after owner’s death
+		* [NEW] - Mechanic - Crafting (Recipes are listed in the Crafting Menu accessible from the Journal UI (default key: insert)).
+		* [NEW] - Mechanic - Death Screen Timeout (Player will be moved to lobby after a 5 second timeout.)
+		* [NEW] - Mechanic - Fishing - From DayZ Epoch (Saltwater fishing only must have fishing pole) Big Thanks to [VB]AWOL and Paul Tomany!
+		* [NEW] - Mechanic - Inventory of unconscious players are now accessible by other players (You can "loot" knocked out players)
+		* [NEW] - Mechanic - Sepsis - Delayed infection - Player is warned, must clean wounds with disinfectant wipes in order to prevent infection onset
+				Stage 1:
+				The first 15 minutes
+				You cannot pass the infection to others
+				You do not take blood damage
+				You have a warning blood icon to show infection
+				Stage 2:
+				15 minutes - 22.5 minutes
+				You cannot pass the infection on
+				You lose 1 blood per second
+				You have the normal blood loss icon		
+				Stage 3:
+				22.5 minutes to 30 minutes
+				You cannot pass the infection to others
+				You lose 2 bloods per second
+				Normal blood loss icon
+				Final Stage/Transition to Infection:
+				After 30 minutes you become fully infected, can transmit the infection to others, you lose 3 blood per second and your screen will shake. On disconnect you will become infected.
+		* [NEW] - Mechanic - ShackTac Movement addons - From Shack Tactical - This addon causes your weapon collision with the environment to be significantly toned down, meaning that you can now move sideways through doorways and generally find CQB to be enjoyable, versus feel like a rusted robot trying to navigate a terrifying alien world called 'indoors'. Try it out and see, it's simple and very noticeable.
+		* [NEW] - Mechanic - ShackTac Movement addons - st_bunnyhop - more realistic replacement for "Combat Roll" allows player to "hop" over fences etc.
+		* [NEW] - Mechanic - Siphon Fuel from vehicle
+		* [NEW] - Mechanic - Weapon Hotkey Switching - Default : 1 = rifle, 2 = pistol, 3 = melee
+		* [NEW] - Weapon - Crafted Weapons. (Nailed Bat, Barbed Wire Bat, Chloroform Rag)
+		* [NEW] - Weapon - SVD Dragunov (MilitarySpecial)
+
+		* [FIXED] - Bug - BattleFieldClearance Antihack
+		* [FIXED] - Bug - Bear Trap state not syncing or saving to the server
+		* [FIXED] - Bug - BIS_Effects AirDestruction bug that sets the world on fire
+		* [FIXED] - Bug - Could not administer Antibiotics to other players (now you can)
+		* [FIXED] - Bug - Could not refuel while swimming (now you can)
+		* [FIXED] - Bug - DayZ Loading Screen Hang due to ACR mod install
+		* [FIXED] - Bug - Dead Player body does not disappear if player "combat logs" (Disconnects too quickly or by force after being killed)
+		* [FIXED] - Bug - General Antihack system fixes
+		* [FIXED] - Bug - Hospital Wall Hack
+		* [FIXED] - Bug - Infection not being cured at tents after log out
+		* [FIXED] - Bug - Player getting stuck after tackle animation
+		* [FIXED] - Bug - Repeat loot in loot piles
+		* [FIXED] - Bug - Zed path finding under chase condition (should not turn so often)
+		* [FIXED] - Errors - Various No Entry errors fixed
+		* [FIXED] - Exploit - "Reconnect Dupe"  & "Body Dupe" - Duplication of items under certain conditions fixed
+		* [FIXED] - Mechanic - Players are able to perform self actions in vehicles (Drink, Eat, Bandage, Etc)
+		* [FIXED] - Object Placement - Bench at NWAF South Barracks
+
+		* [UPDATED] - Feature - "Combat Roll" replaced by Shack Tactical's Bunnyhop
+		* [UPDATED] - Feature - Players may now switch seats while in a helicopter (back seat, gunner, pilot)
+		* [UPDATED] - Humanity System - Humanity Gain over time for Bandits
+		* [UPDATED] - Loot - Hospital loot tables
+		* [UPDATED] - Loot - Removed trash items from building loot tables and replaced with generic trash table (better organization)
+		* [UPDATED] - Stringtables - Czech, German, Spanish, and Russian
+		* [UPDATED] - System - Anti "Wall Hack"
+		* [UPDATED] - System - Auto Continue on 1st Mission Load
+		* [UPDATED] - System - Gear is only accessible in vehicles with "G" key due to removal of Arma Map Menus
+		* [UPDATED] - System - Loot Spawning Radius increased from 120m to 125m
+		* [UPDATED] - System - Max smoke target range to 50m
+		* [UPDATED] - System - Mission file size reduction
+		* [UPDATED] - System - PV Optimization (reduces unneeded network traffic)
+		* [UPDATED] - System - Removed attack call from FSM due to latency Player who spawned the zed may not be the player the zed is attacking
+		* [UPDATED] - System - Various Security updates
+		* [UPDATED] - System - Viral Zeds - Viral Villager Zeds called only at Supermarket,Farm,Residential buildings (easy to spot)
+		* [UPDATED] - System - Viral Zeds - Viral Worker Zeds called only at MilitarySpecial,Military,Industrial buildings (hard to spot)
+		* [UPDATED] - System - Zed Angle of attack increased
+		* [UPDATED] - System - Zed Movement, Targeting, LOS, and Angle of Attack Systems (This should improve Zed reaction times & make sure target is within range)
+		* [UPDATED] - System - Zed Overall Damage output (small update)
+		* [UPDATED] - System - Zed Spawning - Land_Mil_Guardhouse reduced max from 6 to 3
+		* [UPDATED] - Weapon - DMR - Fire Rate lowered (fewer shots per minute)
+		* [UPDATED] - Weapon - Melee weapon Damage values updated  (Machete > 15, Hatchet > 12,Crowbar > 10,Bat > 9,BatBarbed > 12, BatNailed > 12)
+		* [UPDATED] - Weapon - Quick Switch by action menu
+		* [UPDATED] - Weapon - SD/Non-SD magazine compatibility changes (WIP) (nonSD mags removed from SD weapons/SD mags removed from nonSD weapons)
+		* [UPDATED] - Weapon - SVD Dragunov - Fire Rate lowered (fewer shots per minute)
+
+		* [REMOVED] - System - Collision system from tents, stash's, camo nets (Should allow storage system to be placed in better locations)
+		* [REMOVED] - System - Difficulty system (Due to issues with official hive. Official hive cannot track/store multiple difficulty levels)
+		* [REMOVED] - System - Map markers for other players and empty vehicles (blue/orange/green dots & vehicles)
+		* [REMOVED] - System - Removed Arma 2 squad command menu (0-9 or F1-F12)
+		* [REMOVED] - System - Vehicle damage spam log
+
+
+Notes:
+Fishing - We are still trying to decide about fishing the current system is fine but we have an issue with the fishing rod facing the wrong way. 
+
 Version 1.7.7.1
 ---------------
 
