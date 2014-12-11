@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="DayZ">
+	<Package name="weapons">
+		<Key ID="STR_WPN_NAME_1">
+			<Original>Winchester 1866</Original>
+			<English>Winchester 1866</English>
+			<German>Winchester 1866</German>
+			<Russian>Винчестер 1866</Russian>
+		</Key>
+		<Key ID="STR_WPN_NAME_2">
+			<Original>Remington 870</Original>
+			<English>Remington 870</English>
+			<German>Remington 870</German>	
+			<Russian>Ремингтон 870</Russian>
+		</Key>
+	</package>
+	<Package name="magazines">
+		<Key ID="STR_MAG_NAME_3">
+			<Original>Steel Bolt</Original>
+			<English>Steel Bolt</English>
+			<German>Stahlbolzen</German>	
+			<Russian>Стальной болт</Russian>
+		</Key>
+		<Key ID="STR_MAG_DESC_3">
+			<Original>A Crossbow Bolt made from hardened steel with feathered tips. Rugged and able to withstand many uses.</Original>
+			<English>A Crossbow Bolt made from hardened steel with feathered tips. Rugged and able to withstand many uses.</English>
+			<German>Ein Armbrustbolzen aus gehärtetem Stahl mit gefiederten Spitzen. Durch die robuste Machart kann er wiederverwendet werden.</German>	
+			<Russian>Стальной оперенный арбалетный болт. Многоразовый.</Russian>
+		</Key>
+		<Key ID="STR_MAG_ACTION_3">
+			<Original>Bolt</Original>	<!-- As in Crossbow Bolt -->
+			<English>Bolt</English>
+			<German>Bolzen</German>	
+			<Russian>Болт</Russian>
+		</Key>
+	</package>
+</Project>

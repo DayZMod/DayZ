@@ -1,0 +1,11 @@
+/@hive/AddOns/Build-Community.bat
+/@dayz/Build-Community-Beta.bat
+/@dayz/Build-Community.bat
+/Dev-build.bat
+/@Deploy
+/@Dayz
+/@Legacy
+/ARMA2Tools
+/Skaronator
+*.bat
+*-old

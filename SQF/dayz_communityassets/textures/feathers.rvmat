@@ -1,0 +1,41 @@
+ambient[]={1,1,1,1};
+diffuse[]={1,1,1,1};
+forcedDiffuse[]={0,0,0,1};
+emmisive[]={0,0,0,1};
+specular[]={0.95294118,0.95294118,0.95294118,1};
+specularPower=100;
+renderFlags[]=
+{
+	"NoAlphaWrite"
+};
+PixelShaderID="NormalMapSpecularDIMap";
+VertexShaderID="NormalMap";
+class Stage0
+{
+	texture="z\addons\dayz_communityassets\textures\feathers_ca.paa";
+	uvSource="tex";
+};
+class Stage1
+{
+	texture="z\addons\dayz_communityassets\textures\feathers_nohq.paa";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class Stage2
+{
+	texture="z\addons\dayz_communityassets\textures\feathers_smdi.paa";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};

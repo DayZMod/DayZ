@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="DayZ">
+  <Package name="equipment">
+			<Key ID="STR_EQUIP_NAME_31">
+				<Original>Portable Generator</Original>						
+				<English>Portable Generator</English>						
+				<German>Tragbarer Generator</German>
+				<Russian>Портативный генератор</Russian>
+			</Key>
+			<Key ID="STR_EQUIP_DESC_31">
+				<Original>Used to supply electrical power in places where utility (central station) power is not available, or where power is needed only temporarily.</Original>						
+				<English>Used to supply electrical power in places where utility (central station) power is not available, or where power is needed only temporarily.</English>						
+				<German>Ein tragbarer Generator, der im Falle eines Stromausfalls zum Erzeugen von elektrischer Energie verwendet werden kann.</German>
+				<Russian>Генератор используется для создания напряжения в местах, где недоступна электросеть.</Russian>
+			</Key>
+			<Key ID="STR_EQUIP_DESC_37">
+				<Original>An aluminium can containing fuel for all-night game development. Can be consumed as a regular drink as required.</Original>						
+				<English>An aluminium can containing fuel for all-night game development. Can be consumed as a regular drink as required.</English>						
+				<German>Eine Aluminiumdose, in der Energie für eine Nacht voller Spieleentwicklung steckt. Kann auch auch täglicher Basis getrunken werden.</German>
+				<Russian>Алюминиевая банка содержащая газированый энергетик. Единственная на всю Черноруссию.</Russian>
+			</Key>
+			<Key ID="STR_EQUIP_NAME_38">
+				<Original>Mobile Phone</Original>						
+				<English>Mobile Phone</English>						
+				<German>Mobiltelefon</German>
+				<Russian>Мобильный телефон</Russian>
+			</Key>
+			<Key ID="STR_EQUIP_DESC_38">
+				<Original>A specialist Mobile phone that can use mobile networks, line-of-sight, and satellites for communication.</Original>						
+				<English>A specialist Mobile phone that can use mobile networks, line-of-sight, and satellites for communication.</English>						
+				<German>Ein spezielles Mobiltelefon, das Handynetze, direkte Verbindungen und Satelliten für die Kommunikation verwenden kann.</German>
+				<Russian>Специальный мобильный телефон, который используется для передачи данных, прямой и спутниковой связи.</Russian>
+			</Key>
+	</Package>
+	<Package name="weaponHolders">
+			<Key ID="STR_WPN_HOLDR_1">	
+				<Original>Colt 1911</Original>
+				<English>Colt 1911</English>
+				<German>Colt 1911</German>
+				<Russian>Кольт 1911</Russian>
+			</Key>	
+			<Key ID="STR_WPN_HOLDR_3">	
+				<Original>M4A1</Original>
+				<English>M4A1</English>
+				<German>M4A1</German>
+				<Russian>M4A1</Russian>
+			</Key>
+    </Package>
+	<Package name="objects">
+			<Key ID="STR_DAYZ_OBJ_1">	
+				<Original>Cardboard Box (Food)</Original>
+				<English>Cardboard Box (Food)</English>
+				<German>Pappkarton (Lebensmittel)</German>
+				<Russian>Картонная коробка (Пища)</Russian>
+				<French>Carton (Nourriture)</French>
+			</Key>
+	</package>
+</Project>

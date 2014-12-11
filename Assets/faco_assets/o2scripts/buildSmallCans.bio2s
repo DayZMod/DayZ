@@ -1,0 +1,93 @@
+/*
+Description:
+Build all small food cans at once
+
+Functionality:
+1/ create your P: for O2
+2/ create P:\z and P:\z\addons
+3/ unpbo and copy dayz_communityassets to P:\z\addons\dayz_communityassets
+4/ open can_small_generic_clean_empty.p3d in O2
+5/ menu automation > scripts > run script, search buildSmallcans.bio2s, then click on "Save" in order to load the script
+6/ click "Ok" to overwrite empty soda cans in P:\z\addons\dayz_communityassets\models
+
+you can do the same with can_small_generic_clean_full.p3d, in this case small full cans will be built
+
+Licensing Info:
+(c) facoptere@gmail.com - for DayZMod 
+
+*/
+
+
+_sodas =[
+// texture                 		mean color   			model to save 
+ ["can_small_rus_corn_clean_co.paa", "0.69,0.60,0.40,1", "can_small_rus_corn"]
+ ,
+ ["can_small_rus_milk_clean_co.paa", "0.53,0.59,0.62,1", "can_small_rus_milk"]
+ ,
+ ["can_small_rus_peas_clean_co.paa", "0.48,0.61,0.49,1", "can_small_rus_peas"]
+ ,
+ ["can_small_rus_pork_clean_co.paa", "0.46,0.31,0.29,1", "can_small_rus_pork"]
+ ,
+ ["can_small_rus_stew_clean_co.paa", "0.46,0.33,0.35,1", "can_small_rus_stew"]
+];
+
+
+_p3d_write_path = '\z\addons\dayz_communityassets\models\';
+_paa_path = 'z\addons\dayz_communityassets\textures\';
+
+_suffix = ((splitPath nameOf this) @ -2) @ [ -5, -5 ];
+_suffix = if (_suffix == "_full") then { "_full" } else { "_empty" };
+
+scopeName "mainScope";
+//#include "std\lodNames.inc"
+//console = openStandardIO;
+//if (this in ["options"]) exitWith {messageBox ["No options available for this tool.", 0];};
+//_initLevel = (activeLevel this);
+
+
+
+_dlg = dialogBox
+	[150, 50, "Soda can builder",
+		["init", {}],
+		["label",200,13,"Ready to overwrite all "+_suffix+" SMALL food cans?",0],
+		["break"],
+		["ok-button", 45, 15],
+		["cancel-button", 45, 15]
+	];
+	
+echo str (_dlg); // 1=OK
+if (_dlg == 1) then {
+	{
+		_fileto=_p3d_write_path+(_x select 2)+_suffix+".p3d";
+		_colorto="#(argb,8,8,3)color("+(_x select 1)+",co)";
+		_textureto=_paa_path+(_x select 0);
+		echo ("Processing file "+_fileto+" with mean color "+_colorto+" and texture "+_textureto);
+		_object=this as _fileto;
+		// for each model LOD
+		_levels = (getObjects _object);
+		for "_u" from 0 to ((count _levels) - 1) do
+		{
+			_lod = _levels select _u;
+			{	
+				if (_x == "label") then {
+					_mesh = _lod loadSelection _x;
+					{
+						_lod face _x setTexture(_textureto);
+					} forEach getSelectedFaces _mesh;
+				}
+				else {
+					if (_x == "labelfar") then {
+						_mesh = _lod loadSelection _x;
+						{
+							_lod face _x setTexture(_colorto);
+						} forEach getSelectedFaces _mesh;
+					};
+				};
+			} forEach getSelections _lod;
+		};
+		save _object;
+	} forEach _sodas;
+	messageBox ["Done!",0];
+};
+
+breakOut "mainScope";

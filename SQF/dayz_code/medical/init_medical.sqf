@@ -1,0 +1,1 @@
+// moved to dayz_code/system/scheduler/sched_medical.sqf

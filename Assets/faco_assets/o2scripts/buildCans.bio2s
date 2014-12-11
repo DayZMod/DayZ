@@ -1,0 +1,117 @@
+/*
+Description:
+Build all large cans at once
+
+Functionality:
+1/ create your P: for O2
+2/ create P:\z and P:\z\addons
+3/ unpbo and copy dayz_communityassets to P:\z\addons\dayz_communityassets
+4/ open can_generic_clean_empty.p3d in O2
+5/ menu automation > scripts > run script, search buildcans.bio2s, then click on "Save" in order to load the script
+6/ click "Ok" to overwrite empty soda cans in P:\z\addons\dayz_communityassets\models
+
+you can do the same with can_generic_clean_full.p3d, in this case all full cans will be built
+
+Licensing Info:
+(c) facoptere@gmail.com - for DayZMod 
+
+*/
+
+
+
+
+
+
+_sodas =[
+// texture                 		mean color   			model to save 
+ ["can_corn_clean_co.paa", "0.32,0.38,0.15,1", "can_corn_clean"]
+ ,
+ ["can_orlok_clean_co.paa", "0.37,0.42,0.43,1", "can_orlok_clean"]
+ ,
+ ["can_herpy_clean_co.paa", "0.43,0.31,0.40,1", "can_herpy_clean"]
+ ,
+ ["can_griff_clean_co.paa", "0.30,0.31,0.38,1", "can_griff_clean"]
+ ,
+ ["can_derpy_clean_co.paa", "0.48,0.22,0.27,1", "can_derpy_clean"]
+ ,
+ ["can_demon_clean_co.paa", "0.39,0.47,0.31,1", "can_demon_clean"]
+ ,
+ ["can_tylers_clean_co.paa", "0.26,0.26,0.29,1", "can_tylers_clean"]
+ ,
+ ["can_powell_clean_co.paa", "0.27,0.38,0.46,1", "can_powell_clean"]
+ ,
+ ["can_curgon_clean_co.paa", "0.60,0.40,0.40,1", "can_curgon_clean"]
+ ,
+ ["can_badguy_clean_co.paa", "0.36,0.22,0.18,1", "can_badguy_clean"]
+ ,
+ ["can_boneboy_clean_co.paa", "0.52,0.31,0.23,1", "can_boneboy_clean"]
+ ,
+ ["can_unlabeled_clean_co.paa", "0.,0.,0.,1", "can_unlabeled_clean"]
+ ,
+ ["can_fraggleos_clean_co.paa", "0.56,0.43,0.38,1", "can_fraggleos_clean"]
+ ,
+ ["can_pots_clean_co.paa", "0.54,0.55,0.54,1", "can_pots_clean"]
+ ,
+ ["can_beef_clean_co.paa", "0.58,0.78,0.77,1", "can_beef_clean"]
+
+];
+
+_p3d_write_path = '\z\addons\dayz_communityassets\models\';
+_paa_path = 'z\addons\dayz_communityassets\textures\';
+
+_suffix = ((splitPath nameOf this) @ -2) @ [ -5, -5 ];
+_suffix = if (_suffix == "_full") then { "_full" } else { "_empty" };
+
+scopeName "mainScope";
+//#include "std\lodNames.inc"
+//console = openStandardIO;
+//if (this in ["options"]) exitWith {messageBox ["No options available for this tool.", 0];};
+//_initLevel = (activeLevel this);
+
+
+
+_dlg = dialogBox
+	[150, 50, "Soda can builder",
+		["init", {}],
+		["label",200,13,"Ready to overwrite all "+_suffix+" large food cans?",0],
+		["break"],
+		["ok-button", 45, 15],
+		["cancel-button", 45, 15]
+	];
+	
+echo str (_dlg); // 1=OK
+if (_dlg == 1) then {
+	{
+		_fileto=_p3d_write_path+(_x select 2)+_suffix+".p3d";
+		_colorto="#(argb,8,8,3)color("+(_x select 1)+",co)";
+		_textureto=_paa_path+(_x select 0);
+		echo ("Processing file "+_fileto+" with mean color "+_colorto+" and texture "+_textureto);
+		_object=this as _fileto;
+		// for each model LOD
+		_levels = (getObjects _object);
+		for "_u" from 0 to ((count _levels) - 1) do
+		{
+			_lod = _levels select _u;
+			{	
+				if (_x == "label") then {
+					_mesh = _lod loadSelection _x;
+					{
+						_lod face _x setTexture(_textureto);
+					} forEach getSelectedFaces _mesh;
+				}
+				else {
+					if (_x == "labelfar") then {
+						_mesh = _lod loadSelection _x;
+						{
+							_lod face _x setTexture(_colorto);
+						} forEach getSelectedFaces _mesh;
+					};
+				};
+			} forEach getSelections _lod;
+		};
+		save _object;
+	} forEach _sodas;
+	messageBox ["Done!",0];
+};
+
+breakOut "mainScope";

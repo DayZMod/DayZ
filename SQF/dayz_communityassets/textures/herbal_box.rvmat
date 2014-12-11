@@ -1,0 +1,13 @@
+ambient[]={1,1,1,1};
+diffuse[]={1,1,1,1};
+forcedDiffuse[]={0,0,0,0};
+emmisive[]={0,0,0,1};
+specular[]={0,0,0,1};
+specularPower=6;
+PixelShaderID="Normal";
+VertexShaderID="Basic";
+class Stage0
+{
+	texture="z\addons\dayz_communityassets\textures\box_herb_co.paa";
+	uvSource="tex";
+};

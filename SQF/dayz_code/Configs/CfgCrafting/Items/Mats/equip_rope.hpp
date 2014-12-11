@@ -1,0 +1,9 @@
+class equip_rope : CA_Magazine {
+	scope = public;
+	count = 1;
+	displayName = $STR_ITEM_NAME_equip_rope;
+	descriptionShort = $STR_ITEM_DESC_equip_rope;
+	model = "\z\addons\dayz_communityassets\models\rope.p3d";
+	picture = "\z\addons\dayz_communityassets\pictures\equip_rope_ca.paa";
+	type = 256;
+};

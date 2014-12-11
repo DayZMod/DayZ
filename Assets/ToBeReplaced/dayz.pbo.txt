@@ -1,0 +1,16 @@
+dayz\config.cpp
+dayz\credits.txt
+dayz\characters\annie_original.p3d
+dayz\characters\man_bandit.p3d
+dayz\characters\man_hero.p3d
+dayz\characters\man_survivor.p3d
+dayz\characters\woman_bandit.p3d
+dayz\model\BasicColide.p3d
+dayz\objects\Barbedwire.p3d
+dayz\objects\dead_soldier_0.p3d
+dayz\objects\dead_soldier_1.p3d
+dayz\objects\dead_soldier_template.p3d
+dayz\objects\dog.p3d
+dayz\objects\proxy_man.p3d
+dayz\ui\screen_death_ca.paa
+dayz\ui\screen_title_ca.paa

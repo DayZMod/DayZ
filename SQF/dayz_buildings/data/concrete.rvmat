@@ -1,0 +1,19 @@
+surfaceInfo = "ca\data\Penetration\concrete.bisurf"; //Definition of physical properties
+ambient[]={1.000000,1.000000,1.000000,1.000000};
+diffuse[]={1.000000,1.000000,1.000000,1.000000};
+forcedDiffuse[]={0.000000,0.000000,0.000000,0.000000};
+emmisive[]={0.000000,0.000000,0.000000,1.000000};
+specular[]={0.500000,0.500000,0.500000,0};
+specularPower=16.000000;
+PixelShaderID="NormalMapSpecularDIMap";
+VertexShaderID="NormalMap";
+class Stage1
+{
+	texture="z\addons\dayz_buildings\data\concrete_NOHQ.paa";
+	uvSource="tex";
+};
+class Stage2
+{
+	texture="z\addons\dayz_buildings\data\concrete_smdi.paa";
+	uvSource="tex";
+};

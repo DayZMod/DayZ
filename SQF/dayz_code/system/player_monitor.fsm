@@ -1,0 +1,1725 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, DayZ Player Monitor">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-75.000000,-200.000000,25.000000,-150.000000,0.000000,"init"};
+item1[] = {"isServer",4,218,50.000000,-200.000000,150.000000,-150.000000,0.000000,"isServer"};
+item2[] = {"wait",2,250,50.000000,-125.000000,150.000000,-75.000000,0.000000,"wait"};
+item3[] = {"Allow_Connection",4,218,50.000000,-50.000000,150.000000,0.000000,0.000000,"Allow" \n "Connection"};
+item4[] = {"Loading",2,250,-75.000000,-50.000000,25.000000,0.000000,0.000000,"Loading"};
+item5[] = {"Client",4,218,-75.000000,-125.000000,25.000000,-75.000000,0.000000,"Client"};
+item6[] = {"player____null_player",4,218,-175.000000,100.000000,-75.000000,150.000000,0.000000,"player != null" \n "player == player"};
+item7[] = {"Collect",2,250,-75.000000,150.000000,25.000000,200.000000,0.000000,"Collect"};
+item8[] = {"Has_PlayerID",4,218,-175.000000,200.000000,-75.000000,250.000000,1.000000,"Has PlayerID"};
+item9[] = {"no_PlayerID",4,218,125.000000,150.000000,225.000000,200.000000,2.000000,"no PlayerID"};
+item10[] = {"ERROR__No_Player",2,250,325.000000,150.000000,425.000000,200.000000,0.000000,"ERROR:" \n "No PlayerID"};
+item11[] = {"Request",2,250,-75.000000,350.000000,25.000000,400.000000,0.000000,"Request"};
+item12[] = {"Response",4,218,-175.000000,400.000000,-75.000000,450.000000,0.000000,"Response"};
+item13[] = {"Parse_Login",2,250,-75.000000,550.000000,25.000000,600.000000,0.000000,"Parse Login"};
+item14[] = {"Hive_Bad",4,218,125.000000,550.000000,225.000000,600.000000,10.000000,"Hive" \n "Bad"};
+item15[] = {"ERROR__Wrong_HIVE",2,250,325.000000,550.000000,425.000000,600.000000,0.000000,"ERROR:" \n "Wrong HIVE" \n "Version"};
+item16[] = {"Character_Setup",4,218,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
+item17[] = {"Phase_One",2,250,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
+item18[] = {"Response",4,218,-175.000000,700.000000,-75.000000,750.000000,0.000000,"Response"};
+item19[] = {"Phase_Two",2,250,-75.000000,750.000000,25.000000,800.000000,0.000000,"Phase Two"};
+item20[] = {"Dead_Player",4,218,125.000000,750.000000,225.000000,800.000000,0.000000,"Dead" \n "Player"};
+item21[] = {"ERROR__Player_Already",2,250,325.000000,750.000000,425.000000,800.000000,0.000000,"ERROR:" \n "Player Already" \n "Dead"};
+item22[] = {"Alive",4,218,-175.000000,800.000000,-75.000000,850.000000,0.000000,"Alive"};
+item23[] = {"Position",2,250,-75.000000,850.000000,25.000000,900.000000,0.000000,"Position"};
+item24[] = {"Version_Ok",4,218,-175.000000,900.000000,-75.000000,950.000000,0.000000,"Version" \n "Ok"};
+item25[] = {"Load_In",2,250,-75.000000,1150.000000,25.000000,1200.000000,0.000000,"Load In"};
+item26[] = {"Bad_Version",4,218,125.000000,850.000000,225.000000,900.000000,0.000000,"Bad" \n "Version"};
+item27[] = {"ERROR__Bad_Versi",2,250,325.000000,850.000000,425.000000,900.000000,0.000000,"ERROR:" \n "Bad Version"};
+item28[] = {"Display_Ready",4,218,-175.000000,1200.000000,-75.000000,1250.000000,0.000000,"Display" \n "Ready"};
+item29[] = {"Preload_Display",2,250,-75.000000,1250.000000,25.000000,1300.000000,0.000000,"Preload" \n "Display"};
+item30[] = {"Preload_Done",4,218,-175.000000,1300.000000,-75.000000,1350.000000,0.000000,"Preload" \n "Done"};
+item31[] = {"Initialize",2,250,-75.000000,1350.000000,25.000000,1400.000000,0.000000,"Initialize"};
+item32[] = {"Finish",1,250,-75.000000,1525.000000,25.000000,1575.000000,0.000000,"Finish"};
+item33[] = {"no_Time_Date",4,218,125.000000,950.000000,225.000000,1000.000000,0.000000,"no Time/Date"};
+item34[] = {"sleep",4,218,525.000000,150.000000,625.000000,200.000000,0.000000,"sleep"};
+item35[] = {"sleep",4,218,525.000000,550.000000,625.000000,600.000000,0.000000,"sleep"};
+item36[] = {"sleep",4,218,525.000000,750.000000,625.000000,800.000000,0.000000,"sleep"};
+item37[] = {"sleep",4,218,525.000000,850.000000,625.000000,900.000000,0.000000,"sleep"};
+item38[] = {"Enable_Sim",2,250,-75.000000,50.000000,25.000000,100.000000,0.000000,"Enable Sim"};
+item39[] = {"Initialized",4,218,-175.000000,0.000000,-75.000000,50.000000,0.000000,"Initialized"};
+item40[] = {"ERROR__Client_Files",2,250,325.000000,50.000000,425.000000,100.000000,0.000000,"ERROR:" \n "Client Files " \n "are missing missing"};
+item41[] = {"sleep_",4,218,525.000000,50.000000,625.000000,100.000000,0.000000,"sleep" \n ""};
+item42[] = {"Stream",2,250,-75.000000,1050.000000,25.000000,1100.000000,0.000000,"Stream"};
+item43[] = {"Preloaded",4,218,-175.000000,1100.000000,-75.000000,1150.000000,0.000000,"Preloaded"};
+item44[] = {"retry",4,218,25.000000,350.000000,100.000000,375.000000,0.000000,"retry"};
+item45[] = {"retry_",4,218,25.000000,375.000000,100.000000,400.000000,0.000000,"" \n "retry" \n ""};
+item46[] = {"Retry",2,250,100.000000,350.000000,200.000000,400.000000,0.000000,"Retry"};
+item47[] = {"auth_failed",4,218,225.000000,350.000000,300.000000,400.000000,0.000000,"auth failed"};
+item48[] = {"get_ready_to_clo",2,250,325.000000,350.000000,425.000000,400.000000,0.000000,"get ready to close"};
+item49[] = {"sleep_",4,218,525.000000,350.000000,625.000000,400.000000,0.000000,"sleep" \n ""};
+item50[] = {"Disconnect",2,250,775.000000,450.000000,875.000000,500.000000,0.000000,"Disconnect"};
+item51[] = {"Got_time_date",4,218,-175.000000,1000.000000,-75.000000,1050.000000,0.000000,"Got time/date"};
+item52[] = {"Date_or_Time_Send",2,250,-75.000000,950.000000,25.000000,1000.000000,0.000000,"Date or Time" \n "Send request"};
+item53[] = {"True",8,218,-75.000000,1425.000000,25.000000,1475.000000,0.000000,"True"};
+item54[] = {"Server_Loading",2,250,-75.000000,250.000000,25.000000,300.000000,0.000000,"Server Loading"};
+item55[] = {"Too_Long",4,218,125.000000,250.000000,225.000000,300.000000,0.000000,"Too" \n "Long"};
+item56[] = {"Server_Ready",4,218,-175.000000,300.000000,-75.000000,350.000000,0.000000,"Server Ready"};
+item57[] = {"New_Character_57",4,218,-200.000000,550.000000,-100.000000,600.000000,5.000000,"New" \n "Character" \n "57"};
+item58[] = {"Gender_Selection",2,250,-325.000000,550.000000,-225.000000,600.000000,0.000000,"Gender Selection" \n "Dialog" \n "58"};
+item59[] = {"Gender__Selected",4,218,-700.000000,575.000000,-600.000000,625.000000,0.000000,"Gender " \n "Selected" \n "59"};
+item60[] = {"Character_Type_6",2,250,-825.000000,550.000000,-725.000000,600.000000,0.000000,"Character" \n "Type" \n "60"};
+item61[] = {"Region_Selection",2,250,-800.000000,725.000000,-700.000000,775.000000,0.000000,"Region Selection" \n "Dialog" \n "61"};
+item62[] = {"Region_Selected",4,218,-425.000000,700.000000,-325.000000,750.000000,0.000000,"Region" \n "Selected" \n "62"};
+item63[] = {"Region_Process_6",2,250,-300.000000,725.000000,-200.000000,775.000000,0.000000,"Region Process" \n "63"};
+item64[] = {"",7,210,-954.000000,671.000000,-946.000061,679.000000,0.000000,""};
+item65[] = {"Spawn_Process_65",2,250,-300.000000,650.000000,-200.000000,700.000000,0.000000,"Spawn Process" \n "65"};
+item66[] = {"Selection_Enabled",4,218,-925.000000,725.000000,-825.000000,775.000000,0.000000,"Selection" \n "Enabled" \n "66"};
+item67[] = {"Selection_Disabled",4,218,-925.000000,650.000000,-825.000000,700.000000,0.000000,"Selection" \n "Disabled" \n "67"};
+item68[] = {"",7,210,-954.000061,571.000000,-946.000000,579.000000,0.000000,""};
+item69[] = {"",7,210,-953.999939,746.000000,-946.000000,754.000000,0.000000,""};
+item70[] = {"",7,210,-178.999969,746.000000,-171.000031,754.000000,0.000000,""};
+item71[] = {"",7,210,-178.999969,671.000000,-171.000031,679.000000,0.000000,""};
+item72[] = {"ERROR__Date_Time",2,250,325.000000,950.000000,425.000000,1000.000000,0.000000,"ERROR:" \n "Date/Time" \n "not synced!"};
+item73[] = {"sleep",4,218,525.000000,950.000000,625.000000,1000.000000,0.000000,"sleep"};
+item74[] = {"get_ready_to_clo_1",2,250,325.000000,250.000000,425.000000,300.000000,0.000000,"get ready to close"};
+item75[] = {"sleep_",4,218,525.000000,250.000000,625.000000,300.000000,0.000000,"sleep" \n ""};
+item76[] = {"pbo_s__are_missi",4,218,125.000000,50.000000,225.000000,100.000000,2.000000,"pbo's " \n "are missing"};
+item77[] = {"",7,210,821.000000,571.000000,829.000000,579.000000,0.000000,""};
+item78[] = {"",7,210,821.000000,771.000000,829.000000,779.000000,0.000000,""};
+item79[] = {"",7,210,821.000000,971.000000,829.000000,979.000000,0.000000,""};
+item80[] = {"",7,210,821.000000,871.000000,829.000000,879.000000,0.000000,""};
+item81[] = {"",7,210,821.000000,71.000000,829.000000,79.000000,0.000000,""};
+item82[] = {"",7,210,821.000000,171.000000,829.000000,179.000000,0.000000,""};
+item83[] = {"",7,210,821.000000,271.000000,829.000000,279.000000,0.000000,""};
+item84[] = {"Gender_Closed_84",4,218,-450.000000,525.000000,-350.000000,575.000000,0.000000,"Gender" \n "Closed" \n "84"};
+item85[] = {"reopen_Region_85",4,218,-800.000000,800.000000,-700.000000,850.000000,0.000000,"reopen" \n "Region" \n "85"};
+item86[] = {"Default_Male_215",4,218,-700.000000,525.000000,-600.000000,575.000000,0.000000,"Default" \n "Male" \n "215"};
+item87[] = {"Default_Region_2",4,218,-425.000000,750.000000,-325.000000,800.000000,0.000000,"Default" \n "Region" \n "217"};
+item88[] = {"",7,210,-129.000000,671.000000,-121.000000,679.000000,0.000000,""};
+item89[] = {"Gender_Opened_22",4,218,-450.000000,575.000000,-350.000000,625.000000,0.000000,"Gender" \n "Opened" \n "220"};
+item90[] = {"Waiting_for_Gender",2,250,-575.000000,550.000000,-475.000000,600.000000,0.000000,"Waiting for" \n "Gender Selection" \n "221"};
+item91[] = {"Region_Opened_22",4,218,-675.000000,700.000000,-575.000000,750.000000,0.000000,"Region" \n "Opened" \n "223"};
+item92[] = {"Waiting_for__Region",2,250,-550.000000,725.000000,-450.000000,775.000000,0.000000,"Waiting for " \n "Region Selection" \n "224"};
+item93[] = {"Reopen__Gender_2",4,218,-325.000000,475.000000,-225.000000,525.000000,0.000000,"Reopen" \n " Gender" \n "225"};
+item94[] = {"Region__Closed_2",4,218,-675.000000,750.000000,-575.000000,800.000000,0.000000,"Region " \n "Closed" \n "227"};
+item95[] = {"Client_Not_Ready",4,218,-225.000000,450.000000,-125.000000,500.000000,0.000000,"Client Not Ready"};
+item96[] = {"Update_player",2,250,-425.000000,375.000000,-325.000000,425.000000,0.000000,"Update player"};
+item97[] = {"sleep",4,218,-550.000000,375.000000,-450.000000,425.000000,0.000000,"sleep"};
+item98[] = {"",7,210,821.000000,371.000000,829.000000,379.000000,0.000000,""};
+item99[] = {"Ghost_System",2,250,-75.000000,450.000000,25.000000,500.000000,0.000000,"Ghost System"};
+item100[] = {"Client_Ready",4,218,-175.000000,500.000000,-75.000000,550.000000,0.000000,"Client Ready"};
+item101[] = {"Reset",2,250,-425.000000,325.000000,-325.000000,375.000000,0.000000,"Reset"};
+item102[] = {"Sleep",4,218,-550.000000,325.000000,-450.000000,375.000000,0.000000,"Sleep"};
+item103[] = {"",7,210,-279.000000,371.000000,-271.000000,379.000000,0.000000,""};
+item104[] = {"retry_Login",4,4314,-250.000000,350.000000,-150.000000,400.000000,0.000000,"retry Login"};
+item105[] = {"",7,210,-379.000031,471.000000,-371.000000,479.000000,0.000000,""};
+link0[] = {0,1};
+link1[] = {0,5};
+link2[] = {1,2};
+link3[] = {2,3};
+link4[] = {3,4};
+link5[] = {4,39};
+link6[] = {5,4};
+link7[] = {6,7};
+link8[] = {7,8};
+link9[] = {7,9};
+link10[] = {8,54};
+link11[] = {9,10};
+link12[] = {10,34};
+link13[] = {11,12};
+link14[] = {11,45};
+link15[] = {12,99};
+link16[] = {13,14};
+link17[] = {13,16};
+link18[] = {13,57};
+link19[] = {14,15};
+link20[] = {15,35};
+link21[] = {16,17};
+link22[] = {17,18};
+link23[] = {18,19};
+link24[] = {19,20};
+link25[] = {19,22};
+link26[] = {20,21};
+link27[] = {21,36};
+link28[] = {22,23};
+link29[] = {23,24};
+link30[] = {23,26};
+link31[] = {24,52};
+link32[] = {25,28};
+link33[] = {26,27};
+link34[] = {27,37};
+link35[] = {28,29};
+link36[] = {29,30};
+link37[] = {30,31};
+link38[] = {31,53};
+link39[] = {33,72};
+link40[] = {34,82};
+link41[] = {35,77};
+link42[] = {36,78};
+link43[] = {37,80};
+link44[] = {38,6};
+link45[] = {38,76};
+link46[] = {39,38};
+link47[] = {40,41};
+link48[] = {41,81};
+link49[] = {42,43};
+link50[] = {43,25};
+link51[] = {44,11};
+link52[] = {45,46};
+link53[] = {46,44};
+link54[] = {46,47};
+link55[] = {47,48};
+link56[] = {48,49};
+link57[] = {49,98};
+link58[] = {51,42};
+link59[] = {52,33};
+link60[] = {52,51};
+link61[] = {53,32};
+link62[] = {54,55};
+link63[] = {54,56};
+link64[] = {55,74};
+link65[] = {56,11};
+link66[] = {57,58};
+link67[] = {58,89};
+link68[] = {58,93};
+link69[] = {59,60};
+link70[] = {60,68};
+link71[] = {61,85};
+link72[] = {61,91};
+link73[] = {62,63};
+link74[] = {63,70};
+link75[] = {64,67};
+link76[] = {64,69};
+link77[] = {65,71};
+link78[] = {66,61};
+link79[] = {67,65};
+link80[] = {68,64};
+link81[] = {69,66};
+link82[] = {70,71};
+link83[] = {71,88};
+link84[] = {72,73};
+link85[] = {73,79};
+link86[] = {74,75};
+link87[] = {75,83};
+link88[] = {76,40};
+link89[] = {77,50};
+link90[] = {78,77};
+link91[] = {79,80};
+link92[] = {80,78};
+link93[] = {81,82};
+link94[] = {82,83};
+link95[] = {83,98};
+link96[] = {84,58};
+link97[] = {85,61};
+link98[] = {86,60};
+link99[] = {87,63};
+link100[] = {88,16};
+link101[] = {89,90};
+link102[] = {90,59};
+link103[] = {90,84};
+link104[] = {90,86};
+link105[] = {91,92};
+link106[] = {92,62};
+link107[] = {92,87};
+link108[] = {92,94};
+link109[] = {93,58};
+link110[] = {94,61};
+link111[] = {95,105};
+link112[] = {96,97};
+link113[] = {96,103};
+link114[] = {97,101};
+link115[] = {98,50};
+link116[] = {99,95};
+link117[] = {99,100};
+link118[] = {100,13};
+link119[] = {101,102};
+link120[] = {101,103};
+link121[] = {102,96};
+link122[] = {103,104};
+link123[] = {104,11};
+link124[] = {105,96};
+globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-607.428955,100.860413,927.065735,202.910660,625,639,1};
+window[] = {2,-1,-1,-1,-1,586,-1310,-290,60,3,643};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "DayZ Player Monitor";
+  class States
+  {
+    /*%FSM<STATE "init">*/
+    class init
+    {
+      name = "init";
+      init = /*%FSM<STATEINIT""">*/"dayz_versionNo = getText(configFile >> ""CfgMods"" >> ""DayZ"" >> ""version"");" \n
+       "_AuthAttempt = 0;" \n
+       "" \n
+       "dayz_loadScreenMsg = localize 'STR_AUTHENTICATING';" \n
+       "Dayz_loginCompleted = nil;" \n
+       "PVCDZ_plr_Login = [];" \n
+       "_timeStart = diag_tickTime;" \n
+       "_readytoAuth = false;" \n
+       "_startCheck = 0;" \n
+       "_debug = 0;" \n
+       "_schedulerStarted=false;" \n
+       "_spawnSelection = 9;" \n
+       "" \n
+       "if (_debug == 1) then {" \n
+       "diag_log (""DAYZ: CLIENT IS RUNNING DAYZ_CODE "" + str(dayz_versionNo));" \n
+       "};" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Client">*/
+        class Client
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isServer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "isServer">*/
+        class isServer
+        {
+          priority = 0.000000;
+          to="wait";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"isServer"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "wait">*/
+    class wait
+    {
+      name = "wait";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Allow_Connection">*/
+        class Allow_Connection
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"allowConnection"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Loading">*/
+    class Loading
+    {
+      name = "Loading";
+      init = /*%FSM<STATEINIT""">*/"dayz_loadScreenMsg = localize 'str_player_loading'; " \n
+       "" \n
+       "if (_debug == 1) then {diag_log [diag_tickTime,'Loading'];};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Initialized">*/
+        class Initialized
+        {
+          priority = 0.000000;
+          to="Enable_Sim";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isnil ""BIS_MPF_InitDone"""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Collect">*/
+    class Collect
+    {
+      name = "Collect";
+      init = /*%FSM<STATEINIT""">*/"" \n
+       "" \n
+       "dayz_loadScreenMsg = localize 'str_player_waiting_creation'; " \n
+       "" \n
+       "_playerUID = getPlayerUID player;" \n
+       "progressLoadingScreen 0.6;" \n
+       "if (_debug == 1) then {diag_log [diag_tickTime,'Collect'];};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "no_PlayerID">*/
+        class no_PlayerID
+        {
+          priority = 2.000000;
+          to="ERROR__No_Player";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_playerUID == """""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Has_PlayerID">*/
+        class Has_PlayerID
+        {
+          priority = 1.000000;
+          to="Server_Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(isNil ""_playerUID"")"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "ERROR__No_Player">*/
+    class ERROR__No_Player
+    {
+      name = "ERROR__No_Player";
+      init = /*%FSM<STATEINIT""">*/"selectNoPlayer;" \n
+       "_myTime = diag_tickTime;" \n
+       "dayz_loadScreenMsg = localize 'str_player_no_playerid';" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "sleep">*/
+        class sleep
+        {
+          priority = 0.000000;
+          to="Disconnect";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 10"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Request">*/
+    class Request
+    {
+      name = "Request";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Request'];};" \n
+       "" \n
+       "dayz_loadScreenMsg = localize 'str_player_request';" \n
+       "" \n
+       "_msg = [];" \n
+       "progressLoadingScreen 0.65;" \n
+       "PVDZ_plr_Login1 = [_playerUID,player];" \n
+       "publicVariableServer ""PVDZ_plr_Login1"";" \n
+       "diag_log ['Sent to server: PVDZ_plr_Login1', PVDZ_plr_Login1]; " \n
+       "PVDZ_send = [player,""dayzSetDate"",[player]];" \n
+       "publicVariableServer ""PVDZ_send"";" \n
+       "diag_log ['Sent to server: PVDZ_send', PVDZ_send]; " \n
+       "_myTime = diag_tickTime;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "retry_">*/
+        class retry_
+        {
+          priority = 0.000000;
+          to="Retry";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 10"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Response">*/
+        class Response
+        {
+          priority = 0.000000;
+          to="Ghost_System";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"count (PVCDZ_plr_Login) > 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_msg = 		PVCDZ_plr_Login;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Parse_Login">*/
+    class Parse_Login
+    {
+      name = "Parse_Login";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Parse_Login'];};" \n
+       "progressLoadingScreen 0.8;" \n
+       "_charID		= _msg select 0;" \n
+       "_inventory	= _msg select 1;" \n
+       "_backpack	= _msg select 2;" \n
+       "_survival 	= _msg select 3;" \n
+       "_isNew 		= _msg select 4;" \n
+       "//_state 		= _msg select 5;" \n
+       "_version	= _msg select 5;" \n
+       "_model		= _msg select 6;" \n
+       "_patch = {};" \n
+       "" \n
+       "_isHiveOk = false;" \n
+       "_newPlayer = false;" \n
+       "" \n
+       "if (count _msg > 7) then {" \n
+       "	_isHiveOk = _msg select 7;" \n
+       "	_newPlayer = _msg select 8;" \n
+       "  _patch = _msg select 9;" \n
+       "	diag_log (""PLAYER RESULT: "" + str(_isHiveOk));" \n
+       "};" \n
+       "" \n
+       "dayz_loadScreenMsg = localize 'str_player_creating_character'; " \n
+       "if (_isHiveOk) then { if (!_schedulerStarted) then { _schedulerStarted=true; _patch execVM '\z\addons\dayz_code\system\scheduler\sched_init.sqf'; }; };" \n
+       "if (_debug == 1) then {" \n
+       "diag_log (""PLOGIN: authenticated with : "" + str(_msg));" \n
+       "	diag_log [""player_monitor:Parse_Login _isHiveOk,_isNew,isnil preload, preload:"",_isHiveOk,_isNew,!isNil 'dayz_preloadFinished',dayz_preloadFinished];" \n
+       "};" \n
+       "" \n
+       "//Not Equal Failure" \n
+       "" \n
+       "if (isNil ""_model"") then {" \n
+       "	_model = ""Survivor2_DZ"";" \n
+       "	diag_log (""PLOGIN: Model was nil, loading as survivor"");" \n
+       "};" \n
+       "" \n
+       "if (_model == """") then {" \n
+       "	_model = ""Survivor2_DZ"";" \n
+       "	diag_log (""PLOGIN: Model was empty, loading as survivor"");" \n
+       "};" \n
+       "" \n
+       "if (_model == ""Survivor1_DZ"") then {" \n
+       "	_model = ""Survivor2_DZ"";" \n
+       "};" \n
+       "_isHack = false;" \n
+       "if (_model == ""hacker"") then {" \n
+       "	_isHack = true;" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Hive_Bad">*/
+        class Hive_Bad
+        {
+          priority = 10.000000;
+          to="ERROR__Wrong_HIVE";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_isHiveOk"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "New_Character_57">*/
+        class New_Character_57
+        {
+          priority = 5.000000;
+          to="Gender_Selection";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_isNew and !isNil 'dayz_preloadFinished') and {(dayz_preloadFinished)}"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Character_Setup">*/
+        class Character_Setup
+        {
+          priority = 0.000000;
+          to="Phase_One";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(!_isNew and !isNil 'dayz_preloadFinished') and {(dayz_preloadFinished)}"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "ERROR__Wrong_HIVE">*/
+    class ERROR__Wrong_HIVE
+    {
+      name = "ERROR__Wrong_HIVE";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'ERROR__Wrong_HIVE'];};" \n
+       "_myTime = diag_tickTime;" \n
+       "dayz_loadScreenMsg = localize 'str_player_wrong_hive';" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "sleep">*/
+        class sleep
+        {
+          priority = 0.000000;
+          to="Disconnect";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 10"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Phase_One">*/
+    class Phase_One
+    {
+      name = "Phase_One";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Phase_One'];};" \n
+       "_model call player_switchModel;" \n
+       "" \n
+       "player allowDamage false;" \n
+       "_lastAte = _survival select 1;" \n
+       "_lastDrank = _survival select 2;" \n
+       "" \n
+       "_usedFood = 0;" \n
+       "_usedWater = 0;" \n
+       "" \n
+       "dayzGearSave = false;" \n
+       "_inventory call player_gearSet;" \n
+       "" \n
+       "//Assess in backpack" \n
+       "if (count _backpack > 0) then {" \n
+       "	//Populate" \n
+       "	_backpackType = 	_backpack select 0;" \n
+       "	_backpackWpn = 		_backpack select 1;" \n
+       "	_backpackMagTypes = [];" \n
+       "	_backpackMagQty = [];" \n
+       "	if (count _backpackWpn > 0) then {" \n
+       "		_backpackMagTypes = (_backpack select 2) select 0;" \n
+       "		_backpackMagQty = 	(_backpack select 2) select 1;" \n
+       "	};" \n
+       "	_countr = 0;" \n
+       "	_backpackWater = 0;" \n
+       "" \n
+       "	//Add backpack" \n
+       "	if (_backpackType != """") then {" \n
+       "		_isOK = 	isClass(configFile >> ""CfgVehicles"" >>_backpackType);" \n
+       "		if (_isOK) then {" \n
+       "			player addBackpack _backpackType; " \n
+       "			dayz_myBackpack =	unitBackpack player;" \n
+       "			" \n
+       "			//Fill backpack contents" \n
+       "			//Weapons" \n
+       "			_backpackWpnTypes = [];" \n
+       "			_backpackWpnQtys = [];" \n
+       "			if (count _backpackWpn > 0) then {" \n
+       "				_backpackWpnTypes = _backpackWpn select 0;" \n
+       "				_backpackWpnQtys = 	_backpackWpn select 1;" \n
+       "			};" \n
+       "			_countr = 0;" \n
+       "			{" \n
+       "				if (_x == ""Crossbow"") then { _x = ""Crossbow_DZ"" };" \n
+       "				if (_x == ""DMR"") then { _x = ""DMR_DZ"" };" \n
+       "				//if (_x == ""M14_EP1"") then { _x = ""M14_DZ"" };" \n
+       "				if (_x == ""SVD"") then { _x = ""SVD_DZ"" }; " \n
+       "				if (_x == ""SVD_CAMO"") then { _x = ""SVD_CAMO_DZ"" };" \n
+       "				dayz_myBackpack addWeaponCargoGlobal [_x,(_backpackWpnQtys select _countr)];" \n
+       "				_countr = _countr + 1;" \n
+       "			} forEach _backpackWpnTypes;" \n
+       "			" \n
+       "			//Magazines" \n
+       "			_countr = 0;" \n
+       "			{" \n
+       "				if (_x == ""BoltSteel"") then { _x = ""WoodenArrow"" }; // Convert BoltSteel to WoodenArrow" \n
+       "				if (_x == ""ItemBloodbag"") then { _x = ""bloodBagONEG"" }; // Convert ItemBloodbag into universal blood type/rh bag" \n
+       "				dayz_myBackpack addMagazineCargoGlobal [_x,(_backpackMagQty select _countr)];" \n
+       "				_countr = _countr + 1;" \n
+       "			} forEach _backpackMagTypes;" \n
+       "			" \n
+       "			dayz_myBackpackMags =	getMagazineCargo dayz_myBackpack;" \n
+       "			dayz_myBackpackWpns =	getWeaponCargo dayz_myBackpack;" \n
+       "		} else {" \n
+       "			dayz_myBackpack		=	objNull;" \n
+       "			dayz_myBackpackMags = [];" \n
+       "			dayz_myBackpackWpns = [];" \n
+       "		};" \n
+       "	} else {" \n
+       "		dayz_myBackpack		=	objNull;" \n
+       "		dayz_myBackpackMags =	[];" \n
+       "		dayz_myBackpackWpns =	[];" \n
+       "	};" \n
+       "} else {" \n
+       "	dayz_myBackpack		=	objNull;" \n
+       "	dayz_myBackpackMags =	[];" \n
+       "	dayz_myBackpackWpns =	[];" \n
+       "};" \n
+       "PVCDZ_plr_Login2 = [];" \n
+       "PVDZ_plr_Login2 = [_charID,player,_playerUID,_spawnSelection];" \n
+       "publicVariableServer ""PVDZ_plr_Login2"";" \n
+       "diag_log ['Sent to server: PVDZ_plr_Login2', PVDZ_plr_Login2]; " \n
+       "dayz_loadScreenMsg = localize 'str_player_requesting_character';" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Response">*/
+        class Response
+        {
+          priority = 0.000000;
+          to="Phase_Two";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"count (PVCDZ_plr_Login2) > 0"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_msg = 		player getVariable[""worldspace"",[]];"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Phase_Two">*/
+    class Phase_Two
+    {
+      name = "Phase_Two";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Phase_Two'];};dayz_loadScreenMsg = localize 'str_login_characterData'; " \n
+       "" \n
+       "_worldspace = 	PVCDZ_plr_Login2 select 0;" \n
+       "_state =			PVCDZ_plr_Login2 select 1;" \n
+       "_playerAchievements = PVCDZ_plr_Login2 select 2;" \n
+       "" \n
+       "dayz_playerAchievements = _playerAchievements;" \n
+       "	" \n
+       "PVDZ_serverStoreVar = [player,""Achievements"",_playerAchievements];" \n
+       "publicVariableServer ""PVDZ_serverStoreVar"";" \n
+       "diag_log ['Sent to server: PVDZ_serverStoreVar', PVDZ_serverStoreVar]; " \n
+       "player setVariable [""Achievements"",_playerAchievements,false];" \n
+       "" \n
+       "" \n
+       "_setDir = 			_worldspace select 0;" \n
+       "_setPos = 			_worldspace select 1;" \n
+       "" \n
+       "{" \n
+       "	if (player getVariable[""hit_""+_x,false]) then { " \n
+       "		[player,_x,_x] spawn fnc_usec_damageBleed; " \n
+       "		PVDZ_hlt_Bleed = [player,_x,_x];" \n
+       "		publicVariable ""PVDZ_hlt_Bleed""; // draw blood stream on character, on all gameclients" \n
+       "	};" \n
+       "} forEach USEC_typeOfWounds;" \n
+       "//Legs and Arm fractures" \n
+       "_legs = player getVariable [""hit_legs"",0];" \n
+       "_arms = player getVariable [""hit_hands"",0];" \n
+       "" \n
+       "if (_legs > 1) then {" \n
+       "	player setHit[""legs"",1];" \n
+       "	r_fracture_legs = true;" \n
+       "};" \n
+       "if (_arms > 1) then {" \n
+       "	player setHit[""hands"",1];" \n
+       "	r_fracture_arms = true;" \n
+       "};" \n
+       "" \n
+       "//Record current weapon state" \n
+       "dayz_myWeapons = 		weapons player;		//Array of last checked weapons" \n
+       "dayz_myItems = 			items player;		//Array of last checked items" \n
+       "dayz_myMagazines = 	magazines player;" \n
+       "" \n
+       "dayz_playerUID = _playerUID;" \n
+       "" \n
+       "if ((_isNew) OR (count _inventory == 0)) then {" \n
+       "	//player is new, add initial loadout" \n
+       "	_config = (configFile >> ""CfgSurvival"" >> ""Inventory"" >> ""Default"");" \n
+       "	_totalrndmags = getNumber (_config >> ""RandomMagazines"");" \n
+       "	_rndmags = getArray (_config >> ""RandomPossibilitieMagazines"");" \n
+       "	_countmags = 0; " \n
+       "	_gmags = getArray (_config >> ""GuaranteedMagazines"");" \n
+       "	_wpns = getArray (_config >> ""weapons"");" \n
+       "	_bcpk = getText (_config >> ""backpack"");" \n
+       "	_bcpkWpn = getText (_config >> ""backpackWeapon"");" \n
+       "	" \n
+       "	//Add inventory" \n
+       "	{" \n
+       "		_isOK = 	isClass(configFile >> ""CfgMagazines"" >> _x);" \n
+       "		if (_isOK) then {" \n
+       "			player addMagazine _x;" \n
+       "			_countmags = _countmags  +1;" \n
+       "		};" \n
+       "	} forEach _gmags;" \n
+       "" \n
+       "	while {_countmags < _totalrndmags} do {" \n
+       "		_rndmag = _rndmags call BIS_fnc_selectRandom;" \n
+       "		_isOK = 	isClass(configFile >> ""CfgMagazines"" >> _rndmag);" \n
+       "		if (_isOK) then {" \n
+       "			player addMagazine _rndmag;" \n
+       "			_countmags = _countmags  +1;" \n
+       "		};" \n
+       "	};" \n
+       "" \n
+       "	{" \n
+       "		_isOK = 	isClass(configFile >> ""CfgWeapons"" >> _x);" \n
+       "		if (_isOK) then {" \n
+       "			player addWeapon _x;" \n
+       "		};" \n
+       "	} forEach _wpns;" \n
+       "	" \n
+       "	if (_bcpk != """") then {" \n
+       "	player addBackpack _bcpk; " \n
+       "	dayz_myBackpack =	unitBackpack player;" \n
+       "" \n
+       "	if (_bcpkWpn != """") then {" \n
+       "		dayz_myBackpack addWeaponCargoGlobal [_bcpkWpn,1];" \n
+       "	};" \n
+       "	};" \n
+       "};" \n
+       "" \n
+       "//Work out survival time" \n
+       "_totalMins = _survival select 0;" \n
+       "_days = floor (_totalMins / 1440);" \n
+       "_totalMins = (_totalMins - (_days * 1440));" \n
+       "_hours = floor (_totalMins / 60);" \n
+       "_mins =  (_totalMins - (_hours * 60));" \n
+       "" \n
+       "//player variables" \n
+       "dayz_characterID =		_charID;" \n
+       "dayz_hasFire = 			objNull;		//records players Fireplace object" \n
+       "dayz_myCursorTarget = 	objNull;" \n
+       "dayz_myPosition = 		getPosATL player;	//Last recorded position" \n
+       "dayz_lastMeal =			(_lastAte * 60);" \n
+       "dayz_lastDrink =		(_lastDrank * 60);" \n
+       "dayz_zombiesLocal = 	0;			//Used to record how many local zombies being tracked" \n
+       "dayz_Survived = _days;  //total alive dayz" \n
+       "" \n
+       "//load in medical details" \n
+       "r_player_dead = 		player getVariable[""USEC_isDead"",false];" \n
+       "r_player_unconscious = 	player getVariable[""NORRN_unconscious"", false];" \n
+       "r_player_infected =	player getVariable[""USEC_infected"",false];" \n
+       "r_player_injured = 	player getVariable[""USEC_injured"",false];" \n
+       "r_player_inpain = 		player getVariable[""USEC_inPain"",false];" \n
+       "r_player_cardiac = 	player getVariable[""USEC_isCardiac"",false];" \n
+       "r_player_lowblood =	player getVariable[""USEC_lowBlood"",false];" \n
+       "r_player_blood = 		player getVariable[""USEC_BloodQty"",r_player_bloodTotal];" \n
+       "" \n
+       "//Hunger/Thirst" \n
+       "_messing =			player getVariable[""messing"",[0,0,0]];" \n
+       "dayz_hunger = 	_messing select 0;" \n
+       "dayz_thirst = 		_messing select 1;" \n
+       "dayz_nutrition  = 	_messing select 2;" \n
+       "" \n
+       "//player setVariable [""humanity"",-3000, true];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Alive">*/
+        class Alive
+        {
+          priority = 0.000000;
+          to="Position";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!r_player_dead/* and !_isNew*/"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"diag_log 'player_forceSave called from fsm';call player_forceSave;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Dead_Player">*/
+        class Dead_Player
+        {
+          priority = 0.000000;
+          to="ERROR__Player_Already";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"r_player_dead"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "ERROR__Player_Already">*/
+    class ERROR__Player_Already
+    {
+      name = "ERROR__Player_Already";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'ERROR__Player_Already'];};" \n
+       "selectNoPlayer;" \n
+       "_myTime = diag_tickTime;" \n
+       "dayz_loadScreenMsg = localize 'str_login_alreadyDead';" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "sleep">*/
+        class sleep
+        {
+          priority = 0.000000;
+          to="Disconnect";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 10"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Position">*/
+    class Position
+    {
+      name = "Position";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Position'];};" \n
+       "progressLoadingScreen 0.85;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Bad_Version">*/
+        class Bad_Version
+        {
+          priority = 0.000000;
+          to="ERROR__Bad_Versi";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_version != dayz_versionNo"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Version_Ok">*/
+        class Version_Ok
+        {
+          priority = 0.000000;
+          to="Date_or_Time_Send";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_version == dayz_versionNo"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Load_In">*/
+    class Load_In
+    {
+      name = "Load_In";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Load_In'];};" \n
+       "progressLoadingScreen 0.95;" \n 
+       "dayz_loadScreenMsg = localize 'str_player_setup_completed';" \n
+       "_torev4l=nearestObjects [_setPos, Dayz_plants + DayZ_GearedObjects + [""AllVehicles"",""WeaponHolder""], 50];" \n
+       "{ [_x,0] spawn object_roadFlare } forEach (allMissionObjects ""RoadFlare"");" \n
+       "{ [_x,1] spawn object_roadFlare } forEach (allMissionObjects ""ChemLight"");" \n
+       "{" \n
+       "  _fadeFire = _x getVariable['fadeFire', true];" \n
+       "  if (!_fadeFire) then {" \n
+       "    nul = [_x,2,0,false,false] spawn BIS_Effects_Burn;" \n
+       "  };" \n
+       "} forEach allMissionObjects ""SpawnableWreck"";" \n
+       "{deleteVehicle _x} forEach (_setPos nearEntities [""zZombie_Base"",30]);" \n
+       "player setDir _setDir;" \n
+       "player setPosATL _setPos;" \n
+       "player setVelocity [0,0,0.5];" \n
+       "{player reveal _x} forEach _torev4l;" \n
+       "dayz_myPosition = _setPos;" \n
+       "player setVariable ['BIS_noCoreConversations', true];" \n
+       "dayz_clientPreload = true;" /*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Display_Ready">*/
+        class Display_Ready
+        {
+          priority = 0.000000;
+          to="Preload_Display";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"call sched_townGenerator_ready"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "ERROR__Bad_Versi">*/
+    class ERROR__Bad_Versi
+    {
+      name = "ERROR__Bad_Versi";
+      init = /*%FSM<STATEINIT""">*/"selectNoPlayer;" \n
+       "_myTime = diag_tickTime;" \n
+       "dayz_loadScreenMsg = localize 'str_player_outdated';" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "sleep">*/
+        class sleep
+        {
+          priority = 0.000000;
+          to="Disconnect";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 5"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Preload_Display">*/
+    class Preload_Display
+    {
+      name = "Preload_Display";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Preload_Display'];};" \n
+       "" \n
+       "dayz_lastCheckBit = 0;" \n
+       "" \n
+       "player disableConversation true;" \n
+       "" \n
+       "eh_player_killed = player addeventhandler [""FiredNear"",{_this call player_weaponFiredNear;} ];" \n
+       "player addEventHandler ['Respawn', player_death];" \n
+       "" \n
+       "//_state = player getVariable[""state"",[]];" \n
+       "_currentWpn = """";" \n
+       "_currentAnim = """";" \n
+       "if ((!isNil ""_state"") AND {(count _state > 1)}) then {" \n
+       "	//Reload players state" \n
+       "	_currentWpn		=	_state select 0;" \n
+       "	_currentAnim	=	_state select 1;" \n
+       "	//Reload players state" \n
+       "	if (count _state > 2) then {" \n
+       "		dayz_temperatur = _state select 2;" \n
+       "	};" \n
+       "} else {" \n
+       "	_currentWpn	=	""Makarov"";" \n
+       "	_currentAnim	=	""aidlpercmstpsraswpstdnon_player_idlesteady02"";" \n
+       "};" \n
+       "" \n
+       "reload player;" \n
+       "" \n
+       "if (_currentAnim != """") then {" \n
+       "	[objNull, player, rSwitchMove,_currentAnim] call RE;" \n
+       "};" \n
+       "if (_currentWpn != """") then {" \n
+       "	player selectWeapon _currentWpn;" \n
+       "} else {" \n
+       "	//Establish default weapon" \n
+       "	if (count weapons player > 0) then" \n
+       "	{" \n
+       "		private['_type', '_muzzles'];" \n
+       "" \n
+       "		_type = ((weapons player) select 0);" \n
+       "		// check for multiple muzzles (eg: GL)" \n
+       "		_muzzles = getArray(configFile >> ""cfgWeapons"" >> _type >> ""muzzles"");" \n
+       "" \n
+       "		if (count _muzzles > 1) then {" \n
+       "			player selectWeapon (_muzzles select 0);" \n
+       "		} else {" \n
+       "			player selectWeapon _type;" \n
+       "		};" \n
+       "	};" \n
+       "};" \n
+       "" \n
+       "" \n
+       "//Player control loop" \n
+       "dayz_monitor1 = [] spawn {" \n
+       "	while {true} do { " \n
+       "		//sleep (if (call player_zombieCheck) then {dayz_monitorPeriod/3} else {dayz_monitorPeriod});" \n
+       "		call player_zombieCheck;" \n
+       "		sleep 1;" \n
+       "	};" \n
+       "};" /*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Preload_Done">*/
+        class Preload_Done
+        {
+          priority = 0.000000;
+          to="Initialize";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"preloadCamera getPosATL player"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Initialize">*/
+    class Initialize
+    {
+      name = "Initialize";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Initialize'];};" \n
+       "" \n
+       "if (!isNil ""dayzInfectedCamps"") then {" \n
+       "	//diag_log (""Infected Camps: "" +str(dayzInfectedCamps));" \n
+       "	dayzInfectedCamps call infectedcamps;" \n
+       "};" \n
+       "" \n
+       "//Medical" \n
+  //     "dayz_medicalH = [] execVM ""\z\addons\dayz_code\medical\init_medical.sqf"";	//Medical Monitor Script (client only)" \n
+       "[player] call fnc_usec_damageHandle;" \n
+       "if (r_player_unconscious) then {" \n
+       "	r_player_timeout = player getVariable[""unconsciousTime"",0];" \n
+       "	player playActionNow ""Die"";" \n
+       "};" \n
+       "" \n
+       "" \n
+       "" \n
+       "//Add core tools" \n
+       "player addWeapon ""Loot"";" \n
+       "player addWeapon ""Flare"";" \n
+       "if ((currentWeapon player == """")) then { player action [""SWITCHWEAPON"", player,player,1]; };" \n
+       "//load in medical details" \n
+       "r_player_dead = 		player getVariable[""USEC_isDead"",false];" \n
+       "r_player_unconscious = 	player getVariable[""NORRN_unconscious"", false];" \n
+       "r_player_infected =		player getVariable[""USEC_infected"",false];" \n
+       "r_player_injured = 		player getVariable[""USEC_injured"",false];" \n
+       "r_player_inpain = 		player getVariable[""USEC_inPain"",false];" \n
+       "r_player_cardiac = 		player getVariable[""USEC_isCardiac"",false];" \n
+       "r_player_lowblood =		player getVariable[""USEC_lowBlood"",false];" \n
+       "r_player_blood = 		player getVariable[""USEC_BloodQty"",r_player_bloodTotal];" \n
+       "r_player_bloodtype = player getVariable [""blood_type"", false];" \n
+       "r_player_rh = player getVariable [""rh_factor"", false];" \n
+       "" \n
+       "" \n
+       "dayz_musicH = [] spawn player_music;" \n
+       "dayzGearSave = true;" \n
+       "dayz_slowCheck = 	[] spawn player_spawn_2;" \n
+       "Dayz_logonTime = daytime;" \n
+       "Dayz_logonDate = dayz_Survived;" \n
+       "_position = getPosATL player;" \n
+       "_radius = 200;" \n
+       "//Current amounts" \n
+       "dayz_spawnZombies = {alive _x AND local _x} count (_position nearEntities [""zZombie_Base"",_radius]);" \n
+       "dayz_CurrentNearByZombies = {alive _x} count (_position nearEntities [""zZombie_Base"",_radius]);" \n
+       "" \n
+       "{ _x call fnc_veh_ResetEH; } forEach vehicles;" \n
+       "player allowDamage true;" \n
+       "player enableSimulation true;" \n
+       "diag_log [ 'resetting keyboard events',(MISSION_ROOT+'keyboard.sqf')];" \n
+       "keyboard_keys = nil;" \n
+       "[controlNull, 1, false,false,false] call compile preprocessFileLineNumbers (MISSION_ROOT+'keyboard.sqf');" \n
+       "" /*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True">*/
+        class True
+        {
+          priority = 0.000000;
+          to="Finish";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Finish">*/
+    class Finish
+    {
+      name = "Finish";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Finish'];};PVDZ_plr_LoginRecord = [_playerUID,_charID,0];" \n
+       "progressLoadingScreen 1;" \n
+       "publicVariableServer ""PVDZ_plr_LoginRecord"";" \n
+       "diag_log ['Sent to server: PVDZ_plr_LoginRecord', PVDZ_plr_LoginRecord]; " \n
+       "_world = toUpper(worldName); //toUpper(getText (configFile >> ""CfgWorlds"" >> (worldName) >> ""description""));" \n
+       "_nearestCity = nearestLocations [getPos player, [""NameCityCapital"",""NameCity"",""NameVillage"",""NameLocal""],1000];" \n
+       "Dayz_logonTown = ""Wilderness"";" \n
+       "if (count _nearestCity > 0) then {Dayz_logonTown = text (_nearestCity select 0)};" \n
+       "[_world,Dayz_logonTown,format[localize ""str_player_06"",dayz_Survived]] spawn { sleep 5; _this spawn BIS_fnc_infoText;};" \n
+       "Dayz_loginCompleted = true;" /*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Enable_Sim">*/
+    class Enable_Sim
+    {
+      name = "Enable_Sim";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Enable_Sim'];}; _myAssets = getText(configFile >> ""CfgPatches"" >> ""dayz_communityassets"" >> ""dayzVersion"");" \n
+       "//Change getNumber to getText if the pbo got updated in 1.8.1" \n
+       "_mySfx = getNumber(configFile >> ""CfgPatches"" >> ""dayz_sfx"" >> ""dayzVersion"");" \n
+       "_myAnim = getNumber(configFile >> ""CfgPatches"" >> ""dayz_anim"" >> ""dayzVersion"");" \n
+       "if (_debug == 1) then {" \n
+       "	diag_log format[""DayZ Version: DayZ_Anim: %1 DayZ_SFX: %2 DayZ_Assets: %3"",_myAnim, _mySfx,_myAssets];" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "pbo_s__are_missi">*/
+        class pbo_s__are_missi
+        {
+          priority = 2.000000;
+          to="ERROR__Client_Files";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_myAnim != 1.8) || (_mySfx != 1.8) || (_myAssets != ""1.8.0.1"")"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "player____null_player">*/
+        class player____null_player
+        {
+          priority = 0.000000;
+          to="Collect";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(!isNull player) and (player == player)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "ERROR__Client_Files">*/
+    class ERROR__Client_Files
+    {
+      name = "ERROR__Client_Files";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'ERROR__Client_Files'];};selectNoPlayer;" \n
+       "_myTime = diag_tickTime;" \n
+       "dayz_loadScreenMsg = localize 'str_player_outdated';" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "sleep_">*/
+        class sleep_
+        {
+          priority = 0.000000;
+          to="Disconnect";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 10"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Stream">*/
+    class Stream
+    {
+      name = "Stream";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Stream'];};" \n
+       "dayz_loadScreenMsg = localize 'str_login_spawningLocalObjects';" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Preloaded">*/
+        class Preloaded
+        {
+          priority = 0.000000;
+          to="Load_In";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((!isNil 'dayz_plantSpawner_done') and {(dayz_plantSpawner_done == 2)})"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Retry">*/
+    class Retry
+    {
+      name = "Retry";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Retry'];};" \n
+       "dayz_loadScreenMsg = localize 'str_player_retrying';" \n
+       "" \n
+       "_AuthAttempt = _AuthAttempt +1;" \n
+       "" \n
+       "_myTime = diag_tickTime;" \n
+       "" \n
+       "if (_debug == 1) then {" \n
+       "	diag_log (""PLOGIN: Retrying Authentication... ("" + _playerUID + "")"");" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "auth_failed">*/
+        class auth_failed
+        {
+          priority = 0.000000;
+          to="get_ready_to_clo";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_AuthAttempt > 5"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "retry">*/
+        class retry
+        {
+          priority = 0.000000;
+          to="Request";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 5"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "get_ready_to_clo">*/
+    class get_ready_to_clo
+    {
+      name = "get_ready_to_clo";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'get_ready_to_clo'];};dayz_loadScreenMsg = localize 'str_player_authentication_failed';" \n
+       "_myTime = diag_tickTime;" \n
+       "if (_debug == 1) then {" \n
+       "	diag_log (""PLOGIN: Authentication Failed ("" + _playerUID + "")"");" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "sleep_">*/
+        class sleep_
+        {
+          priority = 0.000000;
+          to="Disconnect";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 2"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Disconnect">*/
+    class Disconnect
+    {
+      name = "Disconnect";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Disconnect'];};" \n
+       "" \n
+       " player enableSimulation false;" \n
+       "" \n
+       "if (_debug == 1) then {" \n
+       "	diag_log (""End Mission"");" \n
+       "};" \n
+       "" \n
+       "failMission ""LOSER"";" \n
+       "endMission ""END1"";" \n
+       "" \n
+       "" \n
+       "dayz_authed = true;" \n
+       "dayz_clientPreload = true;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Date_or_Time_Send">*/
+    class Date_or_Time_Send
+    {
+      name = "Date_or_Time_Send";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Date_or_Time_Send'];};" \n
+      "_myTime = diag_tickTime;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Got_time_date">*/
+        class Got_time_date
+        {
+          priority = 0.000000;
+          to="Stream";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isNil ""dayzSetDate"""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"diag_log ['Date & time received:', dayzSetDate];" \n
+           "setDate dayzSetDate;" \n
+           "diag_log ['Local date on this client:', date];"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "no_Time_Date">*/
+        class no_Time_Date
+        {
+          priority = 0.000000;
+          to="ERROR__Date_Time";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"diag_tickTime - _myTime > 15"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Server_Loading">*/
+    class Server_Loading
+    {
+      name = "Server_Loading";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Server_Loading'];};_myTime = diag_tickTime;" \n
+       "dayz_loadScreenMsg = localize 'str_player_waiting_start';" \n
+       "" \n
+       "if (_debug == 1) then {" \n
+       "	diag_log (""Server Loading"");" \n
+       "	diag_log (""PLOGIN: Waiting for server to start authentication"");" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Server_Ready">*/
+        class Server_Ready
+        {
+          priority = 0.000000;
+          to="Request";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isNil ""sm_done"""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Too_Long">*/
+        class Too_Long
+        {
+          priority = 0.000000;
+          to="get_ready_to_clo_1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 120"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Gender_Selection">*/
+    class Gender_Selection
+    {
+      name = "Gender_Selection";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Gender_Selection'];};" \n
+       "endLoadingScreen;createDialog 'RscDisplayGenderSelect';dayz_loadScreenMsg = localize 'STR_UI_GENDER_TITLE';" \n
+       "_timeNem=diag_tickTime;_model = 'Survivor2_DZ';" \n
+       "dayz_preloadFinished=nil;//do not remove this"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Gender_Opened_22">*/
+        class Gender_Opened_22
+        {
+          priority = 0.000000;
+          to="Waiting_for_Gender";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true/*!isNil {uiNameSpace getVariable 'RscDisplayGenderSelect'}*/"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Reopen__Gender_2">*/
+        class Reopen__Gender_2
+        {
+          priority = 0.000000;
+          to="Gender_Selection";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"false/*isNil {uiNameSpace getVariable 'RscDisplayGenderSelect'}*/"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"closeDialog 0;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Waiting_for_Gender">*/
+    class Waiting_for_Gender
+    {
+      name = "Waiting_for_Gender";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Waiting_for_Gender'];};" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "preload_called_twice">*/
+        class preload_called_twice
+        {
+          priority = 0.000000;
+          to="Gender_Selection";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isnil 'dayz_preloadFinished' // do not remove this"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"closeDialog 0"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "preload_called_twice">*/
+        class Default_Male_215
+        {
+          priority = 0.000000;
+          to="Character_Type_6";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"diag_tickTime - _timeNem > 15"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"closeDialog 0;startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Gender__Selected">*/
+        class Gender__Selected
+        {
+          priority = 0.000000;
+          to="Character_Type_6";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isNil {uiNameSpace getVariable 'dayz_selectGender'}"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_model = uiNameSpace getVariable 'dayz_selectGender';closeDialog 0;startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/    
+    /*%FSM<STATE "Character_Type_6">*/
+    class Character_Type_6
+    {
+      name = "Character_Type_6";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Character_Type_6'];};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Selection_Enabled">*/
+        class Selection_Enabled
+        {
+          priority = 0.000000;
+          to="Region_Selection";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"dayz_spawnselection == 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Selection_Disabled">*/
+        class Selection_Disabled
+        {
+          priority = 0.000000;
+          to="Spawn_Process_65";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"dayz_spawnselection == 0"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_spawnSelection=9;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Region_Selection">*/
+    class Region_Selection
+    {
+      name = "Region_Selection";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Region_Selection'];};" \n
+       "endLoadingScreen;createDialog ""RscDisplaySpawnSelecter"";dayz_loadScreenMsg = localize 'str_login_spawnLocation';" \n
+       "_timeNem=diag_tickTime;_spawnSelection = 9;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Region_Opened_22">*/
+        class Region_Opened_22
+        {
+          priority = 0.000000;
+          to="Waiting_for__Region";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true/*!isNil {uiNameSpace getVariable 'dayz_DisplaySpawnSelecter'}*/"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "reopen_Region_85">*/
+        class reopen_Region_85
+        {
+          priority = 0.000000;
+          to="Region_Selection";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"false/*isNil {uiNameSpace getVariable 'dayz_DisplaySpawnSelecter'}*/"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"closeDialog 0;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Waiting_for__Region">*/
+    class Waiting_for__Region
+    {
+      name = "Waiting_for__Region";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Waiting_for__Region'];};_timeNem = diag_tickTime;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Default_Region_2">*/
+        class Default_Region_2
+        {
+          priority = 0.000000;
+          to="Region_Process_6";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"diag_tickTime - _timeNem > 15"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"closeDialog 0;startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Region_Selected">*/
+        class Region_Selected
+        {
+          priority = 0.000000;
+          to="Region_Process_6";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!isNil {uiNameSpace getVariable 'dayz_selectRegion'}"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_spawnSelection=uiNameSpace getVariable 'dayz_selectRegion';closeDialog 0;startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Region_Process_6">*/
+    class Region_Process_6
+    {
+      name = "Region_Process_6";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Region_Process_6, region selected:',_spawnSelection];};" \n
+       "_isNew = false;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Character_Setup">*/
+        class Character_Setup
+        {
+          priority = 0.000000;
+          to="Phase_One";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Spawn_Process_65">*/
+    class Spawn_Process_65
+    {
+      name = "Spawn_Process_65";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Spawn_Process_65'];};" \n
+       "_isNew = false;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Character_Setup">*/
+        class Character_Setup
+        {
+          priority = 0.000000;
+          to="Phase_One";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "ERROR__Date_Time">*/
+    class ERROR__Date_Time
+    {
+      name = "ERROR__Date_Time";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'ERROR__Date_Time'];};_myTime = diag_tickTime;" \n
+       "" \n
+       "diag_log format[""Date and time not synced""];" \n
+       "dayz_loadScreenMsg = localize 'str_player_desync';" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "sleep">*/
+        class sleep
+        {
+          priority = 0.000000;
+          to="Disconnect";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 5"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "get_ready_to_clo_1">*/
+    class get_ready_to_clo_1
+    {
+      name = "get_ready_to_clo_1";
+      init = /*%FSM<STATEINIT""">*/"diag_log ""Server authentication time out! Disconnect and try again!"";" \n
+       "dayz_loadScreenMsg = localize 'str_login_authentTimeout';" \n
+       "_myTime = diag_tickTime;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "sleep_">*/
+        class sleep_
+        {
+          priority = 0.000000;
+          to="Disconnect";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 2"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+
+    /*%FSM<STATE "Update_player">*/
+    class Update_player
+    {
+      name = "Update_player";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Update_player'];};" \n
+       "dayz_loadScreenMsg = format[ localize 'str_player_ghost', _timeOut];" \n
+       "" \n
+       "_myTime = diag_tickTime;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "retry_Login">*/
+        class retry_Login
+        {
+          priority = 0.000000;
+          to="Request";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_timeOut < 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "sleep">*/
+        class sleep
+        {
+          priority = 0.000000;
+          to="Reset";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_timeOut = _timeOut - 1;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Ghost_System">*/
+    class Ghost_System
+    {
+      name = "Ghost_System";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Ghost_System'];};dayz_loadScreenMsg = localize 'str_login_ghostedPlayer';" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Client_Ready">*/
+        class Client_Ready
+        {
+          priority = 0.000000;
+          to="Parse_Login";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"//isNil ""PVCDZ_plr_Ghost""" \n
+           "" \n
+           "!(isNil ""PVCDZ_plr_PlayerAccepted"")"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"PVCDZ_plr_PlayerAccepted = nil;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Client_Not_Ready">*/
+        class Client_Not_Ready
+        {
+          priority = 0.000000;
+          to="Update_player";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(isNil ""PVCDZ_plr_Ghost"")"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_timeOut = (round (PVCDZ_plr_Ghost select 0));" \n
+           "PVCDZ_plr_Ghost = nil;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Reset">*/
+    class Reset
+    {
+      name = "Reset";
+      init = /*%FSM<STATEINIT""">*/"" \n
+       "dayz_loadScreenMsg = format [localize 'str_player_ghost', _timeOut];" \n
+       "" \n
+       "_myTime = diag_tickTime;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "retry_Login">*/
+        class retry_Login
+        {
+          priority = 0.000000;
+          to="Request";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_timeOut < 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Sleep">*/
+        class Sleep
+        {
+          priority = 0.000000;
+          to="Update_player";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 1"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_timeOut = _timeOut - 1;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="init";
+  finalStates[] =
+  {
+    "Finish",
+  };
+};
+/*%FSM</COMPILE>*/

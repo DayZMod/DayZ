@@ -1,0 +1,13 @@
+ambient[]={1,1,1,1};
+diffuse[]={1,1,1,1};
+forcedDiffuse[]={0,0,0,1};
+emmisive[]={0,0,0,1};
+specular[]={1,1,1,0.85999995};
+specularPower=46.799999;
+PixelShaderID="Normal";
+VertexShaderID="Basic";
+class Stage0
+{
+	texture="z\addons\dayz_communityassets\textures\dbattery_co.paa";
+	uvSource="tex";
+};
