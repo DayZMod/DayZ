@@ -35,6 +35,8 @@ class CfgBuildingLoot {
 			{"Colt1911","weapon",0.05},
 			{"MeleeBaseBallBat","weapon",0.02},
 			{"ItemTrashPaperMusic","magazine",0.03},
+		//Bags
+			{"DZ_ALICE_Pack_EP1","object",0.02},
 		//multiple spawns	
 			{"","Trash",0.30},
 			{"","ammo",0.10},
@@ -58,6 +60,7 @@ class CfgBuildingLoot {
 			{"WeaponHolder_ItemCamoNet","object",0.01},
 			{"equip_rope","magazine",0.03},
 			{"PartWoodPile","magazine",0.04},
+		//Bags
 			{"DZ_Assault_Pack_EP1","object",0.04},
 			{"DZ_Czech_Vest_Puch","object",0.04},
 		//Multiple spawns	
@@ -115,6 +118,8 @@ class CfgBuildingLoot {
 			{"equip_pvc_box","magazine",0.03},
 			{"ItemPainkiller","magazine",0.04},
 			{"ItemBandage","magazine",0.06},
+			//Bags
+			{"DZ_ALICE_Pack_EP1","object",0.06},
 			{"DZ_Patrol_Pack_EP1","object",0.08},
 			{"DZ_Assault_Pack_EP1","object",0.06},
 			{"WeaponHolder_ItemTent","object",0.01},
