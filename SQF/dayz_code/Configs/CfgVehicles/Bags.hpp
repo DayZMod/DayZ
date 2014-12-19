@@ -78,8 +78,8 @@ class DZ_ALICE_Pack_EP1: Bag_Base_EP1
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
 	mapsize = 2;
 	model = "\ca\weapons_e\AmmoBoxes\backpack_tk_alice.p3d";
-	transportMaxWeapons = 2;
-	transportMaxMagazines = 16;
+	transportMaxWeapons = 1;
+	transportMaxMagazines = 18;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_ALICE_Pack_EP1'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
