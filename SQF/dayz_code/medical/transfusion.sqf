@@ -154,7 +154,7 @@ while {r_doLoop} do {
 		player removeMagazine _BBSelected;
 
 		cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
-		[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_bagToRemove],"PLAIN DOWN"] call RE;
+		[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_BBSelected],"PLAIN DOWN"] call RE;
 		
 		sleep 0.5;
 	};
@@ -190,7 +190,7 @@ while {r_doLoop} do {
 				_bloodAmount = 0;
 			};
 			cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
-			[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_bagToRemove],"PLAIN DOWN"] call RE;
+			[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_BBSelected],"PLAIN DOWN"] call RE;
 		};
 		if (!_isMedic) then {
 			if (vehicle player == player) then {
