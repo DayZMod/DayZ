@@ -23,15 +23,19 @@ if (_object == player) then {
 			};
 		};
 	};
-
+	
+	//add humanity cap both ways
+	//if (_humanity < 500000) then { player setVariable["humanity",-500000,true]; }; //Hive adds/removes diffrence
+	//if (_humanity > 500000) then { player setVariable["humanity",500000,true]; }; //Hive adds/removes diffrence
+	
 	_model = typeOf player;
 
 	//if model will not be changed by humanity
 	if (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ","RusSoldierHeadset_DZ","RusSoldierWinter_DZ","RusSoldierWoodwarrior_DZ","RusCommander_DZ","RusSoldierLight_DZ","HalfGhillie_DZ","RusSpecOps_DZ","RusOfficer_DZ","RusSoldierCasual_DZ","JoggingSuit_DZ","CivWorker_DZ","CivLeatherLeisure_DZ","CivLeatherLeisure2_DZ","CivDoctor_DZ","CivCasualDoctor_DZ","CivPress_DZ","CivCasualCheck_DZ","CivSuit_DZ","CivPressLeather_DZ","CivPilotSuit_DZ","CivPoliceUniform_DZ","CivPriest_DZ","CivLeisureBlue_DZ","CivLeisureGrey_DZ","CivLeisureBrown_DZ","CivRocker1_DZ","CivRocker2_DZ","CivTeacher_DZ","CivRusWoodland_DZ","CivRusWoodland2_DZ","CivCasualCheck2_DZ","CivWorkerOverall_DZ","CivLeisureVest_DZ","CivRedWorkerOverall_DZ","SoldierWoodwarriorCap_DZ","SoldierWoodwarrior_DZ","SoldierWoodwarriorHat_DZ","SoldierCasualShirt_DZ","WoodWarriorIndi_DZ","UNOfficer_DZ","CamoFaceCover_DZ","LeasureKevlar_DZ"]) exitWith{};
 
 	
-
-	_isMen =		_model == "Survivor2_DZ";
+	//Not sure if this will work needs testing
+	_isMen =		_model == "Survivor_DZ" || _model == "Survivor1_DZ" || _model == "Survivor2_DZ";
 	_isMenH =		_model == "Survivor3_DZ";
 	_isMenB =		_model == "Bandit1_DZ";
 	_isWomen =		_model == "SurvivorW2_DZ";
@@ -65,12 +69,16 @@ if (_object == player) then {
 	//Survivor
 	if (_humanity > -2000 && _humanity <= 5000) then {
 		if (_isMenH || _isMenB) then {
-			[dayz_playerUID,dayz_characterID,"Survivor2_DZ"] spawn player_humanityMorph;
+		//If player is a survivor apply a random skin of 3.
+			_maleSurvivorSkinsArray = ["Survivor_DZ","Survivor1_DZ","Survivor2_DZ"];
+			_skintoApply = [] select(random(count _maleSurvivorSkinsArray));
+			[dayz_playerUID,dayz_characterID,_skintoApply] spawn player_humanityMorph;
 		};
 		if (_isWomenH || _isWomenB) then {
 			[dayz_playerUID,dayz_characterID,"SurvivorW2_DZ"] spawn player_humanityMorph;
 		};
 	};
+	
 	// Hero
 	if (_humanity > 5000) then {
 		if (_isMen || _isMenB) then {
