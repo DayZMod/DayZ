@@ -16,6 +16,7 @@ if (_this isKindOf "AllVehicles") then {
 		_this removeAllEventHandlers "GetIn";
 		_this addEventHandler ["GetOut", {[(_this select 0),"all",true] call server_updateObject;}];
 		_this addEventHandler ["GetIn", {[(_this select 0),"all",true] call server_updateObject;}];
+		//_this addEventHandler ["Engine", { }];
 	};
 
 	//diag_log(format["%1: all EH reset for %2", __FILE__, _this]);
