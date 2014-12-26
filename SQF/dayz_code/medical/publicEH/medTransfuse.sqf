@@ -3,12 +3,13 @@ private["_array","_unit","_medic","_amount","_display","_control","_lowBlood"];
 disableserialization;
 //[_unit,player,_bloodAmount]
 _array = _this; //_this select 0;
-_unit = _array select 0;
-_medic = _array select 1;
-_amount = _array select 2;
+_unit = _array select 0; //Player receving the blood
+_medic = _array select 1; //Player sending the blood 
+_amount = _array select 2; //total amount of blood given
 
 _forceClose = false;
 _timer = diag_tickTime;
+r_doLoop = true;
 
 if (_amount < 0) exitWith { /* someone is trying to kill the player */ };
 

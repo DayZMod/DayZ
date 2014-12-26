@@ -626,6 +626,14 @@
 			<French>Eteindre %1</French>
 			<Czech>Uhasit %1</Czech>
 		</Key>
+		<Key ID="str_actions_medical_transfusion_failed_transfusionkit">
+			<English>Transfusion failed missing Transfusion Kit!</English>
+			<German>Transfusion failed missing Transfusion Kit!</German>
+			<Russian>Transfusion failed missing Transfusion Kit!</Russian>
+			<Spanish>Transfusion failed missing Transfusion Kit!</Spanish>
+			<French>Transfusion failed missing Transfusion Kit!</French>
+			<Czech>Transfusion failed missing Transfusion Kit!</Czech>
+		</Key>
 		<Key ID="str_actions_medical_transfusion_start">
 			<English>Transfusion in progress, remain still...</English>
 			<German>Transfusion wird verabreicht, stillhalten ...</German>
