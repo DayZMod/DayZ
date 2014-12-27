@@ -19,6 +19,9 @@ class CfgActions {
 	class Take : None {
 		show = 0;
 	};
+	class LoadMagazine: None {
+		show = 0;
+	};
 };
 class CfgAISkill {
 	aimingaccuracy[] = {0, 0, 1, 1};
