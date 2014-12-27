@@ -22,17 +22,17 @@ _looptime = _this;
 
 //Factors are equal to win/loss of factor*basic value
 //All Values can be seen as x of 100: 100 / x = minutes from min temperetaure to max temperature (without other effects)
-_vehicle_factor = 5;
-_moving_factor = 4;
-_fire_factor = 20;	//Should be always:  _rain_factor + _night_factor + _wind_factor OR higher !
-_building_factor = 7;
+_vehicle_factor = 4; //5
+_moving_factor = 2; // 4
+_fire_factor = 26;	//Should be always:  _rain_factor + _night_factor + _wind_factor OR higher !
+_building_factor = 3; //7
 _sun_factor = 3;	//max sunfactor linear over the day. highest value in the middle of the day
 
-_water_factor = -12;
+_water_factor = -24; //12
 _rain_factor = -12; //6
-_night_factor = -6; //4
-_wind_factor = -6;
-_stand_factor = -6; //4
+_night_factor = -8; //6
+_wind_factor = -7; //6
+_stand_factor = -8; //6
 
 _difference = 0;
 //_hasfireffect = false;
