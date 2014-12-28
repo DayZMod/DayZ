@@ -16,7 +16,7 @@
 		magazines[] = {};
 		sensitivity = 2;	// sensor sensitivity
 		sensitivityEar = 4;
-		damageScale = 900;
+		damageScale = 450; //900
 		sepsisChance = 36;
 		BleedChance  = 30;
 		forcedSpeed = 6;

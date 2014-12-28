@@ -45,7 +45,7 @@ class zZombie_Base : Zed_Base {
 	identityTypes[] = {"zombie1", "zombie2"};
 	class TalkTopics {};
 	languages[] = {};
-	damageScale = 450;
+	damageScale = 350;
 	sepsisChance = 18;
 	BleedChance  = 15;
 	forcedSpeed = 6;

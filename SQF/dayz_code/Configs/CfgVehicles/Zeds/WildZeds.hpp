@@ -17,7 +17,7 @@ class WildZombie_Base : Zed_Base {
 	class TalkTopics {};
 	languages[] = {};
 	armor = 1;
-	damageScale = 200;
+	damageScale = 250;
 	sepsisChance = 18;
 	BleedChance = 10;
 	forcedSpeed = 6;

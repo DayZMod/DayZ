@@ -101,7 +101,7 @@ if ((_ammo isKindof "B_127x107_Ball") or (_ammo isKindof "B_127x99_Ball")) then 
 
 if (_damage > 0.4) then {
     if (_ammo != "zombie") then {
-        _scale = _scale + 50;
+        _scale = _scale + 50; //250
     };
     //Start body part scale
     if (_ammo == "zombie") then {
@@ -111,7 +111,7 @@ if (_damage > 0.4) then {
     };
     
     if (_isHeadHit) then {
-        _scale = _scale * 2; //2400 = Normal, 3600 = Viral
+        _scale = _scale * 2; //700 = Normal, 900 = Viral, 500 = wild
     };
     
     //End body part scale
