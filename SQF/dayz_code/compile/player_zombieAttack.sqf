@@ -166,7 +166,7 @@ if (_isVehicle) then {
 	};
 } else { 
 	// player by foot
-	if ((_unit distance player) <= 3.2) then {
+	if ((_unit distance player) <= 3.6) then {
 			
 		//Make sure sure evrything is processed as we attack.
 		_damage = 0.2 + random (1.2);
