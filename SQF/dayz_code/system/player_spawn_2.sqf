@@ -174,7 +174,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		//	Infectionriskstart
 		if (dayz_temperatur < ((80 / 100) * (dayz_temperaturnormal - dayz_temperaturmin) + dayz_temperaturmin)) then { //TeeChange
 			private "_listTalk";
-			_listTalk = _mylastPos nearEntities ["CAManBase",8];
+			_listTalk = _mylastPos nearEntities ["CAManBase",12]; //
 			{
 				if (_x getVariable["USEC_infected",false]) then {
 					_rnd = (random 1) * (((dayz_temperaturnormal - dayz_temperatur) * (100 /(dayz_temperaturnormal - dayz_temperaturmin)))/ 50);	//TeeChange
