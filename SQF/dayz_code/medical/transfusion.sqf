@@ -1,34 +1,46 @@
-private ["_hasTransfusionKit","_bloodBagArray","_BBAvailable","_withBloodTest","_unit","_blood","_lowBlood","_injured","_inPain","_lastused","_bloodType","_rh","_bloodTestdone","_bloodAmount","_duration","_humanityAwarded","_wi","_bloodBagArrayNeeded","_bloodBagArrayNeededSz","_r","_BBGood","_BBWhole","_BBFound","_BBSelected","_animState","_isMedic","_timer","_started","_startNow","_minStartTime","_i","_isClose"];
+private ["_hasTransfusionKit","_bloodBagArray","_BBAvailable","_withBloodTest","_withWholeBlood","_unit","_blood","_lowBlood","_injured","_inPain","_lastused","_bloodType","_rh","_bloodTestdone","_bloodAmount","_duration","_humanityAwarded","_wi","_bloodBagArrayNeeded","_bloodBagArrayNeededSz","_r","_BBGood","_BBWhole","_BBFound","_BBSelected","_animState","_isMedic","_timer","_started", "_sentRequest","_startNow","_minStartTime","_i","_isClose"];
 
-// 24 Dec 2014 (Veltro): Addapted code to work for blood bags and whole blood bags. Removed the use of uninitialized variable '_bbselect'. Rearranged arrays to optimize blood bag selection. No longer treat someone that has an unknown blood type as type O-. Small optimization to humanity points that are awarded (mainly less points in case of treating a healthy person). Improved program flow for better readability. 
+// 24 Dec 2014 (Veltro): Addapted code to work for blood bags and whole blood bags. Removed the use of uninitialized variable '_bbselect'. Rearranged arrays to optimize blood bag selection. No longer treat someone that has an unknown blood type as type O-. Small optimization to humanity points that are awarded (mainly less points in case of treating a healthy person). Improved program flow for better readability.
+// 28 Dec 2014 (Veltro): Added changes from development branch. Added _withWholeBlood config parameter to turn off whole blood bag. See notes below.
 
 // Moved up: pre-conditions, faster processing
+//Does the player have a transfusionKit
 _hasTransfusionKit = "transfusionKit" in magazines player;
-if (!_hasTransfusionKit) exitWith {};
+//End if the player does not have a transfusion kit
+if (!_hasTransfusionKit) exitWith { cutText [localize "str_actions_medical_transfusion_failed_transfusionkit", "PLAIN DOWN"]; };
 // Array was rearranged to create a higher chance of success when blood type is unknown
 _bloodBagArray = ["ItemBloodbag","bloodBagONEG","bloodBagOPOS","bloodBagANEG","bloodBagAPOS","bloodBagBNEG","bloodBagBPOS","bloodBagABNEG","bloodBagABPOS","wholeBloodBagONEG","wholeBloodBagOPOS","wholeBloodBagANEG","wholeBloodBagAPOS","wholeBloodBagBNEG","wholeBloodBagBPOS","wholeBloodBagABNEG","wholeBloodBagABPOS"];
 // General check if the player has a blood bag in his inventory
 _BBAvailable = false;
 { if (_x in magazines player) exitWith { _BBAvailable = true; }; } count _bloodBagArray;
 if (!_BBAvailable) exitWith {};
+//Get receving unit
+_unit = (_this select 3) select 0;
+//Get receving units blood value
+_blood = _unit getVariable ["USEC_BloodQty", 0];
+if (_blood >= r_player_bloodTotal ) exitWith {};
 
 //config
 _withBloodTest = true;   // Pick blood bag according to blood type from the result of the blood test. Set this variable to false in case blood testing has changed (in other words: when "blood_testdone" is no longer available)
+_withWholeBlood = false;   // As it stands now, only allow whole blood bag exact match (as in previous versions). Set this variable to true to allow whole blood bag to match according to blood bag matching system.
+                           // Please note that the menu options available to the player should reflect these changes, v1.8.3. does not show a menu option to be able to give another player a whole blood bag.
+
 //init
-_unit = (_this select 3) select 0;
-_blood = _unit getVariable ["USEC_BloodQty", 0];
 // _lowBlood = _unit getVariable ["USEC_lowBlood", false];
 // _injured = _unit getVariable ["USEC_injured", false];
 // _inPain = _unit getVariable ["USEC_inPain", false];
 // _lastused = _unit getVariable ["LastTransfusion", time];
+//Get receving units bloodtype
 _bloodType = _unit getVariable ["blood_type", ""];
 _rh = _unit getVariable ["rh_factor", false];
+//Get the receving units RH type
 _bloodTestdone = false;
 if ( _withBloodTest ) then {
 	_bloodTestdone = _unit getVariable ["blood_testdone", false];
 };
 _bloodAmount = 12000;   // Will be changed to 4000 in case a whole blood bag is used
-_duration = if (_blood <= 4000) then { 3 } else { 2 };   // determines duration of unconsciousness
+//Unconscious timeout for receving unit
+_duration = if (_blood <= 4000) then { 3 } else { 2 };
 _humanityAwarded = 0 ;   // Added to create a small threshold, see notes later
 
 // Earlier code checked if blood test was done and if that was not the case the person was treated 'as if' the person had O-. This is not desired so it was removed.
@@ -40,37 +52,69 @@ switch (_bloodType) do {
 			// Arrays are rearranged to make sure to deplete the least desirable blood bags from inventory first in case blood bag is known
 			// Whole blood bags were added to these arrays
 			// Do not change the order!
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagAPOS","bloodBagOPOS","bloodBagANEG","bloodBagONEG","wholeBloodBagAPOS","wholeBloodBagOPOS","wholeBloodBagANEG","wholeBloodBagONEG"];
+			if ( _withWholeBlood ) then {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagAPOS","bloodBagOPOS","bloodBagANEG","bloodBagONEG","wholeBloodBagAPOS","wholeBloodBagOPOS","wholeBloodBagANEG","wholeBloodBagONEG"];
+			} else {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagAPOS","bloodBagOPOS","bloodBagANEG","bloodBagONEG","wholeBloodBagAPOS"];
+			};
 			_wi = 5;   // pointer to first whole blood bag
 		} else {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagANEG","bloodBagONEG","wholeBloodBagANEG","wholeBloodBagONEG"];
+			if ( _withWholeBlood ) then {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagANEG","bloodBagONEG","wholeBloodBagANEG","wholeBloodBagONEG"];
+			} else {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagANEG","bloodBagONEG","wholeBloodBagANEG"];
+			};
 			_wi = 3;
 		};
 	};
 	case "B" : {
 		if (_rh) then {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagBPOS","bloodBagOPOS","bloodBagBNEG","bloodBagONEG","wholeBloodBagBPOS","wholeBloodBagOPOS","wholeBloodBagBNEG","wholeBloodBagONEG"];
+			if ( _withWholeBlood ) then {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagBPOS","bloodBagOPOS","bloodBagBNEG","bloodBagONEG","wholeBloodBagBPOS","wholeBloodBagOPOS","wholeBloodBagBNEG","wholeBloodBagONEG"];
+			} else {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagBPOS","bloodBagOPOS","bloodBagBNEG","bloodBagONEG","wholeBloodBagBPOS"];
+			};
             _wi = 5;
 		} else {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagBNEG","bloodBagONEG","wholeBloodBagBNEG","wholeBloodBagONEG"];
+			if ( _withWholeBlood ) then {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagBNEG","bloodBagONEG","wholeBloodBagBNEG","wholeBloodBagONEG"];
+			} else {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagBNEG","bloodBagONEG","wholeBloodBagBNEG"];
+			};
 			_wi = 3;
 		};
 	};
 	case "AB" : {
 		if (_rh) then {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagABPOS","bloodBagAPOS","bloodBagBPOS","bloodBagOPOS","bloodBagABNEG","bloodBagANEG","bloodBagBNEG","bloodBagONEG","wholeBloodBagABPOS","wholeBloodBagAPOS","wholeBloodBagBPOS","wholeBloodBagOPOS","wholeBloodBagABNEG","wholeBloodBagANEG","wholeBloodBagBNEG","wholeBloodBagONEG"];
+			if ( _withWholeBlood ) then {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagABPOS","bloodBagAPOS","bloodBagBPOS","bloodBagOPOS","bloodBagABNEG","bloodBagANEG","bloodBagBNEG","bloodBagONEG","wholeBloodBagABPOS","wholeBloodBagAPOS","wholeBloodBagBPOS","wholeBloodBagOPOS","wholeBloodBagABNEG","wholeBloodBagANEG","wholeBloodBagBNEG","wholeBloodBagONEG"];
+			} else {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagABPOS","bloodBagAPOS","bloodBagBPOS","bloodBagOPOS","bloodBagABNEG","bloodBagANEG","bloodBagBNEG","bloodBagONEG","wholeBloodBagABPOS"];
+			};
 			_wi = 9;
 		} else {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagABNEG","bloodBagANEG","bloodBagBNEG","bloodBagONEG","wholeBloodBagABNEG","wholeBloodBagANEG","wholeBloodBagBNEG","wholeBloodBagONEG"];
+			if ( _withWholeBlood ) then {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagABNEG","bloodBagANEG","bloodBagBNEG","bloodBagONEG","wholeBloodBagABNEG","wholeBloodBagANEG","wholeBloodBagBNEG","wholeBloodBagONEG"];
+			} else {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagABNEG","bloodBagANEG","bloodBagBNEG","bloodBagONEG","wholeBloodBagABNEG"];
+			};
 			_wi = 5;
 		};
 	};
 	case "O" : {
 		if (_rh) then {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagOPOS","bloodBagONEG","wholeBloodBagOPOS","wholeBloodBagONEG"];
+			if ( _withWholeBlood ) then {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagOPOS","bloodBagONEG","wholeBloodBagOPOS","wholeBloodBagONEG"];
+			} else {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagOPOS","bloodBagONEG","wholeBloodBagOPOS"];
+			};
 			_wi = 3;
 		} else {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagONEG","wholeBloodBagONEG"];
+			if ( _withWholeBlood ) then {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagONEG","wholeBloodBagONEG"];
+			} else {
+				_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagONEG","wholeBloodBagONEG"];
+			};
 			_wi = 2;
 		};
 	};
@@ -131,6 +175,7 @@ r_doLoop = true;
 r_interrupt = false;
 _timer = diag_tickTime - 1;   // Added - 1 to make sure that if statement is executed immediately
 _started = false;
+_sentRequest = false;
 _startNow = false;
 _minStartTime = diag_tickTime + 4;   // Earlier code waited on an animation state, this has been removed from the main program flow by means of a time out
 _i = 0;
@@ -154,18 +199,20 @@ while {r_doLoop} do {
 		player removeMagazine _BBSelected;
 
 		cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
-		[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_BBSelected],"PLAIN DOWN"] call RE;
+		//see Note 1
+		//[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_BBSelected],"PLAIN DOWN"] call RE;
 		
 		sleep 0.5;
 	};
 
 	if (_started) then {
 		if ((_bloodAmount == 12000) or (_bloodAmount == 4000)) then {
-		
-			// TO DO: This part of code can't be correct. This part of code might get executed 4 or 12 times in certain cases.
-		
-			PVDZ_send = [_unit,"Transfuse",[_unit,player,_bloodAmount]];
-			publicVariableServer "PVDZ_send";
+			//_sentRequest var stops the pvs running more then once as it's no longer needs too 1.8.4
+			if (!_sentRequest) then { 
+				PVDZ_send = [_unit,"Transfuse",[_unit,player,_bloodAmount]];
+				publicVariableServer "PVDZ_send";
+				_sentRequest = true;
+			};
 		};
 		if ((diag_tickTime - _timer) >= 1) then {
 			_timer = diag_tickTime;
@@ -176,21 +223,23 @@ while {r_doLoop} do {
 			};
 			if (_BBGood) then {
 				_bloodAmount = _bloodAmount - 500;
-				if ( _humanityAwarded < 250 ) then {
-					_humanityAwarded = _humanityAwarded + 50 ;   // 50 points for 500 blood, ..., 200 points for 4000 blood, 250 points for 4500. Maximum 250. This should be better this way to keep calculus simple and prevent people getting points for giving blood transfusions to healthy players (and less humanity for only very small amounts of blood)
+				if ( _humanityAwarded < 300 ) then {
+					_humanityAwarded = _humanityAwarded + 25 ;   // 25 points for 500 blood, ..., 200 points for 4000 blood, 300 points for 6000 blood. Maximum 300 blood. This should be better this way to keep calculus simple and prevent people getting points for giving blood transfusions to healthy players (and less humanity for only very small amounts of blood)
 				};
 			} else {
 				if (_i >= 12) then {
+					_bloodAmount = 0;
 					PVDZ_sendUnconscious = [_unit,_duration];
 					publicVariableServer "PVDZ_sendUnconscious";
 					diag_log ("Transfusion: "+str(PVDZ_sendUnconscious));
 				};
 			};
-			if (_i >= 12) then {
+			if (_i >= 24) then {
 				_bloodAmount = 0;
 			};
 			cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
-			[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_BBSelected],"PLAIN DOWN"] call RE;
+			//see Note 1
+			//[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_BBSelected],"PLAIN DOWN"] call RE;
 		};
 		if (!_isMedic) then {
 			if (vehicle player == player) then {
@@ -208,7 +257,9 @@ while {r_doLoop} do {
 	
 		diag_log format ["TRANSFUSION: completed blood transfusion successfully (_i = %1)", _i];
 		cutText [localize "str_actions_medical_transfusion_successful", "PLAIN DOWN"];
-		if (_BBGood) then { [player,_humanityAwarded] call player_humanityChange; };
+		//see Note 1
+		//[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_successful","PLAIN DOWN"] call RE;
+		if (_BBGood and (_humanityAwarded > 0)) then { [player,_humanityAwarded] call player_humanityChange; };
 		r_doLoop = false;
 	};
 
@@ -217,7 +268,8 @@ while {r_doLoop} do {
 	if (r_interrupt or !_isClose) then {
 		diag_log format ["TRANSFUSION: transfusion was interrupted (r_interrupt: %1 | distance: %2 (%3) | _i = %4)", r_interrupt, player distance _unit, _isClose, _i];
 		cutText [localize "str_actions_medical_transfusion_interrupted", "PLAIN DOWN"];
-		[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_interrupted","PLAIN DOWN"] call RE;
+		//see Note 1
+		//[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_interrupted","PLAIN DOWN"] call RE;
 		r_doLoop = false;
 	};
 };
@@ -229,3 +281,8 @@ if (r_interrupt) then {
 	player switchMove "";
 	player playActionNow "stop";
 };
+
+/*
+	Note 1 - 1.8 system sending way too much info upto 12 times to the server on top of each call RE also being sent upto 12 times. System removed
+
+*/
