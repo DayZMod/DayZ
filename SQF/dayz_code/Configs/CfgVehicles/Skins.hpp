@@ -176,6 +176,7 @@ class SurvivorW2_DZ : Survivor_DZ {
 };
 
 class BanditW1_DZ : SurvivorW2_DZ {
+	displayName = $STR_CHAR_2;
 	model = "\dayz\characters\woman_bandit";
 };
 
