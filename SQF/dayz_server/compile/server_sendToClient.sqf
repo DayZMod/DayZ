@@ -60,6 +60,12 @@ switch (_variable) do {
 		_owner publicVariableClient "PVCDZ_hlt_Transfuse";
 		_unit setVariable["medForceUpdate",true];
 	};
+	
+	case "Transfuse_completed": {
+		PVCDZ_hlt_Transfuse_completed = true;
+		_owner publicVariableClient "PVCDZ_hlt_Transfuse_completed";
+		_unit setVariable["medForceUpdate",true];
+	};
 
 	case "Painkiller": {
 		PVCDZ_hlt_PainK = _arraytosend;

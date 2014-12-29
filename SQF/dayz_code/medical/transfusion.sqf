@@ -13,6 +13,7 @@ _bloodType = _unit getVariable ["blood_type", ""];
 _rh = _unit getVariable ["rh_factor", false];
 //Get status of bloodtest of receving unit
 _bloodTestdone = _unit getVariable ["blood_testdone", false];
+r_interrupt = false;
 
 _badBag = false;
 _wholeBag = false;
@@ -205,7 +206,7 @@ while {r_doLoop} do {
 		r_doLoop = false;
 	};
 
-	sleep 0.1;
+	sleep 1;
 };
 
 r_doLoop = false;

@@ -7,9 +7,9 @@ _unit = _array select 0; //Player receving the blood
 _medic = _array select 1; //Player sending the blood 
 _amount = _array select 2; //total amount of blood given
 
-_forceClose = false;
 _timer = diag_tickTime;
 r_doLoop = true;
+r_interrupt = false;
 
 if (_amount < 0) exitWith { /* someone is trying to kill the player */ };
 
@@ -24,9 +24,10 @@ while {r_doLoop} do {
 		_TransfusionInfection = (_rndInfection < 0.3);
 		
 		//Mimic the transfer of the blood (cut out the server)
-		if (!_forceClose) then {
+		if (_amount > 0) then {
 			_amount = _amount - 500;
 		};
+		cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
 		
 		//Make sure the unit is a player and update stats based on whats being sent (should mimic 500 units of blood being sent)
 		if (_unit == player) then {
@@ -56,19 +57,20 @@ while {r_doLoop} do {
 	};
 	
 	//If the players blood is equals too or aboue 12000 stop or if the blood mimic amount reaches 0 end the loop.
-	_blood = _medic getVariable ["USEC_BloodQty", 0];
+	_blood = _unit getVariable ["USEC_BloodQty", 0];
+	
+	//diag_log format["Player Blood %1 - %2, - %3, - %4",_blood,_unit,_medic,(_unit getVariable "USEC_BloodQty")];
+	
 	if (_blood >= r_player_bloodTotal or _amount == 0) then {
 		cutText [localize "str_actions_medical_transfusion_successful", "PLAIN DOWN"];
 		r_doLoop = false;
 	};
 	
-	//If the player moves or gets too far from the client giving the blood end loop with error
-	_isClose = ((player distance _medic) < ((sizeOf typeOf _medic) / 2));
-	if (r_interrupt or !_isClose) then {
+	if (r_interrupt) then {
 		cutText [localize "str_actions_medical_transfusion_interrupted", "PLAIN DOWN"];
 		r_doLoop = false;
 	};
 	
 	//Rerun the loop
-	sleep 0.1;
+	sleep 1;
 };
