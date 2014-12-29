@@ -550,7 +550,7 @@ class CfgBuildingLoot {
 		//mags special
 			{"Skin_Camo1_DZ","magazine",0.02},
 			{"Skin_Sniper1_DZ","magazine",0.02},
-			{"Tranquiliser_Bolt",0.02},
+			{"Tranquiliser_Bolt","magazine",0.02},
 		//bags
 		//multiple spawns
 			{"","medical",0.25},
@@ -585,7 +585,7 @@ class CfgBuildingLoot {
 			{"AmmoBoxSmall_762","object",0.03},
 			{"WeaponHolder_PartVRotor","object",0.02},
 			{"WeaponHolder_ItemCamoNet","object",0.01},
-			{"Tranquiliser_Bolt",0.02},
+			{"Tranquiliser_Bolt","magazine",0.02},
 		//mags special
 			{"100Rnd_762x54_PK","magazine",0.01},
 			{"Skin_Sniper1_DZ","magazine",0.03},
@@ -729,7 +729,7 @@ class CfgBuildingLoot {
 			{"M40A3","weapon",0.02},
 			{"Sa58P_EP1","weapon",0.02},
 			{"Sa58V_EP1","weapon",0.02},
-			{"Tranquiliser_Bolt",0.02},
+			{"Tranquiliser_Bolt","magazine",0.02},
 		//special
 			{"AmmoBoxSmall_556","object",0.04},
 			{"AmmoBoxSmall_762","object",0.02},
