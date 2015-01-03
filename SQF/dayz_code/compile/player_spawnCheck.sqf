@@ -5,7 +5,7 @@ _position = getPosATL player;
 _spawnableObjects = ["building", "SpawnableWreck", "IC_Fireplace1", "IC_DomeTent", "IC_Tent"];
 //_force = false;
 _speed = speed (vehicle player);
-_radius = 150*0.707;
+_radius = 150; //150*0.707; Pointless Processing (106.5)
 _spawnZedRadius = 20;
 
 /*
@@ -25,12 +25,14 @@ _maxtoCreate = 3;
 
 //Limits (Land,Sea,Air)
 _inVehicle = (vehicle player != player);
-_isAir = vehicle player iskindof "Air";
-_isLand =  vehicle player iskindof "Land";
-_isSea =  vehicle player iskindof "Sea";
-if (_isLand) then { } else {  };
-if (_isAir) then { } else {  };
-if (_isSea) then { } else {  };
+/*
+	_isAir = vehicle player iskindof "Air";
+	_isLand =  vehicle player iskindof "Land";
+	_isSea =  vehicle player iskindof "Sea";
+	if (_isLand) then { } else {  };
+	if (_isAir) then { } else {  };
+	if (_isSea) then { } else {  };
+*/
 
 _doNothing = false;
 if (_inVehicle) then {
@@ -88,7 +90,8 @@ diag_log (format["%1 Local.Agents: %2/%3, NearBy.Agents: %8/%9, Global.Agents: %
                     _serverTime = serverTime;
                     _looted = (_x getVariable ["looted",_serverTime]);      
                     _age = _serverTime - _looted;
-                    if ((_age == 0) or (_age > 900)) then { 
+					diag_log format["SpawnCheck (Loot) - %1",_age];
+                    if ((_age == 0) or (_age > 300)) then { 
                         _x setVariable ["looted",_serverTime,!_islocal];                 
                         _x call building_spawnLoot;
                         if (!(_x in dayz_buildingBubbleMonitor)) then {
