@@ -55,6 +55,7 @@ _missing = "";
         _ok = false;
     };
 } count _requiredTools;
+
 if (!_ok) exitWith {
     r_action_count = 0;
     cutText [format [localize "str_player_31_missingtools",_text,_missing] , "PLAIN DOWN"]; 
@@ -236,9 +237,6 @@ _checkNotBuried = {
     // _maxplanting is the height of the emerging foundations, must not be so high because we don't want some "floating" foundations
 };
 
-_actionBuildHidden = true;
-_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
-
 _object = _ghost createVehicleLocal getMarkerpos "respawn_west";
 _safeDistance = 0.5 + (sizeOf _ghost) * 0.5; // beware of hedgehogs
 _dir = getDir player;
@@ -250,6 +248,10 @@ _objColliding = objNull;
 _best = [50,[0,0,0],[0,0,0]];
 _maxplanting = 10;
 _position = getPosATL _object;
+
+_actionBuildHidden = true;
+_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts, _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
+
 while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 
     // force the angle so that the ghost is showing always the same side
@@ -307,7 +309,6 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
         call _checkNotBuried;
     };
     _object setPosATL _position;
-    //systemChat str [ 'emerging', _maxplanting, 'menu hidden', _actionBuildHidden];
 
     if ((((vehicle player) != player or _posReference distance player > 20 or 0 !=  player getVariable["startcombattimer",0]) or {(!alive player)}) or {((call _onLadder) or {(call _isWater)})}) exitWith {
         [[],[],[],[_object, _requiredParts  , _classname, _text, false, 0, "none"]] call object_build;
@@ -321,8 +322,7 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
             _actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
             _actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
        };
-    }
-    else {
+    } else {
         if (!_actionBuildHidden) then {
             _actionBuildHidden = true;
             player removeAction _actionBuild;
