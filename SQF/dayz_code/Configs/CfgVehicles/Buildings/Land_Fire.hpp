@@ -48,19 +48,19 @@ class Land_Fire: House
 
 	class UserActions {
 		class lightup {
-			displayNameDefault = "Fire up";
-			displayName = "Fire up";
+			displayNameDefault = "Light fire";
+			displayName = "Light fire";
 			position = "ohniste";
-			radius = 2;
+			radius = 3;
 			onlyForPlayer = 0;
 			condition = "[this,true] call dayz_inflame_showMenu";
 			statement = "[this,true] call dayz_inflame";
 		};
 		class putout {
-			displayNameDefault = "Put out";
-			displayName = "Put out";
+			displayNameDefault = "Put out fire";
+			displayName = "Put out fire";
 			position = "ohniste";
-			radius = 2;
+			radius = 3;
 			onlyForPlayer = 0;
 			condition = "[this,false] call dayz_inflame_showMenu";
 			statement = "[this,false] call dayz_inflame";
