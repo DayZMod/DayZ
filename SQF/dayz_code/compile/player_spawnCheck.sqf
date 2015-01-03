@@ -90,7 +90,6 @@ diag_log (format["%1 Local.Agents: %2/%3, NearBy.Agents: %8/%9, Global.Agents: %
                     _serverTime = serverTime;
                     _looted = (_x getVariable ["looted",_serverTime]);      
                     _age = _serverTime - _looted;
-					diag_log format["SpawnCheck (Loot) - %1",_age];
                     if ((_age == 0) or (_age > 300)) then { 
                         _x setVariable ["looted",_serverTime,!_islocal];                 
                         _x call building_spawnLoot;
