@@ -2,12 +2,12 @@
 //Created by Dr Bane 20/11/2013
 //Copyright Dr Bane And Musty Gaming
 
-if (!isServer) then {
+if (isServer) then {
 
 _vehicle_155 = objNull;
 if (true) then
 {
-  _this = "Land_A_Hospital" createVehicleLocal [2503.7185, 5086.52, -4.5776367e-005];
+  _this = "Land_A_Hospital" createVehicle [2503.7185, 5086.52, -4.5776367e-005];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_155 = _this;
@@ -18,7 +18,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_160 = objNull;
 if (true) then
 {
-  _this = "Land_A_Office01" createVehicleLocal [2513.2856, 5050.8096];
+  _this = "Land_A_Office01" createVehicle [2513.2856, 5050.8096];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_160 = _this;
@@ -29,7 +29,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_163 = objNull;
 if (true) then
 {
-  _this = "MAP_misc_FallenTree2" createVehicleLocal [2529.1804, 5010.2158, 1.5258789e-005];
+  _this = "MAP_misc_FallenTree2" createVehicle [2529.1804, 5010.2158, 1.5258789e-005];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_163 = _this;
@@ -40,7 +40,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_166 = objNull;
 if (true) then
 {
-  _this = "MAP_misc_stub2" createVehicleLocal [2531.5798, 5002.7026];
+  _this = "MAP_misc_stub2" createVehicle [2531.5798, 5002.7026];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_166 = _this;
@@ -50,7 +50,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_168 = objNull;
 if (true) then
 {
-  _this = "MAP_t_betula2s" createVehicleLocal [2531.5203, 5096.9082, -1.5258789e-005];
+  _this = "MAP_t_betula2s" createVehicle [2531.5203, 5096.9082, -1.5258789e-005];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_168 = _this;
@@ -61,7 +61,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_169 = objNull;
 if (true) then
 {
-  _this = "MAP_t_betula2s" createVehicleLocal [2492.0283, 5066.7285];
+  _this = "MAP_t_betula2s" createVehicle [2492.0283, 5066.7285];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_169 = _this;
@@ -72,7 +72,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_170 = objNull;
 if (true) then
 {
-  _this = "MAP_t_betula2w" createVehicleLocal [2536.5967, 5095.6318, 4.5776367e-005];
+  _this = "MAP_t_betula2w" createVehicle [2536.5967, 5095.6318, 4.5776367e-005];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_170 = _this;
@@ -83,7 +83,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_173 = objNull;
 if (true) then
 {
-  _this = "MAP_t_fagus2W" createVehicleLocal [2528.623, 5088.9038];
+  _this = "MAP_t_fagus2W" createVehicle [2528.623, 5088.9038];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_173 = _this;
@@ -93,7 +93,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_179 = objNull;
 if (true) then
 {
-  _this = "MAP_t_populus3s" createVehicleLocal [2562.9749, 5083.749];
+  _this = "MAP_t_populus3s" createVehicle [2562.9749, 5083.749];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_179 = _this;
@@ -103,7 +103,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_182 = objNull;
 if (true) then
 {
-  _this = "MAP_phone_box" createVehicleLocal [2542.759, 5070.0776, 0.0001373291];
+  _this = "MAP_phone_box" createVehicle [2542.759, 5070.0776, 0.0001373291];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_182 = _this;
@@ -113,7 +113,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_183 = objNull;
 if (true) then
 {
-  _this = "MAP_phone_box" createVehicleLocal [2538.0273, 5070.0796, 3.0517578e-005];
+  _this = "MAP_phone_box" createVehicle [2538.0273, 5070.0796, 3.0517578e-005];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_183 = _this;
@@ -123,7 +123,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_184 = objNull;
 if (true) then
 {
-  _this = "MAP_phone_box" createVehicleLocal [2540.3445, 5070.0625, -1.5258789e-005];
+  _this = "MAP_phone_box" createVehicle [2540.3445, 5070.0625, -1.5258789e-005];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_184 = _this;
@@ -133,7 +133,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_188 = objNull;
 if (true) then
 {
-  _this = "MAP_A_statue01" createVehicleLocal [2540.7234, 5062.2808];
+  _this = "MAP_A_statue01" createVehicle [2540.7234, 5062.2808];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_188 = _this;

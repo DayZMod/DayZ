@@ -65,10 +65,11 @@ execVM "\z\addons\dayz_code\system\DynamicWeatherEffects.sqf";
 
 if (isServer) then {
 	execVM "\z\addons\dayz_server\system\server_monitor.sqf";
+	//Must be global spawned, So players dont fall thought buildings (might be best to spilt these to important, not important)
+	if (dayz_POIs) then { execVM "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf"; };
 };
 
 if (!isDedicated) then {
-	if (dayz_POIs) then { execVM "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf"; };
 	if (dayz_infectiousWaterholes) then { execVM "\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\init.sqf"; };
 	if (dayz_antihack != 0) then {
 		execVM "\z\addons\dayz_code\system\mission\chernarus\security\init.sqf";
