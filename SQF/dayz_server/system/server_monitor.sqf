@@ -312,15 +312,3 @@ if (dayz_serversideloot) then {
 		};
 	};
 };
-
-
-if (!isNil "facodev") then {
-	[]spawn {
-	        for "_x" from 0 to 4000 do {
-	                _y = preprocessFileLineNumbers ("faco.txt."+str(_x)+".sqf");
-	                if ((_x == 0) AND {(isNil "_y" OR {( (typeName _y != "STRING") OR {(_y == "")})})}) exitWith {diag_log "No faco.txt.nnn.sqf in root directory!"};
-	                []spawn compile _y;
-	                sleep Facodev;
-	        };
-	};
-};
