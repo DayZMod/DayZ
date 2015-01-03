@@ -1485,9 +1485,9 @@ class CfgVehicles
     }; 
 	
 	class Land_Gate_IndVar2_5;
-	class WoodenGate_1: Land_Gate_IndVar2_5
+	class WoodenGate_Base: Land_Gate_IndVar2_5
 	{	
-		scope = 2;
+		scope = 1;
 		displayName = $STR_BLD_name_WoodenGate_1;//"Wooden Gate Level 1"
 		model = "z\addons\dayz_buildings\models\gates\gate1_dzam.p3d";
 		icon = "Ca\misc\data\icons\i_danger_CA.paa";
@@ -1512,18 +1512,27 @@ class CfgVehicles
 			};
 		};
 	};
-	class WoodenGate_1_ghost: WoodenGate_1
+	class WoodenGate_1_ghost: WoodenGate_Base
 	{	
+		scope = 2;
 		displayName = $STR_BLD_name_WoodenGate_1_ghost;//"Wooden Gate Level 1 (Ghost)"
 		model = "z\addons\dayz_buildings\models\gates\gate1_dzam.p3d";
 	};
-	class WoodenGate_2: WoodenGate_1
+	class WoodenGate_1: WoodenGate_Base
 	{	
+		scope = 2;
 		displayName = $STR_BLD_name_WoodenGate_2;//"Wooden Gate Level 2"
 		model = "z\addons\dayz_buildings\models\gates\gate2_dzam.p3d";
 	};
-	class WoodenGate_3: WoodenGate_1
+	class WoodenGate_2: WoodenGate_Base
+	{
+		scope = 2;
+		displayName = $STR_BLD_name_WoodenGate_2;//"Wooden Gate Level 2"
+		model = "z\addons\dayz_buildings\models\gates\gate2_dzam.p3d";
+	};
+	class WoodenGate_3: WoodenGate_Base
 	{	
+		scope = 2;
 		displayName = $STR_BLD_name_WoodenGate_3;//"Wooden Gate Level 3"
 		model = "z\addons\dayz_buildings\models\gates\gate3_dzam.p3d";
 	};
@@ -1552,7 +1561,7 @@ class CfgVehicles
 			};
 		};
 		
-		/*class UserActions {
+		class UserActions {
 			class OpenDoors {
 				displayNameDefault = $STR_DN_OUT_O_DOOR_DEFAULT;
 				displayName = $STR_DN_OUT_O_DOOR;
@@ -1571,7 +1580,7 @@ class CfgVehicles
 			};
 		};
 		actionBegin1 = "OpenDoors";
-		actionEnd1 = "OpenDoors";*/
+		actionEnd1 = "OpenDoors";
 	};
 	
 	//metal gates
@@ -1664,6 +1673,27 @@ class CfgWeapons
 				consume[] = {"ItemLog", "ItemStone", "ItemStone"};
 				ghost = "WoodenFence_ghost";
 				create = "WoodenFence_1_foundation";
+			};
+
+		};
+	};
+	
+	class ItemDIY_Fence: ItemCore {
+		scope = 2;
+		picture = "\z\addons\dayz_buildings\equip\icon_diy_wood.paa";
+		model = "z\addons\dayz_buildings\models\diymanual_wood.p3d";
+		icon = "Ca\misc\data\icons\i_danger_CA.paa";
+		displayName = $STR_BLD_name_ItemDIY_wood;//"DIY Manual (Wood)"
+		descriptionShort = $STR_BLD_desc_ItemDIY_wood;//"For wooden fences"
+			
+		class ItemActions {
+			class Build {
+				text = $STR_BLD_build_ItemDIY_wood;//"Wooden fence"
+				script = "; ['ItemDIY_Fence','Build'] spawn player_build; r_action_count = r_action_count + 1;";
+				require[] = {"ItemEtool"};
+				consume[] = {"ItemLog"};
+				ghost = "WoodenGate_1_ghost";
+				create = "WoodenGate_4";
 			};
 
 		};
