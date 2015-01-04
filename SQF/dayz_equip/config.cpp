@@ -628,30 +628,76 @@ class cfgWeapons {
 	
 	
 	#include "configs\ItemMatchbox.hpp"
+	#include "configs\ItemHatchet.hpp"
+	#include "configs\ItemKnife.hpp"
+	#include "configs\ItemMachete.hpp"
+	#include "configs\ItemCrowbar.hpp"
+	#include "configs\ItemEtool.hpp"
+	#include "configs\ItemShovel.hpp"
+	#include "configs\ItemFishingPole.hpp"
+	#include "configs\ItemWatch.hpp"
+	#include "configs\ItemMap.hpp"
+	#include "configs\ItemMap_Debug.hpp"
+	#include "configs\ItemCompass.hpp"
 	
-	class ItemHatchet : ItemCore {
+	class ItemPickaxe : ItemCore {
 		scope = public;
-		displayName = $STR_EQUIP_NAME_41;
-		model = "\dayz_equip\models\hatchet.p3d";
-		picture = "\dayz_equip\textures\equip_hatchet_CA.paa";
-		descriptionShort = $STR_EQUIP_DESC_41;
+		displayName = $STR_EQUIP_NAME_PICKAXE;
+		model = "z\addons\dayz_communityweapons\models\pickaxe\pickaxe.p3d";
+		picture = "\z\addons\dayz_communityweapons\models\pickaxe\pickaxe.paa";
+		descriptionShort = $STR_EQUIP_DESC_PICKAXE;
 		
 		class ItemActions {
-			class Use {
-				text = $STR_ACTIONS_CHOPWOOD;
-				script = "spawn player_chopWood;";
-			};
-			
-			class Toolbelt {
-				text = "Remove from Toolbelt";
-				script = "spawn player_addToolbelt;";
-				use[] = {"ItemHatchet"};
-				output[] = {"MeleeHatchet"};
+			class Use
+			{
+				text="Harvest Stone";
+				script="spawn player_mineStone;";
 			};
 		};
 	};
-	
-	#include "configs\ItemKnife.hpp"
+	class ItemPickaxeBroken : ItemCore {
+		scope = public;
+		model = "z\addons\dayz_communityweapons\models\pickaxe\pickaxe.p3d";
+		picture = "\z\addons\dayz_communityweapons\models\pickaxe\pickaxe.paa";
+		displayName = $STR_name_ItemPickaxeBroken; //"Broken Hatchet";
+		descriptionShort = $STR_desc_ItemPickaxeBroken; //"Too much force has broken this Hatchet. Hopefully you find something to repair it.";
+		fixedTool = "ItemPickaxe";
+		class ItemActions {
+			class Toolbelt {
+				text = "Fix Pickaxe.";
+				script="spawn player_fixHatchet;";
+			};
+		};
+	};
+	class ItemSledgeHammer : ItemCore {
+		scope = public;
+		displayName = $STR_EQUIP_NAME_SledgeHammer;
+		model = "z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.p3d";
+		picture = "\z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.paa";
+		descriptionShort = $STR_EQUIP_DESC_SledgeHammer;
+		
+		class ItemActions {
+			class Use
+			{
+				text="Harvest Stone";
+				script="spawn player_mineStone;";
+			};
+		};
+	};
+	class ItemSledgeHammerBroken : ItemCore {
+		scope = public;
+		model = "z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.p3d";
+		picture = "\z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.paa";
+		displayName = $STR_name_ItemSledgeHammerBroken; //"Broken Hatchet";
+		descriptionShort = $STR_desc_ItemSledgeHammerBroken; //"Too much force has broken this Hatchet. Hopefully you find something to repair it.";
+		fixedTool = "ItemSledgeHammer";
+		class ItemActions {
+			class Toolbelt {
+				text = "Fix Sledge Hammer.";
+				script="spawn player_fixHatchet;";
+			};
+		};
+	};
 	
 	class ItemFlashlight : ItemCore {
 		scope = public;
@@ -766,6 +812,15 @@ class cfgWeapons {
 
 class CfgMagazines {
 	class CA_Magazine;	// External class reference
+	//Need to find a pic of one
+	class equip_lever : CA_Magazine {
+		scope = public;
+		displayName = "Lever (Handle)";
+		picture = "\dayz_equip\textures\equip_lever.paa";
+		ammo = "";
+		count = 1;
+		descriptionShort = "Used to fix tools.";
+	};
 	
 	class 20Rnd_556x45_Stanag : CA_Magazine {
 		scope = public;
