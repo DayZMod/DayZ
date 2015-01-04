@@ -3,7 +3,7 @@ class Attachment_M14_SniperScope : CA_Magazine {
 	displayName = "M14 Sniper Scope";
 	descriptionShort = "Fits an M14 Aim.";
 	count = 1;
-	picture = "\z\addons\dayz_communityassets\pictures\attchment_sniperscope.paa";
+	picture = "\z\addons\dayz_communityassets\pictures\attachment_sniperscope.paa";
 	type = 256;
 	
 	oringal = "M14_EP1";
