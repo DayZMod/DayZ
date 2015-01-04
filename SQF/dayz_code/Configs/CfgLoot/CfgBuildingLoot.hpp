@@ -467,7 +467,7 @@ class CfgBuildingLoot {
 			{"PartWheel","generic",0.02},
 			{"PartFueltank","generic",0.02},
 			{"PartEngine","generic",0.02},
-			{"WeaponHolder_ItemFuelcan","generic",0.03},
+			//{"WeaponHolder_ItemFuelcan","object",0.03},
 			{"ItemDIY_wood","weapon",0.02},
 			{"ItemDIY_metal","weapon",0.01},
 		//Medical	
