@@ -22,7 +22,7 @@ class MetalFence_1_foundation: MetalFence_base
 	displayName = $STR_BLD_name_MetalFence_1_foundation;//"Metal Fence Foundation"
 	class Upgrade { //to next stage
 		requiredTools[] = {"ItemEtool"}; 
-		requiredParts[] = {"ItemRSJ","ItemLog","ItemLog"};
+		requiredParts[] = {"ItemRSJ","ItemLog","ItemStone"};
 		create = "MetalFence_1_frame";
 	};
 	class Disassembly {

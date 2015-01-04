@@ -140,6 +140,7 @@ class CfgMagazines {
 		model = "z\addons\dayz_buildings\models\screws.p3d";
 		descriptionShort = $STR_BLD_desc_ItemScrews;//"Box of screws"
 	};	
+	
 	class ItemPadlock: CA_Magazine
 	{
 		scope = 2;
@@ -151,7 +152,7 @@ class CfgMagazines {
 		descriptionShort = $STR_BLD_desc_ItemPadlock;//"Padlock - Used for securing Workshop's & Houses."
 	};	
 	
-	//Temp Item
+	//Temp Item, Items not finished these are End Game Buildings
 	class ItemBuildingBlueprint: CA_Magazine
 	{
 		scope = 1;
@@ -396,22 +397,22 @@ class CfgWeapons
 		};
 	};
 	
-	class ItemDIY_Fence: ItemCore {
+	class ItemDIY_Gate: ItemCore {
 		scope = 2;
 		picture = "\z\addons\dayz_buildings\equip\icon_diy_wood.paa";
 		model = "z\addons\dayz_buildings\models\diymanual_wood.p3d";
 		icon = "Ca\misc\data\icons\i_danger_CA.paa";
-		displayName = $STR_BLD_name_ItemDIY_wood;//"DIY Manual (Wood)"
-		descriptionShort = $STR_BLD_desc_ItemDIY_wood;//"For wooden fences"
+		displayName = $STR_BLD_name_ItemDIY_woodGate;//"DIY Manual (Gate's)"
+		descriptionShort = $STR_BLD_desc_ItemDIY_woodGate;//"For wooden Gates"
 			
 		class ItemActions {
 			class Build {
-				text = $STR_BLD_build_ItemDIY_wood;//"Wooden fence"
-				script = "; ['ItemDIY_Fence','Build'] spawn player_build; r_action_count = r_action_count + 1;";
+				text = $STR_BLD_build_ItemDIY_woodGate;//"Wooden Gate"
+				script = "; ['ItemDIY_Gate','Build'] spawn player_build; r_action_count = r_action_count + 1;";
 				require[] = {"ItemEtool"};
 				consume[] = {"ItemLog"};
-				ghost = "WoodenGate_1_ghost";
-				create = "WoodenGate_4";
+				ghost = "WoodenGate_ghost"; //Ghost model needs to be changed to WoodenGate4 so the player sees the finished fully upgrade model as the ghost
+				create = "WoodenGate_foundation"; //Foundation model is using wooden fence foundation (needs to change)
 			};
 
 		};

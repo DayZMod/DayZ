@@ -1268,37 +1268,17 @@
 			<French>Impossible d&apos;ajouter 1%, arme manquante: %2</French>
 			<German>Du kannst %1 nicht anbringen, dir fehlt die Waffe dazu: %2.</German>
 		</Key>
-		<Key ID="str_fixHatchetFail">
-			<English>Maybe you can fix it with tape and some wood.</English>
-			<Russian>Возможно получится починить с помощью скотча и бревна.</Russian>
-			<Spanish>Tal vez usted puede fijarlo con cinta adhesiva y un poco de madera.</Spanish>
-			<Czech>Možná, že si můžete spravit lepící páskou a nějaké dřevo.</Czech>
-			<French>Il vous faut du ruban adhésif et du bois pour réparer votre hache.</French>
-			<German>Vielleicht kannst du das mit Klebeband und etwas Holz reparieren.</German>
+		<Key ID="str_fixToolFail">
+			<English>Maybe you can fix it with tape and a handle.</English>
 		</Key>
-		<Key ID="str_fixHatchetMissingTape">
+		<Key ID="str_fixtoolMissingTape">
 			<English>You will need some tape for this.</English>
-			<Russian>Для этого нужен скотч.</Russian>
-			<Spanish>Usted necesitará un poco de cinta para esto.</Spanish>
-			<Czech>Budete potřebovat nějakou pásku za to.</Czech>
-			<French>Vous aurez besoin d&apos;un peu de ruban adhésif pour cela.</French>
-			<German>Du brauchst etwas Klebeband dafuer.</German>
 		</Key>
-		<Key ID="str_fixHatchetMissingWood">
-			<English>You will need some wood for this.</English>
-			<Russian>Для этого нужно бревно.</Russian>
-			<Spanish>Usted necesitará un poco de madera para esto.</Spanish>
-			<Czech>Budete potřebovat nějaké dřevo k tomu.</Czech>
-			<French>Vous aurez besoin d&apos;un peu de bois pour cela.</French>
-			<German>Du brauchst etwas Holz dafuer.</German>
+		<Key ID="str_fixtoolMissingHandle">
+			<English>You will need a lever to fix this.</English>
 		</Key>
-		<Key ID="str_fixHatchetSuccess">
-			<English>You have fixed the Hatchet.</English>
-			<Russian>Вам удалось починить топор.</Russian>
-			<Spanish>Usted ha resuelto el Hatchet.</Spanish>
-			<Czech>Jste opravil Hatchet.</Czech>
-			<French>Vous avez réparé la hache.</French>
-			<German>Du hast die Axt repariert.</German>
+		<Key ID="str_fixToolSuccess">
+			<English>You have fixed your %1.</English>
 		</Key>
 		<Key ID="str_HatchetHandleBreaks">
 			<English>Whilst chopping the handle breaks.</English>
@@ -1473,6 +1453,18 @@
 			<English>Too much force has broken this Hatchet. Hopefully you find something to repair it.</English>
 			<Russian>Вы перестарались и сломали топор. Но скорее всего, вы найдете как его починить.</Russian>
 			<French>Cette hache s'est cassée à force. En espérant que vous puissiez la réparer.</French>
+		</Key>
+		<Key ID="STR_name_ItemPickaxeBroken">
+			<English>Broken Pickaxe</English>
+		</Key>
+		<Key ID="STR_desc_ItemPickaxeBroken">
+			<English>Too much force has broken this pickaxe. Hopefully you find something to repair it.</English>
+		</Key>
+		<Key ID="STR_name_ItemSledgeHammerBroken">
+			<English>Broken SledgeHammer</English>
+		</Key>
+		<Key ID="STR_desc_ItemSledgeHammerBroken">
+			<English>Too much force has broken this SledgeHammer. Hopefully you find something to repair it.</English>
 		</Key>
 		<Key ID="STR_name_ItemTrashPaper">
 			<English>Sheet of Paper</English>
@@ -3913,6 +3905,18 @@
 			<French>Un outil à une main à lame éffilée utilisé pour couper du bois.</French>
 			<German>Ein einhaendig gefuehrtes Schlagwerkzeug mit scharfer Klinge, das zum Hacken und Spalten von Holz verwendet wird.</German>
 		</Key>
+		<Key ID="STR_EQUIP_NAME_PICKAXE">
+			<English>Pickaxe</English>
+		</Key>
+		<Key ID="STR_EQUIP_DESC_PICKAXE">
+			<English>a tool with a long handle at right angles to a curved iron or steel bar with a point at one end and a chisel or point at the other, used for breaking up hard ground or rock.</English>
+		</Key>
+		<Key ID="STR_EQUIP_NAME_SledgeHammer">
+			<English>SledgeHammer</English>
+		</Key>
+		<Key ID="STR_EQUIP_DESC_SledgeHammer">
+			<English>A sledgehammer is a tool with a large, flat, often metal head, attached to a lever.</English>
+		</Key>
 		<Key ID="STR_EQUIP_NAME_CROWBAR">
 			<English>Crowbar</English>
 			<Russian>Ломик</Russian>
@@ -3928,6 +3932,12 @@
 			<Czech>Kovová zbraň s točivým zakončením. Často s prasklinou na jedné či obou stranách.</Czech>
 			<French>Un outil composé d&apos;une barre métallique avec une extrémité incurvée et plate, souvent munie d&apos;une fente pour arracher les clous.</French>
 			<German>Ein schweres Metallwerkzeug mit einem gekruemmten Ende und an beiden Enden abgeflachten Kanten. Kann zum Aufstemmen von Kisten oder zum Ziehen von Naegeln verwendet werden.</German>
+		</Key>
+		<Key ID="STR_EQUIP_NAME_CROWBARBENT">
+			<English>Bent Crowbar</English>
+		</Key>
+		<Key ID="STR_EQUIP_DESC_CROWBARBENT">
+			<English>A bent crowbar.</English>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_MACHETE">
 			<English>Machete</English>
@@ -8545,15 +8555,18 @@
 			<Russian>Деревянная лестница (призрак)</Russian>
 			<French>Escalier en bois (esquisse)</French>
 		</Key>
+		<Key ID="STR_BLD_name_WoodenGate_1_ghost">
+			<English>Wooden Gate (Ghost)</English>
+			<Russian>Деревянные ворота (призрак)</Russian>
+			<French>Portail en bois (esquisse)</French>
+		</Key>
+			<Key ID="STR_BLD_name_WoodenGate_Foundation">
+			<English>Wooden Gate Foundation</English>
+		</Key>
 		<Key ID="STR_BLD_name_WoodenGate_1">
 			<English>Wooden Gate lvl.1</English>
 			<Russian>Деревянные ворота ур.1</Russian>
 			<French>Portail en bois niv.1</French>
-		</Key>
-		<Key ID="STR_BLD_name_WoodenGate_1_ghost">
-			<English>Wooden Gate lvl.1 (Ghost)</English>
-			<Russian>Деревянные ворота (призрак)</Russian>
-			<French>Portail en bois (esquisse)</French>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenGate_2">
 			<English>Wooden Gate lvl.2</English>
@@ -8570,15 +8583,15 @@
 			<Russian>Деревянные ворота ур.4</Russian>
 			<French>Portail en bois niv.4</French>
 		</Key>
-		<Key ID="STR_BLD_name_MetalGate_1">
-			<English>Metal Gate lvl.1</English>
-			<Russian>Металлические ворота ур.1</Russian>
-			<French>Portail métallique niv.1</French>
-		</Key>
 		<Key ID="STR_BLD_name_MetalGate_1_ghost">
 			<English>Metal Gate (Ghost)</English>
 			<Russian>Металлические ворота (призрак)</Russian>
 			<French>Portail métallique (esquisse)</French>
+		</Key>
+		<Key ID="STR_BLD_name_MetalGate_1">
+			<English>Metal Gate lvl.1</English>
+			<Russian>Металлические ворота ур.1</Russian>
+			<French>Portail métallique niv.1</French>
 		</Key>
 		<Key ID="STR_BLD_name_MetalGate_2">
 			<English>Metal Gate lvl.2</English>
@@ -8609,6 +8622,15 @@
 			<English>Wooden fence</English>
 			<Russian>Деревянный забор</Russian>
 			<French>Palissade en bois</French>
+		</Key>
+		<Key ID="STR_BLD_name_ItemDIY_woodGate">
+			<English>DIY Manual (Gate's)</English>
+		</Key>
+		<Key ID="STR_BLD_desc_ItemDIY_woodGate">
+			<English>For wooden Gates</English>
+		</Key>
+		<Key ID="STR_BLD_build_ItemDIY_woodGate">
+			<English>Wooden Gate</English>
 		</Key>
 		<Key ID="STR_BLD_name_ItemDIY_metal">
 			<English>DIY Manual (Metal)</English>

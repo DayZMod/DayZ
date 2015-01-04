@@ -21,7 +21,7 @@ class WoodenFence_1_foundation: WoodenFence_base  // <-- ItemDIY_wood
 	displayName = $STR_BLD_name_WoodenFence_1_foundation;//"Wooden Fence Frame"
 	class Upgrade { //to next stage
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
-		requiredParts[] = {"ItemLog"};
+		requiredParts[] = {"ItemLog","ItemStone"};
 		create = "WoodenFence_1_frame";
 	};
 	class Disassembly {

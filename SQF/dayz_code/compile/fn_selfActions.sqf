@@ -360,6 +360,71 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 			s_player_repair_crtl = -1;
 		};
 	};
+	
+	// House locking and unlocking
+	_isHouse = (typeOf cursorTarget) in ["SurvivorWorkshopAStage5", "SurvivorWorkshopBStage5", "SurvivorWorkshopCStage5"];
+	_isGate = (typeOf cursorTarget) in ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4"];
+
+	//Only the owners can lock the gates
+	_isLockableGate = (typeOf cursorTarget) in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"];
+	_isUnlocked = cursorTarget getVariable ["isOpen","0"] == "1";
+
+	//Allow the gates to be opened when not locked by anyone
+	_isOpen = ((cursorTarget animationPhase "DoorL") == 1) || ((cursorTarget animationPhase "DoorR") == 1);
+	_isClosed = ((cursorTarget animationPhase "DoorL") == 0) || ((cursorTarget animationPhase "DoorR") == 0);
+	
+	//[["ownerArray",["PID"]]]
+	_ownerArray = _cursorTarget getVariable ["ownerArray",[]];
+	_ownerPID = (_ownerArray select 0);
+	
+	// open Gate
+	if (_isGate and _isClosed and _isUnlocked and _canDo) then {
+		if (s_player_openGate < 0) then {
+			s_player_openGate = player addAction ["Open Gate", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Open"], 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_openGate;
+		s_player_openGate = -1;
+	};
+	// Close Gate
+	if (_isGate and _isOpen and _isUnlocked and _canDo) then {
+		if (s_player_CloseGate < 0) then {
+			s_player_CloseGate = player addAction ["Close Gate", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Close"], 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_CloseGate;
+		s_player_CloseGate = -1;
+	};
+	
+	// Unlock Gate/House
+	if ((_isHouse or _isLockableGate) and (_ownerPID == (getPlayerUID player)) and !_isUnlocked and _isClosed and _canDo) then {
+		if (s_player_unlockhouse < 0) then {
+			s_player_unlockhouse = player addAction ["Unlock Gate", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Unlock"], 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_unlockhouse;
+		s_player_unlockhouse = -1;
+	};
+	// Lock Gate/House
+	if ((_isHouse or _isLockableGate) and (_ownerPID == (getPlayerUID player)) and _isUnlocked and _isClosed and _canDo) then {
+		if (s_player_lockhouse < 0) then {
+			s_player_lockhouse = player addAction ["Lock Gate", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Lock"], 1, true, true, "", ""];
+		};
+	} else {
+		player removeAction s_player_lockhouse;
+		s_player_lockhouse = -1;
+	};
+	//Break In
+	if ((_isHouse or _isLockableGate) and (_ownerID == dayz_characterID) and !_isUnlocked and _canDo) then {
+		if (s_player_breakinhouse < 0) then {
+			s_player_breakinhouse = player addAction ["Break In", "\z\addons\dayz_code\actions\player_breakin.sqf",cursorTarget, 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_breakinhouse;
+		s_player_breakinhouse = -1;
+	};
+	
+	
 } else {
 	//Engineering
 	{dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
@@ -410,7 +475,18 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	//player removeAction s_player_debugCheck;
 	//s_player_debugCheck = -1;
 	player removeAction s_player_upgradestroage;
-	s_player_upgradestroage = -1
+	s_player_upgradestroage = -1;
+	//Unlock,Lock
+	player removeAction s_player_lockhouse;
+	s_player_lockhouse = -1;
+	player removeAction s_player_unlockhouse;
+	s_player_unlockhouse = -1;
+	player removeAction s_player_openGate;
+	s_player_openGate = -1;
+	player removeAction s_player_CloseGate;
+	s_player_CloseGate = -1;
+	player removeAction s_player_breakinhouse;
+	s_player_breakinhouse = -1;
 };
 
 //Monitor

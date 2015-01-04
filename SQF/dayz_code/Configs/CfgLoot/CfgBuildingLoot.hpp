@@ -53,13 +53,16 @@ class CfgBuildingLoot {
 			{"ItemKnife","weapon",0.01},
 			{"ItemMap","generic",0.01},
 			{"ItemCompass","weapon",0.01},
-			{"ItemFlashlight","weapon",0.01},
+			{"ItemFlashlight","weapon",0.02},
 			{"ItemSandbag","magazine",0.04},
 			{"WeaponHolder_ItemHatchet","object",0.01},
 			{"WeaponHolder_ItemTent","object",0.01},
 			{"WeaponHolder_ItemCamoNet","object",0.01},
 			{"equip_rope","magazine",0.03},
 			{"PartWoodPile","magazine",0.04},
+			{"ItemPadlock","magazine",0.01},
+			{"ItemPickaxe","weapon",0.01},
+			{"ItemPickaxeBroken","weapon",0.02},
 		//Bags
 			{"DZ_Assault_Pack_EP1","object",0.04},
 			{"DZ_Czech_Vest_Puch","object",0.04},
@@ -127,6 +130,8 @@ class CfgBuildingLoot {
 			{"ItemTrashPaperMusic","magazine",0.03},
 			{"ItemDIY_wood","weapon",0.02},
 			{"ItemDIY_metal","weapon",0.01},
+			{"ItemDIY_Gate","weapon",0.01},
+			{"equip_lever","magazine",0.03},
 		//multiple spawns	
 			{"","Residential",0.50},
 			{"","Trash",1},
@@ -150,7 +155,12 @@ class CfgBuildingLoot {
 			{"ItemRSJ","magazine", 0.09},
 			{"equip_metal_sheet","magazine", 0.09},
 			{"ItemMetalSheet", "magazine", 0.09}, // corrugated iron sheet
-			{"ItemStone","magazine", 0.19},
+			{"ItemStone","magazine", 0.05},
+			{"ItemPickaxe","weapon",0.01},
+			{"ItemPickaxeBroken","weapon",0.02},
+			{"ItemSledgeHammer","weapon",0.01},
+			{"ItemSledgeHammerBroken","weapon",0.02},
+			{"equip_lever","magazine",0.03},
 		/*	{"ItemDIY_wood","weapon",0.04}, // temporary
 			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
@@ -224,6 +234,11 @@ class CfgBuildingLoot {
 			{"equip_nails","magazine",0.06},
 			{"ItemScrews","magazine",0.02},
 			{"equip_rag","magazine",0.01},
+			{"ItemPickaxe","weapon",0.01},
+			{"ItemPickaxeBroken","weapon",0.02},
+			{"ItemSledgeHammer","weapon",0.01},
+			{"ItemSledgeHammerBroken","weapon",0.02},
+			{"equip_lever","magazine",0.03},
 			{"equip_scrapelectronics","magazine",0.01},
 			{"equip_metal_sheet","magazine",0.02},
 			{"equip_2inch_metal_pipe","magazine",0.02},
@@ -266,6 +281,7 @@ class CfgBuildingLoot {
 			{"FoodCanBoneboy","magazine",0.01},
 			{"equip_nails","magazine",0.06},
 			{"equip_string","magazine",0.04},
+			{"equip_lever","magazine",0.03},
 		//bags
 		//multiple spawns		
 			{"","Trash",0.30},
@@ -305,6 +321,7 @@ class CfgBuildingLoot {
 			{"DZ_TK_Assault_Pack_EP1","object",0.02}, // 16
 			{"ItemDIY_wood","weapon",0.02},
 			{"ItemDIY_metal","weapon",0.01},
+			{"ItemDIY_Gate","weapon",0.01},
 			//med
 			//{"ItemAntibiotic",0.01},
 			{"ItemPainkiller","magazine",0.03},
@@ -451,6 +468,7 @@ class CfgBuildingLoot {
 			{"ItemCompass","tool",0.05},
 			{"ItemFlashlight","tool",0.06},
 			{"ItemKnife","tool",0.07},
+			{"equip_lever","magazine",0.05},
 			{"Item5Matchbox","tool",0.06},
 			{"Binocular","tool",0.06},
 			{"ItemCrowbar","tool",0.08},
@@ -470,6 +488,7 @@ class CfgBuildingLoot {
 			//{"WeaponHolder_ItemFuelcan","object",0.03},
 			{"ItemDIY_wood","weapon",0.02},
 			{"ItemDIY_metal","weapon",0.01},
+			{"ItemDIY_Gate","weapon",0.01},
 		//Medical	
 			{"ItemBandage","magazine",0.06},
 			{"ItemPainkiller","magazine",0.04},
