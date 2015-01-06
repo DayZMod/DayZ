@@ -25,8 +25,10 @@ if !([ [[["equip_comfreyleafs"],[_originalCount]],[[],[]]] , [getMagazineCargo _
 				_item addWeaponCargoGlobal [_x, _wepcounts select _forEachIndex];
 			} forEach _weps;
 		};
-		PVDZ_objgather_Delete = getPosATL _plant;
-		publicVariable "PVDZ_objgather_Delete";
+		
+		//remove vehicle, Need to ask server to remove.
+		PVDZ_obj_Delete = [_plant,player];
+		publicVariableServer "PVDZ_obj_Delete";
 
 		deleteVehicle _plant;
 
