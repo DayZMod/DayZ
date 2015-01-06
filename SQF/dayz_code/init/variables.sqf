@@ -502,6 +502,9 @@ if(isNil "dayz_bleedingeffect") then {
 	dayz_bleedingeffect = 3;
 };//dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
 
+if(isNil "dayz_DamageMultiplier") then { 
+	dayz_DamageMultiplier = 1;
+};
 
 //init global arrays for Loot Chances
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\loot_init.sqf";

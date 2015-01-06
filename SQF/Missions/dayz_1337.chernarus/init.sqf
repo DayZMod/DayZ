@@ -20,6 +20,7 @@ dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
 dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
 dayz_POIs = true;
 dayz_infectiousWaterholes = true;
+dayz_DamageMultiplier = 1; //Damage Multiplier for Zombies.
 
 
 

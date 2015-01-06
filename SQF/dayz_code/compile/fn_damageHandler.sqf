@@ -110,6 +110,9 @@ if (_damage > 0.4) then {
     if (_ammo == "zombie") then {
         //_scale = _scale * 3; //600 = Normal, 900 = Viral
         _scale = getNumber (configFile >> "CfgVehicles" >> (typeOf _source) >> "damageScale");
+		if (dayz_DamageMultiplier > 1) then {
+			_scale = _scale * dayz_DamageMultiplier;
+		};
         //diag_log format["%1, DamageScale: %2",__FILE__,_scaleNew];
     };
     
