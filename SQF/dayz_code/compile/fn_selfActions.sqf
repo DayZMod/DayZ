@@ -374,7 +374,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	_isClosed = ((cursorTarget animationPhase "DoorL") == 0) || ((cursorTarget animationPhase "DoorR") == 0);
 	
 	//[["ownerArray",["PID"]]]
-	_ownerArray = _cursorTarget getVariable ["ownerArray",[]];
+	_ownerArray = _cursorTarget getVariable ["ownerArray",["0"]];
 	_ownerPID = (_ownerArray select 0);
 	
 	// open Gate
