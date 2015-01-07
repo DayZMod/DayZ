@@ -3,7 +3,7 @@ _age = -1;
 //_nearbyBuildings = [];
 _position = getPosATL player;
 _spawnableObjects = ["building", "SpawnableWreck", "IC_Fireplace1", "IC_DomeTent", "IC_Tent"];
-//_force = false;
+_force = false;
 _speed = speed (vehicle player);
 _radius = 150; //150*0.707; Pointless Processing (106.5)
 _spawnZedRadius = 20;
@@ -78,8 +78,8 @@ diag_log (format["%1 Local.Agents: %2/%3, NearBy.Agents: %8/%9, Global.Agents: %
     _islocal = _x getVariable ["", false]; // object created locally via TownGenerator. See stream_locationFill.sqf
 
     //Make sure wrecks always spawn Zeds
-    //_isWreck = _x isKindOf "SpawnableWreck";
-    //if (_isWreck) then { _force = true; };
+    _isWreck = _x isKindOf "SpawnableWreck";
+    if (_isWreck) then { _force = true; };
 
     //Loot
     if (_canSpawn) then {
@@ -106,7 +106,7 @@ diag_log (format["%1 Local.Agents: %2/%3, NearBy.Agents: %8/%9, Global.Agents: %
         };
 
     //Zeds
-        if (_dis > _spawnZedRadius) then {
+        if ((_dis > _spawnZedRadius) and (!_force)) then {
             if ((dayz_spawnZombies < _maxControlledZombies) and (dayz_CurrentNearByZombies < dayz_maxNearByZombies) and (dayz_currentGlobalZombies < dayz_maxGlobalZeds)) then {
                 _serverTime = serverTime;
                 _zombied = (_x getVariable ["zombieSpawn",_serverTime]);
@@ -131,5 +131,16 @@ diag_log (format["%1 Local.Agents: %2/%3, NearBy.Agents: %8/%9, Global.Agents: %
                 //diag_log (format["%1 building. %2", __FILE__, _x]);
             };
         };
+		
+		//Needs replacing/updating something Quick Fix
+		if (_dis > _spawnZedRadius) then {
+		//Force AI to spawn at wrecks
+			if (_force) then {
+				_bPos = getPosATL _x;
+				_zombiesNum = {alive _x} count (_bPos nearEntities ["zZombie_Base",(((sizeOf _type) * 2) + 30)]);
+			
+			   if (_zombiesNum == 0) then { [_x] call building_spawnZombies; };
+			};
+		};
     };
 } forEach _nearby;
