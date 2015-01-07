@@ -247,7 +247,7 @@ if (!isDedicated) then {
 	};
 	"PVDZ_obj_RoadFlare"		addPublicVariableEventHandler {(_this select 1) spawn object_roadFlare};
 	"PVDZ_drg_RaDrag"   		addPublicVariableEventHandler {(_this select 1) execVM "\z\addons\dayz_code\medical\publicEH\animDrag.sqf"};
-	"PVDZ_obj_Fire"				addPublicVariableEventHandler {nul=(_this select 1) spawn BIS_Effects_Burn};
+	"PVDZ_obj_Fire"				addPublicVariableEventHandler {(_this select 1) spawn BIS_Effects_Burn};
 	"PVDZ_dayzFlies"			addPublicVariableEventHandler {(_this select 1) call spawn_flies};
 	
 			//Medical

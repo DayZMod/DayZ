@@ -97,7 +97,11 @@ if (isServer) then {
 
 //Set fire to item
 onFire = [_obj,_fireIntensity,time,false,true] spawn BIS_Effects_Burn;
+
+PVDZ_obj_Fire = [_obj,_fireIntensity,time,false,true];
+publicVariable "PVDZ_obj_Fire";
+
 _obj inflame true;
-_obj call player_fireMonitor;
+//_obj spawn player_fireMonitor;
 
 cutText [localize "str_success_tent_destoryed", "PLAIN DOWN"];
