@@ -1,5 +1,4 @@
-/*
-private["_ok","_qty","_countr"];
+private["_firePlace","_ok","_mags","_serial","_qty","_countr"];
 _firePlace = _this;
 
 while {alive _firePlace} do {
@@ -26,10 +25,10 @@ while {alive _firePlace} do {
 			_countr = 0;
 			while {_ok} do {
 				_countr = _countr + 1;
-				if (_countr > 60) then {_ok = false};
+				if (_countr > 600) then {_ok = false};
 				if (!inflamed _firePlace) then {_ok = false};
 				if (!alive _firePlace) then {_ok = false};
-				sleep 10;
+				sleep 1;
 			};
 		} else {
 			_firePlace inflame false;
@@ -37,8 +36,7 @@ while {alive _firePlace} do {
 	};
 	while {!inflamed _firePlace and alive _fireplace} do {
 		//Wait
-		sleep 10;
+		sleep 1;
 	};
-	sleep 10;
+	sleep 1;
 };
-*/

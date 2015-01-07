@@ -45,7 +45,7 @@ if (!isDedicated) then {
 	player_humanityMorph = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_humanityMorph.sqf";
 	player_throwObject = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_throwObject.sqf";
 	player_alertZombies = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_alertZombies.sqf";
-	//player_fireMonitor = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\fire_monitor.sqf";
+	player_fireMonitor = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\fire_monitor.sqf";
 	player_countMagazines = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_countMagazines.sqf";
 	player_forceSave = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_forceSave.sqf";
 	//player_destroyTent = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_destroyTent.sqf";
@@ -510,6 +510,47 @@ init_keyboard = {
 };
 
 dayz_inflame = {
+    private ["_object", "_hasTool"];
+
+    _object = _this select 0;
+    if (_this select 1) then { // true = light the fire
+
+        _hasTool = false;
+        {
+            if (_x IN items player) exitWith {
+                // remove a match
+                player removeWeapon _x;
+                player addWeapon getText(configfile >> "cfgWeapons" >> _x >> "qtyRemaining");
+                _hasTool = true;
+            };
+        } count Dayz_Ignators;
+        if (_hasTool) then { _object inflame true; };
+    } else { // put out the fire
+		_object inflame false;
+    };
+};
+
+dayz_inflame_showMenu = {
+    private ["_object", "_ret", "_flame", "_islit", "_hasTool", "_whatIwant"];
+
+    _object = _this select 0;
+    _whatIwant = _this select 1;
+    _ret = false;
+
+    _islit = (inflamed _object);
+	
+    _hasTool = false;
+    if (!_islit) then {
+        {
+            if (_x IN items player) exitWith { _hasTool = true; };
+        } count Dayz_Ignators;
+    };
+    _ret = (_whatIwant and !_islit and _hasTool) or (!_whatIwant and _isLit);
+
+    _ret
+};
+
+dayz_inflame_other = {
     private ["_fireplace", "_ret", "_flame", "_islit", "_hasTool", "_isLit", "_pos"];
 
     _fireplace = _this select 0;
@@ -533,15 +574,14 @@ dayz_inflame = {
             };
         } count Dayz_Ignators;
         if (_hasTool) then { _flame inflame true; };
-//systemChat str ['fireplace,flame,hastool', _fireplace, _flame, _hasTool, _fireplace distance _pos ];
-    }
-    else { // put out the fire
+
+    } else { // put out the fire
         _flame = nearestObjects [_fireplace, ["flamable_DZ"], 1];
         if (count _flame > 0) then { (_flame select 0) inflame false; };
     };
 };
 
-dayz_inflame_showMenu = {
+dayz_inflame_showMenu_other = {
     private ["_fireplace", "_ret", "_flame", "_islit", "_hasTool", "_whatIwant"];
 
     _fireplace = _this select 0;
@@ -562,6 +602,7 @@ dayz_inflame_showMenu = {
 
     _ret
 };
+
 
 isInflamed = {
     private [ "_flame" ];

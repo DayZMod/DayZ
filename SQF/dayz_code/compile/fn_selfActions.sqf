@@ -214,7 +214,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	};
 	
 	//Fireplace Actions check
-	if (_cursorTarget call isInflamed) then {
+	if ((_cursorTarget call isInflamed) or (inflamed _cursorTarget)) then {
 		_hasRawMeat = {_x in Dayz_meatraw} count magazines player > 0;
 		_hastinitem = {_x in boil_tin_cans} count magazines player > 0;
 		

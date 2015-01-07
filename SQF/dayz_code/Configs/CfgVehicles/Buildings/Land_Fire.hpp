@@ -75,6 +75,26 @@ class Land_Fire_barrel : Land_Fire
 	icon="\Ca\misc\data\icons\i_beczka_CA.paa";
 	displayName=$STR_MISC_FIRE_BARREL;
 	destrType=DestructEngine;
+	class UserActions {
+		class lightup {
+			displayNameDefault = "Light fire";
+			displayName = "Light fire";
+			position = "ohniste";
+			radius = 3;
+			onlyForPlayer = 0;
+			condition = "[this,true] call dayz_inflame_showMenu_other";
+			statement = "[this,true] call dayz_inflame_other";
+		};
+		class putout {
+			displayNameDefault = "Put out fire";
+			displayName = "Put out fire";
+			position = "ohniste";
+			radius = 3;
+			onlyForPlayer = 0;
+			condition = "[this,false] call dayz_inflame_showMenu_other";
+			statement = "[this,false] call dayz_inflame_other";
+		};
+	};
 };
 
 class Land_Fire_DZ : Land_Fire {
@@ -98,4 +118,24 @@ class Misc_TyreHeap: Land_Fire
 	icon="\Ca\Misc3\Data\Icons\icomap_tyreHeap_CA.paa";
 	mapSize = 2;
 	displayName=$STR_DN_TYREHEAP;
+	class UserActions {
+		class lightup {
+			displayNameDefault = "Light fire";
+			displayName = "Light fire";
+			position = "ohniste";
+			radius = 3;
+			onlyForPlayer = 0;
+			condition = "[this,true] call dayz_inflame_showMenu_other";
+			statement = "[this,true] call dayz_inflame_other";
+		};
+		class putout {
+			displayNameDefault = "Put out fire";
+			displayName = "Put out fire";
+			position = "ohniste";
+			radius = 3;
+			onlyForPlayer = 0;
+			condition = "[this,false] call dayz_inflame_showMenu_other";
+			statement = "[this,false] call dayz_inflame_other";
+		};
+	};
 };
