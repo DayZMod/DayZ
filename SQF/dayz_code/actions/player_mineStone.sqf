@@ -130,7 +130,7 @@ if (!isNull _findNearestRock) then {
             _proceed = true;
             sleep 1;
         };
-		cutText [format["%1 piles of stone has been successfully mined. Still to go %2", _counter,_countOut], "PLAIN DOWN"];
+		cutText [format["%1 piles of stone has been successfully mined. Still to go %2", _counter,(_countOut - _counter)], "PLAIN DOWN"];
     };
 
     if (!_proceed) then {            
