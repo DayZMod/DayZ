@@ -133,16 +133,17 @@ class RscDisplayDebriefing: RscStandardDisplay
 class RscShortcutButton;
 class RscShortcutButtonMain;
 
+
 class RscDisplayMultiplayerSetup: RscStandardDisplay
 {
 	onload = "with uiNameSpace do{RscDisplayMultiplayerSetup=_this select 0};"; //#70
 	onMouseHolding = "with uiNameSpace do {" \n
 		"switch (1==1) do {" \n
-		"	case(isNil 'RscDMSLoad'):{RscDMSLoad=diag_tickTime;};" \n /* start autologon timer */
-		"	case(RscDMSLoad==-1):{};" \n /* do not autologon */
-		"	case(RscDMSLoad==-2):{RscDMSLoad=nil;ctrlActivate((_this select 0)displayCtrl 2);};" \n /* special: quit the lobby, disconnect from server */
-		"	case(diag_tickTime-RscDMSLoad>7):{RscDMSLoad=diag_tickTime;};" \n /* workaround for a strange bug */
-		"	case(diag_tickTime-RscDMSLoad>5):{ctrlActivate((_this select 0)displayCtrl 1);RscDMSLoad=-1;};" \n /* autologon after 5 seconds*/
+		"	case(isNil 'RscDMSLoad'):{RscDMSLoad=diag_tickTime;};" \n // start autologon timer 
+		"	case(RscDMSLoad==-1):{};" \n // do not autologon, Death 
+		"	case(RscDMSLoad==-2):{};" \n // start autologon timer, Abort
+		"	case(diag_tickTime-RscDMSLoad>7):{RscDMSLoad=diag_tickTime;};" \n // workaround for a strange bug //
+		"	case(diag_tickTime-RscDMSLoad>5):{ctrlActivate((_this select 0)displayCtrl 1);RscDMSLoad=-1;};" \n // autologon after 5 seconds //
 		"};};";
 	onButtonClick = "with uiNameSpace do{RscDMSLoad=-1};false";
 	onButtonDblClick = "with uiNameSpace do{RscDMSLoad=-1};false";
@@ -259,6 +260,7 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 		class CA_ValuePool: RscIGUIListBox
 		{
 			idc = 114;
+			text = "Players";
 			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
 			w = "(96/100) * SafeZoneW"; // wide
 		};
