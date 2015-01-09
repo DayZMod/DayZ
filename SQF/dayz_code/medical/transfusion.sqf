@@ -136,7 +136,7 @@ while {r_doLoop} do {
 
 	if (_started) then {
 		//_sentRequest var stops the pvs running more then once as it's no longer needs too 1.8.4
-		if (!_sentRequest) then { 
+		if ((!_sentRequest) And (!_badBag)) then { 
 			PVDZ_send = [_unit,"Transfuse",[_unit,player,_bloodAmount]];
 			publicVariableServer "PVDZ_send";
 			_sentRequest = true;
