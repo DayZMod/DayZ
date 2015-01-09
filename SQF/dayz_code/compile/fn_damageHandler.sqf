@@ -30,7 +30,11 @@ if (_unit == player) then {
         if ((_source != player) and _isPlayer) then {       
             _canHitFree =   player getVariable ["freeTarget",false];
             _isBandit = (player getVariable["humanity",0]) <= -2000;
-            _punishment = _canHitFree or _isBandit; //if u are bandit or start first - player will not recieve humanity drop
+			_accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]);
+			// - Accidental Murder - \\  When wearing the garb of a non-civilian you are taking your life in your own hands
+			// Attackers humanity should not be punished for killing a survivor who has shrouded his identity in military garb.
+
+            _punishment = _canHitFree or _isBandit or _accidentalMurder;
             _humanityHit = 0;
 
             if (!_punishment) then {
