@@ -1,9 +1,6 @@
 private ["_plant", "_originalCount"];
 _plant = _this;
 
-//kneel to gather
-player playActionNow "Medic";
-
 if (_plant getVariable["Gathering",false]) exitWith {};
 _originalCount = getNumber (configFile >> "CfgVehicles" >> (typeOf _plant) >> "TransportMagazines" >> "_xx_leaf" >> "count");
 if !([ [[["equip_comfreyleafs"],[_originalCount]],[[],[]]] , [getMagazineCargo _plant, getWeaponCargo _plant] ] call BIS_fnc_areEqual) then {
