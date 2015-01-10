@@ -1400,9 +1400,10 @@
 			<French>Vous avez arrangé 1 %2 à partir de %1 %2s partiellement remplis.\nIl vous reste %3 %4.</French>
 		</Key>
 		<Key ID="str_sleepStats">
-			<English>Blood regenerated: %1, Infected: %2</English>
-			<Russian>Восстановлено крови: %1, Статус инфекции: %2</Russian>
-			<French>Sang produit: %1, infecté: %2</French>
+			<English>Blood regenerated: %1, Blood: %2</English>
+		</Key>
+		<Key ID="str_sleepInfection">
+			<English>Blood: %1, Infection: %2</English>
 		</Key>
 		<Key ID="str_buildCameraOn">
 			<English>Build Camera Active.</English>
