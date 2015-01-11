@@ -39,12 +39,15 @@ class Land_Fire: House
 	model = "z\addons\dayz_communityassets\models\fire";
 	displayName = "$STR_MISC_FIRE";
 	icon = "\ca\misc3\data\Icons\icon_fireplace_ca.paa";
-	mapSize = 0;
+	mapsize = 1.03;
 	scope = 2;
 	accuracy=1;
-	armor = 1000;
+	armor = 150;
 	simulation="fire";
 	vehicleClass = "Misc";
+	destrtype = "DestructNo";
+	keephorizontalplacement = 0;
+	_generalmacro = "Land_FirePlace_F";
 
 	class UserActions {
 		class lightup {
