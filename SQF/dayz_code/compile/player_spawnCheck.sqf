@@ -1,11 +1,10 @@
-private ["_maxControlledZombies","_looted","_zombied","_doNothing","_spawnZedRadius", "_serverTime"];
+private ["_isWreck","_maxControlledZombies","_looted","_zombied","_doNothing","_spawnZedRadius","_serverTime","_age","_nearbyBuildings","_position","_spawnableObjects","_speed","_radius","_maxlocalspawned","_maxWeaponHolders","_currentWeaponHolders","_maxtoCreate","_inVehicle","_isAir","_isLand","_isSea","_Controlledzeddivided","_totalcrew","_nearby","_type","_config","_canSpawn","_dis","_checkLoot","_islocal","_bPos","_zombiesNum"];
 _age = -1;
 //_nearbyBuildings = [];
 _position = getPosATL player;
 _spawnableObjects = ["building", "SpawnableWreck", "IC_Fireplace1", "IC_DomeTent", "IC_Tent"];
-_force = false;
 _speed = speed (vehicle player);
-_radius = 150; //150*0.707; Pointless Processing (106.5)
+_radius = 200; //150*0.707; Pointless Processing (106.5)
 _spawnZedRadius = 20;
 
 /*
@@ -20,8 +19,6 @@ _maxlocalspawned = round(dayz_spawnZombies);
 _maxControlledZombies = round(dayz_maxLocalZombies);
 _maxWeaponHolders = round(dayz_maxMaxWeaponHolders);
 _currentWeaponHolders = round(dayz_currentWeaponHolders);
-_maxtoCreate = 3;
-
 
 //Limits (Land,Sea,Air)
 _inVehicle = (vehicle player != player);
@@ -79,7 +76,6 @@ diag_log (format["%1 Local.Agents: %2/%3, NearBy.Agents: %8/%9, Global.Agents: %
 
     //Make sure wrecks always spawn Zeds
     _isWreck = _x isKindOf "SpawnableWreck";
-    if (_isWreck) then { _force = true; };
 
     //Loot
     if (_canSpawn) then {
@@ -106,41 +102,37 @@ diag_log (format["%1 Local.Agents: %2/%3, NearBy.Agents: %8/%9, Global.Agents: %
         };
 
     //Zeds
-        if ((_dis > _spawnZedRadius) and (!_force)) then {
-            if ((dayz_spawnZombies < _maxControlledZombies) and (dayz_CurrentNearByZombies < dayz_maxNearByZombies) and (dayz_currentGlobalZombies < dayz_maxGlobalZeds)) then {
-                _serverTime = serverTime;
-                _zombied = (_x getVariable ["zombieSpawn",_serverTime]);
-                _age = _serverTime - _zombied;
-                if ((_age == 0) or (_age > 300)) then { 
-                    _bPos = getPosATL _x;
-                    _zombiesNum = {alive _x} count (_bPos nearEntities ["zZombie_Base",(((sizeOf _type) * 2) + 10)]);
-                
-                    if (_zombiesNum == 0) then {    
-                        _x setVariable ["zombieSpawn",_serverTime,!_islocal];
-                        
-                        if (!(_x in dayz_buildingBubbleMonitor)) then {
-                            //add active zed to var
-                            dayz_buildingBubbleMonitor set [count dayz_buildingBubbleMonitor, _x];
-                        };
-                        
-                        //start spawn
-                        [_x] call building_spawnZombies;
-                    };  
-                };
-                
-                //diag_log (format["%1 building. %2", __FILE__, _x]);
-            };
-        };
-		
-		//Needs replacing/updating something Quick Fix
-		if (_dis > _spawnZedRadius) then {
-		//Force AI to spawn at wrecks
-			if (_force) then {
+        if (_dis > _spawnZedRadius) then {
+			if (!_isWreck) then {
+				if ((dayz_spawnZombies < _maxControlledZombies) and (dayz_CurrentNearByZombies < dayz_maxNearByZombies) and (dayz_currentGlobalZombies < dayz_maxGlobalZeds)) then {
+					_serverTime = serverTime;
+					_zombied = (_x getVariable ["zombieSpawn",_serverTime]);
+					_age = _serverTime - _zombied;
+					if ((_age == 0) or (_age > 300)) then { 
+						_bPos = getPosATL _x;
+						_zombiesNum = {alive _x} count (_bPos nearEntities ["zZombie_Base",(((sizeOf _type) * 2) + 10)]);
+					
+						if (_zombiesNum == 0) then {    
+							_x setVariable ["zombieSpawn",_serverTime,!_islocal];
+							
+							if (!(_x in dayz_buildingBubbleMonitor)) then {
+								//add active zed to var
+								dayz_buildingBubbleMonitor set [count dayz_buildingBubbleMonitor, _x];
+							};
+							
+							//start spawn
+							[_x] call building_spawnZombies;
+						};  
+					};
+					
+					//diag_log (format["%1 building. %2", __FILE__, _x]);
+				};
+			} else {
 				_bPos = getPosATL _x;
 				_zombiesNum = {alive _x} count (_bPos nearEntities ["zZombie_Base",(((sizeOf _type) * 2) + 30)]);
-			
-			   if (_zombiesNum == 0) then { [_x] call building_spawnZombies; };
+				//Should be a wreck
+			   if (_zombiesNum == 0) then { [_x,_isWreck] call building_spawnZombies; };
 			};
-		};
+        };
     };
 } forEach _nearby;
