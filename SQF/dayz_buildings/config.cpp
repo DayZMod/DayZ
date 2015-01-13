@@ -417,14 +417,15 @@ class CfgWeapons
 
 		};
 	};
-		
-	class ItemDIY_metal: ItemDIY_wood {
+	
+	//Left in place to stop problems with dbs
+	class ItemDIY_metal: ItemCore {
 		picture = "\z\addons\dayz_buildings\equip\icon_diy_metal.paa";
 		model = "z\addons\dayz_buildings\models\diymanual_metal.p3d";
 		icon = "Ca\misc\data\icons\i_danger_CA.paa";
 		displayName = $STR_BLD_name_ItemDIY_metal;//"DIY Manual (Metal)"
 		descriptionShort = $STR_BLD_desc_ItemDIY_metal;//"For Metal fences"
-			
+		/*
 		class ItemActions {
 			class Build {
 				text = $STR_BLD_build_ItemDIY_metal;//"Metal fence"
@@ -435,5 +436,6 @@ class CfgWeapons
 				create = "MetalFence_1_foundation";
 			};
 		};
+		*/
 	};
 };
