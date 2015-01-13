@@ -54,7 +54,18 @@ if(_classname isKindOf "Bag_Base_EP1") exitwith {
 	if (_PlayerNear) exitWith {cutText [localize "str_pickup_limit_4", "PLAIN DOWN"]};
 
 	diag_log("Picked up a bag: " + _classname);
-	player action ["TakeBag", _holder];
+	
+	_hasBag = unitBackpack player;
+
+	if (isNull _hasBag) then {
+		player action ["TakeBag", _holder];
+	} else {
+		player action ["putbag", player];
+		
+		sleep 0.03
+		
+		player action ["TakeBag", _holder];
+	};
 };
 
 _config = (configFile >> _type >> _classname);
