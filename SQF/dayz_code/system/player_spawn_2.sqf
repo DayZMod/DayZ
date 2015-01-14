@@ -10,6 +10,7 @@ _timer1 = diag_tickTime;
 _spawnCheck = diag_tickTime;
 _timer2 = diag_Ticktime;
 _timer10 = diag_Ticktime;
+_timer30 = diag_Ticktime;
 _timer150 = diag_ticktime;
 
 _timerMonitor = diag_ticktime;
@@ -84,7 +85,8 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		} foreach (nearestObjects [getPosATL player, ["Dayz_Plant1","Dayz_Plant2","Dayz_Plant3"], 15]);
 		
 		_timer10 = diag_Ticktime;
-	};*/
+	};
+*/
 	
 	if ((diag_tickTime - _timer150) > 60) then {
 		//Digest Food.
@@ -103,6 +105,17 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		//[] call player_animalCheck;
 		
 		_timer = diag_tickTime;
+	};
+	
+	//Every 30 seconds force the client to update the server of all medical Values
+	if ((diag_tickTime - _timer30) > 30) then {
+		[] spawn {
+			_medical = player call player_sumMedical;
+			
+			PVDZ_playerMedicalSync = [player,_medical];
+			publicVariableServer "PVDZ_playerMedicalSync";
+		};
+		_timer30 = diag_tickTime;
 	};
 	
 	//Record Check
@@ -241,9 +254,6 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	_lowBlood = player getVariable ["USEC_lowBlood", false];
 	if ((r_player_blood < r_player_bloodTotal) and !_lowBlood) then {
 		player setVariable["USEC_lowBlood",true,true];
-		
-		PVDZ_serverStoreVar = [player,"USEC_lowBlood",true];
-		publicVariableServer "PVDZ_serverStoreVar";
 	};
 
 	//Broadcast Hunger/Thirst

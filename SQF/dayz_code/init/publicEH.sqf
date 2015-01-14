@@ -78,6 +78,8 @@ if (isServer) then {
 	"PVDZ_obj_Destroy"		addPublicVariableEventHandler {(_this select 1) call server_deleteObj};
 	"PVDZ_send" addPublicVariableEventHandler {(_this select 1) call server_sendToClient};
 	"PVDZ_dayzCarBomb" addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\actions\detonate_bomb.sqf";};
+	//[player,[medical Array]];
+	"PVDZ_playerMedicalSync" addPublicVariableEventHandler { (_this select 1) call server_medicalSync; ((_this select 1) select 0) setVariable["Medical",((_this select 1) select 1),false]; diag_log format["%1 - %2",((_this select 1) select 0),((_this select 1) select 1)]; };
 	
 	"PVDZ_sendUnconscious" addPublicVariableEventHandler {	
 		_owner = ((_this select 1) select 0);
