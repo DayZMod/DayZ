@@ -24,6 +24,11 @@ BEGIN
                 FROM character_data
                         WHERE Alive=0;
  
+#remove damaged objects
+        DELETE
+                FROM object_data
+                WHERE Damage = 1;
+
 #remove empty tents older than seven days
         DELETE
                 FROM object_data
