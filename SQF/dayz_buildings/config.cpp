@@ -420,6 +420,7 @@ class CfgWeapons
 	
 	//Left in place to stop problems with dbs
 	class ItemDIY_metal: ItemCore {
+		scope = 2;
 		picture = "\z\addons\dayz_buildings\equip\icon_diy_metal.paa";
 		model = "z\addons\dayz_buildings\models\diymanual_metal.p3d";
 		icon = "Ca\misc\data\icons\i_danger_CA.paa";
