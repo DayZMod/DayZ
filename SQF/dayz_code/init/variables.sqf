@@ -123,7 +123,8 @@ food_with_output=[
 	"FoodCanRusStew",
 	"FoodChipsSulahoops",
 	"FoodChipsMysticales",
-	"FoodCanPotatoes"
+	"FoodCanPotatoes",
+	"FoodCanBeef"
 ];
 
 food_output = [
@@ -152,7 +153,8 @@ food_output = [
 	"FoodCanRusStewEmpty",
 	"FoodChipsSulahoopsEmpty",
 	"FoodChipsMysticalesEmpty",
-	"FoodCanPotatoesEmpty"
+	"FoodCanPotatoesEmpty",
+	"FoodCanBeefEmpty"
 ];
 //Drinking
 no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled", "ItemWaterBottleInfected", "ItemWaterBottleSafe"];
@@ -234,7 +236,8 @@ boil_tin_cans = [
 	"ItemSodaSacriteEmpty",
 	//"ItemSodaSherbetEmpty",
 	"ItemSodaSmashtEmpty",
-	"FoodCanPotatoesEmpty"
+	"FoodCanPotatoesEmpty",
+    "FoodCanBeefEmpty"
 ];
 
 canPickup = false;
