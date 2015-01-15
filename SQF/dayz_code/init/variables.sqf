@@ -124,7 +124,7 @@ food_with_output=[
 	"FoodChipsSulahoops",
 	"FoodChipsMysticales",
 	"FoodCanPotatoes",
-    "FoodCanBeef"
+	"FoodCanBeef"
 ];
 
 food_output = [
@@ -154,7 +154,7 @@ food_output = [
 	"FoodChipsSulahoopsEmpty",
 	"FoodChipsMysticalesEmpty",
 	"FoodCanPotatoesEmpty",
-    "FoodCanBeefEmpty"
+	"FoodCanBeefEmpty"
 ];
 //Drinking
 no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled", "ItemWaterBottleInfected", "ItemWaterBottleSafe"];
