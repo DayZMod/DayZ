@@ -72,7 +72,7 @@ if (isNil "keyboard_keys") then {
             _handled = true;
         }
         else { if ((vehicle player == player) and (speed vehicle player > 0)) then {
-            [objNull, player, rSwitchMove,""] call RE;
+            //[objNull, player, rSwitchMove,""] call RE;
             _handled = true;
         };};
     };
