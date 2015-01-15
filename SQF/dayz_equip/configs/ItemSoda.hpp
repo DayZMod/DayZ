@@ -35,7 +35,7 @@ class ItemSodaPepsi : ItemSoda {
 	descriptionShort = $STR_EQUIP_DESC_36;
 	Nutrition[] = {90,0,100,0}; //[Energy,food,water,temp]
 };
-class ItemSodaMdew : ItemSodaCoke {
+class ItemSodaMdew : ItemSoda {
 	displayName = $STR_EQUIP_NAME_37;
 	model = "\dayz_equip\models\soda_mdew.p3d";
 	picture = "\dayz_equip\textures\equip_soda_mdew_ca.paa";
@@ -166,4 +166,3 @@ class ItemSherbet : ItemSoda {
 	picture = "\z\addons\dayz_communityassets\pictures\equip_soda_sherbet_clean_full_ca.paa";
 	Nutrition[] = {90,0,300,0}; //[Energy,food,water,temp]
 };
-
