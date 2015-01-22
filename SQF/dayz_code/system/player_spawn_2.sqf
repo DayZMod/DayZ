@@ -105,6 +105,10 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		//[] call player_animalCheck;
 		
 		_timer = diag_tickTime;
+		
+		if (rating player < 0) then {
+			player addRating abs(rating player);
+		};
 	};
 	
 	//Every 30 seconds force the client to update the server of all medical Values
