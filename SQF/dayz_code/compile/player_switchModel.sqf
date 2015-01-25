@@ -18,7 +18,7 @@ _currentAnim = animationState player;
 	if ( (_playerUID == dayz_playerUID) && (count _magazines == 0) && (count (magazines player) > 0 )) exitWith {cutText [localize "str_actions_switchmodel_fail", "PLAIN DOWN"]};
 
 
-//	if ( count _magazines == 0 ) exitWith {cutText ["can't count magazines!", "PLAIN DOWN"]};
+	//if ( count _magazines == 0 ) exitWith {cutText ["can't count magazines!", "PLAIN DOWN"]};
 
 	_primweapon = primaryWeapon player;
 	_secweapon = secondaryWeapon player;

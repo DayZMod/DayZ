@@ -35,14 +35,13 @@ if (_object == player) then {
 
 	
 	//Not sure if this will work needs testing
-	_isMen =		_model == "Survivor_DZ" || _model == "Survivor1_DZ" || _model == "Survivor2_DZ";
+	_isMen =		_model == "Survivor1_DZ" || _model == "Survivor2_DZ";
 	_isMenH =		_model == "Survivor3_DZ";
 	_isMenB =		_model == "Bandit1_DZ";
 	_isWomen =		_model == "SurvivorW2_DZ";
 	_isWomenH =		_model == "SurvivorW3_DZ"; //TODO
 	_isWomenB =		_model == "BanditW1_DZ";
 	
-
 
 	// Bandit
 	if (_humanity <= -2000) then {
@@ -53,26 +52,10 @@ if (_object == player) then {
 			[dayz_playerUID,dayz_characterID,"BanditW1_DZ"] spawn player_humanityMorph;
 		};
 	};
-/*
-	// Survivor p.I //proceed [what if hero become "bad"?]  
-	if (_humanity > -2000 && _humanity <=0) then {
-		if (_isMenH) then {
-			[dayz_playerUID,dayz_characterID,"Survivor2_DZ"] spawn player_humanityMorph;
-		};
-		if (_isWomenH) then {
-			[dayz_playerUID,dayz_characterID,"SurvivorW2_DZ"] spawn player_humanityMorph;
-		};
-	};
-	// Survivor p.II //proceed [time to be "normal"]
-	if (_humanity > 0 && _humanity <= 5000) then {
-*/
 	//Survivor
 	if (_humanity > -2000 && _humanity <= 5000) then {
 		if (_isMenH || _isMenB) then {
-		//If player is a survivor apply a random skin of 3.
-			_maleSurvivorSkinsArray = ["Survivor_DZ","Survivor1_DZ","Survivor2_DZ"];
-			_skintoApply = [] select(random(count _maleSurvivorSkinsArray));
-			[dayz_playerUID,dayz_characterID,_skintoApply] spawn player_humanityMorph;
+			[dayz_playerUID,dayz_characterID,"Survivor2_DZ"] spawn player_humanityMorph;
 		};
 		if (_isWomenH || _isWomenB) then {
 			[dayz_playerUID,dayz_characterID,"SurvivorW2_DZ"] spawn player_humanityMorph;
@@ -84,11 +67,6 @@ if (_object == player) then {
 		if (_isMen || _isMenB) then {
 			[dayz_playerUID,dayz_characterID,"Survivor3_DZ"] spawn player_humanityMorph;
 		};
-		/*
-		if (_isWomen || _isWomenB) then {  //TODO
-			[dayz_playerUID,dayz_characterID,"SurvivorW3_DZ"] spawn player_humanityMorph;
-		};
-		*/
 		if (_isWomenB) then { 
 			[dayz_playerUID,dayz_characterID,"SurvivorW2_DZ"] spawn player_humanityMorph;
 		};

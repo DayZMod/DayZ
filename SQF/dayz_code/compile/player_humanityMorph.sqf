@@ -26,7 +26,8 @@ _banditKills = player getVariable ["banditKills",0];
 _achievements = player getVariable ["Achievements",[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
 
 //Switch
-	_model call player_switchModel;
+_switch = _model spawn player_switchModel;
+waitUntil { scriptDone _switch };
 
 //Login
 
