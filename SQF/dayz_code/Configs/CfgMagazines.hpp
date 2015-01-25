@@ -68,7 +68,9 @@ class CfgMagazines {
 	//medical
 	#include "CfgMagazines\medical.hpp"
 	#include "CfgMagazines\BloodBags.hpp"
+	
 	//Attachments
+	//Old Types
 	#include "CfgMagazines\Attachments\Attachment_ACG.hpp"
 	#include "CfgMagazines\Attachments\Attachment_AIM.hpp"
 	#include "CfgMagazines\Attachments\Attachment_Camo.hpp"
@@ -78,6 +80,11 @@ class CfgMagazines {
 	#include "CfgMagazines\Attachments\Attachment_Silencer.hpp"
 	#include "CfgMagazines\Attachments\Attachment_SniperScope.hpp"
 	#include "CfgMagazines\Attachments\Attachment_CrossbowCCO.hpp"
+	//New Type
+	#include "CfgMagazines\Attachments\Attachment_SCOPED.hpp"
+	#include "CfgMagazines\Attachments\Attachment_CCO.hpp"
+	#include "CfgMagazines\Attachments\Attachment_FL.hpp"
+	#include "CfgMagazines\Attachments\Attachment_BELT.hpp"
 	
 	
 	//crafting
