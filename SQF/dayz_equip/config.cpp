@@ -639,7 +639,7 @@ class cfgWeapons {
 	#include "configs\ItemMap.hpp"
 	#include "configs\ItemMap_Debug.hpp"
 	#include "configs\ItemCompass.hpp"
-	
+	/*
 	class ItemPickaxe : ItemCore {
 		scope = public;
 		displayName = $STR_EQUIP_NAME_PICKAXE;
@@ -698,7 +698,7 @@ class cfgWeapons {
 			};
 		};
 	};
-	
+	*/
 	class ItemFlashlight : ItemCore {
 		scope = public;
 		displayName = $STR_EQUIP_NAME_5;
