@@ -13,6 +13,8 @@ _timer10 = diag_Ticktime;
 _timer30 = diag_Ticktime;
 _timer150 = diag_ticktime;
 
+_runonce = false;
+
 _timerMonitor = diag_ticktime;
 
 player setVariable ["temperature",dayz_temperatur,true];
@@ -31,6 +33,11 @@ while {1 == 1} do {
 	_vel = velocity player;
 	_speed = round((_vel distance [0,0,0]) * 3.5);
 	_saveTime = (playersNumber west * 2) + 10;
+	
+	//reset rating always
+	if ((rating player) > 0) or ((rating player) < 0)) then {
+		player setUnitRank "PRIVATE";
+	};
 
 dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)) + (((count dayz_myMagazines) * 0.1) + (count dayz_myWeapons * 0.5));
 	
@@ -71,23 +78,17 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		};
 		_timeOut = 0;
 	};
-	
-/*	if ((diag_tickTime - _timer10) > 10) then {
-		{	
-		//crickets
-			(getPosATL _x) spawn {
-				sleep random 10;
-				_sound=format["Sound_Crickets%1",1+floor random 3];
-				_x = createSoundSource [_sound, _this, [], 0];
-				sleep 2;
-				deleteVehicle _x;
-			};			
-		} foreach (nearestObjects [getPosATL player, ["Dayz_Plant1","Dayz_Plant2","Dayz_Plant3"], 15]);
+
+/*	
+	if ((Dayz_loginCompleted) && (diag_tickTime < 25)) then {
+
+		[player,0] call player_humanityChange;
 		
+		diag_log ("Running");
 		_timer10 = diag_Ticktime;
 	};
 */
-	
+
 	if ((diag_tickTime - _timer150) > 60) then {
 		//Digest Food.
 		if (r_player_foodstack > 0) then { r_player_foodstack = r_player_foodstack - 1; };
@@ -105,10 +106,6 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		//[] call player_animalCheck;
 		
 		_timer = diag_tickTime;
-		
-		if (rating player < 0) then {
-			player addRating abs(rating player);
-		};
 	};
 	
 	//Every 30 seconds force the client to update the server of all medical Values
