@@ -13,6 +13,8 @@ _timer10 = diag_Ticktime;
 _timer30 = diag_Ticktime;
 _timer150 = diag_ticktime;
 
+_forceHumanity = false;
+
 _runonce = false;
 
 _timerMonitor = diag_ticktime;
@@ -73,8 +75,15 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 
 	if (_timeOut > 150) then {
 		_humanity = player getVariable ["humanity",0];
-		if (_humanity < 1) then {
-			[player, round(_timeOut / 10)] call player_humanityChange;
+		if (_humanity < 1 or _forceHumanity) then {
+			if (vehicle player != player) then {
+				[player, round(_timeOut / 10)] call player_humanityChange;
+				_forceHumanity = false;
+			} else {
+				_humanity = _humanity + round(_timeOut / 10);
+				player setVariable["humanity",_humanity,true];
+				_forceHumanity = true;
+			};
 		};
 		_timeOut = 0;
 	};
