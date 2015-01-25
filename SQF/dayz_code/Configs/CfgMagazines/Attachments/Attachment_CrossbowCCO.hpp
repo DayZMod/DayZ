@@ -1,3 +1,5 @@
+//old type
+
 class Attachment_Crossbow_CCO : CA_Magazine {
 	scope = public;
 	displayName = "Crossbow CCO RedDot";

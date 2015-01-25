@@ -25,9 +25,9 @@ class cfgWeapons {
 		handAnim[] = {"OFP2_ManSkeleton", "\Ca\weapons\data\Anim\Bizon.rtm"};
 		drySound[] = {""};
 	};
-	class Crossbow_DZ : Rifle
+	class Crossbow_Base_DZ : Rifle
 	{
-		scope = 2;
+		scope = 1;
 		model = "z\addons\community_crossbow\models\crossbow.p3d";
 		displayName=$STR_WPN_NAME_4;
 		descriptionShort=$STR_WPN_DESC_4;
@@ -69,29 +69,37 @@ class cfgWeapons {
 		midRangeProbab=0.2;
 		maxRange=200;
 	};
-	class Crossbow_CCO : Crossbow_DZ
+	class Crossbow_DZ : Crossbow_Base_DZ
 	{
+		scope = 2;
+		model = "z\addons\community_crossbow\models\crossbow.p3d";
+		displayName=$STR_WPN_NAME_4;
+		descriptionShort=$STR_WPN_DESC_4;
+		picture = "\z\addons\community_crossbow\icons\crossbow_icon.paa";
+		class Attachments
+		{
+			attachments[] = {"CCO","FL","SCOPED"};
+			CCO = "Crossbow_CCO";
+			FL = "Crossbow_FL";
+			SCOPED = "Crossbow_Scoped";
+		};
+	};
+	class Crossbow_CCO : Crossbow_Base_DZ
+	{
+		scope = 2;
 		model = "z\addons\community_crossbow\models\crossbow_cco.p3d";
 		displayName = "Crossbow (CCO)";
 		picture = "\z\addons\community_crossbow\icons\crossbow_cco.paa";
-		/*
-		class ItemActions
+		class Attachments
 		{
-			class CraftCCO //CCO
-			{
-				text = "Remove CCO"; //10 letters
-				script = "call player_weaponatt_cco;";
-				tool[] = {};
-				input[] = {};
-				woutput = "Crossbow_DZAM";
-				ioutput[] = {{"CCOAIM_DZAM",1}};
-			};
+			attachments[] = {"FL"};
+			FL = "Crossbow_CCO_FL";
 		};
-		*/
 	};
 
-	class Crossbow_FL : Crossbow_DZ
+	class Crossbow_FL : Crossbow_Base_DZ
 	{
+		scope = 2;
 		model = "z\addons\community_crossbow\models\crossbow_fl.p3d";
 		displayName = "Crossbow (FL)";
 		picture = "\z\addons\community_crossbow\icons\crossbow_fl.paa";
@@ -105,17 +113,24 @@ class cfgWeapons {
             scale[] = {1, 1, 0.5};
             brightness = 0.1;
         };
+		class Attachments
+		{
+			attachments[] = {"CCO","SCOPED"};
+			CCO = "Crossbow_CCO_FL";
+			SCOPED = " Crossbow_Scoped_FL";
+		};
 	};
 
-	class Crossbow_CCO_FL : Crossbow_FL
+	class Crossbow_CCO_FL : Crossbow_Base_DZ
 	{
+		scope = 2;
 		model = "z\addons\community_crossbow\models\crossbow_cco_fl.p3d";
 		displayName = "Crossbow (CCO FL)";
 		picture = "\z\addons\community_crossbow\icons\crossbow_cco_fl.paa";
-
 	};
-	class Crossbow_Scoped : Crossbow_DZ
+	class Crossbow_Scoped : Crossbow_Base_DZ
 	{
+		scope = 2;
 		model = "z\addons\community_crossbow\models\crossbow_scoped.p3d";
 		displayName = "Crossbow (Scoped)";
 		picture = "\z\addons\community_crossbow\icons\crossbow_scoped.paa";
@@ -126,10 +141,16 @@ class cfgWeapons {
 		opticsZoomMax = 0.071945;
 		distanceZoomMin = 110;
 		distanceZoomMax = 110;
+		class Attachments
+		{
+			attachments[] = {"FL"};
+			FL = "Crossbow_Scoped_FL";
+		};
 	};
 
-	class Crossbow_Scoped_FL : Crossbow_FL
+	class Crossbow_Scoped_FL : Crossbow_Base_DZ
 	{
+		scope = 2;
 		model = "z\addons\community_crossbow\models\crossbow_scoped_fl.p3d";
 		displayName = "Crossbow (Scoped FL)";
 		picture = "\z\addons\community_crossbow\icons\crossbow_scoped_fl.paa";		
@@ -142,6 +163,7 @@ class cfgWeapons {
 		distanceZoomMax = 110;
 	};
 };
+
 class cfgMagazines {
 	class CA_Magazine;
   	class Tranquiliser_Bolt : CA_Magazine
