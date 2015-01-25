@@ -40,6 +40,7 @@ class CfgBuildingLoot {
 		//multiple spawns	
 			{"","Trash",0.30},
 			{"","ammo",0.10},
+			{"","attachments",0.10},
 			{"","generic",0.20}
 		};
 	};
@@ -55,6 +56,8 @@ class CfgBuildingLoot {
 			{"ItemCompass","weapon",0.01},
 			{"ItemFlashlight","weapon",0.02},
 			{"ItemSandbag","magazine",0.04},
+			{"Mosin_Nagant","weapon",0.01},
+			{"Mosin_Nagant_broken","weapon",0.03},	
 			{"WeaponHolder_ItemHatchet","object",0.01},
 			{"WeaponHolder_ItemTent","object",0.01},
 			{"WeaponHolder_ItemCamoNet","object",0.01},
@@ -70,6 +73,7 @@ class CfgBuildingLoot {
 			{"","Residential",0.60},
 			{"","ammo",0.10},
 			{"","Trash",0.30},
+			{"","attachments",0.10},
 			{"","generic",0.20}
 		};
 	};	
@@ -92,7 +96,8 @@ class CfgBuildingLoot {
 			{"ItemTankTrap","magazine",0.04},
 			{"ItemSodaLirik","magazine",0.05},
 			{"ItemSodaPeppsy","magazine",0.10},
-			{"","ammo",0.10}
+			{"","ammo",0.10},
+			{"","attachments",0.10}
 		};
 	};	
 	class Residential: Default {
@@ -111,6 +116,7 @@ class CfgBuildingLoot {
 			{"ItemFlashlight","generic",0.05},
 			{"Makarov","weapon",0.02},
 			{"revolver_EP1","weapon",0.01},
+			{"Mosin_Nagant","weapon",0.01},	
 			{"MR43","weapon",0.02},
 			{"LeeEnfield","weapon",0.01},
 			{"Winchester1866","weapon",0.03},
@@ -134,7 +140,8 @@ class CfgBuildingLoot {
 			{"equip_lever","magazine",0.03},
 		//multiple spawns	
 			{"","Residential",0.50},
-			{"","Trash",1},
+			{"","Trash",0.90},
+			{"","attachments",0.10},
 			{"","ammo",0.10},
 			{"","generic",0.50}
 		};
@@ -164,7 +171,8 @@ class CfgBuildingLoot {
 		/*	{"ItemDIY_wood","weapon",0.04}, // temporary
 			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
-			{"","Trash",4}
+			{"","Trash",4},
+			{"","attachments",0.10}
 		};
 	};
 
@@ -183,7 +191,8 @@ class CfgBuildingLoot {
 			/*{"ItemDIY_wood","weapon",0.04}, // temporary
 			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
-			{"","Trash",4}
+			{"","Trash",4},
+			{"","attachments",0.10}
 		};
 	};
 
@@ -233,6 +242,8 @@ class CfgBuildingLoot {
 			{"equip_hose","magazine",0.02},
 			{"equip_nails","magazine",0.06},
 			{"ItemScrews","magazine",0.02},
+			{"Mosin_Nagant","weapon",0.01},
+			{"Mosin_Nagant_broken","weapon",0.03},	
 			{"equip_rag","magazine",0.01},
 			{"ItemPickaxe","weapon",0.01},
 			{"ItemPickaxeBroken","weapon",0.02},
@@ -247,7 +258,8 @@ class CfgBuildingLoot {
 		//multiple spawns	
 			{"","Trash",0.30},
 			{"","ammo",0.10},
-			{"","generic",0.20}
+			{"","generic",0.20},
+			{"","attachments",0.10}
 		};
 	};
 	class Farm: Default {
@@ -266,6 +278,8 @@ class CfgBuildingLoot {
 			{"LeeEnfield","weapon",0.03},
 			{"Winchester1866","weapon",0.03},
 			{"Crossbow_DZ","weapon",0.03},
+			{"Mosin_Nagant","weapon",0.01},
+			{"Mosin_Nagant_broken","weapon",0.03},	
 			{"MR43","weapon",0.05},
 			{"MeleeMachete","weapon",0.04},
 			{"WeaponHolder_ItemJerrycan","object",0.03},
@@ -286,6 +300,7 @@ class CfgBuildingLoot {
 		//multiple spawns		
 			{"","Trash",0.30},
 			{"","ammo",0.10},
+			{"","attachments",0.10},
 			{"","generic",0.20}
 		};
 	};
@@ -306,6 +321,8 @@ class CfgBuildingLoot {
 			{"Binocular","weapon",0.03},
 			{"Makarov","weapon",0.02},
 			{"LeeEnfield","weapon",0.01},
+			{"Mosin_Nagant","weapon",0.01},
+			{"Mosin_Nagant_broken","weapon",0.03},	
 			{"revolver_EP1","weapon",0.01},
 			{"Winchester1866","weapon",0.03},
 			{"Crossbow_DZ","weapon",0.01},
@@ -388,7 +405,8 @@ class CfgBuildingLoot {
 		//special
 			{"equip_nails","magazine",0.06},
 		//multiple spawns
-			{"","ammo",0.10},		
+			{"","ammo",0.10},	
+			{"","attachments",0.10},			
 			{"","Trash",0.50}
 		};
 	};	
@@ -403,11 +421,13 @@ class CfgBuildingLoot {
 			{"ItemAntibacterialWipe","magazine",0.04},
 			{"ItemPainkiller","magazine",0.04},
 			{"Colt1911","weapon",0.05},
+			{"Mosin_Nagant_broken","weapon",0.03},	
 			{"MeleeBaseBallBat","weapon",0.02},
 			{"equip_duct_tape","magazine",0.03},
 		//multiple spawns
 			{"","Trash",0.30},
 			{"","ammo",0.10},
+			{"","attachments",0.10},
 			{"","generic",0.40}
 		};
 	};
@@ -475,6 +495,7 @@ class CfgBuildingLoot {
 		//weapons
 			{"Makarov","weapon",0.04},
 			{"LeeEnfield","weapon",0.03},
+			{"Mosin_Nagant","weapon",0.01},
 			{"revolver_EP1","weapon",0.04},
 			{"Winchester1866","weapon",0.03},
 			{"Crossbow_DZ","weapon",0.01},
@@ -530,13 +551,8 @@ class CfgBuildingLoot {
 			//{"","Trash",0.10},
 			//{"","generic",0.10},
 			//{"","Supermarket",0.60},
-		//Attachements
-			{"Attachment_M9Silencer","magazine",0.05},
-			{"Attachment_M4A1_Aim","magazine",0.03},
-			{"Attachment_M4A1_Aim_camo","magazine",0.05},
-			{"Attachment_M4A1_AIM_SD_camo","magazine",0.03},
-			{"Attachment_Crossbow_CCO","magazine",0.02},
-			{"Attachment_MakarovSilencer","magazine",0.05}
+			//multiple spawns
+			{"","attachments",0.10}
 		};
 	};
 	class HeliCrashWEST: Default {
@@ -574,6 +590,7 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"","medical",0.25},
 			{"","ammo",0.10},
+			{"","attachments",0.10},
 			{"","militaryWEST",0.25}
 		};
 	};
@@ -612,6 +629,7 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"","medical",0.25},
 			{"","ammo",0.10},
+			{"","attachments",0.10},
 			{"","militaryEAST",0.25}
 		};
 	};
@@ -646,6 +664,7 @@ class CfgBuildingLoot {
 			{"transfusionKit","magazine",0.04},
 		//multiple spawns
 			{"","Trash",0.20},
+			{"","attachments",0.10},
 			{"","ammo",0.10}
 		};
 	};
@@ -696,6 +715,7 @@ class CfgBuildingLoot {
 			{"","military",0.70},
 			{"","Trash",0.20},
 			{"","ammo",0.10},
+			{"","attachments",0.10},
 			{"","generic",0.10}
 		};
 	};
@@ -764,6 +784,7 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"","military",0.70},
 			{"","Trash",0.30},
+			{"","attachments",0.10},
 			{"","generic",0.10}
 		};
 	};
@@ -784,12 +805,13 @@ class CfgBuildingLoot {
 			{"ItemCompass","weapon",0.02},
 		//weapons
 			{"Crossbow_DZ","weapon",0.02},
-			{"Attachment_Crossbow_CCO","magazine",0.02},
 			{"Crossbow_Stock","weapon",0.03},
 			{"MeleeMachete","weapon",0.04},
 			{"huntingrifle","weapon",0.05},
 			{"MR43","weapon",0.08}, 			
-			{"Winchester1866","weapon",0.06},		
+			{"Winchester1866","weapon",0.06},	
+			{"Mosin_Nagant","weapon",0.01},
+			{"Mosin_Nagant_broken","weapon",0.03},	
 		//special
 			{"WeaponHolder_ItemDomeTent","object",0.02},
 			{"ItemSandbag","magazine",0.04},
@@ -817,6 +839,7 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"","Trash",0.20},
 			{"","ammo",0.10},
+			{"","attachments",0.10},
 			{"","generic",0.30}
 		};
 	};

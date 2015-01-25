@@ -40,6 +40,17 @@ class CfgLoot {
 		{"HandRoadFlare",0.05},
 		{"ItemWaterbottleUnfilled",0.01}
 	};
+	attachments[] = {
+		{"Attachment_FL",0.01},
+		{"Attachment_CCO",0.01},
+		{"Attachment_BELT",0.01},
+		{"Attachment_M9Silencer",0.01},
+		{"Attachment_M4A1_Aim",0.01},
+		{"Attachment_M4A1_Aim_camo",0.01},
+		{"Attachment_M4A1_AIM_SD_camo",0.01},
+		{"Attachment_MakarovSilencer",0.01},
+		{"Attachment_SCOPED",0.01}
+	};
 	civilian[] = {
 		{"ItemBandage",0.06},
 		{"ItemPainkiller",0.03},
