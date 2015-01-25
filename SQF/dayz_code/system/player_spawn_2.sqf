@@ -35,7 +35,7 @@ while {1 == 1} do {
 	_saveTime = (playersNumber west * 2) + 10;
 	
 	//reset rating always
-	if ((rating player) > 0) or ((rating player) < 0)) then {
+	if (((rating player) > 0) or ((rating player) < 0)) then {
 		player setUnitRank "PRIVATE";
 	};
 
