@@ -1261,12 +1261,7 @@
 			<German>Dir scheint das Zubehoer zu fehlen.</German>
 		</Key>
 		<Key ID="str_missingweapon">
-			<English>Unable to attach %1, missing weapon: %2</English>
-			<Russian>Не удалось установить %1, не хватает: %2</Russian>
-			<Spanish>No se puede asociar %1, arma que falta: %2</Spanish>
-			<Czech>Nelze připojit %1, chybějící zbraň: %2</Czech>
-			<French>Impossible d&apos;ajouter 1%, arme manquante: %2</French>
-			<German>Du kannst %1 nicht anbringen, dir fehlt die Waffe dazu: %2.</German>
+			<English>Unable to attach %1</English>
 		</Key>
 		<Key ID="str_fixToolFail">
 			<English>Maybe you can fix it with tape and a handle.</English>
