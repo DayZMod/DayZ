@@ -5,7 +5,8 @@ class Attachment_CCO : CA_Magazine {
 	displayName = "CCO RedDot";
 	descriptionShort = "CCO RedDot Attachment.";
 	count = 1;
-	picture = "\z\addons\dayz_communityassets\pictures\attachment_aim.paa";
+	model = "z\addons\dayz_communityweapons\models\attachments\CCO";
+	picture = "\z\addons\dayz_communityweapons\models\attachments\CCO.paa";
 	type = 256;
 	
 	class ItemActions {

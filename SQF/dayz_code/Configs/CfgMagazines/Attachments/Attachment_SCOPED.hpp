@@ -1,11 +1,12 @@
 //New Type
 
 class Attachment_SCOPED : CA_Magazine {
-	scope = public;
+	scope = 2;
 	displayName = "Scoped Sight";
 	descriptionShort = "Scoped Sight Attachment.";
 	count = 1;
-	picture = "\z\addons\dayz_communityassets\pictures\attachment_aim.paa";
+	model = "z\addons\dayz_communityweapons\models\attachments\SCOPE";
+	picture = "\z\addons\dayz_communityweapons\models\attachments\SCOPE.paa";
 	type = 256;
 	
 	class ItemActions {

@@ -5,7 +5,8 @@ class Attachment_BELT : CA_Magazine {
 	displayName = "Ammo Belt";
 	descriptionShort = "Ammo Belt Attachment.";
 	count = 1;
-	picture = "\z\addons\dayz_communityassets\pictures\attachment_aim.paa";
+	model = "z\addons\dayz_communityweapons\models\attachments\BELT";
+	picture = "\z\addons\dayz_communityweapons\models\attachments\BELT.paa";
 	type = 256;
 	
 	class ItemActions {

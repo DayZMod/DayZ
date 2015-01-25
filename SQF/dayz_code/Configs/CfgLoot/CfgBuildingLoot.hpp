@@ -551,8 +551,6 @@ class CfgBuildingLoot {
 			//{"","Trash",0.10},
 			//{"","generic",0.10},
 			//{"","Supermarket",0.60},
-			//multiple spawns
-			{"","attachments",0.10}
 		};
 	};
 	class HeliCrashWEST: Default {

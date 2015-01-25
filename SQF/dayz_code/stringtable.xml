@@ -1263,6 +1263,12 @@
 		<Key ID="str_missingweapon">
 			<English>Unable to attach %1</English>
 		</Key>
+		<Key ID="str_AttachmentmissingWeapon">
+			<English>You seem to be missing a primary weapon!</English>
+		</Key>
+		<Key ID="str_AttachmentWeaponConfig">
+			<English>Your primary weapon can not be used with this attachment!</English>
+		</Key>
 		<Key ID="str_fixToolFail">
 			<English>Maybe you can fix it with tape and a handle.</English>
 		</Key>
