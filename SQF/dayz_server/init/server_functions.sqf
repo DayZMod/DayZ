@@ -1,5 +1,5 @@
 #include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
-#include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
+
 waituntil {!isnil "bis_fnc_init"};
 
 BIS_MPF_remoteExecutionServer = {
