@@ -17,7 +17,7 @@ item12[] = {"Response",4,218,-175.000000,400.000000,-75.000000,450.000000,0.0000
 item13[] = {"Parse_Login",2,250,-75.000000,550.000000,25.000000,600.000000,0.000000,"Parse Login"};
 item14[] = {"Hive_Bad",4,218,125.000000,550.000000,225.000000,600.000000,10.000000,"Hive" \n "Bad"};
 item15[] = {"ERROR__Wrong_HIVE",2,250,325.000000,550.000000,425.000000,600.000000,0.000000,"ERROR:" \n "Wrong HIVE" \n "Version"};
-item16[] = {"Character_Setup",4,218,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
+item16[] = {"Character_Setup",4,4314,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
 item17[] = {"Phase_One",2,250,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
 item18[] = {"Response",4,218,-175.000000,700.000000,-75.000000,750.000000,0.000000,"Response"};
 item19[] = {"Phase_Two",2,250,-75.000000,750.000000,25.000000,800.000000,0.000000,"Phase Two"};
@@ -33,7 +33,7 @@ item28[] = {"Display_Ready",4,218,-175.000000,1200.000000,-75.000000,1250.000000
 item29[] = {"Preload_Display",2,250,-75.000000,1250.000000,25.000000,1300.000000,0.000000,"Preload" \n "Display"};
 item30[] = {"Preload_Done",4,218,-175.000000,1300.000000,-75.000000,1350.000000,0.000000,"Preload" \n "Done"};
 item31[] = {"Initialize",2,250,-75.000000,1350.000000,25.000000,1400.000000,0.000000,"Initialize"};
-item32[] = {"Finish",1,4346,-75.000000,1525.000000,25.000000,1575.000000,0.000000,"Finish"};
+item32[] = {"Finish",1,250,-75.000000,1525.000000,25.000000,1575.000000,0.000000,"Finish"};
 item33[] = {"no_Time_Date",4,218,125.000000,950.000000,225.000000,1000.000000,0.000000,"no Time/Date"};
 item34[] = {"sleep",4,218,525.000000,150.000000,625.000000,200.000000,0.000000,"sleep"};
 item35[] = {"sleep",4,218,525.000000,550.000000,625.000000,600.000000,0.000000,"sleep"};
@@ -232,8 +232,8 @@ link121[] = {102,96};
 link122[] = {103,104};
 link123[] = {104,11};
 link124[] = {105,96};
-globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-741.444641,234.875809,1658.963867,723.258301,625,599,1};
-window[] = {2,-1,-1,-1,-1,626,100,1120,100,3,643};
+globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-836.271484,-57.415649,992.292297,244.640610,624,599,1};
+window[] = {2,-1,-1,-1,-1,651,125,1145,125,3,642};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -256,6 +256,10 @@ class FSM
        "_debug = 0;" \n
        "_schedulerStarted=false;" \n
        "_spawnSelection = 9;" \n
+       "" \n
+       "_timeNemGender = 0;" \n
+       "_timeNemRegion = 0;" \n
+       "" \n
        "" \n
        "if (_debug == 1) then {" \n
        "diag_log (""DAYZ: CLIENT IS RUNNING DAYZ_CODE "" + str(dayz_versionNo));" \n
@@ -516,8 +520,10 @@ class FSM
           priority = 0.000000;
           to="Phase_One";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_isNew"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_timeNemRegion = nil;" \n
+           "_timeNemGender = nil;" \n
+           ""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -1348,8 +1354,13 @@ class FSM
     {
       name = "Gender_Selection";
       init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Gender_Selection'];};" \n
-       "endLoadingScreen;createDialog 'RscDisplayGenderSelect';dayz_loadScreenMsg = localize 'STR_UI_GENDER_TITLE';" \n
-       "_timeNem=diag_tickTime;_model = 'Survivor2_DZ';" \n
+       "endLoadingScreen;" \n
+       "" \n
+       "_gender = createDialog 'RscDisplayGenderSelect';" \n
+       "" \n
+       "dayz_loadScreenMsg = localize 'STR_UI_GENDER_TITLE';" \n
+       "_timeNem=diag_tickTime;" \n
+       "_model = 'Survivor2_DZ';" \n
        "dayz_preloadFinished=nil;//do not remove this"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
@@ -1360,7 +1371,7 @@ class FSM
           priority = 0.000000;
           to="Gender_Selection";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"false/*isNil {uiNameSpace getVariable 'RscDisplayGenderSelect'}*/"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_gender"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"closeDialog 0;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -1370,7 +1381,7 @@ class FSM
           priority = 0.000000;
           to="Waiting_for_Gender";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true/*!isNil {uiNameSpace getVariable 'RscDisplayGenderSelect'}*/"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_gender"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -1381,7 +1392,9 @@ class FSM
     class Character_Type_6
     {
       name = "Character_Type_6";
-      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Character_Type_6'];};"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Character_Type_6'];};" \n
+       "" \n
+       "_model = dayz_selectGender;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -1413,7 +1426,12 @@ class FSM
     {
       name = "Region_Selection";
       init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Region_Selection'];};" \n
-       "endLoadingScreen;createDialog ""RscDisplaySpawnSelecter"";dayz_loadScreenMsg = localize 'str_login_spawnLocation';" \n
+       "endLoadingScreen;" \n
+       "" \n
+       "_timeNem=diag_tickTime;" \n
+       "_region = createDialog ""RscDisplaySpawnSelecter"";" \n
+       "" \n
+       "dayz_loadScreenMsg = localize 'str_login_spawnLocation';" \n
        "_timeNem=diag_tickTime;_spawnSelection = 9;" \n
        ""/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -1425,7 +1443,7 @@ class FSM
           priority = 0.000000;
           to="Waiting_for__Region";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true/*!isNil {uiNameSpace getVariable 'dayz_DisplaySpawnSelecter'}*/"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_region"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -1435,7 +1453,7 @@ class FSM
           priority = 0.000000;
           to="Region_Selection";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"false/*isNil {uiNameSpace getVariable 'dayz_DisplaySpawnSelecter'}*/"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_region"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"closeDialog 0;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -1447,7 +1465,8 @@ class FSM
     {
       name = "Region_Process_6";
       init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Region_Process_6, region selected:',_spawnSelection];};" \n
-       "_isNew = false;"/*%FSM</STATEINIT""">*/;
+       "_isNew = false;" \n
+       "_spawnSelection = dayz_selectRegion;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -1457,8 +1476,10 @@ class FSM
           priority = 0.000000;
           to="Phase_One";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_isNew"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_timeNemRegion = nil;" \n
+           "_timeNemGender = nil;" \n
+           ""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -1469,7 +1490,8 @@ class FSM
     {
       name = "Spawn_Process_65";
       init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Spawn_Process_65'];};" \n
-       "_isNew = false;"/*%FSM</STATEINIT""">*/;
+       "_isNew = false;" \n
+       "dayz_selectRegion = 9;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -1479,8 +1501,10 @@ class FSM
           priority = 0.000000;
           to="Phase_One";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_isNew"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_timeNemRegion = nil;" \n
+           "_timeNemGender = nil;" \n
+           ""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -1539,7 +1563,8 @@ class FSM
     {
       name = "Waiting_for_Gender";
       init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Waiting_for_Gender'];};" \n
-       ""/*%FSM</STATEINIT""">*/;
+       "" \n
+       "_timeNemGender = diag_tickTime;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -1549,7 +1574,7 @@ class FSM
           priority = 0.000000;
           to="Gender_Selection";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"dayz_DisplayGenderSelect and !dialog"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -1559,8 +1584,8 @@ class FSM
           priority = 0.000000;
           to="Character_Type_6";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((diag_tickTime - _timeNemGender) > 60)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"dayz_selectGender = ""Survivor2_DZ"";"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
         /*%FSM<LINK "Gender__Selected">*/
@@ -1569,8 +1594,12 @@ class FSM
           priority = 0.000000;
           to="Character_Type_6";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"!isNil {uiNameSpace getVariable 'dayz_selectGender'}"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"_model = uiNameSpace getVariable 'dayz_selectGender';closeDialog 0;startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!dayz_DisplayGenderSelect"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_model = uiNameSpace getVariable 'dayz_selectGender';" \n
+           "" \n
+           "closeDialog 0;" \n
+           "" \n
+           "//startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -1580,7 +1609,9 @@ class FSM
     class Waiting_for__Region
     {
       name = "Waiting_for__Region";
-      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Waiting_for__Region'];};_timeNem = diag_tickTime;" \n
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Waiting_for__Region'];};" \n
+       "" \n
+       "_timeNemRegion = diag_tickTime;" \n
        ""/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
@@ -1591,8 +1622,12 @@ class FSM
           priority = 0.000000;
           to="Region_Process_6";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"diag_tickTime - _timeNem > 15"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"closeDialog 0;startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((diag_tickTime - _timeNemRegion) > 60)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"dayz_selectRegion = 9;" \n
+           "" \n
+           "closeDialog 0;" \n
+           "" \n
+           "//startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
         /*%FSM<LINK "Region__Closed_2">*/
@@ -1601,7 +1636,7 @@ class FSM
           priority = 0.000000;
           to="Region_Selection";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"dayz_DisplaySpawnSelecter and !dialog"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -1611,8 +1646,10 @@ class FSM
           priority = 0.000000;
           to="Region_Process_6";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"!isNil {uiNameSpace getVariable 'dayz_selectRegion'}"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"_spawnSelection=uiNameSpace getVariable 'dayz_selectRegion';closeDialog 0;startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!dayz_DisplaySpawnSelecter"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_spawnSelection=uiNameSpace getVariable 'dayz_selectRegion';" \n
+           "closeDialog 0;" \n
+           "//startLoadingScreen ['','RscDisplayLoadCustom'];"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };

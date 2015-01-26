@@ -1,9 +1,9 @@
 class RscDisplayGenderSelect
 {
-	idd = -1;
-	movingEnable = 0;
-    enableSimulation = false;
-	onLoad = "with uiNameSpace do { RscDisplayGenderSelect = _this select 0; dayz_selectGender=nil; };diag_log 'RscDisplayGenderSelect loaded';";
+	idd = 6902;
+	enableDisplay = 1;
+	
+	onLoad = "dayz_DisplayGenderSelect = true;";
 	
 	class controls
 	{
@@ -18,7 +18,7 @@ class RscDisplayGenderSelect
 			h = 0.542373 * safezoneH;
 			color[] = { 0.5, 0.5, 0.5, 1 };
 			colorActive[] = { 1, 1, 1, 1 };
-			action = "with uiNameSpace do { RscDisplayGenderSelect = nil; dayz_selectGender='Survivor2_DZ'; };";
+			action = "closeDialog 0;dayz_DisplayGenderSelect = false;dayz_selectGender = 'Survivor2_DZ';";
 		};
 		class GenderPic_Woman : RscActiveText
 		{
@@ -31,7 +31,7 @@ class RscDisplayGenderSelect
 			h = 0.542373 * safezoneH;
 			color[] = { 0.5, 0.5, 0.5, 1 };
 			colorActive[] = { 1, 1, 1, 1 };
-			action = "with uiNameSpace do { RscDisplayGenderSelect = nil; dayz_selectGender='SurvivorW2_DZ'; };";
+			action = "closeDialog 0;dayz_DisplayGenderSelect = false;dayz_selectGender = 'SurvivorW2_DZ';";
 		};
 		class Gender_Title: RscStructuredText
 		{
