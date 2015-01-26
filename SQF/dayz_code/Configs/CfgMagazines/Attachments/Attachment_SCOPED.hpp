@@ -12,7 +12,7 @@ class Attachment_SCOPED : CA_Magazine {
 	class ItemActions {
 		class Use {
 			text = "Attach";
-			type = "SCOPED"
+			type = "SCOPED";
 			script = "spawn player_attachAttchment;";
 		};
 	};

@@ -12,7 +12,7 @@ class Attachment_BELT : CA_Magazine {
 	class ItemActions {
 		class Use {
 			text = "Attach";
-			type = "BELT"
+			type = "BELT";
 			script = "spawn player_attachAttchment;";
 		};
 	};

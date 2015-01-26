@@ -12,7 +12,7 @@ class Attachment_FL : CA_Magazine {
 	class ItemActions {
 		class Use {
 			text = "Attach";
-			type = "FL"
+			type = "FL";
 			script = "spawn player_attachAttchment;";
 		};
 	};

@@ -12,7 +12,7 @@ class Attachment_CCO : CA_Magazine {
 	class ItemActions {
 		class Use {
 			text = "Attach";
-			type = "CCO"
+			type = "CCO";
 			script = "spawn player_attachAttchment;";
 		};
 	};
