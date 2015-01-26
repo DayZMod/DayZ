@@ -63,10 +63,10 @@ BEGIN
                 WHERE Classname = 'Sandbag1_DZ'
                         AND DATE(last_updated) < CURDATE() - INTERVAL 20 DAY;
  
-#remove Bear Traps older than five days
+#remove Traps older than five days
         DELETE
                 FROM object_data
-                WHERE Classname = 'BearTrap_DZ'
+                WHERE (Classname = 'BearTrap_DZ' or Classname = 'TrapBearTrapFlare' or Classname = 'TrapBearTrapSmoke' or Classname = 'Trap_Cans' or Classname = 'TrapTripwireFlare' or Classname = 'TrapTripwireGrenade' or Classname = 'TrapTripwireSmoke')
                         AND DATE(last_updated) < CURDATE() - INTERVAL 5 DAY; 
                         
 #remove incomplete fence's after 1 Day								
