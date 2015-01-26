@@ -7,9 +7,9 @@ class CfgActions {
 	class FirstAid : None { show = 0; };
 	class TakeBag : None { show = 0; };
 	class Take : None { show = 0; };
-	class LoadMagazine : None { show = 0; };
-	class LoadOtherMagazine : LoadMagazine { show = 0; };
-	class LoadEmptyMagazine : LoadMagazine { show = 0; };
+	//class LoadMagazine : None { show = 0; };
+	//class LoadOtherMagazine : LoadMagazine { show = 0; };
+	//class LoadEmptyMagazine : LoadMagazine { show = 0; };
 	class FireInflame : None { show = 0; };
 	class FirePutDown : None { show = 0; };
 	class Repair : None { show = 0; };
