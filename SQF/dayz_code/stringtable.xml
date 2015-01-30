@@ -271,236 +271,283 @@
 			<English>Carry body</English>
 			<Russian>Нести тело</Russian>
 			<French>Trainer le corps</French>
+			<Czech>Nést tělo</Czech>
 		</Key>
 		<Key ID="str_actions_medical_bagEmpty">
 			<English>Missing empty Blood Bag.</English>
 			<Russian>Отсутствует пустой пакет для крови.</Russian>
 			<French>Poche de sang manquante.</French>
+			<Czech>Chybí prázdný krevní vak.</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagANEG">
 			<English>Blood Bag: A-</English>
 			<Russian>Кровь: A(II)Rh-</Russian>
 			<French>Poche de sang: A-</French>
+			<Czech>Krevní vak: A-</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagANEG">
 			<English>A blood bag ready for transfusion kits, type A- that is compatible A-, A+, AB-, AB+ recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови A(II)Rh- подходит пациентам с группами A(II)Rh-, A(II)Rh+, AB(IV)Rh- и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type A- pour transfuser des receveurs de type A-, A+, AB- ou AB+</French>
+			<Czech>Krev připravená pro použití spolu s transfuzní soupravou; skupina A- vhodná pro příjemce se skupinou A-, A+, AB- a AB+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagAPOS">
 			<English>Blood Bag: A+</English>
 			<Russian>Кровь: A(II)Rh+</Russian>
 			<French>Poche de sang: A+</French>
+			<Czech>Krevní vak: A+</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagAPOS">
 			<English>A blood bag ready for transfusion kits, type A+ that is compatible A+ and AB+ recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови A(II)Rh+ подходит пациентам с группами A(II)Rh+ и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type A+ pour transfuser des receveurs de type A+ ou AB+</French>
+			<Czech>Krev připravená pro použití spolu s transfuzní soupravou; skupina A+ vhodná pro příjemce se skupinou A+ a AB+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagBNEG">
 			<English>Blood Bag: B-</English>
 			<Russian>Кровь: B(III)Rh-</Russian>
 			<French>Poche de sang: B-</French>
+			<Czech>Krevní vak: B-</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagBNEG">
 			<English>A blood bag ready for transfusion kits, type B- that is compatible B-, B+, AB+, AB- recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови B(III)Rh- подходит пациентам с группами B(III)Rh-, B(III)Rh+, AB(IV)Rh- и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type B- pour transfuser des receveurs de type B-, B+, AB+ ou AB-</French>
+			<Czech>Krev připravená pro použití spolu s transfuzní soupravou; skupina B- vhodná pro příjemce se skupinou B-, B+, AB- a AB+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagBPOS">
 			<English>Blood Bag: B+</English>
 			<Russian>Кровь: B(III)Rh+</Russian>
 			<French>Poche de sang: B+</French>
+			<Czech>Krevní vak: B+</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagBPOS">
 			<English>A blood bag ready for transfusion kits, type B+ that is compatible B+ and AB+ recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови B(III)Rh+ подходит пациентам с группами B(III)Rh+ и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type B+ pour transfuser des receveurs de type B+ ou AB+</French>
+			<Czech>Krev připravená pro použití spolu s transfuzní soupravou; skupina B+ vhodná pro příjemce se skupinou B+ a AB+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagABNEG">
 			<English>Blood Bag: AB-</English>
 			<Russian>Кровь: AB(IV)Rh-</Russian>
 			<French>Poche de sang: AB-</French>
+			<Czech>Krevní vak: AB-</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagABNEG">
 			<English>A blood bag ready for transfusion kits, type AB- that is compatible AB+ and AB- recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови AB(IV)Rh- подходит пациентам с группами AB(IV)Rh- и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type AB- pour transfuser des receveurs de type AB- ou AB+</French>
+			<Czech>Krev připravená pro použití spolu s transfuzní soupravou; skupina AB- vhodná pro příjemce se skupinou AB- a AB+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagABPOS">
 			<English>Blood Bag: AB+</English>
 			<Russian>Кровь: AB(IV)Rh+</Russian>
 			<French>Poche de sang: AB+</French>
+			<Czech>Krevní vak: AB+</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagABPOS">
 			<English>A blood bag ready for transfusion kits, type AB+ that is compatible AB+ recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови AB(IV)Rh+ подходит пациентам с группой AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type AB+ pour transfuser des receveurs de type AB+ exclusivement</French>
+			<Czech>Krev připravená pro použití spolu s transfuzní soupravou; skupina AB+ vhodná pouze pro příjemce se skupinou AB+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagONEG">
 			<English>Blood Bag: O-</English>
 			<Russian>Кровь: 0(I)Rh-</Russian>
 			<French>Poche de sang: O-</French>
+			<Czech>Krevní vak: O-</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagONEG">
 			<English>A blood bag ready for transfusion kits, type O- that is compatible with all recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови 0(I)Rh- подходит всем пациентам.</Russian>
 			<French>Une poche de sang de type O- compatible pour tous</French>
+			<Czech>Krev připravená pro použití spolu s transfuzní soupravou; skupina O- vhodná pro všechny příjemce</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagOPOS">
 			<English>Blood Bag: O+</English>
 			<Russian>Кровь: 0(I)Rh+</Russian>
 			<French>Poche de sang: O+</French>
+			<Czech>Krevní vak: O+</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagOPOS">
 			<English>A blood bag ready for transfusion kits, type O+ that is compatible O+, AB+, A+, B+ recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови 0(I)Rh- подходит пациентам с группами 0(I)Rh+, A(II)Rh+, B(III)Rh+ и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type O+ pour transfuser des receveurs de type  O+, AB+, A+ ou B+</French>
+			<Czech>Krev připravená pro použití spolu s transfuzní soupravou; skupina O+ vhodná pro příjemce se skupinou O+, A+, B+ a AB+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_wholeBloodBagANEG">
 			<English>Whole Blood: A-</English>
 			<Russian>Цельная кровь: A(II)Rh-</Russian>
 			<French>Poche en Autotransfusion: A-</French>
+			<Czech>Naplněný krevní vak: A-</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagANEG">
 			<English>Personal blood Bag, type A- that is compatible A- recipients</English>
 			<Russian>Пакет цельной крови для самопереливания. Подходит только  A(II)Rh-.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type A-</French>
+			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina A-</Czech>
 		</Key>
 		<Key ID="STR_BLD_use">
 			<English>Use Blood Bag</English>
 			<Russian>Перелить себе</Russian>
 			<French>Utiliser la poche de sang</French>
+			<Czech>Použít krevní vak</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_wholeBloodBagAPOS">
 			<English>Whole Blood: A+</English>
 			<Russian>Цельная кровь: A(II)Rh+</Russian>
 			<French>Poche en Autotransfusion: A+</French>
+			<Czech>Naplněný krevní vak: A+</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagAPOS">
 			<English>Personal blood Bag, type A+ that is compatible A+ recipients</English>
 			<Russian>Пакет цельной крови для самопереливания. Подходит только  A(II)Rh+.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type A+</French>
+			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina A+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_wholeBloodBagBNEG">
 			<English>Whole Blood: B-</English>
 			<Russian>Цельная кровь: B(III)Rh-</Russian>
 			<French>Poche en Autotransfusion: B-</French>
+			<Czech>Naplněný krevní vak: B-</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagBNEG">
 			<English>Personal blood Bag, type B- that is compatible B- recipients</English>
 			<Russian>Пакет цельной крови для самопереливания. Подходит только  B(III)Rh-.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type B-</French>
+			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina B-</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_wholeBloodBagBPOS">
 			<English>Whole Blood: B+</English>
 			<Russian>Цельная кровь: B(III)Rh+</Russian>
 			<French>Poche en Autotransfusion: B+</French>
+			<Czech>Naplněný krevní vak: B+</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagBPOS">
 			<English>Personal blood Bag, type B+ that is compatible B+ recipients</English>
 			<Russian>Пакет цельной крови для самопереливания. Подходит только  B(III)Rh+.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type B+</French>
+			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina B+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_wholeBloodBagABNEG">
 			<English>Whole Blood: AB-</English>
 			<Russian>Цельная кровь: AB(IV)Rh-</Russian>
 			<French>Poche en Autotransfusion: AB-</French>
+			<Czech>Naplněný krevní vak: AB-</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagABNEG">
 			<English>Personal blood Bag, type AB- that is compatible AB- recipients</English>
 			<Russian>Пакет цельной крови для самопереливания. Подходит только  AB(IV)Rh-.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type AB-</French>
+			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina AB-</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_wholeBloodBagABPOS">
 			<English>Whole Blood: AB+</English>
 			<Russian>Цельная кровь: AB(IV)Rh+</Russian>
 			<French>Poche en Autotransfusion: AB+</French>
+			<Czech>Naplněný krevní vak: AB+</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagABPOS">
 			<English>Personal blood Bag, type AB+ that is compatible AB+ recipients</English>
 			<Russian>Пакет цельной крови для самопереливания. Подходит только  AB(IV)Rh+.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type AB+</French>
+			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina AB+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_wholeBloodBagONEG">
 			<English>Whole Blood: O-</English>
 			<Russian>Цельная кровь: 0(I)Rh-</Russian>
 			<French>Poche en Autotransfusion: O-</French>
+			<Czech>Naplněný krevní vak: O-</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagONEG">
 			<English>Personal blood Bag, type O- that is compatible with O- recipients</English>
 			<Russian>Пакет цельной крови для самопереливания. Подходит только  0(I)Rh-.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type O-</French>
+			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina O-</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_wholeBloodBagOPOS">
 			<English>Whole Blood Bag: O+</English>
 			<Russian>Цельная кровь: 0(I)Rh+</Russian>
 			<French>Poche en Autotransfusion: O+</French>
+			<Czech>Naplněný krevní vak: O+</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagOPOS">
 			<English>Personal blood Bag, type O+ that is compatible O+ recipients</English>
 			<Russian>Пакет цельной крови для самопереливания. Подходит только  0(I)Rh+.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type O+</French>
+			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina O+</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_bloodTester">
 			<English>Blood Testing Kit</English>
 			<Russian>Тестер крови</Russian>
 			<French>Test de groupe sanguin</French>
+			<Czech>Krevní test</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodTester">
 			<English>Used to determine RH and blood type</English>
 			<Russian>Используется для определения резус-фактора и группы крови.</Russian>
 			<French>Test pour connaitre son groupe sanguin et les facteurs rhésus</French>
+			<Czech>Používá se k určení krevní skupiny a RH faktoru</Czech>
 		</Key>
 		<Key ID="STR_BLD_use_bloodTester">
 			<English>Test Blood</English>
 			<Russian>Определить</Russian>
 			<French>Effectuer le test</French>
+			<Czech>Určit krevní skupinu</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_transfusionKit">
 			<English>Transfusion Kit</English>
 			<Russian>Набор для переливания</Russian>
 			<French>Kit de transfusion</French>
+			<Czech>Transfúzní souprava</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_transfusionKit">
 			<English>A blood transfusion kit that is required to perform blood transfusions and fill blood bags</English>
 			<Russian>Медицинский набор, необходимый для переливания крови .</Russian>
 			<French>Un kit de transfusion sanguine nécessaire pour transfuser un survivant ou remplir une poche de sang</French>
+			<Czech>Jednorázová transfúzní souprava, jež je nutná při provádění krevních transfúzí a plnění krevních vaků.</Czech>
 		</Key>
 		<Key ID="STR_BLD_use_transfusionKit">
 			<English>Fill Blood Bag</English>
 			<Russian>Наполнить пакет</Russian>
 			<French>Remplir la poche de sang</French>
+			<Czech>Naplnit krevní vak</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_emptyBloodBag">
 			<English>Empty Blood Bag</English>
 			<Russian>Пакет для крови</Russian>
 			<French>Poche de sang vide</French>
+			<Czech>Prázdný krevní vak</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_emptyBloodBag">
 			<English>An empty bag that is yet to be filled with blood</English>
 			<Russian>Еще ненаполненный пакет для крови</Russian>
 			<French>Une poche de sang vide à remplir avec un kit de transfusion</French>
+			<Czech>Prázdný krevní vak, jenž je možné naplnit vlastní krví s pomocí transfúzní soupravy.</Czech>
 		</Key>		
 		<Key ID="str_actions_medical_bagMissingKit">
-			<English>Missing Transfusionkit.</English>
+			<English>Missing Transfusion kit.</English>
 			<Russian>Отсутствует набор для переливания.</Russian>
 			<French>Kit de transfusion manquant</French>
+			<Czech>Chybí transfúzní souprava.</Czech>
 		</Key>
 		<Key ID="str_actions_medical_bagMissingBlood">
 			<English>The bag cannot be filled, there is not enough blood in the donor.</English>
 			<Russian>Не удалось наполнить пакет. Недостаточно крови у донора.</Russian>
 			<French>Le donneur n&apos;a pas assez de sang pour remplir la poche.</French>
+			<Czech>Krevní vak nelze naplnit, dárce nemá dost krve.</Czech>
 		</Key>
 		<Key ID="str_actions_medical_bagDone">
 			<English>The bag has been filled successfully.</English>
 			<Russian>Пакет успешно наполнен кровью.</Russian>
 			<French>La poche est remplie.</French>
+			<Czech>Krevní vak úspěšně naplněn.</Czech>
 		</Key>
 		<Key ID="str_actions_medical_bagInterrupted">
 			<English>The process was interrupted! The blood bag has been lost.</English>
 			<Russian>Процесс прерван! Пакет испорчен.</Russian>
 			<French>L&apos;action interrompue! La poche est perdue.</French>
+			<Czech>Proces byl přerušen! Krevní vak byl ztracen.</Czech>
 		</Key>
 
 		<Key ID="str_actions_repair_01">
@@ -534,7 +581,7 @@
 			<Spanish>Rescatar Vehículo</Spanish>
 			<Russian>Разобрать транспорт</Russian>
 			<French>Récupérer le véhicule</French>
-			<Czech>Zachránit vozidlo</Czech>
+			<Czech>Rozebrat vozidlo</Czech>
 			<German>Fahrzeug ausschlachten</German>
 		</Key>
 		<Key ID="str_actions_helipilotseat">
@@ -576,7 +623,7 @@
 			<Russian>Заправить %1 (%2л)</Russian>
 			<Spanish>Reabastecer %1 con %2L</Spanish>
 			<French>Remettre du carburant dans %1 avec %2L</French>
-			<Czech>Doplnit palivo %1 s %2L</Czech>
+			<Czech>Doplnit palivo do %1 s pomocí %2L</Czech>
 		</Key>
 		<Key ID="str_actions_medical_11">
 			<English>Issue %1</English>
@@ -584,7 +631,7 @@
 			<Russian>Установить %1</Russian>
 			<Spanish>Problema %1</Spanish>
 			<French>Problème %1</French>
-			<Czech>Problém %1</Czech>
+			<Czech>Podat %1</Czech>
 		</Key>
 		<Key ID="str_actions_medical_12">
 			<English>Packup %1</English>
@@ -632,7 +679,7 @@
 			<Russian>Transfusion failed missing Transfusion Kit!</Russian>
 			<Spanish>Transfusion failed missing Transfusion Kit!</Spanish>
 			<French>Transfusion failed missing Transfusion Kit!</French>
-			<Czech>Transfusion failed missing Transfusion Kit!</Czech>
+			<Czech>Transfúze selhala, chybí transfúzní souprava!</Czech>
 		</Key>
 		<Key ID="str_actions_medical_transfusion_start">
 			<English>Transfusion in progress, remain still...</English>
@@ -648,7 +695,7 @@
 			<Russian>Переливание прошло успешно.</Russian>
 			<Spanish>Transfusión exitosa.</Spanish>
 			<French>Transfusion terminée.</French>
-			<Czech>Transfúze krve úspěšná</Czech>
+			<Czech>Transfúze krve úspěšná.</Czech>
 		</Key>
 		<Key ID="str_actions_medical_transfusion_interrupted">
 			<English>The transfusion was interrupted! The blood bag has been lost.</English>
@@ -656,7 +703,7 @@
 			<Russian>Переливание было прервано! Пакет крови потерян.</Russian>
 			<Spanish>¡La transfusión fue interrumpida! La bolsa de sangre se perdió.</Spanish>
 			<French>La transfusion s&apos;est interrompue ! La poche de sang est perdue.</French>
-			<Czech>Transfúze byla přerušena a krevní sáček byl ztracen!</Czech>
+			<Czech>Transfúze byla přerušena a krevní vak byl ztracen!</Czech>
 		</Key>
 		<Key ID="str_actions_medical_dragbody_veh">
 			<English>You cannot enter a vehicle while dragging a body!</English>
@@ -664,7 +711,7 @@
 			<Russian>Нельзя сесть в транспорт, таская тело!</Russian>
 			<Spanish>¡No puedes entrar a un vehículo mientras arrastras un cuerpo!</Spanish>
 			<French>Vous ne pouvez pas entrer dans un véhicule lorsque vous traînez un corps !</French>
-			<Czech>Do vozidla nelze nastoupit, pokud táhnete mrtvolu.</Czech>
+			<Czech>Do vozidla nelze nastoupit, pokud táhnete mrtvolu!</Czech>
 		</Key>
 		<Key ID="str_actions_medical_dropbody">
 			<English>Drop body</English>
@@ -686,7 +733,7 @@
 			<English>Hack</English>
 			<Russian>Удар</Russian>
 			<German>Hacken</German>
-			<Czech></Czech>
+			<Czech>Rozsekat</Czech>
 			<French>Hacker</French>
 			<Spanish></Spanish>
 		</Key>
@@ -704,7 +751,7 @@
 			<Russian>Уничтожить %1</Russian>
 			<Spanish>Destroy %1</Spanish>
 			<French>Détruire %1</French>
-			<Czech>Destroy %1o</Czech>
+			<Czech>Zničit %1o</Czech>
 		</Key>
 		<Key ID="str_actions_save">
 			<English>Save %1</English>
@@ -734,7 +781,7 @@
 			<English>Survived %1 Days</English>
 			<Russian>Прожито %1 дней</Russian>
 			<Spanish>%1 Días Sobrevividos</Spanish>
-			<Czech>Přežito %1 dnů</Czech>
+			<Czech>Přežil %1 dnů</Czech>
 			<French>Survécu %1 jours</French>
 			<German>%1 Tag(e) ueberlebt</German>
 		</Key>
@@ -750,7 +797,7 @@
 			<English>Headshots</English>
 			<Russian>Выстрелов в голову</Russian>
 			<Spanish>Headshots</Spanish>
-			<Czech>Střel do hlavy</Czech>
+			<Czech>Střely do hlavy</Czech>
 			<French>Tirs à la tête</French>
 			<German>Kopfschuesse</German>
 		</Key>
@@ -758,7 +805,7 @@
 			<English>Murders</English>
 			<Russian>Убийств</Russian>
 			<Spanish>Asesinatos</Spanish>
-			<Czech>Vražď</Czech>
+			<Czech>Vraždy</Czech>
 			<French>Meurtres</French>
 			<German>Morde</German>
 		</Key>
@@ -766,7 +813,7 @@
 			<English>Bandits Killed</English>
 			<Russian>Убито бандитов</Russian>
 			<Spanish>Bandidos Asesinados</Spanish>
-			<Czech>Zabito banditů</Czech>
+			<Czech>Zabití bandité</Czech>
 			<French>Bandits tués</French>
 			<German>Banditen getoetet</German>
 		</Key>
@@ -774,7 +821,7 @@
 			<English>Humanity</English>
 			<Russian>Гуманность</Russian>
 			<Spanish>Humanidad</Spanish>
-			<Czech>Humanita</Czech>
+			<Czech>Lidskost</Czech>
 			<French>Humanité</French>
 			<German>Menschlichkeit</German>
 		</Key>
@@ -782,7 +829,7 @@
 			<English>Destroy Tent</English>
 			<Russian>Уничтожить палатку</Russian>
 			<Spanish>Destruye Tent</Spanish>
-			<Czech>Destroy stan</Czech>
+			<Czech>Zničit stan</Czech>
 			<French>Détruisez Tente</French>
 			<German>Zelt zerstoeren</German>
 		</Key>	
