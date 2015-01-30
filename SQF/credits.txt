@@ -65,6 +65,7 @@ feature.
  * markus.ua (Russian Translations)
  * Illetier (German Translations)
  * ILoveBeans (https://github.com/ILoveBeans)
+ * Flamberg (https://github.com/Flamberg)
  
  
 ------------------------
