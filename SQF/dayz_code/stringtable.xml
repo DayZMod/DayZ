@@ -1523,88 +1523,107 @@
 			<English>Attach Carbomb</English>
 			<Russian>Установить бомбу</Russian>
 			<French>Attacher la bombe</French>
+			<Czech>Připevnit bombu</Czech>
 		</Key>
 		<Key ID="str_dragnospace">
 			<English>No space left in vehicle</English>
 			<Russian>В транспорте не осталось места</Russian>
 			<French>Il n&apos;y a plus de place dans le véhicule</French>
+			<Czech>Ve vozidle není místo.</Czech>
 		</Key>
 		<Key ID="STR_name_ItemHatchetBroken">
 			<English>Broken Hatchet</English>
 			<Russian>Сломанный топор</Russian>
 			<French>Hache cassée</French>
+			<Czech>Zlomená sekera</Czech>
 		</Key>
 		<Key ID="STR_desc_ItemHatchetBroken">
 			<English>Too much force has broken this Hatchet. Hopefully you find something to repair it.</English>
 			<Russian>Вы перестарались и сломали топор. Но скорее всего, вы найдете как его починить.</Russian>
 			<French>Cette hache s'est cassée à force. En espérant que vous puissiez la réparer.</French>
+			<Czech>Nadměrnou zátěží se topůrko této sekery zlomilo. Snad najdete něco, čím by se dala spravit.</Czech>
 		</Key>
 		<Key ID="STR_name_ItemPickaxeBroken">
 			<English>Broken Pickaxe</English>
+			<Czech>Zlomený krumpáč</Czech>
 		</Key>
 		<Key ID="STR_desc_ItemPickaxeBroken">
 			<English>Too much force has broken this pickaxe. Hopefully you find something to repair it.</English>
+			<Czech>Nadměrnou zátěží se tento krumpáč zlomil. Snad najdete něco, čím by se dal spravit.</Czech>
 		</Key>
 		<Key ID="STR_name_ItemSledgeHammerBroken">
 			<English>Broken SledgeHammer</English>
+			<Czech>Zlomená palice</Czech>
 		</Key>
 		<Key ID="STR_desc_ItemSledgeHammerBroken">
 			<English>Too much force has broken this SledgeHammer. Hopefully you find something to repair it.</English>
+			<Czech>Nadměrnou zátěží se tato palice zlomila. Snad najdete něco, čím by se dala spravit.</Czech>
 		</Key>
 		<Key ID="STR_name_ItemTrashPaper">
 			<English>Sheet of Paper</English>
 			<Russian>Лист бумаги</Russian>
 			<French>Feuille de papier</French>
+			<Czech>List papíru</Czech>
 		</Key>
 		<Key ID="STR_desc_ItemTrashPaper">
 			<English>Sheet of Paper</English>
 			<Russian>Просто листок бумаги.</Russian>
 			<French>Feuille de papier</French>
+			<Czech>Prázdný list papíru. Mít tak tužku, abyste mohli napsat závěť. Nebo báseň?</Czech>
 		</Key>
 		<Key ID="STR_name_ItemTrashPaperMusic">
 			<English>Sheet Music</English>
 			<Russian>Лист с нотами</Russian>
 			<French>Une partition</French>
+			<Czech>Notový papír</Czech>
 		</Key>
 		<Key ID="STR_desc_ItemTrashPaperMusic">
-			<English>Sheet Music</English>
+			<English>Score of the song "Santa Claus is Coming to Town". Sing along, no more Christmas in the near future!</English>
 			<Russian>Листок бумаги с ровными рядками нот.</Russian>
 			<French>Une partition</French>
+			<Czech>Notový záznam písně "Santa Claus is Coming to Town". Zazpívejte si, Vánoce nějakou dobu nebudou!</Czech>
 		</Key>
 		<Key ID="str_upgradeMissingTool">
 			<English>Missing %1 to upgrade building.</English>
 			<Russian>Для улучшения нужно иметь %1</Russian>
 			<French>Outil manquant pour l&apos;amélioration: %1</French>
+			<Czech>Pro vylepšení budovy schází %1.</Czech>
 		</Key>
 		<Key ID="str_upgradeMissingPart">
 			<English>Missing %1 to upgrade building.</English>
 			<Russian>Для улучшения не хватает %1</Russian>
 			<French>Pièces manquantes pour l&apos;amélioration: %1</French>
+			<Czech>Pro vylepšení budovy schází %1.</Czech>
 		</Key>
 		<Key ID="str_player_tranquilized">
 			<English>YOU HAVE BEEN TRANQUILISED</English>
 			<Russian>Вас вырубили</Russian>
 			<French>Vous êtes sous tranquilisant</French>
+			<Czech>BYLI JSTE OMRÁČENI!</Czech>
 		</Key>
 		<Key ID="str_disassembleMissingTool">
 			<English>Missing %1 to dissassemble building.</English>
 			<Russian>Для разборки нужно иметь %1</Russian>
 			<French>Outil manquant pour le démontage: %1</French>
+			<Czech>Pro demontáž budovy schází %1.</Czech>
 		</Key>
 		<Key ID="str_disassembleMissingPart">
 			<English>Missing %1 to dissassemble building.</English>
 			<Russian>Для раборки не хватает %1</Russian>
 			<French>Pièces manquantes pour le démontage: %1</French>
+			<Czech>Pro demontáž budovy schází %1.</Czech>
 		</Key>
 		<Key ID="str_maintenanceMissingTool">
 			<English>Missing %1 to maintenance building.</English>
 			<Russian>Для обслуживания нужно иметь %1</Russian>
 			<French>Outil manquant pour l&apos;entretien: %1</French>
+			<Czech>Pro údržbu budovy schází %1.</Czech>
 		</Key>
 		<Key ID="str_maintenanceMissingPart">
 			<English>Missing %1 to maintenance building.</English>
 			<Russian>Для обслуживания не хватает %1</Russian>
 			<French>Pièces manquantes pour l&apos;entretien: %1</French>
+			<Czech>Pro údržbu budovy schází %1.</Czech>
 		</Key>
 	</Package>
 	<Package name="equipment_code">
@@ -1614,7 +1633,7 @@
 			<Russian>Чертеж</Russian>
 			<Spanish>Plano de Construcción</Spanish>
 			<French>Plan de fabrication</French>
-			<Czech>Vytvořit Návod</Czech>
+			<Czech>Vytvořit návod</Czech>
 		</Key>
 		<Key ID="STR_CRAFT_DESC_X">
 			<English>Blueprint used in crafting</English>
@@ -1622,7 +1641,7 @@
 			<Russian>Инструкции, используемый при создания предметов</Russian>
 			<Spanish>Los planos son utilizados para construir.</Spanish>
 			<French>Fournit le mode opératoire pour créer des objets.</French>
-			<Czech>Návod je používán pro craftování.</Czech>
+			<Czech>Návod je používán při výrobě.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_comfrey">
 			<English>Comfrey</English>
@@ -1636,7 +1655,7 @@
 			<English>Connector i</English>
 			<Spanish>Connector i</Spanish>
 			<Russian>I коннектор</Russian>
-			<Czech>Connector i</Czech>
+			<Czech>I-spojka</Czech>
 			<French>Connecteur i</French>
 			<German>I-Steckverbindung</German>
 		</Key>
@@ -1646,13 +1665,13 @@
 			<Russian>"I"-образный пластиковый коннектор, используемый в мастерской для соединения палаточных распорок.</Russian>
 			<Spanish>Plastic Connector used in crafting to join 2 tent poles end to end</Spanish>
 			<French>Connecteur en plastique pouvant être fabriqué, servant à joindre deux mâts de tente bout-à-bout</French>
-			<Czech>Plastic Connector used in crafting to join 2 tent poles end to end</Czech>
+			<Czech>Plastová spojka, jež se používá ke spojení dvou stanových tyčí.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_con_l">
 			<English>Connector L</English>
 			<Spanish>Connector L</Spanish>
 			<Russian>L коннектор</Russian>
-			<Czech>Connector L</Czech>
+			<Czech>L-spojka</Czech>
 			<French>Connecteur L</French>
 			<German>L-Steckverbindung</German>
 		</Key>
@@ -1662,13 +1681,13 @@
 			<Russian>"L"-образный пластиковый коннектор, используемый в мастерской для соединения палаточных распорок под углом в 90 градусов.</Russian>
 			<Spanish>Plastic Connector used in crafting to join 2 tent poles end to end at a 90 degree angle</Spanish>
 			<French>Connecteur en plastique pouvant être fabriqué afin de joindre deux mâts de tente bout-à-bout (à un angle de 90°)</French>
-			<Czech>Plastic Connector used in crafting to join 2 tent poles end to end at a 90 degree angle</Czech>
+			<Czech>Plastová spojka, jež se používá ke spojení dvou stanových tyčí v úhlu 90°.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_con_t">
 			<English>Connector T</English>
 			<Spanish>Connector T</Spanish>
 			<Russian>T коннектор</Russian>
-			<Czech>Connector T</Czech>
+			<Czech>T-spojka</Czech>
 			<French>Connecteur T</French>
 			<German>T-Steckverbindung</German>
 		</Key>
@@ -1678,7 +1697,7 @@
 			<Russian>"T"-образный пластиковый коннектор, используемый в мастерской для соединения палаточных распорок буквой Т.</Russian>
 			<Spanish>Plastic Connector used in crafting to join 2 tent poles end to end atop a 3rd pole</Spanish>
 			<French>Connecteur en plastique pouvant être fabriqué afin de joindre deux mâts de tente bout-à-bout sur un troisième mât</French>
-			<Czech>Plastic Connector used in crafting to join 2 tent poles end to end atop a 3rd pole</Czech>
+			<Czech>Plastová spojka, jež se používá ke spojení dvou stanových tyčí nad třetí svislou tyčí.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_weapon_rails">
 			<English>Weapon Rails</English>
@@ -1708,7 +1727,7 @@
 			<English>Metal rod used in crafting.</English>
 			<Spanish>Varilla de metal que puede ser usada para crear objetos.</Spanish>
 			<Russian>Металлический прут, который может пригодиться в мастерской.</Russian>
-			<Czech>Kovová tyč se používá pro craftování.</Czech>
+			<Czech>Kovová tyč se používá při výrobě.</Czech>
 			<French>Perche métallique (Artisanat)</French>
 			<German>Ein Metallstab, kann beim Handwerken verwendet werden.</German>
 		</Key>
@@ -1718,13 +1737,13 @@
 			<Russian>6 распорок</Russian>
 			<Spanish>Varilla Metálica</Spanish>
 			<French>Perche métallique</French>
-			<Czech>Kovová tyč</Czech>
+			<Czech>Stanové tyče</Czech>
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_tent_poles">
 			<English>6 Metal Tent Poles used in crafting Tents and Camo Netting.</English>
 			<Spanish>Varilla de metal que puede ser usada para crear objetos.</Spanish>
 			<Russian>6 палаточных распорок, которые могут пригодиться в мастерской для создания палаток и масксетей.</Russian>
-			<Czech>Kovová tyč se používá pro craftování.</Czech>
+			<Czech>Šest stanových tyčí, jež lze využít při výrobě stanů a kamuflážních sítí.</Czech>
 			<French>Perche métallique (Artisanat)</French>
 			<German>Sechs Zeltstangen aus Metall, koennen beim Handwerken verwendet werden.</German>
 		</Key>
@@ -1740,7 +1759,7 @@
 			<English>Rubber tube used in crafting.</English>
 			<Spanish>Manguera de goma que puede ser usada para crear objetos.</Spanish>
 			<Russian>Резиновая трубка, которая может пригодиться в мастерской.</Russian>
-			<Czech>Gumová hadice se používá pro craftování.</Czech>
+			<Czech>Gumová hadice se používá při výrobě.</Czech>
 			<French>Tuyau flexible (Artisanat)</French>
 			<German>Ein kleiner Gummischlauch, kann beim Handwerken verwendet werden.</German>
 		</Key>
@@ -1756,7 +1775,7 @@
 			<English>Fuse used in crafting.</English>
 			<Spanish>Fusible que puede ser usado para crear objetos.</Spanish>
 			<Russian>Фитиль, который может пригодиться в мастерской.</Russian>
-			<Czech>Knot se používá pro craftování.</Czech>
+			<Czech>Knot se používá při výrobě.</Czech>
 			<French>Mèche (Artisanat)</French>
 			<German>Eine Lunte, kann beim Handwerken verwendet werden.</German>
 		</Key>
@@ -1766,13 +1785,13 @@
 			<Russian>Перья</Russian>
 			<Spanish>Plumas</Spanish>
 			<French>Plumes</French>
-			<Czech>Zvířecí peří</Czech>
+			<Czech>Peří</Czech>
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_feathers">
 			<English>Feathers used in crafting</English>
 			<Spanish>Plumas que pueden ser usadas para crear objetos.</Spanish>
 			<Russian>Перья, которые могут пригодиться в мастерской.</Russian>
-			<Czech>Peří se používá pro craftování.</Czech>
+			<Czech>Peří se používá při výrobě. Nebo na lechtání.</Czech>
 			<French>Plumes (Artisanat)</French>
 			<German>Vogelfedern, koennen beim Handwerken verwendet werden.</German>
 		</Key>
@@ -1788,7 +1807,7 @@
 			<English>Pipecap used in crafting</English>
 			<Spanish>Tapón que puede ser usado para crear objetos.</Spanish>
 			<Russian>Заглушка, которая может пригодиться в мастерской.</Russian>
-			<Czech>Zátka se používá pro craftování.</Czech>
+			<Czech>Zátka se používá při výrobě.</Czech>
 			<French>Plumes (Artisanat)</French>
 			<German>Eine Rohrkappe, kann beim Handwerken verwendet werden.</German>
 		</Key>
@@ -1804,25 +1823,25 @@
 			<English>Screws used to hold weapon rails in place.</English>
 			<Russian>Винты, удерживающие кронштейн на месте.</Russian>
 			<Spanish>Los tornillos son usados para sujetar la corredera dle arma en su lugar.</Spanish>
-			<Czech>Šrouby, které drží nástavec.</Czech>
+			<Czech>Šrouby, kterými lze upevnit nástavec na zbraně.</Czech>
 			<French>Vis utilisées pour fixer le rail viseur sur le canon.</French>
 			<German>Kleine Schrauben, um eine Waffenschiene zu montieren.</German>
 		</Key>
-		<Key ID="STR_ITEM_NAME_equip_scrapelectronics">
-			<English>Scrap Electronics</English>
+		<Key ID="STR_ITEM_NAME_equip_scrapLze rozbalit a obléknoutnics">
+			<English>Scrap Lze rozbalit a obléknoutnics</English>
 			<German>Elektronikschrott</German>
 			<Russian>Радиодетали</Russian>
 			<Spanish>Chatarra Electrónica</Spanish>
-			<French>Electronique</French>
+			<French>Lze rozbalit a obléknoutnique</French>
 			<Czech>Zbytek elektroniky</Czech>
 		</Key>
-		<Key ID="STR_ITEM_DESC_equip_scrapelectronics">
-			<English>A pile of scrap electronics</English>
+		<Key ID="STR_ITEM_DESC_equip_scrapLze rozbalit a obléknoutnics">
+			<English>A pile of scrap Lze rozbalit a obléknoutnics</English>
 			<German>Ein Haufen alter Elektronikbauteile.</German>
 			<Russian>Кучка радиодеталей.</Russian>
 			<Spanish>Una pila de chatarra electrónica</Spanish>
 			<French>Un tas de pièces électroniques</French>
-			<Czech>Balík vyhozené elektroniky</Czech>
+			<Czech>Relikvie z časů, kdy veřejné mínění bylo utvářeno elektronickými masmédii.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_rope">
 			<English>Rope</English>
@@ -1838,7 +1857,7 @@
 			<Russian>Прочная веревка.</Russian>
 			<Spanish>Alguna cuerda</Spanish>
 			<French>Une corde</French>
-			<Czech>Nějaké lano</Czech>
+			<Czech>Kotouč lana. Je libo se oběsit a ukončit tohle trápení?</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_rag">
 			<English>Rag</English>
@@ -1865,12 +1884,12 @@
 			<Czech>PVC krabice</Czech>
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_pvc_box">
-			<English>A box made of PVC</English>
+			<English>A box made of PVC, perfect for school lunches.</English>
 			<German>Eine Schachtel aus PVC.</German>
 			<Russian>Коробка из поливинилхлорида.</Russian>
 			<Spanish>Una caja hecha de PVC</Spanish>
 			<French>Une boîte en PVC</French>
-			<Czech>Krabice z PVC materiálu</Czech>
+			<Czech>Krabice z PVC materiálu, výborná pro školní svačiny.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_part_silencer">
 			<English>Suppressor</English>
@@ -1886,7 +1905,7 @@
 			<Russian>Оружейный глушитель</Russian>
 			<Spanish>Un silenciador</Spanish>
 			<French>Un silencieux</French>
-			<Czech>Tlumič</Czech>
+			<Czech>Tlumič pro střelné zbraně</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_part_camo">
 			<English>Camo Pattern</English>
@@ -1902,7 +1921,7 @@
 			<Russian>Маскировочные материалы</Russian>
 			<Spanish>Materiales de Camuflaje</Spanish>
 			<French>Du camouflage</French>
-			<Czech>Materiál pro maskovací potisk</Czech>
+			<Czech>Materiál pro maskovací potisk na zbraně</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_paper_sheet">
 			<English>Paper Sheet</English>
@@ -1950,7 +1969,7 @@
 			<Russian>Записка на кусочке бумаги.</Russian>
 			<Spanish>Una nota escriba en un pedazo de papel</Spanish>
 			<French>Des mots écrits sur du papier</French>
-			<Czech>Poznámka načmáraná na nějakém papíře</Czech>
+			<Czech>Poznámka načmáraná na papír. Že by poslední vůle?</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_needle">
 			<English>Needle</English>
@@ -1982,7 +2001,7 @@
 			<Russian>Небольшая коробка четырехдюймовых гвоздей.</Russian>
 			<Spanish>Una pequeña caja de clavos de 4 pulgadas.</Spanish>
 			<French>Une petite boite de clous de 10cm.</French>
-			<Czech>Malá krabička s hřebíky.</Czech>
+			<Czech>Malá krabička plná "stovkových" hřebíků.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_metal_sheet">
 			<English>Sheet Metal</English>
@@ -1998,7 +2017,7 @@
 			<Russian>Чистый лист металла.</Russian>
 			<Spanish>Una lámina de metal</Spanish>
 			<French>Une plaque de métal</French>
-			<Czech>Plech</Czech>
+			<Czech>Čistý plát plechu.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_metal_sheet_rusted">
 			<English>Rusty Sheet Metal</English>
@@ -2006,7 +2025,7 @@
 			<Russian>Ржавый лист металла</Russian>
 			<Spanish>Lámina de Metal</Spanish>
 			<French>Plaque de métal rouillée</French>
-			<Czech>Plech</Czech>
+			<Czech>Zrezlý plech</Czech>
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_metal_sheet_rusted">
 			<English>A rusty piece of sheet metal</English>
@@ -2014,7 +2033,7 @@
 			<Russian>Металлический лист, покрытый ржавчиной.</Russian>
 			<Spanish>Una lámina de metal</Spanish>
 			<French>Une plaque de métal rouillée</French>
-			<Czech>Plech</Czech>
+			<Czech>Zrezlý plát plechu.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_laser">
 			<English>Laser</English>
@@ -2061,7 +2080,7 @@
 			<Russian>Немного шланга в хорошем состоянии, может пригодиться в мастерской.</Russian>
 			<Spanish>Un pedazo de manguera en buen estado que podría ser usada para crear objetos.</Spanish>
 			<French>Un bout de tuyau d&apos;arrosage en bon état (Artisanat)</French>
-			<Czech>Kus hadice v dobrém stavu. Předmět lze použít pro craftování.</Czech>
+			<Czech>Kus hadice v dobrém stavu. Předmět lze použít při výrobě.</Czech>
 			<German>Ein Stueck gut erhaltener Schlauch, kann beim Handwerken verwendet werden.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_floppywire">
@@ -2077,7 +2096,7 @@
 			<Russian>Шлейф дисковода в хорошем состоянии, может пригодиться в мастерской.</Russian>
 			<Spanish>Un cable para disquetera floppy en buen estado que podría ser usada para crear objetos.</Spanish>
 			<French>Un câble souple en bon état (Artisanat)</French>
-			<Czech>Kus kabelu, který je dobrém stavu. Předmět lze použít pro craftování.</Czech>
+			<Czech>Kus kabelu, který je dobrém stavu. Předmět lze použít při výrobě.</Czech>
 			<German>Ein Flachbandkabel aus einem alten Computer, recht gut erhalten.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_crate">
@@ -2109,7 +2128,7 @@
 			<Russian>Кирпич, может пригодиться в мастерской.</Russian>
 			<Spanish>Un ladrillo que podría ser usado para crear objetos.</Spanish>
 			<French>Brique (Artisanat)</French>
-			<Czech>Cihla se používá pro crafting.</Czech>
+			<Czech>Cihla se používá při výrobě.</Czech>
 			<German>Ein Backstein, kann beim Handwerken verwendet werden.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_gauze">
@@ -2126,7 +2145,7 @@
 			<Russian>Кусок марли.</Russian>
 			<Spanish>Un montón de gasa</Spanish>
 			<French>De la gaze</French>
-			<Czech>Hromádka gázy</Czech>
+			<Czech>Smotek gázy</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_gauzepackaged">
 			<English>Gauze Packaged</English>
@@ -2141,7 +2160,7 @@
 			<Russian>Почти целая упаковка марли.</Russian>
 			<Spanish>Un paquete de gasas.</Spanish>
 			<French>Gaze emballée.</French>
-			<Czech>Balíček gázy.</Czech>
+			<Czech>Neporušený balíček gázy. Pro mumie.</Czech>
 			<German>Steril verpackter Verbandmull.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_empty_barrel">
@@ -2158,7 +2177,7 @@
 			<Russian>Ствол без обвеса.</Russian>
 			<Spanish>Un barril que su contenido fue descargado</Spanish>
 			<French>Un tonneau vidé de son contenu</French>
-			<Czech>Sud, který byl vyprázdněn</Czech>
+			<Czech>Sud, který někdo vyprázdnil.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_duct_tape">
 			<English>Duct Tape</English>
@@ -2174,7 +2193,7 @@
 			<Russian>Рулон скотча. Полезная штука!</Russian>
 			<Spanish>Un rollo de cinta adhesiva</Spanish>
 			<French>Un rouleau d&apos;adhésif</French>
-			<Czech>Role lepící pásky</Czech>
+			<Czech>Role lepící pásky, univerzální pomocník v dílně.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_cable_tie">
 			<English>Cable Tie</English>
@@ -2190,7 +2209,7 @@
 			<Russian>Пластиковая стяжка.</Russian>
 			<Spanish>Una abrazadera de plástico para cables</Spanish>
 			<French>Un serre-câble en plastique</French>
-			<Czech>Plastový kabelový svazek</Czech>
+			<Czech>Svazek plastových kabelů.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_aa_battery">
 			<English>AA Battery</English>
@@ -2198,7 +2217,7 @@
 			<Russian>Батарейка АА</Russian>
 			<Spanish>Batería AA</Spanish>
 			<French>Pile de type AA</French>
-			<Czech>AA Baterie</Czech>
+			<Czech>AA baterie</Czech>
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_aa_battery">
 			<English>A size AA battery</English>
@@ -2206,7 +2225,7 @@
 			<Russian>Батарейка типа АА.</Russian>
 			<Spanish>Una batería AA</Spanish>
 			<French>Une batterie de Type AA</French>
-			<Czech>AA baterie</Czech>
+			<Czech>Baterie typu AA ("tužková").</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_d_battery">
 			<English>D Battery</English>
@@ -2222,7 +2241,7 @@
 			<Russian>Батарейка типа D.</Russian>
 			<Spanish>Una batería D</Spanish>
 			<French>Une pile de type D</French>
-			<Czech>A velikost D baterie</Czech>
+			<Czech>Baterie typu D ("buřt").</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_2inch_metal_pipe">
 			<English>2 Inch Metal Pipes</English>
@@ -2238,7 +2257,7 @@
 			<Russian>Двухдюймовые металлические трубки.</Russian>
 			<Spanish>Una tubería de metal de 2" de diámetro</Spanish>
 			<French>Des tubes en métal de 5 cm de diamètre</French>
-			<Czech>Dvoupalcová kovová trubka</Czech>
+			<Czech>Kovová trubka o průměru dva palce.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_1inch_metal_pipe">
 			<English>1 Inch Metal Pipes</English>
@@ -2254,7 +2273,7 @@
 			<Russian>Дюймовые металлические трубки.</Russian>
 			<Spanish>Una tubería de metal de 1" de diámetro</Spanish>
 			<French>Des tubes en métal de 2.5 cm de diamètre</French>
-			<Czech>Jednopalcová kovová trubka</Czech>
+			<Czech>Kovová trubka o průměru jeden palec.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_comfreyleafs">
 			<English>Comfrey Leaves</English>
@@ -2268,7 +2287,7 @@
 			<English>Comfrey leaves used in crafting.</English>
 			<Russian>Листья живокоста, полезны при перевязке для обработки ран.</Russian>
 			<Spanish>Hojas de consuelda que pueden ser usadas para crear objetos.</Spanish>
-			<Czech>Listy Kostivalu lékařského jsou používány pro craftování.</Czech>
+			<Czech>Kostival lékařský je léčivá bylina, jejíž listy jsou používány při výrobě.</Czech>
 			<French>Feuilles de consoude officinale (Artisanat)</French>
 			<German>Einige Blaetter vom Rauen Beinwell. Wirken schmerzlindernd und entzuendungshemmend.</German>
 		</Key>
@@ -2277,22 +2296,22 @@
 			<Russian>Бинт</Russian>
 			<Spanish>Vendaje</Spanish>
 			<French>Pansement</French>
-			<Czech>Bandáž</Czech>
+			<Czech>Obvaz</Czech>
 			<German>Bandage</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_garlic_bulb">
 			<English>Garlic Bulb</English>
 			<Russian>Головка чеснока</Russian>
 			<Spanish>Bulbo del ajo</Spanish>
-			<Czech>Česnek žárovky</Czech>
+			<Czech>Česnek</Czech>
 			<French>Gousse d&apos;ail</French>
 			<German>Knoblauchknolle</German>
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_garlic_bulb">
-			<English>Bulb of Garlic, has medicinal qualities can be used for crafting home remedies</English>
+			<English>Bulb of Garlic, has medicinal qualities can be used for crafting home remedies. Or against vampires.</English>
 			<Russian>Головка чеснока, обладает лечащими свойствами, может использоваться для создания самодельных лекарств.</Russian>
 			<Spanish>Bulbo del ajo, tiene cualidades medicinales puede ser utilizado para la elaboración de remedios caseros</Spanish>
-			<Czech>Bulb of Garlic, has medicinal qualities can be used for crafting home remedies</Czech>
+			<Czech>Hlavička česneku, kterou lze využít v alternativní medicíně. Nebo na upíry.</Czech>
 			<French>Gousse d&apos;ail, a des vertues médicinales et peut être utilisé pour créer des remèdes.</French>
 			<German>Eine Knolle Knoblauch, wegen seiner medizinischen Wirkung als Hausmittel bekannt.</German>
 		</Key>
@@ -2301,14 +2320,14 @@
 			<Russian>Инструкция по созданию бинтов. Нужно: пара тряпок, пара марль, нитка и ящик с инструментами</Russian>
 			<Spanish>Plano para crear Vendaje. Requerido: 2 trapos, 2 gasas, 1 hilo y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un Pansement. Requis : 2 Tissus, 2 Gazes, 1 Fil + Boîte à outils</French>
-			<Czech>Návod pro vytvoření bandáže. Potřeba: 2x hadr, 2x gáza, 1x provázek + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení obvazu. Potřeba: 2x hadr, 2x gáza, 1x provázek a sada nástrojů</Czech>
 			<German>Blaupause fuer eine Bandage. Gebraucht werden: 2x Lumpen, 2x Verbandmull, 1x Schnur. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_SEPSISBandage">
 			<English>Sepsis Bandage</English>
 			<Spanish>Vendaje para Sepsis</Spanish>
 			<Russian>Антисептический бинт</Russian>
-			<Czech>Bandáž pro sepsi</Czech>
+			<Czech>Antiseptický obvaz</Czech>
 			<French>Pansement antiseptique</French>
 			<German>Antiseptische Bandage</German>
 		</Key>
@@ -2316,7 +2335,7 @@
 			<English>Blueprint to create an Sepsis cure and Bandage. Required - 3 Rags, 2 gauze, 1 string, 2 Comfrey Leafs.</English>
 			<Spanish>Plano para crear un vendaje que combate la septicemia. Requerido: - 3 trapos, 2 gasas, 1 cuerda, 2 hojas de consuelda.</Spanish>
 			<Russian>Инструкция по созданию антисептических бинтов. Нужно: три тряпки, пара марль, нитка и пара листков живокоста</Russian>
-			<Czech>Návod k vytvoření léku a bandáže na sepsi. Potřeba: 3x hadr, 2x gáza, 1x provázek, 2x Comfrey Leafs.</Czech>
+			<Czech>Návod pro vyrobení antiseptického obvazu. Potřeba: 3x hadr, 2x gáza, 1x provázek, 2x listy kostivalu.</Czech>
 			<French>Plan de fabrication d&apos;un pansement antiseptique. Requis: 3 tissus, 2 gazes, 1 ficelle, 2 consoudes.</French>
 			<German>Blaupause fuer eine antiseptische Bandage. Gebraucht werden: 3x Lumpen, 2x Verbandmull, 1x Schnur, 2x Beinwellblaetter.</German>
 		</Key>
@@ -2332,7 +2351,7 @@
 			<English>Crafted Compass - Reg razor, water bottle, scrap metal. Tools Needed: ToolBox</English>
 			<Russian>Инструкция по созданию самодельного компаса - бритва, бутылка с водой, металлолом и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear Brújula. Requerido: 1 maquinita de afeitar, 1 botella de agua, 1 chatarra y Caja de Herramientas</Spanish>
-			<Czech>Návod pro vytvoření kompasu. Potřeba: 1x břitva, 1x láhev na vodu, 1x kovový šrot + Sada nástrojů.</Czech>
+			<Czech>Návod pro vyrobení kompasu. Potřeba: 1x břitva, 1x láhev na vodu, 1x kovový šrot a sada nástrojů.</Czech>
 			<French>Plan de fabrication d&apos;une Boussole. Requis : 1 rasoir, bouteille, bout de métal + Boîte à outils</French>
 			<German>Blaupause fuer einen improvisierten Kompass. Gebraucht werden: 1x Wasserflasche, 1x Rasierer, 1x Altmetal. Werkzeug: Werkzeugkiste.</German>
 		</Key>
@@ -2341,7 +2360,7 @@
 			<Russian>M4A1 AIM</Russian>
 			<Spanish>M4A1 AIM</Spanish>
 			<French>M4A1 à viseur laser</French>
-			<Czech>M4A1 s CCO mířidlem</Czech>
+			<Czech>M4A1 s CCO</Czech>
 			<German>M4A1 AIM</German>
 		</Key>
 		<Key ID="STR_CRAFT_DESC_M4A1_AIM">
@@ -2349,7 +2368,7 @@
 			<Russian>Инструкция по сборке M4A1 AIM с глушителем. Нужно: M4A1, прицел AIM и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear M4A1 AIM. Requerido: 1 M4A1, 1 AIM y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;une M4A1 à viseur laser. Requis : 1 M4A1, 1 Fixation viseur laser + Boîte à outils</French>
-			<Czech>Návod pro vytvoření M4A1 s CCO mířidlem. Potřeba: 1x M4A1, 1x CCO mířidlo + Sada nástrojů.</Czech>
+			<Czech>Návod pro vyrobení M4A1 s CCO mířidlem. Potřeba: 1x M4A1, 1x CCO mířidlo a sada nástrojů.</Czech>
 			<German>Blaupause fuer ein M4A1 AIM. Gebraucht werden: 1x M4A1, 1x CCO Rotpunktvisier. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_M4A1_HWS_GL_CAMO">
@@ -2364,7 +2383,7 @@
 			<English>Blueprint to create a M4A1 HWS GL Camo. Required - 1 M4A1 HWS GL, 1 Attachment Camo. - ToolBox</English>
 			<Russian>Инструкция по сборке камуфлированного M4A1 HWS GL. Нужно: M4A1 HWS GL, камуфляж для оружия и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear M4A1 HWS GL Camo. Requerido: 1 M4A1 HWS GL, 1 Attachment Camo y Caja de Herramientas</Spanish>
-			<Czech>Návod pro vytvoření M4A1 HWS GL Kamufláž. Potřeba: 1x M4A1 HWS GL, 1x maskovací potisk + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení M4A1 HWS GL Kamufláž. Potřeba: 1x M4A1 HWS GL, 1x maskovací potisk a sada nástrojů</Czech>
 			<French>Plan de fabrication d&apos;une M4A1 holographique, lanceur de grenades, camouflage. Requis : 1 M4A1 HWS GL, 1 fixation camouflage + Boîte à outils</French>
 			<German>Blaupause fuer ein M4A1 HWS GL Tarn. Gebraucht werden: 1x M4A1 HWS GL, 1x Tarnmaterial. Werkzeug: Werkzeugkiste.</German>
 		</Key>
@@ -2381,7 +2400,7 @@
 			<Russian>Инструкция по сборке M9 с глушителем. Нужно: M9, глушитель и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear una M9 Silenciada. Requerido: 1 M9, 1 silenciador y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un M9 silencieux. Requis : 1 M9, 1 Fixation Silencieux + Boîte à outils</French>
-			<Czech>Návod pro vytvoření M9 s tlumičem. Potřeba: 1x M9, 1x tlumič + Sada nástrojů.</Czech>
+			<Czech>Návod pro vyrobení M9 s tlumičem. Potřeba: 1x M9, 1x tlumič a sada nástrojů.</Czech>
 			<German>Blaupause fuer eine M9 SD. Gebraucht werden: 1x M9, 1x Schalldaempfer. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_MAKAROVSD">
@@ -2397,7 +2416,7 @@
 			<Russian>Инструкция по сборке ПМ с глушителем. Нужно: ПМ , глушитель и ящик с инструментами.</Russian>
 			<Spanish>Planos para crear una Makarov Silenciada. Requerido: 1 Makarov, 1 Silenciador y Caja de Herramientas.</Spanish>
 			<French>Plan de fabrication d&apos;un Makarov silencieux. Requis : 1 Makarov, 1 Fixation Silencieux + Boîte à outils</French>
-			<Czech>Návod pro vytvoření Makarov s tlumičem. Potřeba: 1x Makarov, 1x tlumič + Sada nástrojů.</Czech>
+			<Czech>Návod pro vyrobení Makarov s tlumičem. Potřeba: 1x Makarov, 1x tlumič a sada nástrojů.</Czech>
 			<German>Blaupause fuer eine Makarow SD. Gebraucht werden: 1x Makarow, 1x Schalldaempfer. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_bizonSD">
@@ -2413,7 +2432,7 @@
 			<Russian>Инструкция по сборке Бизона с глушителем. Нужно: Бизон, глушитель и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear una Bizon Silenciada. Requerido: 1 Bizon, 1 Silenciador y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un Bizon silencieux. Requis : 1 Bizon, 1 Fixation Silencieux + Boîte à outils</French>
-			<Czech>Návod pro vytvoření Bizon s tlumičem. Potřeba: 1x Bizon, 1x tlumič + Sada nástrojů.</Czech>
+			<Czech>Návod pro vyrobení Bizon s tlumičem. Potřeba: 1x Bizon, 1x tlumič a sada nástrojů.</Czech>
 			<German>Blaupause fuer eine Bizon SD. Gebraucht werden: 1x Bizon, 1x Schalldaempfer. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_SVD_CAMO">
@@ -2429,7 +2448,7 @@
 			<Russian>Инструкция по камуфлированию СВД. Нужно: СВД, камуфляж для оружия и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear un SVD Camuflado. Requerido: 1 SVD, 1 Camuflaje, 1 Skin_Camo1_DZ y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un SVD Camouflage. Requis : 1 SVD, 1 Fixation Camouflage, 1 tenue de camouflage + Boîte à outils</French>
-			<Czech>Návod pro vytvoření SVD s maskovacím potiskem. Potřeba: 1x SVD, 1x maskovací potisk, 1x hejkal + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení SVD s maskovacím potiskem. Potřeba: 1x SVD, 1x maskovací potisk, 1x hejkal a sada nástrojů</Czech>
 			<German>Blaupause fuer ein SVD Tarn. Gebraucht werden: 1x SVD, 1x Tarnmaterial, 1x Tarnmaterial. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_M4A1_Aim_CAMO">
@@ -2437,7 +2456,7 @@
 			<Russian>Камуфлированный M4A1 AIM</Russian>
 			<Spanish>M4A1 AIM Camuflado</Spanish>
 			<French>M4A1 à viseur laser et Camouflage</French>
-			<Czech>M4A1 s mířidlem a maskovacím potiskem</Czech>
+			<Czech>M4A1 s CCO a maskovacím potiskem</Czech>
 			<German>M4A1 AIM Tarn</German>
 		</Key>
 		<Key ID="STR_CRAFT_DESC_M4A1_Aim_CAMO">
@@ -2445,7 +2464,7 @@
 			<Russian>Инструкция по перекраске M4A1 AIM. Нужно: M4A1 AIM, камуфляж для оружия и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear M4A1 AIM Camuflado. Requerido: 1 M4A1 AIM, 1 Camuflaje y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un M4A1 à viseur laser et Camouflage. Requis : 1 M4A1 à viseur laser, 1 Fixation Camouflage + Boîte à outils</French>
-			<Czech>Návod pro vytvoření M4A1 s mířidlem a maskovacím potiskem. Potřeba: 1x M4A1 s CCO mířidlem, 1x maskovací potisk + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení M4A1 s mířidlem a maskovacím potiskem. Potřeba: 1x M4A1 s CCO, 1x maskovací potisk a sada nástrojů</Czech>
 			<German>Blaupause fuer ein M4A1 AIM Tarn. Gebraucht werden: 1x M4A1 AIM, 1x Tarnmaterial. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_G36C_CAMO">
@@ -2461,7 +2480,7 @@
 			<Russian>Инструкция по перекраске G36C. Нужно: G36C, камуфляж для оружия и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear G36C Camuflada. Requerido: 1 G36C, 1 Camuflaje y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un G36C Camouflage. Requis : 1 G36C, 1 Fixation Camouflage + Boîte à outils</French>
-			<Czech>Návod pro vytvoření G36C s maskovacím potiskem. Potřeba: 1x G36C, 1x maskovací potisk + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení G36C s maskovacím potiskem. Potřeba: 1x G36C, 1x maskovací potisk a sada nástrojů</Czech>
 			<German>Blueprint to create a G36C_CAMO. Required - 1 G36C, 1 Attachment_CAMO. - ToolBox</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_G36A_CAMO">
@@ -2477,7 +2496,7 @@
 			<Russian>Инструкция по перекраске G36A. Нужно: G36A, камуфляж для оружия и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear G36A Camuflada. Requerido: 1 G36A, 1 Camuflaje y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un G36A Camouflage. Requis : 1 G36A, 1 Fixation Camouflage + Boîte à outils</French>
-			<Czech>Návod pro vytvoření G36A s maskovacím potiskem. Potřeba: 1x G36A, 1x maskovací potisk + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení G36A s maskovacím potiskem. Potřeba: 1x G36A, 1x maskovací potisk a sada nástrojů</Czech>
 			<German>Blaupause fuer ein G36A Tarn. Gebraucht werden: 1x G36A, 1x Tarnmaterial. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_G36K_CAMO">
@@ -2493,7 +2512,7 @@
 			<Russian>Инструкция по перекраске G36K. Нужно: G36K, камуфляж для оружия и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear G36K Camuflada. Requerido: 1 G36K, 1 Camuflaje y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un G36K Camouflage. Requis : 1 G36K, 1 Fixation Camouflage + Boîte à outils</French>
-			<Czech>Návod pro vytvoření G36K s maskovacím potiskem. Potřeba: 1x G36K, 1x maskovací potisk + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení G36K s maskovacím potiskem. Potřeba: 1x G36K, 1x maskovací potisk a sada nástrojů</Czech>
 			<German>Blaupause fuer ein G36K Tarn. Gebraucht werden: 1x G36K, 1x Tarnmaterial. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_BaseBallBatBarbed">
@@ -2510,7 +2529,7 @@
 			<Russian>Инструкция по сборке биты с колючкой. Нужно: коробка гвоздей, колючка, бита и ящик с нструментами.</Russian>
 			<Spanish>Plano para crear una Bate de Béisbol con Alambre de Púas. Requerido: 1 caja de clavos, 1 alambre de púas, 1 bate de béisbol y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;une Batte de baseball barbelée. Requis : 1 boîtes de clous, 1 Barbelés, 1 batte de baseball + Boîte à outils</French>
-			<Czech>Návod pro vytvoření baseballové pálky s ostnatým drátem. Potřeba: 1x krabička s hřebíky, 1x ostnatý drát, 1x baseballová pálka + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení baseballové pálky s ostnatým drátem. Potřeba: 1x krabička s hřebíky, 1x ostnatý drát, 1x baseballová pálka a sada nástrojů</Czech>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_NailedBaseballBat">
 			<English>Nailed Baseball Bat</English>
@@ -2526,7 +2545,7 @@
 			<Russian>Инструкция по сборке биты с гвоздями. Нужно: пара коробок с гвоздями, бита и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear Bate de Béisbol con Clavos. Requerido: 2 cajas de clavos, 1 bate de béisbol y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;une Batte de baseball cloutée. Requis : 2 boîtes de clous, 1 batte de baseball + Boîte à outils</French>
-			<Czech>Návod pro vytvoření baseballové pálky s hřebíky. Potřeba: 2x krabička s hřebíky, 1x baseballová pálka + Sada nástrojů.</Czech>
+			<Czech>Návod pro vyrobení baseballové pálky s hřebíky. Potřeba: 2x krabička s hřebíky, 1x baseballová pálka a sada nástrojů.</Czech>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_PipeBomb">
 			<English>PipeBomb</English>
@@ -2540,7 +2559,7 @@
 			<English>Blueprint to create a PipeBomb. Required - 1 1inch Metal Pipe, 1 2inch Metal Pipe, 1 metal sheet, 1 fuse, 1 pipecap. - ToolBox</English>
 			<Russian>Инструкция по сборке самодельной бомбы. Нужно: дюймовая труба, двухдюймовая труба, лист металла, фитиль, заглушка и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear una Bomba Casera. Requerido: 1 tubo metálico de 1", 1 tubo metálico de 2", 1 lámina metálica, 1 mecha, 1 tapón y Caja de Herramientas</Spanish>
-			<Czech>Návod pro vytvoření nálože. Potřeba: 1x jednopalcová kovová trubka, 1x dvoupalcová trubka, 1x plech, 1x knot, 1x konec trubky + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení nálože. Potřeba: 1x jednopalcová kovová trubka, 1x dvoupalcová trubka, 1x plech, 1x knot, 1x zátka a sada nástrojů</Czech>
 			<French>Plan de fabrication d&apos;une bombe télécommandée. Requis : 1 tuyau métallique de 2,5cm, 1 tuyau métallique de 5cm, 1 plaque de métal, 1 mèche, 1 bouchon + Boîte à outils</French>
 			<German>Blaupause fuer eine Rohrbombe. Gebraucht werden: 1x Metallrohr 2.5cm, 1x Metallrohr 5cm, 1x Metallplatte, 1x Lunte, 1x Rohrkappe. Werkzeug: Werkzeugkiste.</German>
 		</Key>
@@ -2557,7 +2576,7 @@
 			<Russian>Инструкция по сборке прицела ПСО. Нужно: пара духдюймовых труб, дальномер, кольцевой зажим и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear una Mira PSO. Requerido: 2 tuberias de metal de 2", 1 prismático vectorial, 1 abrazadera metálica y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;une lunette pour PSO. Requis : 2 tuyaux de 5cm, 1 Jumelle, 1 collier de fixation + Boîte à outils</French>
-			<Czech>Návod pro vytvoření zaměřovače PSO. Potřeba: 2x dvouplacová kovová trubka, 1x dalekohled, 1x objímka + Sada nástrojů.</Czech>
+			<Czech>Návod pro vyrobení zaměřovače PSO. Potřeba: 2x dvouplacová kovová trubka, 1x dalekohled, 1x objímka a sada nástrojů.</Czech>
 			<German>Blaupause fuer ein PSO-Zielfernrohr. Gebraucht werden: 2x Metallrohr 5cm, 1x Fernglaslinsen, 1x Schlauchklemme. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_ACG">
@@ -2565,7 +2584,7 @@
 			<Russian>Прицел ACOG</Russian>
 			<Spanish>Mira ACG</Spanish>
 			<French>Lunette pour ACG</French>
-			<Czech>ACG zaměřovač</Czech>
+			<Czech>ACOG zaměřovač</Czech>
 			<German>ACOG-Zielfernrohr</German>
 		</Key>
 		<Key ID="STR_CRAFT_DESC_ACG">
@@ -2573,7 +2592,7 @@
 			<Russian>Инструкция по сборке прицела ACOG. Нужно: пара духдюймовых труб, пара листов металла, кольцевой зажим и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear una Mira ACG. Requerido: 2 tuberias de metal de 2", 2 láminas de metal, 1 abrazadera metálica y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;une lunette pour ACG. Requis : 2 tuyaux de 5cm, 2 plaques de métal, 1 collier de fixation + Boîte à outils</French>
-			<Czech>Návod pro vytvoření zaměřovače ACG. Potřeba: 2x dvoupalcová kovová trubka, 2x plech, 1x objímka + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení zaměřovače ACOG. Potřeba: 2x dvoupalcová kovová trubka, 2x plech, 1x objímka a sada nástrojů</Czech>
 			<German>Blaupause fuer ein ACOG-Zielfernrohr. Gebraucht werden: 2x Metallrohr 5cm, 2x Metallplatte, 1x Schlauchklemme. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_AIM">
@@ -2585,11 +2604,11 @@
 			<German>CCO Rotpunktvisier</German>
 		</Key>
 		<Key ID="STR_CRAFT_DESC_AIM">
-			<English>Blueprint to create an Aimpoint Red-Dot optic. Required - 1 1inch Metal Pipe, 1 scrap electronics, 1 D type battery, 1 Cable Tie. Tools - ToolBox</English>
+			<English>Blueprint to create an Aimpoint Red-Dot optic. Required - 1 1inch Metal Pipe, 1 scrap Lze rozbalit a obléknoutnics, 1 D type battery, 1 Cable Tie. Tools - ToolBox</English>
 			<Russian>Инструкция по сборке прицела AIM. Нужно: дюймовая труба, радиодетали, батарейка типа D, стяжка и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear una Mira AIM. Requerido: 2 tuberias de metal de 2", 1 prismático vectorial, 1 abrazadera plástica y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;une lunette laser. Requis : 1 tuyau de 2.5cm, 1 pièces électroniques, 1 pile de type D, 1 serre-câble + Boîte à outils</French>
-			<Czech>Návod pro vytvoření CCO zaměřovače. Potřeba: 1x jednopalcová kovová trubka, 1x zbytek elektrotechniky, 1x D baterie, 1x objímka + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení CCO zaměřovače. Potřeba: 1x jednopalcová kovová trubka, 1x zbytek elektroniky, 1x D baterie, 1x objímka a sada nástrojů</Czech>
 			<German>Blaupause fuer ein AIM CCO-Rotpunktvisier. Gebraucht werden: 1x Metallrohr 2.5cm, 1x Elektronikschrott, 1x Batterie D, 1x Kabelbinder. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_CAMO">
@@ -2605,7 +2624,7 @@
 			<Russian>Инструкция по камуфлированию оружия. Нужно: тряпка, тюбик краски, стяжка и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear un Patrón de Camuflaje. Requerido: 2 trapos, 1 lata de pintura, 1 abrazadera plástica y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un motif camouflage. Requis : 1 Tissu, 1 pot de peinture, 1 serre-câble + Boîte à outils</French>
-			<Czech>Návod pro vytvoření maskovacího potisku. Potřeba: 1x hadr, 1x barva, 1x provázek + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení maskovacího potisku. Potřeba: 1x hadr, 1x barva, 1x provázek a sada nástrojů</Czech>
 			<German>Blaupause fuer Tarnmaterial. Gebraucht werden: 1x Lumpen, 1x Farbe, 1x Kabelbinder. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_KOBRA">
@@ -2621,7 +2640,7 @@
 			<Russian>Инструкция по сборке прицела "Кобра". Нужно: лист металла, тюбик краски, стяжка и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear una Mira KOBRA. Requerido: 1 lámina de metal, 1 lata de pintura, 1 abrazadera plástica y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;une lunette pour KOBRA. Requis : 1 Plaque de métal, 1 pot de peinture, 1 serre-câble + Boîte à outils</French>
-			<Czech>Návod pro vytvoření zaměřovače KOBRA. Potřeba: 1x plech, 1x barva, 1x drátky + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení zaměřovače KOBRA. Potřeba: 1x plech, 1x barva, 1x drátky a sada nástrojů</Czech>
 			<German>Blaupause fuer ein KOBRA-Zielfernrohr. Gebraucht werden: 1x Metallplatte, 1x Farbe, 1x Kabelbinder. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_GL">
@@ -2637,7 +2656,7 @@
 			<Russian>Инструкция по сборке подствольного гранатомета. Нужно: пара листов металла, двухдюймовая труба, кольцевой зажим и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear una Lanzador de Granadas. Requerido: 2 láminas de metal, 1 tubería de metal de 2", 1 abrazadera de manguera y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;une fixation lance-grenade. Requis : 2 Plaques de métal, 1 Tuyau de 5cm, 1 collier de serrage + Boîte à outils</French>
-			<Czech>Návod pro vytvoření granátometu. Potřeba: 2x plech, 1x dvoupalcová kovová trubka, 1x objímka + Sada nástrojů</Czech>
+			<Czech>Návod pro vyrobení podvěsného granátometu. Potřeba: 2x plech, 1x dvoupalcová kovová trubka, 1x objímka a sada nástrojů</Czech>
 			<German>Blaupause fuer einen 40mm-Unterlaufgranatwerfer zur Montage an Sturmgewehren. Gebraucht werden: 2x Metallplatte, 1x Metallrohr 5cm, 1x Schlauchklemme. Werkzeug: Werkzeugkiste.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_wood_pallet">
@@ -2654,7 +2673,7 @@
 			<Russian>Деревянный поддон.</Russian>
 			<Spanish>Un palé de madera</Spanish>
 			<French>Une palette en bois</French>
-			<Czech>Dřevěná paleta</Czech>
+			<Czech>Dřevěná paleta dle standardu EUR</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_string">
 			<English>String</English>
@@ -2677,7 +2696,7 @@
 			<Russian>ACG (Приспособление)</Russian>
 			<Spanish>ACG (Accesorio)</Spanish>
 			<French>ACG (Fixation)</French>
-			<Czech>Příslušenství - ACG</Czech>
+			<Czech>Příslušenství - ACOG</Czech>
 			<German>ACOG-Zielfernrohr</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_ACG">
@@ -2685,7 +2704,7 @@
 			<Russian>ACOG - стандартный оптический прицел для стрельбы на среднюю дальность.</Russian>
 			<Spanish>Mira ACG (Accesorio)</Spanish>
 			<French>ACG (Fixation)</French>
-			<Czech>Používá se pro vylepšení zbraně.</Czech>
+			<Czech>Advanced Combat Optics Gunsight, používá se pro vylepšení zbraně.</Czech>
 			<German>Advanced Combat Optics Gunsight, ein Zielfernrohr amerikanischer Bauart.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Silencer">
@@ -2701,7 +2720,7 @@
 			<Russian>Приспособление для бесшумной стрельбы.</Russian>
 			<Spanish>Silenciador (Accesorio)</Spanish>
 			<French>Silencieux (Fixation)</French>
-			<Czech>Používá se pro vylepšení zbraně.</Czech>
+			<Czech>Tlumič pro střelné zbraně, používá se pro jejich vylepšení.</Czech>
 			<German>Ein Schalldaempfer fuer Schusswaffen.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Pso">
@@ -2717,7 +2736,7 @@
 			<Russian>ПСО-1 (Прицел снайперский оптический) — один из основных прицелов советского и российского снайперского вооружения.</Russian>
 			<Spanish>Mira PSO (Accesorio)</Spanish>
 			<French>PSO (Fixation)</French>
-			<Czech>Používá se pro vylepšení zbraně.</Czech>
+			<Czech>Ruský zaměřovač PSO-1, používá se pro vylepšení zbraně.</Czech>
 			<German>Ein russisches Zielfernrohr vom Typ PSO-1.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Kobra">
@@ -2733,7 +2752,7 @@
 			<Russian>Электронно-коллиматорный прицел «Кобра».</Russian>
 			<Spanish>Mira KOBRA (Accesorio)</Spanish>
 			<French>KOBRA (Fixation)</French>
-			<Czech>Používá se pro vylepšení zbraně.</Czech>
+			<Czech>Ruský zaměřovač KOBRA, používá se pro vylepšení zbraně.</Czech>
 			<German>Russisches Rotpunktvisier vom Typ KOBRA.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_GL">
@@ -2741,7 +2760,7 @@
 			<Russian>Подствольник (Приспособление)</Russian>
 			<Spanish>GL (Accesorio)</Spanish>
 			<French>GL (Fixation)</French>
-			<Czech>Příslušenství - GL</Czech>
+			<Czech>Příslušenství - Granátomet</Czech>
 			<German>GL-Visier</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_GL">
@@ -2749,7 +2768,7 @@
 			<Russian>Подствольный гранатомёт — гранатомёт, выполненный в виде дополнительного узла, устанавливаемого на ручное оружие, обычно — на автомат.</Russian>
 			<Spanish>Lanzador de Granadas (Accesorio)</Spanish>
 			<French>GL (Fixation)</French>
-			<Czech>Používá se pro vylepšení zbraně.</Czech>
+			<Czech>Podvěsný granátomet, používá se pro vylepšení zbraně.</Czech>
 			<German>Russiches Gruenpunktvisier.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_CAMO">
@@ -2773,7 +2792,7 @@
 			<Russian>AIM (Приспособление)</Russian>
 			<Spanish>AIM (Accesorio)</Spanish>
 			<French>AIM (Fixation)</French>
-			<Czech>Příslušenství - Mířidlo</Czech>
+			<Czech>Příslušenství - CCO</Czech>
 			<German>CCO Rotpunktvisier</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_AIM">
@@ -2781,7 +2800,7 @@
 			<Russian>Прицел AIM.</Russian>
 			<Spanish>Mira AIM (Accesorio)</Spanish>
 			<French>AIM (Fixation)</French>
-			<Czech>Používá se pro vylepšení zbraně.</Czech>
+			<Czech>Close Combat Optics, používá se pro vylepšení zbraně.</Czech>
 			<German>Close Combat Optics, Rotpunktvisier amerikanischer Bauart.</German>
 		</Key>
 		<Key ID="STR_CREATE_STASH">
@@ -2806,7 +2825,7 @@
 			<Russian>Саперная лопатка используется вместе с инженерным ранцем для создания оборонительных сооружений.</Russian>
 			<Spanish>Una pala plegable usada para crear defensas en el campo.</Spanish>
 			<French>Une pelle démontable permettant de construire des éléments de défense.</French>
-			<Czech>Polní lopatka používá pro vytvoření obraného postavení jako jsou zákopy či střelecké okopy.</Czech>
+			<Czech>Polní lopatka se používá při stavbě obranných postavení. Pokud jste SpecNaz, umíte s ní zabít.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_1b">
 			<English>Shovel</English>
@@ -2853,7 +2872,7 @@
 			<Russian>При разделке ваш нож затупился.</Russian>
 			<Spanish>Si bien destripar te das cuenta de que el cuchillo está convirtiendo en roma.</Spanish>
 			<French>Lors du dépecage vous réalisez que le couteau devient émoussé.</French>
-			<Czech>Zatímco kuchání si uvědomíte, nůž se stává tupý.</Czech>
+			<Czech>Během kuchání si všimnete, že se nůž ztupil.</Czech>
 			<German>Beim Ausnehmen bemerkst du, wie stumpf die Messerklinge mittlerweile ist.</German>
 		</Key>
 		<Key ID="str_info_missingtransfusionkit">
@@ -2862,7 +2881,7 @@
 			<Russian>Похоже требуется набор для переливания.</Russian>
 			<Spanish>Me parece que falta un kit de transfusión.</Spanish>
 			<French>Il me semble qu&apos;il manque un kit de transfusion.</French>
-			<Czech>Zdá se mi chybět transfúzní soupravy.</Czech>
+			<Czech>Zdá se, že chybí transfúzní souprava.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_3">
 			<English>Box of Matches</English>
@@ -2877,7 +2896,7 @@
 			<Russian>Коробок с пятью спичками.</Russian>
 			<Spanish>5 Partidos de Izquierda. Caja de seguridad de juegos compatibles para iniciar un incendio en condiciones controladas.</Spanish>
 			<French>5 allumettes restantes. Boîte d&apos;allumettes de sûreté pour allumer un feu dans des conditions contrôlées.</French>
-			<Czech>5. Zápasy vlevo. Box bezpečnosti odpovídá za vzniku požáru za kontrolovaných podmínek.</Czech>
+			<Czech>Zbývá 5 zápalek. Udržujte z dosahu dětí.</Czech>
 			<German>Eine Schachtel mit noch fuenf Sicherheitszuendhoelzern. Von Kindern fernhalten.</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_3_B">
@@ -2885,7 +2904,7 @@
 			<Russian>Коробок с четырьмя спичками.</Russian>
 			<Spanish>4 Partidos de Izquierda. Caja de seguridad de juegos compatibles para iniciar un incendio en condiciones controladas.</Spanish>
 			<French>4 allumettes restantes. Boîte d&apos;allumettes de sûreté pour allumer un feu dans des conditions contrôlées.</French>
-			<Czech>4. Zápasy vlevo. Box bezpečnosti odpovídá za vzniku požáru za kontrolovaných podmínek.</Czech>
+			<Czech>Zbývají 4 zápalky. Udržujte z dosahu dětí.</Czech>
 			<German>Eine Schachtel mit noch vier Sicherheitszuendhoelzern. Von Kindern fernhalten.</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_3_C">
@@ -2893,7 +2912,7 @@
 			<Russian>Коробок с тремя спичками.</Russian>
 			<Spanish>3 Partidos de Izquierda. Caja de seguridad de juegos compatibles para iniciar un incendio en condiciones controladas.</Spanish>
 			<French>3 allumettes restantes. Boîte d&apos;allumettes de sûreté pour allumer un feu dans des conditions contrôlées.</French>
-			<Czech>3. Zápasy vlevo. Box bezpečnosti odpovídá za vzniku požáru za kontrolovaných podmínek.</Czech>
+			<Czech>Zbývají 3 zápalky. Udržujte z dosahu dětí.</Czech>
 			<German>Eine Schachtel mit noch drei Sicherheitszuendhoelzern. Von Kindern fernhalten.</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_3_D">
@@ -2901,22 +2920,22 @@
 			<Russian>Коробок с парой спичек.</Russian>
 			<Spanish>2 Partidos de Izquierda. Caja de seguridad de juegos compatibles para iniciar un incendio en condiciones controladas.</Spanish>
 			<French>2 allumettes restantes. Boîte d&apos;allumettes de sûreté pour allumer un feu dans des conditions contrôlées.</French>
-			<Czech>2. Zápasy vlevo. Box bezpečnosti odpovídá za vzniku požáru za kontrolovaných podmínek.</Czech>
+			<Czech>Zbývají 2 zápalky. Udržujte z dosahu dětí.</Czech>
 			<German>Eine Schachtel mit noch zwei Sicherheitszuendhoelzern. Von Kindern fernhalten.</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_3_E">
-			<English>1 Matches Left. Box of safety matches for starting a fire under controlled conditions.</English>
+			<English>1 Match Left. Box of safety matches for starting a fire under controlled conditions.</English>
 			<Russian>Одна спичка в коробке.</Russian>
 			<Spanish>1 Partidos de Izquierda. Caja de seguridad de juegos compatibles para iniciar un incendio en condiciones controladas.</Spanish>
 			<French>1 allumette restante. Boîte d&apos;allumettes de sûreté pour allumer un feu dans des conditions contrôlées.</French>
-			<Czech>1. Zápasy vlevo. Box bezpečnosti odpovídá za vzniku požáru za kontrolovaných podmínek.</Czech>
+			<Czech>Zbývá 1 zápalka. Udržujte z dosahu dětí.</Czech>
 			<German>Eine Schachtel mit noch einem Sicherheitszuendholz. Von Kindern fernhalten.</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_3_EMPTY">									
 			<English>Empty Box of Matches</English>						
 			<German>Leere Schachtel Streichhoelzer</German>
 			<Russian>Пустой коробок спичек</Russian>
-			<Czech>Prázdný Box odpovídajících</Czech>
+			<Czech>Prázdná krabička zápalek</Czech>
 			<Spanish>Caja vacía de Resultados</Spanish>
 			<French>Boîte d&apos;allumettes vide</French>
 		</Key>						
@@ -2924,7 +2943,7 @@
 			<English>Empty Box of safety matches.</English>						
 			<German>Eine leere Schachtel Streichhoelzer.</German>
 			<Russian>Абсолютно пустой коробок спичек.</Russian>
-			<Czech>Prázdný Box odpovídajících</Czech>
+			<Czech>Smutná krabička bez zápalek. Bude vám zima.</Czech>
 			<Spanish>Caja vacía de Resultados</Spanish>
 			<French>Boîte d&apos;allumettes vide</French>
 		</Key>				
@@ -2934,7 +2953,7 @@
 			<Russian>Коробок спичек используется для разведения огня.</Russian>
 			<Spanish>Una caja de fósforos de seguridad para iniciar fuego bajo condiciones controladas.</Spanish>
 			<French>Boîte d&apos;allumettes suédoises permettant d&apos;allumer un feu.</French>
-			<Czech>Balíček bezpečných zápalek pro zapálení ohně.</Czech>
+			<Czech>Balíček bezpečnostních zápalek pro zapálení ohně. Udržujte z dosahu dětí.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_4">
 			<English>Hunting Knife</English>
@@ -2950,27 +2969,32 @@
 			<Russian>Нож используется для разделки туш животных.</Russian>
 			<Spanish>Un cuchillo usado para preparar la carne de caza para ser guardada.</Spanish>
 			<French>Un couteau servant à dépecer le gibier.</French>
-			<Czech>Nůž, který se používá pro kuchání masa ze zvířat.</Czech>
+			<Czech>Nůž, který se používá pro kuchání zvířat.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_4_A">
 			<English>Your Knife appears to be too blunt. (Maybe 5 uses Left).</English>
 			<Russian>Похоже, нож тупится. Осталось 5 использований.</Russian>
+			<Czech>Tento nůž je tupý. Půjde ho použít ještě asi tak pětkrát.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_4_B">
 			<English>Your Knife appears to be too blunt. (Maybe 4 uses Left).</English>
 			<Russian>Похоже, нож тупится. Осталось 4 использованийя.</Russian>
+			<Czech>Tento nůž je tupý. Půjde ho použít ještě asi tak čtyřikrát.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_4_C">
 			<English>Your Knife appears to be too blunt. (Maybe 3 uses Left).</English>
 			<Russian>Похоже, нож тупится. Осталось 3 использования.</Russian>
+			<Czech>Tento nůž je tupý. Půjde ho použít ještě asi tak třikrát.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_4_D">
 			<English>Your Knife appears to be too blunt. (Maybe 2 uses Left).</English>
 			<Russian>Похоже, нож тупится. Осталось пара использований.</Russian>
+			<Czech>Tento nůž je tupý. Půjde ho použít ještě asi tak dvakrát.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_4_E">
 			<English>Your Knife appears to be too blunt. (Maybe 1 uses Left).</English>
 			<Russian>Похоже, нож тупится. Можно воспользоваться еще разок.</Russian>
+			<Czech>Tento nůž je tupý. Půjde ho použít ještě asi tak jednou.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_5">
 			<English>Flashlight</English>
@@ -2986,7 +3010,7 @@
 			<Russian>Фонарик питается двумя батарейками типа D.</Russian>
 			<Spanish>Linterna a pilas&lt;br/&gt;Pilas: 2 x D</Spanish>
 			<French>Lampe torche à piles.&lt;br/&gt;Piles: 2 x Type D</French>
-			<Czech>Klasická baterka na baterie&lt;br/&gt;Baterie: dvě tužkové</Czech>
+			<Czech>Klasická baterka na baterie&lt;br/&gt;Baterie: 2xD</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_6">
 			<English>Flashlight (Military)</English>
@@ -3002,7 +3026,7 @@
 			<Russian>Армейский фонарик светит красным светом и питается двумя батарейками типа D.</Russian>
 			<Spanish>Linterna Militar de luz roja a pilas&lt;br/&gt;Pilas: 2 x D</Spanish>
 			<French>Lampe torche militaire à piles, lumière rouge.&lt;br/&gt;Piles: 2 x Type D</French>
-			<Czech>Vojenská baterka s červeným světlem na baterie&lt;br/&gt;Baterie: dvě tužkové</Czech>
+			<Czech>Vojenská baterka s červeným světlem na baterie&lt;br/&gt;Baterie: 2xD</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_7">
 			<English>Bandage</English>
@@ -3050,7 +3074,7 @@
 			<Russian>Колесо, которое можно использовать для починки одного колеса на автомобиле.</Russian>
 			<Spanish>Una vieja rueda que puede ser usada para reparar un vehículo.</Spanish>
 			<French>Une roue d&apos;occasion pouvant servir de pièce de rechange pour un réparer un véhicule.</French>
-			<Czech>Staré kolo, které se ale hodí, pokud máte u auta některé kolo poškozené.</Czech>
+			<Czech>Staré kolo, které se hodí, pokud jste zrovna píchli.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_10">
 			<English>Scrap Metal</English>
@@ -3082,7 +3106,7 @@
 			<Russian>Двигатель, запчасти из которого используются для ремонта двигателей в технике.</Russian>
 			<Spanish>Componentes de motor con lubricante. Todo lo necesario para reparar un motor.</Spanish>
 			<French>Un moteur ainsi que de l&apos;huile et du lubrifiant. Tout le nécessaire pour changer un moteur.</French>
-			<Czech>Náhraní díly motoru s olejem. Vše, co je potřeba k opravení motoru.</Czech>
+			<Czech>Náhraní díly motoru včetně oleje. Vše, co je potřeba k tomu, aby váš motor zase běžel jako hodinky.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_30">
 			<English>Windscreen Glass</English>
@@ -3090,7 +3114,7 @@
 			<Russian>Автомобильное стекло</Russian>
 			<Spanish>Ventana de Vidrio</Spanish>
 			<French>Vitre</French>
-			<Czech>Přední sklo</Czech>
+			<Czech>Autosklo</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_30">
 			<English>Brand new auto glass. Could be used to repair glass on a vehicle.</English>
@@ -3098,7 +3122,7 @@
 			<Russian>Новое автомобильное стекло в упаковке. Его можно установить на технику.</Russian>
 			<Spanish>Vidrio nuevo para vehículo. Puede ser usado para reparar la ventana de un vehículo.</Spanish>
 			<French>Vitre neuve. Permet de réparer un véhicule.</French>
-			<Czech>Zcela nové sklo z auta. Lze použít pro opravu skla na vozidle.</Czech>
+			<Czech>Zcela nové autosklo. Lze použít pro opravu vozidla.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_32">
 			<English>Main Rotor Assembly</English>
@@ -3130,7 +3154,7 @@
 			<Russian>Наполненная водой пластиковая бутылка. Вода сомнительного качества.</Russian>
 			<Spanish>Una botella de agua llena que puede consumirse.</Spanish>
 			<French>Bouteille (pleine)</French>
-			<Czech>Láhev, která byla naplněna vodou a může být vypita.</Czech>
+			<Czech>Plná láhev vody, kterou lze vypít.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_13">
 			<English>Water Bottle (Empty)</English>
@@ -3146,7 +3170,7 @@
 			<Russian>Пустая бутылка, которую можно наполнить водой.</Russian>
 			<Spanish>Una botella de agua vacía. Puede ser útil si se la llena con agua de nuevo.</Spanish>
 			<French>Une Bouteille vide. Il serait bien de la remplir à nouveau.</French>
-			<Czech>Prázdná láhev na vodu. Může být znovu naplněna vodou.</Czech>
+			<Czech>Prázdná láhev na vodu. Může být znovu naplněna.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_14">
 			<English>Epi-Pen</English>
@@ -3162,7 +3186,7 @@
 			<Russian>Инъекция адреналина для приведения в чувства людей без сознания.</Russian>
 			<Spanish>Epinefrina Autoinyectable. Inyección intramuscular para revivir a alguien inconciente.</Spanish>
 			<French>Adrénaline en auto-injection intra-musculaire "Epipen". Permet de se remettre d&apos;une perte de conscience.</French>
-			<Czech>Injekce adrenalinu (epinefrinu). Používá se pro oživení osoby z bezvědomí.</Czech>
+			<Czech>Injekce adrenalinu (epinefrinu). Používá se pro probrání osoby z bezvědomí.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_15">
 			<English>Morphine Auto-Injector</English>
@@ -3178,7 +3202,7 @@
 			<Russian>Морфий используется для местного обезболивания при переломах.</Russian>
 			<Spanish>Morfina Autoinyectable. Inyección instramuscular usada para controlar el dolor severo como el de una fractura.</Spanish>
 			<French>Morphine en auto-injection intra-musculaire. Permet de traiter les douleurs aiguees, comme les fractures.</French>
-			<Czech>Injekce morfia, kterou lze použít proti silné bolesti jako jsou např. zlomené kosti.</Czech>
+			<Czech>Injekce morfia, kterou lze použít proti silné bolesti jako jsou např. zlomené kosti. Pozor na závislost.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_16">
 			<English>Blood Bag</English>
@@ -3186,7 +3210,7 @@
 			<Russian>Пакет крови</Russian>
 			<Spanish>Bolsa de Sangre</Spanish>
 			<French>Poche de sang</French>
-			<Czech>Krevní sáček</Czech>
+			<Czech>Krevní vak</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_16">
 			<English>Bag of blood used for administering a Blood transfusion.</English>
@@ -3194,7 +3218,7 @@
 			<Russian>Пакет крови используется для переливания при кровопотерях.</Russian>
 			<Spanish>Bolsa de sangre usada para administrar transfusiones de sangre.</Spanish>
 			<French>Sang permettant de transfuser un co-équipier.</French>
-			<Czech>Krevní sáček, který se používá pro krevní transfúzi.</Czech>
+			<Czech>Krevní vak, který se používá pro krevní transfúzi.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_17">
 			<English>Antibiotics</English>
@@ -3226,7 +3250,7 @@
 			<Russian>Слабое болеутоляющие отлично подходит для подавления боли от небольших ранений.</Russian>
 			<Spanish>Un analgésico moderado adecuado para uso regular de alivio del dolor y la inflamación causada por heridas moderadas.</Spanish>
 			<French>Un antidouleur léger permettant de soulager les petites blessures de tous les jours.</French>
-			<Czech>Klasické prášky proti bolesti pro běžné používání proti aktuální bolesti způsobené běžnými zraněními.</Czech>
+			<Czech>Klasické prášky proti bolesti pro běžné používání proti aktuální bolesti, například migréně.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_SEPSISBANDAGE">
 			<English>Sepsis Bandage</English>
@@ -3234,13 +3258,13 @@
 			<Russian>Антисептический бинт</Russian>
 			<Spanish>Vendaje para Sepsis</Spanish>
 			<French>Pansement antiseptique</French>
-			<Czech>Obvaz</Czech>
+			<Czech>Antiseptický obvaz</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_SEPSISBANDAGE">
 			<English>Joint Services standard first aid dressing. Used to stop bleeding of wounds and cure Sepsis.</English>
 			<Russian>Универсальное средство оказания первой помощи. Используется для остановки кровотечения и лечения сепсиса.</Russian>
 			<Spanish>Vendaje de primeros auxilios usado para detener el sangrado de heridas y curar la septicemia.</Spanish>
-			<Czech>Používá se pro zastavení krvácení a léčbu otravy krve (sepse).</Czech>
+			<Czech>Používá se pro zastavení krvácení a prevenci otravy krve (sepse).</Czech>
 			<French>Pansement de premier secours. Utilisé pour stopper une hémorragie et soigner une septicémie.</French>
 			<German>Antiseptisches Verbandszeug, um Blutungen zu stillen und Entzuendungen zu verhindern.</German>
 		</Key>
@@ -3250,13 +3274,13 @@
 			<Russian>Коробка трав</Russian>
 			<Spanish>hierbas Caja</Spanish>
 			<French>Herb Box</French>
-			<Czech>Herb Box</Czech>
+			<Czech>Krabice bylinek</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_HERBBOX">
 			<English>Box of medicinal herbs</English>
 			<Russian>Коробка лекарственных трав</Russian>
 			<Spanish>Box of medicinal herbs</Spanish>
-			<Czech>Box of medicinal herbs</Czech>
+			<Czech>Krabice plná nejrůznějších léčivých rostlin. Sen každé babky kořenářky.</Czech>
 			<French>Box of medicinal herbs</French>
 			<German>Eine Schachtel mit medizinischen Kraeutern.</German>
 		</Key>
@@ -3308,7 +3332,7 @@
 			<Russian>20-ти литровая канистра для заправки техники и генераторов.</Russian>
 			<Spanish>Bidón de 20 litros que puede ser usado para recargar combustible en los vehículos.</Spanish>
 			<French>Jerrican de 20 litres pour faire le plein des véhicules.</French>
-			<Czech>Kanystr o velikosti 20 litrů. Může být použit pro tankování vozidel a jako palivo pro generátory.</Czech>
+			<Czech>Kanystr o objemu 20 litrů. Může být použit pro tankování vozidel a jako palivo pro generátory.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_47">
 			<English>Raw Meat</English>
@@ -3348,7 +3372,7 @@
 			<Russian>Банка (Бобы)</Russian>
 			<Spanish>Lata (Frijoles al Horno)</Spanish>
 			<French>Conserve (Haricots)</French>
-			<Czech>Plechovka (klas. fazole)</Czech>
+			<Czech>Plechovka (Baked Beans)</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_26">
 			<English>Canned baked beans used for sustainment. Lasts well over five years if stored correctly.</English>
@@ -3380,7 +3404,7 @@
 			<Russian>Банка (Фасоль с мясом)</Russian>
 			<Spanish>Lata (Frank &amp; Beans)</Spanish>
 			<French>Conserve (William Saurien)</French>
-			<Czech>Plechovka (Frankovy fazole)</Czech>
+			<Czech>Plechovka (Frank &amp; Beans)</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_28">
 			<English>Canned Beans and Sausages used for sustenance. Lasts well over five years if stored correctly.</English>
@@ -3388,7 +3412,7 @@
 			<Russian>Банка консервированной фасоли с мясом. Срок хранения до 5 лет.</Russian>
 			<Spanish>Lata de frijoles y salchichas lista para consumir.</Spanish>
 			<French>Une boîte d&apos;haricots et saussisses en sauce. Peut se conserver 5 ans stocké dans un endroit approprié.</French>
-			<Czech>Fazole a párky v plechovce. Při správném skladování vydrží i pět let.</Czech>
+			<Czech>Fazole s párky v plechovce. Při správném skladování vydrží i pět let.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_29">
 			<English>Can (Pasta)</English>
@@ -3428,7 +3452,7 @@
 			<Russian>Пустая бутылка (Виски)</Russian>
 			<Spanish>Botella de Whisky Vacía</Spanish>
 			<French>Bouteille de Whisky vide</French>
-			<Czech>Prádná flaška od Whiskey</Czech>
+			<Czech>Prádná flaška od whiskey</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_34">
 			<English>A cracked empty whiskey bottle that no longer contains anything.</English>
@@ -3436,7 +3460,7 @@
 			<Russian>Треснутая бутылка виски не содержит в себе абсолютно ничего.</Russian>
 			<Spanish>Una botella de whisky vacía.</Spanish>
 			<French>Une bouteille fêlée, sans son précieux brevage.</French>
-			<Czech>Popraskaná láhev od Whisky, která už neobsahuje ani kapku.</Czech>
+			<Czech>Popraskaná láhev od whisky, která už neobsahuje ani kapku.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_35">
 			<English>Empty Soda Can</English>
@@ -3500,7 +3524,7 @@
 			<Russian>Пустая 20-ти литровая канистра, которая может быть наполнена топливом, слитым из машины или заправочной станции.</Russian>
 			<Spanish>Un bidón de 20 litros vacío que puede ser llenado en estaciones de servicio.</Spanish>
 			<French>Un Jerrican de 20 litres, vide. Peut être rempli en siphonnant les cuves à fioul de stations-service.</French>
-			<Czech>Prázdný 20 litrový kanystr, který může být naplněn u benzínových static nebo aut.</Czech>
+			<Czech>Prázdný dvacetilitrový kanystr, který může být naplněn u benzínových stanic nebo aut.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_40">
 			<English>Wood Pile</English>
@@ -3516,7 +3540,7 @@
 			<Russian>Кучка дров, идеально подойдет, чтобы развести костер.</Russian>
 			<Spanish>Una pequeña pila de leña recien cortada que puede ser usada para crear una fogata y varias otras cosas.</Spanish>
 			<French>Un peu de bois qui permet de préparer du feu, entre autre.</French>
-			<Czech>Hromádka čerstvě nasekaného dřeva, které může být použito pro vytvoření ohniště a další různé věci.</Czech>
+			<Czech>Hromádka čerstvě nasekaného dřeva, které může být použito pro vyrobení ohniště a další různé věci.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_42">
 			<English>Heatpack</English>
@@ -3548,7 +3572,7 @@
 			<German>Schwere Tarnkleidung, die dichtes Unterholz simuliert. Kann ausgepackt und getragen werden.</German>
 			<Russian>Маскировочный халат типа «леший». Можно распаковать и надеть.</Russian>
 			<French>Une tenue de camouflage qui imite le feuillage. Peut être porté.</French>
-			<Czech>Maskovací oblečení vytvořeno speciálně pro použítí v lesních oblestech. Může být rozbaleno a nošeno.</Czech>
+			<Czech>Maskovací oblečení vytvořené speciálně pro použítí v lesních oblastech. Lze rozbalit a obléknout.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_44">
 			<English>Camo Clothing</English>
@@ -3564,7 +3588,7 @@
 			<German>Eine Hose mit Flecktarnmuster und ein braunes T-Shirt. Kann ausgepackt und getragen werden.</German>
 			<Russian>Камуфлированные штаны и футболка. Можно распаковать и надеть.</Russian>
 			<French>Un ensemble composé d&apos;un pantalon de camouflage et d&apos;un t-shirt marron. Peut être porté.</French>
-			<Czech>Kalhoty s kamufláží, hnědé tričko a bez čepice. Může být rozbaleno a nošeno.</Czech>
+			<Czech>Kalhoty s kamufláží, hnědé tričko a bez čepice. Lze rozbalit a obléknout.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_45">
 			<English>Civilian Clothing</English>
@@ -3580,7 +3604,7 @@
 			<German>Normale zivile Kleidung mit einer leichten Mehrzweckweste und einer Muetze. Kann ausgepackt und getragen werden.</German>
 			<Russian>Повседневная гражданская одежда. Можно распаковать и надеть.</Russian>
 			<French>Une tenue de ville, avec veste légère et casquette. Peut être porté.</French>
-			<Czech>Normální civilní oblečení s lehkou vestou a čepicí. Může být rozbaleno a nošeno.</Czech>
+			<Czech>Normální civilní oblečení s lehkou vestou a čepicí. Lze rozbalit a obléknout.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_46">
 			<English>Soldier Clothing</English>
@@ -3588,7 +3612,7 @@
 			<German>Feldanzug</German>
 			<Russian>Солдатская форма</Russian>
 			<French>Tenue de soldat</French>
-			<Czech>Vojenská iniforma</Czech>
+			<Czech>Vojenská uniforma</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_46">
 			<English>A British Army Soldier&apos;s uniform. Can be unpacked and worn.</English>
@@ -3596,7 +3620,7 @@
 			<German>Ein Feldanzug der British Armed Forces mit Splitterschutzhelm und Koppelgeschirr.</German>
 			<Russian>Форма солдата британской армии. Можно распаковать и надеть.</Russian>
 			<French>Un uniforme de la BAF. Peut être porté.</French>
-			<Czech>Britská uniforma. Může být rozbalena a nošena.</Czech>
+			<Czech>Britská uniforma. Lze rozbalit a obléknout.</Czech>
 		</Key>
 		<Key ID="STR_WPN_HOLDR_2">
 			<English>Hunting Rifle</English>
@@ -3612,7 +3636,7 @@
 			<Russian>Термоящик (Медикаменты)</Russian>
 			<Spanish>Caja Médica</Spanish>
 			<French>Glacière (Médicaments)</French>
-			<Czech>Krabice (lékařské zásoby)</Czech>
+			<Czech>Chladnička (lékařské zásoby)</Czech>
 		</Key>
 		<Key ID="STR_DAYZ_OBJ_3">
 			<English>Ammunition Box</English>
@@ -3620,7 +3644,7 @@
 			<Russian>Коробка с боеприпасами</Russian>
 			<Spanish>Caja de Munición</Spanish>
 			<French>Boîte de munitions</French>
-			<Czech>Krabice s municí</Czech>
+			<Czech>Bedna s municí</Czech>
 		</Key>
 		<Key ID="STR_WPN_DESC_1">
 			<English>Shotgun 12 gauge</English>
@@ -3636,7 +3660,7 @@
 			<Russian>Ремингтон Модель 870 это помповый дробовик с креплением для фонарика</Russian>
 			<Spanish>La Remington Modelo 870 es una escopeta de acción a bombeo con una linterna militar como accesorio.</Spanish>
 			<French>Le modèle Remington 870 est un fusil à pompe avec une torche militaire.</French>
-			<Czech>Remington 870 je opakovací brokovnice s vojenským upevněním.</Czech>
+			<Czech>Remington 870 je opakovací brokovnice. Lze na ni připevnit vojenskou baterku.</Czech>
 		</Key>
 		<Key ID="STR_WPN_NAME_3">
 			<English>Remington 870 (Flashlight)</English>
@@ -3644,7 +3668,7 @@
 			<Russian>Ремингтон 870 (фонарь)</Russian>
 			<Spanish>Remington 870 (Linterna)</Spanish>
 			<French>Remington 870 (+Torche)</French>
-			<Czech>Remington 870 (s baterkou)</Czech>
+			<Czech>Remington 870 (baterka)</Czech>
 		</Key>
 		<Key ID="STR_WPN_DESC_3">
 			<English>The Remington Model 870 is a pump-action shotgun. This weapon has a torch attached.</English>
@@ -3652,7 +3676,7 @@
 			<Russian>Ремингтон Модель 870 это помповый дробовик с армейским фонариком</Russian>
 			<Spanish>La Remington Modelo 870 es una escopeta de acción a bombeo con una linterna como accesorio.</Spanish>
 			<French>Le modèle Remington 870 est un fusil à pompe avec une lampe torche.</French>
-			<Czech>Remington 870 je opakovací brokovnice s upevněním, např. pro baterku.</Czech>
+			<Czech>Remington 870 je opakovací brokovnice. Tato má navíc připevněnou baterku.</Czech>
 		</Key>
 		<Key ID="STR_WPN_NAME_4">
 			<English>Compound Crossbow</English>
@@ -3668,7 +3692,7 @@
 			<Russian>Спортивный арбалет требует сноровки для точной стрельбы, превращаясь в мощное однозарядное оружие на коротких дистанциях.</Russian>
 			<Spanish>La ballesta compuesta es, una vez que se domina el apuntado, una poderasa arma de único tiro a corta distancia con largo tiempo de recarga.</Spanish>
 			<French>Une fois maîtrisée, l&apos;arbalète composite permet de tirer un coup puissant mais avec un long temps de chargement.</French>
-			<Czech>Kuše je tichá a účiná zbraň na blízko. Nevýhodou je dlouhá nabíjecí doba.</Czech>
+			<Czech>Kuše je tichá a účinná střelná zbraň na krátkou vzdálenost. Její nevýhodou je dlouhá nabíjecí doba.</Czech>
 		</Key>
 		<Key ID="STR_WPN_NAME_5">
 			<English>Double-barreled Shotgun</English>
@@ -3690,7 +3714,7 @@
 			<English>Combine for M9</English>
 			<Spanish>Combinar a M9</Spanish>
 			<Russian>в M9 маг.</Russian>
-			<Czech>Zkobinovat pro M9</Czech>
+			<Czech>Vytvořit M9 zásobník</Czech>
 			<French>Assembler pour un M9</French>
 			<German>In M9-Magazin umladen</German>
 		</Key>		
@@ -3698,7 +3722,7 @@
 			<English>Combine for G17</English>
 			<Spanish>Combinar a G17</Spanish>
 			<Russian>в G17 маг.</Russian>
-			<Czech>Zkombinovat pro G17</Czech>
+			<Czech>Vytvořit G17 zásobník</Czech>
 			<French>Assembler pour un G17</French>
 			<German>In G17-Magazin umladen</German>
 		</Key>		
@@ -3716,7 +3740,7 @@
 			<Russian>15п. для 1866 (дробь)</Russian>
 			<Spanish>15 rondas. Perdigones para 1866</Spanish>
 			<French>15 plombs pour 1866</French>
-			<Czech>15 náb. 1866 Kuličkové</Czech>
+			<Czech>15 náb. 1866 broky</Czech>
 		</Key>
 		<Key ID="STR_MAG_DESC_1">
 			<English>Caliber: 12 gauge</English>
@@ -3732,7 +3756,7 @@
 			<Russian>15п. для 1866</Russian>
 			<Spanish>15 Rondas. Balas para 1866</Spanish>
 			<French>15 balles pour 1866</French>
-			<Czech>15 náb. 1866 Slugs</Czech>
+			<Czech>15 náb. 1866 kulky</Czech>
 		</Key>
 		<Key ID="STR_MAG_DESC_2">
 			<English>Caliber: .44 Rimfire (11x23mm)</English>
@@ -3764,7 +3788,7 @@
 			<Russian>Химсвет (Зеленый)</Russian>
 			<Spanish>Chemlight (Verde)</Spanish>
 			<French>Bâton lumineux (vert)</French>
-			<Czech>Chemické světlo (Zelené)</Czech>
+			<Czech>Chemické světlo (zelené)</Czech>
 		</Key>
 		<Key ID="STR_MAG_ACTION_5">
 			<English>Chemlight</English>
@@ -3788,7 +3812,7 @@
 			<Russian>Химсвет (Красный)</Russian>
 			<Spanish>Chemlight (Roja)</Spanish>
 			<French>Bâton lumineux (rouge)</French>
-			<Czech>Chemické světlo (Červené)</Czech>
+			<Czech>Chemické světlo (červené)</Czech>
 		</Key>
 		<Key ID="STR_MAG_NAME_7">
 			<English>Chemlight (Blue)</English>
@@ -3796,14 +3820,14 @@
 			<Russian>Химсвет (Синий)</Russian>
 			<Spanish>Chemlight (Azul)</Spanish>
 			<French>Bâton lumineux (bleu)</French>
-			<Czech>Chemické světlo (Modré)</Czech>
+			<Czech>Chemické světlo (modré)</Czech>
 		</Key>
 		<Key ID="STR_MAG_NAME_8">
 			<English>2Rnd. Slug</English>
 			<Russian>2п.12к (пуля)</Russian>
 			<Spanish>2Rnd. Slug</Spanish>
 			<French>2 balles</French>
-			<Czech>2 náb. Slug</Czech>
+			<Czech>2 patrony Slug</Czech>
 			<German>2 Schuss Flintenlaufgeschoss</German>
 		</Key>
 		<Key ID="STR_MAG_DESC_8">
@@ -3819,7 +3843,7 @@
 			<Russian>2п.12к (дробь)</Russian>
 			<Spanish>2Rnd. Perdigones</Spanish>
 			<French>2 cartouches</French>
-			<Czech>2 náb. Kuličkové</Czech>
+			<Czech>2 patrony broků</Czech>
 			<German>2 Schuss Schrot</German>
 		</Key>
 		<Key ID="STR_MAG_DESC_9">
@@ -3875,7 +3899,7 @@
 			<German>Sandsaecke</German>
 			<Russian>Мешки с песком</Russian>
 			<Spanish>Bolsas de Arena</Spanish>
-			<Czech>Pytle s pískem</Czech>
+			<Czech>Pytle na písek</Czech>
 			<French>Sacs de sable</French>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_21">
@@ -3883,7 +3907,7 @@
 			<German>Jutesaecke, die mit Sand oder Erde gefuellt fuer Befestigungen verwendet werden koennen.</German>
 			<Russian>Мешки с песком для создания оборонительных сооружений.</Russian>
 			<Spanish>Bolsas hechas de arpillera que pueden llenarse con arena o tierra y ser usadas para fortificación militar.</Spanish>
-			<Czech>Pytle naplěné pískem a solí, které mohou být použity pro postavení vojenské pevnosti.</Czech>
+			<Czech>Jutové pytle, lze naplnit pískem nebo zeminou a použít je pro postavení opevnění.</Czech>
 			<French>Des sacs de jute qui peuvent être remplis de sable et utilisés pour des fortifications militaires.</French>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_22">
@@ -3899,7 +3923,7 @@
 			<German>Schwere Metallteile, die zu einer wirksamen Panzersperre verbunden werden koennen.</German>
 			<Russian>Металлические детали, из которых собирается противотанковый ёж.</Russian>
 			<Spanish>Materiales metálicos que pueden ser usados para crear una trampa antitanque.</Spanish>
-			<Czech>Kovový materiál, který může být použit pro postavení zátarasu</Czech>
+			<Czech>Kovový materiál, který může být použit pro postavení zátarasu.</Czech>
 			<French>Des pièces de métal utilisées par le génie militaire pour construire un obstacle anti-tank.</French>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_23">
@@ -3938,7 +3962,7 @@
 			<English>Bear Trap</English>
 			<Spanish>Trampa de Osos</Spanish>
 			<Russian>Капкан</Russian>
-			<Czech>Medvědí past</Czech>
+			<Czech>Past na medvědy</Czech>
 			<French>Piège à ours</French>
 			<German>Baerenfalle</German>
 		</Key>
@@ -3946,7 +3970,7 @@
 			<English>A device to remotely catch an animal or injure a human.</English>
 			<Spanish>Un dispositivo para atrapar remotamente un animal o herir a un humano.</Spanish>
 			<Russian>Устройство для ловли животных, но может повредить и человека.</Russian>
-			<Czech>Věc na chytání zvířat nebo zranění lidí.</Czech>
+			<Czech>Zařízení určené pro chytání zvířat a zraňování lidí.</Czech>
 			<French>Un dispositif utilisé pour attraper un animal à distance ou pour blesser un humain.</French>
 			<German>Eine schwere Schnappfalle, um Tiere zu fangen oder Menschen zu verletzen.</German>
 		</Key>
@@ -3955,7 +3979,7 @@
 			<Russian>Активировать ловушку</Russian>
 			<Spanish>Armar Trampa</Spanish>
 			<French>Armer le piège</French>
-			<Czech>Odjistit past</Czech>
+			<Czech>Nalíčit past</Czech>
 			<German>Falle spannen</German>
 		</Key>
 		<Key ID="STR_BEARTRAP_DISARM">
@@ -3986,21 +4010,25 @@
 			<English>A single-handed striking tool with a sharp blade used to cut and split wood.</English>
 			<Russian>Топор отлично подойдет для рубки дров.</Russian>
 			<Spanish>Una herramienta con una hoja afilada para golpear y cortar madera.</Spanish>
-			<Czech>Jednoruční sekera pro sekání dřeva nebo i proti zombie.</Czech>
+			<Czech>Jednoruční sekera vhodná pro sekání do dřeva a do zombie.</Czech>
 			<French>Un outil à une main à lame éffilée utilisé pour couper du bois.</French>
 			<German>Ein einhaendig gefuehrtes Schlagwerkzeug mit scharfer Klinge, das zum Hacken und Spalten von Holz verwendet wird.</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_PICKAXE">
 			<English>Pickaxe</English>
+			<Czech>Krumpáč</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_PICKAXE">
-			<English>a tool with a long handle at right angles to a curved iron or steel bar with a point at one end and a chisel or point at the other, used for breaking up hard ground or rock.</English>
+			<English>A tool with a long handle at right angles to a curved iron or steel bar with a point at one end and a chisel or point at the other, used for breaking up hard ground or rock.</English>
+			<Czech>Nástroj s dlouhou násadou, který se používá pro lámání kamene a rozrušování ztvrdlé zeminy.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_SledgeHammer">
 			<English>SledgeHammer</English>
+			<Czech>Palice</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_SledgeHammer">
 			<English>A sledgehammer is a tool with a large, flat, often metal head, attached to a lever.</English>
+			<Czech>Nástroj s dlouhou násadou a obvykle kovovou hlavicí.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_CROWBAR">
 			<English>Crowbar</English>
@@ -4014,15 +4042,17 @@
 			<English>A tool consisting of a metal bar with a single curved end and flattened points, often with a small fissure on one or both ends for removing nails.</English>
 			<Russian>Ручной ударный и рычажный инструмент, изготовленный из прочного металлического стержня.</Russian>
 			<Spanish>Una herramienta que consiste en una barra de metal con un final curvado y chato.</Spanish>
-			<Czech>Kovová zbraň s točivým zakončením. Často s prasklinou na jedné či obou stranách.</Czech>
+			<Czech>Kovový, na konci zahnutý nástroj. Často také se štěrbinou pro vytahování hřebíků.</Czech>
 			<French>Un outil composé d&apos;une barre métallique avec une extrémité incurvée et plate, souvent munie d&apos;une fente pour arracher les clous.</French>
 			<German>Ein schweres Metallwerkzeug mit einem gekruemmten Ende und an beiden Enden abgeflachten Kanten. Kann zum Aufstemmen von Kisten oder zum Ziehen von Naegeln verwendet werden.</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_CROWBARBENT">
 			<English>Bent Crowbar</English>
+			<Czech>Zohýbané páčidlo</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_CROWBARBENT">
 			<English>A bent crowbar.</English>
+			<Czech>Tímto páčidlem někdo páčil a páčil, až ho ohnul.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_MACHETE">
 			<English>Machete</English>
@@ -4036,7 +4066,7 @@
 			<English>An agricultural tool turned into a weapon, the Machete may be less versatile than the common hatchet, but it packs a punch.</English>
 			<Russian>Сельскохозяйственный инструмент, превращенный в оружие. Не такой повседневный, как топор, но весьма мощный.</Russian>
 			<Spanish>Una herramienta agrícola transformada en un arma. El machete puede ser menos versátil que un hacha común pero pega con fuerza.</Spanish>
-			<Czech>Původně zbraň pro zahradničení. Nyní silná zbraň proti zombie i když výskyt není tak častý.</Czech>
+			<Czech>Původně zbraň pro zahradničení. Nemá tolik využití jako sekera, ale proti zombie poslouží stejně dobře.</Czech>
 			<French>Un outil agricole qui peut être utilisé comme une arme. La machette est moins versatile que la hache mais plus tranchante.</French>
 			<German>Ein urspruenglich in der Landwirtschaft verwendetes Werkzeug mit langer Klinge, das auch als Waffe verwendet werden kann. Ungeeignet zum Holzfaellen.</German>
 		</Key>
@@ -4044,7 +4074,7 @@
 			<English>Baseball Bat</English>
 			<Russian>Бейсбольная бита</Russian>
 			<Spanish>Bate de Béisbol</Spanish>
-			<Czech>Baseballová pálka</Czech>
+			<Czech>Basebalová pálka</Czech>
 			<French>Batte de Baseball</French>
 			<German>Baseballschlaeger</German>
 		</Key>
@@ -4053,14 +4083,14 @@
 			<German>Obwohl urspruenglich fuer einen populaeren amerikanischen Sport entworfen, erfreut sich der Baseballschlaeger auch gewalttaetigerer Einsatzmoeglichkeiten.</German>
 			<Russian>Созданная для популярной американской игры, эта гладкая деревянная дубинка также имеет более насильственное применение.</Russian>
 			<Spanish>Diseñado para el popular juego estadounidense, este palo de madera lisa también tiene usos más violentos.</Spanish>
-			<Czech>Vytvořeno pro populární americkou hru, ale tento dřevěný nástroj slouží také pro násilý.</Czech>
+			<Czech>Původně vymyšlena pro populární americkou hru, lze ji ale použít i jako zbraň.</Czech>
 			<French>A l&apos;origine destiné à un fameux sport US, ce club de bois peut avoir un usage plus violent.</French>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_BASEBALLBATNAILS">
 			<English>Baseball Bat Nailed</English>
 			<Russian>Бита с гвоздями</Russian>
 			<Spanish>Bate de Béisbol con Clavos</Spanish>
-			<Czech>Baseballová pálka s hřebíky</Czech>
+			<Czech>Basebalová pálka s hřebíky</Czech>
 			<French>Une batte de baseball cloutée</French>
 			<German>Nagelkeule</German>
 		</Key>
@@ -4068,7 +4098,7 @@
 			<English>Designed for the popular American game, this smooth wooden club also has a lot of nails attached.</English>
 			<Russian>Созданная для популярной американской игры, эта гладкая деревянная дубинка утыкана гвоздями.</Russian>
 			<Spanish>Diseñado para el popular juego estadounidense, este palo de madera lisa también tiene un monton de clavos en la punta.</Spanish>
-			<Czech>Původně pro populární americký sport, nyní tato dřevěná pálka slouží i jako zbraň. Tato má navíc ještě hřebíky.</Czech>
+			<Czech>Původně určena pro populární americký sport, nyní tato dřevěná pálka slouží i jako zbraň. Tato je navíc ještě pobita hřeby.</Czech>
 			<French>Object destiné à un fameux sport US, ce club de bois est bardé de clous</French>
 			<German>Durch diesen Baseballschlaeger wurden ziemlich viele Naegel geschlagen. Baseball laesst sich damit nicht mehr spielen.</German>
 		</Key>
@@ -4076,7 +4106,7 @@
 			<English>Baseball Bat Barbed</English>
 			<Russian>Бита с колючкой</Russian>
 			<Spanish>Bate de Béisbol con Púas</Spanish>
-			<Czech>Baseballová pálka s drátem</Czech>
+			<Czech>Basebalová pálka s drátem</Czech>
 			<German>Stacheldrahtkeule</German>
 			<French>Une batte de baseball barbelée</French>
 		</Key>
@@ -4084,7 +4114,7 @@
 			<English>Designed for the popular American game, this smooth wooden club also has a barbed wire attached.</English>
 			<Russian>Созданная для популярной американской игры, эта гладкая деревянная дубинка обмотана колючкой.</Russian>
 			<Spanish>Diseñado para el popular juego estadounidense, este palo de madera lisa también tiene un alambre de púas enredado.</Spanish>
-			<Czech>Původně pro populární americký sport, nyní tato dřevěná pálka slouží i jako zbraň. Tato má navíc ještě ostnatý drát.</Czech>
+			<Czech>Původně určena pro populární americký sport, nyní tato dřevěná pálka slouží i jako zbraň. Tato je navíc ještě omotána ostnatým drátem.</Czech>
 			<French>Objet destiné à un fameux sport US, ce club de bois est bardé de barbelés</French>
 			<German>Dieser Baseballschlaeger wurde mit Stacheldraht umwickelt. Baseball laesst sich damit nicht mehr spielen.</German>
 		</Key>
@@ -4117,7 +4147,7 @@
 			<Russian>Штурмовая винтовка с гранатометом &lt;br/&gt;Калибр: 5.56x45мм НАТО</Russian>
 			<Spanish>Rifle de asalto con lanzador de granadas &lt;br/&gt;Calibre: 5.56x45mm NATO</Spanish>
 			<French>Fusil d&apos;assault américain avec lance-grenades &lt;br/&gt;Calibre: 5.56x45mm OTAN, Grenade 40mm</French>
-			<Czech>Útočná puška s granátometem &lt;br/&gt;Kalibr: 5.56x45mm NATO</Czech>
+			<Czech>Útočná puška s podvěsným granátometem &lt;br/&gt;Kalibr: 5.56x45mm NATO, granát 40mm</Czech>
 			<German>Amerikanisches Sturmgewehr mit Unterlaufgranatwerfer&lt;br/&gt;Kaliber: 5.56 x 45 mm NATO (STANAG 4172), Granaten: 40 mm</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_M16A4">
@@ -4165,7 +4195,7 @@
 			<Russian>Штурмовая винтовка с гранатометом &lt;br/&gt;Калибр: 5.56x45мм НАТО</Russian>
 			<Spanish>Rifle de asalto con lanzador de granadas &lt;br/&gt;Calibre: 5.56x45mm NATO</Spanish>
 			<French>Fusil d&apos;assault à viseur optique avancé et lance-grenades &lt;br/&gt;Calibre: 5.56x45mm OTAN, grenade 40mm</French>
-			<Czech>Útočná puška s granátometem a zaměřovačem ACOG &lt;br/&gt;Kalibr: 5.56x45mm NATO</Czech>
+			<Czech>Útočná puška s podvěsným granátometem a zaměřovačem ACOG &lt;br/&gt;Kalibr: 5.56x45mm NATO, granát 40mm</Czech>
 			<German>Amerikanisches Sturmgewehr mit Unterlaufgranatwerfer und ACOG-Zielfernrohr&lt;br/&gt;Kaliber: 5.56 x 45 mm NATO (STANAG 4172), Granaten: 40 mm</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_M16A4GL">
@@ -4181,7 +4211,7 @@
 			<Russian>Штурмовая винтовка с гранатометом &lt;br/&gt;Калибр: 5.56x45мм НАТО</Russian>
 			<Spanish>Rifle de asalto con lanzador de granadas &lt;br/&gt;Calibre: 5.56x45mm NATO</Spanish>
 			<French>Fusil d&apos;assault américain avec lance-grenades &lt;br/&gt;Calibre: 5.56x45mm OTAN, grenade 40mm</French>
-			<Czech>Útočná puška s granátometem &lt;br/&gt;Kalibr: 5.56x45mm NATO</Czech>
+			<Czech>Útočná puška s podvěsným granátometem &lt;br/&gt;Kalibr: 5.56x45mm NATO, granát 40mm</Czech>
 			<German>Amerikanisches Sturmgewehr mit Unterlaufgranatwerfer&lt;br/&gt;Kaliber: 5.56 x 45 mm NATO (STANAG 4172), Granaten: 40 mm</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_M9">
@@ -4245,7 +4275,7 @@
 			<Russian>Полуавтоматический пистолет &lt;br/&gt;Калибр: 9x18мм</Russian>
 			<Spanish>Pistola semi-automática &lt;br/&gt;Calibre: 9x18mm</Spanish>
 			<French>Pistolet semi-automatique russe &lt;br/&gt;Calibre: 9x18mm</French>
-			<Czech>Poloautomatická pistole ruského původu &lt;br/&gt;Kalibr: 9x18mm</Czech>
+			<Czech>Ruská poloautomatická pistole &lt;br/&gt;Kalibr: 9x18mm</Czech>
 			<German>Halbautomatische Pistole vom Typ Makarow&lt;br/&gt;Kaliber: 9 x 18 mm Makarow</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_Makarov_SD">
@@ -4261,7 +4291,7 @@
 			<Russian>Полуавтоматический пистолет с глушителем&lt;br/&gt;Калибр: 9x18мм</Russian>
 			<Spanish>Pistola silenciada semi-automática &lt;br/&gt;Calibre: 9x18mm</Spanish>
 			<French>Pistolet semi-automatique russe avec silencieux &lt;br/&gt;Calibre: 9x18mm</French>
-			<Czech>Poloautomatická pistole s tlumičem ruského původu &lt;br/&gt;Kalibr: 9x18mm</Czech>
+			<Czech>Ruská poloautomatická pistole s tlumičem &lt;br/&gt;Kalibr: 9x18mm</Czech>
 			<German>Halbautomatische Pistole vom Typ Makarow mit Schalldaempfer (Typ PB)&lt;br/&gt;Kaliber: 9 x 18 mm Makarow</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_PDW">
@@ -4277,7 +4307,7 @@
 			<Russian>Пистолет-пулемет &lt;br/&gt;Калибр: 9x19мм</Russian>
 			<Spanish>Ametralladora &lt;br/&gt;Calibre: 9x19mm</Spanish>
 			<French>Mitrailleuse&lt;br/&gt;Calibre: 9x19mm</French>
-			<Czech>Automatická zbraň &lt;br/&gt;Kalibr: 9x19mm</Czech>
+			<Czech>Personal Defence Weapon, samopal &lt;br/&gt;Kalibr: 9x19mm</Czech>
 			<German>Leichte Maschinenpistole (Personal Defence Weapon)&lt;br/&gt;Kaliber 9 x 19 mm</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_Revolver">
@@ -4309,7 +4339,7 @@
 			<Russian>Полуавтоматический пистолет &lt;br/&gt;Калибр: 9x19мм</Russian>
 			<Spanish>Pistola semi-automática &lt;br/&gt;Calibre: 9x19mm</Spanish>
 			<French>Pistolet semi-automatique autrichien &lt;br/&gt;Calibre: 9x19mm</French>
-			<Czech>Poloautomatická pistole &lt;br/&gt;Kalibr: 9x19mm</Czech>
+			<Czech>Poloautomatická pistole Glock 17 &lt;br/&gt;Kalibr: 9x19mm</Czech>
 			<German>Halbautomatische Pistole vom Typ Glock 17 mit angebauter Taschenlampe&lt;br/&gt;Kaliber: 9 x 19 mm</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_CLOTHES">
@@ -4332,7 +4362,7 @@
 			<English>Wear</English>
 			<Russian>Надеть</Russian>
 			<Spanish>Vestir</Spanish>
-			<Czech>Nosit</Czech>
+			<Czech>Obléknout</Czech>
 			<French>Porter</French>
 			<German>Anziehen</German>
 		</Key>
@@ -4348,7 +4378,7 @@
 			<English>A type of camouflage clothing designed to resemble heavy foliage. Can be unpacked and worn.</English>
 			<Russian>Маскировочный халат типа «леший». Можно распаковать и надеть.</Russian>
 			<Spanish>Un tipo de traje camuflado diseñado para parecerse a un denso follaje. Puede ser desembalado y usado.</Spanish>
-			<Czech>Maskovací oblečení vytvořeno speciálně pro použítí v lesních oblestech. Může být rozbaleno a nošeno.</Czech>
+			<Czech>Maskovací oblečení vytvořeno speciálně pro použítí v lesních oblestech. Lze rozbalit a obléknout.</Czech>
 			<French>Une tenue de camouflage spécialement étudiée pour se fondre dans la végétation. Peut être porté.</French>
 			<German>Schwere Tarnkleidung, die dichtes Unterholz simuliert. Kann ausgepackt und getragen werden.</German>
 		</Key>
@@ -4364,7 +4394,7 @@
 			<English>A mixture of camouflage trousers with a brown t-shirt and no hat. Can be unpacked and worn.</English>
 			<Russian>Камуфлированные штаны и футболка. Можно распаковать и надеть.</Russian>
 			<Spanish>Una mezcla de pantalones camuflados con una camisa marrón y sin gorra. Puede ser desembalado y usado.</Spanish>
-			<Czech>Mix maskovacích kalhot a hnědého trička bez čepice. Může být rozbaleno a nošeno.</Czech>
+			<Czech>Mix maskovacích kalhot a hnědého trička bez čepice. Lze rozbalit a obléknout.</Czech>
 			<French>Ensemble composé d&apos;un pantalon de camouflage et d&apos;un t-shirt brun. Peut être porté.</French>
 			<German>Eine Hose mit Flecktarnmuster und ein braunes T-Shirt. Kann ausgepackt und getragen werden.</German>
 		</Key>
@@ -4380,7 +4410,7 @@
 			<English>A normal mixture of civilian clothing with a light-weight vest and hat. Can be unpacked and worn.</English>
 			<Russian>Повседневная гражданская одежда. Можно распаковать и надеть.</Russian>
 			<Spanish>Una mezcla de ropa civil con un chaleco ligero y gorra. Puede ser desembalado y usado.</Spanish>
-			<Czech>Klasické civilní oblečení s lehkou vestou a čepicí. Může být rozbaleno a nošeno.</Czech>
+			<Czech>Klasické civilní oblečení s lehkou vestou a čepicí. Lze rozbalit a obléknout.</Czech>
 			<French>Assemblage de vêtements civils avec une veste légère et une casquette. Peut être porté.</French>
 			<German>Normale zivile Kleidung mit einer leichten Mehrzweckweste und einer Muetze. Kann ausgepackt und getragen werden.</German>
 		</Key>
@@ -4396,7 +4426,7 @@
 			<English>A British Army Soldier&apos;s uniform. Can be unpacked and worn.</English>
 			<Russian>Форма солдата британской армии. Можно распаковать и надеть.</Russian>
 			<Spanish>Un uniforme de los Soldados de la Armada Británica. Puede ser desembalado y usado.</Spanish>
-			<Czech>Britská vojenská uniforma. Může být rozbalena a nošena.</Czech>
+			<Czech>Britská vojenská uniforma. Lze rozbalit a obléknout.</Czech>
 			<French>Un uniforme de soldat de l&apos;Armée Britannique. Peut être porté.</French>
 			<German>Ein Feldanzug der British Armed Forces mit Splitterschutzhelm und Koppelgeschirr.</German>
 		</Key>
@@ -4430,7 +4460,7 @@
 			<Russian>Ваш топор слишком туп, чтобы его использовать.</Russian>
 			<Spanish>Tu hacha parece estar muy desafilada para ser usada.</Spanish>
 			<French>Votre Hache semble être trop émoussée pour l&apos;utiliser</French>
-			<Czech>Vypadá to, že tvá sekera je příliž tupá na to, aby se dala použít.</Czech>
+			<Czech>Vypadá to, že tato sekera je příliš tupá na to, aby se dala použít.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_CODE_NAME_4">
 			<English>Dull Knife</English>
@@ -4446,7 +4476,7 @@
 			<Russian>Ваш нож слишком туп, чтобы его использовать.</Russian>
 			<Spanish>Tu cuchillo parece estar muy desafilado.</Spanish>
 			<French>Votre couteau semble trop émoussé</French>
-			<Czech>Vypadá to, že tvůj nůž je příliš tupý.</Czech>
+			<Czech>Vypadá to, že tento nůž je příliš tupý.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_CODE_NAME_0">
 			<English>Raw Meat</English>
@@ -4462,7 +4492,7 @@
 			<Russian>Сырое мясо. Будет вкуснее и безопаснее, если его приготовить.</Russian>
 			<Spanish>Carne Cruda que se utilizará para sobrevivir, debería cocinarse primero.</Spanish>
 			<French>La Viande Crue peut être consommée mais devrait être cuite pour la manger en toute sécurité.</French>
-			<Czech>Kvůli bezpečnosti by mělo být syrové maso nejdříve upečeno.</Czech>
+			<Czech>Bezpečnější bude syrové maso nejprve opéct.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_CODE_NAME_1">
 			<English>Mutton Raw</English>
@@ -4470,7 +4500,7 @@
 			<Russian>Ягнятина</Russian>
 			<Spanish>Cordero Crudo</Spanish>
 			<French>Agneau Cru</French>
-			<Czech>Jehněčí maso</Czech>
+			<Czech>Syrové jehněčí</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_CODE_DESC_1">
 			<English>Lamb Meat to be used for sustenance, should be cooked prior to safe eating.</English>
@@ -4478,7 +4508,7 @@
 			<Russian>Ягнятина. Будет вкуснее и безопаснее, если ее приготовить.</Russian>
 			<Spanish>Carne de Cordero que se utilizará para sobrevivir, debería cocinarse primero.</Spanish>
 			<French>La Viande d&apos;agneau peut être consommée mais doit être cuite avant de pouvoir la manger.</French>
-			<Czech>Kvůli bezpečnosti by mělo být maso z kozy nejdříve upečeno.</Czech>
+			<Czech>Tento kus jehněčího byl měl být nejprve opečen.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_CODE_NAME_2">
 			<English>Raw Chicken Leg</English>
@@ -4486,7 +4516,7 @@
 			<Russian>Куриный окорочек</Russian>
 			<Spanish>Pata de Pollo Cruda</Spanish>
 			<French>Poulet cru</French>
-			<Czech>Syrová kuřecí noha</Czech>
+			<Czech>Syrové kuřecí</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_CODE_DESC_2">
 			<English>Chicken Leg to be used for sustenance, should be cooked prior to safe eating.</English>
@@ -4494,7 +4524,7 @@
 			<Russian>Сырой куриный окорочек. Будет вкуснее и безопаснее, если его приготовить.</Russian>
 			<Spanish>Pata de Pollo que se utilizará para sobrevivir, debería cocinarse primero.</Spanish>
 			<French>La Cuisse de Poulet crue peut être consommée mais devrait être cuite avant de pouvoir la manger.</French>
-			<Czech>Kvůli bezpečnosti by měla být kuřecí nožka nejdříve upečena.</Czech>
+			<Czech>Toto kuřecí stehno byl mělo být nejprve opečeno.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_CODE_NAME_3">
 			<English>Rabbit Raw</English>
@@ -4502,7 +4532,7 @@
 			<Russian>Кролик</Russian>
 			<Spanish>Conejo Crudo</Spanish>
 			<French>Lapin cru</French>
-			<Czech>Králičí maso</Czech>
+			<Czech>Syrové králičí</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_CODE_DESC_3">
 			<English>Rabbit to be used for sustenance, should be cooked prior to safe eating.</English>
@@ -4510,7 +4540,7 @@
 			<Russian>Кролик. Будет вкуснее и безопаснее, если его приготовить.</Russian>
 			<Spanish>Conejo que se utilizará para sobrevivir, debería cocinarse primero.</Spanish>
 			<French>Le Lapin cru peut être consommé mais devrait être cuit avant de le manger.</French>
-			<Czech>Kvůli bezpečnosti by mělo být králičí maso nejdříve upečeno.</Czech>
+			<Czech>Tento kus králičího byl měl být nejprve opečen.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_CODE_NAME_4">
 			<English>Raw Bacon</English>
@@ -4526,7 +4556,7 @@
 			<Russian>Бекон. Будет вкуснее и безопаснее, если его приготовить.</Russian>
 			<Spanish>Panceta que se utilizará para sobrevivir, debería cocinarse primero.</Spanish>
 			<French>Le Bacon cru peut être consommé mais devrait être cuit avant de le manger.</French>
-			<Czech>Kvůli bezpečnosti by měla být slanina nejdříve upečena.</Czech>
+			<Czech>Tento kus slaniny byl měl být nejprve opečen.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_CODE_NAME_6">
 			<English>Raw Beef</English>
@@ -4534,7 +4564,7 @@
 			<Russian>Говядина</Russian>
 			<Spanish>Churrasco Crudo</Spanish>
 			<French>Boeuf Cru</French>
-			<Czech>Syrové hovězí maso</Czech>
+			<Czech>Syrové hovězí</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_CODE_DESC_6">
 			<English>Beef to be used for sustenance, should be cooked prior to safe eating.</English>
@@ -4542,7 +4572,7 @@
 			<Russian>Говядина. Будет вкуснее и безопаснее, если ее приготовить.</Russian>
 			<Spanish>Currasco que se utilizará para sobrevivir, debería cocinarse primero.</Spanish>
 			<French>Le Boeuf Cru peut être consommé mais devrait être cuit avant de le manger.</French>
-			<Czech>Kvůli bezpečnosti by mělo být syrové hovězí maso nejdříve upečeno.</Czech>
+			<Czech>Tento hovězí steak byl měl být nejprve opečen.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_GOAT_RAW">
 			<English>Raw Goat</English>
@@ -4550,7 +4580,7 @@
 			<Russian>Ягнятина</Russian>
 			<Spanish>Cabra Cruda</Spanish>
 			<French>Viande de chèvre crue</French>
-			<Czech>Syrové kozí maso</Czech>
+			<Czech>Syrové kozí</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_GOAT_RAW">
 			<English>Goat Meat to be used for sustenance, should be cooked prior to safe eating.</English>
@@ -4558,7 +4588,7 @@
 			<Russian>Ягнятина. Будет вкуснее и безопаснее, если ее приготовить.</Russian>
 			<Spanish>Carne de Cabra Cruda que se utilizará para sobrevivir, debería cocinarse primero.</Spanish>
 			<French>La viande de chèvre crue peut être consommée mais devrait être cuite avant de le manger.</French>
-			<Czech>Kvůli bezpečnosti by mělo být syrové kozí maso nejdříve upečeno.</Czech>
+			<Czech>Tento kus kozího masa byl měl být nejprve opečen.</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_NAME_0">
 			<English>Cooked Meat</English>
@@ -4566,7 +4596,7 @@
 			<Russian>Жареное мясо</Russian>
 			<Spanish>Carne Cocinada</Spanish>
 			<French>Viande cuite</French>
-			<Czech>Upečené maso</Czech>
+			<Czech>Opečené maso</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_DESC_0">
 			<English>Cooked Meat to be used for sustenance.</English>
@@ -4574,7 +4604,7 @@
 			<Russian>Жареное мясо, готовая к употреблению.</Russian>
 			<Spanish>Carne Cocinada que se utilizará para sobrevivir.</Spanish>
 			<French>La Viande Cuite peut être consommée.</French>
-			<Czech>Upečené maso může být snězeno abyste přežili.</Czech>
+			<Czech>Opečené maso může být snězeno, abyste přežili.</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_NAME_1">
 			<English>Cooked Mutton</English>
@@ -4582,7 +4612,7 @@
 			<Russian>Жареная ягнятина</Russian>
 			<Spanish>Cordero Cocinado</Spanish>
 			<French>Agneau Cuit</French>
-			<Czech>Upečené jehněčí</Czech>
+			<Czech>Opečené jehněčí</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_DESC_1">
 			<English>Lamb Meat to be used for sustenance.</English>
@@ -4590,7 +4620,7 @@
 			<Russian>Жареная ягнятина, готовая к употреблению.</Russian>
 			<Spanish>Carne de Cordero que se utilizará para sobrevivir.</Spanish>
 			<French>La Viande d&apos;agneau peut être consommée.</French>
-			<Czech>Upečené jehněčí může být snězeno abyste přežili.</Czech>
+			<Czech>Opečené jehněčí může být snězeno, abyste přežili.</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_NAME_2">
 			<English>Chicken Leg</English>
@@ -4598,7 +4628,7 @@
 			<Russian>Жареный куриный окрочек</Russian>
 			<Spanish>Pata de Pollo</Spanish>
 			<French>Poulet grillé</French>
-			<Czech>Kuřecí nožka</Czech>
+			<Czech>Opečené kuřecí</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_DESC_2">
 			<English>Chicken Leg to be used for sustenance.</English>
@@ -4606,7 +4636,7 @@
 			<Russian>Жареный куриный окрочек, готовый к употреблению.</Russian>
 			<Spanish>Pata de Pollo que se utilizará para sobrevivir.</Spanish>
 			<French>La cuisse de poulet peut être consommée.</French>
-			<Czech>Kuřecí noha může být snědena abyste přežili.</Czech>
+			<Czech>Kuřecí stehno může být snědeno, abyste přežili.</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_NAME_3">
 			<English>Rabbit</English>
@@ -4614,7 +4644,7 @@
 			<Russian>Жареный кролик</Russian>
 			<Spanish>Conejo</Spanish>
 			<French>Lapin cuit</French>
-			<Czech>Králík</Czech>
+			<Czech>Opečené králičí</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_DESC_3">
 			<English>Rabbit to be used for sustenance.</English>
@@ -4622,7 +4652,7 @@
 			<Russian>Жареный кролик, готовый к употреблению.</Russian>
 			<Spanish>Conejo que se utilizará para sobrevivir.</Spanish>
 			<French>Le Lapin peut être consommé.</French>
-			<Czech>Králík může být sněden abyste přežili.</Czech>
+			<Czech>Králík může být sněden, abyste přežili.</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_NAME_4">
 			<English>Bacon</English>
@@ -4630,7 +4660,7 @@
 			<Russian>Готовый бекон</Russian>
 			<Spanish>Panceta</Spanish>
 			<French>Bacon</French>
-			<Czech>Slanina</Czech>
+			<Czech>Opečená slanina</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_DESC_4">
 			<English>Bacon to be used for sustenance.</English>
@@ -4638,7 +4668,7 @@
 			<Russian>Бекон, готовый к употреблению.</Russian>
 			<Spanish>Panceta que se utilizará para sobrevivir.</Spanish>
 			<French>Le Bacon peut être consommé.</French>
-			<Czech>Slanina může být snědena abyste přežili.</Czech>
+			<Czech>Slanina může být snědena, abyste přežili.</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_NAME_5">
 			<English>Angel Cookies</English>
@@ -4654,7 +4684,7 @@
 			<Russian>Печенюшки для поднятия настроения!</Russian>
 			<Spanish>Galletitas de Ángel que levantan tu moral</Spanish>
 			<French>Cookies d&apos;Ange pour remonter votre moral!</French>
-			<Czech>Sušenky Angle vylepší vaší morálku!</Czech>
+			<Czech>Sušenky Angel vylepší vaši náladu!</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_NAME_6">
 			<English>Beefsteak</English>
@@ -4662,7 +4692,7 @@
 			<Russian>Бифштекс</Russian>
 			<Spanish>Churrasco</Spanish>
 			<French>Bifteck</French>
-			<Czech>Hovězí maso</Czech>
+			<Czech>Opečené hovězí</Czech>
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_DESC_6">
 			<English>Beefsteak to be used for sustenance.</English>
@@ -4670,7 +4700,7 @@
 			<Russian>Бифштекс, готовый к употреблению.</Russian>
 			<Spanish>Churrasco que se utilizará para sobrevivir.</Spanish>
 			<French>Le Bifteck peut être consommé.</French>
-			<Czech>Biftek může být sněden abyste přežili.</Czech>
+			<Czech>Biftek může být sněden, abyste přežili.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_GOAT_COOKED">
 			<English>Grilled Goat</English>
@@ -4678,7 +4708,7 @@
 			<Russian>Жареная ягнятина</Russian>
 			<Spanish>Cabra a la Parrilla</Spanish>
 			<French>Chèvre grillée</French>
-			<Czech>Opečené kozí maso</Czech>
+			<Czech>Opečené kozí</Czech>
 		</Key>
 		<Key ID="STR_FOOD_EQUIP_GOAT_COOKED">
 			<English>Goat Meat to be used for sustenance.</English>
@@ -4686,7 +4716,7 @@
 			<Russian>Жареная ягнятина, готовая к употреблению.</Russian>
 			<Spanish>Cabra a la Parrilla que se utilizará para sobrevivir.</Spanish>
 			<French>La Chèvre grillée peut être consommée.</French>
-			<Czech>Kozí maso, které lze sníst aby jste přežili.</Czech>
+			<Czech>Kozí maso, které lze sníst, aby jste přežili.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_TROUT_RAW">
 			<English>Steelhead</English>
@@ -4708,7 +4738,7 @@
 			<English>Seabass</English>
 			<Russian>Окунь</Russian>
 			<Spanish>Lubina</Spanish>
-			<Czech>Morčák mořský</Czech>
+			<Czech>Mořčák</Czech>
 			<French>Bar</French>
 			<German>Wolfsbarsch</German>
 		</Key>
@@ -4732,7 +4762,7 @@
 			<English>Raw Seabass worth 400 Blood Regen.</English>
 			<Russian>Сырой окунь (400рк)</Russian>
 			<Spanish>Una lubina cruda.</Spanish>
-			<Czech>Syrový Morčák mořský, který vám přidá až 400 krve.</Czech>
+			<Czech>Syrový mořčák mořský, který vám přidá až 400 krve.</Czech>
 			<French>Un bar cru (valeur:400).</French>
 			<German>Ein Wolfsbarsch, kann roh verzehrt werden.</German>
 		</Key>		
@@ -4740,7 +4770,7 @@
 			<English>Steelhead (Cooked)</English>
 			<Russian>Форель (жареная)</Russian>
 			<Spanish>Trucha (Cocinada)</Spanish>
-			<Czech>Pstruh (upečený)</Czech>
+			<Czech>Pstruh (opečený)</Czech>
 			<French>Brochet (cuit)</French>
 			<German>Gebratene Stahlkopfforelle</German>
 		</Key>
@@ -4748,7 +4778,7 @@
 			<English>Tuna (Cooked)</English>
 			<Russian>Тунец (жареный)</Russian>
 			<Spanish>Atún (Cocinado)</Spanish>
-			<Czech>Tuňák (upečený)</Czech>
+			<Czech>Tuňák (opečený)</Czech>
 			<French>Thon (cuit)</French>
 			<German>Gebratener Thunfisch</German>
 		</Key>
@@ -4756,7 +4786,7 @@
 			<English>Seabass (Cooked)</English>
 			<Russian>Окунь (жареный)</Russian>
 			<Spanish>Lubina (Cocinada)</Spanish>
-			<Czech>Morčák mořský (upečený)</Czech>
+			<Czech>Mořčák (opečený)</Czech>
 			<French>Bar (cuit)</French>
 			<German>Gebratener Wolfsbarsch</German>
 		</Key>
@@ -4764,7 +4794,7 @@
 			<English>Cooked Steelhead worth 1000 Blood Regen.</English>
 			<Russian>Приготовленная форель (1000рк)</Russian>
 			<Spanish>Una trucha cocinada.</Spanish>
-			<Czech>Upečený pstruh, který vám přidá až 1000 krve.</Czech>
+			<Czech>Opečený pstruh, který vám přidá až 1000 krve.</Czech>
 			<French>Un Brochet cuit (valeur:1000).</French>
 			<German>Eine ueber Feuer gebratene Stahlkopfforelle. Reich an Eiweiss und Omega-3-Fettsaeuren.</German>
 		</Key>
@@ -4780,7 +4810,7 @@
 			<English>Cooked Seabass worth 1400 Blood Regen.</English>
 			<Russian>Приготовленный окунь (1400рк)</Russian>
 			<Spanish>Una lubina cocinada.</Spanish>
-			<Czech>Upečený Morčák mořský, který vám přidá až 1400 krve.</Czech>
+			<Czech>Upečený mořčák mořský, který vám přidá až 1400 krve.</Czech>
 			<French>Un Bar cuit (valeur:1400).</French>
 			<German>Ein gebratener Wolfsbarsch. Reich an Eiweiss und Omega-3-Fettsaeuren.</German>
 		</Key>		
@@ -4798,15 +4828,17 @@
 			<Russian>Бутылка чистой или обработанной воды. Пригодна для безопасного употребления.</Russian>
 			<Spanish>Una cantimplora llena con agua hervida y que puede consumirse.</Spanish>
 			<French>Une Bouteille remplie d&apos;eau bouillie qui peut être consommée.</French>
-			<Czech>Plná láhev převařené vody, která může být vypita.</Czech>
+			<Czech>Láhev plná převařené vody, kterou lze vypít.</Czech>
 		</Key>
 		<Key ID="STR_ITEMWATERBOTTLEDMG_CODE_NAME">						
 			<English>Water Bottle (Broken)</English>						
 			<Russian>Бутылка (испорчена)</Russian>
+			<Czech>Láhev na vodu (děravá)</Czech>
 		</Key>						
 		<Key ID="STR_ITEMWATERBOTTLEDMG_CODE_DESC">						
 			<English>Broken Water Bottle, Can no longer be used for fluids.</English>	
 			<Russian>Прохудившаяся бутылка. Не может больше содержать жидкости.</Russian>
+			<Czech>Děravá láhev na vodu. Nelze použít, dokud nebude spravena.</Czech>
 		</Key>
 		<Key ID="STR_ITEMWOODENARROW_CODE_NAME">
 			<English>Wooden Arrow</English>
@@ -4814,7 +4846,7 @@
 			<Spanish>Flecha de Madera</Spanish>
 			<French>Flèche en bois</French>
 			<German>Holzpfeil</German>
-			<Czech>Dřevěný šíp</Czech>
+			<Czech>Dřevěná šipka</Czech>
 		</Key>
 		<Key ID="STR_ITEMWOODENARROW_CODE_DESC">
 			<English>Arrow made out of wood, used with the Crossbow.</English>
@@ -4822,7 +4854,7 @@
 			<Spanish>Flecha hecha de madera para usarse en la Ballesta.</Spanish>
 			<French>Une Flèche faite de bois, à utiliser avec l&apos;arbalète</French>
 			<German>Ein aus Holz hergestellter Pfeil. Kann mit einer Armbrust verschossen werden.</German>
-			<Czech>Šíp vyrobený z dřeva pro použití s kuší.</Czech>
+			<Czech>Šipka vyrobená ze dřeva, kterou lze vystřelit z kuše.</Czech>
 		</Key>
 		<Key ID="STR_ITEMQUIVER_CODE_NAME">
 			<English>Quiver</English>
@@ -4838,6 +4870,7 @@
 			<Spanish>Carcaj Pequeño usado con la Ballesta. Máximo: 12 flechas.</Spanish>
 			<French>Un petit Carquois à utiliser avec l&apos;arbalète. Max 12 flèches.</French>
 			<German>Ein kleiner Koecher, der bis zu zwoelf Pfeile fuer die Armbrust aufnehmen kann.</German>
+			<Czech>Toulec, do kterého se vejde až dvanáct šipek do kuše.</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_NAME_0">
 			<English>Soda</English>
@@ -4869,7 +4902,7 @@
 			<Russian>Чистая, закрытая банка "R4Z0R". Уже давно перестали продаваться!</Russian>
 			<Spanish>Una limpia y cerrada lata de gaseosa R4Z0R. Dejaron de venderlas hace años.</Spanish>
 			<French>Une canette intacte de soda "R4Z0R". Ils ont arrêté de les vendre il y a des années !.</French>
-			<Czech>Čistá a ještě neotevřená plechovka sodovky R4Z0R. Před mnoho lety ji přestali prodávat!</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka sodovky R4Z0R. Neprodává se už mnoho let!</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_NAME_2">
 			<English>Soda (Iced Tea)</English>
@@ -4917,7 +4950,7 @@
 			<Russian>Чистая, закрытая банка "Dr. Wasteland".</Russian>
 			<Spanish>Una limpia y cerrada lata de gaseosa Dr. Wasteland.</Spanish>
 			<French>Une canette intacte de soda "Dr. Wasteland".</French>
-			<Czech>Čistá a ještě neotevřená plechovka nápoje Dr. Wateland.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka nápoje Dr. Wasteland.</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_NAME_5">
 			<English>Soda (Orange)</English>
@@ -4925,7 +4958,7 @@
 			<Russian>Газировка (Апельсин)</Russian>
 			<Spanish>Gaseosa (Naranja)</Spanish>
 			<French>Soda (Orange)</French>
-			<Czech>Nápoj (Pomerančový)</Czech>
+			<Czech>Nápoj (Pomeranč)</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_DESC_5">
 			<English>A clean, unopened can of Franka orange soda.</English>
@@ -4949,7 +4982,7 @@
 			<Russian>Чистая, закрытая банка лимонада. Производства "Mikhail".</Russian>
 			<Spanish>Una limpia y cerrada lata de limonada Mikhail.</Spanish>
 			<French>Une canette intacte de limonade à la Mikhail. Fabriqué par Mikhail.</French>
-			<Czech>Čistá a ještě neotevřená plechovka Mikhail Made limonády. Vytvořeno Mikhailem.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka limonády Mikhail Made. Vytvořeno Mikhailem.</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_NAME_7">
 			<English>Soda (Cola)</English>
@@ -4981,7 +5014,7 @@
 			<Russian>Чистая, закрытая банка пива "LVG root".</Russian>
 			<Spanish>Una limpia y cerrada lata de cerveza de raíz LVG.</Spanish>
 			<French>Une canette intacte de bière "LVG root".</French>
-			<Czech>Čistá a ještě neotevřená plechovka piva LVG root.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka piva LVG.</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_NAME_9">
 			<English>Soda</English>
@@ -4997,7 +5030,7 @@
 			<Russian>Чистая, закрытая банка "mZLY yZLY".</Russian>
 			<Spanish>Una limpia y cerrada lata de gaseosa mZLY yZLY.</Spanish>
 			<French>Une canette intacte de soda "mZLY yZLY".</French>
-			<Czech>Čistá a ještě neotevřená plechovka mZLY yZLY sody.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka sody mZLY yZLY.</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_NAME_10">
 			<English>Soda (Cola)</English>
@@ -5045,7 +5078,7 @@
 			<Russian>Чистая, закрытая банка "Sacrite".</Russian>
 			<Spanish>Una limpia y cerrada lata de gaseosa Sacrite.</Spanish>
 			<French>Une canette intacte de soda "Sacrite".</French>
-			<Czech>Čistá a ještě neotevřená plechovka Sacrite sodovky.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka sodovky Sacrite.</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_NAME_13">
 			<English>Soda</English>
@@ -5061,7 +5094,7 @@
 			<Russian>Чистая, закрытая банка газировки "Papa" "Gagarin Rocket Fuel".  Произведено в Чернаруси.</Russian>
 			<Spanish>Una limpia y cerrada lata de gaseosa Papa&apos;s &apos;Gagarin Rocket Fuel&apos;. Producto de Chernarus.</Spanish>
 			<French>Une canette de &apos;Gagarin Rocket Fuel&apos; en bon état. Produit à Chernarus.</French>
-			<Czech>Čistá a ještě neotevřená plechovka Gagarin Rocket Fuel od Papa. Vyrobeno v Chernarusi.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka sodovky Gagarin Rocket Fuel od Papa. Vyrobeno v Černarusi.</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_NAME_14">
 			<English>Soda</English>
@@ -5077,7 +5110,7 @@
 			<Russian>Чистая, закрытая банка газировки "Papa" "Olsha Sparkling Grape".  Произведено в Чернаруси.</Russian>
 			<Spanish>Una limpia y cerrada lata de gaseosa Papa&apos;s &apos;Olsha Sparkling Grape&apos;. Producto de Chernarus.</Spanish>
 			<French>Une canette de soda au raisin &apos;Olsha&apos; en bon état. Produit à Chernarus.</French>
-			<Czech>Čistá a ještě neotevřená plechovka Olsha Sparkling Grape od Papa. Vyrobeno v Chernarusi.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka sodovky Olsha Sparkling Grape od Papa. Vyrobeno v Černarusi.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_MRE">
 			<English>MRE</English>
@@ -5093,7 +5126,7 @@
 			<Russian>Упаковка сухого пайка.</Russian>
 			<Spanish>Ración de combate. Carne lista para consumirse.</Spanish>
 			<French>Repas prêt à manger. Redonne des forces.</French>
-			<Czech>Celodenní vojenská potravinová dávka, pravděpodobně patřící Chernaruské armádě.</Czech>
+			<Czech>Celodenní vojenská potravinová dávka, pravděpodobně patřící černaruské armádě.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_PISTACHIO">
 			<English>Snack (Pistachios)</English>
@@ -5125,7 +5158,7 @@
 			<Russian>Упаковка сушеных фруктов и орешков "Papa", 12 разных видов.</Russian>
 			<Spanish>Una cada de CerealMix Original con 12 frutas y anillos diferentes.</Spanish>
 			<French>Un paquet d&apos;assortiment de fruits secs "Papa", avec 12 fruits et noix différents.</French>
-			<Czech>Balíček ovoce značky Papa, 12 různých ovocí a oříšků.</Czech>
+			<Czech>Balíček na cesty značky Papa, obsahuje 12 druhů ovoce a oříšků.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_EMPTY">
 			<English>Empty Tin Can</English>
@@ -5149,7 +5182,7 @@
 			<Russian>Пустая упаковка</Russian>
 			<Spanish>Bolsa Vacía</Spanish>
 			<French>Paquet vide</French>
-			<Czech>Prázdný balíček na jídlo</Czech>
+			<Czech>Prázdný obal od jídla</Czech>
 		</Key>
 		<Key ID="STR_FOOD_DESC_CHIPS_EMPTY">
 			<English>An empty bag of chips.</English>
@@ -5157,7 +5190,7 @@
 			<Russian>Пустая упаковка от чипсов.</Russian>
 			<Spanish>Una bolsa vacía de papitas.</Spanish>
 			<French>Un paquet de chips vide.</French>
-			<Czech>Prázdný balíček čipsů.</Czech>
+			<Czech>Prázdný obal od bramborových lupínků.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CHIPS_SULAHOOPS">
 			<English>Snack (Chips)</English>
@@ -5173,7 +5206,7 @@
 			<Russian>Чистая, закрытая упаковка "Sulahoops".</Russian>
 			<Spanish>Una limpia y cerrada bolsa de papitas Sulahoops.</Spanish>
 			<French>Un paquet intact de chips "Sulahoops".</French>
-			<Czech>Čistý a ještě neotevřený balíček čipsů "Sulahoops".</Czech>
+			<Czech>Čistý a ještě neotevřený balíček bramborových lupínků "Sulahoops".</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CHIPS_MYSTICALES">
 			<English>Snack (Chips)</English>
@@ -5189,7 +5222,7 @@
 			<Russian>Чистая, закрытая упаковка "Miss Mysticales jalapeño".</Russian>
 			<Spanish>Una limpia y cerrada bolsa de papitas picantes Miss Mysticales.</Spanish>
 			<French>Un paquet intact de chips "Miss Mysticales jalapeño".</French>
-			<Czech>Čistý a ještě neotevřený balíček čipsů značky Miss Mysticales jalapeño.</Czech>
+			<Czech>Čistý a ještě neotevřený balíček bramborových lupínků značky Miss Mysticales jalapeño.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CHIPS_CHOCOLATE">
 			<English>Snack (Chips)</English>
@@ -5205,7 +5238,7 @@
 			<Russian>Чистая, закрытая упаковка "Papa&apos;s Chocolate Yummy Snacks". Произведено в Чернаруси.</Russian>
 			<Spanish>Una limpia y cerrada bolsa de Papa&apos;s &apos;Chocolate Yummy Snacks&apos;. Producto de Chernarus.</Spanish>
 			<French>Un paquet de &apos;Yummy Snacks&apos; au chocolat, en bon état. Produit à Chernarus.</French>
-			<Czech>Čistý a ještě neotevřený balíček čokoládových chipsů od Papa. Vyrobeno v Chernarusi.</Czech>
+			<Czech>Čistý a ještě neotevřený balíček čokoládových chipsů od Papa. Vyrobeno v Černarusi.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CANDY_CHUBBY">
 			<English>Snack (Chocolate)</English>
@@ -5221,7 +5254,7 @@
 			<Russian>Чистый, закрытый батончик "Papa&apos;s Chocolate Chubby Bar". Произведено в Чернаруси.</Russian>
 			<Spanish>Un limpio y cerrado envase de Papa&apos;s &apos;Chocolate Chubby Bar&apos;. Producto de Chernarus.</Spanish>
 			<French>Une barre chocolatée &apos;Chubby Bar&apos; en bon état. Produit à Chernarus.</French>
-			<Czech>Čistá a ještě neotevřená čokoládová tyčinka značky Papa. Vyrobeno v Chernarusi.</Czech>
+			<Czech>Čistá a ještě nerozbalená čokoládová tyčinka značky Papa. Vyrobeno v Černarusi.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CANDY_ANDERS">
 			<English>Snack (Chocolate)</English>
@@ -5237,7 +5270,7 @@
 			<Russian>Чистый, закрытый батончик кокосово-миндального "Ander&apos;s Joy".</Russian>
 			<Spanish>Una limpia y cerrada barra de chocolate con almendras Ander&apos;s Joy.</Spanish>
 			<French>Un paquet intact de barres chocolatées à la noix de coco "Ander&apos;s Joy".</French>
-			<Czech>Čistý a ještě neotevřený balíček čokoláday značky Ander&apos;s Joy.</Czech>
+			<Czech>Čistý a ještě neotevřený balíček čokolády značky Ander&apos;s Joy.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CANDY_LEGACYS">
 			<English>Snack (Chocolate)</English>
@@ -5301,7 +5334,7 @@
 			<Russian>Чистая, закрытая банка шпротов "Papa&apos;s Green Sea Sprats". Произведено в Чернаруси.</Russian>
 			<Spanish>Una limpia y cerrada lata de Papa&apos;s &apos;Green Sea Sprats&apos;. Producto de Chernarus.</Spanish>
 			<French>Une boite d&apos;anchois vert-marine en bon état. Produit à Chernarus.</French>
-			<Czech>Čistá a ještě neotevřená plechovka &apos;Green Sea Sprats&apos;. Vyrobeno v Chernarusi.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka &apos;Green Sea Sprats&apos;. Vyrobeno v Černarusi.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_BEEF">
 			<English>Can (Stroganoff)</English>
@@ -5317,7 +5350,7 @@
 			<Russian>Чистая, закрытая банка бефстроганов по оригинальным рецептам "Papa". Произведено в Чернаруси.</Russian>
 			<Spanish>Una limpia y cerrada lata de la receta original de Bife Strógonoff de Papa&apos;s. Producto de Chernarus.</Spanish>
 			<French>Une boite de boeuf Strogonoff de chez Papa&apos;s, recette originale. Produit à Chernarus.</French>
-			<Czech>Čistá a ještě neotevřená plechovka hovězího stronganoffa od Papa. Vyrobeno v Chernarusi.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka hovězího a la Stroganoff od Papa. Vyrobeno v Černarusi.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_POTATOES">
 			<English>Can (Potatoes)</English>
@@ -5333,7 +5366,7 @@
 			<Russian>Чистая, закрытая банка нарезанного картофеля "Papa". Произведено в Чернаруси.</Russian>
 			<Spanish>Una limpia y cerrada bolsa de papas fritas Papa&apos;s. Producto de Chernarus.</Spanish>
 			<French>Une boite de gratin dauphinois de chez Papa&apos;s. Produit à Chernarus.</French>
-			<Czech>Čistá a ještě neotevřená plechovka krajených brambor od Papa. Vyrobeno v Chernarusi.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka krajených brambor od Papa. Vyrobeno v Černarusi.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_GRIFF">
 			<English>Can (Beans)</English>
@@ -5365,7 +5398,7 @@
 			<Russian>Чистая, закрытая банка нарезанных персиков "Bad Guy".</Russian>
 			<Spanish>Una limpia y cerrada lata de duraznos en rodajas "Bad Guy".</Spanish>
 			<French>Une boîte intacte de pêches en morceaux de "Bad Guy".</French>
-			<Czech>Čistá a ještě neotevřená plechovka fazolí značky Bad Guy.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka broskví značky Bad Guy.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_BONEBOY">
 			<English>Can (Ravioli)</English>
@@ -5397,7 +5430,7 @@
 			<Russian>Чистая, закрытая банка кукурузы "Conrad".</Russian>
 			<Spanish>Una limpia y cerrada lata de granos de maíz enteros "Conrad".</Spanish>
 			<French>Une boîte intacte de maïs en grains "Conrad".</French>
-			<Czech>Čistá a ještě neotevřená plechovka pražené kukuřice značky Conrad.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka kukuřice značky Conrad.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_CURGON">
 			<English>Can (Soup)</English>
@@ -5477,7 +5510,7 @@
 			<Russian>Чистая, закрытая банка тушеной говядины "Donty Hooves".</Russian>
 			<Spanish>Una limpia y cerrada lata de guiso Donty Hooves.</Spanish>
 			<French>Une boîte intacte de ragoût au boeuf "Donty Hooves".</French>
-			<Czech>Čistá a ještě neotevřená plechovka dušeného maso značky Donty Hooves.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka dušeného masa značky Donty Hooves.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_ORLOK">
 			<English>Can (Fruit)</English>
@@ -5501,7 +5534,7 @@
 			<Russian>Банка (Похлебка)</Russian>
 			<Spanish>Lata (Sopa de Pescado)</Spanish>
 			<French>Conserve (Soupe de palourdes)</French>
-			<Czech>Plechovka (Dušené maso)</Czech>
+			<Czech>Plechovka (Rybí polévka)</Czech>
 		</Key>
 		<Key ID="STR_FOOD_DESC_CAN_POWELL">
 			<English>A clean, unopened can of Powell&apos;s New England clam chowder.</English>
@@ -5509,7 +5542,7 @@
 			<Russian>Чистая, закрытая банка похлебки из моллюсков "Powell&apos;s New England".</Russian>
 			<Spanish>Una limpia y cerrada lata de sopa de pescados "Powell&apos;s New England".</Spanish>
 			<French>Une boîte intacte de soupe de palourdes de "Powell&apos;s New England".</French>
-			<Czech>Čistá a ještě neotevřená plechovka dušeného masa značky Powell New England.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka rybí polévky značky Powell New England.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_TYLERS">
 			<English>Can (Beans)</English>
@@ -5541,7 +5574,7 @@
 			<Russian>Чистая, закрытая банка непонятно с че����. Наклейка утеряна.</Russian>
 			<Spanish>Una limpia y cerrada lata sin etiqueta.</Spanish>
 			<French>Une boîte intacte. L&apos;étiquette est manquante.</French>
-			<Czech>Čistá a ještě neotevřená plechovka nečeho, údaje nejsou čitelné.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka, údaje nejsou čitelné. Překvapení šéfkuchaře.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_RUS_STEW">
 			<English>Can (Stew)</English>
@@ -5557,7 +5590,7 @@
 			<Russian>Чистая, закрытая банка тушеной говядины.</Russian>
 			<Spanish>Una limpia y cerrada lata de guiso.</Spanish>
 			<French>Une boîte de pôt-au-feu, en bon état.</French>
-			<Czech>Čistá a ještě neotevřená tenká plechovka dušeného masa.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka dušeného masa.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_RUS_PORK">
 			<English>Can (Pork)</English>
@@ -5565,7 +5598,7 @@
 			<Russian>Тушенка (Свинина)</Russian>
 			<Spanish>Lata (Cerdo)</Spanish>
 			<French>Conserve (Porc)</French>
-			<Czech>Plechovka (Vepřové maso)</Czech>
+			<Czech>Plechovka (Vepřové)</Czech>
 		</Key>
 		<Key ID="STR_FOOD_DESC_CAN_RUS_PORK">
 			<English>A clean, unopened tin can of pork.</English>
@@ -5573,7 +5606,7 @@
 			<Russian>Чистая, закрытая банка тушеной свинины.</Russian>
 			<Spanish>Una limpia y cerrada lata de cerdo en su jugo.</Spanish>
 			<French>Une boîte intacte de viande de porc.</French>
-			<Czech>Čistá a ještě neotevřená tenká plechovka vepřového masa.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka vepřového ve vlastní šťávě.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_RUS_PEAS">
 			<English>Can (Peas)</English>
@@ -5589,7 +5622,7 @@
 			<Russian>Чистая, закрытая банка консервированного зеленого горошка.</Russian>
 			<Spanish>Una limpia y cerrada lata de arvejas.</Spanish>
 			<French>Une boîte intacte de petits pois.</French>
-			<Czech>Čistá a ještě neotevřená malá plechovka plná hrášku.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka plná hrášku.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_RUS_MILK">
 			<English>Can (Milk)</English>
@@ -5605,7 +5638,7 @@
 			<Russian>Чистая, закрытая банка сгущеного молока.</Russian>
 			<Spanish>Una limpia y cerrada lata de leche condensada.</Spanish>
 			<French>Une boîte intacte de lait concentré.</French>
-			<Czech>Čistá a ještě neotevřená plechovka zahuštěného mléka.</Czech>
+			<Czech>Čistá a ještě neotevřená plechovka kondenzovaného mléka.</Czech>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_RUS_CORN">
 			<English>Can (Corn)</English>
@@ -5637,7 +5670,7 @@
 			<Russian>Рулон туалетной бумаги. Может быть весьма полезным в определенных ситуациях.</Russian>
 			<Spanish>Un rollo de papel higiénico.</Spanish>
 			<French>Un rouleau de papier toilette.</French>
-			<Czech>Role toeletního papíru.</Czech>
+			<Czech>Role toeletního papíru. Vzpomínka na minulé éry hygieny.</Czech>
 		</Key>
 		<Key ID="STR_JUNK_NAME_RAZOR">
 			<English>Razor</English>
@@ -5661,7 +5694,7 @@
 			<Russian>Библия</Russian>
 			<Spanish>Libro Sagrado</Spanish>
 			<French>Livre Saint</French>
-			<Czech>Svatá Kniha</Czech>
+			<Czech>Svatá kniha</Czech>
 		</Key>
 		<Key ID="STR_BOOK_DESC_BIBLE">
 			<English>A collection of texts considered to be sacred.</English>
@@ -5717,7 +5750,7 @@
 			<Russian>Пустая емкость для топлива.</Russian>
 			<Spanish>Un envase pequeño para combustible vacío.</Spanish>
 			<French>Un petit bidon pour le carburant.</French>
-			<Czech>Menší kanystr pro palivo.</Czech>
+			<Czech>Menší kanystr na palivo, momentálně prázdný.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_JERRYCAN">
 			<English>Jerry Can (20L)</English>
@@ -5733,7 +5766,7 @@
 			<German>Ein 20-Liter-Kanister, der zum Betanken von Fahrzeugen und Generatoren verwendet werden kann.</German>
 			<Russian>20-ти литровая канистра для заправки техники и генераторов.</Russian>
 			<French>Un jerrican de 20 litres qui peut être utilisé pour réaprovisionner les véhicules et générateurs de courant.</French>
-			<Czech>20 litrový kanistr, který se dá použít k tankování vozidel a pro běh generátorů.</Czech>
+			<Czech>Dvacetilitrový kanistr, který se dá použít k dotankování vozidel a generátorů.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_JERRYCAN_EMPTY">
 			<English>Empty Jerry Can (20L)</English>
@@ -5741,7 +5774,7 @@
 			<German>Leerer Benzinkanister (20L)</German>
 			<Russian>Пустая канистра (20л)</Russian>
 			<French>Jerrican vide (20L)</French>
-			<Czech>Prázdný kanystr (20l)</Czech>
+			<Czech>Prázdný kanystr (20L)</Czech>
 		</Key>
 		<Key ID="STR_ITEM_DESC_JERRYCAN_EMPTY">
 			<English>An empty 20 litre Jerry Can that can be filled from cars or petrol stations.</English>
@@ -5749,7 +5782,7 @@
 			<German>Ein leerer 20-Liter-Kanister, der an Fahrzeugen oder Tankstellen aufgefuellt werden kann.</German>
 			<Russian>Пустая 20-ти литровая канистра, которая может быть наполнена топливом, слитым из машины или заправочной станции.</Russian>
 			<French>Un jerrican vide de 20L qui peut être rempli à partir de véhicules ou de staions servives.</French>
-			<Czech>Prázdný 20 litrový kanystr, který může být naplněn u benzínek nebo odstavených aut.</Czech>
+			<Czech>Prázdný dvacetilitrový kanystr, který může být naplněn u benzínek nebo odstavených aut.</Czech>
 		</Key>
 		<Key ID="STR_BACKPACK_NAME_PATROL">
 			<English>Patrol Pack (coyote)</English>
@@ -5804,7 +5837,7 @@
 			<French>Sac Alice</French>
 			<Russian>Рюкзак ALICE</Russian>
 			<Spanish>Mochila Alice</Spanish>
-			<Czech>Alice batoh</Czech>
+			<Czech>Batoh Alice</Czech>
 			<German>Alice Pack</German>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_ALICE">
@@ -5852,7 +5885,7 @@
 			<French>Sac-à-dos tchèque</French>
 			<Russian>Чешский рюкзак</Russian>
 			<Spanish>Mochila Checa</Spanish>
-			<Czech>Český baťoh</Czech>
+			<Czech>Český batoh</Czech>
 			<German>Tschechischer Rucksack</German>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_CZECH">
@@ -5892,7 +5925,7 @@
 			<Russian>Антибактериальные салфетки.</Russian>
 			<Spanish>Gasa estéril con plata antibacteriana.</Spanish>
 			<French>Lingette antibactérienne</French>
-			<Czech>Antibakteriální ubrousky.</Czech>
+			<Czech>Antibakteriální ubrousky</Czech>
 			<German>Antibakterielle Desinfektionstuecher, mit denen Wunden gereinigt und desinfiziert werden koennen.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_FISHINGPOLE">
@@ -5908,7 +5941,7 @@
 			<Russian>Эта карбоновая палка хоть и выглядит старой, но работает как надо.</Russian>
 			<Spanish>Esta caña de fibra de carbón puede estar vieja pero funciona perfectamente.</Spanish>
 			<French>Canne en fibre de carbone, sans doute assez ancienne mais fonctionnant parfaitement.</French>
-			<Czech>Sice vypadá jako stáry, ale svůj účet splní dokonale</Czech>
+			<Czech>Sice vypadá starobyle, ale svůj účet splní dokonale.</Czech>
 			<German>Die Carbonrute mag alt aussehen, funktioniert aber noch tadellos.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_CAMONET">
@@ -5924,14 +5957,14 @@
 			<Russian>Армейская камуфляжная сетка для сокрытия объектов.</Russian>
 			<Spanish>Red de camuflaje militar para ocultar objetos en la vegetación densa.</Spanish>
 			<French>Filet militaire imitant le feuillage, utilisé pour cacher des objets.</French>
-			<Czech>Vojenský kamuflážní síť pro skrytí vozidel v zalesněném terénu.</Czech>
+			<Czech>Vojenská kamuflážní síť pro skrytí vozidel v zalesněném terénu.</Czech>
 			<German>Militaerisches Tarnnetz, mit dem grosse Objekte im Unterholz versteckt werden koennen.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_BEAR_TRAP_SMOKE">
 			<English>Bear Trap (Smoke)</English>
 			<Russian>Капкан с дымом</Russian>
 			<Spanish>Trampa de Osos (Humo)</Spanish>
-			<Czech>Medvědí past (dýmovnice)</Czech>
+			<Czech>Past na medvědy (dýmovnice)</Czech>
 			<French>Piège (Fumigène)</French>
 			<German>Baerenfalle (Rauch)</German>
 		</Key>
@@ -5947,7 +5980,7 @@
 			<English>Bear Trap (Flare)</English>
 			<Spanish>Trampa de Osos (Bengala)</Spanish>
 			<Russian>Капкан с фаером</Russian>
-			<Czech>Medvědí past (světlice)</Czech>
+			<Czech>Past na medvědy (světlice)</Czech>
 			<French>Piège (fusée éclairance)</French>
 			<German>Baerenfalle (Leuchtfackel)</German>
 		</Key>
@@ -6027,7 +6060,7 @@
 			<English>Wooden Splint</English>
 			<Spanish>tablilla de madera</Spanish>
 			<Russian>Шина из дерева</Russian>
-			<Czech>Dřevěná Splint</Czech>
+			<Czech>Dřevěná dlaha</Czech>
 			<French>Attelle</French>
 			<German>Holzspahn</German>
 		</Key>
@@ -6035,7 +6068,7 @@
 			<English>Makeshift Backpack</English>
 			<Spanish>makeshift Mochila</Spanish>
 			<Russian>Самодельный рюкзак</Russian>
-			<Czech>provizorní Backpack</Czech>
+			<Czech>Provizorní batoh</Czech>
 			<French>Sac à dos de fortune</French>
 			<German>Improvisierter Rucksack</German>
 		</Key>
@@ -6043,7 +6076,7 @@
 			<English>Wooden Craft Table</English>
 			<Spanish>Tabla arte de madera</Spanish>
 			<Russian>Деревянный стол</Russian>
-			<Czech>Dřevěné Craft Tabulka</Czech>
+			<Czech>Dřevěný ponk</Czech>
 			<French>Table en bois Artisanale</French>
 			<German>Hoelzerne Werkbank</German>
 		</Key>
@@ -6054,7 +6087,7 @@
 			<Russian>Пульс отсутствует. Человек мертв...</Russian>
 			<Spanish>Sin pulso. Está muerto...</Spanish>
 			<French>Pas de pouls. Il est mort...</French>
-			<Czech>Žádý puls. Tento člověk je mrtvý...</Czech>
+			<Czech>Žádný puls. Tento člověk zemřel...</Czech>
 			<German>Kein Puls. Da ist nichts mehr zu machen ...</German>
 		</Key>
 		<Key ID="str_pulse_weak">
@@ -6062,7 +6095,7 @@
 			<Russian>Слабый пульс</Russian>
 			<Spanish>El pulso es debil</Spanish>
 			<French>Le pouls est faible</French>
-			<Czech>Puls je slabý</Czech>
+			<Czech>Puls je slabý.</Czech>
 			<German>Der Puls ist schwach.</German>
 		</Key>
 		<Key ID="str_pulse_strong">
@@ -6070,7 +6103,7 @@
 			<Russian>Уверенный пульс</Russian>
 			<Spanish>El pulso es fuerte</Spanish>
 			<French>Le pouls est fort</French>
-			<Czech>Puls je silný</Czech>
+			<Czech>Puls je silný.</Czech>
 			<German>Der Puls ist stabil.</German>
 		</Key>
 		<Key ID="str_success_cooked">
@@ -6080,7 +6113,7 @@
 			<Russian>Вы приготовили: %1 %2</Russian>
 			<Spanish>Cocinaste %1 %2</Spanish>
 			<French>Vous avez cuit %1 %2</French>
-			<Czech>Upekl jsi %1 %2</Czech>
+			<Czech>Upekl jsi %1x %2</Czech>
 		</Key>
 		<Key ID="str_success_gathered">
 			<!-- %1 itemout name %2 itemout quantity %3 quantity left -->
@@ -6089,7 +6122,7 @@
 			<Russian>Вы собрали %1 (%2). %3 осталось.</Russian>
 			<Spanish>You have collected %2 %1. %3 Dropped.</Spanish>
 			<French>Vous avez récolté %2 %1. %3 Dropped.</French>
-			<Czech>You have collected %2 %1. %3 Dropped.</Czech>
+			<Czech>Nasbírali jste %2x %1. Zbývá ještě %3.</Czech>
 		</Key>
 		<Key ID="str_failed_noroom">
 			<English>Unable to gather due to space, 3 main slots are needed.</English>
@@ -6105,7 +6138,7 @@
 			<Russian>Ваша палатка свернута.</Russian>
 			<Spanish>Su carpa se ha embalado</Spanish>
 			<French>Votre tente a été repliée.</French>
-			<Czech>Tvůj stan byl zabalen.</Czech>
+			<Czech>Stan byl zabalen.</Czech>
 		</Key>
 		<Key ID="str_fail_tent_pack">
 			<English>You cannot pack this tent, it is not yours</English>
@@ -6113,7 +6146,7 @@
 			<Russian>Вы не можете свернуть эту палатку, так как она не ваша.</Russian>
 			<Spanish>No puedes embalar esta carpa ya que no es tuya.</Spanish>
 			<French>Vous ne pouvez pas replier cette tente, elle ne vous appartient pas.</French>
-			<Czech>Tento stan nemůžeš zabalit, jelikož není tvůj.</Czech>
+			<Czech>Tento stan nemůžete zabalit, jelikož není váš.</Czech>
 		</Key>
 		<Key ID="str_success_tent_destoryed">
 			<English>You have successfully destroyed a tent.</English>
@@ -6121,7 +6154,7 @@
 			<Russian>Вы успешно уничтожили палатку.</Russian>
 			<Spanish>Has destruido con éxito una tienda de campaña.</Spanish>
 			<French>Vous avez réussi à détruire une tente.</French>
-			<Czech>Úspěšně jste zničil stan.</Czech>
+			<Czech>Úspěšně jste zničili stan.</Czech>
 		</Key>
 		<Key ID="str_success_tent_pitch">
 			<English>You have pitched your tent</English>
@@ -6129,7 +6162,7 @@
 			<Russian>Вы установили палатку.</Russian>
 			<Spanish>Asentaste tu carpa.</Spanish>
 			<French>\n\nVous avez installé votre tente.</French>
-			<Czech>Postavil jsi stan.</Czech>
+			<Czech>Postavili jste stan.</Czech>
 		</Key>
 		<Key ID="str_fail_tent_pitch">
 			<English>You cannot place a Tent here. The area must be flat, and free of other objects</English>
@@ -6137,7 +6170,7 @@
 			<Russian>Палатку нужно ставить на ровную поверхность, без объектов поблизости.</Russian>
 			<Spanish>No puedes asentar tu carpa aquí. El área debe ser plana y libre de otros objetos.</Spanish>
 			<French>\n\nVous ne pouvez pas placer de tente ici. Le sol doit être plat et dégagé.</French>
-			<Czech>Stan zde nelze postavit. Plocha musí být rovná a být dostatečně velká.</Czech>
+			<Czech>Stan zde nelze postavit. Plocha musí být rovná a dostatečně veliká.</Czech>
 		</Key>
 		<Key ID="str_success_stash_pitch">
 			<English>You have created a %1.</English>
@@ -6145,7 +6178,7 @@
 			<Russian>Вы соорудили %1.</Russian>
 			<Spanish>Acabaste de crear: %1.</Spanish>
 			<French>Vous avez créé un(e) %1.</French>
-			<Czech>Vytvořil jsi %1.</Czech>
+			<Czech>Vyrobili jste %1.</Czech>
 		</Key>
 		<Key ID="str_fail_stash_pitch">
 			<English>You cannot place a %1 here. The area must be flat, and free of other objects.</English>
@@ -6153,7 +6186,7 @@
 			<Russian>Нельзя установить %1 тут. Поверхность должна быть ровной, без объектов поблизости.</Russian>
 			<Spanish>No puedes ubicar una %1 aquí. El área debe ser plana y libre de otros objetos.</Spanish>
 			<French>\n\nVous ne pouvez pas placer un(e) ici, le sol doit être plat et dégagé.</French>
-			<Czech>Tady nelze postavit %1. Země musí být plochá a bez jiných objektů, které by mohly bránit postavení.</Czech>
+			<Czech>Tady nelze postavit %1. Země musí být plochá a bez jiných objektů, které by mohly bránit stavbě.</Czech>
 		</Key>
 		<Key ID="str_player_consumed_food">
 			<English>You ate %1.</English>
@@ -6161,7 +6194,7 @@
 			<Russian>Вы съели %1.</Russian>
 			<Spanish>Comiste %1.</Spanish>
 			<French>\n\nVous avez mangé un(e) %1.</French>
-			<Czech>Snědl jsi %1.</Czech>
+			<Czech>Snědli jste %1.</Czech>
 		</Key>
 		<Key ID="str_player_consumed_food_1">
 			<English>You ate %1 and start to feel full...</English>
@@ -6169,7 +6202,7 @@
 			<Russian>Вы съели %1 и чувствуете себя сытым...</Russian>
 			<Spanish>Comiste %1 y te empiezas a sentir lleno...</Spanish>
 			<French>\n\nVous avez mangé %1 et votre ventre est plein...</French>
-			<Czech>Snědl jsi %1 a začínáš cítit, že jsi plný...</Czech>
+			<Czech>Snědli jste %1 a máte plné břicho...</Czech>
 		</Key>
 		<Key ID="str_player_consumed_food_2">
 			<English>You ate %1 but spit out most of it. You&apos;re too full to eat anything.</English>
@@ -6177,7 +6210,7 @@
 			<Russian>Вы съели %1, но выплюнули большую часть.\nВы слишком сыты, чтобы проглотить что-нибуть еще.</Russian>
 			<Spanish>Comiste %1 pero escupiste la mayor parte. Estás demasiado lleno para seguir comiendo.</Spanish>
 			<French>\n\nVous n&apos;avez pas pu terminer votre %1. Vous avez trop mangé.</French>
-			<Czech>Snědl jsi %1, ale většinu jsi vyplivnul. Seš plný a víc toto už nesníš.</Czech>
+			<Czech>Snědli jste %1, ale většinu jste vyplivnul. Jste plný a víc toho už nesníte.</Czech>
 		</Key>
 		<Key ID="str_player_consumed">
 			<English>You have consumed a %1</English>
@@ -6193,7 +6226,7 @@
 			<Russian>Вы подготовили костер.</Russian>
 			<Spanish>Creaste una fogata</Spanish>
 			<French>\n\nVous avez créé un feu de camp.</French>
-			<Czech>Vytvořil jsi ohniště.</Czech>
+			<Czech>Vytvořili jste ohniště.</Czech>
 		</Key>
 		<Key ID="str_build_01">
 			<English>You have constructed a %1</English>
@@ -6201,7 +6234,7 @@
 			<Russian>Вы построили %1.</Russian>
 			<Spanish>Construiste un %1</Spanish>
 			<French>Vous avez construit un(e) %1</French>
-			<Czech>Postavil jsi %1</Czech>
+			<Czech>Postavili jste %1</Czech>
 		</Key>
 		<Key ID="str_build_failed_01">
 			<English>You have failed to build %1 due to %2 being in the way.</English>
@@ -6209,7 +6242,7 @@
 			<Russian>Вам не удалость построить %1. Вам мешает %2.</Russian>
 			<Spanish>Fallaste al contruir un %1.</Spanish>
 			<French>Vous n&apos;avez pas réussi à contruire %1.</French>
-			<Czech>Při stavbě %1 došlo k chybě.</Czech>
+			<Czech>Při stavbě %1 došlo k chybě. Vadí %2.</Czech>
 		</Key>
 		<Key ID="str_build_failed_02">
 			<English>You have failed to build %1.</English>
@@ -6225,7 +6258,7 @@
 			<Russian>Костер нужно разводить на ровной поверхности, без объектов поблизости.</Russian>
 			<Spanish>No puedes hacer una fogata aquí. El área debe ser plana y libre de otros objetos.</Spanish>
 			<French>\n\nVous ne pouvez pas faire de feu de camp ici. Le sol doit être plat et dégagé.</French>
-			<Czech>Ohniště zde nelze postavit. Plocha musí být rovná a dostatečně velká.</Czech>
+			<Czech>Ohniště zde nelze postavit. Plocha musí být rovná a dostatečně veliká.</Czech>
 		</Key>
 		<Key ID="str_fireplace_removed">
 			<English>Fireplace has been removed</English>
@@ -6241,7 +6274,7 @@
 			<Russian>Вы разделали: %1. Доступно кусков мяса: %2</Russian>
 			<Spanish>Un %1 fue achurado, dejando %2 trozos de carne en el cuerpo.</Spanish>
 			<French>%1 a été dépecé, %2 morceaux de viande sont maintenant dans la carcasse.</French>
-			<Czech>%1 bylo vykucháno, %2 syrových steaků lze najít v mrtvole.</Czech>
+			<Czech>%1 bylo vykucháno, %2 kusy masa lze najít v mrtvole.</Czech>
 		</Key>
 		<Key ID="str_medical_healing">
 			<English>You are being healed</English>
@@ -6249,13 +6282,13 @@
 			<Russian>Вас лечат.</Russian>
 			<Spanish>Fuiste curado.</Spanish>
 			<French>Vous recevez des soins</French>
-			<Czech>Jste uzdravováni.</Czech>
+			<Czech>Jste léčeni.</Czech>
 		</Key>
 		<Key ID="str_medical_sepsis_warning">
 			<English>Infection: You have 15 mins to clean your wound before blood loss starts.</English>
 			<Spanish>Infection: Tienes 15 minutos para curarte antes de que empieces a perder sangre.</Spanish>
 			<Russian>ВНИМАНИЕ: У вас 15 минут на дезинфекцию раны до начала потери крови.</Russian>
-			<Czech>Infection: Máte 15 minut na ošetření, jinak začnete ztrácet krev.</Czech>
+			<Czech>INFEKCE: Máte 15 minut na vyčištění rány, pak začnete ztrácet krev.</Czech>
 			<French>Infection : vous avez 15 minutes pour vous soigner avant de commencer à saigner.</French>
 			<German>Das sieht uebel aus. Du solltest die Wunde innerhalb von 15 Minuten desinfizieren, um eine Infektion zu verhindern.</German>
 		</Key>
@@ -6265,7 +6298,7 @@
 			<Russian>Наполнено водой бутылок: %1</Russian>
 			<Spanish>Llenaste %1 cantimplora(s) con agua</Spanish>
 			<French>\n\nVous avez rempli %1 Bouteille(s) avec de l&apos;eau.</French>
-			<Czech>Naplnil jsi %1 lahví vodou.</Czech>
+			<Czech>Naplnili jste vodou %1 láhve.</Czech>
 		</Key>
 		<Key ID="str_player_boiledwater">
 			<English>You have boiled %1 bottles with water.</English>
@@ -6273,7 +6306,7 @@
 			<Russian>Вы наполнили %1 бутылок чистой кипяченой водой.</Russian>
 			<Spanish>Llenaste %1 cantimplora(s) con agua</Spanish>
 			<French>\n\nVous avez rempli %1 Bouteille(s) avec de l&apos;eau.</French>
-			<Czech>Naplnil jsi %1 lahví vodou.</Czech>
+			<Czech>Naplnili jste převařenou vodou %1 láhve.</Czech>
 		</Key>
 		<Key ID="str_player_02">
 			<English>You have no empty water bottles</English>
@@ -6281,7 +6314,7 @@
 			<Russian>У вас нет пустых бутылок.</Russian>
 			<Spanish>No tienes cantimploras vacías</Spanish>
 			<French>\n\nVous n&apos;avez aucune Bouteille vide.</French>
-			<Czech>Nemáš žádné prázdné láhve na vodu.</Czech>
+			<Czech>Nemáte žádné prázdné láhve na vodu.</Czech>
 		</Key>
 		<Key ID="str_player_03">
 			<English>You need a %1 to repair this</English>
@@ -6289,7 +6322,7 @@
 			<Russian>Для починки требуется %1.</Russian>
 			<Spanish>Necesitas %1 para reparar esto.</Spanish>
 			<French>Vous avez besoin d&apos;un(e) %1 pour réparer ceci.</French>
-			<Czech>Abys tohle opravil, potřebuješ: %1</Czech>
+			<Czech>Abyste tohle opravili, potřebujete: %1</Czech>
 		</Key>
 		<Key ID="str_player_04">
 			<English>You have successfully attached the %1 on the %2</English>
@@ -6297,7 +6330,7 @@
 			<Russian>Вы успешно установили %1 на %2.</Russian>
 			<Spanish>Fijaste correctamente el %1 al %2</Spanish>
 			<French>Vous avez réussi à placer le %1 sur le %2</French>
-			<Czech>Úspěšně jsi připevnil %1 k %2</Czech>
+			<Czech>Úspěšně jste připevnili %1 k %2</Czech>
 		</Key>
 		<Key ID="str_player_05">
 			<English>%1 has been filled with %2 litres of Fuel</English>
@@ -6305,7 +6338,7 @@
 			<Russian>В %1 было залито %2 литров топлива.</Russian>
 			<Spanish>El %1 fue cargado con %2 litros de combustible.</Spanish>
 			<French>%1 a été rempli avec %2 litres de carburant.</French>
-			<Czech>%1 bylo doplněno %2 litrů paliva.</Czech>
+			<Czech>Do %1 bylo doplněno %2 litrů paliva.</Czech>
 		</Key>
 		<Key ID="str_player_06">
 			<!-- %1 days count as number -->
@@ -6322,7 +6355,7 @@
 			<Russian>Наполнено топливом канистр: %1</Russian>
 			<Spanish>Llenaste %2 bidones con combustible</Spanish>
 			<French>Vous avez rempli %1 jerrican(s) avec du carburant.</French>
-			<Czech>Naplnil jsi palivem %1 kanystrů</Czech>
+			<Czech>Naplnili jste palivem %1 kanystry.</Czech>
 		</Key>
 		<Key ID="str_player_10">
 			<English>You have no empty jerry cans</English>
@@ -6330,7 +6363,7 @@
 			<Russian>У вас нет пустых канистр.</Russian>
 			<Spanish>No tienes bidones vacíos</Spanish>
 			<French>Vous n&apos;avez pas de jerrican vide.</French>
-			<Czech>Nemáš žádné prázdné kanystry.</Czech>
+			<Czech>Nemáte žádné prázdné kanystry.</Czech>
 		</Key>
 		<Key ID="STR_AUTHENTICATING">
 			<English>Loading Character Data. Please wait...</English>
@@ -6338,7 +6371,7 @@
 			<Russian>Загружаются данные персонажа. Ожидайте...</Russian>
 			<Spanish>Cargando datos del personaje. Por favor espere.</Spanish>
 			<French>Chargement du personnage. Veuillez patienter.</French>
-			<Czech>Načítám data postavy. Prosím čekejte.</Czech>
+			<Czech>Načítám data postavy. Prosím čekejte...</Czech>
 		</Key>
 		<Key ID="str_player_loading">
 			<English>Loading and initializing DayZMod</English>
@@ -6370,7 +6403,7 @@
 			<Russian>Запрос идентификация</Russian>
 			<Spanish>Solicitando Autentificación</Spanish>
 			<French>Demande d&apos;Authentification</French>
-			<Czech>Odesílám požadevek pro ověření</Czech>
+			<Czech>Odesílám požadavek na ověření</Czech>
 		</Key>
 		<Key ID="str_player_waiting_start">
 			<English>Waiting for server to start authentication</English>
@@ -6402,7 +6435,7 @@
 			<Russian>Ожидание создания персонажа</Russian>
 			<Spanish>Esperando a que el personaje sea creado</Spanish>
 			<French>En attente de la création du personnage</French>
-			<Czech>Čekám na vytvoření postavy.</Czech>
+			<Czech>Čekám na vyrobení postavy</Czech>
 		</Key>
 		<Key ID="str_player_setup_completed">
 			<English>Setup Completed, please wait...</English>
@@ -6424,7 +6457,7 @@
 			<English>Login timed out!\nDisconnect and try again!</English>
 			<Russian>Время ожидания входа истекло!\nОтключитесь и попробуйте снова!</Russian>
 			<Spanish>Tiempo de inicio de sesión excedido.\nDesconectate y prueba de nuevo.</Spanish>
-			<Czech>Dovolený čas pro přihlášení vypršel.\nOdpojte se a zkuste to znovu!</Czech>
+			<Czech>Maximální čas pro přihlášení vypršel.\nOdpojte se a zkuste to znovu!</Czech>
 			<French>Délai de connexion dépassé\nVeuillez vous déconnecter et essayer à nouveau.</French>
 			<German>Das Einloggen dauert zu lange. Bitte trennen Sie die Verbindung und versuchen Sie es erneut.</German>
 		</Key>
@@ -6442,7 +6475,7 @@
 			<Russian>Вы используете неверную версию DayZ!</Russian>
 			<Spanish>¡Estás ejecutando una versión incorrecta de DayZ! Por favor reinstala DayZ.</Spanish>
 			<French>Vous utilisez une version incorrecte de DayZ Mod! Veuillez réinstaller DayZ Mod</French>
-			<Czech>Máte nesprávnou verzi souboru DayZ!</Czech>
+			<Czech>Máte nesprávnou verzi souborů DayZ! Přeinstalujte!</Czech>
 		</Key>
 		<Key ID="str_player_wrong_hive">
 			<English>This server is running an incorrect version of the server side application. You cannot play on this server.</English>
@@ -6456,7 +6489,7 @@
 			<English>You are in ghost mode, trying again in %1 seconds!</English>
 			<Russian>Вы заблокированы в режиме призрака, попробуем снова через %1 секунд!</Russian>
 			<Spanish>Usted está en el modo de fantasma, de volver a intentarlo en% 1 segundos!</Spanish>
-			<Czech>Nacházíte se v módu duchů, se snaží znovu v% 1 sekund!</Czech>
+			<Czech>Nacházíte se v módu duchů, další pokus znovu za %1 sekund!</Czech>
 			<French>Vous êtes en quarantaine, nouvelle tentative dans %1 secondes !</French>
 			<German>Sie sind in Ghost-Modus, versucht wieder in% 1 Sekunden!.</German>
 		</Key>
@@ -6464,36 +6497,43 @@
 			<English>Character Data received from server</English>
 			<Russian>От сервера получены данные персонажа</Russian>
 			<French>Données reçues du serveur</French>
+			<Czech>Data o postavě získána ze serveru</Czech>
 		</Key>
 		<Key ID="str_login_alreadyDead">
 			<English>Player Already Dead, disconnect and try again!</English>
 			<Russian>Игрок уже мертв! Отключитесь и попробуйте снова!</Russian>
 			<French>Vous êtes déjà mort, essayez encore !</French>
+			<Czech>Hráč je mrtev, odhlašte se a zkuste znovu!</Czech>
 		</Key>
 		<Key ID="str_login_spawningLocalObjects">
 			<English>Spawning items...</English>
 			<Russian>Генерация предметов...</Russian>
 			<French>Mise en place d'éléments du jeu...</French>
+			<Czech>Probíhá spawn předmětů...</Czech>
 		</Key>
 		<Key ID="str_login_spawnLocation">
 			<English>Region selection</English>
 			<Russian>Выбор региона</Russian>
 			<French>Zone d'apparition</French>
+			<Czech>Výběr oblasti</Czech>
 		</Key>
 		<Key ID="str_login_authentTimeout">
 			<English>Server authentication time out! Disconnect and try again!</English>
 			<Russian>Вышло время идентификации сервером. Отключитесь и попробуйте снова!</Russian>
 			<French>L'authentification a échoué, veuillez vous reconnecter !</French>
+			<Czech>Vypršel čas pro serverové ověření! Odhlašte se a zkuste to znovu!</Czech>
 		</Key>
 		<Key ID="str_login_ghostedPlayer">
 			<English>Checking for Ghosted Player</English>
 			<Russian>Проверка на наличие "призрака" игрока</Russian>
 			<French>Vérificaion de quarantaine</French>
+			<Czech>Ověření ghosted hráče</Czech>
 		</Key>
 		<Key ID="str_login_missionFile">
 			<English>Reading mission file...</English>
 			<Russian>Загрузка файла миссии...</Russian>
 			<French>Chargement de la mission</French>
+			<Czech>Načítám soubor mise...</Czech>
 		</Key>
 		<Key ID="str_player_20">
 			<English>You must be near a water-source such as a pond, or well, or watering hole, to refill your water bottles</English>
@@ -6501,7 +6541,7 @@
 			<Russian>Вы должны находиться возле водоема или источника воды, чтобы наполнить свои фляги.</Russian>
 			<Spanish>Necesitas estar cerca de una fuente de agua como un pozo para rellenar tu cantimplora</Spanish>
 			<French>Vous devez être à côté d&apos;une source comme un plan d&apos;eau ou un puits pour remplir vos Bouteilles.</French>
-			<Czech>Pro plnění láhve na vodu je nutné být poblíž studny nebo rybníka.</Czech>
+			<Czech>Pro naplnění láhve na vodu je nutné být poblíž studny nebo rybníka.</Czech>
 		</Key>
 		<Key ID="str_player_21">
 			<English>You cannot do this while you are on a ladder</English>
@@ -6517,7 +6557,7 @@
 			<Russian>Для разведения костра у вас должны быть дрова.</Russian>
 			<Spanish>Debes tener leña en tu inventario para poder crear una fogata.</Spanish>
 			<French>Vous devez avoir du bois dans votre inventaire pour pouvoir faire un feu de camp.</French>
-			<Czech>Pro vytvoření ohniště je nutné mít v inventáři dřevo.</Czech>
+			<Czech>Pro vyrobení ohniště je nutné mít v inventáři dřevo.</Czech>
 		</Key>
 		<Key ID="str_player_23">
 			<English>You must be in a forest and close to a tree to harvest wood.</English>
@@ -6525,7 +6565,7 @@
 			<Russian>Вы должны находится в лесу и подойти к дереву, чтобы нарубить дров.</Russian>
 			<Spanish>Debes estar en el bosque y cerca de un árbol para recoger leña.</Spanish>
 			<French>Vous devez être en forêt et proche d&apos;un arbre pour couper du bois.</French>
-			<Czech>Pro získání dřeva musíš být v lese blízko stromu.</Czech>
+			<Czech>Pro získání dřeva musíte být v lese blízko suchého stromu.</Czech>
 		</Key>
 		<Key ID="str_player_24">
 			<English>You do not have enough room in your inventory to do that.</English>
@@ -6533,7 +6573,7 @@
 			<Russian>У вас недостаточно места в инвентаре.</Russian>
 			<Spanish>No tienes espacio suficiente en tu inventario para hacer eso.</Spanish>
 			<French>Vous n&apos;avez pas assez de place dans votre inventaire pour faire cela.</French>
-			<Czech>Pro tuto akci nemáš dostatek místa v inventáři.</Czech>
+			<Czech>Pro tuto akci nemáte dostatek místa v inventáři.</Czech>
 		</Key>
 		<Key ID="str_player_24_Stoped">
 			<English>You have finished collecting wood.</English>
@@ -6541,7 +6581,7 @@
 			<German>Du hast erfolgreich Holz gesammelt.</German>
 			<Spanish>You have finished collecting wood.</Spanish>
 			<French>Vous avez terminé de faire du bois.</French>
-			<Czech>You have finished collecting wood.</Czech>
+			<Czech>Nasekali jste dřevo.</Czech>
 		</Key>
 		<Key ID="str_player_24_progress">
 			<English>Chopping down tree (%1/%2). Walk away at anytime to cancel.</English>
@@ -6549,7 +6589,7 @@
 			<German>Der Baum wird gefaellt ... (%1/%2). Gehe ein Stueck zur Seite, um abzubrechen.</German>
 			<Spanish>Tala de árboles (%1/%2). Walk away en cualquier momento para cancelar.</Spanish>
 			<French>Abattre l&apos;arbre (%1/%2). Éloignez-vous à tout moment pour annuler.</French>
-			<Czech>Kácení stromu (%1/%2). Odejít kdykoliv zrušit.</Czech>
+			<Czech>Sekání dřeva (%1/%2). Odstupte pro zrušení akce.</Czech>
 		</Key>
 		<Key ID="str_player_25">
 			<English>A pile of wood has been successfully added to your inventory.</English>
@@ -6557,7 +6597,7 @@
 			<Russian>Дрова добавлены в ваш инвентарь.</Russian>
 			<Spanish>Una pila de leña se agregó correctamente a tu inventario.</Spanish>
 			<French>Un tas de bois a été ajouté à votre inventaire avec succès.</French>
-			<Czech>Hromádka dřeva byla úspěšně přidána do tvého inventáře.</Czech>
+			<Czech>Hromádka dřeva byla úspěšně přidána do vašeho inventáře.</Czech>
 		</Key>
 		<Key ID="str_player_26">
 			<English>You cannot do this while you are in the water.</English>
@@ -6589,7 +6629,7 @@
 			<Russian>Магазины %1 %2 перезаряжены.</Russian>
 			<Spanish>Recargaste correctamente %1 cargadores de %2.</Spanish>
 			<French>Vous avez rechargé %1 %2 chargeur(s) avec succès.</French>
-			<Czech>Úspěšně jsi nabil zásobníky %1 %2.</Czech>
+			<Czech>Úspěšně jste nabili zásobníky %1 %2.</Czech>
 		</Key>
 		<Key ID="str_player_30">
 			<English>%1 must be on your person to move it to/from your toolbelt.</English>
@@ -6597,7 +6637,7 @@
 			<Russian>Для перемещения с/на пояс, (%1) должен быть у вас.</Russian>
 			<Spanish>%1 debe estar en tu persona para moverlo hacia/desde el cinturon.</Spanish>
 			<French>%1 doit être sur vous pour pouvoir le déplacer de/vers votre ceinture à outils.</French>
-			<Czech>%1 musí být v invetáři aby se mohl přesunout z/do panelu nástrojů</Czech>
+			<Czech>%1 musí být v invetáři, aby se mohl přesunout z/do panelu nástrojů.</Czech>
 		</Key>
 		<Key ID="str_player_toback_fail">
 			<English>Cannot add %1 to back.</English>
@@ -6630,7 +6670,7 @@
 			<Russian>Чтобы соорудить схрон, вам нужны (%1).</Russian>
 			<Spanish>Para crear un escondite necesitas %1.</Spanish>
 			<French>Pour construire une planque, il vous faut %1.</French>
-			<Czech>Aby jsi postavil skrýš, je potřeba %1.</Czech>
+			<Czech>Abyste postavili skrýš, je potřeba %1.</Czech>
 		</Key>
 		<Key ID="str_player_31_build">
 			<English>build</English>
@@ -6700,7 +6740,7 @@
 			<English>wear</English>
 			<Russian>одеть</Russian>
 			<Spanish>vestirte</Spanish>
-			<Czech>nosit</Czech>
+			<Czech>obléct</Czech>
 			<German>tragen</German>
 			<French>porter</French>
 		</Key>
@@ -6708,7 +6748,7 @@
 			<English>You must be near a water-source such as a pond, watering hole, or well to drink.</English>
 			<Russian>Вы должны находится возле источника воды чтобы попить.</Russian>
 			<Spanish>Debe estar cerca de una fuente de agua, como un estanque, pozo de agua, o bien para beber.</Spanish>
-			<Czech>Ty musí být v blízkosti vodní zdroje, jako je rybník, zavlažování díra, nebo i na pití.</Czech>
+			<Czech>Musíte být v blízkosti vodního zdroje jako je rybník, zavlažovací díra, nebo studna.</Czech>
 			<German>Du musst dich in der Naehe einer Wasserquelle befinden, um trinken zu koennen.</German>
 			<French>Pour boire, vous devez être à côté d&apos;une source comme un plan d&apos;eau, une fontaine ou un puits</French>
 		</Key>
@@ -6718,7 +6758,7 @@
 			<Russian>(%1) уже кто-то обыскивает.</Russian>
 			<Spanish>%1 ya fue saqueado por alguien más.</Spanish>
 			<French>%1 est déjà en train d&apos;être pillé par quelqu&apos;un d&apos;autre.</French>
-			<Czech>%1 už je loupen někým jiným.</Czech>
+			<Czech>%1 už je vybírán někým jiným.</Czech>
 		</Key>
 		<Key ID="str_player_beingpacked">
 			<English>That tent is already being packed.</English>
@@ -6760,7 +6800,7 @@
 			<Russian>Нельзя переодеваться в транспорте</Russian>
 			<Spanish>No puedes cambiar de ropa mientras estás en un vehículo</Spanish>
 			<French>Vous ne pouvez pas vous changer dans un véhicule</French>
-			<Czech>Neměl by jsi měni oblečení, když jsi ve vozidle</Czech>
+			<Czech>Nelze se převléci, když jste ve vozidle.</Czech>
 		</Key>
 		<Key ID="str_player_fail_wear2">
 			<English>Currently Female Characters cannot change to this skin. This will change in a future update.</English>
