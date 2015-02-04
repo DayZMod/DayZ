@@ -4307,8 +4307,8 @@
 			<Russian>Пистолет-пулемет &lt;br/&gt;Калибр: 9x19мм</Russian>
 			<Spanish>Ametralladora &lt;br/&gt;Calibre: 9x19mm</Spanish>
 			<French>Mitrailleuse&lt;br/&gt;Calibre: 9x19mm</French>
-			<Czech>Personal Defence Weapon, samopal &lt;br/&gt;Kalibr: 9x19mm</Czech>
-			<German>Leichte Maschinenpistole (Personal Defence Weapon)&lt;br/&gt;Kaliber 9 x 19 mm</German>
+			<Czech>Personal Defense Weapon, samopal &lt;br/&gt;Kalibr: 9x19mm</Czech>
+			<German>Leichte Maschinenpistole (Personal Defense Weapon)&lt;br/&gt;Kaliber 9 x 19 mm</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_Revolver">
 			<English>Revolver</English>
@@ -6274,7 +6274,7 @@
 			<Russian>Вы разделали: %1. Доступно кусков мяса: %2</Russian>
 			<Spanish>Un %1 fue achurado, dejando %2 trozos de carne en el cuerpo.</Spanish>
 			<French>%1 a été dépecé, %2 morceaux de viande sont maintenant dans la carcasse.</French>
-			<Czech>%1 bylo vykucháno, %2 kusy masa lze najít v mrtvole.</Czech>
+			<Czech>%1 byla vykuchána, %2 kusy masa lze najít v mrtvole.</Czech>
 		</Key>
 		<Key ID="str_medical_healing">
 			<English>You are being healed</English>
@@ -6435,7 +6435,7 @@
 			<Russian>Ожидание создания персонажа</Russian>
 			<Spanish>Esperando a que el personaje sea creado</Spanish>
 			<French>En attente de la création du personnage</French>
-			<Czech>Čekám na vyrobení postavy</Czech>
+			<Czech>Čekám na vytvoření postavy</Czech>
 		</Key>
 		<Key ID="str_player_setup_completed">
 			<English>Setup Completed, please wait...</English>
@@ -6605,7 +6605,7 @@
 			<Russian>Это действие невозможно пока вы в воде.</Russian>
 			<Spanish>No puedes hacer esto mientras estás en el agua.</Spanish>
 			<French>Vous ne pouvez pas faire cela lorsque vous êtes dans l&apos;eau.</French>
-			<Czech>Tuto akci nelze provést pokud jste ve vodě.</Czech>
+			<Czech>Tuto akci nelze provést, pokud jste ve vodě.</Czech>
 		</Key>
 		<Key ID="str_player_27">
 			<English>You have applied a heatpack to your body successfully.</English>
@@ -6654,7 +6654,7 @@
 			<Russian>Чтобы %2 , (%1) должен находиться в основном инвентаре.</Russian>
 			<Spanish>Debes tener un %1 en tu inventario principal para %2.</Spanish>
 			<French>%1 doit être dans votre inventaire principal pour pouvoir le %2</French>
-			<Czech>%1 musí být ve tvém hlavním inventáři pro %2.</Czech>
+			<Czech>%1 musí být ve vašem hlavním inventáři pro %2.</Czech>
 		</Key>
 		<Key ID="str_player_31_missingtools">
 			<English>To build %1 you require %2.</English>
@@ -6808,7 +6808,7 @@
 			<Russian>Персонажи женского пола не могут переодеваться в данной версии.</Russian>
 			<Spanish>Actualmente los personajes femeninos no se pueden cambiar de ropa. Esto será cambiado en futuras actualizaciones.</Spanish>
 			<French>Pour l&apos;instant cette tenue n&apos;existe pas pour femmes.</French>
-			<Czech>Hráči, kteří hrají za ženu nemohou měnit oblečení. Toto se změní v budoucím patchi.</Czech>
+			<Czech>Hráči, kteří hrají za ženu nemohou měnit oblečení. Toto sexistické omezení bude odstraněno v nějakém budoucím patchi.</Czech>
 		</Key>
 		<Key ID="str_player_actionslimit">
 			<English>Wait for the previous action to complete to perform another!</English>
@@ -6824,7 +6824,7 @@
 			<Russian>Вы успешно зарядили (%1).</Russian>
 			<Spanish>Cargaste exitosamente munición de %1</Spanish>
 			<French>Vous avez chargé %1 munitions.</French>
-			<Czech>Úspěšně jste nahráli %1 munice.</Czech>
+			<Czech>Úspěšně jste nabili munici %1.</Czech>
 		</Key>
 		<Key ID="str_player_ammo_fail">
 			<English>You need %1 type of ammo to do this.</English>
@@ -6832,7 +6832,7 @@
 			<Russian>Вам нужны (%1) чтобы сделать это.</Russian>
 			<Spanish>Necesitas munición del tipo %1 para hacer esto.</Spanish>
 			<French>Vous avez besoin de %1 type de munition pour ce faire.</French>
-			<Czech>Pro toto potřebujete %1 typ munice.</Czech>
+			<Czech>Pro toto potřebujete tento typ munice: %1.</Czech>
 		</Key>
 
 		
@@ -6840,16 +6840,19 @@
 			<English>You can&apos;t carry two primary weapons at the same time!</English>
 			<Russian>Нельзя одновременно носить наготове два основных типа оружия!</Russian>
 			<French>Vous ne pouvez pas porter 2 armes principales !</French>
+			<Czech>Nelze mít najednou dvě hlavní zbraně!</Czech>
 		</Key>
 		<Key ID="str_player_ammo_CannotCount">
-			<English>can&apos;t count magazines!</English>
+			<English>Can&apos;t count magazines!</English>
 			<Russian>Не удалось пересчитать магазины!</Russian>
 			<French>Impossible de compter les chargeurs !</French>
+			<Czech>Nelze spočítat zásobníky!</Czech>
 		</Key>
 		<Key ID="str_player_lowPFS">
 			<English>LOW FPS, PLEASE CHANGE YOUR GRAPHIC SETTINGS</English>
 			<Russian>Низкий FPS! Измените настройки графики!</Russian>
 			<French>IMAGES SACCADEES, VEUILLEZ BAISSER VOS REGLAGES VIDEO.</French>
+			<Czech>NÍZKÉ FPS (SNÍMKOVÁ FREKVENCE), UPRAVTE NASTAVENÍ GRAFIKY</Czech>
 		</Key>
 
 		<Key ID="str_player_build_rotate">
@@ -6858,7 +6861,7 @@
 			<Russian>Используйте Q и E чтобы повернуть объект и V для наклона.</Russian>
 			<Spanish>Use Q y E para rotar el objeto y entonces seleccione la acción deseada</Spanish>
 			<French>Utilisez A et E pour tourner l&apos;objet, et V pour le pencher.</French>
-			<Czech>Použijte Q a E pro rotaci objektu, poté vyberte vámi požadovanou akci</Czech>
+			<Czech>Použijte Q a E pro rotaci objektu, V pro naklopení. Poté vyberte vámi požadovanou akci.</Czech>
 		</Key>
 		<Key ID="str_player_build_movingfast">
 			<English>You are moving too fast!</English>
@@ -6866,7 +6869,7 @@
 			<Russian>Вы слишком быстро движитесь!</Russian>
 			<Spanish>¡Te estás moviendo muy rápido!</Spanish>
 			<French>Vous vous déplacez trop vite !</French>
-			<Czech>Pohybuješ se příliš rychle!</Czech>
+			<Czech>Pohybujete se příliš rychle!</Czech>
 		</Key>
 		<Key ID="str_player_build_complete">
 			<English>Complete Build</English>
@@ -6890,7 +6893,7 @@
 			<Russian>Чтобы поднять предмет, вы должны быть ближе 3х метров!</Russian>
 			<Spanish>¡Necesitas estar a menos de 3 metros para tomarlo!</Spanish>
 			<French>Vous devez être à moins de 3 mètres pour ramasser !</French>
-			<Czech>Aby jste předmět sebrali, musíte být v okolí 3 metrů.</Czech>
+			<Czech>Abyste předmět sebrali, musíte být do vzdálenosti 3 metrů.</Czech>
 		</Key>
 		<Key ID="str_pickup_limit_2">
 			<English>You must wait to pickup this item!</English>
@@ -6914,7 +6917,7 @@
 			<Russian>Другой игрок рядом! Он должен быть далее 5ти метров от поднимаемого рюкзака</Russian>
 			<Spanish>Otro jugador cerca, solo un jugador debe estar a menos de 5 metros de la mochila para tomarla</Spanish>
 			<French>Un autre joueur se trouve à proximité. Un seul joueur peut fouiller un sac dans un rayon de 5 mètres.</French>
-			<Czech>Poblíž je další hráč. Pouze jeden hráč musí být v rozsahu 5 metrů aby jste mohli batoh zvednout</Czech>
+			<Czech>Poblíž je další hráč. Pouze jeden hráč může být v okolí 5 metrů, aby mohl být batoh zvednut..</Czech>
 		</Key>
 		<Key ID="str_pickup_limit_5">
 			<English>Another player is nearby, only one player can be near to perform this action</English>
@@ -6922,7 +6925,7 @@
 			<Russian>Другой игрок рядом, только один игрок может делать это.</Russian>
 			<Spanish>Otro jugador que está cerca, sólo un jugador puede estar cerca para realizar esta acción</Spanish>
 			<French>Un autre joueur est à proximité, un seul joueur peut se trouver à proximité pour effectuer cette action</French>
-			<Czech>Dalším hráčem je v blízkosti, může být jeden hráč blízko k provedení této akce</Czech>
+			<Czech>Další hráče je v blízkosti. Pouze jeden hráč smí být v blízkosti, aby šla provést tato akce.</Czech>
 		</Key>
 		<Key ID="str_refuel_fail">
 			<English>Already refueling!</English>
@@ -6946,7 +6949,7 @@
 			<Russian>попадания пули большого калибра</Russian>
 			<Spanish>por un disparo de alto calibre</Spanish>
 			<French>un tir de gros calibre</French>
-			<Czech>vysoko rážní střelbou.</Czech>
+			<Czech>vysokorážní střelbou.</Czech>
 		</Key>
 		<Key ID="str_death_bled">
 			<English>blood loss</English>
@@ -6954,7 +6957,7 @@
 			<Russian>потери крови</Russian>
 			<Spanish>desangrado</Spanish>
 			<French>une hémorragie</French>
-			<Czech>na vysokou ztrátu krve.</Czech>
+			<Czech>na vykrvácení.</Czech>
 		</Key>
 		<Key ID="str_death_dehyd">
 			<English>dehydration</English>
@@ -6962,7 +6965,7 @@
 			<Russian>обезвоживания</Russian>
 			<Spanish>deshidratado</Spanish>
 			<French>une déshydratation</French>
-			<Czech>dehydratací.</Czech>
+			<Czech>na dehydrataci.</Czech>
 		</Key>
 		<Key ID="str_death_starve">
 			<English>starvation</English>
@@ -7000,7 +7003,7 @@
 			<English>Cannot Abort near another player!\nYou are still in Combat.</English>
 			<Russian>Нельзя выходить находясь рядом с другим игроком!\nВы все еще в бою!</Russian>
 			<Spanish>¡No puedes abortar cerca de otros jugadores!\nTodavía estás en combate.</Spanish>
-			<Czech>Nemůžute ukončit hru, když jste poblíž jiného hráče.\nStále jste v Boji.</Czech>
+			<Czech>Nemůžete ukončit hru, když jste poblíž jiného hráče.\nStále jste v boji.</Czech>
 			<French>Abandon impossible près d&apos;un autre joueur !\nVous êtes toujours en combat.</French>
 			<German>Du kannst dich nicht in der Naehe eines anderen Spielers ausloggen, du befindest dich noch immer in Gefahr!</German>
 		</Key>
@@ -7008,7 +7011,7 @@
 			<English>Cannot Abort Zombies are near!\nYou are still in Combat. </English>
 			<Russian>Нельзя выходить находясь рядом с зомби!\nВы все еще в бою!</Russian>
 			<Spanish>¡No puedes abortar cerca de zombies!\nTodavía estás en combate.</Spanish>
-			<Czech>Nemůžete ukončit hru, když jsou zombie poblíž.\nStále jste v Boji.</Czech>
+			<Czech>Nemůžete ukončit hru, když jsou zombie poblíž.\nStále jste v boji.</Czech>
 			<French>Abandon impossible, des zombies sont à proximité !\nVous êtes toujours en combat.</French>
 			<German>Du kannst dich nicht in der Naehe von Zombies ausloggen, du befindest dich noch immer in Gefahr!</German>
 		</Key>
@@ -7034,7 +7037,7 @@
 			<Russian>Стрела сломалась. Ее нельзя использовать повторно.</Russian>
 			<Spanish>La flecha se rompió y no puede usarse nuevamente</Spanish>
 			<French>La flèche a été brisée et ne peut plus être utilisée.</French>
-			<Czech>Šipka byla zlomena a nemůže být použita znovu</Czech>
+			<Czech>Šipka se zlomila a nemůže být použita znovu.</Czech>
 		</Key>
 		<Key ID="str_must_have_weapon">
 			<English>Weapon, converting ammo for, must be in hands!</English>
@@ -7042,7 +7045,7 @@
 			<Spanish>¡El arma a la que se quiere convertir la munición debe estar en tus manos!</Spanish>
 			<Russian>Оружие, для которого конвертируются магазины, должно быть в руках!</Russian>
 			<French>Pour convertir des munitions pour une arme, celle ci doit être dans vos mains !</French>
-			<Czech>Zbraň, pro kterou měníte munici musí být v rukách.</Czech>
+			<Czech>Zbraň, pro kterou měníte munici, musíte mít v rukách.</Czech>
 		</Key>
 		<Key ID="str_quiver_reachlimit">
 			<English>You cannot have more quivers.</English>
@@ -7058,15 +7061,15 @@
 			<Spanish>No tienes flechas suficientes.</Spanish>
 			<Russian>Недостаточно стрел.</Russian>
 			<French>Vous ne pouvez pas avoir plus de flèches.</French>
-			<Czech>Nemáš dostatečný počet šípů.</Czech>
+			<Czech>Nemáte dostatečný počet šipek.</Czech>
 		</Key>
 		<Key ID="str_quiver_createsuccess">
-			<English>You have create a quiver containing %1 arrows.</English>
+			<English>You have created a quiver containing %1 arrows.</English>
 			<German>Du hast einen Koecher mit %1 Pfeil(en) hergestellt.</German>
 			<Spanish>Creaste un carcaj que contiene %1 flechas.</Spanish>
 			<Russian>Вы создали колчан. В нем %1 стрел.</Russian>
 			<French>Vous avez créé un carquois avec %1 flèches.</French>
-			<Czech>Vytvořil jsi toulec, který obsahuje %1 šípů.</Czech>
+			<Czech>Vytvořili jste toulec, který obsahuje %1 šipek.</Czech>
 		</Key>
 		<Key ID="str_quiver_addarrows">
 			<English>You have added %1 arrows to the quiver.</English>
@@ -7074,7 +7077,7 @@
 			<Spanish>Agregaste %1 flechas al carcaj.</Spanish>
 			<Russian>Вы добавили в колчан %1 стрел.</Russian>
 			<French>Vous avez placé %1 flèches dans le carquois.</French>
-			<Czech>Přidali jste %1 šípů do toulce.</Czech>
+			<Czech>Přidali jste %1 šipek do toulce.</Czech>
 		</Key>
 		<Key ID="str_quiver_full">
 			<English>The quiver is full.</English>
@@ -7107,7 +7110,7 @@
 			<Russian>Создать</Russian>
 			<Spanish>Construir Objeto</Spanish>
 			<French>Construire un objet</French>
-			<Czech>Vytvořit předmět</Czech>
+			<Czech>Vyrobit předmět</Czech>
 			<German>Gegenstand herstellen</German>
 		</Key>
 		<Key ID="STR_UI_CRAFT_OPEN">
@@ -7115,7 +7118,7 @@
 			<Russian>Мастерская</Russian>
 			<Spanish>Construir</Spanish>
 			<French>Construire</French>
-			<Czech>Craftování</Czech>
+			<Czech>Výroba</Czech>
 			<German>Herstellen</German>
 		</Key>
 		<Key ID="STR_UI_START_CRAFTING">
@@ -7124,7 +7127,7 @@
 			<Spanish>Empezar a Construir</Spanish>
 			<Czech>Craftovat</Czech>
 			<French>Démarrer la construction</French>
-			<Czech>Začít craftovat</Czech>
+			<Czech>Začít vyrábět</Czech>
 			<German>Herstellung beginnen</German>
 		</Key>
 		<Key ID="STR_UI_SLOTS_LEFT">
@@ -7229,7 +7232,7 @@
 			<Russian>Выберите свой пол</Russian>
 			<Spanish>SELECCIONE SU GÉNERO</Spanish>
 			<French>HOMME OU FEMME ?</French>
-			<Czech>VYBER SI POHLAVÍ</Czech>
+			<Czech>VYBERTE SI POHLAVÍ</Czech>
 		</Key>
 		<Key ID="STR_UI_GENDER_DESC">
 			<English>Please select the gender you wish to play as. Your gender will be bound to this unique character and cannot be changed until you die.</English>
@@ -7237,7 +7240,7 @@
 			<Russian>Пожалуйста, выберите пол вашего персонажа. Учтите, вы не сможете изменить его в течении игры, до тех пор, пока не погибнете.</Russian>
 			<Spanish>Por favor selecciona el género con el que deseas jugar. Tu género se enlazará a tu personaje y solo podrá ser cambiado cuando mueras.</Spanish>
 			<French>Veuillez sélectionner le genre que vous voulez jouer. Votre genre sera lié à ce personnage unique et sera définitif jusqu&apos;à la mort de ce dernier.</French>
-			<Czech>Vyberte si prosím pohlaví, za které si přejete hrát. Vaše pohlaví bude přiřazeno k unikátní postavě a dokud nezemřete, nelze pohlaví změnit.</Czech>
+			<Czech>Vyberte si, prosím, pohlaví, za které si přejete hrát. Vaše pohlaví bude přiřazeno k unikátní postavě a dokud nezemřete, nelze pohlaví změnit.</Czech>
 		</Key>
 		<Key ID="STR_UI_GENDER_MALE">
 			<English>MALE</English>
@@ -7367,7 +7370,7 @@
 			<Russian>вчера утром</Russian>
 			<Spanish>la madrugada de ayer</Spanish>
 			<French>hier matin</French>
-			<Czech>včera brzno ráno</Czech>
+			<Czech>včera brzo ráno</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_1_i">
 			<!-- str_playerstats_journal_1 %2 -->
@@ -7403,7 +7406,7 @@
 			<Russian>это мой первый день после пробуждения на берегу.</Russian>
 			<Spanish>es mi primer día aquí desde que desperté en la playa.</Spanish>
 			<French>c&apos;est mon premier jour ici depuis mon réveil sur la côte.</French>
-			<Czech>je to můj první den tady, co jsem odešel od pobřeží</Czech>
+			<Czech>je to můj první den tady, co jsem se probral na pobřeží.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_2_info_2">
 			<!-- str_playerstats_journal_2 %6 -->
@@ -7429,7 +7432,7 @@
 			<Russian>По крайней мере нет переломов </Russian>
 			<Spanish>Al menos no tengo ningún hueso roto</Spanish>
 			<French>Au moins je n&apos;ai rien de cassé</French>
-			<Czech>Aspoň, že jsem si nezlomil žádnou kost</Czech>
+			<Czech>Aspoň, že jsem si nic nezlomil</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_3_2">
 			<English>The situation looks dire.  I&apos;ve got multiple broken bones</English>
@@ -7437,7 +7440,7 @@
 			<Russian>Ситуация хреновая. У меня несколько переломов </Russian>
 			<Spanish>La situación parece grave.  Tengo multiples huesos rotos</Spanish>
 			<French>La situation est terrible.  J&apos;ai plusieurs fractures</French>
-			<Czech>Situace vypadá bledě.  Mám několik zlomených kostí</Czech>
+			<Czech>Situace vypadá bledě.  Mám několik zlomenin</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_3_3">
 			<English>Things could be better. My leg is broken</English>
@@ -7477,7 +7480,7 @@
 			<Russian>, мне становится хуже от потери крови.</Russian>
 			<Spanish> y me estoy poniendo pálido rápidamente por la falta de sangre.</Spanish>
 			<French> et je m&apos;évanouis souvent d&apos;anémie</French>
-			<Czech> a z nedostatku krve mi je bledě a klopítám.</Czech>
+			<Czech> a z nedostatku krve mi je bledě a klopýtám.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_5_2">
 			<English> and I&apos;ve lost a lot of blood.</English>
@@ -7565,7 +7568,7 @@
 			<Russian>Хорошо, что у меня есть пакет крови. Если б кто был рядом, чтобы сделать переливание...</Russian>
 			<Spanish>La buena noticia es que tengo una bolsa de sangre conmigo.  Tan solo si hubiera alguien que pudiera hacerme la transfusión...</Spanish>
 			<French>Heureusement j&apos;ai une poche de sang.  Maintenant si seulement quelqu&apos;un pouvait venir m&apos;assister...</French>
-			<Czech>Dobrá věc je, že jsem našel krevní sáček. Kéžby tady teď byl někdo, kdo by mi pomohl při transfúzi.</Czech>
+			<Czech>Dobrá věc je, že jsem našel krevní vak. Kéž by tady teď byl někdo, kdo by mi pomohl při transfúzi.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_6_2">
 			<English>Good thing I&apos;ve got a blood bag in my backpack.  Now if only there was someone who could hook me up...</English>
@@ -7573,7 +7576,7 @@
 			<Russian>Хорошо, что у меня есть пакет крови в рюкзаке. Если б кто был рядом, чтобы сделать переливание...</Russian>
 			<Spanish>La buena noticia es que tengo una bolsa de sangre en la mochila.  Tan solo si hubiera alguien que pudiera hacerme la transfusión...</Spanish>
 			<French>Heureusement j&apos;ai une poche de sang dans mon sac.  Maintenance si seulement quelqu&apos;un pouvait venir m&apos;assister...</French>
-			<Czech>Dobrá věc je, že mám v batohu krevní sáček. Kéžby tady teď byl někdo, kdo by mi pomohl při transfúzi.</Czech>
+			<Czech>Dobrá věc je, že mám v batohu krevní sáček. Kéž by tady teď byl někdo, kdo by mi pomohl při transfúzi.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_6_3">
 			<English>I really need to get a transfusion from somewhere.  If only I had a blood bag.</English>
@@ -7581,7 +7584,7 @@
 			<Russian>Мне действительно необходимо переливание. Если бы у меня был пакет крови.</Russian>
 			<Spanish>Realmente necesito obtener una transfusión de algún lado.  Si solo tuviera una bolsa de sangre...</Spanish>
 			<French>J&apos;ai vraiment besoin d&apos;une transfusion.  Si seulement j&apos;avais une poche de sang.</French>
-			<Czech>Opravdu bych potřeboval krevní transfúzi. Kéžby bych měl krevní sáček.</Czech>
+			<Czech>Opravdu bych potřeboval krevní transfúzi. Kéž bych měl krevní vak.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_7_1">
 			<!-- %1 melee weapon name -->
@@ -7590,7 +7593,7 @@
 			<Russian>Хорошие новости - при мне мой верный %1.</Russian>
 			<Spanish>Por suerte tengo mi confiable %1 para defenderme.</Spanish>
 			<French>Heureusement j&apos;ai mon fidèle %1 pour me défendre.</French>
-			<Czech>Dobrá zpráva je, že mám %1 abych se mohl bránit.</Czech>
+			<Czech>Dobrá zpráva je, že mám %1, abych se mohl bránit.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_7_2">
 			<!-- %1 flashlight name (Day) -->
@@ -7608,7 +7611,7 @@
 			<Russian>У меня есть %1 - прекрасно помогает видеть в этой темноте. Однако другие выжившие смогут заметить без проблем. Не уверен, что это хорошо в текущих обстоятельствах.</Russian>
 			<Spanish>Tengo una %1 que es perfecta para ver en la oscuridad.  Sin embargo supongo que otros supervivientes puedan verme iluminar con ella.  No estoy seguro si es una buena idea o no dadas las circunstancias.</Spanish>
 			<French>J&apos;ai une %1 qui est super pour voir dans le noir.  Mais les autres survivants doivent me voir l&apos;utiliser.  Pas sûr que cela soit un bonne idée étant données les circonstances</French>
-			<Czech>Mám %1, což mi ulehčí život ve tmě. Hádám ale, že jakmile ji zapnu, uvidímě i ostatní. Musím popřemýšlet, zda to za to riziko stojí.</Czech>
+			<Czech>Mám %1, což mi ulehčí život ve tmě. Hádám ale, že jakmile ji zapnu, uvidí mě i ostatní. Musím popřemýšlet, zda to za to riziko stojí.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_7_4">
 			<!-- %1 Makarov weapon name -->
@@ -7652,7 +7655,7 @@
 			<Russian>Сдается, не очень разумно бродить беззащитным. Стоит поискать оружие.</Russian>
 			<Spanish>Por alguna razón, creo que es una buena idea vagar sin armarme.  Tal vez debería tratar de encontrar un arma.</Spanish>
 			<French>Je pense qu&apos;il est bon d&apos;errer sans être armé.  Peut-être que je devrais tout de même chercher une arme.</French>
-			<Czech>Myslím si, že chodit tady beze zbraně je špatný nápad. Možná bych si měl nějakou najít, ať nějsem jenom kachna pro ostatní.</Czech>
+			<Czech>Myslím si, že chodit tady beze zbraně je špatný nápad. Možná bych si měl nějakou najít, ať nejsem jenom kachna pro ostatní.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_month_1">
 			<English>January</English>
@@ -7837,7 +7840,7 @@
 			<French>Epave de Mi-8</French>
 			<Russian>Обломки Ми-8</Russian>
 			<Spanish>Mi-8 Destruído</Spanish>
-			<Czech>Mi-8 Vrak</Czech>
+			<Czech>Vrak Mi-8</Czech>
 			<German>Mi-8-Wrack</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_UH1Y_WRECK">
@@ -7845,7 +7848,7 @@
 			<French>Epave de UH-1Y</French>
 			<Russian>Обломки UH-1Y</Russian>
 			<Spanish>UH-1Y Estrellado</Spanish>
-			<Czech>Havarovaný UN-1Y</Czech>
+			<Czech>Havarovaný UH-1Y</Czech>
 			<German>zerstoerter UH-1Y</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_UH60_WRECK">
@@ -7853,7 +7856,7 @@
 			<French>Epave de UH-60</French>
 			<Russian>Обломки UH-60</Russian>
 			<Spanish>UH-60 Destruído</Spanish>
-			<Czech>UH-60 Vrak</Czech>
+			<Czech>Vrak UH-60</Czech>
 			<German>UH-60-Wrack</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_AN2">
@@ -8045,7 +8048,7 @@
 			<Russian>Колючка</Russian>
 			<French>Wire (CAT1)</French>
 			<Spanish>Wire (CAT1)</Spanish>
-			<Czech>Wire (CAT1)</Czech>
+			<Czech>Drát (CAT1)</Czech>
 			<German>Kabel (CAT1)</German>
 		</Key>
 		<Key ID="STR_BUILT_WIRE2">
@@ -8053,7 +8056,7 @@
 			<Russian>Усиленная колючка</Russian>
 			<French>Wire (CAT2)</French>
 			<Spanish>Wire (CAT2)</Spanish>
-			<Czech>Wire (CAT2)</Czech>
+			<Czech>Drát (CAT2)</Czech>
 			<German>Kabel (CAT2)</German>
 		</Key>
 		<Key ID="STR_BUILT_HEDGEHOG">
@@ -8061,7 +8064,7 @@
 			<Russian>Противотанковый ёж</Russian>
 			<French>Hedgehog (Steel)</French>
 			<Spanish>Hedgehog (Steel)</Spanish>
-			<Czech>Hedgehog (Steel)</Czech>
+			<Czech>Ježek (ocel)</Czech>
 			<German>Tschechenigel (Stahl)</German>
 		</Key>
 		<Key ID="STR_BUILT_SANDBAG">
@@ -8069,7 +8072,7 @@
 			<Russian>Преграда из мешков с песком</Russian>
 			<French>Sacs de sable</French>
 			<Spanish>Bag Fence</Spanish>
-			<Czech>Bag Fence</Czech>
+			<Czech>Val z pytlů</Czech>
 			<German>Sandsackwall</German>
 		</Key>
 		<Key ID="STR_ZNAME_SOLDIER">
@@ -8109,7 +8112,7 @@
 			<Spanish>Infectado Viral</Spanish>
 			<Russian>Опасный инфицированный</Russian>
 			<French>Viral infecté</French>
-			<Czech>Infikovaný Viral</Czech>
+			<Czech>Infikovaný a nakažlivý</Czech>
 			<German>Viral Infizierter</German>
 		</Key>
 		<Key ID="STR_ZNAME_POLICEMAN">
@@ -8174,6 +8177,7 @@
 			<English>Work Bench (Packed)</English>
 			<Russian>Верстак (упакован)</Russian>
 			<French>Etabli (plié)</French>
+			<Czech>Ponk (sbalený)</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemWorkBench">
 			<English>A Folded Workbench, required for House Building and Some Crafting</English>
