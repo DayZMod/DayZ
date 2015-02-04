@@ -8183,598 +8183,719 @@
 			<English>A Folded Workbench, required for House Building and Some Crafting</English>
 			<Russian>Упакованный верстак, необходим для строительства зданий и некоторых ремесел.</Russian>
 			<French>Un établi plié, requis pour la construction et l&apos;artisanat</French>
+			<Czech>Rozložený a sbalený ponk, který je potřeba při stavbě budov a k výrobě některých předmětů.</Czech>
 		</Key>
 		<Key ID="STR_BLD_build_ItemWorkBench">
 			<English>Place WorkBench</English>
 			<Russian>Установить верстак</Russian>
 			<French>Placer l&apos;établi</French>
+			<Czech>Umístit ponk</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemLog">
 			<English>Wooden Log</English>
 			<Russian>Бревно</Russian>
 			<French>Rondin</French>
+			<Czech>Poleno</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemLog">
 			<English>Rough Wooden Log</English>
 			<Russian>Обработанное бревно</Russian>
 			<French>Un rondin en bois brut</French>
+			<Czech>Neotesané dřevěné poleno</Czech>
 		</Key>
 		<Key ID="STR_BLD_craft_ItemLog">
 			<English>Wooden Plank</English>
 			<Russian>Доска</Russian>
 			<French>Couper en planches</French>
+			<Czech>Rozštípat</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemPlank">
 			<English>Sawn Planks</English>
 			<Russian>Доски</Russian>
 			<French>Planches</French>
+			<Czech>Prkna</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemPlank">
 			<English>Saw Planks</English>
 			<Russian>Распиленные доски</Russian>
 			<French>Des planches de bois</French>
+			<Czech>Hrubá neohoblovaná prkna</Czech>
 		</Key>
 		<Key ID="STR_BLD_craft_ItemPlank">
 			<English>Wood Piles</English>
 			<Russian>Поленья</Russian>
 			<French>Couper en petits bois</French>
+			<Czech>Rozštípat</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemMetalSheet">
 			<English>Corrugated Sheet</English>
 			<Russian>Волнистый лист</Russian>
 			<French>Tôle ondulée</French>
+			<Czech>Vlnitý plech</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemMetalSheet">
 			<English>Metal Sheeting</English>
 			<Russian>Металлический волнистый лист</Russian>
 			<French>De la tôle ondulée</French>
+			<Czech>Zvlněný plech na střechy</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemStone">
 			<English>Rough Stone</English>
 			<Russian>Обработанный камень</Russian>
 			<French>Pierres</French>
+			<Czech>Kameny</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemStone">
 			<English>Rough Stone</English>
 			<Russian>Обработанный камень</Russian>
 			<French>Des grosses pierres pour la construction</French>
+			<Czech>Hrubé neopracované kameny, použitelné na stavbu.</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemConcreteBlock">
 			<English>Concrete Block</English>
 			<Russian>Бетонный блок</Russian>
 			<French>Parpaing</French>
+			<Czech>Betonový blok</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemConcreteBlock">
 			<English>Concrete Block</English>
 			<Russian>Бетонный блок</Russian>
 			<French>Parpaing</French>
+			<Czech>Kus betonu</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemRSJ">
 			<English>Steel Beam</English>
 			<Russian>Стальная балка</Russian>
 			<French>Poutrelle</French>
+			<Czech>Traverza</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemRSJ">
 			<English>Steel RSJ Support Beam</English>
 			<Russian>Стальная рельсовая балка</Russian>
 			<French>Poutrelle IPN en acier</French>
+			<Czech>Ocelová traverza s I-profilem</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemScrews">
 			<English>Box of screws for metal</English>
 			<Russian>Коробка шурупов</Russian>
 			<French>Vis</French>
+			<Czech>Krabička šroubů</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemScrews">
 			<English>Box of screws</English>
 			<Russian>Коробка шурупов по металлу</Russian>
 			<French>Une boite de vis métal</French>
+			<Czech>Krabička plná šroubů pro spojování kovových materiálů.</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemPadlock">
 			<English>Padlock</English>
 			<Russian>Замок</Russian>
 			<French>Cadenas</French>
+			<Czech>Zámek</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemPadlock">
 			<English>Padlock - Used for securing Workshop&apos;s &amp; Houses.</English>
 			<Russian>Используется для запирания зданий.</Russian>
 			<French>Un cadenas pour protéger portes/portails</French>
+			<Czech>Tento visací zámek lze využít pro zabezpečení dílen a domů.</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemBuildingBlueprint">
 			<English>Blueprint</English>
 			<Russian>Чертеж</Russian>
 			<French>Plan de construction</French>
+			<Czech>Návod</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemBuildingBlueprint">
 			<English>Blueprint</English>
 			<Russian>Чертеж</Russian>
 			<French>Plan de construction</French>
+			<Czech>Stavební plány</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemWorkshop">
 			<English>Workshop</English>
 			<Russian>Мастерская</Russian>
 			<French>Plan Atelier</French>
+			<Czech>Dílna</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemWorkshop">
 			<English>Building Plans for a workshop.</English>
 			<Russian>Чертежи мастерской</Russian>
 			<French>Plan de construction d&apos;un atelier.</French>
+			<Czech>Stavební plány pro vybudování dílny</Czech>
 		</Key>
 		<Key ID="STR_BLD_build_ItemWorkshop">
 			<English>WorkshopBase</English>
 			<Russian>Мастерская</Russian>
 			<French>Construire Atelier</French>
+			<Czech>Dílna</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemShantyHouse">
 			<English>ShantyHouse</English>
 			<Russian>Шалаш</Russian>
 			<French>Abris de fortune</French>
+			<Czech>Chatrč</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemShantyHouse">
 			<English>Building Plans for a Basic Shanty House.</English>
 			<Russian>Чертежи для постройки шалаша</Russian>
 			<French>Plan de construction d&apos;un abris de fortune.</French>
+			<Czech>Stavební plány pro vybudování chatrče</Czech>
 		</Key>
 		<Key ID="STR_BLD_build_ItemShantyHouse">
 			<English>ShantyHouseBase</English>
 			<Russian>Шалаш</Russian>
 			<French>Construire Abris</French>
+			<Czech>Chatrč</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WeaponHolder_ItemWorkBench">
 			<English>Workbench</English>
 			<Russian>Верстак</Russian>
 			<French>Etabli</French>
+			<Czech>Ponk</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WeaponHolder_ItemMetalSheet">
 			<English>Metal Sheet</English>
 			<Russian>Лист металла</Russian>
 			<French>Tôle</French>
+			<Czech>Plech</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WeaponHolder_ItemConcreteBlock">
 			<English>Concrete Blocks</English>
 			<Russian>Бетонный блок</Russian>
 			<French>Parpaing</French>
+			<Czech>Betonové bloky</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WeaponHolder_ItemRSJ">
 			<English>Steel Beam</English>
 			<Russian>Стальная балка </Russian>
 			<French>Poutrelle</French>
+			<Czech>Traverza</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_DZ_buildables">
 			<English>Buildables</English>
 			<Russian>Постройки</Russian>
 			<French>Buildables</French>
+			<Czech>Stavby</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_SurvivorWorkshop_Base">
 			<English>Workshop Foundation</English>
 			<Russian>Мастерская (основание)</Russian>
 			<French>Atelier (fondations)</French>
+			<Czech>Dílna (základy)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_SurvivorWorkshopBase_ghost">
 			<English>Workshop Framework (Ghost)</English>
 			<Russian>Мастерская (призрачная)</Russian>
 			<French>Atelier (esquisse)</French>
+			<Czech>Dílna (náhled)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_SurvivorWorkshop">
 			<English>Workshop Foundation</English>
 			<Russian>Мастерсткая (основание)</Russian>
 			<French>Atelier (Fondations)</French>
+			<Czech>Dílna (základy)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_SurvivorWorkshopStage2">
 			<English>Workshop Framework</English>
 			<Russian>Мастерская (каркас)</Russian>
 			<French>Atelier (Structure)</French>
+			<Czech>Dílna (kostra)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_SurvivorWorkshopAStage3">
 			<English>Workshop Walls</English>
 			<Russian>Мастерская (стены)</Russian>
 			<French>Atelier (Murs)</French>
+			<Czech>Dílna (zdi)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_SurvivorWorkshopAStage4">
 			<English>Workshop Roof</English>
 			<Russian>Мастерская (крыша)</Russian>
 			<French>Atelier (Toit)</French>
+			<Czech>Dílna (střecha)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_SurvivorWorkshopAStage5">
 			<English>Workshop Complete</English>
 			<Russian>Мастерская (завершение)</Russian>
 			<French>Atelier (Finitions)</French>
+			<Czech>Dílna (hotovo)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_close_the_door">
 			<English>Close door</English>
 			<Russian>Закрыть дверь</Russian>
 			<French>Fermer la porte</French>
+			<Czech>Zavřít dveře</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouse_Base">
 			<English>Shanty House Base</English>
 			<Russian>Шалаш (основание)</Russian>
 			<French>Abris de fortune (classe de base)</French>
+			<Czech>Chatrč (základna)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouse">
 			<English>Shanty House Base</English>
 			<Russian>Шалаш (цоколь)</Russian>
 			<French>Abris de fortune (Socle)</French>
+			<Czech>Chatrč (základ)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouse_ghost">
 			<English>Shanty House (Ghost)</English>
 			<Russian>Шалаш (призрачный)</Russian>
 			<French>Abris de fortine (esquisse)</French>
+			<Czech>Chatrč (náhled)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage2">
 			<English>Shanty House lvl.2</English>
 			<Russian>Шалаш ур.2</Russian>
 			<French>Abris de fortune niv.2</French>
+			<Czech>Chatrč (úroveň 2)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage3">
 			<English>Shanty House lvl.3</English>
 			<Russian>Шалаш ур.3</Russian>
 			<French>Abris de fortune niv.3</French>
+			<Czech>Chatrč (úroveň 3)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage4">
 			<English>Shanty House lvl.4</English>
 			<Russian>Шалаш ур.4</Russian>
 			<French>Abris de fortune niv.4</French>
+			<Czech>Chatrč (úroveň 4)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage5">
 			<English>Shanty House lvl.5</English>
 			<Russian>Шалаш ур.5</Russian>
 			<French>Abris de fortune niv.5</French>
+			<Czech>Chatrč (úroveň 5)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage6">
 			<English>Shanty House lvl.6</English>
 			<Russian>Шалаш ур.6</Russian>
 			<French>Abris de fortune niv.6</French>
+			<Czech>Chatrč (úroveň 6)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage7">
 			<English>Shanty House lvl.7</English>
 			<Russian>Шалаш ур.7</Russian>
 			<French>Abris de fortune niv.7</French>
+			<Czech>Chatrč (úroveň 7)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_Metal_Ladder">
 			<English>Metal Ladder</English>
 			<Russian>Металлическая лестница</Russian>
 			<French>Echelle</French>
+			<Czech>Kovový žebřík</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WorkBench">
 			<English>Workbench</English>
 			<Russian>Верстак</Russian>
 			<French>Atelier</French>
+			<Czech>Ponk</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WorkBench_Internal">
 			<English>Workshop Workbench</English>
 			<Russian>Верстак мастерской</Russian>
 			<French>Etabli (Atelier)</French>
+			<Czech>Dílenský ponk</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WorkBench_Hidden">
 			<English>Hidden Workbench</English>
 			<Russian>Верстак (спрятанный)</Russian>
 			<French>Etabli (caché)</French>
+			<Czech>Skrytý ponk</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemStorage">
 			<English>Storage Box</English>
 			<Russian>Ящик</Russian>
 			<French>Coffre (stocker)</French>
+			<Czech>Bedna</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WeaponStorage">
 			<English>Weapon Box</English>
 			<Russian>Оружейный ящик</Russian>
 			<French>Coffre (armes)</French>
+			<Czech>Bedna na zbraně</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WeaponStorage_shanty">
 			<English>Storage Box</English>
 			<Russian>Ящик</Russian>
 			<French>Coffre (Stocker)</French>
+			<Czech>Bedna</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_Stove">
 			<English>Makeshift Stove</English>
 			<Russian>Самодельная плита</Russian>
 			<French>Four (Artisanat)</French>
+			<Czech>Provizorní kamna</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox1">
 			<English>Contains WoodenFence lvl.1</English>
 			<Russian>Содержит деревянный забор ур.1</Russian>
 			<French>Pièces palissade niv.1</French>
+			<Czech>Obsahuje dřevěný plot (úroveň 1)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox2">
 			<English>Contains WoodenFence lvl.2</English>
 			<Russian>Содержит деревянный забор ур.2</Russian>
 			<French>Pièces palissade niv.2</French>
+			<CzechObsahuje dřevěný plot (úroveň 2)></Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox3">
 			<English>Contains WoodenFence lvl.3</English>
 			<Russian>Содержит деревянный забор ур.3</Russian>
 			<French>Pièces palissade niv.3</French>
+			<Czech>Obsahuje dřevěný plot (úroveň 3)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox4">
 			<English>Contains WoodenFence lvl.4</English>
 			<Russian>Содержит деревянный забор ур.4</Russian>
 			<French>Pièces palissade niv.4</French>
+			<Czech>Obsahuje dřevěný plot (úroveň 4)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox5">
 			<English>Contains WoodenFence lvl.5</English>
 			<Russian>Содержит деревянный забор ур.5</Russian>
 			<French>Pièces palissade niv.5</French>
+			<Czech>Obsahuje dřevěný plot (úroveň 5</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox6">
 			<English>Contains WoodenFence lvl.6</English>
 			<Russian>Содержит деревянный забор ур.6</Russian>
 			<French>Pièces palissade niv.6</French>
+			<Czech>Obsahuje dřevěný plot (úroveň 6)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox7">
 			<English>Contains WoodenFence lvl.7</English>
 			<Russian>Содержит деревянный забор ур.7</Russian>
 			<French>Pièces palissade niv.7</French>
+			<Czech>Obsahuje dřevěný plot (úroveň 7)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_base">
 			<English>Wooden Fence</English>
 			<Russian>Деревянный забор</Russian>
 			<French>Palissade en bois (classe de base)</French>
+			<Czech>Dřevěný plot (základ)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_ghost">
 			<English>Wooden Fence (Ghost)</English>
 			<Russian>Деревянный забор (призрак)</Russian>
 			<French>Palissade en bois (esquisse)</French>
+			<Czech>Dřevěný plot (náhled)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_1_foundation">
 			<English>Wooden Fence (foundation)</English>
 			<Russian>Деревянный забор (основание)</Russian>
 			<French>Palissade (fondations)</French>
+			<Czech>Dřevěný plot (základy)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_1_frame">
 			<English>Wooden Fence frame</English>
 			<Russian>Деревянный забор (рамка)</Russian>
 			<French>Palissade (cadre)</French>
+			<Czech>Dřevěný plot (kostra)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_quaterpanel">
 			<English>Wooden Fence 2nd Panel</English>
 			<Russian>Деревянный забор (вторая панель)</Russian>
 			<French>Palissade (premier panneau)</French>
+			<Czech>Dřevěný plot (druhá deska)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_halfpanel">
 			<English>Wooden Fence 3rd Panel</English>
 			<Russian>Деревянный забор (третья панель)</Russian>
 			<French>Palissade (moitié)</French>
+			<Czech>Dřevěný plot (třetí deska)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_thirdpanel">
 			<English>Wooden Fence 4th Panel</English>
 			<Russian>Деревянный забор (четвертая панель)</Russian>
 			<French>Palissade (3è panneau)</French>
+			<Czech></Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_1">
 			<English>Wooden Fence lvl.1</English>
 			<Russian>Деревянный забор ур.1</Russian>
 			<French>Palissade niv.1</French>
+			<Czech>Dřevěný plot (úroveň 1)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_2">
 			<English>Wooden Fence lvl.2</English>
 			<Russian>Деревянный забор ур.2</Russian>
 			<French>Palissade niv.2</French>
+			<Czech>Dřevěný plot (úroveň 2)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_3">
 			<English>Wooden Fence lvl.3</English>
 			<Russian>Деревянный забор ур.3</Russian>
 			<French>Palissade niv.3</French>
+			<Czech>Dřevěný plot (úroveň 3)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_4">
 			<English>Wooden Fence lvl.4</English>
 			<Russian>Деревянный забор ур.4</Russian>
 			<French>Palissade niv.4</French>
+			<Czech>Dřevěný plot (úroveň 4)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_5">
 			<English>Wooden Fence lvl.5</English>
 			<Russian>Деревянный забор ур.5</Russian>
 			<French>Palissade niv.5</French>
+			<Czech>Dřevěný plot (úroveň 5)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_6">
 			<English>Wooden Fence lvl.6</English>
 			<Russian>Деревянный забор ур.6</Russian>
 			<French>Palissade niv.6</French>
+			<Czech>Dřevěný plot (úroveň 6)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_7">
 			<English>Wooden Fence lvl.7</English>
 			<Russian>Деревянный забор ур.7</Russian>
 			<French>Palissade niv.7</French>
+			<Czech>Dřevěný plot (úroveň 7)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFenceBox1">
 			<English>Contains kit for MetalFence lvl.1</English>
 			<Russian>Содержит металлический забор ур.1</Russian>
 			<French>Pièces pour Palissade Métallique niv.1</French>
+			<Czech>Obsahuje kovový plot (úroveň 1)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFenceBox2">
 			<English>Contains kit for MetalFence lvl.2</English>
 			<Russian>Содержит металлический забор ур.2</Russian>
 			<French>Pièces pour Palissade Métallique niv.2</French>
+			<Czech>Obsahuje kovový plot (úroveň 2)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFenceBox3">
 			<English>Contains kit for MetalFence lvl.3</English>
 			<Russian>Содержит металлический забор ур.3</Russian>
 			<French>Pièces pour Palissade Métallique niv.3</French>
+			<Czech>Obsahuje kovový plot (úroveň 3)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFenceBox4">
 			<English>Contains kit for MetalFence lvl.4</English>
 			<Russian>Содержит металлический забор ур.4</Russian>
 			<French>Pièces pour Palissade Métallique niv.4</French>
+			<Czech>Obsahuje kovový plot (úroveň 4)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFenceBox5">
 			<English>Contains kit for MetalFence lvl.5</English>
 			<Russian>Содержит металлический забор ур.5</Russian>
 			<French>Pièces pour Palissade Métallique niv.5</French>
+			<Czech>Obsahuje kovový plot (úroveň 5)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFenceBox6">
 			<English>Contains kit for MetalFence lvl.6</English>
 			<Russian>Содержит металлический забор ур.6</Russian>
 			<French>Pièces pour Palissade Métallique niv.6</French>
+			<Czech>Obsahuje kovový plot (úroveň 6)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFenceBox7">
 			<English>Contains kit for MetalFence lvl.7</English>
 			<Russian>Содержит металлический забор ур.7</Russian>
 			<French>Pièces pour Palissade Métallique niv.7</French>
+			<Czech>Obsahuje kovový plot (úroveň 7)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_base">
 			<English>Metal Fence lvl.1</English>
 			<Russian>Металлический забор ур.1</Russian>
 			<French>Palissade métallique niv.1</French>
+			<Czech>Kovový plot (úroveň 1)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_ghost">
 			<English>Metal Fence (Ghost)</English>
 			<Russian>Металлический забор (призрак)</Russian>
 			<French>Palissade métallique (esquisse)</French>
+			<Czech>Kovový plot (náhled)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_1_foundation">
 			<English>Metal Fence Foundation</English>
 			<Russian>Металлический забор (основание)</Russian>
 			<French>Palissade métallique (fondations)</French>
+			<Czech>Kovový plot (základy)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_1_frame">
 			<English>Metal Fence Frame</English>
 			<Russian>Металлический забор (каркас)</Russian>
 			<French>Palissade métallique (cadre)</French>
+			<Czech>Kovový plot (kostra)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_halfpanel">
 			<English>Metal Fence one third</English>
 			<Russian>Металлический забор (1/3)</Russian>
 			<French>Palissade métallique (1/3)</French>
+			<Czech>Kovový plot (1/3)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_thirdpanel">
 			<English>Metal Fence two third</English>
 			<Russian>Металлический забор (2/3)</Russian>
 			<French>Palissade métallique (2/3)</French>
+			<Czech>Kovový plot (2/3)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_1">
 			<English>Metal Fence lvl.1</English>
 			<Russian>Металлический забор ур.1</Russian>
 			<French>Palissade métallique niv.1</French>
+			<Czech>Kovový plot (úroveň 1)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_2">
 			<English>Metal Fence lvl.2</English>
 			<Russian>Металлический забор ур.2</Russian>
 			<French>Palissade métallique niv.2</French>
+			<Czech>Kovový plot (úroveň 2)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_3">
 			<English>Metal Fence lvl.3</English>
 			<Russian>Металлический забор ур.3</Russian>
 			<French>Palissade métallique niv.3</French>
+			<Czech>Kovový plot (úroveň 3)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_4">
 			<English>Metal Fence lvl.4</English>
 			<Russian>Металлический забор ур.4</Russian>
 			<French>Palissade métallique niv.4</French>
+			<Czech>Kovový plot (úroveň 4)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_5">
 			<English>Metal Fence lvl.5</English>
 			<Russian>Металлический забор ур.5</Russian>
 			<French>Palissade métallique niv.5</French>
+			<Czech>Kovový plot (úroveň 5)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_6">
 			<English>Metal Fence lvl.6</English>
 			<Russian>Металлический забор ур.6</Russian>
 			<French>Palissade métallique niv.6</French>
+			<Czech>Kovový plot (úroveň 6)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_7">
 			<English>Metal Fence lvl.7</English>
 			<Russian>Металлический забор ур.7</Russian>
 			<French>Palissade métallique niv.7</French>
+			<Czech>Kovový plot (úroveň 7)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_Stairs1">
 			<English>Wooden Stair Platform</English>
 			<Russian>Деревянная лестничная платформа</Russian>
 			<French>Palier d&apos;escalier en bois</French>
+			<Czech>Dřevěné schody</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_Stairs1_ghost">
 			<English>Wooden Stair (Ghost)</English>
 			<Russian>Деревянная лестница (призрак)</Russian>
 			<French>Escalier en bois (esquisse)</French>
+			<Czech>Dřevěné schody (náhled)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenGate_1_ghost">
 			<English>Wooden Gate (Ghost)</English>
 			<Russian>Деревянные ворота (призрак)</Russian>
 			<French>Portail en bois (esquisse)</French>
+			<Czech>Dřevěná brána (náhled)</Czech>
 		</Key>
 			<Key ID="STR_BLD_name_WoodenGate_Foundation">
 			<English>Wooden Gate Foundation</English>
+			<Czech>Dřevěná brána (základy)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenGate_1">
 			<English>Wooden Gate lvl.1</English>
 			<Russian>Деревянные ворота ур.1</Russian>
 			<French>Portail en bois niv.1</French>
+			<Czech>Dřevěná brána (úroveň 1)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenGate_2">
 			<English>Wooden Gate lvl.2</English>
 			<Russian>Деревянные ворота ур.2</Russian>
 			<French>Portail en bois niv.2</French>
+			<Czech>Dřevěná brána (úroveň 2)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenGate_3">
 			<English>Wooden Gate lvl.3</English>
 			<Russian>Деревянные ворота ур.3</Russian>
 			<French>Portail en bois niv.3</French>
+			<Czech>Dřevěná brána (úroveň 3)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenGate_4">
 			<English>Wooden Gate lvl.4</English>
 			<Russian>Деревянные ворота ур.4</Russian>
 			<French>Portail en bois niv.4</French>
+			<Czech>Dřevěná brána (úroveň 4)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalGate_1_ghost">
 			<English>Metal Gate (Ghost)</English>
 			<Russian>Металлические ворота (призрак)</Russian>
 			<French>Portail métallique (esquisse)</French>
+			<Czech>Kovová brána (náhled)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalGate_1">
 			<English>Metal Gate lvl.1</English>
 			<Russian>Металлические ворота ур.1</Russian>
 			<French>Portail métallique niv.1</French>
+			<Czech>Kovová brána (úroveň 1)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalGate_2">
 			<English>Metal Gate lvl.2</English>
 			<Russian>Металлические ворота ур.2</Russian>
 			<French>Portail métallique niv.2</French>
+			<Czech>Kovová brána (úroveň 2)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalGate_3">
 			<English>Metal Gate lvl.3</English>
 			<Russian>Металлические ворота ур.3</Russian>
 			<French>Portail métallique niv.3</French>
+			<Czech>Kovová brána (úroveň 3)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_MetalGate_4">
 			<English>Metal Gate lvl.4</English>
 			<Russian>Металлические ворота ур.4</Russian>
 			<French>Portail métallique niv.4</French>
+			<Czech>Kovová brána (úroveň 4)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemDIY_wood">
 			<English>DIY Manual (Wood)</English>
 			<Russian>"Сделай сам" (дерево)</Russian>
 			<French>Manuel (Bois)</French>
+			<Czech>DYI návod (dřevo)</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemDIY_wood">
 			<English>For wooden fences</English>
 			<Russian>Инструкции по работе с деревом.</Russian>
 			<French>Manuel de bricolage pour apprendre à travailler le bois</French>
+			<Czech>Do-It-Yourself návod na postavení dřevěného plotu.</Czech>
 		</Key>
 		<Key ID="STR_BLD_build_ItemDIY_wood">
 			<English>Wooden fence</English>
 			<Russian>Деревянный забор</Russian>
 			<French>Palissade en bois</French>
+			<Czech>Dřevěný plot</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemDIY_woodGate">
 			<English>DIY Manual (Gate's)</English>
+			<Czech>DIY návod (brány)</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemDIY_woodGate">
 			<English>For wooden Gates</English>
+			<Czech>Pro dřevěné brány</Czech>
 		</Key>
 		<Key ID="STR_BLD_build_ItemDIY_woodGate">
 			<English>Wooden Gate</English>
+			<Czech>Dřevěná brána</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemDIY_metal">
 			<English>DIY Manual (Metal)</English>
 			<Russian>"Сделай сам" (металл)</Russian>
 			<French>Manuel (Métal)</French>
+			<Czech>DIY návod (kov)</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemDIY_metal">
 			<English>For Metal fences</English>
 			<Russian>Инструкции по работе с металлом.</Russian>
 			<French>Manuel de bricolage pour apprendre à travailler le métal</French>
+			<Czech>Pro kovové ploty</Czech>
 		</Key>
 		<Key ID="STR_BLD_build_ItemDIY_metal">
 			<English>Metal fence</English>
 			<Russian>Металлический забор</Russian>
 			<French>Palissade métallique</French>
+			<Czech>Kovový plot</Czech>
 		</Key>
 	</Package>
 </Project>
