@@ -8873,7 +8873,7 @@
 		</Key>
 		<Key ID="STR_BLD_desc_ItemDIY_woodGate">
 			<English>For wooden Gates</English>
-			<Czech>Pro dřevěné brány</Czech>
+			<Czech>Do-It-Yourself návod na postavení dřevěné brány.</Czech>
 		</Key>
 		<Key ID="STR_BLD_build_ItemDIY_woodGate">
 			<English>Wooden Gate</English>
@@ -8889,7 +8889,7 @@
 			<English>For Metal fences</English>
 			<Russian>Инструкции по работе с металлом.</Russian>
 			<French>Manuel de bricolage pour apprendre à travailler le métal</French>
-			<Czech>Pro kovové ploty</Czech>
+			<Czech>Do-It-Yourself návod na postavení kovového plotu.</Czech>
 		</Key>
 		<Key ID="STR_BLD_build_ItemDIY_metal">
 			<English>Metal fence</English>
