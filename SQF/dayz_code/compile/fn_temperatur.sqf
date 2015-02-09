@@ -22,17 +22,21 @@ _looptime = _this;
 
 //Factors are equal to win/loss of factor*basic value
 //All Values can be seen as x of 100: 100 / x = minutes from min temperetaure to max temperature (without other effects)
-_vehicle_factor = 4; //5
+
+//Positive effects
+_vehicle_factor = .5; //5
 _moving_factor = 2; // 4
-_fire_factor = 26;	//Should be always:  _rain_factor + _night_factor + _wind_factor OR higher !
+_fire_factor = 19;	//Should be always:  _rain_factor + _night_factor + _wind_factor OR higher !
 _building_factor = 3; //7
 _sun_factor = 3;	//max sunfactor linear over the day. highest value in the middle of the day
 
-_water_factor = -24; //12
-_rain_factor = -12; //6
-_night_factor = -8; //6
-_wind_factor = -7; //6
-_stand_factor = -8; //6
+
+//Negative effects
+_water_factor = 12; //12
+_rain_factor = 6; //6
+_night_factor = 6; //6
+_wind_factor = 7; //6
+_stand_factor = 3; //6
 
 _difference = 0;
 //_hasfireffect = false;
@@ -54,13 +58,16 @@ if((vehicle player) != player) then {
 	_speed = round((_vel distance [0,0,0]) * 3.6);
 	_difference = (_moving_factor * (_speed / 20)) min 7;
 };
+	//diag_log format["Moving - %1",_difference];
 
 //fire
-_fireplaces = nearestObjects [player, ["flamable_DZ"], 8];
+_fireplaces = nearestObjects [player, ["flamable_DZ","Land_Fire","Land_Campfire"], 8];
 if(({inflamed _x} count _fireplaces) > 0 && !_isinvehicle ) then {
 	//Math: factor * 1 / (0.5*(distance max 1)^2) 0.5 = 12.5% of the factor effect in a distance o 4 meters
 	_difference = _difference + (_fire_factor /(0.5*((player distance (_fireplaces select 0)) max 1)^2));
 	//_hasfireffect = true;
+	
+	//diag_log format["fire - %1",_difference];
 };
 
 //building
@@ -103,6 +110,8 @@ if(daytime > _sunrise && daytime < (24 - _sunrise) && !_raining && overcast <= 0
 	*/
 
 	_difference = _difference + (-((_sun_factor / (12 - _sunrise)^2)) * ((daytime - 12)^2) + _sun_factor);
+	
+	//diag_log format["sun - %1",_difference];
 };
 
 //NEGATIVE EFFECTS
@@ -110,11 +119,15 @@ if(daytime > _sunrise && daytime < (24 - _sunrise) && !_raining && overcast <= 0
 //water
 if(surfaceIsWater getPosATL player || dayz_isSwimming) then {
 	_difference = _difference + _water_factor;
+	
+	//diag_log format["water - %1",_difference];
 };
 
 //rain
 if(_raining && !_isinvehicle && !_isinbuilding) then {
 	_difference = _difference + (rain * _rain_factor);
+	
+	//diag_log format["night - %1",_difference];
 };
 
 //night
@@ -125,22 +138,31 @@ if((daytime < _sunrise || daytime > (24 - _sunrise)) && !_isinvehicle) then {
 	} else {
 		_difference = _difference + (((_night_factor * -1) / (_sunrise^2)) * ((_daytime - 24)^2) + _night_factor);
 	};
+	
+	//diag_log format["night - %1",_difference];
 };
 
 //wind
 if(((wind select 0) > 4 || (wind select 1) > 4) && !_isinvehicle && !_isinbuilding ) then {
-	_difference = _difference + _wind_factor;
+	_difference = _difference - _wind_factor;
+	
+	//diag_log format["Wind - %1",_difference];
 };
 
 //height
 if (!_isinvehicle && overcast >= 0.6) then {
 	_height_mod = ((getPosASL player select 2) / 100) / 2;
 	_difference = _difference - _height_mod;
+	
+	//diag_log format["height - %1",_difference];
 };
+
 
 //Standing cooldown.
 if (!_isinvehicle && !_isinvehicle && !_isinbuilding) then {
 	_difference = _difference - _stand_factor;
+	
+	//diag_log format["Standing - %1",_difference];
 };
 
 //Calculate Change Value Basic Factor Looptime Correction Adjust Value to current used temperatur scala
@@ -148,3 +170,5 @@ _difference = _difference * SleepTemperatur / (60 / _looptime) * ((dayz_temperat
 
 //Change Temperatur Should be moved in a own Function to allow adding of Items which increase the Temp like "hot tea"
 dayz_temperatur = (((dayz_temperatur + _difference) max dayz_temperaturmin) min dayz_temperaturmax);
+
+//diag_log format["%1 - %2",dayz_temperatur,_difference];
