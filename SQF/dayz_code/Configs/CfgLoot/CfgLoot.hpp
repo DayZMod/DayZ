@@ -28,6 +28,7 @@ class CfgLoot {
 		{"30Rnd_556x45_StanagSD",0.01},
 		{"30Rnd_9x19_MP5",0.02},
 		{"30Rnd_9x19_MP5SD",0.01},
+		{"Mosin_Nagant_Ammo",0.03},
 		{"100Rnd_762x51_M240",0.01}
 	};
 	//Zed Loot
