@@ -23,6 +23,7 @@ class CfgBuildingLoot {
 		lootChance = 0.3;
 		lootPos[] = {};
 		lootType[] = {
+			{"equip_Crossbow_Kit","magazine",0.01},
 			{"ItemSodaClays","magazine",0.01},
 			{"ItemSodaMzly","magazine",0.01},
 			{"Item5Matchbox","weapon",0.02},
@@ -51,6 +52,7 @@ class CfgBuildingLoot {
 		lootType[] = {
 		//one spawn
 			{"Item5Matchbox","weapon",0.01},
+			{"equip_Crossbow_Kit","magazine",0.01},
 			{"ItemKnife","weapon",0.01},
 			{"ItemMap","generic",0.01},
 			{"ItemCompass","weapon",0.01},
@@ -90,6 +92,7 @@ class CfgBuildingLoot {
 			{"PartWoodPile","magazine",0.04},
 			{"FoodCanBeef","magazine",0.05},
 			{"FoodCanCurgon","magazine",0.05},
+			{"equip_Crossbow_Kit","magazine",0.01},
 			{"FoodCanRusCorn","magazine",0.05},
 			{"FoodCanBoneboy","magazine",0.05},
 			{"ItemWire","magazine",0.01},
@@ -116,6 +119,7 @@ class CfgBuildingLoot {
 			{"ItemFlashlight","generic",0.05},
 			{"Makarov","weapon",0.02},
 			{"revolver_EP1","weapon",0.01},
+			{"equip_Crossbow_Kit","magazine",0.01},
 			{"Mosin_Nagant","weapon",0.01},	
 			{"MR43","weapon",0.02},
 			{"LeeEnfield","weapon",0.01},
