@@ -1,7 +1,7 @@
 class Attachment_M16_ACG : CA_Magazine {
 	scope = public;
-	displayName = $STR_ATTACHMENT_NAME_ACG;
-	descriptionShort = $STR_ATTACHMENT_DESC_ACG;
+	displayName = $STR_ATTACHMENT_NAME_ACG_M16;
+	descriptionShort = $STR_ATTACHMENT_DESC_ACG_M16;
 	count = 1;
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_acg.paa";
 	type = 256;
@@ -11,7 +11,7 @@ class Attachment_M16_ACG : CA_Magazine {
 	
 	class ItemActions {
 		class Use {
-			text = "Attach to M16A4";
+			text = $STR_ACTIONS_ATTACH_ACG_M16;
 			script = "spawn player_useattchment;";
 		};
 	};
@@ -19,8 +19,8 @@ class Attachment_M16_ACG : CA_Magazine {
 
 class Attachment_SA58_ACG : CA_Magazine {
 	scope = public;
-	displayName = "SA58 ACOG Attachment";
-	descriptionShort = "Can be attached to an SA58.";
+	displayName = $STR_ATTACHMENT_NAME_ACG_SA58;
+	descriptionShort = $STR_ATTACHMENT_DESC_ACG_SA58;
 	count = 1;
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_acg.paa";
 	type = 256;
@@ -30,7 +30,7 @@ class Attachment_SA58_ACG : CA_Magazine {
 	
 	class ItemActions {
 		class Use {
-			text = "Attach to SA58.";
+			text = $STR_ACTIONS_ATTACH_ACG_SA58;
 			script = "spawn player_useattchment;";
 		};
 	};
