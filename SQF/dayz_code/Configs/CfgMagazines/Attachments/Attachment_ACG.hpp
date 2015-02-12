@@ -11,7 +11,7 @@ class Attachment_M16_ACG : CA_Magazine {
 	
 	class ItemActions {
 		class Use {
-			text = $STR_ACTIONS_ATTACH_M16;
+			text = $STR_ACTIONS_ATTACH_M16A4;
 			script = "spawn player_useattchment;";
 		};
 	};
