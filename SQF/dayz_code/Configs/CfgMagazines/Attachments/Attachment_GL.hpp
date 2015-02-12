@@ -11,7 +11,7 @@ class Attachment_AK_74_GL : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to AK-74";
+            text = $STR_ACTIONS_ATTACH_AK74;
             script = "spawn player_useAttchment;";
         };
     };
@@ -30,7 +30,7 @@ class Attachment_AK_107_GL_Kobra : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to AK_74_Kobra";
+            text = $STR_ACTIONS_ATTACH_AK74;
             script = "spawn player_useAttchment;";
         };
     };
@@ -49,7 +49,7 @@ class Attachment_AK_107_GL_PSO : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to AK-107 PSO";
+            text = $STR_ACTIONS_ATTACH_AK74;
             script = "spawn player_useAttchment;";
         };
     };
@@ -68,7 +68,7 @@ class Attachment_BAF_L85A2_RIS_Holo_GL : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to L85A2 Holo";
+            text = $STR_ACTIONS_ATTACH_L85A2;
             script = "spawn player_useAttchment;";
         };
     };
@@ -87,7 +87,7 @@ class Attachment_BAF_L85A2_RIS_ACOG_GL : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to L85A2 ACOG";
+            text = $STR_ACTIONS_ATTACH_L85A2;
             script = "spawn player_useAttchment;";
         };
     };
@@ -106,7 +106,7 @@ class Attachment_BAF_L85A2_RIS_SUSAT_GL : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to L85A2 SUSAT";
+            text = $STR_ACTIONS_ATTACH_L85A2;
             script = "spawn player_useAttchment;";
         };
     };
@@ -125,7 +125,7 @@ class Attachment_M16A2GL : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to M16A2";
+            text = $STR_ACTIONS_ATTACH_M16A2;
             script = "spawn player_useAttchment;";
         };
     };
@@ -144,7 +144,7 @@ class Attachment_M16A4_GL : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to M16A4";
+            text = $STR_ACTIONS_ATTACH_M16A4;
             script = "spawn player_useAttchment;";
         };
     };
@@ -158,12 +158,12 @@ class Attachment_M16A4_ACG_GL : CA_Magazine {
     picture = "\z\addons\dayz_communityassets\CraftingPlaceHolders\equip_part_somegeneric.paa";
     type = 256;
 
-    oringal = "m16a4";
+    oringal = "m16a4_acg";
     weapon = "M16A4_ACG_GL";
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to M16A4 ACOG";
+            text = $STR_ACTIONS_ATTACH_M16A4;
             script = "spawn player_useAttchment;";
         };
     };
@@ -182,7 +182,7 @@ class Attachment_m8_carbineGL : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to M8 Carbine";
+            text = $STR_ACTIONS_ATTACH_M8;
             script = "spawn player_useAttchment;";
         };
     };
@@ -201,7 +201,7 @@ class Attachment_SCAR_L_CQC_EGLM_Holo : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach M203 Launcher to SCAR-L Holo";
+            text = $STR_ACTIONS_ATTACH_SCAR;
             script = "spawn player_useAttchment;";
         };
     };
