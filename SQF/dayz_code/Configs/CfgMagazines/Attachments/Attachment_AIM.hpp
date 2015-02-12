@@ -1,7 +1,7 @@
 class Attachment_M4A1_Aim : CA_Magazine {
 	scope = public;
-	displayName = "M4A1 Aim";
-	descriptionShort = "AIM attachment fits a m4a1 weapon";
+	displayName = $STR_ATTACHMENT_NAME_AIM_M4A1;
+	descriptionShort = $STR_ATTACHMENT_DESC_AIM_M4A1;
 	count = 1;
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_aim.paa";
 	type = 256;
@@ -11,7 +11,7 @@ class Attachment_M4A1_Aim : CA_Magazine {
 	
 	class ItemActions {
 		class Use {
-			text = "Attach to M4A1";
+			text = $STR_ACTIONS_ATTACH_AIM_M4;
 			script = "spawn player_useAttchment;";
 		};
 	};
@@ -19,8 +19,8 @@ class Attachment_M4A1_Aim : CA_Magazine {
 
 class Attachment_Sa58V_EP1_Aim : CA_Magazine {
 	scope = public;
-	displayName = "SA58 Aim";
-	descriptionShort = "AIM attachment fits an SA58";
+	displayName = $STR_ATTACHMENT_NAME_AIM_SA58;
+	descriptionShort = $STR_ATTACHMENT_DESC_AIM_SA58;
 	count = 1;
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_aim.paa";
 	type = 256;
@@ -30,7 +30,7 @@ class Attachment_Sa58V_EP1_Aim : CA_Magazine {
 	
 	class ItemActions {
 		class Use {
-			text = "Attach to SA58";
+			text = $STR_ACTIONS_ATTACH_AIM_SA58;
 			script = "spawn player_useAttchment;";
 		};
 	};
