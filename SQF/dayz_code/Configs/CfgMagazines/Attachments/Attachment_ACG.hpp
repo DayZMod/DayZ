@@ -11,7 +11,7 @@ class Attachment_M16_ACG : CA_Magazine {
 	
 	class ItemActions {
 		class Use {
-			text = $STR_ACTIONS_ATTACH_ACG_M16;
+			text = $STR_ACTIONS_ATTACH_M16;
 			script = "spawn player_useattchment;";
 		};
 	};
@@ -30,7 +30,7 @@ class Attachment_SA58_ACG : CA_Magazine {
 	
 	class ItemActions {
 		class Use {
-			text = $STR_ACTIONS_ATTACH_ACG_SA58;
+			text = $STR_ACTIONS_ATTACH_SA58;
 			script = "spawn player_useattchment;";
 		};
 	};
