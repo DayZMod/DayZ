@@ -2,8 +2,8 @@
 
 class Attachment_SCOPED : CA_Magazine {
 	scope = 2;
-	displayName = "Scoped Sight";
-	descriptionShort = "Scoped Sight Attachment.";
+	displayName = $STR_ATTACHMENT_NAME_SCOPE;
+	descriptionShort = $STR_ATTACHMENT_DESC_SCOPE;
 	count = 1;
 	model = "z\addons\dayz_communityweapons\models\attachments\SCOPE";
 	picture = "\z\addons\dayz_communityweapons\models\attachments\SCOPE.paa";
@@ -11,7 +11,7 @@ class Attachment_SCOPED : CA_Magazine {
 	
 	class ItemActions {
 		class Use {
-			text = "Attach";
+			text = $STR_ACTIONS_ATTACH_SCOPE;
 			type = "SCOPED";
 			script = "spawn player_attachAttchment;";
 		};
