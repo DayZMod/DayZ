@@ -1,7 +1,7 @@
 class Attachment_M14_SniperScope : CA_Magazine {
 	scope = public;
-	displayName = "M14 Sniper Scope";
-	descriptionShort = "Fits an M14 Aim.";
+	displayName = $STR_ATTACHMENT_NAME_SCOPE_M14;
+	descriptionShort = $STR_ATTACHMENT_DESC_SCOPE_M14;
 	count = 1;
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_sniperscope.paa";
 	type = 256;
@@ -11,7 +11,7 @@ class Attachment_M14_SniperScope : CA_Magazine {
 	
 	class ItemActions {
 		class Use {
-			text = "Attach to M14 Aim";
+			text = $STR_ACTIONS_ATTACH_M14;
 			script = "spawn player_useAttchment;";
 		};
 	};
