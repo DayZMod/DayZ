@@ -244,6 +244,11 @@ _spawnselection = switch (dayz_spawnselection) do {
 	case 0: { "No" };
 };
 
+_disabledTemperature = switch (dayz_temperature_override) do {
+	case true: { "Enabled" };
+	case false: { "Disabled" };
+};
+
 	// left page
 	((uiNamespace getVariable "horde_myDisplay") displayCtrl 1800) ctrlSetStructuredText parseText format ["
 					<br/>
@@ -252,7 +257,7 @@ _spawnselection = switch (dayz_spawnselection) do {
 					<t size='2' font='Zeppelin33' color = '#000000' align='left'>Hunger: 			 </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%2%</t><br/>
 					<t size='2' font='Zeppelin33' color = '#000000' align='left'>Thirst: 		 </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%3%</t><br/>
 					<br/>
-					<t size='2' font='Zeppelin33' color = '#000000' align='left'>Temp: 			 </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%5</t><br/>
+					<t size='2' font='Zeppelin33' color = '#000000' align='left'>Temp: 			 </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%5/%13</t><br/>
 					<br />
 					<t size='2' font='Zeppelin33' color = '#000000' align='left'>Humanity: 		 </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%6</t><br/>
 					<t size='2' font='Zeppelin33' color = '#000000' align='left'>Zombies: 		 </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%7</t><br/>
@@ -281,7 +286,8 @@ _spawnselection = switch (dayz_spawnselection) do {
 					(_survivors),
 					(round diag_fps),
 					(round diag_fpsmin),
-					(_moon)
+					(_moon),
+					(_disabledTemperature)
 				];
 
 // right page - blank until humanity is checked
