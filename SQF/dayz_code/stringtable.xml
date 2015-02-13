@@ -1827,16 +1827,16 @@
 			<French>Vis utilisées pour fixer le rail viseur sur le canon.</French>
 			<German>Kleine Schrauben, um eine Waffenschiene zu montieren.</German>
 		</Key>
-		<Key ID="STR_ITEM_NAME_equip_scrapLze rozbalit a obléknoutnics">
-			<English>Scrap Lze rozbalit a obléknoutnics</English>
+		<Key ID="STR_ITEM_NAME_equip_scrapelectronics">
+			<English>Scrap Electronics</English>
 			<German>Elektronikschrott</German>
 			<Russian>Радиодетали</Russian>
 			<Spanish>Chatarra Electrónica</Spanish>
-			<French>Lze rozbalit a obléknoutnique</French>
+			<French>Electronique</French>
 			<Czech>Zbytek elektroniky</Czech>
 		</Key>
-		<Key ID="STR_ITEM_DESC_equip_scrapLze rozbalit a obléknoutnics">
-			<English>A pile of scrap Lze rozbalit a obléknoutnics</English>
+		<Key ID="STR_ITEM_DESC_equip_scrapelectronics">
+			<English>A pile of scrap electronics</English>
 			<German>Ein Haufen alter Elektronikbauteile.</German>
 			<Russian>Кучка радиодеталей.</Russian>
 			<Spanish>Una pila de chatarra electrónica</Spanish>
@@ -2604,7 +2604,7 @@
 			<German>CCO Rotpunktvisier</German>
 		</Key>
 		<Key ID="STR_CRAFT_DESC_AIM">
-			<English>Blueprint to create an Aimpoint Red-Dot optic. Required - 1 1inch Metal Pipe, 1 scrap Lze rozbalit a obléknoutnics, 1 D type battery, 1 Cable Tie. Tools - ToolBox</English>
+			<English>Blueprint to create an Aimpoint Red-Dot optic. Required - 1 1inch Metal Pipe, 1 scrap electronics, 1 D type battery, 1 Cable Tie. Tools - ToolBox</English>
 			<Russian>Инструкция по сборке прицела AIM. Нужно: дюймовая труба, радиодетали, батарейка типа D, стяжка и ящик с инструментами.</Russian>
 			<Spanish>Plano para crear una Mira AIM. Requerido: 2 tuberias de metal de 2", 1 prismático vectorial, 1 abrazadera plástica y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;une lunette laser. Requis : 1 tuyau de 2.5cm, 1 pièces électroniques, 1 pile de type D, 1 serre-câble + Boîte à outils</French>
