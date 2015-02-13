@@ -22,6 +22,8 @@ dayz_POIs = true;
 dayz_infectiousWaterholes = true;
 dayz_DamageMultiplier = 1; //Damage Multiplier for Zombies.
 
+dayz_temperature_override = false; // Set to true to disable all temperature changes.
+
 
 
 

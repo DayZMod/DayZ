@@ -512,6 +512,10 @@ if(isNil "dayz_DamageMultiplier") then {
 	dayz_DamageMultiplier = 1;
 };
 
+if(isNil "dayz_temperature_override") then { 
+	dayz_temperature_override = false;
+};
+
 //init global arrays for Loot Chances
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\loot_init.sqf";
 

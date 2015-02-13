@@ -25,16 +25,17 @@ _looptime = _this;
 
 //Positive effects
 	_vehicle_factor		=	2;
-	_moving_factor 		=  	5;
 	_fire_factor		=	15;	
-	_building_factor 	=  	4;
-	_sun_factor			= 	4;
+	_moving_factor 		=  	1.9;
+	_building_factor 	=  	1.5;
+	_sun_factor			= 	2;
+	
 //Negative effects
-	_water_factor		= 	-8;
-	_rain_factor		=	-3;
-	_night_factor		= 	-1.5;
-	_wind_factor		=	-1;
-	_stand_factor 		= 	-2;
+	_water_factor		= 	8;
+	_stand_factor 		= 	2;
+	_rain_factor		=	3;
+	_night_factor		= 	1.5;
+	_wind_factor		=	2;
 
 _difference = 0; 
 //_hasfireffect = false;
@@ -155,18 +156,21 @@ if (!_isinvehicle && overcast >= 0.6) then {
 	//diag_log format["height - %1",_difference];
 };
 
-
 //Standing cooldown.
-if (!_isinvehicle && !_isinvehicle && !_isinbuilding) then {
+if ((speed player == 0) && !_isinvehicle && !_isinvehicle && !_isinbuilding) then {
 	_difference = _difference - _stand_factor;
 	
 	//diag_log format["Standing - %1",_difference];
 };
 
+
 //Calculate Change Value Basic Factor Looptime Correction Adjust Value to current used temperatur scala
 _difference = _difference * SleepTemperatur / (60 / _looptime) * ((dayz_temperaturmax - dayz_temperaturmin) / 100);
 
+if (dayz_temperature_override) then { _difference = 0; if (dayz_temperatur < 37) then { dayz_temperatur = 37; } };
+
 //Change Temperatur Should be moved in a own Function to allow adding of Items which increase the Temp like "hot tea"
 dayz_temperatur = (((dayz_temperatur + _difference) max dayz_temperaturmin) min dayz_temperaturmax);
+
 
 //diag_log format["%1 - %2",dayz_temperatur,_difference];
