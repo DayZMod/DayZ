@@ -117,14 +117,14 @@ if(daytime > _sunrise && daytime < (24 - _sunrise) && !_raining && overcast <= 0
 
 //water
 if(surfaceIsWater getPosATL player || dayz_isSwimming) then {
-	_difference = _difference + _water_factor;
+	_difference = _difference - _water_factor;
 	
 	//diag_log format["water - %1",_difference];
 };
 
 //rain
 if(_raining && !_isinvehicle && !_isinbuilding) then {
-	_difference = _difference + (rain * _rain_factor);
+	_difference = _difference - (rain * _rain_factor);
 	
 	//diag_log format["night - %1",_difference];
 };
@@ -133,9 +133,9 @@ if(_raining && !_isinvehicle && !_isinbuilding) then {
 if((daytime < _sunrise || daytime > (24 - _sunrise)) && !_isinvehicle) then {
 	_daytime = if(daytime < 12) then {daytime + 24} else {daytime};
 	if(_isinbuilding) then {
-		_difference = _difference + ((((_night_factor * -1) / (_sunrise^2)) * ((_daytime - 24)^2) + _night_factor)) / 2;
+		_difference = _difference - ((((_night_factor * -1) / (_sunrise^2)) * ((_daytime - 24)^2) + _night_factor)) / 2;
 	} else {
-		_difference = _difference + (((_night_factor * -1) / (_sunrise^2)) * ((_daytime - 24)^2) + _night_factor);
+		_difference = _difference - (((_night_factor * -1) / (_sunrise^2)) * ((_daytime - 24)^2) + _night_factor);
 	};
 	
 	//diag_log format["night - %1",_difference];
