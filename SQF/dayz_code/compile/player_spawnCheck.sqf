@@ -4,7 +4,7 @@ _age = -1;
 _position = getPosATL player;
 _spawnableObjects = ["building", "SpawnableWreck", "IC_Fireplace1", "IC_DomeTent", "IC_Tent"];
 _speed = speed (vehicle player);
-_radius = 200; //150*0.707; Pointless Processing (106.5)
+_radius = 300; //150*0.707; Pointless Processing (106.5)
 _spawnZedRadius = 20;
 
 /*
@@ -12,7 +12,6 @@ _spawnZedRadius = 20;
 PVDZ_getTickTime = player;
 publicVariableServer "PVDZ_getTickTime";
 */
-
 
 //Total Counts
 _maxlocalspawned = round(dayz_spawnZombies);
