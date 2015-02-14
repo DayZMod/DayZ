@@ -30,13 +30,13 @@ while {_isOk} do {
 
 	if (!_hasSledgeHammer) exitWith {
 		_proceed = nil;
-		titleText ["You need a toolbox to break into a house." , "PLAIN DOWN"];
+		titleText ["You need a Crowbar to break into a gate." , "PLAIN DOWN"];
 		sleep 1;
 	};
 
 	if (!_hasCrowbar) exitWith {
 		_proceed = nil;
-		titleText ["You need a sledge hammer to break into a house." , "PLAIN DOWN"];
+		titleText ["You need a sledge hammer to break into a gate." , "PLAIN DOWN"];
 		sleep 1;
 	};
 	
