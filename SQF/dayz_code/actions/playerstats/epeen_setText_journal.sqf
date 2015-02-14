@@ -245,8 +245,8 @@ _spawnselection = switch (dayz_spawnselection) do {
 };
 
 _disabledTemperature = switch (dayz_temperature_override) do {
-	case true: { "Enabled" };
-	case false: { "Disabled" };
+	case true: { "Disabled" };
+	case false: { "Enabled" };
 };
 
 	// left page
