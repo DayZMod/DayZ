@@ -8537,7 +8537,7 @@
 			<English>Contains WoodenFence lvl.2</English>
 			<Russian>Содержит деревянный забор ур.2</Russian>
 			<French>Pièces palissade niv.2</French>
-			<CzechObsahuje dřevěný plot (úroveň 2)></Czech>
+			<Czech>Obsahuje dřevěný plot (úroveň 2)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox3">
 			<English>Contains WoodenFence lvl.3</English>
