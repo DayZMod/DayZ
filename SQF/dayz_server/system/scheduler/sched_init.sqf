@@ -18,7 +18,7 @@ call compile preprocessFileLineNumbers (_base+"sched_safetyVehicle.sqf");
 	 [ 6,	 	340,	sched_lootpiles ],
 	 [ 900,		0,		sched_sync ],
 	 [ 120,		48,		sched_safetyVehicle ],
-	 [ 3, 		17,		sched_traps ]
+	 //[ 3, 		17,		sched_traps ]
 ] execFSM ("z\addons\dayz_code\system\scheduler\scheduler.fsm");
 
 //diag_log [ __FILE__, "Scheduler started"];

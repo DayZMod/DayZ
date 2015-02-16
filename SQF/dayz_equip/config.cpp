@@ -1775,7 +1775,7 @@ class CfgVehicles {
 		displayname = "Fence";
 		vehicleClass = "Fortifications";
 	};
-	
+	/*
 	class BearTrap_DZ : TrapItems {
 		scope = public;
 		destrType = "DestructNo";
@@ -1829,6 +1829,7 @@ class CfgVehicles {
 			};
 		};
 	};
+	*/
 	class ReammoBox;	// External class reference
 	
 	class WeaponHolderBase : ReammoBox {
