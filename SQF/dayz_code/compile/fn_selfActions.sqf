@@ -415,7 +415,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 		s_player_lockhouse = -1;
 	};
 	//Break In
-	if ((_isHouse or _isLockableGate) and !_isUnlocked and _canDo) then {
+	if ((_isHouse or _isLockableGate) and (_ownerPID != (getPlayerUID player)) and !_isUnlocked and _canDo) then {
 		if (s_player_breakinhouse < 0) then {
 			s_player_breakinhouse = player addAction ["Break In", "\z\addons\dayz_code\actions\player_breakin.sqf",cursorTarget, 1, true, true, "", ""];
 		}
