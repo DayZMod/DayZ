@@ -2,8 +2,8 @@
 
 class Attachment_FL : CA_Magazine {
 	scope = public;
-	displayName = "Flashlight";
-	descriptionShort = "FlashLight Attachment.";
+	displayName = $STR_ATTACHMENT_NAME_FL;
+	descriptionShort = $STR_ATTACHMENT_DESC_FL;
 	count = 1;
 	model = "z\addons\dayz_communityweapons\models\attachments\FL";
 	picture = "\z\addons\dayz_communityweapons\models\attachments\FL.paa";
@@ -11,7 +11,7 @@ class Attachment_FL : CA_Magazine {
 	
 	class ItemActions {
 		class Use {
-			text = "Attach";
+			text = $STR_ACTIONS_ATTACH_FL;
 			type = "FL";
 			script = "spawn player_attachAttchment;";
 		};

@@ -1625,6 +1625,78 @@
 			<French>Pièces manquantes pour l&apos;entretien: %1</French>
 			<Czech>Pro údržbu budovy schází %1.</Czech>
 		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_M16A4">
+			<English>Attach to M16A4</English>
+			<Czech>Připevnit k M16A4</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_M16A2">
+			<English>Attach to M16A2</English>
+			<Czech>Připevnit k M16A2</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_SA58">
+			<English>Attach to Sa-58</English>
+			<Czech>Připevnit k Sa-58</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_M4">
+			<English>Attach to M4A1</English>
+			<Czech>Připevnit k M4A1</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_BELT">
+			<English>Attach the belt</English>
+			<Czech>Připevnit pás</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_CCO">
+			<English>Attach CCO</English>
+			<Czech>Připevnit CCO</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_CROSSBOW">
+			<English>Attach to Crossbow</English>
+			<Czech>Připevnit ke kuši</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_FL">
+			<English>Attach the flashlight</English>
+			<Czech>Připevnit baterku</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_AK74">
+			<English>Attach to AK-74</English>
+			<Czech>Připevnit k AK-74</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_L85A2">
+			<English>Attach to L85A2</English>
+			<Czech>Připevnit k L85A2</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_M8">
+			<English>Attach to M8</English>
+			<Czech>Připevnit k M8</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_SCAR">
+			<English>Attach to SCAR</English>
+			<Czech>Připevnit k SCAR</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_SCOPE">
+			<English>Attach the scope sight</English>
+			<Czech>Připevnit puškohled</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_MAKAROV">
+			<English>Attach to Makarov</English>
+			<Czech>Připevnit k Makarov</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_M9">
+			<English>Attach to M9</English>
+			<Czech>Připevnit k M9</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_BIZON">
+			<English>Attach to Bizon</English>
+			<Czech>Připevnit k Bizon</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_MP5">
+			<English>Attach to MP5</English>
+			<Czech>Připevnit k MP5</Czech>
+		</Key>
+		<Key ID="STR_ACTIONS_ATTACH_M14">
+			<English>Attach to M14</English>
+			<Czech>Připevnit k M14</Czech>
+		</Key>
 	</Package>
 	<Package name="equipment_code">
 		<Key ID="STR_CRAFT_NAME_X">
@@ -2691,24 +2763,40 @@
 			<French>Du fil</French>
 			<Czech>Kratší provázek</Czech>
 		</Key>
-		<Key ID="STR_ATTACHMENT_NAME_ACG">
-			<English>ACOG ATTACHMENT</English>
+		<Key ID="STR_ATTACHMENT_NAME_ACG_M16">
+			<English>ACOG Attachment for M16</English>
 			<Russian>ACG (Приспособление)</Russian>
 			<Spanish>ACG (Accesorio)</Spanish>
 			<French>ACG (Fixation)</French>
-			<Czech>Příslušenství - ACOG</Czech>
+			<Czech>Příslušenství - ACOG pro M16</Czech>
 			<German>ACOG-Zielfernrohr</German>
 		</Key>
-		<Key ID="STR_ATTACHMENT_DESC_ACG">
-			<English>ACOG ATTACHMENT</English>
+		<Key ID="STR_ATTACHMENT_DESC_ACG_M16">
+			<English>ACOG attachment that can be attached to M16A4.</English>
 			<Russian>ACOG - стандартный оптический прицел для стрельбы на среднюю дальность.</Russian>
 			<Spanish>Mira ACG (Accesorio)</Spanish>
 			<French>ACG (Fixation)</French>
-			<Czech>Advanced Combat Optics Gunsight, používá se pro vylepšení zbraně.</Czech>
+			<Czech>Advanced Combat Optics Gunsight, používá se pro vylepšení M16A4.</Czech>
+			<German>Advanced Combat Optics Gunsight, ein Zielfernrohr amerikanischer Bauart.</German>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_ACG_SA58">
+			<English>ACOG Attachment for Sa-58</English>
+			<Russian>ACG (Приспособление)</Russian>
+			<Spanish>ACG (Accesorio)</Spanish>
+			<French>ACG (Fixation)</French>
+			<Czech>Příslušenství - ACOG pro Sa-58</Czech>
+			<German>ACOG-Zielfernrohr</German>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_ACG_SA58">
+			<English>ACOG attachment that can be attached to Sa-58.</English>
+			<Russian>ACOG - стандартный оптический прицел для стрельбы на среднюю дальность.</Russian>
+			<Spanish>Mira ACG (Accesorio)</Spanish>
+			<French>ACG (Fixation)</French>
+			<Czech>Advanced Combat Optics Gunsight, používá se pro vylepšení Sa-58.</Czech>
 			<German>Advanced Combat Optics Gunsight, ein Zielfernrohr amerikanischer Bauart.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Silencer">
-			<English>Suppressor ATTACHMENT</English>
+			<English>Suppressor Attachment</English>
 			<Russian>Глушитель (Приспособление)</Russian>
 			<Spanish>Silenciador (Accesorio)</Spanish>
 			<French>Silencieux (Fixation)</French>
@@ -2716,7 +2804,7 @@
 			<German>Schalldaempfer</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_Silencer">
-			<English>Suppressor ATTACHMENT</English>
+			<English>Suppressor Attachment</English>
 			<Russian>Приспособление для бесшумной стрельбы.</Russian>
 			<Spanish>Silenciador (Accesorio)</Spanish>
 			<French>Silencieux (Fixation)</French>
@@ -2724,7 +2812,7 @@
 			<German>Ein Schalldaempfer fuer Schusswaffen.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Pso">
-			<English>PSO ATTACHMENT</English>
+			<English>PSO Attachment</English>
 			<Russian>ПСО (Приспособление)</Russian>
 			<Spanish>PSO (Accesorio)</Spanish>
 			<French>PSO (Fixation)</French>
@@ -2736,11 +2824,11 @@
 			<Russian>ПСО-1 (Прицел снайперский оптический) — один из основных прицелов советского и российского снайперского вооружения.</Russian>
 			<Spanish>Mira PSO (Accesorio)</Spanish>
 			<French>PSO (Fixation)</French>
-			<Czech>Ruský zaměřovač PSO-1, používá se pro vylepšení zbraně.</Czech>
+			<Czech>Ruský zaměřovač PSO-1, používá se pro vylepšení zbraní.</Czech>
 			<German>Ein russisches Zielfernrohr vom Typ PSO-1.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Kobra">
-			<English>KOBRA ATTACHMENT</English>
+			<English>KOBRA Attachment</English>
 			<Russian>Кобра (Приспособление)</Russian>
 			<Spanish>KOBRA (Accesorio)</Spanish>
 			<French>KOBRA (Fixation)</French>
@@ -2748,60 +2836,172 @@
 			<German>KOBRA Rotpunktvisier</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_Kobra">
-			<English>KOBRA ATTACHMENT</English>
+			<English>Can be mounted on the AK 74.</English>
 			<Russian>Электронно-коллиматорный прицел «Кобра».</Russian>
 			<Spanish>Mira KOBRA (Accesorio)</Spanish>
 			<French>KOBRA (Fixation)</French>
-			<Czech>Ruský zaměřovač KOBRA, používá se pro vylepšení zbraně.</Czech>
+			<Czech>Ruský zaměřovač KOBRA, používá se pro vylepšení AK-74.</Czech>
 			<German>Russisches Rotpunktvisier vom Typ KOBRA.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_GL">
-			<English>GL ATTACHMENT</English>
+			<English>GL Attachment</English>
 			<Russian>Подствольник (Приспособление)</Russian>
 			<Spanish>GL (Accesorio)</Spanish>
 			<French>GL (Fixation)</French>
-			<Czech>Příslušenství - Granátomet</Czech>
+			<Czech>Příslušenství - granátomet</Czech>
 			<German>GL-Visier</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_GL">
-			<English>GL ATTACHMENT</English>
+			<English>A grenade launcher to upgrade your weapons.</English>
 			<Russian>Подствольный гранатомёт — гранатомёт, выполненный в виде дополнительного узла, устанавливаемого на ручное оружие, обычно — на автомат.</Russian>
 			<Spanish>Lanzador de Granadas (Accesorio)</Spanish>
 			<French>GL (Fixation)</French>
-			<Czech>Podvěsný granátomet, používá se pro vylepšení zbraně.</Czech>
+			<Czech>Podvěsný granátomet, používá se pro vylepšení zbraní.</Czech>
 			<German>Russiches Gruenpunktvisier.</German>
 		</Key>
-		<Key ID="STR_ATTACHMENT_NAME_CAMO">
-			<English>CAMO ATTACHMENT</English>
+		<Key ID="STR_ATTACHMENT_NAME_CAMO_M4">
+			<English>Camo Attachment for M4</English>
 			<Russian>Камуфляж (Приспособление)</Russian>
 			<Spanish>Camuflaje (Accesorio)</Spanish>
-			<French>GL (Fixation)</French>
-			<Czech>Příslušenství - kamufláž</Czech>
+			<French>Camouflage (Fixation)</French>
+			<Czech>Příslušenství - kamufláž pro M4</Czech>
 			<German>Tarnmaterial</German>
 		</Key>
-		<Key ID="STR_ATTACHMENT_DESC_CAMO">
-			<English>CAMO ATTACHMENT</English>
+		<Key ID="STR_ATTACHMENT_DESC_CAMO_M4">
+			<English>Camo paint for M4A1 with AIM.</English>
 			<Russian>Камуфляж для оружия.</Russian>
 			<Spanish>Camuflaje para armas (Accesorio)</Spanish>
 			<French>Camouflage (Fixation)</French>
-			<Czech>Používá se pro vylepšení zbraně.</Czech>
+			<Czech>Používá se pro vylepšení M4A1 s CCO.</Czech>
 			<German>Material zur Tarnung von Waffen und Gegenstaenden.</German>
 		</Key>
-		<Key ID="STR_ATTACHMENT_NAME_AIM">
-			<English>AIM ATTACHMENT</English>
+		<Key ID="STR_ATTACHMENT_NAME_AIM_M4A1">
+			<English>AIM Attachment for M4</English>
 			<Russian>AIM (Приспособление)</Russian>
 			<Spanish>AIM (Accesorio)</Spanish>
 			<French>AIM (Fixation)</French>
-			<Czech>Příslušenství - CCO</Czech>
+			<Czech>Příslušenství - CCO pro M4</Czech>
 			<German>CCO Rotpunktvisier</German>
 		</Key>
-		<Key ID="STR_ATTACHMENT_DESC_AIM">
-			<English>AIM ATTACHMENT</English>
+		<Key ID="STR_ATTACHMENT_DESC_AIM_M4A1">
+			<English>AIM attachment that can be attached to M4A1.</English>
 			<Russian>Прицел AIM.</Russian>
 			<Spanish>Mira AIM (Accesorio)</Spanish>
 			<French>AIM (Fixation)</French>
-			<Czech>Close Combat Optics, používá se pro vylepšení zbraně.</Czech>
+			<Czech>Kolimátor Close Combat Optics, používá se pro vylepšení M4A1.</Czech>
 			<German>Close Combat Optics, Rotpunktvisier amerikanischer Bauart.</German>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_AIM_SA58">
+			<English>AIM Attachment for Sa-58</English>
+			<Russian>AIM (Приспособление)</Russian>
+			<Spanish>AIM (Accesorio)</Spanish>
+			<French>AIM (Fixation)</French>
+			<Czech>Příslušenství - CCO pro Sa-58</Czech>
+			<German>CCO Rotpunktvisier</German>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_AIM_SA58">
+			<English>AIM attachment that can be attached to Sa-58.</English>
+			<Russian>Прицел AIM.</Russian>
+			<Spanish>Mira AIM (Accesorio)</Spanish>
+			<French>AIM (Fixation)</French>
+			<Czech>Kolimátor Close Combat Optics, používá se pro vylepšení Sa-58.</Czech>
+			<German>Close Combat Optics, Rotpunktvisier amerikanischer Bauart.</German>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_BELT">
+			<English>Ammo Belt</English>
+			<Czech>Příslušenství - nábojový pás</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_BELT">
+			<English>Ammo Belt Attachment.</English>
+			<Czech>Nábojový pás, používá se pro vylepšení zbraní.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_CCO_RED">
+			<English>CCO RedDot Attachment</English>
+			<Czech>Příslušenství - CCO</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_CCO_RED">
+			<English>CCO RedDot Attachment</English>
+			<Czech>Kolimátor Close Combat Optics, používá se pro vylepšení zbraní.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_CCO_RED_CROSSBOW">
+			<English>Crossbow CCO Attachment</English>
+			<Czech>Příslušenství - CCO pro kuši</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_CCO_RED_CROSSBOW">
+			<English>Fits a Compound Crossbow.</English>
+			<Czech>Kolimátor Close Combat Optics, používá se pro vylepšení kuše.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_FL">
+			<English>Flashlight Attachment</English>
+			<Czech>Příslušenství - baterka</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_FL">
+			<English>FlashLight Attachment.</English>
+			<Czech>Baterka, používá se pro vylepšení zbraní.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_SCOPE">
+			<English>Scoped Sight Attachment</English>
+			<Czech>Příslušenství - puškohled</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_SCOPE">
+			<English>Scoped Sight Attachment.</English>
+			<Czech>Puškohled, používá se pro vylepšení zbraní.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_SILENCER_MAKAROV">
+			<English>Silencer Attachment for Makarov</English>
+			<Czech>Příslušenství - tlumič pro Makarov</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_SILENCER_MAKAROV">
+			<English>A silencer that can be attached to Makarov.</English>
+			<Czech>Tlumič, používá se pro vylepšení pistole Makarov.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_SILENCER_M9">
+			<English>Silencer Attachment for M9</English>
+			<Czech>Příslušenství - tlumič pro M9</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_SILENCER_M9">
+			<English>A silencer that can be attached to M9.</English>
+			<Czech>Tlumič, používá se pro vylepšení pistole M9.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_SILENCER_M4">
+			<English>Silencer Attachment for M4A1</English>
+			<Czech>Příslušenství - tlumič pro M4A1</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_SILENCER_M4">
+			<English>A silencer that can be attached to an M4A1 that already has AIM and camo.</English>
+			<Czech>Tlumič, používá se pro vylepšení M4A1, jež již má CCO a kamufláž.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_SILENCER_BIZON">
+			<English>Silencer Attachment for Bizon</English>
+			<Czech>Příslušenství - tlumič pro Bizon</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_SILENCER_BIZON">
+			<English>A silencer that can be attached to Bizon.</English>
+			<Czech>Tlumič, používá se pro vylepšení pušky Bizon.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_SILENCER_SCAR">
+			<English>Silencer Attachment for SCAR</English>
+			<Czech>Příslušenství - tlumič pro SCAR</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_SILENCER_SCAR">
+			<English>A silencer that can be attached to SCAR CQC.</English>
+			<Czech>Tlumič, používá se pro vylepšení SCAR CQC.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_SILENCER_MP5">
+			<English>Silencer Attachment for MP5</English>
+			<Czech>Příslušenství - tlumič pro MP5</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_SILENCER_MP5">
+			<English>A silencer that can be attached to MP5A5.</English>
+			<Czech>Tlumič, používá se pro vylepšení samopalu MP5A5.</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_NAME_SCOPE_M14">
+			<English>Scope Attachment for M14</English>
+			<Czech>Příslušenství - dalekohled pro M14</Czech>
+		</Key>
+		<Key ID="STR_ATTACHMENT_DESC_SCOPE_M14">
+			<English>A sniper scope that can be attached to M14 AIM.</English>
+			<Czech>Puškohled, používá se pro vylepšení pušky M14 AIM.</Czech>
 		</Key>
 		<Key ID="STR_CREATE_STASH">
 			<English>Create Stash</English>
@@ -6080,6 +6280,14 @@
 			<French>Table en bois Artisanale</French>
 			<German>Hoelzerne Werkbank</German>
 		</Key>
+		<Key ID="STR_ITEM_NAME_CROSSBOW_KIT">
+			<English>Crossbow string and arms</English>
+			<Czech>Tětiva a lučiště</Czech>
+		</Key>
+		<Key ID="STR_ITEM_DESC_CROSSBOW_KIT">
+			<English>This kit is used to craft a crossbow</English>
+			<Czech>Tato sada obsahuje tětivu a lučiště. Součást nutná pro výrobu kuše.</Czech>
+		</Key>
 	</Package>
 	<Package name="feedback">
 		<Key ID="str_pulse_extremely_weak">
@@ -7760,7 +7968,7 @@
 			<Russian>Старый хэтчбэк</Russian>
 			<Spanish>Honda Accord Hatchback</Spanish>
 			<French>Honda Accord Hatchback</French>
-			<Czech>Starý hatchback</Czech>
+			<Czech>Stará Honda Accord v hatchback verzi</Czech>
 			<German>alter Kleinwagen</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_SEDAN">
