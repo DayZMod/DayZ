@@ -18,7 +18,10 @@ _classname = getText (configFile >> _isClass >> _item >> "ItemActions" >> _actio
 _requiredTools = getArray (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "require");
 _requiredParts   = getArray (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "consume");
 _ghost = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "ghost");
+//need to move to array and separate what checks need to be done.
+_byPassChecks = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "byPass");
 
+if (_byPassChecks == "") then { _byPassChecks = "BaseItems" };
 if (_ghost == "") then { _ghost = _classname; };
 
 _text = getText (configFile >> "CfgVehicles" >> _classname >> "displayName");
@@ -313,21 +316,40 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
     if ((((vehicle player) != player or _posReference distance player > 20 or 0 !=  player getVariable["startcombattimer",0]) or {(!alive player)}) or {((call _onLadder) or {(call _isWater)})}) exitWith {
         [[],[],[],[_object, _requiredParts  , _classname, _text, false, 0, "none"]] call object_build;
     };
-
-    if (isNull _objColliding and _maxplanting <= _emergingLevel and !(call _checkOnRoad)) then { // placement is fine, enable "Build" in the menu
-        if (_actionBuildHidden) then {
-            _actionBuildHidden = false;
-            player removeAction _actionCancel;
-            _sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
-            _actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
-            _actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
-       };
-    } else {
-        if (!_actionBuildHidden) then {
-            _actionBuildHidden = true;
-            player removeAction _actionBuild;
-        };
-    };
+	
+	if (_byPassChecks == "byPassRoadCheck") then {
+		if (isNull _objColliding and _maxplanting <= _emergingLevel) then { // placement is fine, enable "Build" in the menu
+			if (_actionBuildHidden) then {
+				_actionBuildHidden = false;
+				player removeAction _actionCancel;
+				_sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
+				_actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
+				_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
+		   };
+		} else {
+			if (!_actionBuildHidden) then {
+				_actionBuildHidden = true;
+				player removeAction _actionBuild;
+			};
+		};
+	};
+	
+	if (_byPassChecks == "BaseItems") then {
+		if (isNull _objColliding and _maxplanting <= _emergingLevel and !(call _checkOnRoad)) then { // placement is fine, enable "Build" in the menu
+			if (_actionBuildHidden) then {
+				_actionBuildHidden = false;
+				player removeAction _actionCancel;
+				_sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
+				_actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
+				_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
+		   };
+		} else {
+			if (!_actionBuildHidden) then {
+				_actionBuildHidden = true;
+				player removeAction _actionBuild;
+			};
+		};
+	};
     sleep 0.03;
 };
 
