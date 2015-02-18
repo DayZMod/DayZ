@@ -102,9 +102,11 @@ for "_i" from 1 to 20 do {
 
     // create the parent object locally
     _upgrade = configName _parent;
-    _cursorTarget = _upgrade createVehicleLocal getMarkerpos "respawn_west";
-    _cursorTarget setVectorDirAndUp _vector;
-    _cursorTarget setPosATL _pos;
+	if (getNumber(_parent >> "scope")==2) then {
+		_cursorTarget = _upgrade createVehicleLocal getMarkerpos "respawn_west";
+		_cursorTarget setVectorDirAndUp _vector;
+		_cursorTarget setPosATL _pos;
+	};
 
     sleep 1.5;
 
@@ -129,25 +131,27 @@ if (!_realObjectStillThere) then {
     if (!isNull _cursorTarget) then {
         _upgrade = typeOf _cursorTarget;
         deleteVehicle _cursorTarget;
-        _object = createVehicle [_upgrade, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
-        if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
-        _object setVectorDirAndUp _vector;
-        _object setPosATL _pos;
-        _puid = getPlayerUID player;
-        if (!(_puid in _ownerArray)) then {
-            _ownerArray set [ count _ownerArray, _puid ];
-        };        
-        _object setVariable ["ownerArray",_ownerArray,true];
-        _variables = [[ "ownerArray", _ownerArray]];
-        _object setVariable ["characterID",_characterID,true];
-        PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],_variables];
-        publicVariableServer "PVDZ_obj_Publish";
-        diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
-        /*
-        //Send maintenance info
-        PVDZ_veh_Save = [_object,"maintenance"];
-        publicVariableServer "PVDZ_veh_Save";*/
-        player reveal _object;
+		if (getNumber(_parent >> "scope")==2) then {
+			_object = createVehicle [_upgrade, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
+			if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
+			_object setVectorDirAndUp _vector;
+			_object setPosATL _pos;
+			_puid = getPlayerUID player;
+			if (!(_puid in _ownerArray)) then {
+				_ownerArray set [ count _ownerArray, _puid ];
+			};        
+			_object setVariable ["ownerArray",_ownerArray,true];
+			_variables = [[ "ownerArray", _ownerArray]];
+			_object setVariable ["characterID",_characterID,true];
+			PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],_variables];
+			publicVariableServer "PVDZ_obj_Publish";
+			diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
+			/*
+			//Send maintenance info
+			PVDZ_veh_Save = [_object,"maintenance"];
+			publicVariableServer "PVDZ_veh_Save";*/
+			player reveal _object;
+		};
     };
 };
 
