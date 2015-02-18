@@ -1,7 +1,7 @@
 class Attachment_Kobra : CA_Magazine {
 	scope = public;
-	displayName = "Kobra Attachment.";
-	descriptionShort = "Can be mounted on the AK 74.";
+	displayName = $STR_ATTACHMENT_NAME_Kobra;
+	descriptionShort = $STR_ATTACHMENT_DESC_Kobra;
 	count = 1;
 	picture = "\z\addons\dayz_communityassets\pictures\attchement_kobra.paa";
 	type = 256;
@@ -11,7 +11,7 @@ class Attachment_Kobra : CA_Magazine {
 
     class ItemActions {
         class Use {
-            text = "Attach Kobra Scope to AK-74";
+            text = $STR_ACTIONS_ATTACH_AK74;
             script = "spawn player_useAttchment;";
         };
     };

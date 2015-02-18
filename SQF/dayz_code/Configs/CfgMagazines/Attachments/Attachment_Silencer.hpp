@@ -1,7 +1,7 @@
 class Attachment_MakarovSilencer : CA_Magazine {
 	scope = public;
-	displayName = "Makarov Silencer";
-	descriptionShort = "Makarov Silencer";
+	displayName = $STR_ATTACHMENT_NAME_SILENCER_MAKAROV;
+	descriptionShort = $STR_ATTACHMENT_DESC_SILENCER_MAKAROV;
 	count = 1;
 	model = "z\addons\dayz_communityassets\models\surpressor.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_silencer.paa";
@@ -12,7 +12,7 @@ class Attachment_MakarovSilencer : CA_Magazine {
 
 	class ItemActions {
 		class Use {
-			text = "Attach Silencer to Makarov";
+			text = $STR_ACTIONS_ATTACH_MAKAROV;
 			script = "spawn player_useAttchment;";
 		};
 	};
@@ -20,8 +20,8 @@ class Attachment_MakarovSilencer : CA_Magazine {
 
 class Attachment_M9Silencer : CA_Magazine {
 	scope = public;
-	displayName = "M9 Silencer";
-	descriptionShort = "M9 Silencer";
+	displayName = $STR_ATTACHMENT_NAME_SILENCER_M9;
+	descriptionShort = $STR_ATTACHMENT_DESC_SILENCER_M9;
 	count = 1;
 	model = "z\addons\dayz_communityassets\models\surpressor.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_silencer.paa";
@@ -32,7 +32,7 @@ class Attachment_M9Silencer : CA_Magazine {
 
 	class ItemActions {
 		class Use {
-			text = "Attach Silencer to M9";
+			text = $STR_ACTIONS_ATTACH_M9;
 			script = "spawn player_useAttchment;";
 		};
 	};
@@ -40,8 +40,8 @@ class Attachment_M9Silencer : CA_Magazine {
 
 class Attachment_M4A1_AIM_SD_camo : CA_Magazine {
 	scope = public;
-	displayName = $STR_ATTACHMENT_NAME_Silencer;
-	descriptionShort = "M4A1 Silencer. Weapon needed M4A1_AIM_CAMO";
+	displayName = $STR_ATTACHMENT_NAME_SILENCER_M4;
+	descriptionShort = $STR_ATTACHMENT_DESC_SILENCER_M4;
 	count = 1;
 	model = "z\addons\dayz_communityassets\models\surpressor.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_silencer.paa";
@@ -52,7 +52,7 @@ class Attachment_M4A1_AIM_SD_camo : CA_Magazine {
 
 	class ItemActions {
 		class Use {
-			text = "Attach Silencer to M4A1";
+			text = $STR_ACTIONS_ATTACH_M4;
 			script = "spawn player_useAttchment;";
 		};
 	};
@@ -60,8 +60,8 @@ class Attachment_M4A1_AIM_SD_camo : CA_Magazine {
 
 class Attachment_bizonSilencer : CA_Magazine {
 	scope = public;
-	displayName = $STR_ATTACHMENT_NAME_Silencer;
-	descriptionShort = "Bizon Silencer. Weapon needed Bizon";
+	displayName = $STR_ATTACHMENT_NAME_SILENCER_BIZON;
+	descriptionShort = $STR_ATTACHMENT_DESC_SILENCER_BIZON;
 	count = 1;
 	model = "z\addons\dayz_communityassets\models\surpressor.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_silencer.paa";
@@ -72,7 +72,7 @@ class Attachment_bizonSilencer : CA_Magazine {
 
 	class ItemActions {
 		class Use {
-			text = "Attach Silencer to Bizon";
+			text = $STR_ACTIONS_ATTACH_BIZON;
 			script = "spawn player_useAttchment;";
 		};
 	};
@@ -80,8 +80,8 @@ class Attachment_bizonSilencer : CA_Magazine {
 
 class Attachment_SCAR_H_CQC_CCO_Silencer : CA_Magazine {
 	scope = public;
-	displayName = $STR_ATTACHMENT_NAME_Silencer;
-	descriptionShort = "SCAR CQC Silencer. Weapon needed SCAR CQC";
+	displayName = $STR_ATTACHMENT_NAME_SILENCER_SCAR;
+	descriptionShort = $STR_ATTACHMENT_DESC_SILENCER_SCAR;
 	count = 1;
 	model = "z\addons\dayz_communityassets\models\surpressor.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_silencer.paa";
@@ -92,7 +92,7 @@ class Attachment_SCAR_H_CQC_CCO_Silencer : CA_Magazine {
 
 	class ItemActions {
 		class Use {
-			text = "Attach Silencer to SCAR";
+			text = $STR_ACTIONS_ATTACH_SCAR;
 			script = "spawn player_useAttchment;";
 		};
 	};
@@ -100,8 +100,8 @@ class Attachment_SCAR_H_CQC_CCO_Silencer : CA_Magazine {
 
 class Attachment_MP5A5_Silencer : CA_Magazine {
     scope = public;
-	displayName = "MP5A5 Silencer";
-	descriptionShort = "MP5A5 Silencer. Weapon needed: MP5A5";
+	displayName = $STR_ATTACHMENT_NAME_SILENCER_MP5;
+	descriptionShort = $STR_ATTACHMENT_DESC_SILENCER_MP5;
 	count = 1;
 	model = "z\addons\dayz_communityassets\models\surpressor.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_silencer.paa";
@@ -112,7 +112,7 @@ class Attachment_MP5A5_Silencer : CA_Magazine {
 
 	class ItemActions {
         class Use {
-            text = "Attach Silencer to MP5A5";
+            text = $STR_ACTIONS_ATTACH_MP5;
             script = "spawn player_useAttchment;";
         };
 	};
