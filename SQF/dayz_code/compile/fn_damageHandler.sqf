@@ -14,6 +14,7 @@ _damage = _this select 2;
 _unconscious = _unit getVariable ["NORRN_unconscious", false];
 _source = _this select 3;
 _ammo = _this select 4;
+_model = typeOf player;
 _Viralzed = typeOf _source in DayZ_ViralZeds;
 _isMinor = (_hit in USEC_MinorWounds);
 _isHeadHit = (_hit == "head_hit");
