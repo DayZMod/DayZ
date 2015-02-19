@@ -26,14 +26,14 @@ _looptime = _this;
 //Positive effects
 	_vehicle_factor		=	2;
 	_fire_factor		=	15;	
-	_moving_factor 		=  	1.9;
+	_moving_factor 		=  	2.1;
 	_building_factor 	=  	1.5;
-	_sun_factor			= 	2;
+	_sun_factor			= 	3;
 	
 //Negative effects
 	_water_factor		= 	8;
 	_stand_factor 		= 	2;
-	_rain_factor		=	3;
+	_rain_factor		=	2.5;
 	_night_factor		= 	1.5;
 	_wind_factor		=	2;
 
@@ -116,7 +116,7 @@ if(daytime > _sunrise && daytime < (24 - _sunrise) && !_raining && overcast <= 0
 //NEGATIVE EFFECTS
 
 //water
-if(surfaceIsWater getPosATL player || dayz_isSwimming) then {
+if((surfaceIsWater getPosATL player || dayz_isSwimming) && !_isinvehicle) then {
 	_difference = _difference - _water_factor;
 	
 	//diag_log format["water - %1",_difference];
