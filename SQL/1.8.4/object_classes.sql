@@ -78,7 +78,7 @@ INSERT INTO `object_classes` (`Classname`, `Chance`, `MaxNum`, `Damage`, `Type`)
 	('Lada2', '0.59', 2, '0', 'car'),
 	('hilux1_civil_3_open_EP1', '0.59', 3, '0', 'car'),
 	('LandRover_CZ_EP1', '0.59', 3, '0', 'car'),
-	('HMMWV', '0.21', 2, '0', 'car'),
+	('HMMWV_DZ', '0.21', 2, '0', 'car'),
 	('MH6J_DZ', '0.48', 1, '0.05000', 'helicopter'),
 	('StashSmall', '0', 0, '0', 'StashSmall'),
 	('StashMedium', '0', 0, '0', 'StashMedium'),
