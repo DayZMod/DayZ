@@ -81,11 +81,6 @@ check_publishobject = {
 	diag_log format ["DEBUG: Checking if Object: %1 is allowed, published by %2", _object, _playername];
 #endif
 
-	_badObjects = ["WoodenFence_base","WoodenFence_base"];
-	if ((typeOf _object) in _badObjects) then {
-		deleteVehicle _object;
-	};
-	
 	if ((typeOf _object) in DayZ_SafeObjects) then {
 		_saveObject = "DayZ_SafeObjects";
 		_allowed = true;
