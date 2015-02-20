@@ -26,7 +26,7 @@ class CfgBuildingLoot {
 			{"equip_Crossbow_Kit","magazine",0.01},
 			{"ItemSodaClays","magazine",0.01},
 			{"ItemSodaMzly","magazine",0.01},
-			{"Item5Matchbox","weapon",0.02},
+			{"ItemMatchbox","weapon",0.02},
 			{"ItemBookBible","magazine",0.03},
 			{"WoodenArrow","magazine",0.02},
 			{"FoodCanCurgon","magazine",0.01},
@@ -51,7 +51,7 @@ class CfgBuildingLoot {
 		lootPos[] = {};
 		lootType[] = {
 		//one spawn
-			{"Item5Matchbox","weapon",0.01},
+			{"ItemMatchbox","weapon",0.01},
 			{"equip_Crossbow_Kit","magazine",0.01},
 			{"ItemKnife","weapon",0.01},
 			{"ItemMap","generic",0.01},
@@ -113,7 +113,7 @@ class CfgBuildingLoot {
 		//one spawn
 			{"FoodCakeCremeCakeClean","magazine",0.01},
 			{"ItemSodaMtngreen","magazine",0.01},
-			{"Item5Matchbox","weapon",0.01},
+			{"ItemMatchbox","weapon",0.01},
 			{"ItemWatch","generic",0.03},
 			{"ItemKnife","generic",0.05},
 			{"ItemFlashlight","generic",0.05},
@@ -275,7 +275,7 @@ class CfgBuildingLoot {
 		lootType[] = {
 		//one spawn
 		//tools
-			{"Item5Matchbox","weapon",0.05},
+			{"ItemMatchbox","weapon",0.05},
 			{"ItemSandbag","magazine",0.04},
 			{"WeaponHolder_ItemHatchet","object",0.05},
 			{"huntingrifle","weapon",0.02},
@@ -321,7 +321,7 @@ class CfgBuildingLoot {
 			{"ItemMap","generic",0.06},
 			{"ItemFlashlight","generic",0.05},
 			{"ItemKnife","generic",0.02},
-			{"Item5Matchbox","weapon",0.05},
+			{"ItemMatchbox","weapon",0.05},
 			{"Binocular","weapon",0.03},
 			{"Makarov","weapon",0.02},
 			{"LeeEnfield","weapon",0.01},
@@ -493,7 +493,7 @@ class CfgBuildingLoot {
 			{"ItemFlashlight","tool",0.06},
 			{"ItemKnife","tool",0.07},
 			{"equip_lever","magazine",0.05},
-			{"Item5Matchbox","tool",0.06},
+			{"ItemMatchbox","tool",0.06},
 			{"Binocular","tool",0.06},
 			{"ItemCrowbar","tool",0.08},
 		//weapons
@@ -803,7 +803,7 @@ class CfgBuildingLoot {
 			{"ItemMap","weapon",0.06},
 			{"ItemFlashlight","generic",0.06},
 			{"ItemKnife","generic",0.07},
-			{"Item5Matchbox","generic",0.07},
+			{"ItemMatchbox","generic",0.07},
 			{"ItemCompass","weapon",0.02},
 		//weapons
 			{"Crossbow_DZ","weapon",0.02},

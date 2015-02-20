@@ -169,23 +169,6 @@ if (!isDedicated) then {
 		_inAngle = [_zPos,_eyeDir,_degree,_tPos] call fnc_inAngleSector;
 		_inAngle
 	};
-/*
-	dayz_AttackCheck = {
-		private ["_cantSee","_attackCheck"];
-		_target = _this select 0;
-		_agent = _this select 1;
-		_degree = _this select 2;
-		_attackCheck = false;
-		_inAngle = [_target,_agent,_degree] call dayz_angleCheck;
-		if (_inAngle) then  {
-			_cantSee = [_target,_agent] call dayz_losCheck;
-			if (!_cantSee) then {
-				_attackCheck = true;
-			};
-		};
-		_attackCheck
-	};
-*/
 	dayz_losCheck = {
 		private "_cantSee";
 		_target = _this select 0; // PUT THE PLAYER IN FIRST ARGUMENT!!!!
@@ -406,16 +389,17 @@ if (!isDedicated) then {
         _matches = 0;
         {
             if (configName inheritsFrom (configfile >> "cfgWeapons" >> _x) == "ItemMatchbox") then { // iskindOf does not work here?!
-                 _matches = _matches + getNumber(configfile >> "cfgWeapons" >> _x >> "matches");
+                 _matches = _matches + getNumber(configfile >> "cfgWeapons" >> _x >> "Ignators" >> "matches");
                  player removeWeapon _x;
             };
         } count (items player);
         // limit to 1 fullbox and 1 used matchbox
-        _fullBox = floor (_matches / 5);
+        _fullBox = floor (_matches / 5);		
         _remain = _matches % 5;
         if (_fullBox > 0) then { player addWeapon "Item5Matchbox"; };
-  		if (_fullBox > 1) then { player addWeapon "Item4Matchbox"; }
-  		else {
+  		if (_fullBox > 1) then { 
+			player addWeapon "Item4Matchbox"; 
+		} else {
 	        if (_remain > 0) then { player addWeapon ("Item"+str(_remain)+"Matchbox"); };
 		};
     };  
@@ -514,17 +498,31 @@ dayz_inflame = {
     private ["_object", "_hasTool"];
 
     _object = _this select 0;
-    if (_this select 1) then { // true = light the fire
+	// true = light the fire
+    if (_this select 1) then {
 
         _hasTool = false;
         {
             if (_x IN items player) exitWith {
-                // remove a match
-                player removeWeapon _x;
-                player addWeapon getText(configfile >> "cfgWeapons" >> _x >> "qtyRemaining");
+				_matches = getNumber(configfile >> "cfgWeapons" >> _x >> "Ignators" >> "matches");
+				_qtyRemaining = getText(configfile >> "cfgWeapons" >> _x >> "Ignators" >> "qtyRemaining");
+				
+				//diag_log format["%1[%2,%3]",_x,_matches,_qtyRemaining];
+
+				if (_matches == -1) then { 
+					if ([getNumber(configfile >> "cfgWeapons" >> _x >> "Ignators" >> "chance")] call fn_chance) then {
+						player removeWeapon _x;
+						player addWeapon _qtyRemaining;
+					};
+				} else {
+					// remove a match
+					player removeWeapon _x;
+					player addWeapon _qtyRemaining;
+				};
                 _hasTool = true;
             };
         } count Dayz_Ignators;
+		
         if (_hasTool) then { _object inflame true; };
     } else { // put out the fire
 		_object inflame false;
@@ -568,9 +566,21 @@ dayz_inflame_other = {
         _hasTool = false;
         {
             if (_x IN items player) exitWith {
-                // remove a match
-                player removeWeapon _x;
-                player addWeapon getText(configfile >> "cfgWeapons" >> _x >> "qtyRemaining");
+				_matches = getNumber(configfile >> "cfgWeapons" >> _x >> "Ignators" >> "matches");
+				_qtyRemaining = getText(configfile >> "cfgWeapons" >> _x >> "Ignators" >> "qtyRemaining");
+				
+				//diag_log format["%1[%2,%3]",_x,_matches,_qtyRemaining];
+
+				if (_matches == -1) then { 
+					if ([getNumber(configfile >> "cfgWeapons" >> _x >> "Ignators" >> "chance")] call fn_chance) then {
+						player removeWeapon _x;
+						player addWeapon _qtyRemaining;
+					};
+				} else {
+					// remove a match
+					player removeWeapon _x;
+					player addWeapon _qtyRemaining;
+				};
                 _hasTool = true;
             };
         } count Dayz_Ignators;
