@@ -1697,6 +1697,10 @@
 			<English>Attach to M14</English>
 			<Czech>Připevnit k M14</Czech>
 		</Key>
+		<Key ID="STR_ACTIONS_BRACE_LEG">
+			<English>Brace Leg</English>
+			<Czech>Zafixovat nohu</Czech>
+		</Key>
 	</Package>
 	<Package name="equipment_code">
 		<Key ID="STR_CRAFT_NAME_X">
@@ -6256,13 +6260,17 @@
 			<French>Piège déclenché au passage d&apos;un fil caché.</French>
 			<German>Eine improvisierte Falle. Die Rauchgranate wird durch den Stolperdraht ausgeloest.</German>
 		</Key>
-		<Key ID="STR_ITEM_WOODENSPLINT">
+		<Key ID="STR_ITEM_NAME_WOODENSPLINT">
 			<English>Wooden Splint</English>
 			<Spanish>tablilla de madera</Spanish>
 			<Russian>Шина из дерева</Russian>
 			<Czech>Dřevěná dlaha</Czech>
 			<French>Attelle</French>
 			<German>Holzspahn</German>
+		</Key>
+		<Key ID="STR_ITEM_DESC_WOODENSPLINT">
+			<English>A Wooden splint that can be used to brace a broken leg.</English>
+			<Czech>Dřevěná dlaha, která se bude hodit na zafixování zlomené nohy.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_MAKESHIFTBACKPACK">
 			<English>Makeshift Backpack</English>
