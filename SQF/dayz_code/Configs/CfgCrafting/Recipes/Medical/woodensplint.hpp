@@ -1,5 +1,5 @@
 class Blueprint_woodensplint : Recipe {
-	displayName = $STR_ITEM_WOODENSPLINT;
+	displayName = $STR_ITEM_NAME_WOODENSPLINT;
 	input[] = 
 	{
 		{"PartWoodPile","CfgMagazines",6},
