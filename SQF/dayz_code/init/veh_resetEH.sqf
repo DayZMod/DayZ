@@ -10,6 +10,7 @@ if (_this isKindOf "AllVehicles") then {
 	_this removeAllEventHandlers "Killed";
 	_this addeventhandler ["HandleDamage",{ _this call fnc_veh_handleDam } ];
 	_this addeventhandler ["Killed",{ _this call fnc_veh_handleKilled } ];
+	_this addEventHandler ["GetOut", { _this call vehicle_getOut }];
 
 	if (isServer) then {
 		_this removeAllEventHandlers "GetOut";
