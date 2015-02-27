@@ -8,7 +8,7 @@ call compile preprocessFileLineNumbers (_base+"sched_planthint.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_bloodstains.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_animals.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_buriedZeds.sqf");
-//call compile preprocessFileLineNumbers (_base+"sched_gravity.sqf");
+call compile preprocessFileLineNumbers (_base+"sched_gravity.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_security.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_antiTeleport.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_newDay.sqf");
@@ -25,7 +25,7 @@ if (count _list == 0) then {
 	_list = [
 	// period	offset	loop code <-> ctx, init code ->ctx
 	 [ 0,	 	0,		sched_onEachFrame, sched_onEachFrame_init ], // SPECIAL: nul period -> code returns boolean requesting to skip other tasks
-	// [ 0.2,	 	20,		sched_gravity, sched_gravity_init ],
+	 [ 0.2,	 	20,		sched_gravity, sched_gravity_init ],
 	 [ 0.2,	 	0.15,	sched_security, sched_security_init ],
 	 [ 0.2,	 	0.05,	sched_antiTP, sched_antiTP_init ],
 	 [ 0.1,	 	0.01,	sched_playerActions ],
