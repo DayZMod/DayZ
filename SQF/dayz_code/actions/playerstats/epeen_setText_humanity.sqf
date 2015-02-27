@@ -32,7 +32,7 @@ switch (true) do
 		ctrlSetText [1203, "\z\addons\dayz_communityassets\pictures\playerstats\humanity\humanity_bandit_top_1.paa"];
 		ctrlSetText [1204, "\z\addons\dayz_communityassets\pictures\playerstats\humanity\humanity_bandit_2.paa"];
 	};
-	case (_h < -4999):
+	case (_h < -1999):
 	{
 		ctrlSetText [1201, "\z\addons\dayz_communityassets\pictures\playerstats\humanity\humanity_bandit_middle_1.paa"];
 		ctrlSetText [1202, ""];
