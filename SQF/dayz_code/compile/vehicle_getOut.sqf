@@ -20,8 +20,8 @@ if (_buildables > 0) then {
 	};
 
 	//Log to server RPT (could give false pos) - should help admins see who is trying to abuse this.
-	PVDZ_sec_atp = [(typeof _vehicle), _position, _unit];
-    publicVariableServer "PVDZ_sec_atp";
+	PVDZ_Server_LogIt = format["Player %1 exited a vehicle(%2) close to buildable object as %3",_unit, (typeof _vehicle), _position];
+    publicVariableServer "PVDZ_Server_LogIt";
 
     cutText ["Unable to exit vehicle too close to buildables objects", "PLAIN DOWN"];
 
