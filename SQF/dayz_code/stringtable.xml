@@ -1322,7 +1322,7 @@
 		</Key>
 		<Key ID="str_fixToolFail">
 			<English>Maybe you can fix it with tape and a handle.</English>
-			<Czech>Možná to půjde spravit s pomocí pásky a držadla.</Czech>
+			<Czech>Možná to půjde spravit s pomocí pásky a násady.</Czech>
 		</Key>
 		<Key ID="str_fixtoolMissingTape">
 			<English>You will need some tape for this.</English>
@@ -1330,7 +1330,7 @@
 		</Key>
 		<Key ID="str_fixtoolMissingHandle">
 			<English>You will need a lever to fix this.</English>
-			<Czech>K tomuto bude třeba nějaká páka.</Czech>
+			<Czech>K tomuto bude třeba nějaká násada nebo topůrko.</Czech>
 		</Key>
 		<Key ID="str_fixToolSuccess">
 			<English>You have fixed your %1.</English>
