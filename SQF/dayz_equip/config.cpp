@@ -650,7 +650,7 @@ class cfgWeapons {
 		class ItemActions {
 			class Use
 			{
-				text= $STR_ACTION_MINE_STONE;
+				text= $STR_ACTIONS_MINE_STONE;
 				script="spawn player_mineStone;";
 			};
 		};
@@ -664,7 +664,7 @@ class cfgWeapons {
 		fixedTool = "ItemPickaxe";
 		class ItemActions {
 			class Toolbelt {
-				text = $STR_ACTION_FIX_PICKAXE;
+				text = $STR_ACTIONS_FIX_PICKAXE;
 				script="spawn player_fixHatchet;";
 			};
 		};
@@ -693,7 +693,7 @@ class cfgWeapons {
 		fixedTool = "ItemSledgeHammer";
 		class ItemActions {
 			class Toolbelt {
-				text = $STR_ACTION_FIX_SLEDGE_HAMMER;
+				text = $STR_ACTIONS_FIX_SLEDGE_HAMMER;
 				script="spawn player_fixHatchet;";
 			};
 		};
