@@ -1344,6 +1344,10 @@
 			<French>La poignée s&apos;est cassée pendant que vous coupiez du bois</French>
 			<German>Du schlaegst zu und der Schaft der Axt bricht.</German>
 		</Key>
+		<Key ID="str_PickAxeHandleBreaks">
+			<English>Whilst mining the handle breaks.</English>
+			<Czech>Během kopání se zlomila násada.</Czech>
+		</Key>
 		<Key ID="str_cannotCraft">
 			<English>Missing %1 to do this.</English>
 			<Russian>Не хватает %1.</Russian>
@@ -6854,6 +6858,22 @@
 			<Spanish>%1 debe estar en tu persona para moverlo hacia/desde el cinturon.</Spanish>
 			<French>%1 doit être sur vous pour pouvoir le déplacer de/vers votre ceinture à outils.</French>
 			<Czech>%1 musí být v invetáři, aby se mohl přesunout z/do panelu nástrojů.</Czech>
+		</Key>
+		<Key ID="str_mining_finished">
+			<English>You have finished collecting stone.</English>
+			<Czech>Nalámali jste kámen.</Czech>
+		</Key>
+		<Key ID="str_mining_progress">
+			<English>%1 piles of stone have been successfully mined. Still to go: %2</English>
+			<Czech>%1 hromady kamení byly úspěšně nalámány. Ještě zbývá nalámat: %2</Czech>
+		</Key>
+		<Key ID="str_mining_canceled">
+			<English>Canceled mining stone.</English>
+			<Czech>Lámání kamene bylo přerušeno.</Czech>
+		</Key>
+		<Key ID="str_mining_no_rocks">
+			<English>Cannot find any rocks around.</English>
+			<Czech>V blízkosti nejsou žádné skály.</Czech>
 		</Key>
 		<Key ID="str_player_toback_fail">
 			<English>Cannot add %1 to back.</English>
