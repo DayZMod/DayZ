@@ -105,7 +105,9 @@ waitUntil {getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationS
 _characterID = _cursorTarget getVariable ["characterID","0"];
 _objectID = _cursorTarget getVariable ["ObjectID","0"];
 _objectUID = _cursorTarget getVariable ["ObjectUID","0"];
+//Person who owns the fence can be disa,abled by this person.
 _ownerArray = _cursorTarget getVariable ["ownerArray",[]];
+_clanArray = _cursorTarget getVariable ["clanArray",[]];
 _dir = round getDir _cursorTarget;
 _vector = [vectorDir _cursorTarget,vectorUp _cursorTarget];
 _pos = getposATL _cursorTarget;
@@ -118,10 +120,11 @@ if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
 _object setVectorDirAndUp _vector;
 _object setPosATL _pos;
 _puid = getPlayerUID player;
-if (!(_puid in _ownerArray)) then {
-    _ownerArray set [ count _ownerArray, _puid ];
+if (!(_puid in _clanArray)) then {
+    _clanArray set [ count _clanArray, _puid ];
 };
 _object setVariable ["ownerArray",_ownerArray,true];
+_object setVariable ["clanArray",_ownerArray,true];
 _object setVariable ["characterID",_characterID,true];
 
 //remove old object
@@ -138,7 +141,7 @@ _wh = "WeaponHolder" createVehicle (getPosATL player);
 } forEach _producedParts;
 
 //publish new object
-_variables = [[ "ownerArray", _ownerArray]];
+_variables = [["ownerArray", _ownerArray],["clanArray", _clanArray]];
 PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],_variables];
 publicVariableServer "PVDZ_obj_Publish";
 diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];

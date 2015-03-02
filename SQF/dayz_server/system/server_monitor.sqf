@@ -191,10 +191,10 @@ _countr = 0;
 						// old method
 						if (typeName _x == "STRING") then { _object setVariable ["ownerArray", [_x], true]; };
 						if (typeName _x == "BOOLEAN") then { _object setVariable ["armed", _x, true]; };
-					}
-					else { // new method: array of variables to set
+					} else { // new method: array of variables to set
 						switch (_x select 0) do {
 							case "ownerArray" : { _object setVariable ["ownerArray", _x select 1, true]; };
+							case "clanArray" : { _object setVariable ["clanArray", _x select 1, true]; };
 							case "armed" : { _object setVariable ["armed", _x select 1, true]; };
 							//etc
 						};
