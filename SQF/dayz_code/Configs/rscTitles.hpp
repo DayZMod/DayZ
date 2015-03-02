@@ -370,7 +370,7 @@ class RscDisplayMain : RscStandardDisplay
 		class DAYZ_Version : CA_Version
 		{
 			idc = -1;
-			text = "@DayZMod 1.8.4.1";
+			text = "@DayZMod Dev-20a57cf";
 			y = "(SafeZoneH + SafeZoneY) - (1 - 0.95)";
 		};
 		delete CA_TitleMainMenu;
