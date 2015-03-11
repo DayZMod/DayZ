@@ -113,7 +113,7 @@ class CfgBuildingLoot {
 		//one spawn
 			{"FoodCakeCremeCakeClean","magazine",0.01},
 			{"ItemSodaMtngreen","magazine",0.01},
-			{"ItemMatchbox","weapon",0.01},
+			{"ItemMatchbox","weapon",0.03},
 			{"ItemWatch","generic",0.03},
 			{"ItemKnife","generic",0.05},
 			{"ItemFlashlight","generic",0.05},
