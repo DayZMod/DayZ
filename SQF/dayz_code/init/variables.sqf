@@ -516,6 +516,10 @@ if(isNil "dayz_temperature_override") then {
 	dayz_temperature_override = false;
 };
 
+if(isNil "dayz_attackRange") then { 
+	dayz_attackRange = 3;
+};
+
 //init global arrays for Loot Chances
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\loot_init.sqf";
 

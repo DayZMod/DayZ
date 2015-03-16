@@ -44,7 +44,7 @@ if (_isSea) then { } else {  };
 				};
 			};
 			
-			if (_x distance _refObj > 3.6) then {
+			if (_x distance _refObj > dayz_attackRange) then {
 				_x setVariable ["speedLimit", _forcedSpeed, false];
 			};
 			if (!local _x) then {		
@@ -55,7 +55,7 @@ if (_isSea) then { } else {  };
 					_delta = _pHeight - _entHeight;
 					_x setVariable ["speedLimit", 0, false];			
 					
-					if (_x distance _refObj < 3.6) then {
+					if (_x distance _refObj < dayz_attackRange) then {
 						if (!(animationState _x == "ZombieFeed")) then {
 							if (((diag_tickTime - _last) > 1.5) and ((_delta < 1.5) and (_delta > -1.5))) then {
 								_attackResult = [_x,  _type] call player_zombieAttack;

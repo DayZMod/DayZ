@@ -23,7 +23,7 @@ dayz_infectiousWaterholes = true;
 dayz_DamageMultiplier = 1; //Damage Multiplier for Zombies.
 
 dayz_maxGlobalZeds = 500; //Limit the total zeds server wide.
-
+dayz_attackRange = 3; // attack range of zeds vehicles are * 2 of this number
 dayz_temperature_override = false; // Set to true to disable all temperature changes.
 
 
