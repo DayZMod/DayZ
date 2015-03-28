@@ -3,6 +3,7 @@ class WoodenFence_base: DZ_buildables
 {
 	scope = 1;
 	canbevertical = 1;
+	destrType="DestructNo";
 	class Upgrade {
 		requiredParts[] = {"ItemLog", "ItemStone", "ItemStone"}; // copy of ItemDIY_wood upgrade section
 		require[] = {"ItemEtool"};
