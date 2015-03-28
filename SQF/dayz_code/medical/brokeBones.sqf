@@ -1,7 +1,8 @@
 private ["_started","_finished","_animState","_isMedic","_id","_unit"];
 _unit = (_this select 3) select 0;
+_item = (_this select 3) select 1;
 
-player removeMagazine "equip_woodensplint";
+player removeMagazine _item;
 
 _unit setVariable ["hit_legs",0];
 _unit setVariable ["hit_hands",0];
@@ -47,7 +48,7 @@ if (_finished) then {
 	PVDZ_send = [_unit,"Morphine",[_unit,player]];
 	publicVariableServer "PVDZ_send";
 } else {
-	player addMagazine "equip_woodensplint";
+	player addMagazine _item;
 	r_interrupt = false;
 	[objNull, player, rSwitchMove,""] call RE;
 	player playActionNow "stop";

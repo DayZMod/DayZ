@@ -87,13 +87,16 @@ if (_inVehicle) then {
 		_unconscious = _unit getVariable ["NORRN_unconscious", false];
 		_lowBlood = _unit getVariable ["USEC_lowBlood", false];
 		_injured = _unit getVariable ["USEC_injured", false];
+		_hasSepsis = _unit getVariable ["USEC_Sepsis", false];
 		_inPain = _unit getVariable ["USEC_inPain", false];
 		_legsBroke = _unit getVariable ["hit_legs", 0] >= 1;
 		_armsBroke = _unit getVariable ["hit_hands", 0] >= 1;
 		_infected = _unit getVariable ["USEC_infected", false];
 		_hasBandage = "ItemBandage" in magazines player;
+		_hasSepsisBandage = "ItemSepsisBandage" in magazines player;
 		_hasEpi = "ItemEpinephrine" in magazines player;
 		_hasMorphine = "ItemMorphine" in magazines player;
+		_hasSplint = "equip_woodensplint" in magazines player;
 		_hasBlood = "ItemBloodbag" in magazines player;
 		_hasBloodANEG = "bloodBagANEG" in magazines player;
 		_hasBloodAPOS = "bloodBagAPOS" in magazines player;
@@ -144,6 +147,12 @@ if (_inVehicle) then {
 				_action = _unit addAction [localize "str_actions_medical_04", "\z\addons\dayz_code\medical\bandage.sqf",[_unit,"ItemBandage"], 0, true, true, "", "'ItemBandage' in magazines player"];
 				r_player_actions set [count r_player_actions,_action];
 			};
+			//Sepsis
+			if(_hasSepsis and _hasSepsisBandage) then {
+				r_action = true;
+				_action = _unit addAction [localize "str_actions_medical_04", "\z\addons\dayz_code\medical\bandage.sqf",[_unit,"ItemSepsisBandage"], 0, true, true, "", "'ItemBandage' in magazines player"];
+				r_player_actions set [count r_player_actions,_action];
+			};
 			//Allow player to give Epinephrine
 			if(_unconscious and _hasEpi) then {
 				r_action = true;
@@ -153,7 +162,13 @@ if (_inVehicle) then {
 			//Allow player to give Morphine
 			if((_legsBroke or _armsBroke) and _hasMorphine) then {
 				r_action = true;
-				_action = _unit addAction [localize "str_actions_medical_06", "\z\addons\dayz_code\medical\morphine.sqf",[_unit], 0, true, true, "", "'ItemMorphine' in magazines player"];
+				_action = _unit addAction [localize "str_actions_medical_06", "\z\addons\dayz_code\medical\brokeBones.sqf",[_unit,"ItemMorphine"], 0, true, true, "", "'ItemMorphine' in magazines player"];
+				r_player_actions set [count r_player_actions,_action];
+			};
+			//Allow player to give equip_woodensplint
+			if((_legsBroke or _armsBroke) and _hasSplint) then {
+				r_action = true;
+				_action = _unit addAction [localize "str_actions_medical_06", "\z\addons\dayz_code\medical\brokeBones.sqf",[_unit,"equip_woodensplint"], 0, true, true, "", "'equip_woodensplint' in magazines player"];
 				r_player_actions set [count r_player_actions,_action];
 			};
 			//Allow player to give Painkillers
