@@ -148,7 +148,7 @@ link80[] = {62,58};
 link81[] = {61,62};
 link82[] = {62,61};
 globals[] = {25.000000,1,0,0,0,640,480,1,136,6316128,1,-565.680786,17.917299,599.718506,118.872169,727,599,1};
-window[] = {2,-1,-1,-32000,-32000,876,175,1383,175,3,745};
+window[] = {2,-1,-1,-1,-1,726,25,1233,25,3,745};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -573,7 +573,7 @@ class FSM
           priority = 0.000000;
           to="Chase";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((local _target) and (_agent distance _target <= 3) and ((diag_tickTime - _last) > 2) and (_delta < 1.5) and (_delta > -1.5) and (alive _target))"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((local _target) and (_agent distance _target <= dayz_attackRange) and ((diag_tickTime - _last) > 2) and (_delta < 1.5) and (_delta > -1.5) and (alive _target))"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"[_agent,  ""zombie""] spawn player_attackdelay;" \n
            "_agent setVariable[""lastAttack"", diag_tickTime];" \n
            "" \n
