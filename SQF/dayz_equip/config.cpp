@@ -650,7 +650,7 @@ class cfgWeapons {
 		class ItemActions {
 			class Use
 			{
-				text="Harvest Stone";
+				text= $STR_ACTIONS_MINE_STONE;
 				script="spawn player_mineStone;";
 			};
 		};
@@ -664,7 +664,7 @@ class cfgWeapons {
 		fixedTool = "ItemPickaxe";
 		class ItemActions {
 			class Toolbelt {
-				text = "Fix Pickaxe.";
+				text = $STR_ACTIONS_FIX_PICKAXE;
 				script="spawn player_fixHatchet;";
 			};
 		};
@@ -679,7 +679,7 @@ class cfgWeapons {
 		class ItemActions {
 			class Use
 			{
-				text="Harvest Stone";
+				text= $STR_ACTION_MINE_STONE;
 				script="spawn player_mineStone;";
 			};
 		};
@@ -693,7 +693,7 @@ class cfgWeapons {
 		fixedTool = "ItemSledgeHammer";
 		class ItemActions {
 			class Toolbelt {
-				text = "Fix Sledge Hammer.";
+				text = $STR_ACTIONS_FIX_SLEDGE_HAMMER;
 				script="spawn player_fixHatchet;";
 			};
 		};
@@ -815,11 +815,11 @@ class CfgMagazines {
 	//Need to find a pic of one
 	class equip_lever : CA_Magazine {
 		scope = public;
-		displayName = "Lever (Handle)";
+		displayName = $STR_EQUIP_NAME_LEVER;
 		picture = "\dayz_equip\textures\equip_lever.paa";
 		ammo = "";
 		count = 1;
-		descriptionShort = "Used to fix tools.";
+		descriptionShort = $STR_EQUIP_DESC_LEVER;
 	};
 	
 	class 20Rnd_556x45_Stanag : CA_Magazine {
