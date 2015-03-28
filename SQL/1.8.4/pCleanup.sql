@@ -35,13 +35,13 @@ BEGIN
 #remove empty tents older than seven days
         DELETE
                 FROM object_data
-                WHERE (Classname = 'TentStorage%' or Classname = 'StashSmall%' or Classname = 'StashMedium%')
+                WHERE (Classname = 'TentStorage%' or Classname = 'StashSmall%' or Classname = 'StashMedium%' or Classname = 'DomeTentStorage%')
                         AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
                         AND Inventory = '[[[],[]],[[],[]],[[],[]]]';
        
         DELETE
                 FROM object_data
-                WHERE (Classname = 'TentStorage%' or Classname = 'StashSmall%' or Classname = 'StashMedium%')
+                WHERE (Classname = 'TentStorage%' or Classname = 'StashSmall%' or Classname = 'StashMedium%' or Classname = 'DomeTentStorage%')
                         AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
                         AND Inventory = '[]';          
  
