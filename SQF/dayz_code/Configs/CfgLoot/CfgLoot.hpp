@@ -42,6 +42,13 @@ class CfgLoot {
 		{"ItemWaterbottleUnfilled",0.01}
 	};
 	attachments[] = {
+		{"Attachment_M16_ACG",0.01},
+		{"Attachment_SA58_ACG",0.01},
+		{"Attachment_Sa58V_EP1_Aim",0.01},
+		{"Attachment_bizonSilencer",0.01},
+		{"Attachment_MP5A5_Silencer",0.01},
+		{"Attachment_M14_SniperScope",0.01},
+		{"Attachment_Kobra",0.01},
 		{"Attachment_FL",0.01},
 		{"Attachment_CCO",0.01},
 		{"Attachment_BELT",0.01},

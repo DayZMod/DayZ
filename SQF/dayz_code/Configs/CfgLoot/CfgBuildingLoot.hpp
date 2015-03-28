@@ -41,7 +41,7 @@ class CfgBuildingLoot {
 		//multiple spawns	
 			{"","Trash",0.30},
 			{"","ammo",0.10},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","generic",0.20}
 		};
 	};
@@ -75,7 +75,7 @@ class CfgBuildingLoot {
 			{"","Residential",0.60},
 			{"","ammo",0.10},
 			{"","Trash",0.30},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","generic",0.20}
 		};
 	};	
@@ -100,7 +100,7 @@ class CfgBuildingLoot {
 			{"ItemSodaLirik","magazine",0.05},
 			{"ItemSodaPeppsy","magazine",0.10},
 			{"","ammo",0.10},
-			{"","attachments",0.10}
+			{"","attachments",0.03}
 		};
 	};	
 	class Residential: Default {
@@ -145,7 +145,7 @@ class CfgBuildingLoot {
 		//multiple spawns	
 			{"","Residential",0.50},
 			{"","Trash",0.90},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","ammo",0.10},
 			{"","generic",0.50}
 		};
@@ -176,7 +176,7 @@ class CfgBuildingLoot {
 			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
 			{"","Trash",4},
-			{"","attachments",0.10}
+			{"","attachments",0.03}
 		};
 	};
 
@@ -196,7 +196,7 @@ class CfgBuildingLoot {
 			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
 			{"","Trash",4},
-			{"","attachments",0.10}
+			{"","attachments",0.03}
 		};
 	};
 
@@ -263,7 +263,7 @@ class CfgBuildingLoot {
 			{"","Trash",0.30},
 			{"","ammo",0.10},
 			{"","generic",0.20},
-			{"","attachments",0.10}
+			{"","attachments",0.03}
 		};
 	};
 	class Farm: Default {
@@ -304,7 +304,7 @@ class CfgBuildingLoot {
 		//multiple spawns		
 			{"","Trash",0.30},
 			{"","ammo",0.10},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","generic",0.20}
 		};
 	};
@@ -410,7 +410,7 @@ class CfgBuildingLoot {
 			{"equip_nails","magazine",0.06},
 		//multiple spawns
 			{"","ammo",0.10},	
-			{"","attachments",0.10},			
+			{"","attachments",0.03},			
 			{"","Trash",0.50}
 		};
 	};	
@@ -431,7 +431,7 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"","Trash",0.30},
 			{"","ammo",0.10},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","generic",0.40}
 		};
 	};
@@ -578,7 +578,7 @@ class CfgBuildingLoot {
 			//{"G36_C_SD_camo","weapon",0.01},
 			{"G36A_camo","weapon",0.03},
 			{"G36K_camo","weapon",0.03},
-			{"M9SD","weapon",0.02},
+			{"M9","weapon",0.02},
 			{"M24","weapon",0.01},
 		//special
 			{"MedBox2","object",0.05},
@@ -592,7 +592,7 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"","medical",0.25},
 			{"","ammo",0.10},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","militaryWEST",0.25}
 		};
 	};
@@ -614,10 +614,9 @@ class CfgBuildingLoot {
 			{"SVD_CAMO_DZ","weapon",0.01},
 			{"SVD_DZ","weapon",0.01},
 			{"M14_EP1","weapon",0.03},
-			{"bizon_silenced","weapon",0.04},
-			{"DMR_DZ","weapon",0.03},
+			{"bizon","weapon",0.04},
 			{"RPK_74","weapon",0.02},
-			{"MakarovSD","weapon",0.02},
+			{"Makarov","weapon",0.02},
 		//special
 			{"MedBox2","object",0.05},
 			{"AmmoBoxSmall_762","object",0.03},
@@ -631,7 +630,7 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"","medical",0.25},
 			{"","ammo",0.10},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","militaryEAST",0.25}
 		};
 	};
@@ -666,7 +665,7 @@ class CfgBuildingLoot {
 			{"transfusionKit","magazine",0.04},
 		//multiple spawns
 			{"","Trash",0.20},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","ammo",0.10}
 		};
 	};
@@ -689,12 +688,10 @@ class CfgBuildingLoot {
 			{"Colt1911","weapon",0.05},
 			{"M9","weapon",0.05},
 			{"M16A2","weapon",0.05},
-			{"M16A2GL","weapon",0.02},
-			{"M9SD","weapon",0.01},
-			{"MakarovSD","weapon",0.01},
+			{"M9","weapon",0.01},
+			{"Makarov","weapon",0.01},
 			{"AK_74","weapon",0.06},
-			{"M4A1_Aim","weapon",0.03},
-			{"AKS_74_kobra","weapon",0.06},
+			{"M4A1","weapon",0.03},
 			{"AKS_74_U","weapon",0.04},
 			{"AK_47_M","weapon",0.04},
 			{"M1014","weapon",0.06},
@@ -704,7 +701,6 @@ class CfgBuildingLoot {
 			{"Remington870_lamp","weapon",0.05},
 			{"glock17_EP1","weapon",0.08},
 			{"MP5A5","weapon",0.04},
-			{"MP5SD","weapon",0.01},
 			{"M4A3_CCO_EP1","weapon",0.02},
 			{"Skin_Soldier1_DZ","magazine",0.02},
 		//special
@@ -717,7 +713,7 @@ class CfgBuildingLoot {
 			{"","military",0.70},
 			{"","Trash",0.20},
 			{"","ammo",0.10},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","generic",0.10}
 		};
 	};
@@ -739,33 +735,29 @@ class CfgBuildingLoot {
 			{"Binocular_Vector","generic",0.01},
 		//weapons
 			{"M16A2","weapon",0.05},
-			{"M16A2GL","weapon",0.05},
 			{"M249_DZ","weapon",0.01},
-			{"M9SD","weapon",0.02},
-			{"MakarovSD","weapon",0.02},
+			{"M9","weapon",0.02},
+			{"Makarov","weapon",0.02},
 			{"AK_74","weapon",0.05},
-			{"M4A1_Aim","weapon",0.02},
-			{"AKS_74_kobra","weapon",0.05},
+			{"M4A1","weapon",0.02},
 			{"AKS_74_U","weapon",0.05},
 			{"AK_47_M","weapon",0.05},
 			{"M24","weapon",0.01},
 			{"SVD_CAMO_DZ","weapon",0.01},
 			{"SVD_DZ","weapon",0.02},
 			{"M1014","weapon",0.07},
-			{"DMR_DZ","weapon",0.02},
 			{"M4A1","weapon",0.05},
 			{"M14_EP1","weapon",0.03},
 			{"UZI_EP1","weapon",0.08},
 			{"Remington870_lamp","weapon",0.06},
 			{"glock17_EP1","weapon",0.07},
 			{"M240_DZ","weapon",0.01},
-			{"M4A1_AIM_SD_camo","weapon",0.04},
-			{"M16A4_ACG","weapon",0.05},
+			{"m16a4","weapon",0.05},
 			{"M4A1_HWS_GL_camo","weapon",0.02},
 			{"Mk_48_DZ","weapon",0.01},
 			{"M4A3_CCO_EP1","weapon",0.03},
-			{"Sa58V_RCO_EP1","weapon",0.04},
-			{"Sa58V_CCO_EP1","weapon",0.04},
+			{"Sa58V_EP1","weapon",0.04},
+			{"Sa58V_EP1","weapon",0.04},
 			//{"G36_C_SD_camo","weapon",0.01},
 			{"M40A3","weapon",0.02},
 			{"Sa58P_EP1","weapon",0.02},
@@ -786,7 +778,7 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"","military",0.70},
 			{"","Trash",0.30},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","generic",0.10}
 		};
 	};
@@ -841,7 +833,7 @@ class CfgBuildingLoot {
 		//multiple spawns
 			{"","Trash",0.20},
 			{"","ammo",0.10},
-			{"","attachments",0.10},
+			{"","attachments",0.03},
 			{"","generic",0.30}
 		};
 	};
