@@ -135,6 +135,7 @@ _countr = 0;
 				_magItemQtys = _x select 1;
 				_i = _forEachIndex;
 				{    
+				/*
 					if (_x == "Crossbow") then { _x = "Crossbow_DZ" }; // Convert Crossbow to Crossbow_DZ
 					if (_x == "BoltSteel") then { _x = "WoodenArrow" }; // Convert BoltSteel to WoodenArrow
 					if (_x == "ItemBloodbag") then { _x = "bloodBagONEG" }; // Convert ItemBloodbag into universal blood type/rh bag
@@ -143,7 +144,7 @@ _countr = 0;
 					//if (_x == "M14_EP1") then { _x = "M14_DZ" };
 					if (_x == "SVD") then { _x = "SVD_DZ" }; 
 					if (_x == "SVD_CAMO") then { _x = "SVD_CAMO_DZ" };
-					if (_x == "ItemMatchbox") then { _x = "Item5Matchbox" };
+				*/
 					if ((isClass(configFile >> (_config select _i) >> _x)) &&
 						{(getNumber(configFile >> (_config select _i) >> _x >> "stopThis") != 1)}) then {
 						if (_forEachIndex < count _magItemQtys) then {
@@ -166,19 +167,18 @@ _countr = 0;
 
 				[_object,_selection,_dam] call fnc_veh_setFixServer;
 			} forEach _hitpoints;
+			
 			_object setvelocity [0,0,1];
 			_object setFuel _fuel;
 			_object call fnc_veh_ResetEH;
-		} 
-		else { 
+		} else { 
 			if (_type in DayZ_nonCollide) then {
 				_pos set [2,0];
 				_object addMPEventHandler ["MPKilled",{_this call vehicle_handleServerKilled;}];
 			};
 			if (_pos select 2 == 0 or 0 == getNumber (configFile >> "CfgVehicles" >> _type >> "canbevertical")) then {
 				_object setVectorUp surfaceNormal _pos;
-			}
-			else {
+			} else {
 				_object setVectorUp [0,0,1];
 			};
 			_object setPosATL _pos;
@@ -186,6 +186,7 @@ _countr = 0;
 				_object allowDamage false;
 			};
 			if (_object isKindOf "TrapItems" or _object isKindOf "DZ_buildables") then {
+				//Use inventory for owner/clan info & traps armed state
 				{
 					if (typeName _x != "ARRAY") then {
 						// old method
@@ -196,10 +197,13 @@ _countr = 0;
 							case "ownerArray" : { _object setVariable ["ownerArray", _x select 1, true]; };
 							case "clanArray" : { _object setVariable ["clanArray", _x select 1, true]; };
 							case "armed" : { _object setVariable ["armed", _x select 1, true]; };
-							//etc
 						};
 					};
 				} forEach _inventory;
+				//Use hitpoints for Maintenance system.
+				{
+					if (_x == "Maintenance") then { _object setVariable ["Maintenance", true, true]; };
+				} foreach _hitPoints;
 			};
 		};
 		

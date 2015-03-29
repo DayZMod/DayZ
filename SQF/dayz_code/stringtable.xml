@@ -1630,13 +1630,13 @@
 			<Czech>Pro demontáž budovy schází %1.</Czech>
 		</Key>
 		<Key ID="str_maintenanceMissingTool">
-			<English>Missing %1 to maintenance building.</English>
+			<English>Missing %1 tool for maintenance.</English>
 			<Russian>Для обслуживания нужно иметь %1</Russian>
 			<French>Outil manquant pour l&apos;entretien: %1</French>
 			<Czech>Pro údržbu budovy schází %1.</Czech>
 		</Key>
 		<Key ID="str_maintenanceMissingPart">
-			<English>Missing %1 to maintenance building.</English>
+			<English>Missing %1 for maintenance.</English>
 			<Russian>Для обслуживания не хватает %1</Russian>
 			<French>Pièces manquantes pour l&apos;entretien: %1</French>
 			<Czech>Pro údržbu budovy schází %1.</Czech>

@@ -185,24 +185,26 @@ if (!isNil "sm_done") then {
 			[_objectID,_objectUID] call server_deleteObj;
 		};
 	};
-	/*
+
 	_object_maintenance = {
-		private["_inventory","_previous","_key"];
+		private["_ownerArray","_key"];
 
 		_ownerArray = _object getVariable ["ownerArray",[]];
 
 		if (_objectID == "0") then {
 			_key = format["CHILD:309:%1:%2:",_objectUID,_ownerArray];
+			_key = format["CHILD:306:%1:%2:%3:",_objectUID,[],0];
 		} else {
 			_key = format["CHILD:303:%1:%2:",_objectID,_ownerArray];
+			_key = format["CHILD:306:%1:%2:%3:",_objectID,[],0];
 		};
 		
-		#ifdef OBJECT_DEBUG
+	//	#ifdef OBJECT_DEBUG
 			diag_log ("HIVE: WRITE: Maintenance, "+ str(_key));
-		#endif
+	//	#endif
 		
 		_key call server_hiveWrite;
-	};*/
+	};
 
 
 	_object setVariable ["lastUpdate",diag_ticktime,true];
