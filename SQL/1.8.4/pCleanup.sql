@@ -50,6 +50,12 @@ BEGIN
                 FROM object_data
                 WHERE Classname = 'Wire_cat1'
                         AND DATE(last_updated) < CURDATE() - INTERVAL 2 DAY;
+						
+#remove CamoNets older than seven days
+        DELETE
+                FROM object_data
+                WHERE Classname = 'CamoNet_DZ'
+                        AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY;
                        
 #remove Tank Traps older than fifteen days
         DELETE
@@ -69,13 +75,13 @@ BEGIN
                 WHERE (Classname = 'BearTrap_DZ' or Classname = 'TrapBearTrapFlare' or Classname = 'TrapBearTrapSmoke' or Classname = 'Trap_Cans' or Classname = 'TrapTripwireFlare' or Classname = 'TrapTripwireGrenade' or Classname = 'TrapTripwireSmoke')
                         AND DATE(last_updated) < CURDATE() - INTERVAL 5 DAY; 
                         
-#remove incomplete fence's after 1 Day								
+#remove incomplete fences after 1 Day								
         DELETE
                 FROM object_data
                 WHERE (Classname = 'WoodenFence_1_foundation')
                         AND DATE(last_updated) < CURDATE() - INTERVAL 1 Day;  
                         
-#remove incomplete fence's after 3 Dayz								
+#remove incomplete fences after 3 Dayz								
         DELETE
                 FROM object_data
                 WHERE (Classname = 'WoodenFence_1_frame' or Classname = 'WoodenFence_quaterpanel' or Classname = 'WoodenFence_halfpanel' or Classname = 'WoodenFence_thirdpanel')
