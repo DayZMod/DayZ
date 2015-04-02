@@ -196,22 +196,6 @@ class CfgVehicles {
 		supplyRadius = 1;
 	};
 	#include "CfgVehicles\gathered_plants.hpp"
-	
-	class Wire_cat1 : BuiltItems {
-		displayName = $STR_BUILT_WIRE1;
-	};
-	
-	class Wire_cat2 : Wire_cat1 {
-		displayName = $STR_BUILT_WIRE2;
-	};
-	
-	class Hedgehog_DZ : BuiltItems {
-		displayName = $STR_BUILT_HEDGEHOG;
-	};
-	
-	class Sandbag1_DZ : BuiltItems {
-		displayName = $STR_BUILT_SANDBAG;
-	}; 
 };
 class CfgNonAIVehicles {
 	#include "CfgVehicles\StreetLamps.hpp"

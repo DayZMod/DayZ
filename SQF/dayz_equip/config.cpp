@@ -1684,7 +1684,7 @@ class CfgVehicles {
 		icon = "\Ca\misc\data\icons\I_drutkolczasty_CA.paa";
 		accuracy = 0.3;	// accuracy needed to recognize type of this target
 		mapSize = 5.5;
-		displayName = "Wire (CAT1)";
+		displayName = $STR_BUILT_WIRE1;
 		model = "\dayz_equip\models\wire_cat1.p3d";
 		destrType = "DestructTent";
 		armor = 100;
@@ -1736,7 +1736,7 @@ class CfgVehicles {
 	};
 		
 	class Wire_cat2 : Wire_cat1 {
-		displayName = "Wire (CAT2)";
+		displayName = $STR_BUILT_WIRE2;
 		model = "\dayz_equip\models\wire_cat2.p3d";
 	};
 	
@@ -1748,8 +1748,31 @@ class CfgVehicles {
 		icon = "\ca\data\data\Unknown_object.paa";
 		mapSize = 2;
 		armor = 400;
-		displayName = "Hedgehog (Steel)";
+		displayName = $STR_BUILT_HEDGEHOG;
 		vehicleClass = "Fortifications";
+		class dismantle {
+			requiredtools[] = 
+			{
+				//{"Item","Chance","ReturnedPart"}
+				{"ItemSledgeHammer",0.02,"ItemSledgeHammerBroken"},
+				{"ItemCrowbar",0.04,"ItemCrowbarBent"}
+			}; //Tools needed
+			dismantleToo = "ItemTankTrap"; //Returned magazine item
+			attemps = 5; //Random number
+		};
+		class UserActions {
+			class Dismantle {
+				displayNameDefault = $STR_BUILT_HEDGEHOG_Dismantle;
+				showWindow = 0;
+		        hideOnUse = 1;
+				displayName = $STR_BUILT_HEDGEHOG_Dismantle;
+				position="action";
+				radius = 2.7;
+				onlyForPlayer = 1;
+				condition = "(this getVariable ['CharacterID','0'] != dayz_characterID) && (alive this)";
+				statement = "this spawn object_dismantle;";
+			};
+		};
 	};
 	
 	class Sandbag1_DZ : BuiltItems {
@@ -1760,7 +1783,7 @@ class CfgVehicles {
 		icon = "\Ca\misc3\data\Icons\icon_fortBagFenceLong_ca.paa";
 		mapSize = 2;
 		armor = 400;
-		displayName = "SandBag";
+		displayName = $STR_BUILT_SANDBAG;
 		vehicleClass = "Fortifications";
 	};
 	
@@ -1775,61 +1798,6 @@ class CfgVehicles {
 		displayname = "Fence";
 		vehicleClass = "Fortifications";
 	};
-	/*
-	class BearTrap_DZ : TrapItems {
-		scope = public;
-		destrType = "DestructNo";
-		displayName = "Bear Trap";
-		model = "\dayz_equip\models\bear_trap.p3d";
-		
-		class Eventhandlers {
-			init = "_this execFSM '\z\addons\dayz_code\system\trap_monitor.fsm';";
-		};
-		
-		class AnimationSources {
-			class LeftShutter {
-				source = "user";
-				animPeriod = 0.1;
-				initPhase = 1;
-			};
-			
-			class RightShutter {
-				source = "user";
-				animPeriod = 0.1;
-				initPhase = 1;
-			};
-		};
-		
-		class UserActions {
-			class OpenTrap {
-				position = "";
-				displayName = "Reset Trap";
-				radius = 1.5;
-				onlyForPlayer = 0;
-				condition = "this animationPhase 'LeftShutter' == 1";
-				statement = "this animate ['LeftShutter', 0];this animate ['RightShutter', 0];";
-			};
-			
-			class CloseTrap {
-				position = "";
-				displayName = "Activate Trap";
-				radius = 1.5;
-				onlyForPlayer = 0;
-				condition = "this animationPhase 'LeftShutter' == 0";
-				statement = "this animate ['LeftShutter', 1];this animate ['RightShutter', 1];";
-			};
-			
-			class CollectTrap {
-				position = "";
-				displayName = "Take Trap";
-				radius = 1.5;
-				onlyForPlayer = 0;
-				condition = "this animationPhase 'LeftShutter' == 1";
-				statement = "[0,0,0,['cfgMagazines','TrapBear',this]] call object_pickup;";
-			};
-		};
-	};
-	*/
 	class ReammoBox;	// External class reference
 	
 	class WeaponHolderBase : ReammoBox {

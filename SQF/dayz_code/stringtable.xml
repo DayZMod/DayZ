@@ -8315,6 +8315,9 @@
 			<Czech>Drát (CAT2)</Czech>
 			<German>Kabel (CAT2)</German>
 		</Key>
+		<Key ID="STR_BUILT_HEDGEHOG_Dismantle">
+			<English>Dismantle Hedgehog (Steel)</English>
+		</Key>
 		<Key ID="STR_BUILT_HEDGEHOG">
 			<English>Hedgehog (Steel)</English>
 			<Russian>Противотанковый ёж</Russian>
