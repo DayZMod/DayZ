@@ -39,10 +39,10 @@ class CfgBuildingLoot {
 		//Bags
 			{"DZ_ALICE_Pack_EP1","object",0.02},
 		//multiple spawns	
-			{"","Trash",0.30},
-			{"","ammo",0.10},
+			{"","Trash",0.10},
+			{"","ammo",0.05},
 			{"","attachments",0.03},
-			{"","generic",0.20}
+			{"","generic",0.08}
 		};
 	};
 	class Castle: Default {
@@ -72,11 +72,11 @@ class CfgBuildingLoot {
 			{"DZ_Assault_Pack_EP1","object",0.04},
 			{"DZ_Czech_Vest_Puch","object",0.04},
 		//Multiple spawns	
-			{"","Residential",0.60},
-			{"","ammo",0.10},
-			{"","Trash",0.30},
+			{"","Residential",0.10},
+			{"","ammo",0.05},
+			{"","Trash",0.10},
 			{"","attachments",0.03},
-			{"","generic",0.20}
+			{"","generic",0.08}
 		};
 	};	
 	class CarePackages: Default {
@@ -99,7 +99,7 @@ class CfgBuildingLoot {
 			{"ItemTankTrap","magazine",0.04},
 			{"ItemSodaLirik","magazine",0.05},
 			{"ItemSodaPeppsy","magazine",0.10},
-			{"","ammo",0.10},
+			{"","ammo",0.05},
 			{"","attachments",0.03}
 		};
 	};	
@@ -143,11 +143,11 @@ class CfgBuildingLoot {
 			{"ItemDIY_Gate","weapon",0.01},
 			{"equip_lever","magazine",0.03},
 		//multiple spawns	
-			{"","Residential",0.50},
-			{"","Trash",0.90},
+			{"","Residential",0.10},
+			{"","Trash",0.10},
 			{"","attachments",0.03},
-			{"","ammo",0.10},
-			{"","generic",0.50}
+			{"","ammo",0.05},
+			{"","generic",0.08}
 		};
 	};
 
@@ -158,9 +158,9 @@ class CfgBuildingLoot {
 		lootChance = 0.4;
 		lootPos[] = {};
 		lootType[] = {
-			{"ItemLog","magazine", 0.19},
-			{"ItemPlank","magazine", 0.19},
-			{"equip_nails","magazine", 0.18},
+			{"ItemLog","magazine", 0.09},
+			{"ItemPlank","magazine", 0.09},
+			{"equip_nails","magazine", 0.08},
 			{"ItemScrews","magazine", 0.09},
 			{"equip_metal_sheet_rusted","magazine", 0.09},
 			{"ItemRSJ","magazine", 0.09},
@@ -175,7 +175,7 @@ class CfgBuildingLoot {
 		/*	{"ItemDIY_wood","weapon",0.04}, // temporary
 			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
-			{"","Trash",4},
+			{"","Trash",0.10},
 			{"","attachments",0.03}
 		};
 	};
@@ -187,15 +187,15 @@ class CfgBuildingLoot {
 		lootChance = 0.4;
 		lootPos[] = {};
 		lootType[] = {
-			{"ItemLog","magazine", 0.25},
-			{"ItemStone","magazine", 0.25},
-			{"equip_metal_sheet_rusted","magazine", 0.17},
-			{"ItemRSJ","magazine", 0.17},
-			{"ItemMetalSheet", "magazine", 0.17}, // corrugated iron sheet
+			{"ItemLog","magazine", 0.10},
+			{"ItemStone","magazine", 0.10},
+			{"equip_metal_sheet_rusted","magazine", 0.07},
+			{"ItemRSJ","magazine", 0.07},
+			{"ItemMetalSheet", "magazine", 0.07}, // corrugated iron sheet
 			/*{"ItemDIY_wood","weapon",0.04}, // temporary
 			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
-			{"","Trash",4},
+			{"","Trash",0.04},
 			{"","attachments",0.03}
 		};
 	};
@@ -207,9 +207,9 @@ class CfgBuildingLoot {
 		lootChance = 0.5;
 		lootPos[] = {};
 		lootType[] = {
-			{"ItemLog","magazine", 0.33},
-			{"ItemPlank","magazine", 0.33},
-			{"PartWoodPile","magazine", 0.33}
+			{"ItemLog","magazine", 0.01},
+			{"ItemPlank","magazine", 0.01},
+			{"PartWoodPile","magazine", 0.01}
 		};
 	};
 
@@ -260,9 +260,9 @@ class CfgBuildingLoot {
 			{"equip_1inch_metal_pipe","magazine",0.02},
 			{"ItemPlank","magazine", 0.16},
 		//multiple spawns	
-			{"","Trash",0.30},
-			{"","ammo",0.10},
-			{"","generic",0.20},
+			{"","Trash",0.10},
+			{"","ammo",0.05},
+			{"","generic",0.08},
 			{"","attachments",0.03}
 		};
 	};
@@ -302,10 +302,10 @@ class CfgBuildingLoot {
 			{"equip_lever","magazine",0.03},
 		//bags
 		//multiple spawns		
-			{"","Trash",0.30},
-			{"","ammo",0.10},
+			{"","Trash",0.10},
+			{"","ammo",0.05},
 			{"","attachments",0.03},
-			{"","generic",0.20}
+			{"","generic",0.08}
 		};
 	};
 	class Supermarket: Default {
@@ -409,9 +409,9 @@ class CfgBuildingLoot {
 		//special
 			{"equip_nails","magazine",0.06},
 		//multiple spawns
-			{"","ammo",0.10},	
+			{"","ammo",0.05},	
 			{"","attachments",0.03},			
-			{"","Trash",0.50}
+			{"","Trash",0.10}
 		};
 	};	
 	class Office: Residential {
@@ -429,10 +429,10 @@ class CfgBuildingLoot {
 			{"MeleeBaseBallBat","weapon",0.02},
 			{"equip_duct_tape","magazine",0.03},
 		//multiple spawns
-			{"","Trash",0.30},
-			{"","ammo",0.10},
+			{"","Trash",0.10},
+			{"","ammo",0.05},
 			{"","attachments",0.03},
-			{"","generic",0.40}
+			{"","generic",0.08}
 		};
 	};
 	class InfectedCamps: Default { //5
@@ -510,7 +510,6 @@ class CfgBuildingLoot {
 			{"PartWheel","generic",0.02},
 			{"PartFueltank","generic",0.02},
 			{"PartEngine","generic",0.02},
-			//{"WeaponHolder_ItemFuelcan","object",0.03},
 			{"ItemDIY_wood","weapon",0.02},
 			{"ItemDIY_metal","weapon",0.01},
 			{"ItemDIY_Gate","weapon",0.01},
@@ -534,9 +533,6 @@ class CfgBuildingLoot {
 			{"equip_gauze","magazine",0.04},
 			{"bloodTester","magazine",0.06},
 			{"transfusionKit","magazine",0.04},
-		//	{"MedBox2","generic",0.05},
-		//	{"MedBox1","generic",0.05},
-		//	{"FoodBox0","generic",0.05},
 		//mags special
 			{"equip_rope","magazine",0.03},
 			{"equip_herb_box","magazine",0.03},
@@ -545,16 +541,7 @@ class CfgBuildingLoot {
 			{"ItemSodaMtngreen","magazine",0.01},
 			{"PartWoodPile","magazine",0.06},
 			{"Skin_Camo1_DZ","magazine",0.01},
-			{"ItemBookBible","magazine",0.02},
-		//bags
-		//	{"DZ_ALICE_Pack_EP1","backpacks",0.01}, // 16
-		//	{"DZ_TK_Assault_Pack_EP1","backpacks",0.02}, // 16
-		//	{"DZ_CivilBackpack_EP1","backpacks",0.01}, // 24
-		//	{"DZ_Backpack_EP1","backpacks",0.01}, // 24
-		//multiple spawns
-			//{"","Trash",0.10},
-			//{"","generic",0.10},
-			//{"","Supermarket",0.60},
+			{"ItemBookBible","magazine",0.02}
 		};
 	};
 	class HeliCrashWEST: Default {
@@ -590,10 +577,10 @@ class CfgBuildingLoot {
 			{"Tranquiliser_Bolt","magazine",0.02},
 		//bags
 		//multiple spawns
-			{"","medical",0.25},
-			{"","ammo",0.10},
+			{"","medical",0.05},
+			{"","ammo",0.05},
 			{"","attachments",0.03},
-			{"","militaryWEST",0.25}
+			{"","militaryWEST",0.10}
 		};
 	};
 	class HeliCrashEAST: Default {
@@ -628,10 +615,10 @@ class CfgBuildingLoot {
 			{"Skin_Sniper1_DZ","magazine",0.03},
 		//bags
 		//multiple spawns
-			{"","medical",0.25},
-			{"","ammo",0.10},
+			{"","medical",0.05},
+			{"","ammo",0.05},
 			{"","attachments",0.03},
-			{"","militaryEAST",0.25}
+			{"","militaryEAST",0.10}
 		};
 	};
 	class Hospital: Default {
@@ -664,9 +651,9 @@ class CfgBuildingLoot {
 			{"bloodTester","magazine",0.06},
 			{"transfusionKit","magazine",0.04},
 		//multiple spawns
-			{"","Trash",0.20},
+			{"","Trash",0.10},
 			{"","attachments",0.03},
-			{"","ammo",0.10}
+			{"","ammo",0.05}
 		};
 	};
 	class Military: Default {
@@ -710,11 +697,11 @@ class CfgBuildingLoot {
 			{"DZ_British_ACU","object",0.02}, // 18
 			{"DZ_CivilBackpack_EP1","object",0.01}, // 24			
 		//multiple spawns
-			{"","military",0.70},
-			{"","Trash",0.20},
+			{"","military",0.10},
+			{"","Trash",0.10},
 			{"","ammo",0.10},
 			{"","attachments",0.03},
-			{"","generic",0.10}
+			{"","generic",0.08}
 		};
 	};
 	class MilitarySpecial: Default {
@@ -776,10 +763,10 @@ class CfgBuildingLoot {
 			{"DZ_CivilBackpack_EP1","object",0.01}, // 24
 			{"DZ_Backpack_EP1","object",0.01}, // 24		
 		//multiple spawns
-			{"","military",0.70},
-			{"","Trash",0.30},
+			{"","military",0.10},
+			{"","Trash",0.10},
 			{"","attachments",0.03},
-			{"","generic",0.10}
+			{"","generic",0.08}
 		};
 	};
 	class Hunting: Default {
@@ -831,10 +818,10 @@ class CfgBuildingLoot {
 			{"equip_string","magazine",0.04},
 			{"Crossbow_EX_Bolt","magazine",0.02},
 		//multiple spawns
-			{"","Trash",0.20},
-			{"","ammo",0.10},
+			{"","Trash",0.10},
+			{"","ammo",0.05},
 			{"","attachments",0.03},
-			{"","generic",0.30}
+			{"","generic",0.08}
 		};
 	};
 #include "CfgBuildingPos.hpp"
