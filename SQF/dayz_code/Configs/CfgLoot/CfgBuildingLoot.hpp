@@ -80,7 +80,7 @@ class CfgBuildingLoot {
 		};
 	};	
 	class CarePackages: Default {
-		lootChance = 0.2;
+		lootChance = 0.6;
 		lootPos[] = {};
 		lootType[] = {
 		//one spawn
@@ -141,7 +141,7 @@ class CfgBuildingLoot {
 			{"ItemDIY_wood","weapon",0.02},
 			{"ItemDIY_metal","weapon",0.01},
 			{"ItemDIY_Gate","weapon",0.01},
-			{"equip_lever","magazine",0.03},
+			{"equip_lever","magazine",0.01},
 		//multiple spawns	
 			{"","Residential",0.10},
 			{"","Trash",0.10},
@@ -161,17 +161,14 @@ class CfgBuildingLoot {
 			{"ItemLog","magazine", 0.09},
 			{"ItemPlank","magazine", 0.09},
 			{"equip_nails","magazine", 0.08},
-			{"ItemScrews","magazine", 0.09},
 			{"equip_metal_sheet_rusted","magazine", 0.09},
-			{"ItemRSJ","magazine", 0.09},
 			{"equip_metal_sheet","magazine", 0.09},
-			{"ItemMetalSheet", "magazine", 0.09}, // corrugated iron sheet
 			{"ItemStone","magazine", 0.05},
 			{"ItemPickaxe","weapon",0.01},
 			{"ItemPickaxeBroken","weapon",0.02},
 			{"ItemSledgeHammer","weapon",0.01},
 			{"ItemSledgeHammerBroken","weapon",0.02},
-			{"equip_lever","magazine",0.03},
+			{"equip_lever","magazine",0.01},
 		/*	{"ItemDIY_wood","weapon",0.04}, // temporary
 			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
@@ -190,8 +187,6 @@ class CfgBuildingLoot {
 			{"ItemLog","magazine", 0.10},
 			{"ItemStone","magazine", 0.10},
 			{"equip_metal_sheet_rusted","magazine", 0.07},
-			{"ItemRSJ","magazine", 0.07},
-			{"ItemMetalSheet", "magazine", 0.07}, // corrugated iron sheet
 			/*{"ItemDIY_wood","weapon",0.04}, // temporary
 			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
@@ -245,7 +240,6 @@ class CfgBuildingLoot {
 			{"equip_duct_tape","magazine",0.03},
 			{"equip_hose","magazine",0.02},
 			{"equip_nails","magazine",0.06},
-			{"ItemScrews","magazine",0.02},
 			{"Mosin_Nagant","weapon",0.01},
 			{"Mosin_Nagant_broken","weapon",0.03},	
 			{"equip_rag","magazine",0.01},
@@ -253,7 +247,7 @@ class CfgBuildingLoot {
 			{"ItemPickaxeBroken","weapon",0.02},
 			{"ItemSledgeHammer","weapon",0.01},
 			{"ItemSledgeHammerBroken","weapon",0.02},
-			{"equip_lever","magazine",0.03},
+			{"equip_lever","magazine",0.01},
 			{"equip_scrapelectronics","magazine",0.01},
 			{"equip_metal_sheet","magazine",0.02},
 			{"equip_2inch_metal_pipe","magazine",0.02},
@@ -299,7 +293,7 @@ class CfgBuildingLoot {
 			{"FoodCanBoneboy","magazine",0.01},
 			{"equip_nails","magazine",0.06},
 			{"equip_string","magazine",0.04},
-			{"equip_lever","magazine",0.03},
+			{"equip_lever","magazine",0.02},
 		//bags
 		//multiple spawns		
 			{"","Trash",0.10},
@@ -492,7 +486,7 @@ class CfgBuildingLoot {
 			{"ItemCompass","tool",0.05},
 			{"ItemFlashlight","tool",0.06},
 			{"ItemKnife","tool",0.07},
-			{"equip_lever","magazine",0.05},
+			{"equip_lever","magazine",0.02},
 			{"ItemMatchbox","tool",0.06},
 			{"Binocular","tool",0.06},
 			{"ItemCrowbar","tool",0.08},

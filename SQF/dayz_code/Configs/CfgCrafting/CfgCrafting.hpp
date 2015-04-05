@@ -34,6 +34,8 @@ class CfgCrafting {
 	#include "Recipes\Ammo\WoodenArrow.hpp"
 	//other
 	#include "Recipes\Other\woodencrate.hpp"
+	#include "Recipes\Other\nails.hpp"
+	#include "Recipes\Other\BackPack.hpp"
 	//#include "Recipes\Other\woodenCraftTable.hpp"
 	//Traps
 	#include "Recipes\Traps\TrapBearTrapFlare.hpp"
@@ -41,8 +43,5 @@ class CfgCrafting {
 	#include "Recipes\Traps\TrapTripwireCans.hpp"
 	#include "Recipes\Traps\TrapTripwireFlare.hpp"
 	#include "Recipes\Traps\TrapTripwireGrenade.hpp"
-	#include "Recipes\Traps\TrapTripwireSmoke.hpp"
-	
-	//Backpacks
-	#include "Recipes\Other\BackPack.hpp"	
+	#include "Recipes\Traps\TrapTripwireSmoke.hpp"	
 };

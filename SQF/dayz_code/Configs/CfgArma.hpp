@@ -317,7 +317,8 @@ class CfgSurvival {
 	class Inventory {
 		class Default {
 			RandomMagazines = 3;
-			GuaranteedMagazines[] = {"ItemBandage","HandRoadFlare"};
+			weapons[] = {"Makarov"};
+			GuaranteedMagazines[] = {"ItemBandage","8Rnd_9x18_Makarov","8Rnd_9x18_Makarov","HandRoadFlare"};
 			RandomPossibilitieMagazines[] = {"ItemBandage","ItemPainkiller"};
 			backpackWeapon = "";
 			//backpack = "DZ_Patrol_Pack_EP1";

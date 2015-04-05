@@ -77,9 +77,9 @@ _unit setDir _dir;
 
 // let's animate the Z
 if (local _unit) then {
-	_unit switchMove _move;
+	_unit PlayMove _move;
 } else {
-	[objNull,  _unit,  rswitchMove,  _move] call RE;
+	[objNull,  _unit,  rPlayMove,  _move] call RE;
 };
 
 //slow it down make sure the animation isnt running after the damage

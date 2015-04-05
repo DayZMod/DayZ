@@ -8471,6 +8471,9 @@
 			<French>Couper en planches</French>
 			<Czech>Rozštípat</Czech>
 		</Key>
+		<Key ID="STR_BLD_craft_equip_rope">
+			<English>String</English>
+		</Key>
 		<Key ID="STR_BLD_name_ItemPlank">
 			<English>Sawn Planks</English>
 			<Russian>Доски</Russian>

@@ -86,7 +86,7 @@ class CfgAmmo {
 		maxRangeProbab = 5;
 		explosive = 0;
 		simulationStep = 0.001;
-		timeToLive = 0.05;
+		timeToLive = 0.04;
 		soundHit[] = {"", db-90, 1};
 		soundEngine[] = {"", db-80, 4};
 	};
@@ -101,7 +101,7 @@ class CfgAmmo {
 		maxRangeProbab = 5;
 		explosive = 0;
 		simulationStep = 0.001;
-		timeToLive = 0.05;
+		timeToLive = 0.04;
 		soundHit[] = {"", db-90, 1};
 		soundEngine[] = {"", db-80, 4};
 	};
@@ -116,7 +116,7 @@ class CfgAmmo {
 		maxRangeProbab = 5;
 		explosive = 0;
 		simulationStep = 0.001;
-		timeToLive = 0.05;
+		timeToLive = 0.04;
 		soundHit[] = {"", db-90, 1};
 		soundEngine[] = {"", db-80, 4};
 	};
@@ -131,7 +131,7 @@ class CfgAmmo {
 		maxRangeProbab = 5;
 		explosive = 0;
 		simulationStep = 0.001;
-		timeToLive = 0.05;
+		timeToLive = 0.04;
 		soundHit[] = {"", db-90, 1};
 		soundEngine[] = {"", db-80, 4};
 	};
@@ -161,7 +161,7 @@ class CfgAmmo {
 		maxRangeProbab = 5;
 		explosive = 0;
 		simulationStep = 0.001;
-		timeToLive = 0.05;
+		timeToLive = 0.04;
 		soundHit[] = {"", db-90, 1};
 		soundEngine[] = {"", db-80, 4};
 	};
@@ -176,7 +176,7 @@ class CfgAmmo {
 		maxRangeProbab = 5;
 		explosive = 0;
 		simulationStep = 0.001;
-		timeToLive = 0.05;
+		timeToLive = 0.04;
 		soundHit[] = {"", db-90, 1};
 		soundEngine[] = {"", db-80, 4};
 	};
