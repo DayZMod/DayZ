@@ -624,31 +624,31 @@ class CfgBuildingLoot {
 	class Hospital: Default {
 		zombieChance = 0.4;
 		minRoaming = 2;
-		maxRoaming = 6;
+		maxRoaming = 4;
 		zombieClass[] = {"z_doctor","z_doctor","z_doctor"};
-		lootChance = 0.2;
+		lootChance = 0.4;
 		lootPos[] = {};
 		lootType[] = {
-			{"MedBox2","object",0.03},
-			{"MedBox1","object",0.02},
+			{"MedBox2","object",0.01},
+			{"MedBox1","object",0.01},
 			{"ItemBandage","magazine",0.06},
 			{"ItemPainkiller","magazine",0.04},
 			{"ItemMorphine","magazine",0.04},
 			{"ItemEpinephrine","magazine",0.03},
 			{"ItemAntibacterialWipe","magazine",0.04},
-			{"ItemAntibiotic","magazine",0.01},
+			{"ItemAntibiotic","magazine",0.03},
 			{"emptyBloodBag","magazine",0.04},
-			{"bloodBagOPOS","magazine",0.01},
-			{"bloodBagONEG","magazine",0.01},
-			{"bloodBagABPOS","magazine",0.01},
-			{"bloodBagABNEG","magazine",0.01},
-			{"bloodBagBPOS","magazine",0.01},
-			{"bloodBagBNEG","magazine",0.01},
-			{"bloodBagAPOS","magazine",0.01},
-			{"bloodBagANEG","magazine",0.01},
+			{"bloodBagOPOS","magazine",0.02},
+			{"bloodBagONEG","magazine",0.02},
+			{"bloodBagABPOS","magazine",0.02},
+			{"bloodBagABNEG","magazine",0.02},
+			{"bloodBagBPOS","magazine",0.02},
+			{"bloodBagBNEG","magazine",0.02},
+			{"bloodBagAPOS","magazine",0.02},
+			{"bloodBagANEG","magazine",0.02},
 			{"equip_gauzepackaged","magazine",0.02},
 			{"equip_gauze","magazine",0.04},
-			{"bloodTester","magazine",0.06},
+			{"bloodTester","magazine",0.03},
 			{"transfusionKit","magazine",0.04},
 		//multiple spawns
 			{"","Trash",0.10},
