@@ -1785,6 +1785,28 @@ class CfgVehicles {
 		armor = 400;
 		displayName = $STR_BUILT_SANDBAG;
 		vehicleClass = "Fortifications";
+		class dismantle {
+			requiredtools[] = 
+			{
+				//{"Item","Chance","ReturnedPart"}
+				{"ItemShovel",0.02,"ItemShovelBroken"}
+			}; //Tools needed
+			dismantleToo = "ItemSandbag"; //Returned magazine item
+			attemps = 5; //Random number
+		};
+		class UserActions {
+			class Dismantle {
+				displayNameDefault = $STR_BUILT_SANDBAG_Dismantle;
+				showWindow = 0;
+		        hideOnUse = 1;
+				displayName = $STR_BUILT_SANDBAG_Dismantle;
+				position="action";
+				radius = 2.7;
+				onlyForPlayer = 1;
+				condition = "(this getVariable ['CharacterID','0'] != dayz_characterID) && (alive this)";
+				statement = "this spawn object_dismantle;";
+			};
+		};
 	};
 	
 	class Fence_DZ: BuiltItems {

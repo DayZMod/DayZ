@@ -17,3 +17,11 @@ class ItemShovel: ItemCore
 		};
 	};
 };
+class ItemShovelBroken: ItemCore
+{
+	scope=2;
+	displayName="Broken Shovel";
+	model="\z\addons\dayz_communityassets\models\shovel.p3d";
+	picture="\z\addons\dayz_communityassets\pictures\equip_shovel_ca.paa";
+	descriptionShort=$STR_EQUIP_DESC_1b;
+};
