@@ -2,7 +2,7 @@ class RscDisplayGear {
 	idd = 106;
 	enableDisplay = 1;
 	movingEnable = 0;
-	onLoad = "[] spawn object_monitorGear; {player removeMagazines _x} count MeleeMagazines; call gear_ui_init; call ui_gear_sound; if (isNil('IGUI_GEAR_activeFilter')) then { IGUI_GEAR_activeFilter = 0;}; [this,'onLoad'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";/* diag_log 'RscDisplayGear::onLoad'; */
+	onLoad = "[] spawn object_monitorGear; {player removeMagazines _x} count MeleeMagazines; call gear_ui_init; call ui_gear_sound; if (isNil('IGUI_GEAR_activeFilter')) then { IGUI_GEAR_activeFilter = 0;}; [_this,'onLoad'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";/* diag_log 'RscDisplayGear::onLoad'; */
 	onUnload = "{player removeMagazines _x} count MeleeMagazines; call player_forceSave; call dayz_meleeMagazineCheck;"; /* diag_log 'RscDisplayGear::onunLoad'; */
 	onMouseMoving = "[] call gear_ui_hide;";
 	onMouseHolding = "[] call gear_ui_hide;";

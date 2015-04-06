@@ -53,7 +53,6 @@ class CfgWeapons {
 	//AR
 	class M16_base;
 	#include "CfgWeapons\Weapon\AR\M16A2.hpp"
-	
 	#include "CfgWeapons\Weapon\AR\M16A2GL.hpp"
 	#include "CfgWeapons\Weapon\AR\M16A4.hpp"
 	#include "CfgWeapons\Weapon\AR\M16A4ACG.hpp"

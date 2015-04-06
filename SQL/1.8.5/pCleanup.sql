@@ -40,10 +40,10 @@ BEGIN
  
 #remove barbed wire older than two days
         DELETE
-                FROM object_data
-                WHERE Classname = 'Wire_cat1'
-                        AND DATE(last_updated) < CURDATE() - INTERVAL 2 DAY;
-                       
+            FROM object_data
+				WHERE Classname = 'Wire_cat1'
+					AND DATE(last_updated) < CURDATE() - INTERVAL 2 DAY;
+					                      
 #remove Tank Traps older than fifteen days
         DELETE
                 FROM object_data
@@ -81,7 +81,15 @@ BEGIN
 #Remove Bad Data
        DELETE
 		 	FROM object_data
-         	WHERE Classname = '%_base';				
+         	WHERE Classname = '%_base';	
+			
+#Remove wire if the owner has died.						
+		DELETE
+			FROM Object_DATA
+			USING Object_DATA, Character_DATA
+				WHERE Object_DATA.Classname = 'Wire_cat1'
+					AND Object_DATA.CharacterID = Character_DATA.CharacterID
+					AND Character_DATA.Alive = 0			
 END//
 DELIMITER ;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

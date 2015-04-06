@@ -39,7 +39,7 @@ _icons = [
 _event = _this select 1;
 _data = _this select 0;
 //diag_log [diag_ticktime, __FILE__, _this];
-
+_display = nil;
 
 
 /*-------------------------------------------*/
@@ -71,7 +71,7 @@ _lbSelectedItem = {
 };
 
 _arrowsEnable = {
-	private ["_index","_selectedItem"];
+	private ["_index"];
 
 	_lbcontrol = _display displayctrl _lbIDC;
 
