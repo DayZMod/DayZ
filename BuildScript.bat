@@ -241,8 +241,8 @@ copy SQF\mod.cpp %Deploy%\%ModName%
 :: copy SQF\mod.paa %Deploy%\%ModName% - Not in folder
 copy SQF\do_not_use_without_permissions.txt %Deploy%\%ModName%
 copy SQF\credits.txt %Deploy%\%ModName%
-:: copy BattlEye-Filters\ %Deploy%\cfgdayz\BattlEye\ - Not in folder
-:: copy BattlEye-Filters\ %Deploy%\Battleye-Filters - Not in folder
+copy BattlEye-Filters\ %Deploy%\cfgdayz\BattlEye\
+copy BattlEye-Filters\ %Deploy%\Battleye-Filters
 
 
 cd %home%
