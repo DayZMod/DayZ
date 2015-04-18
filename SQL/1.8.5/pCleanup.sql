@@ -28,13 +28,13 @@ BEGIN
 #remove empty tents older than seven days
         DELETE
                 FROM object_data
-                WHERE (Classname = 'TentStorage%' or Classname = 'StashSmall%' or Classname = 'StashMedium%' or Classname = 'DomeTentStorage%')
+                WHERE (Classname like 'TentStorage%' or Classname like 'StashSmall%' or Classname like 'StashMedium%' or Classname like 'DomeTentStorage%')
                         AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
                         AND Inventory = '[[[],[]],[[],[]],[[],[]]]';
        
         DELETE
                 FROM object_data
-                WHERE (Classname = 'TentStorage%' or Classname = 'StashSmall%' or Classname = 'StashMedium%' or Classname = 'DomeTentStorage%')
+                WHERE (Classname like 'TentStorage%' or Classname like 'StashSmall%' or Classname like 'StashMedium%' or Classname like 'DomeTentStorage%')
                         AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
                         AND Inventory = '[]';          
  
@@ -81,7 +81,7 @@ BEGIN
 #Remove Bad Data
        DELETE
 		 	FROM object_data
-         	WHERE Classname = '%_base';	
+         	WHERE Classname like '%_base';	
 			
 #Remove wire if the owner has died.						
 		DELETE
