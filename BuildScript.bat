@@ -25,7 +25,7 @@ set build=8.3
 set home=F:\Github\DayzMod-Public\DayZ
 set tools=F:\Github\ARMA2Tools\
 Set Deploy=F:\Github\Deployed\DayZ
-set Dayz=%home%\@Dayz
+:: set Dayz=%home%\@Dayz Not used
 Set ServerHive=%home%\SQF
 Set ClientCode=%home%\SQF
 Set Binaries=%home%\Binaries
@@ -194,7 +194,7 @@ GOTO:menuLOOP
 
 :menu_0 Full
 mkdir %Deploy%
-mkdir %ModName%
+:: mkdir %ModName% - Folder not used
 mkdir %deploy%\@Hive
 mkdir %deploy%\%ModName%\Addons
 mkdir %deploy%\@Hive\Addons
@@ -228,7 +228,7 @@ echo (%date%) (%time%) ATTENTION: Creating Server side .PBO's
 
 echo (%date%) (%time%) ATTENTION: Getting Files
 cd %home%
-copy Binaries\Database.dll %Deploy%\
+:: copy Binaries\Database.dll %Deploy%\ - Not in folder
 copy Binaries\tbb.dll %Deploy%\
 copy Binaries\tbbmalloc.dll %Deploy%\
 copy Binaries\DatabaseMySql.dll %Deploy%\
@@ -238,7 +238,7 @@ copy Binaries\HiveEXT.ini %Deploy%\cfgdayz\
 copy Documentation\PRIVACY.txt %Deploy%\
 copy Documentation\README.txt %Deploy%\
 copy SQF\mod.cpp %Deploy%\%ModName%
-copy SQF\mod.paa %Deploy%\%ModName%
+:: copy SQF\mod.paa %Deploy%\%ModName% - Not in folder
 copy SQF\do_not_use_without_permissions.txt %Deploy%\%ModName%
 copy SQF\credits.txt %Deploy%\%ModName%
 copy BattlEye-Filters\ %Deploy%\cfgdayz\BattlEye\
