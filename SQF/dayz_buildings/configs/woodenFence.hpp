@@ -156,15 +156,21 @@ class WoodenFence_5: WoodenFence_4
 		armor = 500;
 		model = "z\addons\dayz_buildings\models\fence5.p3d";
 		displayName = $STR_BLD_name_WoodenFence_5;//"Wooden Fence Level 5"
+	/*
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
 		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
 		create = "WoodenFence_6";
 	};
+	*/
+	class Upgrade {
+		delete create;
+	};
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
 	};
 }; 
+
 class WoodenFence_6: WoodenFence_5
 {
 		scope = 2;
@@ -185,7 +191,7 @@ class WoodenFence_6: WoodenFence_5
 		requiredTools[] = {"ItemToolbox"};
 	};
 };
-/* 
+
 class WoodenFence_7: WoodenFence_6 
 {
 		scope = 2;
@@ -199,4 +205,3 @@ class WoodenFence_7: WoodenFence_6
 		delete create;
 	};
 }; 
-*/
