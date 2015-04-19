@@ -8,7 +8,7 @@ class WoodenGate_Base: DZ_buildables
 	mapSize = 0.2;
 	accuracy = 0.2;
 	vehicleClass = "dayz_buildings";
-	destrType="DestructNo";
+	destrType="DestructBuilding";
 	placement = "vertical";
 	class AnimationSources
 	{
