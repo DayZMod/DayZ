@@ -157,12 +157,8 @@ if (_hiveVer >= dayz_hiveVersionNo) then {
 	_isHiveOk = true;
 };
 
-_patch = {}; // piece of code used to patch the client without a full mod update - for script patching only
-if (_isHiveOk) then {
-	_patch = compile preprocessFileLineNumbers '\z\addons\dayz_server\patch.sqf';
-};
 
-PVCDZ_plr_Login = [_charID,_inventory,_backpack,_survival,_isNew,dayz_versionNo,_model,_isHiveOk,_newPlayer, _patch];
+PVCDZ_plr_Login = [_charID,_inventory,_backpack,_survival,_isNew,dayz_versionNo,_model,_isHiveOk,_newPlayer];
 diag_log format["%1, %2, %3, %4, %5, %6, %7, %8, %9",_charID,_inventory,_backpack,_survival,_isNew,dayz_versionNo,_model,_isHiveOk,_newPlayer];
 (owner _playerObj) publicVariableClient "PVCDZ_plr_Login";
 
