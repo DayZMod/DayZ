@@ -1,0 +1,12 @@
+Density=3000;
+Thickness=1;
+rough=0.3;
+dust=0;
+bulletPenetrability=990;
+bulletPenetrabilityWithThickness=500;
+soundEnviron=Empty;
+isWater=false;
+friction=0.7;
+restitution=0.3;
+impact = Hit_Plaster;
+soundHit = body;
