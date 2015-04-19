@@ -12,8 +12,8 @@ class Attachment_FL : CA_Magazine {
 	class ItemActions {
 		class Use {
 			text = $STR_ACTIONS_ATTACH_FL;
-			type = "FL";
-			script = "spawn player_attachAttchment;";
+			type = "Attachment_FL";
+			script = "spawn player_attachAttachment;";
 		};
 	};
 };

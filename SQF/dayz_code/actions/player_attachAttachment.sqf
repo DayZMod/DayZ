@@ -4,6 +4,7 @@ private["_item","_onLadder","_hasmeditem","_config","_text","_id"];
 
 _attachment = _this;
 _pWeap = primaryWeapon player;
+_state = animationState player;
 
 if (_pWeap == "") exitwith {  closedialog 0; cutText [localize "str_AttachmentmissingWeapon", "PLAIN DOWN"]; };
 
@@ -29,7 +30,7 @@ if (_ok) then {
 	 };
 	} foreach _weaponAttachments;
 	 
-	diag_log format["%1 - %2 = %3",_selectedAttachment,_weaponAttachments, _item];
+	//diag_log format["%1 - %2 = %3",_selectedAttachment,_weaponAttachments, _item];
 
 	if (_onLadder) exitWith { cutText [localize "str_player_21", "PLAIN DOWN"] };
 
@@ -42,7 +43,18 @@ if (_ok) then {
 		player removeMagazine _attachment;
 		player removeWeapon _pWeap;
 		player addWeapon _item; 
-
+		
+		if ( (primaryWeapon player) != "") then {
+			_type = primaryWeapon player;
+			_muzzles = getArray(configFile >> "cfgWeapons" >> _type >> "muzzles");
+			if ((_muzzles select 0) != "this") then {
+				player selectWeapon (_muzzles select 0);
+			} else {
+				player selectWeapon _type;
+			};
+		};
+		player switchMove _state;
+		
 		if (vehicle player != player) then {
 			_display = findDisplay 106;
 			_display closeDisplay 0;

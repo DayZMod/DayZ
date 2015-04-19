@@ -1,9 +1,9 @@
 //New Type
 
-class Attachment_BELT : CA_Magazine {
+class Attachment_Sup556 : CA_Magazine {
 	scope = public;
-	displayName = $STR_ATTACHMENT_NAME_BELT;
-	descriptionShort = $STR_ATTACHMENT_DESC_BELT;
+	displayName = "Sup556";
+	descriptionShort = "Attachment Sup556";
 	count = 1;
 	model = "z\addons\dayz_communityweapons\models\attachments\BELT";
 	picture = "\z\addons\dayz_communityweapons\models\attachments\BELT.paa";
@@ -12,7 +12,7 @@ class Attachment_BELT : CA_Magazine {
 	class ItemActions {
 		class Use {
 			text = $STR_ACTIONS_ATTACH_BELT;
-			type = "Attachment_BELT";
+			type = "Attachment_Sup556";
 			script = "spawn player_attachAttachment;";
 		};
 	};

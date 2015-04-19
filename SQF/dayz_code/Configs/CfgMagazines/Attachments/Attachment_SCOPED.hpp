@@ -12,8 +12,8 @@ class Attachment_SCOPED : CA_Magazine {
 	class ItemActions {
 		class Use {
 			text = $STR_ACTIONS_ATTACH_SCOPE;
-			type = "SCOPED";
-			script = "spawn player_attachAttchment;";
+			type = "Attachment_SCOPED";
+			script = "spawn player_attachAttachment;";
 		};
 	};
 };

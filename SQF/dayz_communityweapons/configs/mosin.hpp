@@ -66,10 +66,10 @@ class Mosin_Nagant: Mosin_Nagant_Base
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891.paa";
 	class Attachments
 	{
-		attachments[] = {"FL","SCOPED","BELT"};
-		FL = "Mosin_Nagant_FL";
-		SCOPED = "Mosin_Nagant_Scoped";
-		BELT = "Mosin_Nagant_Belt";
+		attachments[] = {"Attachment_FL","Attachment_SCOPED","Attachment_BELT"};
+		Attachment_FL = "Mosin_Nagant_FL";
+		Attachment_SCOPED = "Mosin_Nagant_Scoped";
+		Attachment_BELT = "Mosin_Nagant_Belt";
 	};
 };
 	
@@ -91,12 +91,29 @@ class Mosin_Nagant_FL : Mosin_Nagant_Base
 		scale[] = {1, 1, 0.5};
 		brightness = 0.1;
 	};
-
 	class Attachments
 	{
-		attachments[] = {"SCOPED","BELT"};
-		SCOPED = "Mosin_Nagant_Scoped_FL";
-		BELT = "Mosin_Nagant_Belt_FL";
+		attachments[] = {"Attachment_SCOPED","Attachment_BELT"};
+		Attachment_SCOPED = "Mosin_Nagant_Scoped_FL";
+		Attachment_BELT = "Mosin_Nagant_Belt_FL";
+	};
+	class ItemActions {
+	/*
+		class removeBelt {
+			text = "Remove Belt";
+			script = "; ['Attachment_BELT','Mosin_Nagant_Belt','Mosin_Nagant'] spawn player_removeAttachment;";
+		};
+	*/
+		class removeFL {
+			text = "Remove FlashLight";
+			script = "; ['Attachment_FL','Mosin_Nagant_FL','Mosin_Nagant'] spawn player_removeAttachment;";
+		};
+	/*
+		class removeScope {
+			text = "Remove Scope";
+			script = "; ['Attachment_SCOPED','Mosin_Nagant_Scoped','Mosin_Nagant'] spawn player_removeAttachment;";
+		};
+	*/
 	};	
 };
 
@@ -116,9 +133,25 @@ class Mosin_Nagant_Scoped : Mosin_Nagant_Base
 	distanceZoomMax = 110;
 	class Attachments
 	{
-		attachments[] = {"FL","BELT"};
-		FL = "Mosin_Nagant_Scoped_FL";
-		BELT = "Mosin_Nagant_Belt_Scoped";
+		attachments[] = {"Attachment_FL","Attachment_BELT"};
+		Attachment_FL = "Mosin_Nagant_Scoped_FL";
+		Attachment_BELT = "Mosin_Nagant_Belt_Scoped";
+	};
+	class ItemActions {
+	/*
+		class removeBelt {
+			text = "Remove Belt";
+			script = "; ['Attachment_BELT','Mosin_Nagant_Belt','Mosin_Nagant'] spawn player_removeAttachment;";
+		};
+		class removeFL {
+			text = "Remove FlashLight";
+			script = "; ['Attachment_FL','Mosin_Nagant_Scoped_FL','Mosin_Nagant_FL'] spawn player_removeAttachment;";
+		};
+	*/
+		class removeScope {
+			text = "Remove Scope";
+			script = "; ['Attachment_SCOPED','Mosin_Nagant_Scoped','Mosin_Nagant'] spawn player_removeAttachment;";
+		};
 	};
 };
 	
@@ -147,8 +180,24 @@ class Mosin_Nagant_Scoped_FL : Mosin_Nagant_Base
 	};
 	class Attachments
 	{
-		attachments[] = {"BELT"};
-		BELT = "Mosin_Nagant_Belt_Scoped_FL";
+		attachments[] = {"Attachment_BELT"};
+		Attachment_BELT = "Mosin_Nagant_Belt_Scoped_FL";
+	};
+	class ItemActions {
+		/*
+		class removeBelt {
+			text = "Remove Belt";
+			script = "; ['Attachment_BELT','Mosin_Nagant_Belt','Mosin_Nagant'] spawn player_removeAttachment;";
+		};
+		*/
+		class removeFL {
+			text = "Remove FlashLight";
+			script = "; ['Attachment_FL','Mosin_Nagant_Scoped_FL','Mosin_Nagant_Scoped'] spawn player_removeAttachment;";
+		};
+		class removeScope {
+			text = "Remove Scope";
+			script = "; ['Attachment_SCOPED','Mosin_Nagant_Scoped_FL','Mosin_Nagant_FL'] spawn player_removeAttachment;";
+		};
 	};
 };
 class Mosin_Nagant_Belt : Mosin_Nagant_Base
@@ -163,9 +212,25 @@ class Mosin_Nagant_Belt : Mosin_Nagant_Base
 	reloadMagazineSound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\reload-s.ogg, 0.010000, 1};
 	class Attachments
 	{
-		attachments[] = {"FL","SCOPED"};
-		FL = "Mosin_Nagant_Belt_FL";
-		SCOPED = "Mosin_Nagant_Belt_Scoped";
+		attachments[] = {"Attachment_FL","Attachment_SCOPED"};
+		Attachment_FL = "Mosin_Nagant_Belt_FL";
+		Attachment_SCOPED = "Mosin_Nagant_Belt_Scoped";
+	};
+	class ItemActions {
+		class removeBelt {
+			text = "Remove Belt";
+			script = "; ['Attachment_BELT','Mosin_Nagant_Belt','Mosin_Nagant'] spawn player_removeAttachment;";
+		};
+		/*
+		class removeFL {
+			text = "Remove FlashLight";
+			script = "; ['Attachment_FL','Mosin_Nagant_Belt_FL','Mosin_Nagant_Belt'] spawn player_removeAttachment;";
+		};
+		class removeScope {
+			text = "Remove Scope";
+			script = "; ['Attachment_SCOPED','Mosin_Nagant_Belt_Scoped','Mosin_Nagant_Scoped'] spawn player_removeAttachment;";
+		};
+		*/
 	};
 };
 
@@ -190,8 +255,24 @@ class Mosin_Nagant_Belt_FL : Mosin_Nagant_Base
 	};		
 	class Attachments
 	{
-		attachments[] = {"SCOPED"};
-		SCOPED = "Mosin_Nagant_Belt_Scoped_FL";
+		attachments[] = {"Attachment_SCOPED"};
+		Attachment_SCOPED = "Mosin_Nagant_Belt_Scoped_FL";
+	};
+	class ItemActions {
+		class removeBelt {
+			text = "Remove Belt";
+			script = "; ['Attachment_BELT','Mosin_Nagant_Belt_FL','Mosin_Nagant_FL'] spawn player_removeAttachment;";
+		};
+		class removeFL {
+			text = "Remove FlashLight";
+			script = "; ['Attachment_FL','Mosin_Nagant_Belt_FL','Mosin_Nagant_Belt'] spawn player_removeAttachment;";
+		};
+		/*
+		class removeScope {
+			text = "Remove Scope";
+			script = "; ['Attachment_SCOPED','Mosin_Nagant_Belt_Scoped','Mosin_Nagant_Scoped'] spawn player_removeAttachment;";
+		};
+		*/
 	};
 };
 
@@ -207,8 +288,24 @@ class Mosin_Nagant_Belt_Scoped : Mosin_Nagant_Base
 	reloadMagazineSound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\reload-s.ogg, 0.010000, 1};
 	class Attachments
 	{
-		attachments[] = {"FL"};
-		FL = "Mosin_Nagant_Belt_Scoped_FL";
+		attachments[] = {"Attachment_FL"};
+		Attachment_FL = "Mosin_Nagant_Belt_Scoped_FL";
+	};
+	class ItemActions {
+		class removeBelt {
+			text = "Remove Belt";
+			script = "; ['Attachment_BELT','Mosin_Nagant_Belt_Scoped','Mosin_Nagant_Scoped'] spawn player_removeAttachment;";
+		};
+		/*
+		class removeFL {
+			text = "Remove FlashLight";
+			script = "; ['Attachment_FL','Mosin_Nagant_Belt_Scoped','Mosin_Nagant_Belt_Scoped'] spawn player_removeAttachment;";
+		};
+		*/
+		class removeScope {
+			text = "Remove Scope";
+			script = "; ['Attachment_SCOPED','Mosin_Nagant_Belt_Scoped','Mosin_Nagant_Belt'] spawn player_removeAttachment;";
+		};
 	};
 };
 
@@ -230,6 +327,21 @@ class Mosin_Nagant_Belt_Scoped_FL : Mosin_Nagant_Base
 		angle = 40;
 		scale[] = {1, 1, 0.5};
 		brightness = 0.1;
+	};
+	
+	class ItemActions {
+		class removeBelt {
+			text = "Remove Belt";
+			script = "; ['Attachment_BELT','Mosin_Nagant_Belt_Scoped_FL','Mosin_Nagant_Scoped_FL'] spawn player_removeAttachment;";
+		};
+		class removeFL {
+			text = "Remove FlashLight";
+			script = "; ['Attachment_FL','Mosin_Nagant_Belt_Scoped_FL','Mosin_Nagant_Belt_Scoped'] spawn player_removeAttachment;";
+		};
+		class removeScope {
+			text = "Remove Scope";
+			script = "; ['Attachment_SCOPED','Mosin_Nagant_Belt_Scoped_FL','Mosin_Nagant_Belt_FL'] spawn player_removeAttachment;";
+		};
 	};
 };
 /*	

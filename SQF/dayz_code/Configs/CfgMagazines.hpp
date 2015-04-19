@@ -150,24 +150,20 @@ class CfgMagazines {
 	#include "CfgMagazines\HandGrenade.hpp"
 	//Skins
 	#include "CfgMagazines\Skin.hpp"
-	//Fuelcan
-	//#include "CfgMagazines\Fuelcan.hpp"
-	//#include "CfgMagazines\Jerrycan.hpp"
 	//medical
 	#include "CfgMagazines\medical.hpp"
 	#include "CfgMagazines\BloodBags.hpp"
 	
 	//Attachments
-	//Old Types
-	#include "CfgMagazines\Attachments\Attachment_ACG.hpp"
-	#include "CfgMagazines\Attachments\Attachment_AIM.hpp"
-	#include "CfgMagazines\Attachments\Attachment_Camo.hpp"
-	#include "CfgMagazines\Attachments\Attachment_GL.hpp"
-	#include "CfgMagazines\Attachments\Attachment_Kobra.hpp"
-	//#include "CfgMagazines\Attachments\Attachment_Pso.hpp" Not done
-	#include "CfgMagazines\Attachments\Attachment_Silencer.hpp"
-	#include "CfgMagazines\Attachments\Attachment_SniperScope.hpp"
-	#include "CfgMagazines\Attachments\Attachment_CrossbowCCO.hpp"
+	//Old Types, needs removing
+	#include "CfgMagazines\Attachments\legacy\Attachment_ACG.hpp"
+	#include "CfgMagazines\Attachments\legacy\Attachment_AIM.hpp"
+	#include "CfgMagazines\Attachments\legacy\Attachment_Camo.hpp"
+	#include "CfgMagazines\Attachments\legacy\Attachment_GL.hpp"
+	#include "CfgMagazines\Attachments\legacy\Attachment_Kobra.hpp"
+	#include "CfgMagazines\Attachments\legacy\Attachment_Silencer.hpp"
+	#include "CfgMagazines\Attachments\legacy\Attachment_SniperScope.hpp"
+	//#include "CfgMagazines\Attachments\legacy\Attachment_CrossbowCCO.hpp"
 	//New Type
 	#include "CfgMagazines\Attachments\Attachment_SCOPED.hpp"
 	#include "CfgMagazines\Attachments\Attachment_CCO.hpp"

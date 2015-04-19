@@ -1658,7 +1658,7 @@
 			<Czech>Připevnit k M4A1</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_BELT">
-			<English>Attach the belt</English>
+			<English>Attach belt</English>
 			<Czech>Připevnit pás</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_CCO">
@@ -1670,7 +1670,7 @@
 			<Czech>Připevnit ke kuši</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_FL">
-			<English>Attach the flashlight</English>
+			<English>Attach flashlight</English>
 			<Czech>Připevnit baterku</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_AK74">
@@ -1690,7 +1690,7 @@
 			<Czech>Připevnit k SCAR</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_SCOPE">
-			<English>Attach the scope sight</English>
+			<English>Attach Scope</English>
 			<Czech>Připevnit puškohled</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_MAKAROV">

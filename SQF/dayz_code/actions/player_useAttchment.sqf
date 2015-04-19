@@ -1,5 +1,7 @@
 private["_item","_onLadder","_hasmeditem","_config","_text","_id"];
 
+//Old System
+
 _item = _this;
 
 //Other initail info

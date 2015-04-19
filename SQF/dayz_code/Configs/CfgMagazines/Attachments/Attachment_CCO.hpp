@@ -12,8 +12,8 @@ class Attachment_CCO : CA_Magazine {
 	class ItemActions {
 		class Use {
 			text = $STR_ACTIONS_ATTACH_CCO;
-			type = "CCO";
-			script = "spawn player_attachAttchment;";
+			type = "Attachment_CCO";
+			script = "spawn player_attachAttachment;";
 		};
 	};
 };
