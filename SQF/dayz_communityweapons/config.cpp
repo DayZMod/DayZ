@@ -18,6 +18,7 @@ class cfgWeapons {
 	class Rifle;
 	
 	#include "configs\mosin.hpp"
+	//#include "configs\m4a1.hpp"
 };
 
 class CfgRecoils
