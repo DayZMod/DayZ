@@ -183,7 +183,7 @@ _countr = 0;
 			};
 			_object setPosATL _pos;
 			if (_object iskindof "DZ_buildables") then {
-				_object allowDamage false;
+				_object addMPEventHandler ["MPKilled",{_this call vehicle_handleServerKilled;}];
 			};
 			if (_object isKindOf "TrapItems" or _object isKindOf "DZ_buildables") then {
 				//Use inventory for owner/clan info & traps armed state
