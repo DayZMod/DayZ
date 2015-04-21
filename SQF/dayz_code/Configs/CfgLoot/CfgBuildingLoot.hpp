@@ -139,7 +139,6 @@ class CfgBuildingLoot {
 			{"ItemTrashPaper","magazine",0.03},
 			{"ItemTrashPaperMusic","magazine",0.03},
 			{"ItemDIY_wood","weapon",0.02},
-			{"ItemDIY_metal","weapon",0.01},
 			{"ItemDIY_Gate","weapon",0.01},
 			{"equip_lever","magazine",0.01},
 		//multiple spawns	
@@ -170,7 +169,6 @@ class CfgBuildingLoot {
 			{"ItemSledgeHammerBroken","weapon",0.02},
 			{"equip_lever","magazine",0.01},
 		/*	{"ItemDIY_wood","weapon",0.04}, // temporary
-			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
 			{"","Trash",0.10},
 			{"","attachments",0.03}
@@ -188,7 +186,6 @@ class CfgBuildingLoot {
 			{"ItemStone","magazine", 0.10},
 			{"equip_metal_sheet_rusted","magazine", 0.07},
 			/*{"ItemDIY_wood","weapon",0.04}, // temporary
-			{"ItemDIY_metal","weapon",0.02}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
 			{"","Trash",0.04},
 			{"","attachments",0.03}
@@ -335,7 +332,6 @@ class CfgBuildingLoot {
 			{"DZ_Czech_Vest_Puch","object",0.02}, // 16
 			{"DZ_TK_Assault_Pack_EP1","object",0.02}, // 16
 			{"ItemDIY_wood","weapon",0.02},
-			{"ItemDIY_metal","weapon",0.01},
 			{"ItemDIY_Gate","weapon",0.01},
 			//med
 			//{"ItemAntibiotic",0.01},
@@ -505,7 +501,6 @@ class CfgBuildingLoot {
 			{"PartFueltank","generic",0.02},
 			{"PartEngine","generic",0.02},
 			{"ItemDIY_wood","weapon",0.02},
-			{"ItemDIY_metal","weapon",0.01},
 			{"ItemDIY_Gate","weapon",0.01},
 		//Medical	
 			{"ItemBandage","magazine",0.06},
