@@ -1,4 +1,4 @@
-private["_item","_result","_dis","_sfx","_num", "_breaking"];
+private ["_item","_result","_dis","_sfx","_num","_breaking","_counter","_rocks","_findNearestRock","_objInfo","_lenInfo","_objName","_i","_k","_countOut","_isOk","_proceed","_animState","_started","_finished","_isMedic","_itemOut","_wpPos","_nearByPile"];
 
 
 _item = _this;
@@ -32,7 +32,7 @@ _findNearestRock = objNull;
 
 
 if (!isNull _findNearestRock) then {
-    _countOut = round(random 3);;
+    _countOut = round(random 3);
 
     //Remove melee magazines (BIS_fnc_invAdd fix) (add new melee ammo to array if needed)
     {player removeMagazines _x} forEach ["hatchet_swing","crowbar_swing","Machete_swing","Fishing_Swing"];
