@@ -8,7 +8,7 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `generateUID`(`inst` int) RETURNS bigint(20)
+CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `generateUID`(`inst` int) RETURNS bigint(20)
 BEGIN
 	DECLARE Min BIGINT DEFAULT 10000000;
 	DECLARE Max BIGINT DEFAULT 99999999;
