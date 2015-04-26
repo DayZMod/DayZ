@@ -2,6 +2,7 @@ class WoodenGate_Base: DZ_buildables
 {	
 //Not Used Just Base Class
 	scope = 1;
+		armor =1000;
 	displayName = $STR_BLD_name_WoodenGate_1;//"Wooden Gate Level 1"
 	model = "z\addons\dayz_buildings\models\gates\gate4_dzam.p3d";
 	icon = "Ca\misc\data\icons\i_danger_CA.paa";
@@ -120,6 +121,7 @@ class WoodenGate_3: WoodenGate_Base
 
 class WoodenGate_4: WoodenGate_Base
 {	
+	armor =1000;
 	scope = 2;
 	displayName = $STR_BLD_name_WoodenGate_4;//"Wooden Gate Level 4"
 	model = "z\addons\dayz_buildings\models\gates\gate4_dzam.p3d";
