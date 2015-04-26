@@ -6,14 +6,14 @@ DROP TABLE IF EXISTS `vehicle_inventory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `vehicle_inventory` (
-  `ObjectUID` bigint(20) NOT NULL,
+  `ID` int(11) NOT NULL,
   `Type` enum('Backpack','Magazine','Weapon') CHARACTER SET latin1 NOT NULL DEFAULT 'Magazine',
   `Classname` varchar(255) CHARACTER SET latin1 NOT NULL,
   `MinAmount` tinyint(3) NOT NULL DEFAULT '1',
   `MaxAmount` tinyint(3) NOT NULL DEFAULT '1',
   `Chance` double(20,10) NOT NULL DEFAULT '1.0000000000',
-  PRIMARY KEY (`ObjectUID`,`Type`,`Classname`),
-  KEY `ObjectUID` (`ObjectUID`) USING BTREE
+  PRIMARY KEY (`ID`,`Type`,`Classname`),
+  KEY `ObjectUID` (`ID`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

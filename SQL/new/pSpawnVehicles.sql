@@ -8,72 +8,113 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pSpawnVehicles`(IN `i` INT)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pSpawnVehicles`(IN `i` int)
 BEGIN
 	#---------------------------------------------------------------
 	#Change this to affect the maximum number of vehicles on the server.
-	DECLARE MaxVehicles INT DEFAULT 85;
+	DECLARE MaxVehicles INT DEFAULT 80;
 	
 	#Change this to affect the radius that is checked for existing vehicles when spawning.
-	#If set to 0 or negative vehicles will always spawn despite blocking objects.
-	#DECLARE SearchRadius DOUBLE DEFAULT 0;
+	#If set to 0 or negative vehicles will always spawn despite blocking vehicles.
+	DECLARE SearchRadius DOUBLE DEFAULT 10;
 	#---------------------------------------------------------------
 	
-	DECLARE ServerInstance VARCHAR(8) DEFAULT i;
+	DECLARE ServerInstance INT DEFAULT i;
+	DECLARE MaxNumSpawn INT DEFAULT MaxVehicles - countVehicles(ServerInstance);
 	
-	set @class_num := 0, @class := "";
-	set @type_num := 0, @type := "";
-	
-	#Insert new records into object_data.
-	INSERT INTO object_data (ObjectUID, Instance, Classname, CharacterID, Worldspace, Inventory, Hitpoints, Fuel, Damage, Datestamp)
-	SELECT	ObjectUID, ServerInstance, Classname, 0,
-					#Pick random location from vehicle_locations associated with vehicle_spawns.
-					(SELECT Worldspace FROM vehicle_locations WHERE vehicle_locations.ObjectUID = y.ObjectUID ORDER BY RAND() * Weight LIMIT 1),
-					#Generate random inventory.
-					randomizeVehicleInventory(ObjectUID),
-					#Generate random damage for parts.
-					randomizeVehicleHitpoints(ObjectUID),
-					#Generate random fuel level in the range ]MinFuel,MaxFuel[.
-					MinFuel + RAND() * (MaxFuel - MinFuel),
-					#Generate random damage in the range ]MinDamage,MaxDamage[.
-					MinDamage + RAND() * (MaxDamage - MinDamage),
-					SYSDATE()
-	FROM
+	DROP TEMPORARY TABLE IF EXISTS temp_objects;
+	CREATE TEMPORARY TABLE temp_objects AS
 	(
-		SELECT *, @class_num, (SELECT Type FROM object_classes WHERE Classname = x.Classname LIMIT 1) AS Type
+		SELECT	CONVERT(SUBSTRING(SUBSTRING_INDEX(@ws, ",", 2), LENGTH(SUBSTRING_INDEX(@ws, ",", 1)) + 2), DECIMAL(10, 5)) AS X,
+				CONVERT(SUBSTRING(SUBSTRING_INDEX(@ws, ",", 3), LENGTH(SUBSTRING_INDEX(@ws, ",", 2)) + 2), DECIMAL(10, 5)) AS Y
+		FROM object_data
+		WHERE CharacterID = 0
+			AND Instance = ServerInstance
+			AND (@ws := Worldspace) IS NOT NULL
+			AND (@ws := REPLACE(@ws, "[", "")) IS NOT NULL
+			AND (@ws := REPLACE(@ws, "]", "")) IS NOT NULL
+	);
+	
+	DROP TEMPORARY TABLE IF EXISTS temp_locations;
+	CREATE TEMPORARY TABLE temp_locations AS
+	(
+		SELECT vehicle_locations.ID, temp2.Worldspace, vehicle_locations.Weight
 		FROM
 		(
-			SELECT ObjectUID, Classname, MinDamage, MaxDamage, MinFuel, MaxFuel
+			SELECT Worldspace
+			FROM
+			(
+				SELECT	Worldspace,
+						CONVERT(SUBSTRING(SUBSTRING_INDEX(@ws, ",", 2), LENGTH(SUBSTRING_INDEX(@ws, ",", 1)) + 2), DECIMAL(10, 5)) AS X,
+						CONVERT(SUBSTRING(SUBSTRING_INDEX(@ws, ",", 3), LENGTH(SUBSTRING_INDEX(@ws, ",", 2)) + 2), DECIMAL(10, 5)) AS Y
+				FROM (SELECT Worldspace FROM vehicle_locations GROUP BY Worldspace) AS temp
+				WHERE (@ws := Worldspace) IS NOT NULL
+					AND (@ws := REPLACE(@ws, "[", "")) IS NOT NULL
+					AND (@ws := REPLACE(@ws, "]", "")) IS NOT NULL
+			) AS temp1
+			WHERE
+			(
+				@distance :=
+				(
+					SELECT MIN(SQRT((temp_objects.X - temp1.X) * (temp_objects.X - temp1.X) + (temp_objects.Y - temp1.Y) * (temp_objects.Y - temp1.Y)))
+					FROM temp_objects
+				)
+			) IS NULL OR @distance < SearchRadius
+		) AS temp2
+		JOIN vehicle_locations
+			ON vehicle_locations.Worldspace = temp2.Worldspace
+	);
+	
+	DROP TEMPORARY TABLE IF EXISTS temp_spawns;
+	CREATE TEMPORARY TABLE temp_spawns AS
+	(
+		SELECT temp.ID, Classname, Worldspace, Chance, MinFuel, MaxFuel, MinDamage, MaxDamage
+		FROM
+		(
+			SELECT *
 			FROM vehicle_spawns
-			#Filter out already spawned vehicles.
-			WHERE ObjectUID NOT IN (SELECT ObjectUID FROM object_data WHERE Instance = ServerInstance)
-			#Sort by Classname and random in preparation for filtering. See where clause below.
-			ORDER BY Classname, RAND()
-		) AS x
-		WHERE
-			#If @class is the same as previous increment @class_num, otherwise reset.
-			(@class_num := IF (Classname = @class, @class_num + 1, 1)) IS NOT NULL
-			#Set @class to the current Classname.
-			AND (@class := Classname) IS NOT NULL
-			#Pick n from each class, where n is the number of instances of said class still spawnable.
-			#e.g. if 2 hueys can be spawned in total and one is spawned, take one huey.
-			AND (@class_num <= (getVehicleClassMaxNum(Classname) - countVehiclesClass(ServerInstance, Classname)))
-		#Sort by Type and random in preparation for filtering. See where clause below.
-		ORDER BY Type, RAND()
-	) AS y
-	WHERE
-		#See above.
-		(@type_num := IF (Type = @type, @type_num + 1, 1)) IS NOT NULL
-		AND (@type := Type) IS NOT NULL
-		#Same as above but for class groups. e.g. each of the four helicopter classes may have a
-		#MaxNum of 2 (resulting in a total of 8), but only a total of 4 helicopters are allowed.
-		AND (@type_num <= (getVehicleGroupMaxNum(Type) - countVehiclesGroup(ServerInstance, Type)))
-		#Make a random check for each vehicle where the chance is defined in object_classes.
-		AND RAND() < (SELECT Chance FROM object_classes WHERE object_classes.Classname = y.Classname LIMIT 1);
+			WHERE (@numSpawnable := getNumSpawnable(ServerInstance, ID)) IS NOT NULL
+				AND @numSpawnable > 0
+			ORDER BY RAND()
+		) AS temp
+		JOIN temp_locations
+			ON temp_locations.ID = temp.Location
+		ORDER BY RAND()
+	);
+	
+	SET @numSpawned = 0;
+	WHILE (@numSpawned < MaxNumSpawn AND (SELECT COUNT(*) FROM temp_spawns) > 0) DO
+		SET @spawnid = (SELECT ID FROM temp_spawns LIMIT 1);
+		SET @chance = (SELECT Chance FROM temp_spawns LIMIT 1);
+		SET @numSpawnable = getNumSpawnable(ServerInstance, @spawnid);
+		IF (@numSpawnable > 0 AND RAND() < @chance) THEN
+			SET @worldspace = (SELECT Worldspace FROM temp_spawns LIMIT 1);
+			INSERT INTO object_data (ObjectUID, Classname, Instance, CharacterID, Worldspace, Inventory, Hitpoints, Fuel, Damage, Datestamp)
+			SELECT generateUID(ServerInstance), Classname, ServerInstance, 0, Worldspace,
+				randomizeVehicleInventory(Classname),
+				randomizeVehicleHitpoints(Classname),
+				MinFuel + RAND() * (MaxFuel - MinFuel),
+				MinDamage + RAND() * (MaxDamage - MinDamage),
+				SYSDATE()
+			FROM temp_spawns
+			LIMIT 1;
+			
+			DELETE FROM temp_spawns WHERE Worldspace = @worldspace;
+			
+			SET @numSpawned = @numSpawned + 1;
+		END IF;
+		
+		SET @numSpawnable = @numSpawnable - 1;
+		
+		IF (@numSpawnable < 1) THEN
+			DELETE FROM temp_spawns WHERE ID = @spawnid;
+		END IF;
+	END WHILE;
+	
+	SELECT CONCAT(@numSpawned, " vehicles spawned.");
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

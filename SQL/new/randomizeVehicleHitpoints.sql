@@ -8,7 +8,7 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `randomizeVehicleHitpoints`(`uid` bigint) RETURNS varchar(255) CHARSET latin1
+CREATE DEFINER=`root`@`localhost` FUNCTION `randomizeVehicleHitpoints`(`class` varchar(255)) RETURNS varchar(255) CHARSET latin1
     READS SQL DATA
 BEGIN
 	#---------------------------------------------------------------
@@ -17,20 +17,19 @@ BEGIN
 	DECLARE Threshold DOUBLE DEFAULT 0.15;
 	#---------------------------------------------------------------
 	
+	DECLARE Result VARCHAR(255);
+	DECLARE Hitpoints_ID INT DEFAULT (SELECT Hitpoints FROM vehicle2_spawns WHERE Classname = "UAZ_Unarmed_TK_EP1" LIMIT 1);
 	
-	DECLARE Hitpoints VARCHAR(255);
-	DECLARE ID INT DEFAULT (SELECT vehicle_spawns.Hitpoints FROM vehicle_spawns WHERE ObjectUID = uid LIMIT 1);
-	
-	IF (ISNULL(ID)) THEN
+	IF (ISNULL(Hitpoints_ID)) THEN
 		RETURN "[]";
 	END IF;
 	
 	SELECT GROUP_CONCAT("[\"", PartName, "\",", TRUNCATE(IF ((@r := MinDamage + RAND() * (MaxDamage - MinDamage)) < Threshold, MinDamage, @r), 4), "]")
-		INTO Hitpoints
+		INTO Result
 		FROM vehicle_hitpoints
-		WHERE vehicle_hitpoints.ID = ID;
+		WHERE ID = Hitpoints_ID;
 	
-	RETURN CONCAT_WS("", "[", Hitpoints, "]");
+	RETURN CONCAT_WS("", "[", Result, "]");
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
