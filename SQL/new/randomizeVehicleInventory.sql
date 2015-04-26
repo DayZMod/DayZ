@@ -8,31 +8,37 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `randomizeVehicleInventory`(`uid` int) RETURNS varchar(255) CHARSET latin1
+CREATE DEFINER=`root`@`localhost` FUNCTION `randomizeVehicleInventory`(`c` varchar(255)) RETURNS varchar(255) CHARSET latin1
     READS SQL DATA
 BEGIN
 	DECLARE WeaponClasses		VARCHAR(255);
 	DECLARE WeaponAmounts		VARCHAR(255);
-	DECLARE MagazineClasses	VARCHAR(255);
-	DECLARE MagazineAmounts	VARCHAR(255);
-	DECLARE BackpackClasses	VARCHAR(255);
-	DECLARE BackpackAmounts	VARCHAR(255);
+	DECLARE MagazineClasses		VARCHAR(255);
+	DECLARE MagazineAmounts		VARCHAR(255);
+	DECLARE BackpackClasses		VARCHAR(255);
+	DECLARE BackpackAmounts		VARCHAR(255);
 	
-	DECLARE MaxWeapons		INT DEFAULT (SELECT vehicle_spawns.MaxWeapons		FROM vehicle_spawns WHERE ObjectUID = uid LIMIT 1);
-	DECLARE MaxMagazines	INT DEFAULT (SELECT vehicle_spawns.MaxMagazines	FROM vehicle_spawns WHERE ObjectUID = uid LIMIT 1);
-	DECLARE MaxBackpacks	INT DEFAULT (SELECT vehicle_spawns.MaxBackpacks	FROM vehicle_spawns WHERE ObjectUID = uid LIMIT 1);
+	DECLARE InventoryID INT DEFAULT (SELECT Inventory FROM vehicle_spawns WHERE Classname = c LIMIT 1);
+	
+	DECLARE MaxWeapons		INT DEFAULT (SELECT MaxWeapons		FROM vehicle_spawns WHERE Classname = c LIMIT 1);
+	DECLARE MaxMagazines	INT DEFAULT (SELECT MaxMagazines	FROM vehicle_spawns WHERE Classname = c LIMIT 1);
+	DECLARE MaxBackpacks	INT DEFAULT (SELECT MaxBackpacks	FROM vehicle_spawns WHERE Classname = c LIMIT 1);
+	
+	IF (ISNULL(InventoryID)) THEN
+		RETURN "[]";
+	END IF;
 	
 	#Weapons
 	SET @amt := 0;
 	SET @sum := 0;
 	SELECT	GROUP_CONCAT("\"", Classname, "\""),
-					GROUP_CONCAT(IF(@sum > MaxWeapons, MaxWeapons - @sum + @amt, @amt))
+			GROUP_CONCAT(IF(@sum > MaxWeapons, MaxWeapons - @sum + @amt, @amt))
 	INTO WeaponClasses, WeaponAmounts
 	FROM 
 	(
 		SELECT *
-		FROM vehicle_inventory 
-		WHERE ObjectUID = uid 
+		FROM vehicle_inventory
+		WHERE ID = InventoryID
 			AND Type = "Weapon" 
 			AND RAND() < Chance
 		ORDER BY RAND()
@@ -45,13 +51,13 @@ BEGIN
 	SET @amt := 0;
 	SET @sum := 0;
 	SELECT	GROUP_CONCAT("\"", Classname, "\""),
-					GROUP_CONCAT(IF(@sum > MaxMagazines, MaxMagazines - @sum + @amt, @amt))
+			GROUP_CONCAT(IF(@sum > MaxMagazines, MaxMagazines - @sum + @amt, @amt))
 	INTO MagazineClasses, MagazineAmounts
 	FROM 
 	(
 		SELECT *
 		FROM vehicle_inventory 
-		WHERE ObjectUID = uid 
+		WHERE ID = InventoryID
 			AND Type = "Magazine" 
 			AND RAND() < Chance
 		ORDER BY RAND()
@@ -64,13 +70,13 @@ BEGIN
 	SET @amt := 0;
 	SET @sum := 0;
 	SELECT	GROUP_CONCAT("\"", Classname, "\""),
-					GROUP_CONCAT(IF(@sum > MaxBackpacks, MaxBackpacks - @sum + @amt, @amt))
+			GROUP_CONCAT(IF(@sum > MaxBackpacks, MaxBackpacks - @sum + @amt, @amt))
 	INTO BackpackClasses, BackpackAmounts
 	FROM 
 	(
 		SELECT *
 		FROM vehicle_inventory 
-		WHERE ObjectUID = uid 
+		WHERE ID = InventoryID
 			AND Type = "Backpack" 
 			AND RAND() < Chance
 		ORDER BY RAND()

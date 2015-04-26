@@ -8,7 +8,7 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `countVehiclesClass`(`instance` int,`c` varchar(255)) RETURNS int(11)
+CREATE DEFINER=`root`@`localhost` FUNCTION `countVehiclesClass`(`inst` int,`c` varchar(255)) RETURNS int(11)
     READS SQL DATA
 BEGIN
 	DECLARE count INT DEFAULT 0;
@@ -16,7 +16,7 @@ BEGIN
 	SELECT COUNT(*)
 		INTO count
 		FROM object_data
-		WHERE Instance = instance
+		WHERE Instance = inst
 		AND CharacterID = 0
 		AND Classname = c;
 	

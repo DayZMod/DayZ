@@ -8,16 +8,34 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `countVehiclesGroup`(`instance` int, `t` varchar(255)) RETURNS int(11)
+CREATE DEFINER=`root`@`localhost` FUNCTION `countVehiclesGroup`(`inst` int, `groupid` int) RETURNS int(11)
     READS SQL DATA
 BEGIN
 	DECLARE count INT;
 	
-	SELECT COUNT(*)
+	/*SELECT COUNT(*)
 		INTO count
 		FROM object_data AS obj
-		WHERE Instance = instance
-		AND t = (SELECT Type FROM object_classes AS class WHERE class.Classname = obj.Classname LIMIT 1);
+		WHERE CharacterID = 0
+			AND Instance = instance
+		AND t = (SELECT `Group` FROM vehicle_spawns AS spawn WHERE spawn.Classname = obj.Classname LIMIT 1);*/
+	
+	SELECT COUNT(*)
+	INTO count
+	FROM object_data
+	WHERE CharacterID = 0
+		AND Instance = inst
+		AND Classname IN
+		(
+			SELECT Classname
+			FROM vehicle_spawns
+			WHERE ID IN
+			(
+				SELECT Spawn_ID
+				FROM vehicle_spawns_groups
+				WHERE Group_ID = groupid
+			)
+		);
 	
 	RETURN count;
 END ;;
