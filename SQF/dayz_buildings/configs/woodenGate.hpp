@@ -101,7 +101,7 @@ class WoodenGate_2: WoodenGate_Base
 	model = "z\addons\dayz_buildings\models\gates\gate2_dzam.p3d";
 	class Upgrade { //to next stage
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
-		requiredParts[] = {"ItemLog","ItemPlank","ItemScrews"};
+		requiredParts[] = {"ItemLog","ItemPlank","equip_nails"};
 		create = "WoodenGate_3";
 	};
 };
