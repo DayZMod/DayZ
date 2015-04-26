@@ -6,7 +6,7 @@ _vehicle = _this select 0;
 _position = _this select 1;
 _unit = _this select 2;
 
-_buildables = count ((getposATL _vehicle) nearObjects ["DZ_buildables", 2]);
+_buildables = count ((getposATL _vehicle) nearObjects ["DZ_buildables", 3]);
 
 if (_buildables > 0) then {
 
