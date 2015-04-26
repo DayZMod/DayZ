@@ -5,7 +5,7 @@ _proceed = false;
 _exit = false;
 
 //Random times to run
-_rndattemps = getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "dismantle" >> "attemps");
+_rndattemps = getNumber (configFile >> "CfgVehicles" >> (typeOf _object) >> "dismantle" >> "attempts");
 _limit = 1 + round(random _rndattemps);
 
 //Dismantle magazine type
