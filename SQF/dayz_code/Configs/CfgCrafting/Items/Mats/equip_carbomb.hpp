@@ -1,4 +1,3 @@
-
 class ItemCarBomb : CA_Magazine {
 	scope = public;
 	count = 1;
