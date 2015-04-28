@@ -174,10 +174,13 @@ if (!isNil "sm_done") then {
 		_object setDamage 1;
 		
 		if (_objectID == "0") then {
-			_key = format["CHILD:306:%1:%2:%3:",_objectUID,[],1];
+			//Need to update hive to make a new call too allow UID to be updated for a killed event
+			//_key = format["CHILD:306:%1:%2:%3:",_objectUID,[],1];
+			_key = format["CHILD:310:%1:",_objectUID];
 		} else {
 			_key = format["CHILD:306:%1:%2:%3:",_objectID,[],1];
 		};
+		
 		diag_log ("HIVE: WRITE: "+ str(_key));
 		_key call server_hiveWrite;   
 		
@@ -193,6 +196,7 @@ if (!isNil "sm_done") then {
 
 		if (_objectID == "0") then {
 			_key = format["CHILD:309:%1:%2:",_objectUID,_ownerArray];
+			//Wont work just now.
 			_key = format["CHILD:306:%1:%2:%3:",_objectUID,[],0];
 		} else {
 			_key = format["CHILD:303:%1:%2:",_objectID,_ownerArray];
