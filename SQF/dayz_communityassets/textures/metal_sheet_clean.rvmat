@@ -1,0 +1,40 @@
+ambient[]={1,1,1,1};
+diffuse[]={1,1,1,1};
+forcedDiffuse[]={0,0,0,1};
+emmisive[]={0,0,0,1};
+specular[]={0.85500002,0.88700002,0.82300001,0.48900035};
+specularPower=65.300003;
+PixelShaderID="NormalMapSpecularDIMap";
+VertexShaderID="NormalMap";
+class Stage0
+{
+	texture="z\addons\dayz_communityassets\textures\metal_sheet_co.paa";
+	uvSource="tex";
+	Filter="Point";
+};
+class Stage1
+{
+	texture="z\addons\dayz_communityassets\textures\metal_sheet_nohq.paa";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+	Filter="Linear";
+};
+class Stage2
+{
+	texture="z\addons\dayz_communityassets\textures\metal_sheet_co_smd.paa";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+	Filter="Point";
+};

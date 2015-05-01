@@ -1,54 +1,47 @@
-![DayZ Logo](http://stuff.skaronator.com/20130823120139172.png)
+![DayZ Logo](http://dayz.com/assets/img/logos/header_logo.png)
 
 
 Current Version
 ==================================
- - 1.8
+ - 1.8.4.1
  
 Files updated
 ------------
- - Dayz
- - Dayz_anim
- - Dayz_code
- - Dayz_communityassets
- - dayz_sfx
- - st_bunnyhop
- - st_collision
- - st_evasive
+ - dayz
+ - dayz_anim
+ - dayz_buildings
+ - dayz_code
+ - dayz_communityassets
+ - dayz_equip
+ - dayz_weapons
+ - community_crossbow
+ - communityweapons
  - Dayz_server (server admins only)
  - Mission (server admins only) (Prerequisites)
  - SQL Files (server admins only)
 
-Requirements
+Requirements (server admins only)
 ------------
 
  - Microsoft Windows (Tested with 7, Server 2008)
  - ArmA 2 Combined Operations Dedicated Server (Steam users must merge ArmA2 and ArmA2 OA Directories)
- - Recommended ArmA 2 Operation Arrowhead Beta Patch (http://www.arma2.com/beta-patch.php)
  - Microsoft Visual C++ 2010 SP1 x86 Redistributable (http://www.microsoft.com/en-us/download/details.aspx?id=8328)
  
-Branches
+Releases
 --------
+- **Release_1.8.4.1** Released: Feb/11 **Latest Version**<br>
+**[Public Files](https://github.com/DayZMod/DayZ/releases/tag/1.8.4.1)**<br>
+**[BattlEye-Filters](https://github.com/DayZMod/Battleye-Filters/releases/tag/1.8.4)**<br>
 
-- **Release_1.8** Released: 14/Sept/13 **Latest Version**<br>
-**[Public Files](https://github.com/DayZMod/DayZ/tree/Release_1.8)**<br>
-**[BattlEye-Filters](https://github.com/DayZMod/Battleye-Filters/tree/Release_1.8)**<br>
-
-
-- **Release_1.7.7.1** Released: 18/June/13<br>
-**[Public Files](https://github.com/DayZMod/DayZ/tree/Release_1.7.7.1)**<br>
-**[BattlEye-Filters](https://github.com/DayZMod/Battleye-Filters/tree/Release_1.7.7.1)**<br>
-
-- **Release_1.7.7** Released: 10/June/13<br>
-**[Public Files](https://github.com/DayZMod/DayZ/tree/Release_1.7.7)**<br>
-**[BattlEye-Filters](https://github.com/DayZMod/Battleye-Filters/tree/Release_1.7.7)**<br>
+- **Release_1.8.4** Released: Feb/11 **Latest Version**<br>
+**[Public Files](https://github.com/DayZMod/DayZ/releases/tag/1.8.4)**<br>
+**[BattlEye-Filters](https://github.com/DayZMod/Battleye-Filters/releases/tag/1.8.4)**<br>
 
 
 Directories
 -----------
 
- - **Assets** - New Assets Stuff
- - **BattlEye-Filters** - Current Filters for BattlEye
+ - **Assets** - New Assets Stuff / temp directories
  - **Binaries** - Hive dlls
  - **Documentation** - Changelog & Credits and Suggestions
  - **Legacy** - Legacy Code of DayZMod

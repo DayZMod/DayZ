@@ -1,0 +1,14 @@
+ambient[]={0.27058825,0.27058825,0.27058825,0.79000002};
+diffuse[]={0.27058825,0.27058825,0.27058825,0.79000002};
+forcedDiffuse[]={0,0,0,0};
+emmisive[]={0,0,0,1};
+specular[]={0.99999988,1,0.94599998,0.8490001};
+specularPower=38.900002;
+PixelShaderID="Normal";
+VertexShaderID="Basic";
+class Stage0
+{
+	texture="z\addons\dayz_communityassets\textures\plastics_black_co.paa";
+	uvSource="tex";
+	Filter="Point";
+};

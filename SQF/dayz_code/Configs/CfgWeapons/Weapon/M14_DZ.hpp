@@ -1,0 +1,51 @@
+class M14_DZ : M14_EP1 {
+		htMin = 1;
+		htMax = 420;
+		afMax = 0;
+		mfMax = 0;
+		mFact = 1;
+		tBody = 100;
+		scope = 2;
+		model = "\ca\weapons_E\M14\M14";
+		picture = "\ca\weapons_e\data\icons\M14_CA.paa";
+		UiPicture = "\CA\weapons\data\Ico\i_regular_CA.paa";
+		dexterity = 1.53;
+		magazines[] = {"20Rnd_762x51_DMR"};
+		reloadTime = 2;
+		backgroundReload = 1;
+	class Single_Sniper	{
+		displayName = "$STR_DN_MODE_SEMIAUTO";
+		multiplier = 1;
+		burst = 1;
+		artilleryCharge = 1;
+		artilleryDispersion = 1;
+		begin1[] = {"ca\sounds\weapons\rifles\sniper_single_05",1.77828,1,1000};
+		soundBegin[] = {"begin1",1};
+		dispersion = 0.00045;
+		recoil = "recoil_single_primary_3outof10";
+		recoilProne = "recoil_single_primary_prone_3outof10";
+		minRange = 0;
+		minRangeProbab = 0.3;
+		midRange = 150;
+		midRangeProbab = 0.7;
+		maxRange = 300;
+		soundEnd[] = {}; //EMPTY
+		soundLoop[] = {}; //EMPTY
+		soundContinuous = 0;
+		soundBurst = 1;
+		reloadTime = 0.4;
+		ffCount = 1;
+		ffMagnitude = 0.5;
+		ffFrequency = 11;
+		flash = "gunfire";
+		flashSize = 0.1;
+		autoFire = 0;
+		useAction = 0;
+		useActionTitle = "";
+		showToPlayer = 1;
+		maxRangeProbab = 0.05;
+		aiRateOfFire = 10.0;
+		aiRateOfFireDistance = 800;
+	};
+	modes[] = {"Single_Sniper"};
+};

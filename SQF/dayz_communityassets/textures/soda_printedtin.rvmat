@@ -1,0 +1,7 @@
+ambient[] = {0.8,0.8,0.8,1.0};
+diffuse[] = {0.4,0.4,0.4,1.0};
+forcedDiffuse[] = {0.0,0.0,0.0,0.0};
+emmisive[] = {0.0,0.0,0.0,1.0};
+specular[] = {0.3,0.3,0.3,0.0};
+specularPower = 30; 
+ 

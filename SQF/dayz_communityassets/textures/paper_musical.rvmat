@@ -1,0 +1,13 @@
+ambient[]={1,1,1,1};
+diffuse[]={1,1,1,0.99999994};
+forcedDiffuse[]={0,0,0,1};
+emmisive[]={0,0,0,1};
+specular[]={1,1,1,0.99999988};
+specularPower=75.300003;
+PixelShaderID="Normal";
+VertexShaderID="Basic";
+class Stage0
+{
+	texture="z\addons\dayz_communityassets\textures\paper_sheet_musical_co.paa";
+	uvSource="tex";
+};

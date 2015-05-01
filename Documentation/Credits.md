@@ -13,8 +13,8 @@ Original Author
 Community Dev Project Managers
 ---------------
 
- * [R4Z0R49] (https://github.com/R4Z0R49)
- * [AlbyBDPK] (https://github.com/AlbyBDPK)
+ * [R4Z0R49](https://github.com/R4Z0R49)
+ * [AlbyBDPK](https://github.com/AlbyBDPK)
 
  
 -------------------------
@@ -30,7 +30,7 @@ These contributors have made many changes, over a fairly long time span, or for 
  * [facoptere](https://github.com/facoptere)
  * [icomrade](https://github.com/icomrade)
  * [thevisad](https://github.com/thevisad)
- * [DDesmond] (https://github.com/ddesmond)
+ * [DDesmond](https://github.com/ddesmond)
  * [Sharkiller](https://github.com/Sharkiller) (Spanish Tranlations)
  * [Defwen](https://github.com/Defwen) (Czech Translations)
  
@@ -69,6 +69,7 @@ These contributors have made specific changes for a particular bug fix or featur
  * [LordGoF](https://github.com/LordGoF)
  * [soapmak3r](https://github.com/soapmak3r) (Background Music)
  * [Hangender](https://github.com/hangender)
+ * [Purplish](https://github.com/Purplish)
  * Aj (Leadz)
  * Ander
  * Shaueh

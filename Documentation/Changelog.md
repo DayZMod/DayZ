@@ -2,6 +2,105 @@
 DayZ Mod Changelog
 ============
 
+Version 1.8.1
+---------------
+
+* TBA - Release Date 
+
+Client:  
+
+* dayz_code 
+* dayz_communityassets 
+
+Server:  
+
+* dayz_server (server admins only) 
+* mission (server admins only) (Prerequisites) Downloaded from http://www.silentspy.net/utility/dayz/mission-generator/ 
+* BattEye Filters (server admins only) 
+* SQL Files (server admins only) 
+
+   Changes:
+	* [NEW] - Mechanic - Nutrition system for all food types.
+	* [NEW] - Mechanic - Hunger and Thirst is now based on the new nutrition system.
+	* [NEW] - Mechanic - Salvage Parts from Vehicles (Players with a toolbox can now remove undamaged parts from vehicles in world)
+	* [NEW] - Storage - Dome Tent has now been added.
+	* [NEW] - Loot bias is now controlled by the server admin.
+	* [NEW] - Private SQL - Cleanup updated to move dead bodies(character_dead) to a new table before removal from main table(character_data).
+	* [NEW] - 1 new model (feather).
+	* [NEW] - Wooden arrows can now be created. (Wood,FeatherX2)
+	* [NEW] - Feathers added to Hens as you gut.
+	* [NEW] - Action menu update to destroy tents. (all items pile up outside)
+	* [NEW] - Blood types/blood system
+	- You may now fill bloodbags (filled blood bags only take 4k blood and give back 4k)
+	- incompatible blood transfusions will result in extended unconsciousness of the recipient.
+	- Ability to take blood from yourself and other players
+	- Blood types + Rh types are based off real world statistics
+	- ability to take a bit of blood off a recently dead corpes (may yield infection)
+	* [NEW] - Blood testing kit (to determine blood type) and disposable transfusion kit.
+	 
+	* [FIXED] - Infected Camps no longer repeatedly spawn infected.
+	* [FIXED] - Infected Camps Loot updated to be more in line with crash sites.
+	* [FIXED] - LOOT - Building locks have been moved to after the building has spawned loot. (hopefully this should allow the bias to sometimes fail but allow other pass's if no loot has spawned.
+	* [FIXED] - You can no longer refuel a destroyed vehicle using a 5l fuel can.
+	* [FIXED] - Humanity gain from blood transfusion moved to end of transfusion process. (Due to issues with skin change breaking the transfusion)
+	* [FIXED] - Zeds will no longer target vehicles. If the player is targeted before entering a vehicle Zeds will continue to engage the player
+	* [FIXED] - Carry slot, addToToolbelt/drop fixes
+	* [FIXED] - Ability to fly a helicopter with no main rotor on restart
+	* [FIXED] - Antihack (again)
+
+	* [UPDATED] - Thirst and hunger updated to no longer be a instant fill on eating/drinking.
+	* [UPDATED] - Melee weapons updated Range and shot count.
+	* [UPDATED] - Full moon nights is now select-able by the server admins.
+	* [UPDATED] - Salvage system updated to provide a chance some items like glass,engine and fuel can break during salvage
+	* [UPDATED] - View switched to first person on knock out/unconcious.
+
+______________________
+Version 1.8.0.1 
+----------------
+
+* TBA - Release Date 
+
+Affected Addons:  
+
+Client:  
+
+* dayz_code 
+* dayz_communityassets 
+
+Server:  
+
+* dayz_server (server admins only) 
+* mission (server admins only) (Prerequisites) Downloaded from http://www.silentspy.net/utility/dayz/mission-generator/ 
+* BattEye Filters (server admins only) 
+* SQL Files (server admins only) 
+
+   Changes:
+		  
+		* [FIXED] - Database cleanup has now been fixed and camo net added.
+		* [FIXED] - Date sync has now been fixed to provide night time again.
+		* [FIXED] - SVD and SVD_CAMO firemodes now working as they should.
+		* [FIXED] - Motocycle tt650 now has modified hitpart system should hopefully fix repair issues with it.
+		* [FIXED] - Backpack sounds not playing for opening the backpack of other players.
+		* [FIXED] - Building Delays Fixed. (Buildings will now only have 1 pass per the timer. Zeds 5 mins, Loot 15 mins) - Should provide FPS boost.
+		* [FIXED] - Loot Bias system Fixed. (Limits the amount of Piles within a building every 15 mins) - Should lower overall loot spawned, Should provide FPS Boost
+		* [FIXED] - Potential fix for the action menu issues. 
+		* [FIXED] - Fixed duping of meat while gutting animals and removing fuel/parts from a vehicle
+		* [FIXED] - Remove gas, repair etc. options from incorrect object.
+		* [FIXED] - Time sync on login
+		* [FIXED] - Siphon Fuel mechanic
+		* [FIXED] - Incorrect right click menu in gear if a melee object is on a player's back.
+		* [FIXED] - Removed refuel option on destroyed vehicles and study body option on animals.
+		* [FIXED] - Gutting animals works properly now
+		* [FIXED] - Humanity system and kills displaying incorrect.
+		* [FIXED] - Blood level is now synced direct to server every 10 secs. (No more sending to all players on server) Performance Boost.
+		
+		* [UPDATED] - Mechanic - Sepsis chance from "bleeding" raised from 1% to 30% (More like 3% once 10% bleeding effect is taken into account).
+		* [UPDATED] - System - Zed Aggro on all Weapon fire now changed to a more dynamic system to allow the overall distance the shot was hered to changes the way and amount of zeds responce. ((50 Meters and below = Run to location),( 50-71  = 50% chance they walk to location), (70 meters and up = walk to location))
+		* [UPDATED] - System - Zed Damage output base scale lowered (from 300 Normal/400 Viral to 250 Normal/350 Viral)
+		* [UPDATED] - PBX Boat speed reduced from 125 to 85.
+		* [UPDATED] - Login time has now been reduced.
+
+______________________
 VERSION 1.8.0.0  
 ---------------
 
@@ -135,11 +234,11 @@ Server:
 
 Notes:
 Fishing - We are still trying to decide about fishing the current system is fine but we have an issue with the fishing rod facing the wrong way. 
-
+______________________
 Version 1.7.7.1
 ---------------
 
-* Releasedate 18 June 2013
+* Release date 18 June 2013
 
 
 Affected addons:
@@ -147,7 +246,7 @@ Affected addons:
 * dayz_code
 * dayz_communityassets
 
-Serverside affected addons:
+Server side affected addons:
 * dayz_server (server admins only)
 * Mission (server admins only) (Prerequisites) Downloaded from http://www.silentspy.net/utility/dayz/mission-generator/
 * BattlEye-Filters (server admins only)
@@ -155,10 +254,11 @@ Serverside affected addons:
 
 
 	Changes:
-
-	    * [ADDED] - Server owners can now toggle server side debugging (Server RPT) for many options by editting /compile/server_toggle_debug.hpp) 
 	    
-	    * [FIXED] - Crashsite loot spawn fixed.
+
+	    * [NEW] - Server owners can now toggle server side debugging (Server RPT) for many options by editing /compile/server_toggle_debug.hpp)
+	    
+	    * [FIXED] - Crash site loot spawn fixed.
 	    * [FIXED] - LOS should now reset correct.
 	    * [FIXED] - Updated Chopper Repair system to include hull and missiles.
 	    * [FIXED] - Blood transfusion should now work properly.
@@ -170,7 +270,7 @@ Serverside affected addons:
 	    * [FIXED] - Added check to make sure no one is within 30 meters of zed spawning.
 	    * [FIXED] - Fixed bandit detection for kills and humanity changes.
 	    * [FIXED] - Fixed an issue where you wouldn't be able to pick up any loot.
-	    * [FIXED] - Fixed an issue where bandaging an other player wouldn't bandage them.
+	    * [FIXED] - Fixed an issue where bandaging another player wouldn't bandage them.
 	    * [FIXED] - Added a range check to zed attacks, no more 5-10m hits. (We Hope)
 	    * [FIXED] - Fixed issue where your player's body would be deleted if aborting too quickly.
 	    * [FIXED] - Shadow LODs on soda cans.
@@ -183,7 +283,6 @@ Serverside affected addons:
 	    * [UPDATED] - Reported bike damage is divided by 10.
 	    * [UPDATED] - Much quicker login/loading.
 	    * [UPDATED] - More reliable loot spawns.
-	    * [UPDATED] - Infection rates are much lower (based on #zeds attacking you) viral zeds have 4x greater infection rates
 	    * [UPDATED] - player knockdown by zeds should be less common.
 	    * [UPDATED] - SUV has been unbanned and readded under SUV_DZ Server admins must update there database.
 	    * [UPDATED] - fishing_Boat speed update from 15 to 45.

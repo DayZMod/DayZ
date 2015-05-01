@@ -1,0 +1,13 @@
+ambient[]={0.79607844,0.93725491,0.63921571,1};
+diffuse[]={0.79607844,0.93725491,0.63921571,1};
+forcedDiffuse[]={0,0,0,0};
+emmisive[]={0,0,0,1};
+specular[]={0.79607844,0.93725491,0.63921571,1};
+specularPower=27;
+PixelShaderID="Normal";
+VertexShaderID="Basic";
+class Stage0
+{
+	texture="#(argb,8,8,3)color(0.5,0.5,1,1,NOHQ)";
+	uvSource="tex";
+};

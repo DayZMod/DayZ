@@ -1,0 +1,32 @@
+ambient[] = {1.0, 1.0, 1.0, 1.0};
+diffuse[] = {1.0, 1.0, 1.0, 1.0};
+forcedDiffuse[] = {0.0, 0.0, 0.0, 1.0};
+emmisive[] = {0.0, 0.0, 0.0, 1.0};
+specular[] = {0.99498, 0.99498, 0.99498, 1.0};
+specularPower = 100.8;
+PixelShaderID = "NormalMapSpecularMap";
+VertexShaderID = "NormalMap";
+
+class Stage1 {
+	texture="z\addons\dayz_communityassets\textures\can_small_mat_clean_nohq.paa";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,0};
+		pos[]={0,0,0};
+	};
+};
+
+class Stage2 {
+	texture = "z\addons\dayz_communityassets\textures\can_small_mat_clean_smdi.paa";
+	uvSource = "tex";
+	
+	class uvTransform {
+		aside[] = {1.0, 0.0, 0.0};
+		up[] = {0.0, 1.0, 0.0};
+		dir[] = {0.0, 0.0, 0.0};
+		pos[] = {0, 0, 0};
+	};
+};

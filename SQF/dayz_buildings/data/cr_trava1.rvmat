@@ -1,0 +1,34 @@
+aambient[] = {1.5,1.5,1.5,1.0};
+diffuse[] = {0.5,0.5,0.5,1.0};
+forcedDiffuse[] = {0.0,0.0,0.0,0};
+specular[] = {1.0,1.0,1.0,0};
+specularPower = 10;
+emmisive[] = {0,0,0,0};
+PixelShaderID = "NormalMapDiffuse";
+VertexShaderID = "NormalMapDiffuseAlpha";
+class Stage1
+{
+ texture="CA\chernarus\data\cr_travad1_detail_nopx.paa";
+ uvSource = "tex";
+ class uvTransform
+ {
+  aside[] = {10,0,0};
+  up[] = {0,10,0};
+  dir[] = {0,0,10};
+  pos[] = {0,0,0};
+ };
+};
+class Stage2
+{
+ texture="CA\chernarus\data\cr_travad1_detail_co.paa";  // path to detail texture
+ uvSource = "tex";
+ class uvTransform
+ {
+  aside[] = {10,0,0};
+  up[] = {0,10,0};
+  dir[] = {0,0,10};
+  pos[] = {0,0,0};
+ };
+};
+
+

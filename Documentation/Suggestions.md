@@ -29,3 +29,4 @@ Suggestions
 
 * Add visual representation for humanity level. (normal humanity indicator will be removed together with the debug screen)
 * Can we please have street lights?
+* Improve FPS
