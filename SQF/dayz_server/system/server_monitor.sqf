@@ -81,7 +81,8 @@ _countr = 0;
 	_damage = 		if ((typeName (_x select 8)) == "SCALAR") then { _x select 8 } else { 0.9 };
 	
 	_dir = floor(random(360));
-	_pos = getMarkerpos "respawn_west";	
+	_pos = getMarkerpos "respawn_west";
+	_bomb = false;
 	_wsDone = false;
 	
 	if (count _worldspace >= 1 && {(typeName (_worldspace select 0)) == "SCALAR"}) then { 
@@ -108,7 +109,18 @@ _countr = 0;
 		
 		DayZ_nonCollide = ["TentStorage","TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3", "StashMedium4", "DomeTentStorage", "DomeTentStorage0", "DomeTentStorage1", "DomeTentStorage2", "DomeTentStorag3", "DomeTentStorage4", "CamoNet_DZ"];
 
-		
+		if ((["_Bomb", _type] call fnc_inString)) then{
+			// remove "_Bomb" from name
+			private ["_in", "_arr", "_newType"];
+			_arr = toArray(_type);
+			_newType = [];
+			for "_i" from 0 to (count _arr) - 6 do {
+				_newType = _newType+[_arr select _i];
+			};
+			_type = toString(_newType);
+			_bomb = true;
+		};
+
 		//Create it
 		_object = createVehicle [_type, _pos, [], 0, if (_type in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
 		_object setVariable ["lastUpdate",time];
@@ -145,6 +157,7 @@ _countr = 0;
 					if (_x == "SVD") then { _x = "SVD_DZ" }; 
 					if (_x == "SVD_CAMO") then { _x = "SVD_CAMO_DZ" };
 				*/
+					if (_x == "BOMB") then { _x = ""; PVDZ_dayzCarBomb = _object; publicVariableServer "PVDZ_dayzCarBomb";};
 					if ((isClass(configFile >> (_config select _i) >> _x)) &&
 						{(getNumber(configFile >> (_config select _i) >> _x >> "stopThis") != 1)}) then {
 						if (_forEachIndex < count _magItemQtys) then {

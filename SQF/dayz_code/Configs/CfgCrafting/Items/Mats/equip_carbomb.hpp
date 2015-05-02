@@ -1,4 +1,3 @@
-
 class ItemCarBomb : CA_Magazine {
 	scope = public;
 	count = 1;
@@ -6,7 +5,7 @@ class ItemCarBomb : CA_Magazine {
 	displayName = "Car Bomb";
 	model = "\ca\weapons\explosive.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\carbomb.paa";
-	descriptionShort = "Can be attached to a vehicles engine and then automaticly explode when the next player enters the drivers seat!";
+	descriptionShort = "Can be attached to a vehicles engine and then automatically explodes when the engine is turned on.";
 	class ItemActions {
 		class Use {
 			text = "Attach Carbomb";

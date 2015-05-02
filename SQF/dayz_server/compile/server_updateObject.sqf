@@ -95,9 +95,13 @@ if (!isNil "sm_done") then {
 		if (_object isKindOf "TrapItems") then {
 			_inventory = [["armed",_object getVariable ["armed", false]]];
 		} else {
+			_magCargo = getMagazineCargo _object;
+			if (_object getVariable["hasBomb", false]) then {
+				_magCargo set [0, (_magCargo select 0) + ["BOMB"]];
+			};
 			_inventory = [
 				getWeaponCargo _object,
-				getMagazineCargo _object,
+				_magCargo,
 				getBackpackCargo _object
 			];
 		};
