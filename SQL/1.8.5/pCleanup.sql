@@ -89,7 +89,7 @@ BEGIN
 			USING Object_DATA, Character_DATA
 				WHERE Object_DATA.Classname = 'Wire_cat1'
 					AND Object_DATA.CharacterID = Character_DATA.CharacterID
-					AND Character_DATA.Alive = 0			
+					AND Character_DATA.Alive = 0;			
 END;
 DELIMITER ;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
