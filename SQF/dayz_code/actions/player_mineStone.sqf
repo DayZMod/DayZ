@@ -32,7 +32,7 @@ _findNearestRock = objNull;
 
 
 if (!isNull _findNearestRock) then {
-    _countOut = round(random 3);
+    _countOut = 2 + floor(random 3);
 
     //Remove melee magazines (BIS_fnc_invAdd fix) (add new melee ammo to array if needed)
     {player removeMagazines _x} forEach ["hatchet_swing","crowbar_swing","Machete_swing","Fishing_Swing"];
@@ -120,7 +120,7 @@ if (!isNull _findNearestRock) then {
             player reveal _item;
         };
             
-        if ((_counter == _countOut) || _breaking) exitWith {
+        if ((_counter >= _countOut) || _breaking) exitWith {
             if (_breaking) then {
                 cutText [localize "str_PickAxeHandleBreaks", "PLAIN DOWN"];
             } else {
