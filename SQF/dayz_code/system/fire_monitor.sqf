@@ -8,7 +8,15 @@ while {alive _firePlace} do {
 		_mags = getMagazineCargo _firePlace;
 		clearMagazineCargoGlobal _firePlace;
 		clearWeaponCargoGlobal _firePlace;
-		_serial = (_mags select 0) find "PartWoodPile";
+		_fuel = ["PartWoodPile","ItemLog","ItemPlank"];
+		_serial = "";
+		{
+			if ((_mags select 0) find "PartWoodPile") exitwith { _serial = _x; );
+			if ((_mags select 0) find "ItemLog") exitwith { _serial = _x; );
+			if ((_mags select 0) find "ItemPlank") exitwith { _serial = _x; );
+		} foreach _fuel;
+		
+		//_serial = (_mags select 0) find "PartWoodPile"; or (_mags select 0) find "ItemLog"; or (_mags select 0) find "ItemPlank";
 		_qty = 0;
 		if (_serial >= 0) then {
 			_qty = (_mags select 1) select _serial;
