@@ -400,6 +400,7 @@ r_antiA_done = false;
 r_antiB_done = false;
 r_antiD_done = false;
 carryClick = false;
+dayz_workingInprogress = false;
 
 //INT Nutrition Info
 r_player_Nutrition = [0]; //[Calories]

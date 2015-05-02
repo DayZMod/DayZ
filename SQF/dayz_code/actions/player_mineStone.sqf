@@ -5,6 +5,9 @@ _item = _this;
 call gear_ui_init;
 closeDialog 1;
 
+if(dayz_workingInprogress) exitWith { cutText ["Mining already in progress!", "PLAIN DOWN"];};
+dayz_workingInprogress = true;
+
 // allowed rocks list move this later
 _rocks = ["r2_boulder1.p3d","r2_boulder2.p3d","r2_rock1.p3d","r2_rock2.p3d","r2_rocktower.p3d","r2_rockwall.p3d","r2_stone.p3d"];
 _findNearestRock = objNull;
@@ -154,3 +157,5 @@ if (!isNull _findNearestRock) then {
 } else {
 	cutText [localize "str_mining_no_rocks", "PLAIN DOWN"];
 };
+
+dayz_workingInprogress = false;
