@@ -1,4 +1,5 @@
 achievementServer = {
+diag_log ("AchievementServer Called");
 
 	private ["_player","_achievementID"];
 	
@@ -7,6 +8,12 @@ achievementServer = {
 	_playerOwnerID = owner _player;
 
 	diag_log (text format ["Achievement: %1 was awarded to %2", _achievementID, _player]);
+	
+	_achievements = _player getVariable "Achievements";
+	
+	_achievements set [_achievementID,1];
+	
+	_player setVariable ["Achievements",_achievements];
 
 	// now send the OSD message to the client that called this
 	achievementClientPV = [_achievementID];
