@@ -7,26 +7,31 @@ while {alive _firePlace} do {
 		_ok = false;
 		_mags = getMagazineCargo _firePlace;
 		clearMagazineCargoGlobal _firePlace;
-		clearWeaponCargoGlobal _firePlace;
+
 		_fuel = ["PartWoodPile","ItemLog","ItemPlank"];
-		_serial = "";
+		_serial = -1;
 		{
-			if ((_mags select 0) find "PartWoodPile") exitwith { _serial = _x; );
-			if ((_mags select 0) find "ItemLog") exitwith { _serial = _x; );
-			if ((_mags select 0) find "ItemPlank") exitwith { _serial = _x; );
+			private ["_find"];
+			
+			_find = ((_mags select 0) find _x);
+			
+			if (_find >= 0) exitwith { _serial = _find; };
+			
 		} foreach _fuel;
 		
-		//_serial = (_mags select 0) find "PartWoodPile"; or (_mags select 0) find "ItemLog"; or (_mags select 0) find "ItemPlank";
 		_qty = 0;
+		_classname = "";
 		if (_serial >= 0) then {
+			_classname = (_mags select 0) select _serial;
 			_qty = (_mags select 1) select _serial;
 		};
+		
 		_ok = false;
 		if (_qty > 0) then {
 			_qty = _qty - 1;
 			_ok = true;
 			if (_qty > 0) then {
-				_firePlace addMagazineCargoGlobal ["PartWoodPile",_qty];
+				_firePlace addMagazineCargoGlobal [_classname,_qty];
 			};
 		};
 		if (_ok) then {
