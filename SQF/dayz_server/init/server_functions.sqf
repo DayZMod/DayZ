@@ -23,6 +23,7 @@ server_spawnCrashSite  =    compile preprocessFileLineNumbers "\z\addons\dayz_se
 server_sendToClient =		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_sendToClient.sqf";
 server_Wildgenerate =		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\zombie_Wildgenerate.sqf";
 server_plantSpawner =		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_plantSpawner.sqf";
+base_fireMonitor = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\fire_monitor.sqf";
 
 server_lootSpawner =      compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_lootSpawner.sqf";
 server_spawnLoot =      compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_spawnLoot.sqf";
@@ -54,6 +55,18 @@ server_medicalSync = {
 	_player setVariable["rh_factor",(_array select 12)]; //12
 	_player setVariable["messing",(_array select 13)]; //13
 	_player setVariable["blood_testdone",(_array select 14)]; //14
+};
+
+dayz_Achievements = {
+	_achievementID = (_this select 0) select 0;
+	_player = (_this select 0) select 1;
+	_playerOwnerID = owner _player;
+	
+	_achievements = _player getVariable "Achievements";
+	
+	_achievements set [_achievementID,1];
+	
+	_player setVariable ["Achievements",_achievements];
 };
 
 vehicle_handleServerKilled = {

@@ -17,13 +17,16 @@ disableUserInput true;
 
 //add weapon on back to player...
 if (dayz_onBack != "") then {
-	//_body addWeapon dayz_onBack;
-    
+	//Add weapon on back to body.
+	_body addWeapon dayz_onBack;
+    /*
+	//Add weapon on back to the ground.
 	_pos = _body modeltoWorld [1,1,0];
 	//_pos set [2, 0];
     _item = createVehicle ["WeaponHolder", _pos, [], 0.0, "CAN_COLLIDE"];
     _item setPosATL [_pos select 0, _pos select 1, ((_pos select 2) + 0.1)];
     _item addWeaponCargoGlobal [dayz_onBack,1];
+	*/
 };
 //Send Death Notice
 //["PVDZ_plr_Death",[dayz_characterID,0,_body,_playerID,dayz_playerName]] call callRpcProcedure;

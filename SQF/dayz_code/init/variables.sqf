@@ -48,7 +48,7 @@ DayZ_traps = ["Trap_Cans", "TrapTripwireFlare", "TrapBearTrapSmoke", "TrapTripwi
 DayZ_ViralZeds = ["z_new_villager2","z_new_villager3","z_new_villager4","z_new_worker2","z_new_worker3","z_new_worker4"];
 
 //placed objects
-DayZ_SafeObjects = ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4","Land_Fire_DZ", "TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3", "StashMedium4", "Wire_cat1", "Sandbag1_DZ", "Fence_DZ", "Generator_DZ", "Hedgehog_DZ", "BearTrap_DZ", "DomeTentStorage", "DomeTentStorage0", "DomeTentStorage1", "DomeTentStorage2", "DomeTentStorage3", "DomeTentStorage4", "CamoNet_DZ", "Trap_Cans", "TrapTripwireFlare", "TrapBearTrapSmoke", "TrapTripwireGrenade", "TrapTripwireSmoke", "TrapBearTrapFlare"];
+DayZ_SafeObjects = ["Base_Fire_DZ","WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4","Land_Fire_DZ", "TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3", "StashMedium4", "Wire_cat1", "Sandbag1_DZ", "Fence_DZ", "Generator_DZ", "Hedgehog_DZ", "BearTrap_DZ", "DomeTentStorage", "DomeTentStorage0", "DomeTentStorage1", "DomeTentStorage2", "DomeTentStorage3", "DomeTentStorage4", "CamoNet_DZ", "Trap_Cans", "TrapTripwireFlare", "TrapBearTrapSmoke", "TrapTripwireGrenade", "TrapTripwireSmoke", "TrapBearTrapFlare"];
 
 //objects with gear menus
 DayZ_GearedObjects = ["Car", "Helicopter", "Motorcycle", "Ship", "TentStorage_base", "StashSmall_base", "StashMedium_base" ];
@@ -400,6 +400,7 @@ r_antiA_done = false;
 r_antiB_done = false;
 r_antiD_done = false;
 carryClick = false;
+dayz_workingInprogress = false;
 
 //INT Nutrition Info
 r_player_Nutrition = [0]; //[Calories]

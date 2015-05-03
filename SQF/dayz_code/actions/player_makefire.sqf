@@ -54,6 +54,7 @@ if ((count _worldspace) == 2) then {
 
 	[_fire,true] call dayz_inflame;
 	_fire spawn player_fireMonitor;
+
 	
 	if (dayz_playerAchievements select 14 < 1) then {
 	// Firestarter

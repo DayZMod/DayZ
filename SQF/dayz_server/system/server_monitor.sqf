@@ -107,7 +107,6 @@ _countr = 0;
 		//diag_log format["OBJ: %1 - %2,%3,%4,%5,%6,%7,%8", _idKey,_type,_ownerID,_worldspace,_inventory,_hitPoints,_fuel,_damage];
 		
 		DayZ_nonCollide = ["TentStorage","TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3", "StashMedium4", "DomeTentStorage", "DomeTentStorage0", "DomeTentStorage1", "DomeTentStorage2", "DomeTentStorag3", "DomeTentStorage4", "CamoNet_DZ"];
-
 		
 		//Create it
 		_object = createVehicle [_type, _pos, [], 0, if (_type in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
@@ -122,6 +121,8 @@ _countr = 0;
 		if (!_wsDone) then {
 			[_object,"position",true] call server_updateObject;
 		};
+		
+		if (_type == "Base_Fire_DZ") then { _object spawn base_fireMonitor; };
 		
 		//Dont add inventory for traps.
 		if (!(_object isKindOf "TrapItems") And !(_object iskindof "DZ_buildables")) then {
@@ -171,6 +172,7 @@ _countr = 0;
 			_object setvelocity [0,0,1];
 			_object setFuel _fuel;
 			_object call fnc_veh_ResetEH;
+			
 		} else { 
 			if (_type in DayZ_nonCollide) then {
 				_pos set [2,0];

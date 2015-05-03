@@ -104,7 +104,49 @@ class Land_Fire_DZ : Land_Fire {
 		transportMaxMagazines = 1;
 		transportMaxWeapons = 0;
 		transportMaxBackpacks = 0;
+	class UserActions {
+		class upgrade {
+			displayNameDefault = "Create Base Fire";
+			displayName = "Create Base Fire";
+			position = "ohniste";
+			radius = 3;
+			onlyForPlayer = 0;
+			condition = "alive this";
+			statement = "[this] spawn object_upgradeFireplace";
 		};
+		class lightup {
+			displayNameDefault = "Light fire";
+			displayName = "Light fire";
+			position = "ohniste";
+			radius = 3;
+			onlyForPlayer = 0;
+			condition = "[this,true] call dayz_inflame_showMenu";
+			statement = "[this,true] call dayz_inflame";
+		};
+		class putout {
+			displayNameDefault = "Put out fire";
+			displayName = "Put out fire";
+			position = "ohniste";
+			radius = 3;
+			onlyForPlayer = 0;
+			condition = "[this,false] call dayz_inflame_showMenu";
+			statement = "[this,false] call dayz_inflame";
+		};
+	};
+	class Upgrade {
+		requiredTools[] = {"ItemEtool"}; 
+		requiredParts[] = {"ItemLog", "ItemLog", "ItemStone", "ItemStone", "ItemStone"};
+		create = "Base_Fire_DZ";
+	};
+};
+	
+class Base_Fire_DZ : Land_Fire {
+		displayName = "Permanent fireplace";
+		transportMaxMagazines = 1;
+		transportMaxWeapons = 0;
+		transportMaxBackpacks = 0;
+		model = "\Ca\misc3\Campfire";
+};
 
 class Land_Camp_Fire_DZ : Land_Fire {
 	transportMaxMagazines = 3;

@@ -11,7 +11,7 @@ achievementClientMsg = {
 	
 	_AchievementText = switch (_achievement) do
 	{
-		case 0: {"Time Waster"};				// play for over 1 hour staight
+		case 0: {"Time Waster"};				// play for over 1 hour straight
 		case 1: {"High Flyer"};					// 500+ AGL
 		case 2: {"Grave Robber"};				// Stand near a "mass_grave"
 		case 3: {"Shopaholic"};					// Visit 5 supermarkets
