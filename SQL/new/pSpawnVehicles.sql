@@ -38,7 +38,7 @@ BEGIN
 	DROP TEMPORARY TABLE IF EXISTS temp_locations;
 	CREATE TEMPORARY TABLE temp_locations AS
 	(
-		SELECT vehicle_locations.ID, temp2.Worldspace, vehicle_locations.Weight
+		SELECT vehicle_locations.ID, temp2.Worldspace
 		FROM
 		(
 			SELECT Worldspace
@@ -59,7 +59,7 @@ BEGIN
 					SELECT MIN(SQRT((temp_objects.X - temp1.X) * (temp_objects.X - temp1.X) + (temp_objects.Y - temp1.Y) * (temp_objects.Y - temp1.Y)))
 					FROM temp_objects
 				)
-			) IS NULL OR @distance < SearchRadius
+			) IS NULL OR @distance > SearchRadius
 		) AS temp2
 		JOIN vehicle_locations
 			ON vehicle_locations.Worldspace = temp2.Worldspace
