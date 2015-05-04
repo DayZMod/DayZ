@@ -18,7 +18,7 @@ BEGIN
 	#---------------------------------------------------------------
 	
 	DECLARE Result VARCHAR(255);
-	DECLARE Hitpoints_ID INT DEFAULT (SELECT Hitpoints FROM vehicle_spawns WHERE Classname = "UAZ_Unarmed_TK_EP1" LIMIT 1);
+	DECLARE Hitpoints_ID INT DEFAULT (SELECT Hitpoints FROM vehicle_spawns WHERE Classname = class LIMIT 1);
 	
 	IF (ISNULL(Hitpoints_ID)) THEN
 		RETURN "[]";
