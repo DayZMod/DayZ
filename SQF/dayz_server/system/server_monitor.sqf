@@ -226,12 +226,6 @@ call server_plantSpawner;
 // launch the new task scheduler
 [] execVM "\z\addons\dayz_server\system\scheduler\sched_init.sqf";
 
-// remove annoying benches
-if (toLower(worldName) == "chernarus") then {
-	([4654,9595,0] nearestObject 145259) setDamage 1;
-	([4654,9595,0] nearestObject 145260) setDamage 1;
-};
-
 createCenter civilian;
 if (isDedicated) then {
 	endLoadingScreen;

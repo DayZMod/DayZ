@@ -81,6 +81,14 @@ if (!isDedicated) then {
 		execVM "\z\addons\dayz_code\system\mission\chernarus\security\init.sqf";
 		call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\antihack.sqf";
 	};
+	
+	// remove annoying benches
+	if (toLower(worldName) == "chernarus") then {
+		diag_log format["WARNING: Clearing Benches from %1",worldName];
+		([4654,9595,0] nearestObject 145259) setDamage 1;
+		([4654,9595,0] nearestObject 145260) setDamage 1;
+	};
+	
 	if (dayz_enableRules) then { execVM "rules.sqf"; };
 	if (!isNil "dayZ_serverName") then { execVM "\z\addons\dayz_code\system\watermark.sqf"; };
 	execVM "\z\addons\dayz_code\compile\client_plantSpawner.sqf";
