@@ -206,7 +206,7 @@ class CfgWeapons {
 	//class AKS_74_kobra: FakeWeapon {};
 	//class AKS_74_pso: FakeWeapon {};
 	//class AKS_74_U: FakeWeapon {};
-	class AKS_74_UN_kobra: FakeWeapon {};
+	//class AKS_74_UN_kobra: FakeWeapon {}; //unbanned -foxy
 	//class RPK_74: FakeWeapon {};
 	//class bizon: FakeWeapon {};
 	//class bizon_silenced: FakeWeapon {};
@@ -309,11 +309,11 @@ class CfgWeapons {
 	//class FN_FAL: FakeWeapon {};
 	//class FN_FAL_ANPVS4: FakeWeapon {};
 	//class G36C_camo: FakeWeapon {};
-	class G36_C_SD_camo: FakeWeapon {};
+	//class G36_C_SD_camo: FakeWeapon {}; //unbanned -foxy
 	//class G36A_camo: FakeWeapon {};
 	//class G36K_camo: FakeWeapon {};
 	//class G36C: FakeWeapon {};
-	class G36_C_SD_eotech: FakeWeapon {};
+	//class G36_C_SD_eotech: FakeWeapon {}; //unbanned -foxy
 	//class G36a: FakeWeapon {};
 	//class G36K: FakeWeapon {};
 	class MG36: FakeWeapon {};

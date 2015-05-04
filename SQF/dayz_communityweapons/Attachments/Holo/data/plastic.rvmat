@@ -1,0 +1,96 @@
+class StageTI
+{
+	texture="CA\weapons_E\Data\Default_TI_CA.tga";
+};
+ambient[]={0.75999999,0.75999999,0.75999999,1};
+diffuse[]={0.75999999,0.75999999,0.75999999,1};
+forcedDiffuse[]={0,0,0,0};
+emmisive[]={0,0,0,1};
+specular[]={0.20400074,0.21500079,0.22000085,1};
+specularPower=15;
+PixelShaderID="Super";
+VertexShaderID="Super";
+class Stage1
+{
+	texture="Ca\weapons_E\SCAR\Data\eotech553B_nohq.tga";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class Stage2
+{
+	texture="ca\weapons\Data\DetailMaps\Metal_rough_DT.tga";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={4,0,0};
+		up[]={0,4,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class Stage3
+{
+	texture="#(argb,8,8,3)color(0,0,0,0,MC)";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class Stage4
+{
+	texture="#(argb,8,8,3)color(1,1,1,1,AS)";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class Stage5
+{
+	texture="Ca\weapons_E\SCAR\Data\eotech553B_smdi.tga";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class Stage6
+{
+	texture="#(ai,32,128,1)fresnel(1.99,3.53)";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class Stage7
+{
+	texture="ca\data\env_land_plastic_co.tga";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
