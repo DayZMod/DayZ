@@ -1,19 +1,21 @@
-//New Type
-
-class Attachment_M203 : CA_Magazine {
+class Attachment_M203 : CA_Magazine
+{
 	scope = public;
-	displayName = "M203";
-	descriptionShort = "Attachment M203";
 	count = 1;
-	model = "z\addons\dayz_communityweapons\models\attachments\BELT";
-	picture = "\z\addons\dayz_communityweapons\models\attachments\BELT.paa";
-	type = 256;
+	type = WeaponSlotItem;
 	
-	class ItemActions {
-		class Use {
-			text = $STR_ACTIONS_ATTACH_BELT;
-			type = "Attachment_M203";
-			script = "spawn player_attachAttachment;";
+	model = "\z\addons\dayz_communityweapons\attachments\m203\m203.p3d";
+	picture = "\z\addons\dayz_communityweapons\data\m_placeholder_ca.paa";
+	
+	displayName = $STR_DZ_ATT_M203_NAME;
+	descriptionShort = "M203 Under-barrel grenade launcher TODO";
+	
+	class ItemActions
+	{
+		class AttachToPrimary
+		{
+			text = $STR_DZ_ATT_ACT_TO_PRIMARY;
+			script = "; [_id,1] call player_attachAttachment";
 		};
 	};
 };

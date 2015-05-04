@@ -1,14 +1,14 @@
-class Attachment_Sup556 : CA_Magazine
+class Attachment_Sup545 : CA_Magazine
 {
 	scope = public;
 	count = 1;
 	type = WeaponSlotItem;
 	
-	model = "\z\addons\dayz_communityweapons\attachments\suppressor556\suppressor556.p3d";
+	model = "\z\addons\dayz_communityweapons\attachments\suppressor545\suppressor545.p3d";
 	picture = "\z\addons\dayz_communityweapons\data\m_placeholder_ca.paa";
 	
-	displayName = $STR_DZ_ATT_SUP556_NAME;
-	descriptionShort = "5.56mm Sound Suppressor TODO";
+	displayName = $STR_DZ_ATT_SUP545_NAME;
+	descriptionShort = "5.45mm Sound Suppressor TODO";
 	
 	class ItemActions
 	{

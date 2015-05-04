@@ -156,21 +156,38 @@ class CfgMagazines {
 	
 	//Attachments
 	//Old Types, needs removing
-	#include "CfgMagazines\Attachments\legacy\Attachment_ACG.hpp"
-	#include "CfgMagazines\Attachments\legacy\Attachment_AIM.hpp"
-	#include "CfgMagazines\Attachments\legacy\Attachment_Camo.hpp"
-	#include "CfgMagazines\Attachments\legacy\Attachment_GL.hpp"
-	#include "CfgMagazines\Attachments\legacy\Attachment_Kobra.hpp"
-	#include "CfgMagazines\Attachments\legacy\Attachment_Silencer.hpp"
-	#include "CfgMagazines\Attachments\legacy\Attachment_SniperScope.hpp"
+	//#include "CfgMagazines\Attachments\legacy\Attachment_ACG.hpp"
+	//#include "CfgMagazines\Attachments\legacy\Attachment_AIM.hpp"
+	//#include "CfgMagazines\Attachments\legacy\Attachment_Camo.hpp"
+	//#include "CfgMagazines\Attachments\legacy\Attachment_GL.hpp"
+	//#include "CfgMagazines\Attachments\legacy\Attachment_Kobra.hpp"
+	//#include "CfgMagazines\Attachments\legacy\Attachment_Silencer.hpp"
+	//#include "CfgMagazines\Attachments\legacy\Attachment_SniperScope.hpp"
 	//#include "CfgMagazines\Attachments\legacy\Attachment_CrossbowCCO.hpp"
-	//New Type
+	
+	//New attachments
 	#include "CfgMagazines\Attachments\Attachment_SCOPED.hpp"
-	#include "CfgMagazines\Attachments\Attachment_CCO.hpp"
-	#include "CfgMagazines\Attachments\Attachment_FL.hpp"
 	#include "CfgMagazines\Attachments\Attachment_BELT.hpp"
 	
+	#include "CfgMagazines\Attachments\Attachment_FL.hpp"
+	#include "CfgMagazines\Attachments\Attachment_FL_Pist.hpp"
+	
+	#include "CfgMagazines\Attachments\Attachment_CCO.hpp"
+	#include "CfgMagazines\Attachments\Attachment_HOLO.hpp"
+	#include "CfgMagazines\Attachments\Attachment_Kobra.hpp"
+	#include "CfgMagazines\Attachments\Attachment_PSO1.hpp"
+	
+	#include "CfgMagazines\Attachments\Attachment_M203.hpp"
+	#include "CfgMagazines\Attachments\Attachment_GP25.hpp"
+	
+	#include "CfgMagazines\Attachments\Attachment_Sup9.hpp"
+	#include "CfgMagazines\Attachments\Attachment_Sup556.hpp"
+	#include "CfgMagazines\Attachments\Attachment_Sup545.hpp"
+	
+	#include "CfgMagazines\Attachments\Attachment_Ghillie.hpp"
 	
 	//crafting
 	#include "CfgCrafting\Mats.hpp"
+	
+	
 };

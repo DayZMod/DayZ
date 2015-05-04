@@ -1,67 +1,145 @@
-//New script to attach attachments to weapons.
-
-private["_item","_onLadder","_hasmeditem","_config","_text","_id"];
-
-_attachment = _this;
-_pWeap = primaryWeapon player;
-_state = animationState player;
-
-if (_pWeap == "") exitwith {  closedialog 0; cutText [localize "str_AttachmentmissingWeapon", "PLAIN DOWN"]; };
-
-//Other initail info
-call gear_ui_init;
-_onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-
-//Get config info
-_config = configFile >> "CfgMagazines" >> _attachment;
-_wConfig = configFile >> "CfgWeapons" >> _pWeap;
-
-_ok = isClass (_wConfig >> "Attachments");
-if (_ok) then {
- 
-	_selectedAttachment = getText(_config >> "ItemActions" >> "Use" >> "type");
-	_weaponAttachments = getArray(_wConfig >> "Attachments" >> "attachments");
+/*
+player_attachAttachment
 	
-	_item = "";
+	-foxy
 
+parameters:
+	string		attachment item classname
+	integer		type of weapon: 1 if primary, 0 if secondary
+*/
+
+#define WeaponSlotHandGun 2
+
+private
+[
+	"_attachment",
+	"_weaponType",
+	"_weapon",
+	"_onLadder",
+	"_attachmentConfig",
+	"_weaponConfig",
+	"_addableAttachments",
+	"_newWeapon",
+	"_muzzle"
+];
+
+//check if player is on a ladder and if so, exit
+_onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
+if (_onLadder) exitWith
+{
+	closeDialog 0;
+	cutText [localize "str_player_21", "PLAIN DOWN"];
+};
+
+//name of attachment item
+_attachment = _this select 0;
+_weapon = "";
+
+//get the player's weapon
+if ((_this select 1) == 1) then
+{
+	_weapon = primaryWeapon player;
+}
+else
+{
 	{
-	 if (_selectedAttachment == _x) then {
-		_item = getText(_wConfig >> "Attachments" >> _x);
-	 };
-	} foreach _weaponAttachments;
-	 
-	//diag_log format["%1 - %2 = %3",_selectedAttachment,_weaponAttachments, _item];
-
-	if (_onLadder) exitWith { cutText [localize "str_player_21", "PLAIN DOWN"] };
-
-	if (_item == "") then { 
-		closedialog 0;
-		sleep 0.2;
-		_text = getText(_config >> "displayName");
-		cutText [format[ localize "str_missingweapon", _text] , "PLAIN DOWN"];
-	} else {
-		player removeMagazine _attachment;
-		player removeWeapon _pWeap;
-		player addWeapon _item; 
+		_weaponType = getNumber (configFile >> "CfgWeapons" >> _x >> "type");
 		
-		if ( (primaryWeapon player) != "") then {
-			_type = primaryWeapon player;
-			_muzzles = getArray(configFile >> "cfgWeapons" >> _type >> "muzzles");
-			if ((_muzzles select 0) != "this") then {
-				player selectWeapon (_muzzles select 0);
-			} else {
-				player selectWeapon _type;
-			};
+		//note: assumes no handgun would have multiple binary flags set.
+		if (_weaponType == WeaponSlotHandGun) exitWith
+		{
+			_weapon = _x;
 		};
-		player switchMove _state;
-		
-		if (vehicle player != player) then {
-			_display = findDisplay 106;
-			_display closeDisplay 0;
-		};
-	};	
-} else {
+	} foreach weapons player;
+};
+
+//check if player has a weapon
+if (_weapon == "") exitWith
+{
 	closedialog 0;
-	sleep 0.2;
-	cutText [localize "str_AttachmentWeaponConfig", "PLAIN DOWN"];
+	
+	if ((_this select 1) == 1) then
+	{
+		cutText [localize "str_AttachmentmissingWeapon", "PLAIN DOWN"];
+	}
+	else
+	{
+		cutText [localize "str_AttachmentmissingWeapon2", "PLAIN DOWN"];
+	};
+};
+
+//retrieve attachment and weapon configs
+_attachmentConfig = configFile >> "CfgMagazines" >> _attachment;
+_weaponConfig = configFile >> "CfgWeapons" >> _weapon;
+
+//check if weapon has Attachments class
+if (!isClass(_weaponConfig >> "Attachments")) exitWith
+{
+	closeDialog 0;
+	
+	if ((_this select 1) == 1) then
+	{
+		cutText [localize "str_AttachmentWeaponConfig", "PLAIN DOWN"];
+	}
+	else
+	{
+		cutText [localize "str_AttachmentWeaponConfig2", "PLAIN DOWN"];
+	};
+};
+
+//list of attachments that can be added to current weapon
+_addableAttachments = getArray(_weaponConfig >> "Attachments" >> "attachments");
+
+//Find new weapon class from weapon config Attachments class
+_newWeapon = "";
+{
+	if (_attachment == _x) exitWith
+	{
+		_newWeapon = getText(_weaponConfig >> "Attachments" >> _x);
+	};
+} foreach _addableAttachments;
+
+//Attachment cannot be attached to this weapon
+if (_newWeapon == "") exitWith
+{
+	closedialog 0;
+	
+	if ((_this select 1) == 1) then
+	{
+		cutText [localize "str_AttachmentWeaponConfig", "PLAIN DOWN"];
+	}
+	else
+	{
+		cutText [localize "str_AttachmentWeaponConfig2", "PLAIN DOWN"];
+	};
+};
+
+call gear_ui_init;
+
+//remove attachment from inventory and replace weapon
+player removeMagazine _attachment;
+player removeWeapon _weapon;
+player addWeapon _newWeapon;
+
+//if player is in a vehicle close gear
+//otherwise the display will not update
+if (vehicle player != player) then
+{
+	_display = findDisplay 106;
+	_display closeDisplay 0;
+};
+
+//if player doesn't have a muzzle selected set it to the first muzzle of the new weapon
+if (currentWeapon player == "") then
+{
+	_muzzle = (getArray (configFile >> "CfgWeapons" >> _newWeapon >> "muzzles")) select 0;
+	
+	if (_muzzle == "this") then
+	{
+		player selectWeapon _newWeapon;
+	}
+	else
+	{
+		player selectWeapon _muzzle;
+	}
 };

@@ -1,49 +1,74 @@
-private ["_attachment","_weapon","_replacement","_freeSlots","_freeSlotsCount","_onLadder","_weaponDisplayName","_attachDisplayName"];
+/*
+player_removeAttachment
+	
+	-foxy
 
-_array = _this;
+parameters:
+	string		attachment item classname
+	string		current weapon classname
+	string		resulting weapon classname
+*/
+
+private
+[
+	"_attachment",
+	"_weapon",
+	"_newWeapon",
+	"_onLadder",
+	"_muzzle"
+];
+
+//check if player is on a ladder and if so, exit
+_onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
+if (_onLadder) exitWith
+{
+	closeDialog 0;
+	cutText [localize "str_player_21", "PLAIN DOWN"];
+};
+
 _attachment = _this select 0;
 _weapon = _this select 1;
-_replacement = _this select 2;
-_state = animationState player;
+_newWeapon = _this select 2;
 
-_freeSlots = [player] call BIS_fnc_invSlotsEmpty;
-_freeSlotsCount = _freeSlots select 4;
-_onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-
-_weaponDisplayName = getText (configFile >> "CfgWeapons" >> _weapon >> "displayName");
-_attachDisplayName = getText (configFile >> "CfgMagazines" >> _attachment >> "displayName"); 
-
-if (_freeSlotsCount < 1) exitWith {
+//check that player has enough room in inventory
+if ((([player] call BIS_fnc_invSlotsEmpty) select 4) < 1) exitWith
+{
 	closeDialog 0;
-	cutText ["You don't have enough room in your inventory", "PLAIN DOWN"];
-};
-if (_onLadder) exitWith {
-	closeDialog 0;
-	cutText ["You can't remove attachments when climbing a ladder.", "PLAIN DOWN"];
+	cutText [localize "str_player_24", "PLAIN DOWN"];
 };
 
-if (player hasWeapon _weapon) then {
-	//cutText [format["Removing %1 from %2",_attachDisplayName,_weaponDisplayName],"PLAIN DOWN"];
-	private ["_ammo","_currentMagazine"];
+if (!(player hasWeapon _weapon)) exitWith
+{
+	closeDialog 0;
+	cutText [localize "str_AttachmentMissingWeapon3", "PLAIN DOWN"];
+};
+
+call gear_ui_init;
+
+//replace weapon and add attachment to inventory
+player removeWeapon _weapon;
+player addWeapon _newWeapon;
+player addMagazine _attachment;
+
+//if player is in a vehicle close gear
+//otherwise the display will not update
+if (vehicle player != player) then
+{
+	_display = findDisplay 106;
+	_display closeDisplay 0;
+};
+
+//if player doesn't have a muzzle selected set it to the first muzzle of the new weapon
+if (currentWeapon player == "") then
+{
+	_muzzle = (getArray (configFile >> "CfgWeapons" >> _newWeapon >> "muzzles")) select 0;
 	
-	
-	//Remove Weapon
-	player removeWeapon _weapon;
-	//Add Magazine attachment
-	player addMagazine _attachment;	
-	//Add Replaced Weapon
-	player addWeapon _replacement;
-	
-	if ( (primaryWeapon player) != "") then {
-		_type = primaryWeapon player;
-		_muzzles = getArray(configFile >> "cfgWeapons" >> _type >> "muzzles");
-		if ((_muzzles select 0) != "this") then {
-			player selectWeapon (_muzzles select 0);
-		} else {
-			player selectWeapon _type;
-		};
-	};
-	player switchMove _state;
-	
-	//cutText [format["You have successfully removed %1 from your %2.",_attachDisplayName,_weaponDisplayName],"PLAIN DOWN"];
-}; 
+	if (_muzzle == "this") then
+	{
+		player selectWeapon _newWeapon;
+	}
+	else
+	{
+		player selectWeapon _muzzle;
+	}
+};

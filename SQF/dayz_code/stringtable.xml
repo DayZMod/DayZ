@@ -1328,9 +1328,18 @@
 			<English>You seem to be missing a primary weapon!</English>
 			<Czech>Vypadá to, že chybí hlavní zbraň!</Czech>
 		</Key>
+		<Key ID="str_AttachmentmissingWeapon2">
+			<English>You seem to be missing a sidearm!</English>
+		</Key>
+		<Key ID="str_AttachmentMissingWeapon3">
+			<English>You seem to have misplaced the weapon you were working on.</English>
+		</Key>
 		<Key ID="str_AttachmentWeaponConfig">
 			<English>Your primary weapon can not be used with this attachment!</English>
 			<Czech>Na tuto hlavní zbraň nelze upevnit tento nástavec!</Czech>
+		</Key>
+		<Key ID="str_AttachmentWeaponConfig2">
+			<English>Your sidearm can not be used with this attachment!</English>
 		</Key>
 		<Key ID="str_fixToolFail">
 			<English>Maybe you can fix it with tape and a handle.</English>
@@ -3937,7 +3946,7 @@
 			<Czech>Vytvořit M9 zásobník</Czech>
 			<French>Assembler pour un M9</French>
 			<German>In M9-Magazin umladen</German>
-		</Key>		
+		</Key>
 		<Key ID="STR_MAG_CONV_M9_G17">
 			<English>Combine for G17</English>
 			<Spanish>Combinar a G17</Spanish>
@@ -3945,7 +3954,19 @@
 			<Czech>Vytvořit G17 zásobník</Czech>
 			<French>Assembler pour un G17</French>
 			<German>In G17-Magazin umladen</German>
-		</Key>		
+		</Key>
+		<Key ID="STR_MAG_CONV_G36_STANAG">
+			<English>Combine to STANAG</English>
+		</Key>
+		<Key ID="STR_MAG_CONV_STANAG_G36">
+			<English>Combine for G36</English>
+		</Key>
+		<Key ID="STR_MAG_CONV_AK47_SA58">
+			<English>Combine for SA-58</English>
+		</Key>
+		<Key ID="STR_MAG_CONV_SA58_AK47">
+			<English>Combine for AK-47</English>
+		</Key>
 		<Key ID="STR_MAG_COMBINE_1">
 			<English>Combine to 8 rounds</English>
 			<Russian>Собрать в 8п. </Russian>
@@ -9161,6 +9182,533 @@
 			<Russian>Металлический забор</Russian>
 			<French>Palissade métallique</French>
 			<Czech>Kovový plot</Czech>
+		</Key>
+	</Package>
+	<Package name="weapons">
+		<!-- **** WEAPONS **** -->
+		
+		<!-- M14 -->
+		<Key ID="STR_DZ_WPN_M14_NAME">
+			<Original>M14</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M14_GH_NAME">
+			<Original>M14 Camo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M14_CCO_NAME">
+			<Original>M14 CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M14_CCO_GH_NAME">
+			<Original>M14 CCO Camo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M14_HOLO_NAME">
+			<Original>M14 Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M14_HOLO_GH_NAME">
+			<Original>M14 Holo Camo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M14_ACOG_NAME">
+			<Original>M14 ACOG</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M14_ACOG_GH_NAME">
+			<Original>M14 ACOG Camo</Original>
+		</Key>
+		
+		
+		
+		<!-- Snipers -->
+		<Key ID="STR_DZ_WPN_M24_NAME">
+			<Original>M24</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M24_GH_NAME">
+			<Original>M24 Camo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M40A3_NAME">
+			<Original>M40A3</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M40A3_GH_NAME">
+			<Original>M40A3 Camo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_DMR_NAME">
+			<Original>DMR</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_DMR_GH_NAME">
+			<Original>DMR Camo</Original>
+		</Key>
+		
+		
+		
+		<!-- M4A1 -->
+		<Key ID="STR_DZ_WPN_M4A1_NAME">
+			<Original>M4A1</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_FL_NAME">
+			<Original>M4A1 FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_SD_NAME">
+			<Original>M4A1 SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_SD_FL_NAME">
+			<Original>M4A1 SD FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_NAME">
+			<Original>M4A1 GL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_FL_NAME">
+			<Original>M4A1 GL FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_SD_NAME">
+			<Original>M4A1 GL SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_SD_FL_NAME">
+			<Original>M4A1 GL SD FL</Original>
+		</Key>
+		<!-- M4A1 CCO-->
+		<Key ID="STR_DZ_WPN_M4A1_CCO_NAME">
+			<Original>M4A1 CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_CCO_FL_NAME">
+			<Original>M4A1 CCO FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_CCO_SD_NAME">
+			<Original>M4A1 CCO SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_CCO_SD_FL_NAME">
+			<Original>M4A1 CCO SD FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_NAME">
+			<Original>M4A1 GL CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_FL_NAME">
+			<Original>M4A1 GL CCO FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_SD_NAME">
+			<Original>M4A1 GL CCO SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_SD_FL_NAME">
+			<Original>M4A1 GL CCO SD FL</Original>
+		</Key>
+		<!-- M4A1 Holo -->
+		<Key ID="STR_DZ_WPN_M4A1_HOLO_NAME">
+			<Original>M4A1 Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_HOLO_FL_NAME">
+			<Original>M4A1 Holo FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_HOLO_SD_NAME">
+			<Original>M4A1 Holo SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_HOLO_SD_FL_NAME">
+			<Original>M4A1 Holo SD FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_NAME">
+			<Original>M4A1 GL Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_FL_NAME">
+			<Original>M4A1 GL Holo FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_SD_NAME">
+			<Original>M4A1 GL Holo SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_SD_FL_NAME">
+			<Original>M4A1 GL Holo SD FL</Original>
+		</Key>
+		<!-- M4A1 ACOG -->
+		<Key ID="STR_DZ_WPN_M4A1_ACOG_NAME">
+			<Original>M4A1 ACOG</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_ACOG_FL_NAME">
+			<Original>M4A1 ACOG FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_ACOG_SD_NAME">
+			<Original>M4A1 ACOG SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_ACOG_SD_FL_NAME">
+			<Original>M4A1 ACOG SD FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_NAME">
+			<Original>M4A1 GL ACOG</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_FL_NAME">
+			<Original>M4A1 GL ACOG FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_SD_NAME">
+			<Original>M4A1 GL ACOG SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_SD_FL_NAME">
+			<Original>M4A1 GL ACOG SD FL</Original>
+		</Key>
+		
+		
+		
+		<!-- FN FAL -->
+		<Key ID="STR_DZ_WPN_FNFAL_NAME">
+			<Original>FN FAL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_FNFAL_CCO_NAME">
+			<Original>FN FAL CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_FNFAL_HOLO_NAME">
+			<Original>FN FAL Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_FNFAL_ACOG_NAME">
+			<Original>FN FAL ACOG</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_FNFAL_ANPVS4_NAME">
+			<Original>FN FAL AN/PVS-4</Original>
+		</Key>
+		
+		
+		
+		<!-- AK74 -->
+		<Key ID="STR_DZ_WPN_AK74_NAME">
+			<Original>AK-74</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AK74_SD_NAME">
+			<Original>AK-74 SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AK74_GL_NAME">
+			<Original>AK-74 GL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AK74_GL_SD_NAME">
+			<Original>AK-74 GL SD</Original>
+		</Key>
+		
+		<Key ID="STR_DZ_WPN_AK74_KOBRA_NAME">
+			<Original>AK-74 Kobra</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AK74_KOBRA_SD_NAME">
+			<Original>AK-74 Kobra SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AK74_GL_KOBRA_NAME">
+			<Original>AK-74 GL Kobra</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AK74_GL_KOBRA_SD_NAME">
+			<Original>AK-74 GL Kobra SD</Original>
+		</Key>
+		
+		<Key ID="STR_DZ_WPN_AK74_PSO1_NAME">
+			<Original>AK-74 PSO-1</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AK74_PSO1_SD_NAME">
+			<Original>AK-74 PSO-1 SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AK74_GL_PSO1_NAME">
+			<Original>AK-74 GL PSO-1</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AK74_GL_PSO1_SD_NAME">
+			<Original>AK-74 GL PSO-1 SD</Original>
+		</Key>
+		
+		
+		
+		<!-- AKS74U -->
+		<Key ID="STR_DZ_WPN_AKS74U_NAME">
+			<Original>AKS-74U</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AKS74U_SD_NAME">
+			<Original>AKS-74U SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AKS74U_KOBRA_NAME">
+			<Original>AKS-74U Kobra</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AKS74U_KOBRA_SD_NAME">
+			<Original>AKS-74U Kobra SD</Original>
+		</Key>
+		
+		
+		
+		<!-- RPK74 -->
+		<Key ID="STR_DZ_WPN_RPK74_NAME">
+			<Original>RPK-74</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_RPK74_KOBRA_NAME">
+			<Original>RPK-74 Kobra</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_RPK74_PSO1_NAME">
+			<Original>RPK-74 PSO-1</Original>
+		</Key>
+		
+		
+		
+		<!-- AKM -->
+		<Key ID="STR_DZ_WPN_AKM_NAME">
+			<Original>AK-47M</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AKM_KOBRA_NAME">
+			<Original>AK-47M Kobra</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_AKM_PSO1_NAME">
+			<Original>AK-47M PSO-1</Original>
+		</Key>
+		
+		
+		
+		<!-- G36C -->
+		<Key ID="STR_DZ_WPN_G36C_NAME">
+			<Original>G36C</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G36C_SD_NAME">
+			<Original>G36C SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G36C_CCO_NAME">
+			<Original>G36C CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G36C_CCO_SD_NAME">
+			<Original>G36C CCO SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G36C_HOLO_NAME">
+			<Original>G36C Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G36C_HOLO_SD_NAME">
+			<Original>G36C Holo SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G36C_ACOG_NAME">
+			<Original>G36C ACOG</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G36C_ACOG_SD_NAME">
+			<Original>G36C ACOG SD</Original>
+		</Key>
+		
+		
+		
+		<!-- G36 -->
+		<Key ID="STR_DZ_WPN_G36A_CAMO_NAME">
+			<Original>G36A Camo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G36A_CAMO_SD_NAME">
+			<Original>G36A Camo SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G36K_CAMO_NAME">
+			<Original>G36K Camo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G36K_CAMO_SD_NAME">
+			<Original>G36K Camo SD</Original>
+		</Key>
+		
+		
+		
+		<!-- M9 -->
+		<Key ID="STR_DZ_WPN_M9_NAME">
+			<Original>M9</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M9_SD_NAME">
+			<Original>M9 SD</Original>
+		</Key>
+		
+		
+		
+		<!-- G17 -->
+		<Key ID="STR_DZ_WPN_G17_NAME">
+			<Original>G17</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G17_FL_NAME">
+			<Original>G17 FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G17_SD_NAME">
+			<Original>G17 SD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_G17_SD_FL_NAME">
+			<Original>G17 SD FL</Original>
+		</Key>
+		
+		
+		
+		<!-- M249 -->
+		<Key ID="STR_DZ_WPN_M249_NAME">
+			<Original>M249 SAW</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M249_CCO_NAME">
+			<Original>M249 SAW CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M249_HOLO_NAME">
+			<Original>M249 SAW Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M249_ACOG_NAME">
+			<Original>M249 SAW ACOG</Original>
+		</Key>
+		
+		
+		
+		<!-- M1014 -->
+		<Key ID="STR_DZ_WPN_M1014_NAME">
+			<Original>M1014</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M1014_CCO_NAME">
+			<Original>M1014 CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M1014_Holo_NAME">
+			<Original>M1014 Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M1014_ACOG_NAME">
+			<Original>M1014 ACOG</Original>
+		</Key>
+		
+		
+		
+		<!-- Mk48 -->
+		<Key ID="STR_DZ_WPN_MK48_NAME">
+			<Original>Mk48</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MK48_CCO_NAME">
+			<Original>Mk48 CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MK48_HOLO_NAME">
+			<Original>Mk48 Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MK48_ACOG_NAME">
+			<Original>Mk48 ACOG</Original>
+		</Key>
+		
+		
+		
+		<!-- PKM -->
+		<Key ID="STR_DZ_WPN_PKM_NAME">
+			<Original>PKM</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_PKM_KOBRA_NAME">
+			<Original>PKM Kobra</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_PKM_PSO1_NAME">
+			<Original>PKM PSO-1</Original>
+		</Key>
+		
+		
+		
+		<!-- SVD -->
+		<Key ID="STR_DZ_WPN_SVD_NAME">
+			<Original>SVD</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_SVD_KOBRA_NAME">
+			<Original>SVD Kobra</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_SVD_PSO1_NAME">
+			<Original>SVD PSO-1</Original>
+		</Key>
+		
+		
+		
+		
+		
+		
+		
+		<!-- **** MAGAZINES **** -->
+		
+		<Key ID="STR_DZ_MAG_17RND_9X19_GLOCK17SD">
+			<Original>G17 SD Mag.</Original>
+		</Key>
+		<Key ID="STR_DZ_MAG_30RND_762X39_AK47">
+			<Original>AK-47 Mag.</Original>
+		</Key>
+		
+		
+		
+		
+		
+		
+		
+		<!-- **** ATTACHMENTS **** -->
+		
+		<Key ID="STR_DZ_ATT_ACT_TO_PRIMARY">
+			<Original>Attach to primary</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_ACT_TO_SECONDARY">
+			<Original>Attach to secondary</Original>
+		</Key>
+		
+		<!-- 9mm Suppressor -->
+		<Key ID="STR_DZ_ATT_SUP9_NAME">
+			<Original>9mm Suppressor</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_SUP9_RMVE">
+			<Original>Remove Suppressor</Original>
+		</Key>
+		
+		<!-- 5.56mm Suppressor -->
+		<Key ID="STR_DZ_ATT_SUP556_NAME">
+			<Original>5.56mm Suppressor</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_SUP556_RMVE">
+			<Original>Remove Suppressor</Original>
+		</Key>
+		
+		<!-- 5.45mm Suppressor -->
+		<Key ID="STR_DZ_ATT_SUP545_NAME">
+			<Original>5.45mm Suppressor</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_SUP545_RMVE">
+			<Original>Remove Suppressor</Original>
+		</Key>
+		
+		<!-- CCO -->
+		<Key ID="STR_DZ_ATT_CCO_NAME">
+			<Original>M68 CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_CCO_RMVE">
+			<Original>Remove CCO</Original>
+		</Key>
+		
+		<!-- Holo -->
+		<Key ID="STR_DZ_ATT_HOLO_NAME">
+			<Original>Eotech 553 HWS</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_HOLO_RMVE">
+			<Original>Remove Holo</Original>
+		</Key>
+		
+		<!-- Kobra -->
+		<Key ID="STR_DZ_ATT_KOBRA_NAME">
+			<Original>Kobra CQB Optic</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_KOBRA_RMVE">
+			<Original>Remove Kobra</Original>
+		</Key>
+		
+		<!-- PSO-1 -->
+		<Key ID="STR_DZ_ATT_PSO1_NAME">
+			<Original>PSO-1 Scope</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_PSO1_RMVE">
+			<Original>Remove PSO-1</Original>
+		</Key>
+		
+		<!-- M203 -->
+		<Key ID="STR_DZ_ATT_M203_NAME">
+			<Original>M203 grenade launcher</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_M203_RMVE">
+			<Original>Remove M203</Original>
+		</Key>
+		
+		<!-- GP-25 -->
+		<Key ID="STR_DZ_ATT_GP25_NAME">
+			<Original>GP-25 grenade launcher</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_GP25_RMVE">
+			<Original>Remove GP-25</Original>
+		</Key>
+		
+		<!-- Rifle flashlight -->
+		<Key ID="STR_DZ_ATT_FL_RFL_NAME">
+			<Original>Rifle flashlight</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_FL_RFL_RMVE">
+			<Original>Remove Flashlight</Original>
+		</Key>
+		
+		<!-- Pistol flashlight -->
+		<Key ID="STR_DZ_ATT_FL_PST_NAME">
+			<Original>Pistol flashlight</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_FL_PST_RMVE">
+			<Original>Remove Flashlight</Original>
+		</Key>
+		
+		<!-- Ghillie -->
+		<Key ID="STR_DZ_ATT_GHIL_NAME">
+			<Original>Small camo netting</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_GHIL_RMVE">
+			<Original>Remove Ghillie</Original>
 		</Key>
 	</Package>
 </Project>

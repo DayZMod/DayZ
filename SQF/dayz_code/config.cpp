@@ -49,7 +49,7 @@ class CfgAddons {
 #include "Configs\CfgWorlds.hpp"
 #include "Configs\CfgMoves.hpp"
 #include "Configs\CfgVehicles.hpp"
-#include "Configs\CfgWeapons.hpp"
+#include "Configs\CfgWeapons\CfgWeapons.hpp"
 #include "Configs\CfgCrafting\CfgCrafting.hpp"
 #include "Configs\CfgMagazines.hpp"
 #include "Configs\CfgLoot\CfgBuildingLoot.hpp"
@@ -61,3 +61,4 @@ class CfgAddons {
 #include "Configs\CfgFaces.hpp"
 #include "Configs\CfgGlasses.hpp"
 #include "Configs\CfgArma.hpp"
+#include "Configs\CfgRecoils.hpp"
