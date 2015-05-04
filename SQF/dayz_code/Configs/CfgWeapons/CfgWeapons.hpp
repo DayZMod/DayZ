@@ -163,6 +163,8 @@ class CfgWeapons
 	#include "Melee\Flare.hpp"
 	#include "Melee\Flashlight.hpp"
 	
+	#include "GPS.hpp"
+	
 	
 	
 	
