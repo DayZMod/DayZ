@@ -2,7 +2,9 @@ class WoodenGate_Base: DZ_buildables
 {	
 //Not Used Just Base Class
 	scope = 1;
-		armor =1000;
+	armor =1000;
+	//Make sure gate goes vertical
+	canbevertical = 1;
 	displayName = $STR_BLD_name_WoodenGate_1;//"Wooden Gate Level 1"
 	model = "z\addons\dayz_buildings\models\gates\gate4_dzam.p3d";
 	icon = "Ca\misc\data\icons\i_danger_CA.paa";
