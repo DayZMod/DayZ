@@ -555,6 +555,7 @@ class CfgBuildingLoot {
 			{"G36A_camo","weapon",0.03},
 			{"G36K_camo","weapon",0.03},
 			{"M9","weapon",0.02},
+			{"DMR_DZ","weapon",0.03},
 			{"M24","weapon",0.01},
 		//special
 			{"MedBox2","object",0.05},
@@ -592,6 +593,7 @@ class CfgBuildingLoot {
 			{"M14_EP1","weapon",0.03},
 			{"bizon","weapon",0.04},
 			{"RPK_74","weapon",0.02},
+			{"DMR_DZ","weapon",0.03},
 			{"Makarov","weapon",0.02},
 		//special
 			{"MedBox2","object",0.05},
