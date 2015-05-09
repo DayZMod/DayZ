@@ -15,6 +15,9 @@ dayz_disAudial = _distance;
 dayz_firedCooldown = time;
 
 if (_ammo isKindOf "Melee") exitWith {
+	// Added Nutrition-Factor for work
+	//[Type,Blood[Calories,Hunger,Thrist,Temp]
+	["Working",0,[0,3,5,0]] call dayz_NutritionSystem;
 	_unit playActionNow "GestureSwing";
 };
 
