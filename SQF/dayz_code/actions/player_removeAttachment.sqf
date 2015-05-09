@@ -15,7 +15,8 @@ private
 	"_weapon",
 	"_newWeapon",
 	"_onLadder",
-	"_muzzle"
+	"_muzzle",
+	"_newWeaponConfig"
 ];
 
 //check if player is on a ladder and if so, exit
@@ -37,10 +38,19 @@ if ((([player] call BIS_fnc_invSlotsEmpty) select 4) < 1) exitWith
 	cutText [localize "str_player_24", "PLAIN DOWN"];
 };
 
+//check that player has the weapon
 if (!(player hasWeapon _weapon)) exitWith
 {
 	closeDialog 0;
 	cutText [localize "str_AttachmentMissingWeapon3", "PLAIN DOWN"];
+};
+
+//Check that newWeapon + attachment actually results in current weapon
+_newWeaponConfig = configFile >> "CfgWeapons" >> _newWeapon;
+if (!isClass(_newWeaponConfig >> "Attachments") || {getText(_newWeaponConfig >> "Attachments" >> _attachment) != _weapon}) exitWith
+{
+	closeDialog 0;
+	cutText ["Cannot remove attachment.", "PLAIN DOWN"];
 };
 
 call gear_ui_init;
