@@ -19,19 +19,34 @@ M16A4_GL			M16A4_GL_DZ
 M16A4_ACG			M16A4_ACOG1_DZ
 M16A4_ACG_GL		M16A4_GL_ACOG1_DZ
 
-G36A_Camo			G36A_Camo_DZ
+G36A_Camo			G36K_Camo_DZ
 G36K_Camo			G36K_Camo_DZ
 G36C				G36C_DZ
 G36C_Camo			G36C_DZ
 
-bizon				Bizon_DZ
-bizon_silenced		Bizon_SD_DZ
-M14_EP1				M14_CCO_DZ
-FN_FAL				FNFAL_DZ
-FN_FAL_ANPVS4		FNFAL_ANPVS4_DZ
-BAF_L85A2_RIS_Holo	L85A2_Holo_DZ
-LeeEnfield			LeeEnfield_DZ
 M24					M24_DZ
 M40A3				M40A3_DZ
 SVD_CAMO_DZ			SVD_Gh_DZ
+M14_EP1				M14_CCO_DZ
+FN_FAL				FNFAL_DZ
+FN_FAL_ANPVS4		FNFAL_ANPVS4_DZ
+
+bizon				Bizon_DZ
+bizon_silenced		Bizon_SD_DZ
+MP5A5				MP5_DZ
+MP5SD				MP5_SD_DZ
+
+BAF_L85A2_RIS_Holo	L85_Holo_DZ
+LeeEnfield			LeeEnfield_DZ
 Huntingrifle		CZ550_DZ
+Mk_48_DZ			Mk48_CCO_DZ
+M1014				M1014_DZ
+
+Makarov				Makarov_DZ
+MakarovSD			Makarov_SD_DZ
+M9					M9_DZ
+M9SD				M9_SD_DZ
+glock17_EP1			G17_FL_DZ
+Colt1911			M1911_DZ
+Revolver_EP1		Revolver_DZ
+UZI_EP1				PDW_DZ

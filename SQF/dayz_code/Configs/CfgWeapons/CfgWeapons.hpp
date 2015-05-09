@@ -86,8 +86,10 @@ class CfgWeapons
 	class MP5SD;
 	#include "Rifles\MP5.hpp"
 	
-	//temporarily moved down after the legacy m16 configs
-	//#include "Rifles\M16.hpp"
+	class M16A2;
+	class M16A2GL;
+	#include "Rifles\M16A2.hpp"
+	#include "Rifles\M16A4.hpp"
 	
 	class BAF_L85A2_RIS_Holo;
 	#include "Rifles\L85.hpp"
@@ -115,20 +117,18 @@ class CfgWeapons
 	class glock17_EP1;
 	#include "Pistols\G17.hpp"
 	
-	//Temporarily moved down after legacy pistol configs
+	class Colt1911;
+	#include "Pistols\M1911.hpp"
 	
-	//class Colt1911;
-	//#include "Pistols\M1911.hpp"
+	class Makarov;
+	class MakarovSD;
+	#include "Pistols\Makarov.hpp"
 	
-	//class Makarov;
-	//class MakarovSD;
-	//#include "Pistols\Makarov.hpp"
+	class UZI_EP1;
+	#include "Pistols\PDW.hpp"
 	
-	//class UZI_EP1;
-	//#include "Pistols\PDW.hpp"
-	
-	//class revolver_EP1;
-	//#include "Pistols\Revolver.hpp"
+	class revolver_EP1;
+	#include "Pistols\Revolver.hpp"
 	
 	
 	
@@ -158,12 +158,18 @@ class CfgWeapons
 	
 	
 	
+	/* TOOLS */
+	
+	#include "Tools\GPS.hpp"
+	
+	
+	
+	
+	
 	/* OTHER */
 	
 	#include "Melee\Flare.hpp"
 	#include "Melee\Flashlight.hpp"
-	
-	#include "GPS.hpp"
 	
 	
 	
@@ -171,7 +177,7 @@ class CfgWeapons
 	
 	/* LEGACY */
 	
-	#include "legacy\M1911.hpp"
+	/*#include "legacy\M1911.hpp"
 	#include "legacy\Makarov.hpp"
 	#include "legacy\MakarovSD.hpp"
 	#include "legacy\PDW.hpp"
@@ -186,12 +192,9 @@ class CfgWeapons
 	class M16_base;
 	#include "legacy\M16A2.hpp"
 	#include "legacy\M16A2GL.hpp"
-	#include "legacy\M16A4.hpp"
-	#include "legacy\M16A4ACG.hpp"
-	#include "legacy\M16A4GL.hpp"
-	#include "legacy\M16A4ACGGL.hpp"
 	
-	#include "Rifles\M16.hpp"
+	#include "Rifles\M16A2.hpp"
+	#include "Rifles\M16A4.hpp"*/
 	
 
 	class ItemFlashlightEmpty : ItemCore

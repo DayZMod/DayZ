@@ -29,7 +29,7 @@ class Makarov_SD_DZ : MakarovSD
 	{
 		class RemoveSuppressor
 		{
-			text = $STR_DZ_ATT_FL_PST_RMVE;
+			text = $STR_DZ_ATT_SUP545_RMVE;
 			script = "; ['Attachment_SupMakarov',_id,'Makarov_DZ'] call player_removeAttachment";
 		};
 	};

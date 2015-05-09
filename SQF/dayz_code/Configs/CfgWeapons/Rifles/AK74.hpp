@@ -3,6 +3,7 @@
 class AK74_Kobra_DZ : AK_74
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_kobra.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_kobra_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_KOBRA_NAME;
 	
 	magazines[] =
@@ -36,6 +37,7 @@ class AK74_Kobra_DZ : AK_74
 class AK74_Kobra_SD_DZ : AKS_74_UN_kobra
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_kobra_sd.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_kobra_sd_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_KOBRA_SD_NAME;
 	
 	magazines[] =
@@ -72,6 +74,7 @@ class AK74_Kobra_SD_DZ : AKS_74_UN_kobra
 class AK74_GL_Kobra_DZ : AK74_Kobra_DZ
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_gl_kobra.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_gl_kobra_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_GL_KOBRA_NAME;
 	
 	//GP-25
@@ -106,6 +109,7 @@ class AK74_GL_Kobra_DZ : AK74_Kobra_DZ
 class AK74_GL_Kobra_SD_DZ : AK74_Kobra_SD_DZ
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_gl_kobra_sd.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_gl_kobra_sd_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_GL_KOBRA_SD_NAME;
 	
 	//GP-25
@@ -139,6 +143,7 @@ class AK74_GL_Kobra_SD_DZ : AK74_Kobra_SD_DZ
 class AK74_DZ : AK74_Kobra_DZ
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_NAME;
 	
 	//iron sight zeroing
@@ -169,6 +174,7 @@ class AK74_DZ : AK74_Kobra_DZ
 class AK74_SD_DZ : AK74_Kobra_SD_DZ
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_sd.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_sd_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_SD_NAME;
 	
 	//iron sight zeroing
@@ -204,6 +210,7 @@ class AK74_SD_DZ : AK74_Kobra_SD_DZ
 class AK74_GL_DZ : AK74_GL_Kobra_DZ
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_gl.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_gl_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_GL_NAME;
 	
 	//iron sight zeroing
@@ -239,6 +246,7 @@ class AK74_GL_DZ : AK74_GL_Kobra_DZ
 class AK74_GL_SD_DZ : AK74_GL_Kobra_SD_DZ
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_gl_SD.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_gl_sd_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_GL_SD_NAME;
 	
 	//iron sight zeroing
@@ -279,6 +287,7 @@ class AK74_GL_SD_DZ : AK74_GL_Kobra_SD_DZ
 class AK74_PSO1_DZ : AK74_Kobra_DZ
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_pso.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_pso_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_PSO1_NAME;
 	
 	//PSO-1
@@ -352,6 +361,7 @@ class AK74_PSO1_DZ : AK74_Kobra_DZ
 class AK74_PSO1_SD_DZ : AK74_Kobra_SD_DZ
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_pso_sd.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_pso_sd_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_PSO1_SD_NAME;
 	
 	//PSO-1
@@ -428,6 +438,7 @@ class AK74_PSO1_SD_DZ : AK74_Kobra_SD_DZ
 class AK74_GL_PSO1_DZ : AK74_GL_Kobra_DZ
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_gl_pso.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_gl_pso_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_GL_PSO1_NAME;
 	
 	//PSO-1
@@ -504,6 +515,7 @@ class AK74_GL_PSO1_DZ : AK74_GL_Kobra_DZ
 class AK74_GL_PSO1_SD_DZ : AK74_GL_Kobra_SD_DZ
 {
 	model = "z\addons\dayz_communityweapons\ak74\ak74_gl_pso_sd.p3d";
+	picture = "\z\addons\dayz_communityweapons\ak74\data\w_ak74_gl_pso_sd_ca.paa";
 	displayName = $STR_DZ_WPN_AK74_GL_PSO1_SD_NAME;
 	
 	//PSO-1

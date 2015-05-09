@@ -3,6 +3,7 @@
 class M14_DZ : M14_EP1
 {
 	model = "z\addons\dayz_communityweapons\m14\m14.p3d";
+	picture = "\z\addons\dayz_communityweapons\m14\data\w_m14_ca.paa";
 	displayName = $STR_DZ_WPN_M14_NAME;
 	
 	distanceZoomMin = 300;
@@ -28,6 +29,7 @@ class M14_DZ : M14_EP1
 class M14_Gh_DZ : M14_DZ
 {
 	model = "z\addons\dayz_communityweapons\m14\m14_ghillie.p3d";
+	picture = "\z\addons\dayz_communityweapons\m14\data\w_m14_ghillie_ca.paa";
 	displayName = $STR_DZ_WPN_M14_GH_NAME;
 	
 	class Attachments
@@ -57,6 +59,7 @@ class M14_Gh_DZ : M14_DZ
 class M14_CCO_DZ : M14_DZ
 {
 	model = "ca\weapons_e\m14\m14.p3d";
+	picture = "\z\addons\dayz_communityweapons\m14\data\w_m14_cco_ca.paa";
 	displayName = $STR_DZ_WPN_M14_CCO_NAME;
 	
 	class Attachments
@@ -82,6 +85,7 @@ class M14_CCO_DZ : M14_DZ
 class M14_CCO_Gh_DZ : M14_CCO_DZ
 {
 	model = "z\addons\dayz_communityweapons\m14\m14_ghillie_cco.p3d";
+	picture = "\z\addons\dayz_communityweapons\m14\data\w_m14_ghillie_cco_ca.paa";
 	displayName = $STR_DZ_WPN_M14_CCO_GH_NAME;
 	
 	class Attachments {};
@@ -106,6 +110,7 @@ class M14_CCO_Gh_DZ : M14_CCO_DZ
 class M14_Holo_DZ : M14_DZ
 {
 	model = "z\addons\dayz_communityweapons\m14\m14_holo.p3d";
+	picture = "\z\addons\dayz_communityweapons\m14\data\w_m14_holo_ca.paa";
 	displayName = $STR_DZ_WPN_M14_HOLO_NAME;
 	
 	class Attachments
@@ -131,6 +136,7 @@ class M14_Holo_DZ : M14_DZ
 class M14_Holo_Gh_DZ : M14_Holo_DZ
 {
 	model = "z\addons\dayz_communityweapons\m14\m14_ghillie_holo.p3d";
+	picture = "\z\addons\dayz_communityweapons\m14\data\w_m14_ghillie_holo_ca.paa";
 	displayName = $STR_DZ_WPN_M14_HOLO_GH_NAME;
 	
 	class Attachments {};

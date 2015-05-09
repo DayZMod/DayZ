@@ -1,6 +1,7 @@
 class FNFAL_DZ : FN_FAL
 {
 	model = "z\addons\dayz_communityweapons\fnfal\fnfal.p3d";
+	picture = "\z\addons\dayz_communityweapons\fnfal\data\w_fnfal_ca.paa";
 	displayName = $STR_DZ_WPN_FNFAL_NAME;
 	
 	distanceZoomMin = 300;
@@ -22,6 +23,7 @@ class FNFAL_DZ : FN_FAL
 class FNFAL_CCO_DZ : FNFAL_DZ
 {
 	model = "z\addons\dayz_communityweapons\fnfal\fnfal_cco.p3d";
+	picture = "\z\addons\dayz_communityweapons\fnfal\data\w_fnfal_cco_ca.paa";
 	displayName = $STR_DZ_WPN_FNFAL_CCO_NAME;
 	
 	class Attachments {};
@@ -39,6 +41,7 @@ class FNFAL_CCO_DZ : FNFAL_DZ
 class FNFAL_Holo_DZ : FNFAL_CCO_DZ
 {
 	model = "z\addons\dayz_communityweapons\fnfal\fnfal_holo.p3d";
+	picture = "\z\addons\dayz_communityweapons\fnfal\data\w_fnfal_holo_ca.paa";
 	displayName = $STR_DZ_WPN_FNFAL_HOLO_NAME;
 	
 	class ItemActions

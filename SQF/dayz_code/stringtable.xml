@@ -3732,7 +3732,12 @@
 			<Czech>Hliníková plechovka, která obsahuje chutný sycený nápoj plný cukru, umělých příchutí a konzervačních látek.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_37">
-			<English>Drink</English>
+			<English>Soda Can (Mountain Dew)</English>
+			<German>Dose (Mountain Dew)</German>
+			<Russian>Газировка (Маунтин Дью)</Russian>
+			<Spanish>Gaseosa (Mountain Dew)</Spanish>
+			<French>Canette (Mountain Dew)</French>
+			<Czech>Plechovka (Mountain Dew)</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_39">
 			<English>Jerry Can (Empty)</English>
@@ -9335,6 +9340,47 @@
 		
 		
 		
+		<!-- M16A4 -->
+		<Key ID="STR_DZ_WPN_M16A4">
+			<Original>M16A4</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_FL">
+			<Original>M16A4 FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_CCO">
+			<Original>M16A4 CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_CCO_FL">
+			<Original>M16A4 CCO FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_HOLO">
+			<Original>M16A4 Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_HOLO_FL">
+			<Original>M16A4 Holo FL</Original>
+		</Key>
+		<!-- M203 -->
+		<Key ID="STR_DZ_WPN_M16A4_GL">
+			<Original>M16A4 M203</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_GL_FL">
+			<Original>M16A4 M203 FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_GL_CCO">
+			<Original>M16A4 M203 CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_GL_CCO_FL">
+			<Original>M16A4 M203 CCO FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_GL_HOLO">
+			<Original>M16A4 M203 Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_GL_HOLO_FL">
+			<Original>M16A4 M203 Holo FL</Original>
+		</Key>
+		
+		
+		
 		<!-- FN FAL -->
 		<Key ID="STR_DZ_WPN_FNFAL_NAME">
 			<Original>FN FAL</Original>
@@ -9478,6 +9524,16 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_G36K_CAMO_SD_NAME">
 			<Original>G36K Camo SD</Original>
+		</Key>
+		
+		
+		
+		<!-- MP5 -->
+		<Key ID="STR_DZ_WPN_MP5_NAME">
+			<Original>MP5A5</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MP5_SD_NAME">
+			<Original>MP5A5 SD</Original>
 		</Key>
 		
 		

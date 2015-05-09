@@ -1,6 +1,7 @@
 class M249_CCO_DZ : M249
 {
 	model = "z\addons\dayz_communityweapons\m249\m249_cco.p3d";
+	picture = "\z\addons\dayz_communityweapons\m249\data\w_m249_cco_ca.paa";
 	displayName = $STR_DZ_WPN_M249_CCO_NAME;
 	
 	type = WeaponSlotPrimary;
@@ -18,6 +19,7 @@ class M249_CCO_DZ : M249
 class M249_DZ : M249_CCO_DZ
 {
 	model = "ca\weapons\m249.p3d";
+	picture = "\z\addons\dayz_communityweapons\m249\data\w_m249_ca.paa";
 	displayName = $STR_DZ_WPN_M249_NAME;
 	
 	//iron sight zeroing
@@ -44,6 +46,7 @@ class M249_DZ : M249_CCO_DZ
 class M249_Holo_DZ : M249_CCO_DZ
 {
 	model = "z\addons\dayz_communityweapons\m249\m249_holo.p3d";
+	picture = "\z\addons\dayz_communityweapons\m249\data\w_m249_holo_ca.paa";
 	displayName = $STR_DZ_WPN_M249_HOLO_NAME;
 	
 	class ItemActions

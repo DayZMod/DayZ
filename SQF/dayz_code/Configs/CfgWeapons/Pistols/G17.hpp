@@ -1,6 +1,7 @@
 class G17_DZ : glock17_EP1
 {
 	model = "z\addons\dayz_communityweapons\g17\g17.p3d";
+	picture = "\z\addons\dayz_communityweapons\g17\data\w_g17_ca.paa";
 	displayName = $STR_DZ_WPN_G17_NAME;
 	
 	magazines[] = 
@@ -27,6 +28,7 @@ class G17_DZ : glock17_EP1
 class G17_FL_DZ : G17_DZ
 {
 	model = "z\addons\dayz_communityweapons\g17\g17_fl.p3d";
+	picture = "\z\addons\dayz_communityweapons\g17\data\w_g17_fl_ca.paa";
 	displayName = $STR_DZ_WPN_G17_FL_NAME;
 
 	class FlashLight
@@ -63,9 +65,8 @@ class G17_FL_DZ : G17_DZ
 class G17_SD_DZ : M9SD
 {
 	model = "z\addons\dayz_communityweapons\g17\g17_sd.p3d";
+	picture = "\z\addons\dayz_communityweapons\g17\data\w_g17_sd_ca.paa";
 	displayName = $STR_DZ_WPN_G17_SD_NAME;
-	
-	picture="\ca\weapons_E\Data\icons\glock17_CA.paa";
 	
 	magazines[] = 
 	{
@@ -104,6 +105,7 @@ class G17_SD_DZ : M9SD
 class G17_SD_FL_DZ : G17_SD_DZ
 {
 	model = "z\addons\dayz_communityweapons\g17\g17_sd_fl.p3d";
+	picture = "\z\addons\dayz_communityweapons\g17\data\w_g17_sd_fl_ca.paa";
 	displayName = $STR_DZ_WPN_G17_SD_FL_NAME;
 
 	class FlashLight

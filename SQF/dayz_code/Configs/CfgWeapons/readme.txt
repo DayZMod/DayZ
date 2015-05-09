@@ -3,6 +3,3 @@ but i want to have new _DZ suffixed classes with the same naming convention for 
 in one go to reduce database hassles between versions.
 
 -foxy
-
-ACOG1 is 5.56x45mm reticle
-ACOG2 is 7.62x51mm reticle

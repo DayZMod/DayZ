@@ -1,6 +1,7 @@
 class Mk48_CCO_DZ : Mk_48
 {
 	model = "z\addons\dayz_communityweapons\mk48\mk48_cco.p3d";
+	picture = "\z\addons\dayz_communityweapons\mk48\data\w_mk48_cco_ca.paa";
 	displayName = $STR_DZ_WPN_MK48_CCO_NAME;
 	
 	distanceZoomMin = 300;
@@ -19,6 +20,7 @@ class Mk48_CCO_DZ : Mk_48
 class Mk48_DZ : Mk48_CCO_DZ
 {
 	model = "z\addons\dayz_communityweapons\mk48\mk48.p3d";
+	picture = "\z\addons\dayz_communityweapons\mk48\data\w_mk48_ca.paa";
 	displayName = $STR_DZ_WPN_MK48_NAME;
 	
 	//iron sight zeroing
@@ -45,6 +47,7 @@ class Mk48_DZ : Mk48_CCO_DZ
 class Mk48_Holo_DZ : Mk48_CCO_DZ
 {
 	model = "z\addons\dayz_communityweapons\mk48\mk48_holo.p3d";
+	picture = "\z\addons\dayz_communityweapons\mk48\data\w_mk48_holo_ca.paa";
 	displayName = $STR_DZ_WPN_MK48_HOLO_NAME;
 	
 	class ItemActions

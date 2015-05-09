@@ -26,6 +26,7 @@ class DMR_DZ : DMR
 class DMR_Gh_DZ : DMR_DZ
 {
 	model = "z\addons\dayz_communityweapons\dmr\dmr_ghillie.p3d";
+	picture = "\z\addons\dayz_communityweapons\dmr\data\w_dmr_ghillie_ca.paa";
 	displayName = $STR_DZ_WPN_DMR_GH_NAME;
 	
 	memoryPointCamera = "opticView";

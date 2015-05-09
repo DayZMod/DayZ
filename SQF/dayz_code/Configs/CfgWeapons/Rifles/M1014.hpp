@@ -1,6 +1,7 @@
 class M1014_DZ : M1014
 {
 	model = "z\addons\dayz_communityweapons\m1014\m1014.p3d";
+	picture = "\z\addons\dayz_communityweapons\m1014\data\w_m1014_ca.paa";
 	displayName = $STR_DZ_WPN_M1014_NAME;
 	
 	class Single : Single
@@ -27,6 +28,7 @@ class M1014_DZ : M1014
 class M1014_CCO_DZ : M1014_DZ
 {
 	model = "z\addons\dayz_communityweapons\m1014\m1014_cco.p3d";
+	picture = "\z\addons\dayz_communityweapons\m1014\data\w_m1014_cco_ca.paa";
 	displayName = $STR_DZ_WPN_M1014_CCO_NAME;
 	
 	distanceZoomMin=75;
@@ -47,6 +49,7 @@ class M1014_CCO_DZ : M1014_DZ
 class M1014_Holo_DZ : M1014_CCO_DZ
 {
 	model = "z\addons\dayz_communityweapons\m1014\m1014_holo.p3d";
+	picture = "\z\addons\dayz_communityweapons\m1014\data\w_m1014_holo_ca.paa";
 	displayName = $STR_DZ_WPN_M1014_HOLO_NAME;
 	
 	class ItemActions

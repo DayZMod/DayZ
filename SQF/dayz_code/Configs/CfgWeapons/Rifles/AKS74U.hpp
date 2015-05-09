@@ -86,7 +86,7 @@ class AKS74U_SD_DZ : AKS74U_Kobra_SD_DZ
 	displayName = $STR_DZ_WPN_AKS74U_SD_NAME;
 	
 	weaponInfoType = "RscWeaponZeroing";
-	discreteDistance[] = {350,500};
+	discreteDistance[] = {100,350,500};
 	discreteDistanceInitIndex = 0;
 	
 	class Attachments

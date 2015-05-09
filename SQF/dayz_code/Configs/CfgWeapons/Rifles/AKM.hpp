@@ -1,6 +1,7 @@
 class AKM_DZ : AK_47_M
 {
 	model = "z\addons\dayz_communityweapons\akm\akm.p3d";
+	picture = "\z\addons\dayz_communityweapons\akm\data\w_akm_ca.paa";
 	displayName = $STR_DZ_WPN_AKM_NAME;
 	
 	//iron sight zeroing
@@ -25,6 +26,7 @@ class AKM_DZ : AK_47_M
 class AKM_Kobra_DZ : AKM_DZ
 {
 	model = "z\addons\dayz_communityweapons\akm\akm_kobra.p3d";
+	picture = "\z\addons\dayz_communityweapons\akm\data\w_akm_kobra_ca.paa";
 	displayName = $STR_DZ_WPN_AKM_KOBRA_NAME;
 	
 	//kobra zeroing
@@ -50,6 +52,7 @@ class AKM_Kobra_DZ : AKM_DZ
 class AKM_PSO1_DZ : AKM_Kobra_DZ
 {
 	model = "z\addons\dayz_communityweapons\akm\akm_pso.p3d";
+	picture = "\z\addons\dayz_communityweapons\akm\data\w_akm_pso_ca.paa";
 	displayName = $STR_DZ_WPN_AKM_PSO1_NAME;
 
 	//PSO-1
