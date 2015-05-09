@@ -41,24 +41,6 @@ class CfgLoot {
 		{"HandRoadFlare",0.05},
 		{"ItemWaterbottleUnfilled",0.01}
 	};
-	attachments[] = {
-		{"Attachment_M16_ACG",0.01},
-		{"Attachment_SA58_ACG",0.01},
-		{"Attachment_Sa58V_EP1_Aim",0.01},
-		{"Attachment_bizonSilencer",0.01},
-		{"Attachment_MP5A5_Silencer",0.01},
-		{"Attachment_M14_SniperScope",0.01},
-		{"Attachment_Kobra",0.01},
-		{"Attachment_FL",0.01},
-		{"Attachment_CCO",0.01},
-		{"Attachment_BELT",0.01},
-		{"Attachment_M9Silencer",0.01},
-		{"Attachment_M4A1_Aim",0.01},
-		{"Attachment_M4A1_Aim_camo",0.01},
-		{"Attachment_M4A1_AIM_SD_camo",0.01},
-		{"Attachment_MakarovSilencer",0.01},
-		{"Attachment_SCOPED",0.01}
-	};
 	attachmentsGeneric[] =
 	{
 		{"Attachment_BELT",0.03},
