@@ -1328,6 +1328,7 @@ class ItemSodaEmpty;
 	//Base Class for fizzy dirnks
 	class ItemSoda : FoodDrink {
 		scope = public;
+		displayName = $str_player_31_drink;
 		sfx = "soda";
 		sfxdis = 3;
 		bloodRegen = 0;
@@ -1339,7 +1340,7 @@ class ItemSodaEmpty;
 		sfx = "";
 		sfxdis = 3;
 		bloodRegen = 0;
-		Nutrition[] = {0,0,0,0}; //[Energy,food,water,temp]
+		Nutrition[] = {90,0,100,5}; //[Energy,food,water,temp]
 	};
 	//Base Raw Class
 	class FoodRaw : FoodEdible {

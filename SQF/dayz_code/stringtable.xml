@@ -3732,12 +3732,7 @@
 			<Czech>Hliníková plechovka, která obsahuje chutný sycený nápoj plný cukru, umělých příchutí a konzervačních látek.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_37">
-			<English>Soda Can (Mountain Dew)</English>
-			<German>Dose (Mountain Dew)</German>
-			<Russian>Газировка (Маунтин Дью)</Russian>
-			<Spanish>Gaseosa (Mountain Dew)</Spanish>
-			<French>Canette (Mountain Dew)</French>
-			<Czech>Plechovka (Mountain Dew)</Czech>
+			<English>Drink</English>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_39">
 			<English>Jerry Can (Empty)</English>
