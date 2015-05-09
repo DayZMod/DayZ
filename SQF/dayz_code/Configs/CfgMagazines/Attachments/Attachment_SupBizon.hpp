@@ -12,10 +12,10 @@ class Attachment_SupBizon : CA_Magazine
 	
 	class ItemActions
 	{
-		class AttachToSecondary
+		class AttachToPrimary
 		{
-			text = $STR_DZ_ATT_ACT_TO_SECONDARY;
-			script = "; [_id,0] call player_attachAttachment";
+			text = $STR_DZ_ATT_ACT_TO_PRIMARY;
+			script = "; [_id,1] call player_attachAttachment";
 		};
 	};
 };

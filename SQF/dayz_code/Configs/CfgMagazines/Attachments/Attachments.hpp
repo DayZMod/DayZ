@@ -15,5 +15,7 @@
 #include "Attachment_Sup9.hpp"
 #include "Attachment_Sup556.hpp"
 #include "Attachment_Sup545.hpp"
+#include "Attachment_SupMakarov.hpp"
+#include "Attachment_SupBizon.hpp"
 
 #include "Attachment_Ghillie.hpp"
