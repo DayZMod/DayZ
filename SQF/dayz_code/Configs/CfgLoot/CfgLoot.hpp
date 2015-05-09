@@ -59,6 +59,31 @@ class CfgLoot {
 		{"Attachment_MakarovSilencer",0.01},
 		{"Attachment_SCOPED",0.01}
 	};
+	attachmentsGeneric[] =
+	{
+		{"Attachment_BELT",0.03},
+		{"Attachment_SCOPED",0.01},
+		{"Attachment_FL",0.02},
+		{"Attachment_FL_Pist",0.02}
+	};
+	attachmentsEast[] =
+	{
+		{"Attachment_Kobra",0.01},
+		{"Attachment_PSO1",0.01},
+		{"Attachment_SupMakarov",0.03},
+		{"Attachment_SupBizon",0.02},
+		{"Attachment_Sup545",0.01},
+		{"Attachment_GP25",0.01}
+	};
+	attachmentsWest[] =
+	{
+		{"Attachment_CCO",0.01},
+		{"Attachment_Holo",0.01},
+		{"Attachment_Ghillie",0.02},
+		{"Attachment_M203",0.01},
+		{"Attachment_Sup556",0.01},
+		{"Attachment_Sup9",0.03}
+	};
 	civilian[] = {
 		{"ItemBandage",0.06},
 		{"ItemPainkiller",0.03},
