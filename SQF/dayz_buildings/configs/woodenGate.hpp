@@ -48,6 +48,9 @@ class WoodenGate_foundation: WoodenGate_Base
 		requiredParts[] = {"ItemLog","ItemStone"};
 		create = "WoodenGate_1";
 	};
+	class Disassembly {
+		requiredTools[] = {"ItemToolbox"};
+	};	
 };
 //Stage 1 Not Locked, Access by anyone
 class WoodenGate_1: WoodenGate_Base
@@ -95,6 +98,9 @@ class WoodenGate_1: WoodenGate_Base
 		requiredParts[] = {"ItemLog","ItemPadlock"};
 		create = "WoodenGate_2";
 	};
+	class Disassembly {
+		requiredTools[] = {"ItemToolbox"};
+	};
 };
 //stage 2, Locked, Only accessed by the owner (still need to add others?)
 class WoodenGate_2: WoodenGate_Base
@@ -106,6 +112,9 @@ class WoodenGate_2: WoodenGate_Base
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
 		requiredParts[] = {"ItemLog","ItemPlank","equip_nails"};
 		create = "WoodenGate_3";
+	};
+	class Disassembly {
+		requiredTools[] = {"ItemToolbox"};
 	};
 };
 
@@ -119,6 +128,9 @@ class WoodenGate_3: WoodenGate_Base
 		requiredParts[] = {"ItemLog","ItemLog","ItemPlank"};
 		create = "WoodenGate_4";
 	};
+	class Disassembly {
+		requiredTools[] = {"ItemToolbox"};
+	};
 };
 
 class WoodenGate_4: WoodenGate_Base
@@ -127,4 +139,7 @@ class WoodenGate_4: WoodenGate_Base
 	scope = 2;
 	displayName = $STR_BLD_name_WoodenGate_4;//"Wooden Gate Level 4"
 	model = "z\addons\dayz_buildings\models\gates\gate4_dzam.p3d";
+	class Disassembly {
+		requiredTools[] = {"ItemToolbox"};
+	};
 };
