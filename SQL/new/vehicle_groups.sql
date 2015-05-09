@@ -25,6 +25,8 @@ INSERT INTO `vehicle_groups` VALUES
 (3,8),
 (4,2),
 (5,2),
-(6,15);
+(6,15),
+(9,1),
+(10,2);
 /*!40000 ALTER TABLE `vehicle_groups` ENABLE KEYS */;
 UNLOCK TABLES;

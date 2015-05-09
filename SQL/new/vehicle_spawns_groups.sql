@@ -35,13 +35,18 @@ INSERT INTO `vehicle_spawns_groups` VALUES
 (24,6),
 (26,6),
 (27,0),
+(27,10),
 (28,0),
 (29,0),
+(30,9),
 (31,1),
 (32,1),
 (33,0),
 (34,1),
 (35,2),
-(36,2);
+(36,2),
+(37,9),
+(38,0),
+(38,10);
 /*!40000 ALTER TABLE `vehicle_spawns_groups` ENABLE KEYS */;
 UNLOCK TABLES;
