@@ -1,4 +1,4 @@
-class Attachment_Sup9 : CA_Magazine
+class Attachment_SupMakarov : CA_Magazine
 {
 	scope = public;
 	count = 1;
