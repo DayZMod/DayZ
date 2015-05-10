@@ -3,7 +3,7 @@
 
 Current Version
 ==================================
- - 1.8.4.1
+ - DayZMod Dev-dd9b5b9
  
 Files updated
 ------------
