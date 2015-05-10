@@ -50,3 +50,4 @@ class CfgAddons {
 #include "Configs\CfgGlasses.hpp"
 #include "Configs\CfgArma.hpp"
 #include "Configs\CfgRecoils.hpp"
+#include "gui\padlock\padlock_ui.hpp"

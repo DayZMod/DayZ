@@ -199,6 +199,7 @@ _countr = 0;
 							case "ownerArray" : { _object setVariable ["ownerArray", _x select 1, true]; };
 							case "clanArray" : { _object setVariable ["clanArray", _x select 1, true]; };
 							case "armed" : { _object setVariable ["armed", _x select 1, true]; };
+							case "padlockCombination" : { _object setVariable ["dayz_padlockCombination",_x select 1,false]; };
 						};
 					};
 				} forEach _inventory;

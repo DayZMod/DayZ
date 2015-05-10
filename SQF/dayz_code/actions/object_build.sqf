@@ -43,8 +43,12 @@ if (_build) then {
     _variables = [];
 
     if (_object iskindof "DZ_buildables") then {
+		_passcode = [floor(random 10),floor(random 10),floor(random 10),floor(random 10)];
         _object setVariable ["ownerArray",[getPlayerUID player],true];
-        _variables set [ count _variables, ["ownerArray", [getPlayerUID player]]]
+		_object setVariable ["dayz_padlockCombination",_passcode,true];
+		
+        _variables set [ count _variables, ["ownerArray", [getPlayerUID player]]];
+		_variables set [ count _variables, ["padlockCombination", _passcode]];
     };
     _object setVariable ["characterID",dayz_characterID, true];
 

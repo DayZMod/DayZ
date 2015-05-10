@@ -1,5 +1,6 @@
 if (isServer) then {
 	call compile preprocessFileLineNumbers "\z\addons\dayz_server\init\server_functions.sqf";
+
 };
 
 if (!isDedicated) then {
