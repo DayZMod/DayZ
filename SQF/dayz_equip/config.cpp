@@ -1305,7 +1305,7 @@ class ItemSodaEmpty;
 		
 		class ItemActions {
 			class Drink {
-				text = $STR_ACTIONS_DRINK; //$STR_ACTIONS_DRINK
+				text = "Drink"; //$STR_ACTIONS_DRINK
 				script = "spawn player_drink;";
 			};
 		};
