@@ -6,6 +6,8 @@ if (!isDedicated) then {
 //	"filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
 	"filmic" setToneMappingParams [0.07, 0.31, 0.23, 0.37, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
 	
+	call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_padlock.sqf";
+	
 	//Remove later
 	player_convertAttchment = compile preprocessFileLineNumbers "\z\addons\dayz_code\Configs\CfgMagazines\Attachments\legacy\fn_convertAttachment.sqf";
 
