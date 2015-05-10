@@ -320,6 +320,7 @@ dayz_resetSelfActions = {
 	s_player_openGate = -1;
 	s_player_CloseGate = -1;
 	s_player_breakinhouse = -1;
+	s_player_setCode = -1;
 };
 call dayz_resetSelfActions;
 
@@ -519,6 +520,10 @@ if(isNil "dayz_temperature_override") then {
 
 if(isNil "dayz_attackRange") then { 
 	dayz_attackRange = 3;
+};
+
+if(isNil "dayz_maxGlobalZeds") then {
+	dayz_maxGlobalZeds = 1000;
 };
 
 //init global arrays for Loot Chances
