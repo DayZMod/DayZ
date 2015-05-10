@@ -239,7 +239,6 @@ class DomeTentStorage_base : TentStorage_base {
 	model = "\z\addons\dayz_communityassets\models\D_tent.p3d";
 	displayname = $STR_VEH_NAME_DOME_TENT;
 	icon = "\Ca\buildings\Icons\i_Astan_CA.paa";
-	model = "\ca\buildings\Tents\astan";
 	pack = "WeaponHolder_ItemDomeTent";
 	vehicleClass = "Survival";
 	transportMaxMagazines = 150;
