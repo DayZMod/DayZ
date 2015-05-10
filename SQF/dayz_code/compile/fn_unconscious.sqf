@@ -93,4 +93,5 @@ r_player_unconsciousInProgress = false;
 terminate _disableHdlr;
 waituntil {scriptDone _disableHdlr};
 disableUserInput false; r_player_unconsciousInputDisabled = false;
+player switchMove "AmovPpneMstpSnonWnonDnon_healed";
 //diag_log [ __FILE__, diag_tickTime, "done" ];
