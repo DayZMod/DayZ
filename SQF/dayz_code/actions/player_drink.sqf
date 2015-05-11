@@ -67,7 +67,7 @@ if (([0.3] call fn_chance) && (_itemorignal == "ItemWaterbottle")) then {
 };
 
 //HerbalDrink chance of healing 
-if (([0.5] call fn_chance) && (_itemorignal == "ItemWaterBottleHerbal")) then {
+if (([0.3] call fn_chance) && (_itemorignal == "ItemWaterBottleHerbal")) then {
     r_player_infected = false;
     player setVariable["USEC_infected",false,true];
 };
