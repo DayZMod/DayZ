@@ -55,14 +55,14 @@ if (_inVehicle) then {
 
 if (_doNothing) exitwith {};
 
-_nearby = nearestObjects [_position, _spawnableObjects,_radius];
-_maxlocalspawned = _maxlocalspawned max floor(_maxControlledZombies*.8);
-if (_maxlocalspawned > 0) then { _spawnZedRadius = _spawnZedRadius * 3; };
-
 //Logging
 diag_log (format["%1 Local.Agents: %2/%3, NearBy.Agents: %8/%9, Global.Agents: %6/%7, W.holders: %10/%11, (radius:%4m %5fps).","SpawnCheck",
     _maxlocalspawned, _maxControlledZombies, _radius, round diag_fpsmin,dayz_currentGlobalZombies, 
     dayz_maxGlobalZeds, dayz_CurrentNearByZombies, dayz_maxNearByZombies, _currentWeaponHolders,_maxWeaponHolders]);
+	
+_nearby = nearestObjects [_position, _spawnableObjects,_radius];
+_maxlocalspawned = _maxlocalspawned max floor(_maxControlledZombies*.8);
+if (_maxlocalspawned > 0) then { _spawnZedRadius = _spawnZedRadius * 3; };
 
 //Spawn zeds in buildings
 {
