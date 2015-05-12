@@ -1,4 +1,4 @@
-class Blueprint_Binoculars : Recipe {
+class Blueprint_Ghillie : Recipe {
 	displayName = $STR_CRAFT_NAME_Binoculars;
 	input[] = 
 	{
