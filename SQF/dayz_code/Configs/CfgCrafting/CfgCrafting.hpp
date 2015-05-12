@@ -11,6 +11,7 @@ class CfgCrafting {
 	#include "Recipes\Weapons\NailedBaseballBat.hpp"
 	#include "Recipes\Weapons\BaseBallBatBarbed.hpp"
 	#include "Recipes\Weapons\Crossbow.hpp"
+	#include "Recipes\Weapons\BaseballBat.hpp"
 
 	//Not Ready
 	/*
@@ -31,12 +32,16 @@ class CfgCrafting {
 	#include "Recipes\Medical\sepsisBandage.hpp"
 	#include "Recipes\Medical\woodensplint.hpp"
 	#include "Recipes\Medical\HerbalDrink.hpp"
+	#include "Recipes\Medical\TransfusionKit.hpp"
+	#include "Recipes\Medical\AntibacterialWipe.hpp"
 	//ammo
 	#include "Recipes\Ammo\WoodenArrow.hpp"
 	//other
 	#include "Recipes\Other\woodencrate.hpp"
 	#include "Recipes\Other\nails.hpp"
 	#include "Recipes\Other\BackPack.hpp"
+	#include "Recipes\Other\Binoculars.hpp"
+	#include "Recipes\Other\Ghillie.hpp"
 	//#include "Recipes\Other\woodenCraftTable.hpp"
 	//Traps
 	#include "Recipes\Traps\TrapBearTrapFlare.hpp"
