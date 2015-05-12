@@ -1,5 +1,5 @@
 class Blueprint_Ghillie : Recipe {
-	displayName = $STR_CRAFT_NAME_Binoculars;
+	displayName = $STR_CRAFT_NAME_Ghillie;
 	input[] = 
 	{
 		{"WeaponHolder_ItemCamoNet","CfgMagazines",1},
