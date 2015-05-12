@@ -119,7 +119,7 @@ class cfgWeapons {
 		{
 			attachments[] = {"Attachment_CCO","Attachment_SCOPED"};
 			Attachment_CCO = "Crossbow_CCO_FL";
-			Attachment_SCOPED = " Crossbow_Scoped_FL";
+			Attachment_SCOPED = "Crossbow_Scoped_FL";
 		};
 		class ItemActions {
 			class removeFL {
@@ -167,7 +167,7 @@ class cfgWeapons {
 		class ItemActions {
 			class removeSCOPED {
 				text = "Remove Scope";
-				script = "; ['Attachment_FL','Crossbow_Scoped','Crossbow_DZ'] spawn player_removeAttachment;";
+				script = "; ['Attachment_SCOPED','Crossbow_Scoped','Crossbow_DZ'] spawn player_removeAttachment;";
 			};
 		};
 	};
