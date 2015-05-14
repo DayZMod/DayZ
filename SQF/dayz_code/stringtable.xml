@@ -6341,6 +6341,84 @@
 			<English>This kit is used to craft a crossbow</English>
 			<Czech>Tato sada obsahuje tětivu a lučiště. Součást nutná pro výrobu kuše.</Czech>
 		</Key>
+			<Key ID="STR_CRAFT_NAME_AntibacterialWipe">
+			<English>AntibacterialWipe</English>
+			<Russian>Салфетки</Russian>
+			<Spanish>Gasa Antibacterial</Spanish>
+			<French>Lingette</French>
+			<Czech>Ubrousky</Czech>
+			<German>Desinfektionstuecher</German>
+		</Key>
+		<Key ID="STR_CRAFT_DESC_AntibacterialWipe">
+			<English>Blueprint to create an AntibacterialWipe. Required - 1 Bandage and 1 Antibiotics.</English>
+			<Russian>Blueprint для создания AntibacterialWipe . Требуется - 1 повязки и 1 Антибиотики</Russian>
+			<Spanish>Blueprint para crear un AntibacterialWipe . Requerido - 1 vendaje y 1 Antibióticos</Spanish>
+			<French>Blueprint pour créer un AntibacterialWipe . Required - 1 Bandage et 1 Antibiotiques</French>
+			<Czech>Blueprint vytvořit AntibacterialWipe . Povinné - 1 obvaz a 1 Antibiotika.</Czech>
+			<German>Blueprint , eine AntibacterialWipe erstellen. Erforderlich - 1 Bandage und 1 Antibiotika</German>
+		</Key>
+		<Key ID="STR_CRAFT_NAME_BaseballBat">
+			<English>BaseballBat</English>
+			<Russian>Бейсбольная бита</Russian>
+			<Spanish>Bate de Béisbol</Spanish>
+			<Czech>Basebalová pálka</Czech>
+			<French>Batte de Baseball</French>
+			<German>Baseballschlaeger</German>
+		</Key>
+		<Key ID="STR_CRAFT_DESC_BaseballBat">
+			<English>Blueprint to create a BaseballBat. Required - 1 lever (handle). Tools Needed: Hatchet</English>
+			<Russian>Blueprint для создания BaseballBat . Требуется - 1 рычаг ( рукоятка ) . Необходимые инструменты : топор</Russian>
+			<Spanish>Blueprint para crear un BaseballBat . Requerido - 1 palanca ( mango) . Herramientas necesarias : Hatchet</Spanish>
+			<French>Blueprint pour créer un BaseballBat . Required - 1 levier ( poignée ) . Outils nécessaires: Hatchet</French>
+			<Czech>Blueprint vytvořit BaseballBat . Povinné - 1 páka ( rukojeť ) . Potřebné nástroje : sekyrka</Czech>
+			<German>Blueprint , einen Baseballschläger zu erstellen. Erforderlich - 1 Hebel ( Griff) . Benötigtes Werkzeug : Hatchet</German>
+		</Key>
+		<Key ID="STR_CRAFT_NAME_Binoculars">
+			<English>Binoculars</English>
+			<Russian>бинокль</Russian>
+			<Spanish>binoculares</Spanish>
+			<French>jumelles</French>
+			<Czech>dalekohled</Czech>
+			<German>Fernglas</German>
+		</Key>
+		<Key ID="STR_CRAFT_DESC_Binoculars">
+			<English>Blueprint to create Binoculars. Required - 2 Attachment Scopes and 1 Duct tape roll.</English>
+			<Russian>Blueprint для создания бинокль . Требуется - Вложений: 2 Области и 1 рулон Клейкая лента</Russian>
+			<Spanish>Blueprint para crear prismáticos . Requerido - 2 Anexo Scopes y 1 rollo de cinta Duct</Spanish>
+			<French>Blueprint pour créer Jumelles . Required - 2 pièce jointe Scopes et 1 rouleau de ruban Duct</French>
+			<Czech>Blueprint vytvořit dalekohled. Požadovaná - 2 Příloha Scopes a 1 izolační páska role</Czech>
+			<German>Blaupause , um Ferngläser erstellen. Erforderlich - 2 Anhang Scopes und 1 Kanalbandrolle</German>
+		</Key>
+		<Key ID="STR_CRAFT_NAME_transfusionKit">
+			<English>transfusionKit</English>
+			<Russian>Набор для переливания</Russian>
+			<French>Kit de transfusion</French>
+			<Czech>Transfúzní souprava</Czech>
+		</Key>
+		<Key ID="STR_CRAFT_DESC_transfusionKit">
+			<English>Blueprint to create a transfusionKit. Required - 1 hose and 1 empty blood-bag.</English>
+			<Russian>Blueprint для создания transfusionKit . Требуется - 1 шланг и 1 пустой мешок крови</Russian>
+			<Spanish>Blueprint pour créer un transfusionKit . Required - 1 tuyau et 1 sac de sang vide</Spanish>
+			<French>Blueprint pour créer un transfusionKit . Required - 1 tuyau et 1 sac de sang vide</French>
+			<Czech>Blueprint vytvořit transfusionKit . Povinné - 1 hadice a 1 prázdnou krev - bag</Czech>
+			<German>Blueprint , eine transfusionKit erstellen. Erforderlich - 1 Schlauch und 1 leere Blutbeutel</German>
+		</Key>
+		<Key ID="STR_CRAFT_NAME_Ghillie">
+			<English>Ghillie suit</English>
+			<Russian>маскировочный костюм</Russian>
+			<Spanish>Ghillie</Spanish>
+			<French>costume Ghillie</French>
+			<Czech>Ghillie oblek</Czech>
+			<German>Ghillie Anzug</German>
+		</Key>
+		<Key ID="STR_CRAFT_DESC_Ghillie">
+			<English>Blueprint to create 2 ghillie suits. Required - 1 camo net, 1 rag Tools Needed: itemKnife.</English>
+			<Russian>Blueprint для создания 2 Ghillie костюмы. Требуется - 1 камуфляж сеть, 1 тряпка Необходимые инструменты : itemKnife</Russian>
+			<Spanish>Blueprint para crear 2 juegos del ghillie . Requerido - 1 red camo, 1 trapo Herramientas necesarias : itemKnife</Spanish>
+			<French>Blueprint pour créer 2 ghillie combinaisons . Required - 1 filet de camouflage , 1 chiffon Outils nécessaires: itemKnife</French>
+			<Czech>Blueprint vytvořit 2 ghillie obleky . Povinné - 1 Camo net , 1 hadrové Potřebné nástroje : itemKnife</Czech>
+			<German>Blueprint 2 ghillie Klagen erstellen. Erforderlich - 1 camo net , 1 Lappen Benötigtes Werkzeug : itemKnifeGhillie Anzug</German>
+		</Key>
 	</Package>
 	<Package name="feedback">
 		<Key ID="str_pulse_extremely_weak">
