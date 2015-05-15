@@ -1,6 +1,7 @@
 class AKS74U_Kobra_DZ : AKS_74_U
 {
 	model = "z\addons\dayz_communityweapons\aks74u\aks74u_kobra.p3d";
+	picture = "\z\addons\dayz_communityweapons\aks74u\data\w_aks74u_kobra_ca.paa";
 	displayName = $STR_DZ_WPN_AKS74U_KOBRA_NAME;
 	
 	magazines[] =
@@ -32,6 +33,7 @@ class AKS74U_Kobra_DZ : AKS_74_U
 class AKS74U_Kobra_SD_DZ : AKS_74_UN_kobra
 {
 	model = "z\addons\dayz_communityweapons\aks74u\aks74u_kobra_sd.p3d";
+	picture = "\z\addons\dayz_communityweapons\aks74u\data\w_aks74u_kobra_sd_ca.paa";
 	displayName = $STR_DZ_WPN_AKS74U_KOBRA_SD_NAME;
 	
 	magazines[] =
@@ -59,6 +61,7 @@ class AKS74U_Kobra_SD_DZ : AKS_74_UN_kobra
 class AKS74U_DZ : AKS74U_Kobra_DZ
 {
 	model = "z\addons\dayz_communityweapons\aks74u\aks74u.p3d";
+	picture = "\z\addons\dayz_communityweapons\aks74u\data\w_aks74u_ca.paa";
 	displayName = $STR_DZ_WPN_AKS74U_NAME;
 	
 	weaponInfoType = "RscWeaponZeroing";
@@ -83,6 +86,7 @@ class AKS74U_DZ : AKS74U_Kobra_DZ
 class AKS74U_SD_DZ : AKS74U_Kobra_SD_DZ
 {
 	model = "z\addons\dayz_communityweapons\aks74u\aks74u_sd.p3d";
+	picture = "\z\addons\dayz_communityweapons\aks74u\data\w_aks74u_sd_ca.paa";
 	displayName = $STR_DZ_WPN_AKS74U_SD_NAME;
 	
 	weaponInfoType = "RscWeaponZeroing";

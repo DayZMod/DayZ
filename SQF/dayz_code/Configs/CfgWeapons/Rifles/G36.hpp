@@ -136,6 +136,7 @@ class G36A_Camo_SD_DZ : G36_C_SD_camo
 class G36K_Camo_DZ : G36A_Camo_DZ
 {
 	model = "z\addons\dayz_communityweapons\g36\g36k_camo";
+	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36_camo_ca.paa";
 	displayName = $STR_DZ_WPN_G36K_CAMO_NAME;
 	
 	class Attachments
@@ -152,6 +153,7 @@ class G36K_Camo_DZ : G36A_Camo_DZ
 class G36K_Camo_SD_DZ : G36A_Camo_SD_DZ
 {
 	model = "z\addons\dayz_communityweapons\g36\g36k_camo_sd";
+	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36_camo_sd_ca.paa";
 	displayName = $STR_DZ_WPN_G36K_CAMO_SD_NAME;
 	
 	class ItemActions

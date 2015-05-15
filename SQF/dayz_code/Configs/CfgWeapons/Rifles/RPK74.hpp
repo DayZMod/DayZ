@@ -1,6 +1,7 @@
 class RPK74_Kobra_DZ : RPK_74
 {
 	model = "z\addons\dayz_communityweapons\rpk74\rpk74_kobra.p3d";
+	picture = "\z\addons\dayz_communityweapons\rpk74\data\w_rpk74_kobra_ca.paa";
 	displayName = $STR_DZ_WPN_RPK74_KOBRA_NAME;
 	
 	modes[] = {FullAuto,Single};
@@ -18,6 +19,7 @@ class RPK74_Kobra_DZ : RPK_74
 class RPK74_DZ : RPK74_Kobra_DZ
 {
 	model = "z\addons\dayz_communityweapons\rpk74\rpk74.p3d";
+	picture = "\z\addons\dayz_communityweapons\rpk74\data\w_rpk74_ca.paa";
 	displayName = $STR_DZ_WPN_RPK74_NAME;
 	
 	//iron sight zeroing
@@ -44,6 +46,7 @@ class RPK74_DZ : RPK74_Kobra_DZ
 class RPK74_PSO1_DZ : RPK74_Kobra_DZ
 {
 	model = "z\addons\dayz_communityweapons\rpk74\rpk74_pso.p3d";
+	picture = "\z\addons\dayz_communityweapons\rpk74\data\w_rpk74_pso_ca.paa";
 	displayName = $STR_DZ_WPN_RPK74_PSO1_NAME;
 	
 	//PSO-1
