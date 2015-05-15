@@ -51,7 +51,6 @@ r_player_unconscious = false;
 r_player_cardiac = false;
 _model = typeOf player;
 
-
 _array = _this;
 if (count _array > 0) then {
 	_source = _array select 0;
@@ -61,7 +60,7 @@ if (count _array > 0) then {
 		_isBandit = (player getVariable["humanity",0]) <= -2000;
         _accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ","Bandit1_DZ","BanditW1_DZ"]);
 
-		_punishment = _canHitFree or _isBandit or _accidentalMurder; //if u are bandit or start first - player will not recieve humanity drop
+		_punishment = _canHitFree || _isBandit || _accidentalMurder; //if u are bandit or start first - player will not recieve humanity drop
 		_humanityHit = 0;
 
 		if (!_punishment) then {
@@ -75,6 +74,7 @@ if (count _array > 0) then {
 			_source setVariable ["humanKills",(_kills + 1),true];
 			PVDZ_send = [_source,"Humanity",[_source,_humanityHit,300]];
 			publicVariableServer "PVDZ_send";
+
 		} else {
 			//i'm "guilty" - kill me as bandit
 			_killsV = _source getVariable ["banditKills",0];

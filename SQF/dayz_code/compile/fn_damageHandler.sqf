@@ -40,7 +40,7 @@ if (_unit == player) then {
 			// - Accidental Murder - \\  When wearing the garb of a non-civilian you are taking your life in your own hands
 			// Attackers humanity should not be punished for killing a survivor who has shrouded his identity in military garb.
 
-            _punishment = _canHitFree or _isBandit or _accidentalMurder;
+            _punishment = _canHitFree || _isBandit || _accidentalMurder;
             _humanityHit = 0;
 
             if (!_punishment) then {
