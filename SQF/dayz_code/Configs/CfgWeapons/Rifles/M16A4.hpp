@@ -2,6 +2,7 @@
 class M16A4_DZ : M16A2
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4;
 	
 	magazines[] = 
@@ -30,6 +31,7 @@ class M16A4_DZ : M16A2
 class M16A4_FL_DZ : M16A4_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_fl.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_fl_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_FL;
 	
 	class FlashLight
@@ -70,6 +72,7 @@ class M16A4_FL_DZ : M16A4_DZ
 class M16A4_GL_DZ : M16A2GL
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_gl.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_gl_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_GL;
 	
 	magazines[] = 
@@ -105,6 +108,7 @@ class M16A4_GL_DZ : M16A2GL
 class M16A4_GL_FL_DZ : M16A4_GL_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_gl_fl.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_gl_fl_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_GL_FL;
 	
 	class FlashLight
@@ -151,6 +155,7 @@ class M16A4_GL_FL_DZ : M16A4_GL_DZ
 class M16A4_CCO_DZ : M16A4_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_cco.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_cco_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_CCO;
 	
 	class Attachments
@@ -178,6 +183,7 @@ class M16A4_CCO_DZ : M16A4_DZ
 class M16A4_CCO_FL_DZ : M16A4_FL_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_cco_fl.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_cco_fl_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_CCO_FL;
 	
 	class Attachments
@@ -208,6 +214,7 @@ class M16A4_CCO_FL_DZ : M16A4_FL_DZ
 class M16A4_GL_CCO_DZ : M16A4_GL_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_gl_cco.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_gl_cco_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_GL_CCO;
 	
 	class Attachments
@@ -238,6 +245,7 @@ class M16A4_GL_CCO_DZ : M16A4_GL_DZ
 class M16A4_GL_CCO_FL_DZ : M16A4_GL_FL_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_gl_cco_fl.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_gl_cco_fl_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_GL_CCO_FL;
 	
 	class Attachments {};
@@ -268,6 +276,7 @@ class M16A4_GL_CCO_FL_DZ : M16A4_GL_FL_DZ
 class M16A4_Holo_DZ : M16A4_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_holo.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_holo_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_HOLO;
 	
 	class Attachments
@@ -295,6 +304,7 @@ class M16A4_Holo_DZ : M16A4_DZ
 class M16A4_Holo_FL_DZ : M16A4_FL_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_holo_fl.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_holo_fl_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_HOLO_FL;
 	
 	class Attachments
@@ -325,6 +335,7 @@ class M16A4_Holo_FL_DZ : M16A4_FL_DZ
 class M16A4_GL_Holo_DZ : M16A4_GL_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_gl_holo.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_gl_holo_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_gl_HOLO;
 	
 	class Attachments
@@ -355,6 +366,7 @@ class M16A4_GL_Holo_DZ : M16A4_GL_DZ
 class M16A4_GL_Holo_FL_DZ : M16A4_GL_FL_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_gl_holo_fl.p3d";
+	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_gl_holo_fl_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_GL_HOLO_FL;
 	
 	class Attachments {};

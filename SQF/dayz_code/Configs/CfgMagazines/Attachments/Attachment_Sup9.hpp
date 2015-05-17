@@ -4,11 +4,11 @@ class Attachment_Sup9 : CA_Magazine
 	count = 1;
 	type = WeaponSlotItem;
 	
-	model = "z\addons\dayz_communityassets\models\surpressor.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\attachment_silencer.paa";
+	model = "\z\addons\dayz_communityweapons\attachments\suppressor9\9mm_suppressor.p3d";
+	picture = "\z\addons\dayz_communityweapons\data\m_placeholder_ca.paa";
 	
-	displayName = $STR_ATTACHMENT_NAME_SILENCER_MAKAROV;
-	descriptionShort = $STR_ATTACHMENT_DESC_SILENCER_MAKAROV;
+	displayName = $STR_DZ_ATT_SUP9_NAME;
+	descriptionShort = "9mm Sound Suppressor TODO";
 	
 	class ItemActions
 	{
@@ -16,6 +16,12 @@ class Attachment_Sup9 : CA_Magazine
 		{
 			text = $STR_DZ_ATT_ACT_TO_SECONDARY;
 			script = "; [_id,0] call player_attachAttachment";
+		};
+		
+		class AttachToPrimary
+		{
+			text = $STR_DZ_ATT_ACT_TO_PRIMARY;
+			script = "; [_id,1] call player_attachAttachment";
 		};
 	};
 };
