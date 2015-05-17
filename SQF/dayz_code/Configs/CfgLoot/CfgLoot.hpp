@@ -75,6 +75,7 @@ class CfgLoot {
 		{"ItemSodaLirik",0.02},
 		{"ItemSodaPeppsy",0.02},
 		{"FoodCanBeef",0.03},
+		{"Item1Matchbox",0.01},
 		{"FoodCanCurgon",0.03}
 	};
 	viralloot[] = {
@@ -85,6 +86,7 @@ class CfgLoot {
 		{"ItemSodaPeppsy",0.04},
 		{"FoodCanRusCorn",0.05},
 		{"FoodCanCurgon",0.05},
+		{"ItemAntibiotic1",0.01},
 		{"FoodCanBoneboy",0.05}
 	};
 	food[] = {
