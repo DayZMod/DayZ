@@ -109,14 +109,13 @@ class 15Rnd_9x19_M9SD : 15Rnd_9x19_M9
 	};
 };
 
-class 17Rnd_9x19_glock17SD : 17Rnd_9x19_glock17
+class 17Rnd_9x19_glock17SD : 15Rnd_9x19_M9SD
 {
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_glock17sd_ca.paa";
 	
 	displayName = $STR_DZ_MAG_17RND_9X19_GLOCK17SD;
 	
-	ammo = B_9x19_SD;
-	initSpeed = 315;
+	count = 17;
 	
 	class ItemActions
 	{
