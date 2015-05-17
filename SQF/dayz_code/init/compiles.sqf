@@ -508,6 +508,38 @@ init_keyboard = {
 	[controlNull, 1, false,false,false] call compile preprocessFileLineNumbers (MISSION_ROOT+'keyboard.sqf');
 };
 
+dayz_reduceItems = {
+    private ["_item", "_class"];
+//Item in current inventory.
+	_item = _this select 0;
+//Class type to use.
+	_class = _this select 1;
+
+//Does player have the original item? (Not Really needed player_useMeds checks)
+	if (_item IN magazines player) exitWith {
+	//Amount in current box (will be -1 for a random chance to start the reducing)
+		_amount = getNumber(configfile >> "cfgWeapons" >> _x >> _class >> "amount");
+	//Item to move too if there is some left
+		_qtyRemaining = getText(configfile >> "cfgWeapons" >> _x >> _class >> "qtyRemaining");
+		
+		//diag_log format["%1[%2,%3]",_item,_amount,_qtyRemaining];
+		
+	//Only run for the random amount.
+		if (_amount == -1) then { 
+		//Chance to start the reduction 
+			if ([getNumber(configfile >> "cfgWeapons" >> _x >> _class >> "chance")] call fn_chance) then {
+				player removeWeapon _x;
+				player addWeapon _qtyRemaining;
+			};
+		} else {
+			player removeWeapon _x;
+			player addWeapon _qtyRemaining;
+		};
+	};
+	true
+};
+
+
 dayz_inflame = {
     private ["_object", "_hasTool"];
 

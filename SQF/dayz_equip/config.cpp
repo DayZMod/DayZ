@@ -1417,22 +1417,7 @@ class ItemSodaEmpty;
 		descriptionShort = $STR_EQUIP_DESC_16;
 	};
 	
-	class ItemAntibiotic : CA_Magazine {
-		scope = public;
-		count = 1;
-		type = 256;
-		displayName = $STR_EQUIP_NAME_17;
-		model = "\dayz_equip\models\med_antibiotic_gear.p3d";
-		picture = "\dayz_equip\textures\equip_antibiotics_ca.paa";
-		descriptionShort = $STR_EQUIP_DESC_17;
-		
-		class ItemActions {
-			class Use {
-				text = $STR_TAKE_ANTIBIOTIC;
-				script = "spawn player_useMeds;";
-			};
-		};
-	};
+	#include "configs\ItemAntibiotic.hpp"
 	
 	class ItemPainkiller : CA_Magazine {
 		scope = public;
