@@ -25,5 +25,3 @@ if ((_unit == player) or (vehicle player != player)) then {
 	publicVariableServer "PVDZ_send";
 	[player,20] call player_humanityChange;
 };
-
-player removeMagazine "ItemAntibiotic";

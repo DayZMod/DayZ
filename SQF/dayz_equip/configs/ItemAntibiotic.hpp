@@ -32,7 +32,7 @@ class ItemAntibiotic : ItemAntibiotic_base {
 };
 class ItemAntibiotic6 : ItemAntibiotic {
 	displayName = $STR_EQUIP_NAME_17;
-	descriptionShort = $STR_EQUIP_DESC_17;
+	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 6 Remaining";
 	
 	class medical {
 		amount = 6;
@@ -41,7 +41,7 @@ class ItemAntibiotic6 : ItemAntibiotic {
 };
 class ItemAntibiotic5 : ItemAntibiotic {
 	displayName = $STR_EQUIP_NAME_17;
-	descriptionShort = $STR_EQUIP_DESC_17;
+	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 5 Remaining";
 	
 	class medical {
 		amount = 5;
@@ -50,7 +50,7 @@ class ItemAntibiotic5 : ItemAntibiotic {
 };
 class ItemAntibiotic4 : ItemAntibiotic {
 	displayName = $STR_EQUIP_NAME_17;
-	descriptionShort = $STR_EQUIP_DESC_17;
+	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 4 Remaining";
 	
 	class medical {
 		amount = 4;
@@ -59,7 +59,7 @@ class ItemAntibiotic4 : ItemAntibiotic {
 };
 class ItemAntibiotic3 : ItemAntibiotic {
 	displayName = $STR_EQUIP_NAME_17;
-	descriptionShort = $STR_EQUIP_DESC_17;
+	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 3 Remaining";
 	
 	class medical {
 		amount = 3;
@@ -68,7 +68,7 @@ class ItemAntibiotic3 : ItemAntibiotic {
 };
 class ItemAntibiotic2 : ItemAntibiotic {
 	displayName = $STR_EQUIP_NAME_17;
-	descriptionShort = $STR_EQUIP_DESC_17;
+	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 2 Remaining";
 	
 	class medical {
 		amount = 2;
@@ -78,7 +78,7 @@ class ItemAntibiotic2 : ItemAntibiotic {
 };
 class ItemAntibiotic1 : ItemAntibiotic {
 	displayName = $STR_EQUIP_NAME_17;
-	descriptionShort = $STR_EQUIP_DESC_17;
+	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 1 Remaining";
 	
 	class medical {
 		amount = 1;
@@ -87,6 +87,7 @@ class ItemAntibiotic1 : ItemAntibiotic {
 };
 
 class ItemAntibioticEmpty : ItemAntibiotic_base {
+	scope = 2;
 	displayName = $STR_EQUIP_NAME_17;
-	descriptionShort = $STR_EQUIP_DESC_17;
+	descriptionShort = "EmptyBox of Azithromycin.";
 };

@@ -109,6 +109,7 @@ if (!isDedicated) then {
 	player_tearClothes = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_tearClothes.sqf";
 	//object_remove = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\remove.sqf";
 	player_fixHatchet = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_fixTools.sqf";
+	player_sharpen = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_sharpen.sqf";
 
 	//ui
 	player_selectSlot = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\ui_selectSlot.sqf";
@@ -518,22 +519,27 @@ dayz_reduceItems = {
 //Does player have the original item? (Not Really needed player_useMeds checks)
 	if (_item IN magazines player) exitWith {
 	//Amount in current box (will be -1 for a random chance to start the reducing)
-		_amount = getNumber(configfile >> "cfgWeapons" >> _x >> _class >> "amount");
-	//Item to move too if there is some left
-		_qtyRemaining = getText(configfile >> "cfgWeapons" >> _x >> _class >> "qtyRemaining");
+		_amount = getNumber(configfile >> "CfgMagazines" >> _item >> _class >> "amount");
 		
-		//diag_log format["%1[%2,%3]",_item,_amount,_qtyRemaining];
+		//_amount = getNumber(configfile >> "CfgMagazines" >> "ItemAntibiotic2" >> "medical" >> "qtyRemaining");
+		//_amount = getnumber(configfile >> "CfgMagazines" >> "ItemAntibiotic3" >> "medical" >> "amount"); 
+		diag_log (_amount);
+
+	//Item to move too if there is some left
+		_qtyRemaining = getText(configfile >> "CfgMagazines" >> _item >> _class >> "qtyRemaining");
+		
+		diag_log format["%1,%2[%3,%4]",_item,_class,_amount,_qtyRemaining];
 		
 	//Only run for the random amount.
 		if (_amount == -1) then { 
 		//Chance to start the reduction 
-			if ([getNumber(configfile >> "cfgWeapons" >> _x >> _class >> "chance")] call fn_chance) then {
-				player removeWeapon _x;
-				player addWeapon _qtyRemaining;
+			if ([getNumber(configfile >> "CfgMagazines" >> _item >> _class >> "chance")] call fn_chance) then {
+				player removeMagazine _item;
+				player addMagazine _qtyRemaining;
 			};
 		} else {
-			player removeWeapon _x;
-			player addWeapon _qtyRemaining;
+			player removeMagazine _item;
+			player addMagazine _qtyRemaining;
 		};
 	};
 	true
