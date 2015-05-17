@@ -55,6 +55,7 @@
 #include "equip_comfreyleafs.hpp"
 #include "equip_floppywire.hpp"
 #include "equip_crate.hpp"
-#include "equip_brick.hpp"
+//Moved to dayz_equip
+//#include "equip_brick.hpp"
 
 //Need adding to loot table

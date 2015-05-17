@@ -6,4 +6,11 @@ class equip_brick : CA_Magazine {
 	model = "\z\addons\dayz_communityassets\models\brick.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\equip_brick.paa";
 	type = 256;
+	
+	class ItemActions {
+		class FixKnife {
+			text = "Sharpen Knife";
+			script = "; ['ItemKnifeBlunt','ItemWaterbottle','ItemKnife'] spawn player_sharpen;";
+		};
+	};
 };

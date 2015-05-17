@@ -3,3 +3,4 @@
 #include "Workbench.hpp"
 #include "Padlock.hpp"
 #include "Stone.hpp"
+#include "equip_brick.hpp"
