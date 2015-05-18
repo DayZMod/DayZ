@@ -115,19 +115,23 @@ if (_newWeapon == "") exitWith
 };
 
 call gear_ui_init;
+player playActionNow "Medic";
 
 //remove attachment from inventory and replace weapon
 player removeMagazine _attachment;
 player removeWeapon _weapon;
 player addWeapon _newWeapon;
 
-//if player is in a vehicle close gear
+/*//if player is in a vehicle close gear
 //otherwise the display will not update
 if (vehicle player != player) then
 {
 	_display = findDisplay 106;
 	_display closeDisplay 0;
-};
+};*/
+
+//close gear
+(findDisplay 106) closeDisplay 0;
 
 //if player doesn't have a muzzle selected set it to the first muzzle of the new weapon
 if (currentWeapon player == "") then
