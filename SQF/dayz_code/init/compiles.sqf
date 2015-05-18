@@ -418,7 +418,31 @@ if (!isDedicated) then {
 	        if (_remain > 0) then { player addWeapon ("Item"+str(_remain)+"Matchbox"); };
 		};
     };  
+	
+	dayz_rollingMessages = {
+		if ((diag_ticktime - Message_1_time) < 5) then {
+			if ((time - Message_2_time) < 5) then
+			{
+				Message_3 = Message_2;
+				Message_3_time = Message_2_time;
+			}
+			else
+			{
+				Message_3 = "";
+			};
+			
+			Message_2 = Message_1;
+			Message_2_time = Message_1_time;
+		} else {
+			Message_2 = "";
+			Message_3 = "";
+		};
 
+		Message_1 = _this;
+		Message_1_time = diag_ticktime;
+		cutText [format ["%1\n%2\n%3", Message_1, Message_2, Message_3], "PLAIN DOWN"];
+	};
+	
 	dayz_originalPlayer = player;
 };
 
