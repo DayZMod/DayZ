@@ -13,7 +13,9 @@ if ((isNil "_cursorTarget") or {(isNull _cursorTarget)}) then {
 };
 
 if(isNull _cursorTarget) exitWith {
-    cutText [localize "str_disassembleNoOption", "PLAIN DOWN"];
+    //cutText [localize "str_disassembleNoOption", "PLAIN DOWN"];
+	_msg = localize "str_disassembleNoOption";
+	_msg call dayz_rollingMessages;
 };
 
 //Remove action Menu
@@ -25,11 +27,18 @@ _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animatio
 _isWater = (surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 if(_isWater or _onLadder) exitWith {
     //cutText ["unable to upgrade at this time", "PLAIN DOWN"];
-    cutText [localize "str_disassembleInProgress", "PLAIN DOWN"];
+    //cutText [localize "str_disassembleInProgress", "PLAIN DOWN"];
+	_msg = localize "str_disassembleInProgress";
+	_msg call dayz_rollingMessages;
 };
 
 _alreadyRemoving = _cursorTarget getVariable["alreadyRemoving",0];
-if (_alreadyRemoving == 1) exitWith {cutText [localize "str_disassembleInProgress" , "PLAIN DOWN"]};
+if (_alreadyRemoving == 1) exitWith {
+	//cutText [localize "str_disassembleInProgress" , "PLAIN DOWN"];
+	_msg = localize "str_disassembleInProgress";
+	_msg call dayz_rollingMessages;
+};
+
 _cursorTarget setVariable["alreadyRemoving",1];
 _characterID = _cursorTarget getVariable ["characterID","0"];
 _objectID = _cursorTarget getVariable ["ObjectID","0"];
@@ -57,8 +66,10 @@ for "_i" from 1 to 20 do {
         if (!(_x IN items player)) exitWith { _toolsOK = false; };
     } count _requiredTools;
     if (!_toolsOK) exitWith {
-        cutText [format [localize "str_disassembleMissingTool",getText (configFile >> "CfgWeapons" >> _x >> "displayName"),_displayname], "PLAIN DOWN"];//["Missing %1 to disassemble %2."
-    };
+        //cutText [format [localize "str_disassembleMissingTool",getText (configFile >> "CfgWeapons" >> _x >> "displayName"),_displayname], "PLAIN DOWN"];//["Missing %1 to disassemble %2."
+    	_msg = format [localize "str_disassembleMissingTool",getText (configFile >> "CfgWeapons" >> _x >> "displayName"),_displayname];
+		_msg call dayz_rollingMessages;
+	};
 
     if (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "disableWeapons") == 0) then {
         player playActionNow "Medic";
@@ -155,7 +166,9 @@ if (!_realObjectStillThere) then {
     };
 };
 
-cutText [localize "str_disassembleDone", "PLAIN DOWN"];
+_msg = localize "str_disassembleDone";
+_msg call dayz_rollingMessages;
+//cutText [localize "str_disassembleDone", "PLAIN DOWN"];
 
 player setVariable["alreadyBuilding",0];
 
