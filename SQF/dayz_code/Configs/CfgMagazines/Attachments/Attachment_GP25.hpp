@@ -5,7 +5,7 @@ class Attachment_GP25 : CA_Magazine
 	type = WeaponSlotItem;
 	
 	model = "\z\addons\dayz_communityweapons\attachments\gp25\gp25.p3d";
-	picture = "\z\addons\dayz_communityweapons\data\m_placeholder_ca.paa";
+	picture = "\z\addons\dayz_communityweapons\attachments\gp25\data\m_gp25_ca.paa";
 	
 	displayName = $STR_DZ_ATT_GP25_NAME;
 	descriptionShort = "GP-25 under-barrel grenade launcher TODO";

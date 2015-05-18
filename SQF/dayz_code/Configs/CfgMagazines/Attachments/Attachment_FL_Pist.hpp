@@ -4,8 +4,8 @@ class Attachment_FL_Pist : CA_Magazine
 	count = 1;
 	type = WeaponSlotItem;
 	
-	model = "ca\weapons\mag_univ.p3d";
-	picture = "\z\addons\dayz_communityweapons\data\m_placeholder_ca.paa";
+	model = "\z\addons\dayz_communityweapons\attachments\flashlight_pistol\flashlight_pistol.p3d";
+	picture = "\z\addons\dayz_communityweapons\attachments\flashlight_pistol\data\m_flashlight_pistol_ca.paa";
 	
 	displayName = $STR_DZ_ATT_FL_PST_NAME;
 	descriptionShort = "Rail attachable pistol flashlight TODO";

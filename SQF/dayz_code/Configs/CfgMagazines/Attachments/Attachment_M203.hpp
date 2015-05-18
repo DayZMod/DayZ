@@ -5,7 +5,7 @@ class Attachment_M203 : CA_Magazine
 	type = WeaponSlotItem;
 	
 	model = "\z\addons\dayz_communityweapons\attachments\m203\m203.p3d";
-	picture = "\z\addons\dayz_communityweapons\data\m_placeholder_ca.paa";
+	picture = "\z\addons\dayz_communityweapons\attachments\m203\data\m_m203_ca.paa";
 	
 	displayName = $STR_DZ_ATT_M203_NAME;
 	descriptionShort = "M203 Under-barrel grenade launcher TODO";
