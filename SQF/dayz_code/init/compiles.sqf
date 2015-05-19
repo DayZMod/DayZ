@@ -698,3 +698,16 @@ isInflamed = {
     _flame = if (count _flame > 0) then { _flame select 0 } else { objNull };
     !(isNull _flame) and {(inflamed _flame)}
 };
+
+dayz_engineSwitch = {
+	//private["_unit","_humanity","_delay"];
+	_vehicle = _this select 0;
+	_state = _this select 1;
+	
+	if (local _vehicle) then {
+		_vehicle engineOn _state;
+	} else {
+		PVDZ_send = [_vehicle,"SetEngineState",[_vehicle,_state]];
+		publicVariableServer "PVDZ_send";
+	};
+};

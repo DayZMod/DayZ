@@ -196,6 +196,60 @@ class CfgVehicles {
 		supplyRadius = 1;
 	};
 	#include "gathered_plants.hpp"
+	class Generator_Base: SkodaBase
+	{
+		model = "\dayz_equip\models\generator_gear.p3d";
+		picture = "\dayz_equip\textures\equip_generator_ca.paa";
+		displayName="Generator";
+	};
+	class Generator_DZ: Generator_Base
+	{
+		scope = 1;
+		transportMaxWeapons=0;
+		transportmaxbackpacks = 0;
+		transportMaxMagazines=10;
+		displayName="Generator";
+		weapons[] = {};
+		magazines[] = {};
+		class TransportBackpacks{};
+		class TransportMagazines{};
+		class TransportWeapons{};
+		class TransportItems{};
+		maximumLoad = 200;
+		supplyRadius = -1;
+		memoryPointSupply = "";
+		
+		soundengineoffext[] = {"ca\sounds\vehicles\Wheeled\sedan\ext\ext-sedan-stop-1", 0.398107, 1, 250};
+		soundengineonext[] = {"ca\sounds\vehicles\Wheeled\sedan\ext\ext-sedan-start-1", 0.398107, 1, 250};
+
+		class Turrets {};
+			
+		class UserActions
+		{
+			class EngineOn
+			{
+				displayNameDefault = "Switch On";
+				displayName = "Switch On";
+				position = "";
+				shortcut = "EngineOn";
+				radius = 2.7;
+				onlyForPlayer = 1;
+				condition = "alive this and !isEngineOn this";
+				statement = "[this,true] call dayz_engineSwitch";
+			};
+			class EngineOff: EngineOn
+			{
+				displayNameDefault = "Switch Off";
+				displayName = "Switch Off";
+				position = "";
+				shortcut = "EngineOn";
+				radius = 2.7;
+				onlyForPlayer = 1;
+				condition = "alive this and isEngineOn this";
+				statement = "player action ['engineOff', this];";
+			};
+		};
+	};
 };
 class CfgNonAIVehicles {
 	#include "StreetLamps.hpp"

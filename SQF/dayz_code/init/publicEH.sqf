@@ -10,6 +10,8 @@
 "PVCDZ_obj_GutBody"		addPublicVariableEventHandler {(_this select 1) spawn local_gutObject};
 "PVCDZ_veh_SetFuel"		addPublicVariableEventHandler {(_this select 1) spawn local_setFuel};
 //"dayzInfectedCamps"		addPublicVariableEventHandler {(_this select 1) call infectedcamps};
+
+"PVCDZ_veh_engineSwitch"		addPublicVariableEventHandler {(_this select 1) spawn dayz_engineSwitch};
 	
 {
 	private ["_building", "_fckingcode"];
