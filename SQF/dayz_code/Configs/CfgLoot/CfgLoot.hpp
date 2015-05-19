@@ -75,7 +75,7 @@ class CfgLoot {
 		{"ItemSodaLirik",0.02},
 		{"ItemSodaPeppsy",0.02},
 		{"FoodCanBeef",0.03},
-		{"Item1Matchbox",0.01},
+		//{"Item1Matchbox",0.01}, Removed due to item not mag
 		{"FoodCanCurgon",0.03}
 	};
 	viralloot[] = {
