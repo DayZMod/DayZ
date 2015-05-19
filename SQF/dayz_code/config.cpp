@@ -17,7 +17,7 @@ class CfgMods {
 		hidePicture = 0;
 		hideName = 0;
 		action = "http://www.dayzmod.com";
-		version = "DayZMod Dev-6f2e9bd";
+		version = "DayZMod Dev-edde9c4";
 		hiveVersion = 0.96;
 		requiredAddons[] = {"Chernarus"};
 	};
