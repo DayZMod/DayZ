@@ -40,7 +40,6 @@ class CfgCrafting {
 	#include "Recipes\Other\woodencrate.hpp"
 	#include "Recipes\Other\nails.hpp"
 	#include "Recipes\Other\BackPack.hpp"
-	#include "Recipes\Other\Binocular.hpp"
 	#include "Recipes\Other\Ghillie.hpp"
 	//#include "Recipes\Other\woodenCraftTable.hpp"
 	//Traps
