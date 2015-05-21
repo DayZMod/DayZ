@@ -148,7 +148,7 @@ link80[] = {62,58};
 link81[] = {61,62};
 link82[] = {62,61};
 globals[] = {25.000000,1,0,0,0,640,480,1,136,6316128,1,-565.680786,17.917299,599.718506,118.872169,727,599,1};
-window[] = {2,-1,-1,-1,-1,776,75,1283,75,3,745};
+window[] = {2,-1,-1,-1,-1,726,25,1233,25,3,745};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -512,7 +512,7 @@ class FSM
        "_isAlive = alive _agent;" \n
        "_targetPos = getPosATL _target;" \n
        "" \n
-       "if (_agent distance _target <= dayz_attackRange) then {" \n
+       "if (_agent distance _target >= dayz_attackRange) then {" \n
        "	_agent moveTo _targetPos;" \n
        "};" \n
        "" \n
