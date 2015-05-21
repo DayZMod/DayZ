@@ -675,7 +675,7 @@ class cfgWeapons {
 		model = "z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.p3d";
 		picture = "\z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.paa";
 		descriptionShort = $STR_EQUIP_DESC_SledgeHammer;
-		
+/*		
 		class ItemActions {
 			class Use
 			{
@@ -683,6 +683,7 @@ class cfgWeapons {
 				script="spawn player_mineStone;";
 			};
 		};
+*/		
 	};
 	class ItemSledgeHammerBroken : ItemCore {
 		scope = public;
