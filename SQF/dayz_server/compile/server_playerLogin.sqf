@@ -134,6 +134,11 @@ if (!_isNew) then {
 		if (_model == "") then {
 			_model = "Survivor2_DZ";
 		};
+	// on new character if not female; randomize male survivor skin
+	
+	if (_model == "Survivor2_DZ") then {
+		_model = ["Survivor1_DZ","Survivor2_DZ"] call BIS_fnc_selectRandom;	
+	};
 	};
 
 	//Record initial inventory
