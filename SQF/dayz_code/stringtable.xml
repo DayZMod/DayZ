@@ -2376,6 +2376,20 @@
 			<French>Des tubes en métal de 2.5 cm de diamètre</French>
 			<Czech>Kovová trubka o průměru jeden palec.</Czech>
 		</Key>
+		<Key ID="STR_ITEM_DESC_HerbalDrink">
+			<English>A drink mixed with herbs that may help heal infection.</English>
+			<Czech>Nápoj smíchá s bylinkami , které mohou pomoci léčit infekci .</Czech>
+			<French>Une boisson mélangée avec des herbes qui peuvent aider à guérir l'infection .</French>
+			<German>Ein Getränk gemischt mit Kräutern , die helfen, zu heilen Infektion kann .</German>
+		</Key>
+		<Key ID="STR_ITEM_NAME_HerbalDrink">
+			<English>Herbal Drink</English>
+			<Spanish>bebida Herbal</Spanish>
+			<Russian>травяной напиток</Russian>
+			<Czech>Herbal Drink</Czech>
+			<French>boisson à base de plantes</French>
+			<German>Herbal Drink</German>
+		</Key>
 		<Key ID="STR_ITEM_NAME_equip_comfreyleafs">
 			<English>Comfrey Leaves</English>
 			<Russian>Листья живокоста</Russian>
@@ -2615,6 +2629,23 @@
 			<French>Plan de fabrication d&apos;un G36K Camouflage. Requis : 1 G36K, 1 Fixation Camouflage + Boîte à outils</French>
 			<Czech>Návod pro vyrobení G36K s maskovacím potiskem. Potřeba: 1x G36K, 1x maskovací potisk a sada nástrojů</Czech>
 			<German>Blaupause fuer ein G36K Tarn. Gebraucht werden: 1x G36K, 1x Tarnmaterial. Werkzeug: Werkzeugkiste.</German>
+		</Key>
+		</Key>
+		<Key ID="STR_CRAFT_NAME_HerbalDrink">
+			<English>Herbal Drink</English>
+			<Spanish>bebida Herbal</Spanish>
+			<Russian>травяной напиток</Russian>
+			<Czech>Herbal Drink</Czech>
+			<French>boisson à base de plantes</French>
+			<German>Herbal Drink</German>
+		</Key>
+		<Key ID="STR_CRAFT_DESC_HerbalDrink">
+			<English>Blueprint to create a Herbal Drink. Required - 1 Water bottle boiled and one herb box.</English>
+			<Russian>Blueprint для создания травяной напиток . Требуется - 1 бутылка воды кипяченой и одна трава окно .</Russian>
+			<Spanish>Blueprint para crear una bebida a base de plantas . Requerido - 1 Botella de agua hervida y una caja de hierbas.</Spanish>
+			<French>Blueprint pour créer une boisson à base de plantes . Required - 1 bouteille d'eau bouillie et une boîte d'herbe .</French>
+			<Czech>Blueprint vytvořit Herbal drink. Povinné - 1 láhev vody vařené a jedna bylina box .</Czech>
+			<German>Blueprint , eine Kräuter- Drink erstellen. Erforderlich - 1 Flasche Wasser gekocht und ein Kraut -Box .</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_BaseBallBatBarbed">
 			<English>Baseball Bat Barbed</English>

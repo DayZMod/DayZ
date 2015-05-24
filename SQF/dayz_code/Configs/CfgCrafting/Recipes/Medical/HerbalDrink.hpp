@@ -1,5 +1,6 @@
 class Blueprint_HerbalDrink : Recipe {
 	displayName = $STR_CRAFT_NAME_HerbalDrink;
+	descriptionShort = $STR_CRAFT_DESC_herbalDrink;
 	input[] = 
 	{
 		{"ItemWaterbottleBoiled","CfgMagazines",1},
