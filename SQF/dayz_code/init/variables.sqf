@@ -165,7 +165,7 @@ food_output = [
 	"FoodCanBeefEmpty"
 ];
 //Drinking
-no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled", "ItemWaterBottleInfected", "ItemWaterBottleSafe"];
+no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled", "ItemWaterBottleInfected", "ItemWaterBottleSafe","ItemWaterBottleHerbal"];
 
 drink_with_output = [
     "ItemSoda",  //just to define item for ItemSodaEmpty
