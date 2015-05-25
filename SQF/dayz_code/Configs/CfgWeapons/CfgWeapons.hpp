@@ -161,6 +161,7 @@ class CfgWeapons
 	/* TOOLS */
 	
 	#include "Tools\GPS.hpp"
+	#include "Tools\Binocular.hpp"
 	
 	
 	
