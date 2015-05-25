@@ -20,8 +20,27 @@ switch (_item) do {
 	case "ItemMorphine": {
 		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\morphine.sqf";
 	};
+	//PainKiller system
 	case "ItemPainkiller": {
 		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\painkiller.sqf";
+	};
+	case "ItemPainkiller1": {
+		_id = [player,"ItemPainkiller1"] execVM "\z\addons\dayz_code\medical\ItemPainkiller.sqf";
+	};
+	case "ItemPainkiller2": {
+		_id = [player,"ItemPainkiller2"] execVM "\z\addons\dayz_code\medical\ItemPainkiller.sqf";
+	};
+	case "ItemPainkiller3": {
+		_id = [player,"ItemPainkiller3"] execVM "\z\addons\dayz_code\medical\ItemPainkiller.sqf";
+	};
+	case "ItemPainkiller4": {
+		_id = [player,"ItemPainkiller4"] execVM "\z\addons\dayz_code\medical\ItemPainkiller.sqf";
+	};
+	case "ItemPainkiller5": {
+		_id = [player,"ItemPainkiller5"] execVM "\z\addons\dayz_code\medical\ItemPainkiller.sqf";
+	};
+	case "ItemPainkiller6": {
+		_id = [player,"ItemPainkiller6"] execVM "\z\addons\dayz_code\medical\ItemPainkiller.sqf";
 	};
 	//Antibiotic's system
 	case "ItemAntibiotic": {
