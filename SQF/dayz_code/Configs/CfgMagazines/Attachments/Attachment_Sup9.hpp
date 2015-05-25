@@ -8,7 +8,7 @@ class Attachment_Sup9 : CA_Magazine
 	picture = "\z\addons\dayz_communityweapons\attachments\suppressor9\data\m_suppressor9_ca.paa";
 	
 	displayName = $STR_DZ_ATT_SUP9_NAME;
-	descriptionShort = "9mm Sound Suppressor TODO";
+	descriptionShort = $STR_DZ_ATT_SUP9_DESC;
 	
 	class ItemActions
 	{

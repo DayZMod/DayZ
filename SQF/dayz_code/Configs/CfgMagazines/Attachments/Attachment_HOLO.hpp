@@ -8,7 +8,7 @@ class Attachment_HOLO : CA_Magazine
 	picture = "\z\addons\dayz_communityweapons\attachments\holo\data\m_holo_ca.paa";
 	
 	displayName = $STR_DZ_ATT_HOLO_NAME;
-	descriptionShort = "Eotech 553 Holographic Weapon Sight TODO";
+	descriptionShort = $STR_DZ_ATT_HOLO_DESC;
 	
 	class ItemActions
 	{

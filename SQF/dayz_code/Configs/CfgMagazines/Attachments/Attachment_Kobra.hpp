@@ -8,7 +8,7 @@ class Attachment_Kobra : CA_Magazine
 	picture = "\z\addons\dayz_communityweapons\attachments\kobra\data\m_kobra_ca.paa";
 	
 	displayName = $STR_DZ_ATT_KOBRA_NAME;
-	descriptionShort = "EKP-1S-03 Red dot sight TODO";
+	descriptionShort = $STR_DZ_ATT_KOBRA_DESC;
 	
 	class ItemActions
 	{

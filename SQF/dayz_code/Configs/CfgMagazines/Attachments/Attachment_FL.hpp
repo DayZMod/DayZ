@@ -8,7 +8,7 @@ class Attachment_FL : CA_Magazine
 	picture = "\z\addons\dayz_communityweapons\attachments\flashlight_rifle\data\m_flashlight_rifle_ca.paa";
 	
 	displayName = $STR_DZ_ATT_FL_RFL_NAME;
-	descriptionShort = "Rail attachable rifle flashlight TODO";
+	descriptionShort = $STR_DZ_ATT_FL_RFL_DESC;
 	
 	class ItemActions
 	{

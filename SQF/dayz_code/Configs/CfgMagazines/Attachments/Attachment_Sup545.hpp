@@ -8,7 +8,7 @@ class Attachment_Sup545 : CA_Magazine
 	picture = "\z\addons\dayz_communityweapons\attachments\suppressor545\data\m_suppressor545_ca.paa";
 	
 	displayName = $STR_DZ_ATT_SUP545_NAME;
-	descriptionShort = "5.45mm Sound Suppressor TODO";
+	descriptionShort = $STR_DZ_ATT_SUP545_DESC;
 	
 	class ItemActions
 	{

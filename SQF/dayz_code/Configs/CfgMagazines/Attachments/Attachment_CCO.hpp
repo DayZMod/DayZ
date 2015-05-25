@@ -8,7 +8,7 @@ class Attachment_CCO : CA_Magazine
 	picture = "\z\addons\dayz_communityweapons\attachments\cco\data\m_cco_ca.paa";
 	
 	displayName = $STR_DZ_ATT_CCO_NAME;
-	descriptionShort = "M68 Close Combat Optic TODO";
+	descriptionShort = $STR_DZ_ATT_CCO_DESC;
 	
 	class ItemActions
 	{

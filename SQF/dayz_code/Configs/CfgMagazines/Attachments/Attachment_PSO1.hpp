@@ -8,7 +8,7 @@ class Attachment_PSO1 : CA_Magazine
 	picture = "\z\addons\dayz_communityweapons\attachments\pso\data\m_pso_ca.paa";
 	
 	displayName = $STR_DZ_ATT_PSO1_NAME;
-	descriptionShort = "PSO-1 Optical Sniper Sight TODO";
+	descriptionShort = $STR_DZ_ATT_PSO1_DESC;
 	
 	class ItemActions
 	{

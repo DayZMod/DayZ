@@ -9282,16 +9282,16 @@
 			<Original>M4A1 SD FL</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_NAME">
-			<Original>M4A1 GL</Original>
+			<Original>M4A1 M203</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_FL_NAME">
-			<Original>M4A1 GL FL</Original>
+			<Original>M4A1 M203 FL</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_SD_NAME">
-			<Original>M4A1 GL SD</Original>
+			<Original>M4A1 M203 SD</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_SD_FL_NAME">
-			<Original>M4A1 GL SD FL</Original>
+			<Original>M4A1 M203 SD FL</Original>
 		</Key>
 		<!-- M4A1 CCO-->
 		<Key ID="STR_DZ_WPN_M4A1_CCO_NAME">
@@ -9307,16 +9307,16 @@
 			<Original>M4A1 CCO SD FL</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_NAME">
-			<Original>M4A1 GL CCO</Original>
+			<Original>M4A1 M203 CCO</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_FL_NAME">
-			<Original>M4A1 GL CCO FL</Original>
+			<Original>M4A1 M203 CCO FL</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_SD_NAME">
-			<Original>M4A1 GL CCO SD</Original>
+			<Original>M4A1 M203 CCO SD</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_SD_FL_NAME">
-			<Original>M4A1 GL CCO SD FL</Original>
+			<Original>M4A1 M203 CCO SD FL</Original>
 		</Key>
 		<!-- M4A1 Holo -->
 		<Key ID="STR_DZ_WPN_M4A1_HOLO_NAME">
@@ -9332,16 +9332,16 @@
 			<Original>M4A1 Holo SD FL</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_NAME">
-			<Original>M4A1 GL Holo</Original>
+			<Original>M4A1 M203 Holo</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_FL_NAME">
-			<Original>M4A1 GL Holo FL</Original>
+			<Original>M4A1 M203 Holo FL</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_SD_NAME">
-			<Original>M4A1 GL Holo SD</Original>
+			<Original>M4A1 M203 Holo SD</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_SD_FL_NAME">
-			<Original>M4A1 GL Holo SD FL</Original>
+			<Original>M4A1 M203 Holo SD FL</Original>
 		</Key>
 		<!-- M4A1 ACOG -->
 		<Key ID="STR_DZ_WPN_M4A1_ACOG_NAME">
@@ -9357,16 +9357,16 @@
 			<Original>M4A1 ACOG SD FL</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_NAME">
-			<Original>M4A1 GL ACOG</Original>
+			<Original>M4A1 M203 ACOG</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_FL_NAME">
-			<Original>M4A1 GL ACOG FL</Original>
+			<Original>M4A1 M203 ACOG FL</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_SD_NAME">
-			<Original>M4A1 GL ACOG SD</Original>
+			<Original>M4A1 M203 ACOG SD</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_SD_FL_NAME">
-			<Original>M4A1 GL ACOG SD FL</Original>
+			<Original>M4A1 M203 ACOG SD FL</Original>
 		</Key>
 		
 		
@@ -9439,10 +9439,10 @@
 			<Original>AK-74 SD</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_NAME">
-			<Original>AK-74 GL</Original>
+			<Original>AK-74 GP-25</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_SD_NAME">
-			<Original>AK-74 GL SD</Original>
+			<Original>AK-74 GP-25 SD</Original>
 		</Key>
 		
 		<Key ID="STR_DZ_WPN_AK74_KOBRA_NAME">
@@ -9452,10 +9452,10 @@
 			<Original>AK-74 Kobra SD</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_KOBRA_NAME">
-			<Original>AK-74 GL Kobra</Original>
+			<Original>AK-74 GP-25  Kobra</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_KOBRA_SD_NAME">
-			<Original>AK-74 GL Kobra SD</Original>
+			<Original>AK-74 GP-25  Kobra SD</Original>
 		</Key>
 		
 		<Key ID="STR_DZ_WPN_AK74_PSO1_NAME">
@@ -9465,10 +9465,10 @@
 			<Original>AK-74 PSO-1 SD</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_PSO1_NAME">
-			<Original>AK-74 GL PSO-1</Original>
+			<Original>AK-74 GP-25  PSO-1</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_PSO1_SD_NAME">
-			<Original>AK-74 GL PSO-1 SD</Original>
+			<Original>AK-74 GP-25  PSO-1 SD</Original>
 		</Key>
 		
 		
@@ -9701,6 +9701,9 @@
 		<Key ID="STR_DZ_ATT_SUP9_NAME">
 			<Original>9mm Suppressor</Original>
 		</Key>
+		<Key ID="STR_DZ_ATT_SUP9_DESC">
+			<Original>9mm Sound suppressor</Original>
+		</Key>
 		<Key ID="STR_DZ_ATT_SUP9_RMVE">
 			<Original>Remove Suppressor</Original>
 		</Key>
@@ -9708,6 +9711,9 @@
 		<!-- 5.56mm Suppressor -->
 		<Key ID="STR_DZ_ATT_SUP556_NAME">
 			<Original>5.56mm Suppressor</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_SUP556_DESC">
+			<Original>5.56mm Sound suppressor</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_SUP556_RMVE">
 			<Original>Remove Suppressor</Original>
@@ -9717,6 +9723,9 @@
 		<Key ID="STR_DZ_ATT_SUP545_NAME">
 			<Original>5.45mm Suppressor</Original>
 		</Key>
+		<Key ID="STR_DZ_ATT_SUP545_DESC">
+			<Original>5.45mm Sound suppressor</Original>
+		</Key>
 		<Key ID="STR_DZ_ATT_SUP545_RMVE">
 			<Original>Remove Suppressor</Original>
 		</Key>
@@ -9725,13 +9734,19 @@
 		<Key ID="STR_DZ_ATT_CCO_NAME">
 			<Original>M68 CCO</Original>
 		</Key>
+		<Key ID="STR_DZ_ATT_CCO_DESC">
+			<Original>CompM2 Close Combat Optic&lt;br/&gt;Manufactured by Swedish Aimpoint AB.</Original>
+		</Key>
 		<Key ID="STR_DZ_ATT_CCO_RMVE">
 			<Original>Remove CCO</Original>
 		</Key>
 		
 		<!-- Holo -->
 		<Key ID="STR_DZ_ATT_HOLO_NAME">
-			<Original>Eotech 553 HWS</Original>
+			<Original>EOTech 553 HWS</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_HOLO_DESC">
+			<Original>Holographic Weapon Sight&lt;br/&gt;Manufactured by American EOTech Inc.</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_HOLO_RMVE">
 			<Original>Remove Holo</Original>
@@ -9739,7 +9754,10 @@
 		
 		<!-- Kobra -->
 		<Key ID="STR_DZ_ATT_KOBRA_NAME">
-			<Original>Kobra CQB Optic</Original>
+			<Original>Kobra Red Dot Optic</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_KOBRA_DESC">
+			<Original>Model EKP-1S-03</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_KOBRA_RMVE">
 			<Original>Remove Kobra</Original>
@@ -9749,6 +9767,9 @@
 		<Key ID="STR_DZ_ATT_PSO1_NAME">
 			<Original>PSO-1 Scope</Original>
 		</Key>
+		<Key ID="STR_DZ_ATT_PSO1_DESC">
+			<Original>4x24 Sniper scope</Original>
+		</Key>
 		<Key ID="STR_DZ_ATT_PSO1_RMVE">
 			<Original>Remove PSO-1</Original>
 		</Key>
@@ -9756,6 +9777,9 @@
 		<!-- M203 -->
 		<Key ID="STR_DZ_ATT_M203_NAME">
 			<Original>M203 grenade launcher</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_M203_DESC">
+			<Original>Under-barrel grenade launcher</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_M203_RMVE">
 			<Original>Remove M203</Original>
@@ -9765,6 +9789,9 @@
 		<Key ID="STR_DZ_ATT_GP25_NAME">
 			<Original>GP-25 grenade launcher</Original>
 		</Key>
+		<Key ID="STR_DZ_ATT_GP25_DESC">
+			<Original>Under-barrel grenade launcher</Original>
+		</Key>
 		<Key ID="STR_DZ_ATT_GP25_RMVE">
 			<Original>Remove GP-25</Original>
 		</Key>
@@ -9772,6 +9799,9 @@
 		<!-- Rifle flashlight -->
 		<Key ID="STR_DZ_ATT_FL_RFL_NAME">
 			<Original>Rifle flashlight</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_FL_RFL_DESC">
+			<Original>Rail-attachable rifle flashlight</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_FL_RFL_RMVE">
 			<Original>Remove Flashlight</Original>
@@ -9781,6 +9811,9 @@
 		<Key ID="STR_DZ_ATT_FL_PST_NAME">
 			<Original>Pistol flashlight</Original>
 		</Key>
+		<Key ID="STR_DZ_ATT_FL_PST_DESC">
+			<Original>Rail-attachable pistol flashlight</Original>
+		</Key>
 		<Key ID="STR_DZ_ATT_FL_PST_RMVE">
 			<Original>Remove Flashlight</Original>
 		</Key>
@@ -9788,6 +9821,9 @@
 		<!-- Ghillie -->
 		<Key ID="STR_DZ_ATT_GHIL_NAME">
 			<Original>Small camo netting</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_GHIL_DESC">
+			<Original>Assorted pieces of camo netting. Might be used to camouflage something small.</Original>
 		</Key>
 		<Key ID="STR_DZ_ATT_GHIL_RMVE">
 			<Original>Remove Ghillie</Original>
