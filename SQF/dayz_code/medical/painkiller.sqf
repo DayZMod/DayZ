@@ -19,7 +19,11 @@ if ((_unit == player) or (vehicle player != player)) then {
 	[player,20] call player_humanityChange;
 };
 
-player removeMagazine "ItemPainkiller";
+_unit = _this select 0;
+_medsUsed = _this select 1;
+
+//Remove one pill from the box.
+[_medsUsed,"medical"] call dayz_reduceItems;
 
 sleep 1;
 
