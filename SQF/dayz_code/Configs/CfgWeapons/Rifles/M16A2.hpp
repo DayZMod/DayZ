@@ -8,11 +8,8 @@ class M16A2_DZ : M16A2
 	};
 };
 
-class M16A2_GL_DZ : M16A2
+class M16A2_GL_DZ : M16A2GL
 {
-	muzzles[] = {this, M203Muzzle};
-	handAnim[] = {"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M16GL.rtm"};
-	
 	magazines[] =
 	{
 		30Rnd_556x45_Stanag,

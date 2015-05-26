@@ -89,6 +89,7 @@ class CfgWeapons
 	#include "Rifles\MP5.hpp"
 	
 	class M16A2;
+	class M16A2GL;
 	#include "Rifles\M16A2.hpp"
 	#include "Rifles\M16A4.hpp"
 	
