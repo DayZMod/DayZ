@@ -91,6 +91,11 @@ class CfgWeapons
 	#include "Rifles\M16A2.hpp"
 	#include "Rifles\M16A4.hpp"
 	
+	class Sa58V_EP1;
+	class Sa58V_CCO_EP1;
+	class Sa58V_RCO_EP1;
+	#include "Rifles\SA58.hpp"
+	
 	class BAF_L85A2_RIS_Holo;
 	#include "Rifles\L85.hpp"
 	

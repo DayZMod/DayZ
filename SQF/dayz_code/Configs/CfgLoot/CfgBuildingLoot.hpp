@@ -552,7 +552,7 @@ class CfgBuildingLoot {
 			{"G36C_DZ","weapon",0.03},
 			//{"G36C_camo","weapon",0.03},
 			//{"G36_C_SD_camo","weapon",0.01},
-			{"G36A_Camo_DZ","weapon",0.03},
+			//{"G36A_Camo_DZ","weapon",0.03},
 			{"G36K_Camo_DZ","weapon",0.03},
 			{"M9_DZ","weapon",0.02},
 			{"M24_DZ","weapon",0.01},
@@ -726,10 +726,9 @@ class CfgBuildingLoot {
 			{"M16A4_DZ","weapon",0.04},
 			{"Mk48_DZ","weapon",0.01},
 			{"M40A3_DZ","weapon",0.01},
-			{"Sa58V_EP1","weapon",0.04},
-			{"Sa58P_EP1","weapon",0.04},
-			{"Sa58V_CCO_EP1","weapon",0.03}, //Sa58 attachments not done yet
-			{"Sa58V_RCO_EP1","weapon",0.02},
+			{"SA58_DZ","weapon",0.04},
+			{"SA58_CCO_DZ","weapon",0.03},
+			{"SA58_ACOG_DZ","weapon",0.02},
 			{"Tranquiliser_Bolt","magazine",0.02},
 		//special
 			{"AmmoBoxSmall_556","object",0.04},
