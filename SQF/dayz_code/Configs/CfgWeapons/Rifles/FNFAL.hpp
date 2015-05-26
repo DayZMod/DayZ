@@ -6,6 +6,8 @@ class FNFAL_DZ : FN_FAL
 	
 	magazines[] = {20Rnd_762x51_FNFAL};
 	
+	modes[] = {Single, Burst};
+	
 	distanceZoomMin = 300;
 	distanceZoomMax = 300;
 	
