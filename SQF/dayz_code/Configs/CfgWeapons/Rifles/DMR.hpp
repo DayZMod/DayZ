@@ -5,6 +5,8 @@ class DMR_DZ : DMR
 	
 	//memoryPointCamera = "opticView";
 	
+	magazines[] = {20Rnd_762x51_DMR};
+	
 	class Single : Single
 	{
 		reloadTime = 0.6;

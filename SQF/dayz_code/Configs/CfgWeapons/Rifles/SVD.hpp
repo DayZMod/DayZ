@@ -1,5 +1,7 @@
 class SVD_DZ : SVD
 {
+	magazines[] = {10Rnd_762x54_SVD};
+	
 	reloadTime = 0.06;
 	
 	recoil = "recoil_single_primary_4outof10";

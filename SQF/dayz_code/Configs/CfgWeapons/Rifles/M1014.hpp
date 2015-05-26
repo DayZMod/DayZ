@@ -4,6 +4,14 @@ class M1014_DZ : M1014
 	picture = "\z\addons\dayz_communityweapons\m1014\data\w_m1014_ca.paa";
 	displayName = $STR_DZ_WPN_M1014_NAME;
 	
+	magazines[] =
+	{
+		8Rnd_B_Beneli_74Slug,
+		8Rnd_B_Beneli_Pellets,
+		2Rnd_shotgun_74Slug,
+		2Rnd_shotgun_74Pellets
+	};
+	
 	class Single : Single
 	{
 		reloadTime = 0.27;

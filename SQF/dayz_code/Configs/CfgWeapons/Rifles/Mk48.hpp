@@ -4,6 +4,10 @@ class Mk48_CCO_DZ : Mk_48
 	picture = "\z\addons\dayz_communityweapons\mk48\data\w_mk48_cco_ca.paa";
 	displayName = $STR_DZ_WPN_MK48_CCO_NAME;
 	
+	type = WeaponSlotPrimary;
+	
+	magazines[] = {100Rnd_762x51_M240};
+	
 	distanceZoomMin = 300;
 	distanceZoomMax = 300;
 	
@@ -58,4 +62,9 @@ class Mk48_Holo_DZ : Mk48_CCO_DZ
 			script = "; ['Attachment_Holo',_id,'Mk48_DZ'] call player_removeAttachment";
 		};
 	};
+};
+
+/*legacy*/
+class Mk_48_DZ : Mk_48
+{
 };

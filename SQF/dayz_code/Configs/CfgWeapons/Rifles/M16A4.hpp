@@ -69,17 +69,14 @@ class M16A4_FL_DZ : M16A4_DZ
 	};
 };
 
-class M16A4_GL_DZ : M16A2GL
+class M16A4_GL_DZ : M16A4_DZ
 {
 	model = "z\addons\dayz_communityweapons\m16a4\m16a4_gl.p3d";
 	picture = "\z\addons\dayz_communityweapons\m16a4\data\w_m16a4_gl_ca.paa";
 	displayName = $STR_DZ_WPN_M16A4_GL;
 	
-	magazines[] = 
-	{
-		30Rnd_556x45_Stanag,
-		30Rnd_556x45_StanagSD
-	};
+	muzzles[] = {this, M203Muzzle};
+	handAnim[] = {"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M16GL.rtm"};
 	
 	class Attachments
 	{

@@ -1,8 +1,9 @@
 class M24_DZ : M24
 {
 	model = "ca\weapons\m24_green.p3d";
-	
 	displayName = $STR_DZ_WPN_M24_NAME;
+	
+	magazines[] = {5Rnd_762x51_M24};
 	
 	class Attachments
 	{

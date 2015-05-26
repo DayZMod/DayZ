@@ -4,6 +4,13 @@ class RPK74_Kobra_DZ : RPK_74
 	picture = "\z\addons\dayz_communityweapons\rpk74\data\w_rpk74_kobra_ca.paa";
 	displayName = $STR_DZ_WPN_RPK74_KOBRA_NAME;
 	
+	magazines[] =
+	{
+		75Rnd_545x39_RPK,
+		30Rnd_545x39_AK,
+		30Rnd_545x39_AKSD
+	};
+	
 	modes[] = {FullAuto,Single};
 	
 	class ItemActions

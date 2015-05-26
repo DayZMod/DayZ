@@ -4,6 +4,8 @@ class FNFAL_DZ : FN_FAL
 	picture = "\z\addons\dayz_communityweapons\fnfal\data\w_fnfal_ca.paa";
 	displayName = $STR_DZ_WPN_FNFAL_NAME;
 	
+	magazines[] = {20Rnd_762x51_FNFAL};
+	
 	distanceZoomMin = 300;
 	distanceZoomMax = 300;
 	

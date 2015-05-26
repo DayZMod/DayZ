@@ -4,6 +4,8 @@ class AKM_DZ : AK_47_M
 	picture = "\z\addons\dayz_communityweapons\akm\data\w_akm_ca.paa";
 	displayName = $STR_DZ_WPN_AKM_NAME;
 	
+	magazines[] = {30Rnd_762x39_AK47};
+	
 	//iron sight zeroing
 	weaponInfoType = "RscWeaponZeroing";
 	discreteDistance[] = {100,200,300,400,500,600,700,800,900,1000};

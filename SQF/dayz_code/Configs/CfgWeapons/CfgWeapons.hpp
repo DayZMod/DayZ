@@ -39,7 +39,6 @@ class CfgWeapons
 	#include "Rifles\DMR.hpp"
 	
 	class FN_FAL;
-	class FN_FAL_ANPVS4;
 	#include "Rifles\FNFAL.hpp"
 	
 	class G36C;
@@ -65,6 +64,9 @@ class CfgWeapons
 	class M249;
 	#include "Rifles\M249.hpp"
 	
+	class M240;
+	#include "Rifles\M240.hpp"
+	
 	class M1014 : Rifle
 	{
 		class Single;
@@ -87,7 +89,6 @@ class CfgWeapons
 	#include "Rifles\MP5.hpp"
 	
 	class M16A2;
-	class M16A2GL;
 	#include "Rifles\M16A2.hpp"
 	#include "Rifles\M16A4.hpp"
 	
@@ -103,7 +104,7 @@ class CfgWeapons
 	class bizon_silenced;
 	#include "Rifles\Bizon.hpp"
 	
-	class Huntingrifle;
+	class huntingrifle;
 	#include "Rifles\CZ550.hpp"
 	
 	class LeeEnfield;
@@ -179,30 +180,6 @@ class CfgWeapons
 	
 	
 	
-	
-	
-	/* LEGACY */
-	
-	/*#include "legacy\M1911.hpp"
-	#include "legacy\Makarov.hpp"
-	#include "legacy\MakarovSD.hpp"
-	#include "legacy\PDW.hpp"
-	#include "legacy\Revolver.hpp"
-	
-	#include "Pistols\M1911.hpp"
-	#include "Pistols\Makarov.hpp"
-	#include "Pistols\PDW.hpp"
-	#include "Pistols\Revolver.hpp"
-	
-	//AR
-	class M16_base;
-	#include "legacy\M16A2.hpp"
-	#include "legacy\M16A2GL.hpp"
-	
-	#include "Rifles\M16A2.hpp"
-	#include "Rifles\M16A4.hpp"*/
-	
-
 	class ItemFlashlightEmpty : ItemCore
 	{
 		scope = public;

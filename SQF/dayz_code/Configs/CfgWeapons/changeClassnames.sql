@@ -1,5 +1,14 @@
+DELIMITER ;;
+CREATE PROCEDURE temp_pClassnames ()
+BEGIN
+	DECLARE i INT DEFAULT 0;
+	DECLARE c INT DEFAULT 0;
+
+	DROP TEMPORARY TABLE IF EXISTS temp_classes;
+	CREATE TEMPORARY TABLE temp_classes (Old varchar(255), new varchar(255));
+	
+	INSERT INTO temp_classes VALUES
 	("AK_74","AK74_DZ"),
-	("AKS_74","AK74_DZ"),
 	("AKS_74_kobra","AK74_DZ"),
 	("AKS_74_U","AKS74U_DZ"),
 	("AK_47_M","AKM_DZ"),
@@ -19,15 +28,15 @@
 	
 	("M16A2","M16A2_DZ"),
 	("M16A2GL","M16A2_GL_DZ"),
-	("M16A4","M16A4_DZ"),
+	("m16a4","M16A4_DZ"),
 	("M16A4_GL","M16A4_GL_DZ"),
-	("M16A4_ACG","M16A4_DZ"),
+	("m16a4_acg","M16A4_DZ"),
 	("M16A4_ACG_GL","M16A4_GL_DZ"),
 	
-	("G36A_Camo","G36K_Camo_DZ"),
-	("G36K_Camo","G36K_Camo_DZ"),
+	("G36A_camo","G36K_Camo_DZ"),
+	("G36K_camo","G36K_Camo_DZ"),
 	("G36C","G36C_DZ"),
-	("G36C_Camo","G36C_DZ"),
+	("G36C_camo","G36C_DZ"),
 	
 	("M24","M24_DZ"),
 	("M40A3","M40A3_DZ"),
@@ -43,7 +52,7 @@
 	
 	("BAF_L85A2_RIS_Holo","L85_Holo_DZ"),
 	("LeeEnfield","LeeEnfield_DZ"),
-	("Huntingrifle","CZ550_DZ"),
+	("huntingrifle","CZ550_DZ"),
 	("Mk_48_DZ","Mk48_DZ"),
 	("M1014","M1014_DZ"),
 	
@@ -53,7 +62,7 @@
 	("M9SD","M9_SD_DZ"),
 	("glock17_EP1","G17_FL_DZ"),
 	("Colt1911","M1911_DZ"),
-	("Revolver_EP1","Revolver_DZ"),
+	("revolver_EP1","Revolver_DZ"),
 	("UZI_EP1","PDW_DZ"),
 	
 	("Attachment_M4A1_Aim","Attachment_CCO"),
@@ -64,3 +73,26 @@
 	("Attachment_M4A1_AIM_SD_camo","Attachment_Sup556"),
 	("Attachment_bizonSilencer","Attachment_SupBizon"),
 	("Attachment_MakarovSilencer","Attachment_SupMakarov");
+	
+	SET c = (SELECT COUNT(*) FROM temp_classes);
+	
+	WHILE (i < c) DO
+		SET @from_str = (SELECT Old FROM temp_classes LIMIT i, 1);
+		SET @to_str = (SELECT New FROM temp_classes LIMIT i, 1);
+		
+		UPDATE character_data
+		SET Inventory = REPLACE(Inventory,@from_str,@to_str), Backpack = REPLACE(Backpack,@from_str,@to_str);
+		
+		UPDATE object_data
+		SET Inventory = REPLACE(Inventory,@from_str,@to_str);
+		
+		SET i = i + 1;
+	END WHILE;
+	
+	DROP TEMPORARY TABLE IF EXISTS temp_classes;
+END;;
+DELIMITER ;
+
+CALL temp_pClassnames();
+
+DROP PROCEDURE temp_pClassnames;
