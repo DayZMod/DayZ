@@ -36,7 +36,7 @@ class Attachment_bizonSilencer : CA_Magazine {
 	model = "z\addons\dayz_communityassets\models\surpressor.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_silencer.paa";
 	type = 256;
-};
+};/*
 
 class Attachment_SCAR_H_CQC_CCO_Silencer : CA_Magazine {
 	scope = public;
@@ -46,7 +46,7 @@ class Attachment_SCAR_H_CQC_CCO_Silencer : CA_Magazine {
 	model = "z\addons\dayz_communityassets\models\surpressor.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\attachment_silencer.paa";
 	type = 256;
-};
+};*/
 
 class Attachment_MP5A5_Silencer : CA_Magazine {
     scope = public;

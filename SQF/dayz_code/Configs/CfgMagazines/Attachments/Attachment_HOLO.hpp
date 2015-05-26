@@ -1,4 +1,4 @@
-class Attachment_HOLO : CA_Magazine
+class Attachment_Holo : CA_Magazine
 {
 	scope = public;
 	count = 1;
