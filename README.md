@@ -3,7 +3,7 @@
 
 Current Version
 ==================================
- - DayZMod Dev-edde9c4
+ - DayZMod Dev-b725dcd
  
 Files updated
 ------------
