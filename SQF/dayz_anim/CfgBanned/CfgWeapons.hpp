@@ -307,7 +307,7 @@ class CfgWeapons {
 	class AKS_74_NSPU: FakeWeapon {};
 	class AKS_74_GOSHAWK: FakeWeapon {};
 	//class FN_FAL: FakeWeapon {};
-	class FN_FAL_ANPVS4: FakeWeapon {};
+	//class FN_FAL_ANPVS4: FakeWeapon {};
 	class G36C_camo: FakeWeapon {};
 	class G36_C_SD_camo: FakeWeapon {};
 	class G36A_camo: FakeWeapon {};

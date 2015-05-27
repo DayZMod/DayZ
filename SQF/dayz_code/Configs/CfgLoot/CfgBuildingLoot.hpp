@@ -545,7 +545,7 @@ class CfgBuildingLoot {
 			{"NVGoggles","weapon",0.01},
 		//weapons
 			{"FNFAL_DZ","weapon",0.04},
-			//{"FNFAL_ANPVS4_DZ","weapon",0.01},
+			{"FNFAL_ANPVS4_DZ","weapon",0.01},
 			{"Mk48_DZ","weapon",0.03},
 			{"M249_DZ","weapon",0.04},
 			{"L85_Holo_DZ","weapon",0.03},

@@ -58,6 +58,7 @@ class FNFAL_Holo_DZ : FNFAL_CCO_DZ
 	};
 };
 
-/*class FNFAL_ANPVS4_DZ : FN_FAL_ANPVS4
+class FNFAL_ANPVS4_DZ : FN_FAL_ANPVS4
 {
-};*/
+	modes[] = {Single, Burst};
+};

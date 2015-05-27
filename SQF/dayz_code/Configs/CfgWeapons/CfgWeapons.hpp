@@ -39,6 +39,7 @@ class CfgWeapons
 	#include "Rifles\DMR.hpp"
 	
 	class FN_FAL;
+	class FN_FAL_ANPVS4;
 	#include "Rifles\FNFAL.hpp"
 	
 	class G36C : Rifle
