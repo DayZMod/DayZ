@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `object_data` (
   `CharacterID` int(11) NOT NULL DEFAULT '0',
   `Worldspace` varchar(70) NOT NULL DEFAULT '[]',
   `Inventory` longtext,
-  `Hitpoints` varchar(500) NOT NULL DEFAULT '[]',
+  `Hitpoints` longtext NOT NULL,
   `Fuel` double(13,5) NOT NULL DEFAULT '1.00000',
   `Damage` double(13,5) NOT NULL DEFAULT '0.00000',
   `last_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

@@ -14,7 +14,7 @@ BEGIN
 	#---------------------------------------------------------------
 	#Random number r is generated in the range ]0, 1[.
 	#If r + MinDamage is less than Threshold, damage to part is set to MinDamage.
-	DECLARE Threshold DOUBLE DEFAULT 0.15;
+	DECLARE Threshold DOUBLE DEFAULT 0.5;
 	#---------------------------------------------------------------
 	
 	DECLARE Result VARCHAR(255);
