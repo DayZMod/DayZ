@@ -1,7 +1,8 @@
-class G36A_Camo_DZ : G36C_camo
+class G36K_Camo_DZ : G36C
 {
-	model = "z\addons\dayz_communityweapons\g36\g36a_camo.p3d";
-	displayName = $STR_DZ_WPN_G36A_CAMO_NAME;
+	model = "z\addons\dayz_communityweapons\g36\g36k_camo.p3d";
+	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36k_camo_ca.paa";
+	displayName = $STR_DZ_WPN_G36K_CAMO_NAME;
 	
 	magazines[] =
 	{
@@ -16,6 +17,23 @@ class G36A_Camo_DZ : G36C_camo
 	opticsPPEffects[]={"OpticsCHAbera1","OpticsBlur2"};
 	opticsZoomMin=0.083; opticsZoomMax=0.083;
 	distanceZoomMin=100; distanceZoomMax=100;
+	
+	dexterity = 1.8;
+	
+	class Single : Single
+	{
+		dispersion = 0.0011;
+	};
+	
+	class Burst : Burst
+	{
+		dispersion = 0.0011;
+	};
+	
+	class FullAuto : FullAuto
+	{
+		dispersion = 0.0011;
+	};
 
 	class OpticsModes
 	{
@@ -62,14 +80,15 @@ class G36A_Camo_DZ : G36C_camo
 			"Attachment_Sup556"
 		};
 		
-		Attachment_Sup556 = "G36A_Camo_SD_DZ";
+		Attachment_Sup556 = "G36K_Camo_SD_DZ";
 	};
 };
 
-class G36A_Camo_SD_DZ : G36_C_SD_camo
+class G36K_Camo_SD_DZ : G36_C_SD_eotech
 {
-	model = "z\addons\dayz_communityweapons\g36\g36a_camo_sd.p3d";
-	displayName = $STR_DZ_WPN_G36A_CAMO_SD_NAME;
+	model = "z\addons\dayz_communityweapons\g36\g36k_camo_sd.p3d";
+	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36k_camo_sd_ca.paa";
+	displayName = $STR_DZ_WPN_G36K_CAMO_SD_NAME;
 	
 	magazines[] =
 	{
@@ -84,6 +103,23 @@ class G36A_Camo_SD_DZ : G36_C_SD_camo
 	opticsPPEffects[]={"OpticsCHAbera1","OpticsBlur2"};
 	opticsZoomMin=0.083; opticsZoomMax=0.083;
 	distanceZoomMin=100; distanceZoomMax=100;
+	
+	dexterity = 1.7;
+	
+	class Single : Single
+	{
+		dispersion = 0.0011;
+	};
+	
+	class Burst : Burst
+	{
+		dispersion = 0.0011;
+	};
+	
+	class FullAuto : FullAuto
+	{
+		dispersion = 0.0011;
+	};
 
 	class OpticsModes
 	{
@@ -128,32 +164,41 @@ class G36A_Camo_SD_DZ : G36_C_SD_camo
 		class RemoveSuppressor
 		{
 			text = $STR_DZ_ATT_SUP556_RMVE;
-			script = "; ['Attachment_Sup556',_id,'G36A_Camo_DZ'] call player_removeAttachment";
+			script = "; ['Attachment_Sup556',_id,'G36K_Camo_DZ'] call player_removeAttachment";
 		};
 	};
 };
 
-class G36K_Camo_DZ : G36A_Camo_DZ
+class G36A_Camo_DZ : G36K_Camo_DZ
 {
-	model = "z\addons\dayz_communityweapons\g36\g36k_camo";
-	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36k_camo_ca.paa";
-	displayName = $STR_DZ_WPN_G36K_CAMO_NAME;
+	model = "z\addons\dayz_communityweapons\g36\g36a_camo.p3d";
+	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36a_camo_ca.paa";
+	displayName = $STR_DZ_WPN_G36A_CAMO_NAME;
 	
-	class Attachments
+	dexterity = 1.66;
+	
+	class Single : Single
 	{
-		attachments[] =
-		{
-			"Attachment_Sup556"
-		};
-		
-		Attachment_Sup556 = "G36K_Camo_SD_DZ";
+		dispersion = 0.0007;
 	};
+	
+	class Burst : Burst
+	{
+		dispersion = 0.0007;
+	};
+	
+	class FullAuto : FullAuto
+	{
+		dispersion = 0.0007;
+	};
+	
+	class Attachments {};
 };
 
-class G36K_Camo_SD_DZ : G36A_Camo_SD_DZ
+/*class G36A_Camo_SD_DZ : G36K_Camo_SD_DZ
 {
-	model = "z\addons\dayz_communityweapons\g36\g36k_camo_sd";
-	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36k_camo_sd_ca.paa";
+	model = "z\addons\dayz_communityweapons\g36\g36a_camo_sd";
+	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36a_camo_sd_ca.paa";
 	displayName = $STR_DZ_WPN_G36K_CAMO_SD_NAME;
 	
 	class ItemActions
@@ -164,4 +209,4 @@ class G36K_Camo_SD_DZ : G36A_Camo_SD_DZ
 			script = "; ['Attachment_Sup556',_id,'G36K_Camo_DZ'] call player_removeAttachment";
 		};
 	};
-};
+};*/

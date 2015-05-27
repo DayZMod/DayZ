@@ -25,7 +25,7 @@ class G36C_DZ : G36C
 	};
 };
 
-class G36C_SD_DZ : G36_C_SD_camo
+class G36C_SD_DZ : G36_C_SD_eotech
 {
 	model = "z\addons\dayz_communityweapons\g36c\g36c_sd.p3d";
 	picture = "\z\addons\dayz_communityweapons\g36c\data\w_g36c_sd_ca.paa";

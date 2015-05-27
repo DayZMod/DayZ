@@ -41,12 +41,20 @@ class CfgWeapons
 	class FN_FAL;
 	#include "Rifles\FNFAL.hpp"
 	
-	class G36C;
-	class G36_C_SD_camo;
-	#include "Rifles\G36C.hpp"
-	
-	class G36C_camo;
+	class G36C : Rifle
+	{
+		class Single;
+		class Burst;
+		class FullAuto;
+	};
+	class G36_C_SD_eotech : G36C
+	{
+		class Single;
+		class Burst;
+		class FullAuto;
+	};
 	#include "Rifles\G36.hpp"
+	#include "Rifles\G36C.hpp"
 	
 	class M4A1;
 	class M4A1_AIM_SD_camo;
