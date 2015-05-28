@@ -100,7 +100,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 */
 	
 	//reset OpenTarget variable if the timer has run out.
-	if (diag_tickTime - OpenTarget_Time >= dayz_OpenTarget_TimerTicks) then
+	if (OpenTarget_Time > 0 && {diag_tickTime - OpenTarget_Time >= dayz_OpenTarget_TimerTicks}) then
 	{
 		player setVariable ["OpenTarget",false,true];
 	};
