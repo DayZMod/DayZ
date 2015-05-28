@@ -125,7 +125,7 @@ switch (_variable) do {
 	{
 		_unit setVariable["OpenTarget",true,true];
 		
-		PVCDZ_OpenTargetReset = true;
+		PVCDZ_OpenTarget_Reset = true;
 		_owner publicVariableClient "PVCDZ_OpenTarget_Reset";
 	};
 };
