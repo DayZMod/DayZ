@@ -25,22 +25,32 @@ _isPlayer = (isPlayer _source);
 _breakaleg = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Dayz_freefall select 1 > 3)})}) /*AND {(abs(time - (Dayz_freefall select 0))<1)}*/;
 if ( (!_breakaleg) AND {(((isNull _source) OR {(_unit == _source)}) AND {((_ammo == "") OR {({damage _x > 0.9} count((getposATL vehicle _unit) nearEntities [["Air", "LandVehicle", "Ship"],15]) == 0) AND (count nearestObjects [getPosATL vehicle _unit, ["TrapItems"], 30] == 0)})})}) exitWith {0};
 
-if (_unit == player) then {
-    if (_hit == "") then {
-        if ((_source != player) and _isPlayer) then {       
-            _canHitFree =   player getVariable ["freeTarget",false];
-            _isBandit = (player getVariable["humanity",0]) <= -2000;
+if (_unit == player) then
+{
+    if (_hit == "") then
+	{
+        if ((_source != player) and _isPlayer) then
+		{
+            //_isBandit = (player getVariable["humanity",0]) <= -2000;
+			_isBandit = (_model in ["Bandit1_DZ","BanditW1_DZ"]);
+			
+			//if player is not free to shoot at inform server that _source shot at player
+			if (!_isBandit && !(player getVariable ["OpenTarget",false])) then
+			{
+				PVDZ_send = [_source,"OpenTarget",[]];
+				publicVariableServer "PVDZ_send";
+			};
 
 			// Due to server errors or desync killing someone in a bandit skin with >-2000 humanity CAN occur. 
             // Attacker should not be punished for killing a Bandit skin under any circumstances. 
             // To prevent this we check for Bandit Skin. 
 
-            _accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ","Bandit1_DZ","BanditW1_DZ"]);
+            //_accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ","Bandit1_DZ","BanditW1_DZ"]);
 
 			// - Accidental Murder - \\  When wearing the garb of a non-civilian you are taking your life in your own hands
 			// Attackers humanity should not be punished for killing a survivor who has shrouded his identity in military garb.
 
-            _punishment = _canHitFree || _isBandit || _accidentalMurder;
+            _punishment =  _isBandit || _canHitFree;// || _accidentalMurder;
             _humanityHit = 0;
 
             if (!_punishment) then {
