@@ -15,6 +15,14 @@ Camo1_DZ = "Camo1_DZ";
 Soldier1_DZ = "Soldier1_DZ";
 Rocket_DZ = "Rocket_DZ";
 
+//Rolling Msg system
+Message_1 = "";
+Message_2 = "";
+Message_3 = "";
+Message_1_time = 0;
+Message_2_time = 0;
+Message_3_time = 0;
+
 ///Player class's
 AllPlayers = ["Survivor_DZ","Survivor1_DZ","SurvivorW2_DZ","Survivor2_DZ","Sniper1_DZ","Soldier1_DZ","Camo1_DZ","BanditW1_DZ","Bandit1_DZ","Survivor3_DZ"];
 DayZ_Male = ["Survivor_DZ","Survivor1_DZ","Survivor2_DZ","Survivor3_DZ","Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Bandit1_DZ"];
@@ -48,7 +56,7 @@ DayZ_traps = ["Trap_Cans", "TrapTripwireFlare", "TrapBearTrapSmoke", "TrapTripwi
 DayZ_ViralZeds = ["z_new_villager2","z_new_villager3","z_new_villager4","z_new_worker2","z_new_worker3","z_new_worker4"];
 
 //placed objects
-DayZ_SafeObjects = ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4","Land_Fire_DZ", "TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3", "StashMedium4", "Wire_cat1", "Sandbag1_DZ", "Fence_DZ", "Generator_DZ", "Hedgehog_DZ", "BearTrap_DZ", "DomeTentStorage", "DomeTentStorage0", "DomeTentStorage1", "DomeTentStorage2", "DomeTentStorage3", "DomeTentStorage4", "CamoNet_DZ", "Trap_Cans", "TrapTripwireFlare", "TrapBearTrapSmoke", "TrapTripwireGrenade", "TrapTripwireSmoke", "TrapBearTrapFlare"];
+DayZ_SafeObjects = ["Base_Fire_DZ","WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4","Land_Fire_DZ", "TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3", "StashMedium4", "Wire_cat1", "Sandbag1_DZ", "Fence_DZ", "Generator_DZ", "Hedgehog_DZ", "BearTrap_DZ", "DomeTentStorage", "DomeTentStorage0", "DomeTentStorage1", "DomeTentStorage2", "DomeTentStorage3", "DomeTentStorage4", "CamoNet_DZ", "Trap_Cans", "TrapTripwireFlare", "TrapBearTrapSmoke", "TrapTripwireGrenade", "TrapTripwireSmoke", "TrapBearTrapFlare"];
 
 //objects with gear menus
 DayZ_GearedObjects = ["Car", "Helicopter", "Motorcycle", "Ship", "TentStorage_base", "StashSmall_base", "StashMedium_base" ];
@@ -157,7 +165,7 @@ food_output = [
 	"FoodCanBeefEmpty"
 ];
 //Drinking
-no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled", "ItemWaterBottleInfected", "ItemWaterBottleSafe"];
+no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled", "ItemWaterBottleInfected", "ItemWaterBottleSafe","ItemWaterBottleHerbal"];
 
 drink_with_output = [
     "ItemSoda",  //just to define item for ItemSodaEmpty
@@ -320,6 +328,7 @@ dayz_resetSelfActions = {
 	s_player_openGate = -1;
 	s_player_CloseGate = -1;
 	s_player_breakinhouse = -1;
+	s_player_setCode = -1;
 };
 call dayz_resetSelfActions;
 
@@ -400,6 +409,7 @@ r_antiA_done = false;
 r_antiB_done = false;
 r_antiD_done = false;
 carryClick = false;
+dayz_workingInprogress = false;
 
 //INT Nutrition Info
 r_player_Nutrition = [0]; //[Calories]
@@ -518,6 +528,10 @@ if(isNil "dayz_temperature_override") then {
 
 if(isNil "dayz_attackRange") then { 
 	dayz_attackRange = 3;
+};
+
+if(isNil "dayz_maxGlobalZeds") then {
+	dayz_maxGlobalZeds = 1000;
 };
 
 //init global arrays for Loot Chances

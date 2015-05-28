@@ -9,7 +9,39 @@
 	};
 	
 */
-private ["_objclass", "_cursorTarget", "_item", "_classname", "_requiredTools", "_requiredParts", "_upgrade", "_upgradeConfig", "_upgradeDisplayname", "_onLadder", "_isWater", "_upgradeParts", "_startUpgrade", "_missingPartsConfig", "_textMissingParts", "_dis", "_sfx", "_ownerID", "_objectID", "_objectUID", "_alreadyupgrading", "_pos", "_dir", "_weapons", "_magazines", "_backpacks", "_object", "_objWpnTypes", "_objWpnQty", "_countr"];
+private
+[
+	"_objclass",
+	"_cursorTarget",
+	"_item",
+	"_classname",
+	"_requiredTools",
+	"_requiredParts",
+	"_upgrade",
+	"_upgradeConfig",
+	"_upgradeDisplayname",
+	"_onLadder",
+	"_isWater",
+	"_upgradeParts",
+	"_startUpgrade",
+	"_missingPartsConfig",
+	"_textMissingParts",
+	"_dis",
+	"_sfx",
+	"_ownerID",
+	"_objectID",
+	"_objectUID",
+	"_alreadyupgrading",
+	"_pos",
+	"_dir",
+	"_weapons",
+	"_magazines",
+	"_backpacks",
+	"_object",
+	"_objWpnTypes",
+	"_objWpnQty",
+	"_countr"
+];
 
 _objclass = _this;
 _cursorTarget = _this select 3;
@@ -109,7 +141,11 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	//Get location and direction of old item
 	_dir = round getDir _cursorTarget;
 	_vector = [vectorDir _cursorTarget,vectorUp _cursorTarget];
-	_pos = getposATL _cursorTarget;
+	
+	//reset orientation before measuring position, otherwise the new object will be placed incorrectly. -foxy
+	_cursorTarget setDir 0;
+	_pos = getPosATL _cursorTarget;
+	
 	diag_log [ "dir/angle/pos", _dir, _vector, _pos];
 	if (abs(((_vector select 1) select 2) - 1) > 0.001) then { _pos set [2,0]; };
 	diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
@@ -139,8 +175,12 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	
 	//create new tent
     _object = createVehicle [_upgrade, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
-	_object setVectorDirAndUp _vector;
+	
+	//reseting orientation to make sure the object goes where it's supposed to -foxy
+	_object setDir 0;
 	_object setPosATL _pos;
+	_object setVectorDirAndUp _vector;
+	
 	//set ownerID from old tent.
 	_object setVariable ["characterID",_ownerID];
 	

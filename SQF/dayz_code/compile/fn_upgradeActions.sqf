@@ -55,7 +55,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
     };
 
     
-    if (((getPlayerUID player) in _ownerArray) or (count _ownerArray == 0) or ((typeof _cursorTarget) in ["WoodenFence_1_foundation","MetalFence_1_foundation"])) then {
+    if (((getPlayerUID player) in _ownerArray) or (count _ownerArray == 0) or ((typeof _cursorTarget) in ["WoodenFence_1_foundation","WoodenGate_foundation"])) then {
         if (s_player_disassembly < 0) then {
             if (isClass (configFile >> "CfgVehicles" >> (typeof _cursorTarget) >> "Disassembly")) then {
                 s_player_disassembly = player addAction [format[localize "str_disassembly",_text], "\z\addons\dayz_code\actions\object_disassembly.sqf",_cursorTarget, 0, false, true, "", "'ItemToolbox' in items player"];

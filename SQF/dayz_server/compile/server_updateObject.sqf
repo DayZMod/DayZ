@@ -209,6 +209,27 @@ if (!isNil "sm_done") then {
 		
 		_key call server_hiveWrite;
 	};
+	
+	_object_access = {
+		private["_ownerArray","_key","_accessArray","_variables"];
+
+		_ownerArray = _object getVariable ["ownerArray",[]];
+		_accessArray = _object getVariable ["dayz_padlockCombination",[]];
+		
+		diag_log format ["[%1,%2]",_ownerArray,_accessArray];
+		_variables = [];
+		
+		_variables set [ count _variables, ["ownerArray", _ownerArray]];
+		_variables set [ count _variables, ["padlockCombination", _accessArray]];
+
+		if (_objectID == "0") then {
+			_key = format["CHILD:309:%1:%2:",_objectUID,_variables];
+		} else {
+			_key = format["CHILD:303:%1:%2:",_objectID,_variables];
+		};
+		
+		_key call server_hiveWrite;
+	};
 
 
 	_object setVariable ["lastUpdate",diag_ticktime,true];
@@ -232,6 +253,9 @@ if (!isNil "sm_done") then {
 		};
 		case "killed": {
 			call _object_killed;
+		};
+		case "accessCode": {
+			call _object_access;
 		};
 	};
 };

@@ -89,8 +89,8 @@ BEGIN
 			USING Object_DATA, Character_DATA
 				WHERE Object_DATA.Classname = 'Wire_cat1'
 					AND Object_DATA.CharacterID = Character_DATA.CharacterID
-					AND Character_DATA.Alive = 0			
-END;;
+					AND Character_DATA.Alive = 0;			
+END//
 DELIMITER ;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

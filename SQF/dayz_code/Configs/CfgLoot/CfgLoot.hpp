@@ -16,6 +16,7 @@ class CfgLoot {
 		{"20Rnd_762x51_DMR",0.02},
 		{"20Rnd_762x51_FNFAL",0.03},
 		{"17Rnd_9x19_glock17",0.05},
+		{"17Rnd_9x19_glock17sd",0.01},
 		{"15Rnd_9x19_M9SD",0.01},
 		{"8Rnd_9x18_MakarovSD",0.01},
 		{"15Rnd_9x19_M9",0.03},
@@ -24,12 +25,16 @@ class CfgLoot {
 		{"5Rnd_762x51_M24",0.01},
 		{"8Rnd_B_Beneli_74Slug",0.04},
 		{"1Rnd_HE_M203",0.01},
+		{"1Rnd_HE_GP25",0.02},
 		{"8Rnd_B_Beneli_Pellets",0.04},
 		{"30Rnd_556x45_StanagSD",0.01},
+		{"30Rnd_545x39_AKSD",0.02},
 		{"30Rnd_9x19_MP5",0.02},
 		{"30Rnd_9x19_MP5SD",0.01},
 		{"Mosin_Nagant_Ammo",0.03},
-		{"100Rnd_762x51_M240",0.01}
+		{"100Rnd_762x51_M240",0.01},
+		{"64Rnd_9x19_Bizon",0.03},
+		{"64Rnd_9x19_SD_Bizon",0.01}
 	};
 	//Zed Loot
 	policeman[] = {
@@ -41,23 +46,30 @@ class CfgLoot {
 		{"HandRoadFlare",0.05},
 		{"ItemWaterbottleUnfilled",0.01}
 	};
-	attachments[] = {
-		{"Attachment_M16_ACG",0.01},
-		{"Attachment_SA58_ACG",0.01},
-		{"Attachment_Sa58V_EP1_Aim",0.01},
-		{"Attachment_bizonSilencer",0.01},
-		{"Attachment_MP5A5_Silencer",0.01},
-		{"Attachment_M14_SniperScope",0.01},
+	attachmentsGeneric[] =
+	{
+		{"Attachment_BELT",0.03},
+		{"Attachment_SCOPED",0.01},
+		{"Attachment_FL",0.02},
+		{"Attachment_FL_Pist",0.02}
+	};
+	attachmentsEast[] =
+	{
 		{"Attachment_Kobra",0.01},
-		{"Attachment_FL",0.01},
+		{"Attachment_PSO1",0.01},
+		{"Attachment_SupMakarov",0.03},
+		{"Attachment_SupBizon",0.02},
+		{"Attachment_Sup545",0.01},
+		{"Attachment_GP25",0.01}
+	};
+	attachmentsWest[] =
+	{
 		{"Attachment_CCO",0.01},
-		{"Attachment_BELT",0.01},
-		{"Attachment_M9Silencer",0.01},
-		{"Attachment_M4A1_Aim",0.01},
-		{"Attachment_M4A1_Aim_camo",0.01},
-		{"Attachment_M4A1_AIM_SD_camo",0.01},
-		{"Attachment_MakarovSilencer",0.01},
-		{"Attachment_SCOPED",0.01}
+		{"Attachment_Holo",0.01},
+		{"Attachment_Ghillie",0.02},
+		{"Attachment_M203",0.01},
+		{"Attachment_Sup556",0.01},
+		{"Attachment_Sup9",0.03}
 	};
 	civilian[] = {
 		{"ItemBandage",0.06},
@@ -68,6 +80,7 @@ class CfgLoot {
 		{"ItemSodaLirik",0.02},
 		{"ItemSodaPeppsy",0.02},
 		{"FoodCanBeef",0.03},
+		//{"Item1Matchbox",0.01}, Removed due to item not mag
 		{"FoodCanCurgon",0.03}
 	};
 	viralloot[] = {
@@ -78,6 +91,7 @@ class CfgLoot {
 		{"ItemSodaPeppsy",0.04},
 		{"FoodCanRusCorn",0.05},
 		{"FoodCanCurgon",0.05},
+		{"ItemAntibiotic1",0.01},
 		{"FoodCanBoneboy",0.05}
 	};
 	food[] = {
@@ -157,9 +171,13 @@ class CfgLoot {
 		{"5Rnd_762x51_M24",0.01},
 		{"8Rnd_B_Beneli_74Slug",0.04},
 		{"1Rnd_HE_M203",0.01},
+		{"1Rnd_HE_GP25",0.02},
 		{"FlareWhite_M203",0.02},
+		{"FlareWhite_GP25",0.02},
 		{"FlareGreen_M203",0.02},
-		{"1Rnd_Smoke_M203",0.01},		
+		{"FlareGreen_GP25",0.02},
+		{"1Rnd_Smoke_M203",0.01},
+		{"1Rnd_SMOKE_GP25",0.01},
 		{"200Rnd_556x45_M249",0.01},
 		{"HandGrenade_west",0.01},
 		{"HandGrenade_east",0.01},
@@ -168,6 +186,7 @@ class CfgLoot {
 		{"SmokeShellGreen",0.04},
 		{"8Rnd_B_Beneli_Pellets",0.04},
 		{"30Rnd_556x45_StanagSD",0.01},
+		{"30Rnd_545x39_AKSD",0.02},
 		{"30Rnd_9x19_MP5",0.02},
 		{"30Rnd_9x19_MP5SD",0.01},
 		{"100Rnd_762x51_M240",0.01},

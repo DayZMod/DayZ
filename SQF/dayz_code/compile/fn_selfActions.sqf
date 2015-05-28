@@ -395,9 +395,17 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 		player removeAction s_player_CloseGate;
 		s_player_CloseGate = -1;
 	};
-	
-	// Unlock Gate/House
+	// Set
 	if ((_isHouse or _isLockableGate) and (_ownerPID == (getPlayerUID player)) and !_isUnlocked and _isClosed and _canDo) then {
+		if (s_player_setCode < 0) then {
+			s_player_setCode = player addAction ["Set Lock Code", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Set"], 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_setCode;
+		s_player_setCode = -1;
+	};
+	// Unlock Gate/House
+	if ((_isHouse or _isLockableGate) and !_isUnlocked and _isClosed and _canDo) then {
 		if (s_player_unlockhouse < 0) then {
 			s_player_unlockhouse = player addAction ["Unlock Gate", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Unlock"], 1, true, true, "", ""];
 		}
@@ -406,7 +414,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 		s_player_unlockhouse = -1;
 	};
 	// Lock Gate/House
-	if ((_isHouse or _isLockableGate) and (_ownerPID == (getPlayerUID player)) and _isUnlocked and _isClosed and _canDo) then {
+	if ((_isHouse or _isLockableGate) and _isUnlocked and _isClosed and _canDo) then {
 		if (s_player_lockhouse < 0) then {
 			s_player_lockhouse = player addAction ["Lock Gate", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"Lock"], 1, true, true, "", ""];
 		};
@@ -477,6 +485,8 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	player removeAction s_player_upgradestroage;
 	s_player_upgradestroage = -1;
 	//Unlock,Lock
+	player removeAction s_player_setCode;
+	s_player_setCode = -1;
 	player removeAction s_player_lockhouse;
 	s_player_lockhouse = -1;
 	player removeAction s_player_unlockhouse;

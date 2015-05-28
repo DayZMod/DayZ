@@ -66,6 +66,12 @@ if (([0.3] call fn_chance) && (_itemorignal == "ItemWaterbottle")) then {
     player setVariable["USEC_infected",true,true];
 };
 
+//HerbalDrink chance of healing 
+if (([0.3] call fn_chance) && (_itemorignal == "ItemWaterBottleHerbal")) then {
+    r_player_infected = false;
+    player setVariable["USEC_infected",false,true];
+};
+
 //Added definite chance of infection when drinking infected bottle
 if (_itemorignal == "ItemWaterBottleInfected") then {
     r_player_infected = true;

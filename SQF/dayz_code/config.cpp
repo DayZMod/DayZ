@@ -1,14 +1,4 @@
-#define VSoft				0
-#define VArmor				1
-#define VAir				2
-#define private				0
-#define protected			1
-#define public				2
-#define ReadAndWrite		0
-#define ReadAndCreate		1
-#define ReadOnly			2
-#define ReadOnlyVerified	3
-#define EAST 				0 // (Russian)
+#include "Configs\basicDefines.hpp"
 
 class CfgPatches {
 	class dayz_code {
@@ -27,7 +17,11 @@ class CfgMods {
 		hidePicture = 0;
 		hideName = 0;
 		action = "http://www.dayzmod.com";
+<<<<<<< HEAD
 		version = "DayZ 1.8.5";
+=======
+		version = "DayZMod Dev-b725dcd";
+>>>>>>> origin/Development
 		hiveVersion = 0.96;
 		requiredAddons[] = {"Chernarus"};
 	};
@@ -43,15 +37,13 @@ class CfgAddons {
 	};
 };
 
-#include "Configs\basicDefines.hpp"
-
 #include "Configs\rscTitles.hpp"
 #include "Configs\CfgWorlds.hpp"
 #include "Configs\CfgMoves.hpp"
-#include "Configs\CfgVehicles.hpp"
-#include "Configs\CfgWeapons.hpp"
+#include "Configs\CfgVehicles\CfgVehicles.hpp"
+#include "Configs\CfgWeapons\CfgWeapons.hpp"
 #include "Configs\CfgCrafting\CfgCrafting.hpp"
-#include "Configs\CfgMagazines.hpp"
+#include "Configs\CfgMagazines\CfgMagazines.hpp"
 #include "Configs\CfgLoot\CfgBuildingLoot.hpp"
 #include "Configs\CfgMarkers.hpp"
 #include "Configs\CfgAmmo.hpp"
@@ -61,3 +53,5 @@ class CfgAddons {
 #include "Configs\CfgFaces.hpp"
 #include "Configs\CfgGlasses.hpp"
 #include "Configs\CfgArma.hpp"
+#include "Configs\CfgRecoils.hpp"
+#include "gui\padlock\padlock_ui.hpp"

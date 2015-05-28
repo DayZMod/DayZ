@@ -3,10 +3,10 @@ _base="z\addons\dayz_server\system\scheduler\";
 
 call compile preprocessFileLineNumbers (_base+"sched_corpses.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_lootpiles.sqf");
-call compile preprocessFileLineNumbers (_base+"sched_playersHivesync.sqf");
-call compile preprocessFileLineNumbers (_base+"sched_vehiclesHivesync.sqf");
+//call compile preprocessFileLineNumbers (_base+"sched_playersHivesync.sqf");
+//call compile preprocessFileLineNumbers (_base+"sched_vehiclesHivesync.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_sync.sqf");
-call compile preprocessFileLineNumbers (_base+"sched_traps.sqf");
+//call compile preprocessFileLineNumbers (_base+"sched_traps.sqf");
 call compile preprocessFileLineNumbers (_base+"sched_safetyVehicle.sqf");
 
 [
@@ -30,10 +30,6 @@ call compile preprocessFileLineNumbers (_base+"sched_safetyVehicle.sqf");
 // (see ViralZeds.hpp -> zombie_agent.fsm -> zombie_findOwner.sqf), called when a zombie becomes "local" to the server after the player disconnected
 zombie_findOwner = {
 	(_this select 0) call fa_deleteVehicle;
-};
-
-beartrap = {
-#include "\z\addons\dayz_server\faco\beartrap.sqf"		
 };
 */
 

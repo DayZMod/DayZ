@@ -187,4 +187,20 @@ class CfgAmmo {
 		//explosiontime = 1;
 		fusedistance = 0;
 	};
+	
+	//mosin nagant
+	class Mosin_762 : BulletBase
+	{
+		hit = 9;
+		typicalSpeed = 850;
+		airFriction = -0.00055;
+		supersonicCrackNear[] = {"",1,1};
+		supersonicCrackFar[] = {"",1,1};
+		visibleFire=40;
+		audibleFire=40;
+		visibleFireTime = 0.5;
+		tracerColor[] = {255,255,0,0};
+		tracerColorR[] = {255,255,0,0};
+		cartridge = "FxCartridge_762";
+	};
 };

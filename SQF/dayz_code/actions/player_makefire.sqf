@@ -12,7 +12,8 @@ _text = getText (_config >> "displayName");
 
 // item is missing or tools are missing
 if ((!(_item IN magazines player)) && (!(_itemPile in magazines player))) exitWith {
-	cutText [localize "str_player_22", "PLAIN DOWN"];
+	//cutText [localize "str_player_22", "PLAIN DOWN"];
+	(localize "str_player_22") call dayz_rollingMessages;
 };
 
 _booleans = []; //testonLadder, testSea, testPond, testBuilding, testSlope, testDistance
@@ -54,6 +55,7 @@ if ((count _worldspace) == 2) then {
 
 	[_fire,true] call dayz_inflame;
 	_fire spawn player_fireMonitor;
+
 	
 	if (dayz_playerAchievements select 14 < 1) then {
 	// Firestarter
@@ -61,7 +63,9 @@ if ((count _worldspace) == 2) then {
 		achievement = [14, player, dayz_characterID];
 		publicVariableServer "achievement";
 	};
-	cutText [localize "str_fireplace_01", "PLAIN DOWN"];
+	//cutText [localize "str_fireplace_01", "PLAIN DOWN"];
+	(localize "str_fireplace_01") call dayz_rollingMessages;
 } else {
-	cutText [localize "str_fireplace_02", "PLAIN DOWN"];
+	//cutText [localize "str_fireplace_02", "PLAIN DOWN"];
+	(localize "str_fireplace_0") call dayz_rollingMessages;
 };

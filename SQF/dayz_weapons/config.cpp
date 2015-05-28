@@ -444,7 +444,7 @@ class cfgWeapons {
 		};
 	};
 	
-	class M249;	// External class reference
+	/*class M249;	// External class reference
 	
 	class M249_DZ : M249 {
 		type = "1";
@@ -468,7 +468,7 @@ class cfgWeapons {
 	
 	class m107_TWS_EP1_DZ : m107_TWS_EP1 {
 		type = "1";
-	};
+	};*/
 };
 
 class cfgMagazines {

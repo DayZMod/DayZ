@@ -23,8 +23,27 @@ switch (_item) do {
 	case "ItemPainkiller": {
 		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\painkiller.sqf";
 	};
+	//Antibiotic's system
 	case "ItemAntibiotic": {
-		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\antibiotics.sqf";
+		_id = [player,"ItemAntibiotic"] execVM "\z\addons\dayz_code\medical\antibiotics.sqf";
+	};
+	case "ItemAntibiotic1": {
+		_id = [player,"ItemAntibiotic1"] execVM "\z\addons\dayz_code\medical\antibiotics.sqf";
+	};
+	case "ItemAntibiotic2": {
+		_id = [player,"ItemAntibiotic2"] execVM "\z\addons\dayz_code\medical\antibiotics.sqf";
+	};
+	case "ItemAntibiotic3": {
+		_id = [player,"ItemAntibiotic3"] execVM "\z\addons\dayz_code\medical\antibiotics.sqf";
+	};
+	case "ItemAntibiotic4": {
+		_id = [player,"ItemAntibiotic4"] execVM "\z\addons\dayz_code\medical\antibiotics.sqf";
+	};
+	case "ItemAntibiotic5": {
+		_id = [player,"ItemAntibiotic5"] execVM "\z\addons\dayz_code\medical\antibiotics.sqf";
+	};
+	case "ItemAntibiotic6": {
+		_id = [player,"ItemAntibiotic6"] execVM "\z\addons\dayz_code\medical\antibiotics.sqf";
 	};
 	case "ItemAntibacterialWipe": {
 		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\wipes.sqf";
@@ -68,7 +87,7 @@ switch (_item) do {
 		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\selfbloodbag.sqf";
 	};
 	case "equip_woodensplint": {
-		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\brokeLeg.sqf";
+		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\brokeBones.sqf";
 	};
 };
 if (vehicle player != player) then {

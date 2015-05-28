@@ -20,6 +20,13 @@ class ItemWaterBottleInfected : ItemWaterbottle {
 	picture = "\z\addons\dayz_communityassets\textures\waterbottle.paa";
 };
 
+class ItemWaterBottleHerbal : ItemWaterbottle { 
+	model = "z\addons\dayz_communityassets\models\waterbottle.p3d";
+	picture = "\z\addons\dayz_communityassets\textures\waterbottle.paa";
+	displayName = $STR_ITEM_NAME_HerbalDrink;
+	descriptionShort = $STR_ITEM_DESC_HerbalDrink;
+};
+
 //Removed Later
 class ItemSodaCoke : ItemSoda {
 	displayName = $STR_EQUIP_NAME_36a;

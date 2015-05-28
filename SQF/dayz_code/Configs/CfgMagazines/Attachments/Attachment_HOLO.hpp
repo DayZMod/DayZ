@@ -1,19 +1,21 @@
-//New Type
-
-class Attachment_HOLO : CA_Magazine {
+class Attachment_Holo : CA_Magazine
+{
 	scope = public;
-	displayName = "HOLO";
-	descriptionShort = "HOLO attachment";
 	count = 1;
-	model = "z\addons\dayz_communityweapons\models\attachments\BELT";
-	picture = "\z\addons\dayz_communityweapons\models\attachments\BELT.paa";
-	type = 256;
+	type = WeaponSlotItem;
 	
-	class ItemActions {
-		class Use {
-			text = $STR_ACTIONS_ATTACH_BELT;
-			type = "Attachment_HOLO";
-			script = "spawn player_attachAttachment;";
+	model = "\z\addons\dayz_communityweapons\attachments\holo\holo.p3d";
+	picture = "\z\addons\dayz_communityweapons\attachments\holo\data\m_holo_ca.paa";
+	
+	displayName = $STR_DZ_ATT_HOLO_NAME;
+	descriptionShort = $STR_DZ_ATT_HOLO_DESC;
+	
+	class ItemActions
+	{
+		class AttachToPrimary
+		{
+			text = $STR_DZ_ATT_ACT_TO_PRIMARY;
+			script = "; [_id,1] call player_attachAttachment";
 		};
 	};
 };

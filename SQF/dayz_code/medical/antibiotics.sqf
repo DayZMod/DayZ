@@ -1,6 +1,10 @@
 private ["_id","_hasMeds","_unit"];
-_hasMeds = "ItemAntibiotic" in magazines player;
-_unit = (_this select 3) select 0;
+
+_unit = _this select 0;
+_medsUsed = _this select 1;
+
+//Remove one table from the box.
+[_medsUsed,"medical"] call dayz_reduceItems;
 
 //remove infection
 r_player_infected = false;
@@ -21,5 +25,3 @@ if ((_unit == player) or (vehicle player != player)) then {
 	publicVariableServer "PVDZ_send";
 	[player,20] call player_humanityChange;
 };
-
-player removeMagazine "ItemAntibiotic";

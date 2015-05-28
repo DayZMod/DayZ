@@ -30,16 +30,30 @@ if (_unit == player) then {
         if ((_source != player) and _isPlayer) then {       
             _canHitFree =   player getVariable ["freeTarget",false];
             _isBandit = (player getVariable["humanity",0]) <= -2000;
-			_accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]);
+
+			// Due to server errors or desync killing someone in a bandit skin with >-2000 humanity CAN occur. 
+            // Attacker should not be punished for killing a Bandit skin under any circumstances. 
+            // To prevent this we check for Bandit Skin. 
+
+            _accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ","Bandit1_DZ","BanditW1_DZ"]);
+
 			// - Accidental Murder - \\  When wearing the garb of a non-civilian you are taking your life in your own hands
 			// Attackers humanity should not be punished for killing a survivor who has shrouded his identity in military garb.
 
-            _punishment = _canHitFree or _isBandit or _accidentalMurder;
+            _punishment = _canHitFree || _isBandit || _accidentalMurder;
             _humanityHit = 0;
 
             if (!_punishment) then {
-                _myKills =  200 - (((player getVariable ["humanKills",0]) / 30) * 100);
+                _myKills =  200 - (((player getVariable ["humanKills",0]) / 3) * 150);
+                // how many non bandit players have I (the shot/damaged player) killed?
+                // punish my killer 200 for shooting a surivor
+                // but subtract 50 for each survivor I've murdered
                 _humanityHit = -(_myKills * _damage);
+                    if (_humanityHit < -800) then {
+                        _humanityHit = -800;
+                    };
+                    // In the case of outrageous damage (crashes, explosions, desync repeated headshots); cap the limit on humanity lost. 
+
                 [_source,_humanityHit] spawn {  
                     private ["_source","_humanityHit"];
                     _source = _this select 0;

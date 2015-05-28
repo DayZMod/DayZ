@@ -3,7 +3,31 @@ private ["_target","_type","_fn_Lock","_fn_UnLock","_fn_Open","_fn_Closed"];
 _target = ((_this select 3) select 0);
 _type = ((_this select 3) select 1);
 
+_fn_Set = {
+	if (typeOf _target in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"]) then {
+		_target animate ["DoorR", 0];
+		_target animate ["DoorL", 0];
+		//_target setVariable ["isOpen", "0", true];
+		[_target,true] spawn padlock_open;
+	};
+};
+
 _fn_Lock = {
+	if (typeOf _target in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"]) then {
+		_target animate ["DoorR", 0];
+		_target animate ["DoorL", 0];
+		_target setVariable ["isOpen", "0", true];
+		_target setVariable ["dayz_padlockLockStatus",true,true];
+	};
+};
+
+_fn_UnLock = {
+	if (typeOf _target in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"]) then {
+		[_target,false] spawn padlock_open;
+	};
+};
+
+_fn_Lockold = {
 	if (typeOf _target in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"]) then {
 		_target animate ["DoorR", 0];
 		_target animate ["DoorL", 0];
@@ -12,7 +36,7 @@ _fn_Lock = {
 	};
 };
 
-_fn_UnLock = {
+_fn_UnLockold = {
 	if (typeOf _target in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"]) then {
 		_target setVariable ["isOpen", "1", true];
 		cutText ["Gates Unlocked.", "PLAIN DOWN"];
@@ -40,4 +64,5 @@ switch (_type) do {
     case "Unlock": { call _fn_UnLock; };
     case "Open": { call _fn_Open; };
     case "Close": { call _fn_Closed; };
+	case "Set": { call _fn_Set; };
 };

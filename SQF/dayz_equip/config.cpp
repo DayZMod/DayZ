@@ -675,7 +675,7 @@ class cfgWeapons {
 		model = "z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.p3d";
 		picture = "\z\addons\dayz_communityweapons\models\sledge_hammer\sledgehammer.paa";
 		descriptionShort = $STR_EQUIP_DESC_SledgeHammer;
-		
+/*		
 		class ItemActions {
 			class Use
 			{
@@ -683,6 +683,7 @@ class cfgWeapons {
 				script="spawn player_mineStone;";
 			};
 		};
+*/		
 	};
 	class ItemSledgeHammerBroken : ItemCore {
 		scope = public;
@@ -1305,7 +1306,7 @@ class ItemSodaEmpty;
 		
 		class ItemActions {
 			class Drink {
-				text = $STR_ACTIONS_DRINK; //$STR_ACTIONS_DRINK
+				text = "Drink"; //$STR_ACTIONS_DRINK
 				script = "spawn player_drink;";
 			};
 		};
@@ -1417,22 +1418,7 @@ class ItemSodaEmpty;
 		descriptionShort = $STR_EQUIP_DESC_16;
 	};
 	
-	class ItemAntibiotic : CA_Magazine {
-		scope = public;
-		count = 1;
-		type = 256;
-		displayName = $STR_EQUIP_NAME_17;
-		model = "\dayz_equip\models\med_antibiotic_gear.p3d";
-		picture = "\dayz_equip\textures\equip_antibiotics_ca.paa";
-		descriptionShort = $STR_EQUIP_DESC_17;
-		
-		class ItemActions {
-			class Use {
-				text = $STR_TAKE_ANTIBIOTIC;
-				script = "spawn player_useMeds;";
-			};
-		};
-	};
+	#include "configs\ItemAntibiotic.hpp"
 	
 	class ItemPainkiller : CA_Magazine {
 		scope = public;

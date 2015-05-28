@@ -6,6 +6,11 @@ _iPos = _this select 2;
 _radius = _this select 3;
 _uniq = [];
 
+switch (_iItem) do {
+	case "ItemAntibiotic": { _iItem = ["ItemAntibiotic6","ItemAntibiotic5","ItemAntibiotic4","ItemAntibiotic3","ItemAntibiotic2","ItemAntibiotic1","ItemAntibioticEmpty"] select floor(random(6)); };
+	case "ItemMatchbox": { _iItem = ["ItemMatchbox","Item5Matchbox","Item5Matchbox","Item5Matchbox","Item5Matchbox","Item5Matchbox","ItemMatchboxEmpty"] select floor(random(6)); };
+};
+
 switch (_iClass) do {
 	case "weapon": {
 		//Item is a weapon, add it and a random quantity of magazines

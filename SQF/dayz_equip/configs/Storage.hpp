@@ -156,6 +156,7 @@ class StashMedium4 : StashMedium_base {
 };
 class TentStorage_base : DZ_storage_base {
 	vehicleClass="Military";
+	model = "\z\addons\dayz_communityassets\models\A_tent.p3d";
 	destrType=DestructTent;
 	displayName = $STR_VEH_NAME_TENT;
 	pack = "WeaponHolder_ItemTent";
@@ -165,7 +166,6 @@ class TentStorage_base : DZ_storage_base {
 };
 class TentStorage : TentStorage_base {
 	displayName = $STR_VEH_NAME_TENT;
-	model = "\z\addons\dayz_communityassets\models\A_tent.p3d";
 	vehicleClass = "Survival";
 	pack = "WeaponHolder_ItemTent";
 	transportMaxMagazines = 130;
@@ -236,9 +236,9 @@ class TentStorage4 : TentStorage_base {
 
 class DomeTentStorage_base : TentStorage_base {
 	armor = 50;
+	model = "\z\addons\dayz_communityassets\models\D_tent.p3d";
 	displayname = $STR_VEH_NAME_DOME_TENT;
 	icon = "\Ca\buildings\Icons\i_Astan_CA.paa";
-	model = "\ca\buildings\Tents\astan";
 	pack = "WeaponHolder_ItemDomeTent";
 	vehicleClass = "Survival";
 	transportMaxMagazines = 150;
@@ -249,7 +249,6 @@ class DomeTentStorage_base : TentStorage_base {
 class DomeTentStorage : DomeTentStorage_base {
 	armor = 50;
 	displayname = $STR_VEH_NAME_DOME_TENT;
-	model = "\z\addons\dayz_communityassets\models\D_tent.p3d";
 	transportMaxMagazines = 150;
 	transportMaxWeapons = 15;
 	transportMaxBackpacks = 5;

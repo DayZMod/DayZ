@@ -1,19 +1,21 @@
-//New Type
-
-class Attachment_CCO : CA_Magazine {
+class Attachment_CCO : CA_Magazine
+{
 	scope = public;
-	displayName = $STR_ATTACHMENT_NAME_CCO_RED;
-	descriptionShort = $STR_ATTACHMENT_DESC_CCO_RED;
 	count = 1;
-	model = "z\addons\dayz_communityweapons\models\attachments\CCO";
-	picture = "\z\addons\dayz_communityweapons\models\attachments\CCO.paa";
-	type = 256;
+	type = WeaponSlotItem;
 	
-	class ItemActions {
-		class Use {
-			text = $STR_ACTIONS_ATTACH_CCO;
-			type = "Attachment_CCO";
-			script = "spawn player_attachAttachment;";
+	model = "\z\addons\dayz_communityweapons\attachments\cco\cco.p3d";
+	picture = "\z\addons\dayz_communityweapons\attachments\cco\data\m_cco_ca.paa";
+	
+	displayName = $STR_DZ_ATT_CCO_NAME;
+	descriptionShort = $STR_DZ_ATT_CCO_DESC;
+	
+	class ItemActions
+	{
+		class AttachToPrimary
+		{
+			text = $STR_DZ_ATT_ACT_TO_PRIMARY;
+			script = "; [_id,1] call player_attachAttachment";
 		};
 	};
 };
