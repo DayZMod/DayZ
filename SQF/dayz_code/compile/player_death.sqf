@@ -60,10 +60,12 @@ if (count _array > 0) then
 	{
 		//_isBandit = (player getVariable["humanity",0]) <= -2000;
 		_isBandit = (_model in ["Bandit1_DZ","BanditW1_DZ"]);
-        _accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]);
 		
 		//if u are bandit or start first - player will not recieve humanity drop
-		_punishment =  _isBandit || {player getVariable ["OpenTarget",false]} || {_accidentalMurder};
+		_punishment =
+			_isBandit ||
+			{player getVariable ["OpenTarget",false]} ||
+			{_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
 		_humanityHit = 0;
 
 		if (!_punishment) then {
