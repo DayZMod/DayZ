@@ -110,7 +110,8 @@ _countr = 0;
 		
 		//Create it
 		_object = createVehicle [_type, _pos, [], 0, if (_type in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
-		_object setVariable ["lastUpdate",time];
+		// prevent immediate hive write when vehicle parts are set up
+		_object setVariable ["lastUpdate",diag_ticktime];
 		_object setVariable ["ObjectID", _idKey, true];
 		dayz_serverIDMonitor set [count dayz_serverIDMonitor,_idKey];
 		_object setVariable ["CharacterID", _ownerID, true];

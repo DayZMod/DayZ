@@ -136,8 +136,6 @@ if (!isNil "sm_done") then {
 				} else {
 						_array set [count _array,[_selection,0]]; 
 				};
-				//"_selection" ???  anyway seems not needed
-				//_object setHit ["_selection", _hit];
 		
 		} forEach _hitpoints;
 		
@@ -150,11 +148,14 @@ if (!isNil "sm_done") then {
 					needUpdate_objects = needUpdate_objects - [_object];
 			};
 			_recorddmg = true;	       
-		} else {                
-			if (!(_object in needUpdate_objects)) then {
-				//diag_log format["DEBUG: Monitoring: %1",_object];
-				needUpdate_objects set [count needUpdate_objects, _object];
-				_recorddmg = true;
+		} else {
+			//Prevent damage events for the first 10 seconds of the servers live.
+			if (diag_ticktime - _lastUpdate > 10) then {
+				if (!(_object in needUpdate_objects)) then {
+					//diag_log format["DEBUG: Monitoring: %1",_object];
+					needUpdate_objects set [count needUpdate_objects, _object];
+					_recorddmg = true;
+				};
 			};
 		};
 		
