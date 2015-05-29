@@ -18,7 +18,7 @@ BEGIN
 #Last Ran
 	update event_scheduler set LastRun = NOW() where System = "pMain";
 #Starts Cleanup
-	#CALL pCleanup();
+	CALL pCleanup();
 
 	CALL pSpawnVehicles(sInstance);
 END ;;
