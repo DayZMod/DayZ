@@ -18,7 +18,7 @@ BEGIN
 #Last Ran
 	update event_scheduler set LastRun = NOW() where System = "pMain";
 #Starts Cleanup
-	CALL pCleanupBase();
+	CALL pCleanupBase(); #comment out to disable base decay
 	CALL pCleanup();
 
 	CALL pSpawnVehicles(sInstance);
