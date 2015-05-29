@@ -8,7 +8,7 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `randomizeVehicleHitpoints`(`class` varchar(255)) RETURNS varchar(500) CHARSET latin1
+CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `randomizeVehicleHitpoints`(`class` varchar(255)) RETURNS varchar(2000) CHARSET latin1
     READS SQL DATA
 BEGIN
 	#---------------------------------------------------------------
@@ -17,7 +17,7 @@ BEGIN
 	DECLARE Threshold DOUBLE DEFAULT 0.5;
 	#---------------------------------------------------------------
 	
-	DECLARE Result VARCHAR(255);
+	DECLARE Result varchar(2000);
 	DECLARE Hitpoints_ID INT DEFAULT (SELECT Hitpoints FROM vehicle_spawns WHERE Classname = class LIMIT 1);
 	
 	IF (ISNULL(Hitpoints_ID)) THEN
