@@ -13,6 +13,8 @@ class 200Rnd_556x45_M249: CA_Magazine
 class 20Rnd_556x45_Stanag; 
 class 30Rnd_556x45_Stanag : 20Rnd_556x45_Stanag
 {
+	model = "\dayz_equip\models\mag30.p3d";
+	
 	class ItemActions
 	{
 		COMBINE_MAG

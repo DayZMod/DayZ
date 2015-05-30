@@ -1,4 +1,3 @@
-
 #define TEast 0
 #define TWest 1
 #define TGuerrila 2

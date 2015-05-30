@@ -15,6 +15,9 @@ class CfgMagazines
 	#include "TrashTinCan.hpp"
 	#include "TrashLoot.hpp"
 	
+	//Vehicle parts
+	#include "VehicleParts.hpp"
+	
 	//Chemlight and Roadflare
 	#include "HandGrenade.hpp"
 	
