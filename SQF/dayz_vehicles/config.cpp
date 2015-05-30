@@ -9,12 +9,14 @@
 #define true	1
 #define false	0
 
-class CfgPatches {
-	class dayz_vehicles {
+class CfgPatches
+{
+	class dayz_vehicles
+	{
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {};
+		requiredAddons[] = {"dayz_anim"};
 	};
 };
 

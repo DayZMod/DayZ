@@ -22,12 +22,14 @@
 #define TFriendly		6
 #define TLogic		7
 
-class CfgPatches {
-	class dayz_weapons {
+class CfgPatches
+{
+	class dayz_weapons
+	{
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"CAWeapons", "dayz_equip"};
+		requiredAddons[] = {"dayz_anim"};
 	};
 };
 

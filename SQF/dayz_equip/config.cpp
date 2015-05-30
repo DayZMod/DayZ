@@ -18,12 +18,14 @@
 #define true	1
 #define false	0
 
-class CfgPatches {
-	class dayz_equip {
+class CfgPatches
+{
+	class dayz_equip
+	{
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {};
+		requiredAddons[] = {"dayz_anim"};
 	};
 };
 
