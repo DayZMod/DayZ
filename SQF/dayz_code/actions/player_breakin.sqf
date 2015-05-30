@@ -49,9 +49,6 @@ while {_isOk} do {
 	[player,_sfx,0,false,_dis] call dayz_zombieSpeak;  
 	[player,_dis,true,(getPosATL player)] spawn player_alertZombies;
 	
-// Working-Factor for chopping wood.
-    ["Working",0,[100,15,10,0]] call dayz_NutritionSystem;
-	
 //Setup Vars
 	r_interrupt = false;
 	_animState = animationState player;
@@ -138,6 +135,9 @@ if (!_proceed) then {
 	};
 	titleText ["Break in cancelled." , "PLAIN DOWN"];
 };
+
+// Working-Factor for chopping wood.
+["Working",0,[100,15,10,0]] call dayz_NutritionSystem;
 
 //Completed but no success.
 if (_proceed and !_brokein) then {
