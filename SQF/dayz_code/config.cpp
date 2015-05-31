@@ -16,13 +16,6 @@ class CfgPatches
 			
 			//dayz addons
 			"dayz",
-			
-			//shacktac addons must come after "dayz"
-			"st_bunnyhop",
-			"st_collision",
-			"st_evasive",
-			
-			//dayz addons cont.
 			"dayz_buildings",
 			"dayz_communityassets",
 			"dayz_communityweapons",
@@ -30,7 +23,12 @@ class CfgPatches
 			"dayz_sfx",
 			"dayz_vehicles",
 			"dayz_weapons",
-			"community_crossbow"
+			"community_crossbow",
+			
+			//shacktac addons
+			"st_bunnyhop",
+			"st_collision",
+			"st_evasive"
 		};
 	};
 };

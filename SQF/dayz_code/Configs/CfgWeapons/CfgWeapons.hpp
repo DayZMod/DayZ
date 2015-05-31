@@ -17,6 +17,8 @@ class CfgWeapons
 	class Pistol;
 	class GrenadeLauncher;
 	
+	
+	
 	/*Loot dummy weapon*/
 	#include "LootDummy.hpp"
 	
@@ -24,7 +26,7 @@ class CfgWeapons
 	
 	
 	
-	/* NEW WEAPONS */
+	/* **** NEW WEAPONS **** */
 	//each include is preceded by its required external references.
 	
 	/* RIFLES */
@@ -127,10 +129,6 @@ class CfgWeapons
 	class LeeEnfield;
 	#include "Rifles\LeeEnfield.hpp"
 	
-	
-	
-	
-	
 	/* PISTOLS */
 	
 	class M9;
@@ -183,20 +181,27 @@ class CfgWeapons
 	
 	/* TOOLS */
 	
+	#include "Tools\Binocular.hpp"
+	
 	#include "Tools\Map.hpp"
 	#include "Tools\Compass.hpp"
 	#include "Tools\GPS.hpp"
-	#include "Tools\Binocular.hpp"
-	#include "Tools\Toolbox.hpp"
-	#include "Tools\Matchbox.hpp"
+	#include "Tools\Watch.hpp"
+	
 	#include "Tools\Knife.hpp"
+	#include "Tools\Matchbox.hpp"
+	
+	#include "Tools\Toolbox.hpp"
+	#include "Tools\Etool.hpp"
+	
 	#include "Tools\FishingPole.hpp"
-	#include "Tools\Crowbar.hpp"
-	#include "Tools\Hatchet.hpp"
-	#include "Tools\Machete.hpp"
 	#include "Tools\Shovel.hpp"
 	#include "Tools\Pickaxe.hpp"
 	#include "Tools\Sledgehammer.hpp"
+	
+	#include "Tools\Crowbar.hpp"
+	#include "Tools\Hatchet.hpp"
+	#include "Tools\Machete.hpp"
 	
 	
 	

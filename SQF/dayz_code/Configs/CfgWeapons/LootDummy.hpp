@@ -12,6 +12,7 @@ class Loot : Default
 	enableAttack = false;
 	showToPlayer = false;
 	
+	//Insert here magazines to show up as "Take x" in action menu
 	magazines[] =
 	{
 		"ItemBandage",
