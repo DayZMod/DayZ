@@ -13,7 +13,7 @@ class 200Rnd_556x45_M249: CA_Magazine
 class 20Rnd_556x45_Stanag; 
 class 30Rnd_556x45_Stanag : 20Rnd_556x45_Stanag
 {
-	model = "\dayz_equip\models\mag30.p3d";
+	//model = "\dayz_equip\models\mag30.p3d";
 	
 	class ItemActions
 	{
@@ -67,8 +67,8 @@ class 30Rnd_556x45_StanagSD : 30Rnd_556x45_Stanag
 		
 		class ReloadMag
 		{
-			text=$STR_MAG_CONV_STANAG_G36;
-			script="spawn player_reloadMag;";
+			text = $STR_MAG_CONV_STANAG_G36;
+			script = "spawn player_reloadMag;";
 			use[] =
 			{
 				"30Rnd_556x45_StanagSD"
@@ -91,8 +91,8 @@ class 30Rnd_556x45_G36SD : 30Rnd_556x45_G36
 		
 		class ReloadMag
 		{
-			text=$STR_MAG_CONV_G36_STANAG;
-			script="spawn player_reloadMag;";
+			text = $STR_MAG_CONV_G36_STANAG;
+			script = "spawn player_reloadMag;";
 			use[] =
 			{
 				"30Rnd_556x45_G36SD"
