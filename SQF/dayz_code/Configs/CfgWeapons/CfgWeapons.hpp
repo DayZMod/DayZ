@@ -203,6 +203,9 @@ class CfgWeapons
 	#include "Tools\Hatchet.hpp"
 	#include "Tools\Machete.hpp"
 	
+	#include "Tools\Flashlight.hpp"
+	#include "Tools\FlashlightRed.hpp"
+	
 	
 	
 	
@@ -210,7 +213,7 @@ class CfgWeapons
 	/* OTHER */
 	
 	#include "Melee\Flare.hpp"
-	#include "Melee\Flashlight.hpp"
+	//#include "Melee\Flashlight.hpp"
 	
 	
 	

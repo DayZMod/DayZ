@@ -15,37 +15,22 @@ class Loot : Default
 	//Insert here magazines to show up as "Take x" in action menu
 	magazines[] =
 	{
+		//medical
 		"ItemBandage",
+		"ItemSepsisBandage",
+		"ItemPainkiller",
+		"ItemMorphine",
+		"ItemAntibiotic",
 		"ItemHeatPack",
-		"PartWoodPile",
-		"PartFueltank",
+		"ItemEpinephrine"
+		
+		//vehicle parts
+		/*"PartFueltank",
 		"PartWheel",
 		"PartGeneric",
 		"PartEngine",
 		"PartVRotor",
 		"PartGlass",
-		"ItemWaterbottle",
-		"ItemWaterbottleUnfilled",
-		"ItemEpinephrine",
-		"ItemMorphine",
-		//"ItemBloodbag",//old type removed
-		"ItemAntibiotic",
-		"ItemPainkiller",
-		"ItemJerrycan",
-		"ItemGenerator",
-		"ItemTent",
-		"ItemSandbag",
-		"ItemTankTrap",
-		"ItemWire",
-		"FoodSteakRaw",
-		"TrashTinCan",
-		"ItemSodaLirik",
-		"ItemSodaMtngreen",
-		"FoodEdible",
-		"FoodSteakCooked",
-		"FoodCanBakedBeans",
-		"FoodCanSardines",
-		"FoodCanFrankBeans",
-		"FoodCanPasta"
+		"ItemJerrycan",*/
 	};
 };

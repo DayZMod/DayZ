@@ -71,145 +71,34 @@ DayZ_RestingAnims = ["amovpsitmstpsnonwpstdnon_ground", "amovpsitmstpsnonwpstdno
 dayz_playerAchievements = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 //Cooking
-Dayz_meatraw = [
-    "FoodSteakRaw",
-    "FoodmeatRaw",
-    "FoodbeefRaw",
-    "FoodmuttonRaw",
-    "FoodchickenRaw",
-    "FoodrabbitRaw",
-    "FoodbaconRaw",
-    "FoodgoatRaw",
+Dayz_meatraw =
+[
+    "FoodBeefRaw",
+    "FoodMuttonRaw",
+    "FoodChickenRaw",
+    "FoodRabbitRaw",
+    "FoodBaconRaw",
+    "FoodGoatRaw",
 	"FishRawTrout",
 	"FishRawSeaBass",
 	"FishRawTuna"
 ];
-Dayz_meatcooked = [
-    "FoodSteakCooked",
-    "FoodmeatCooked",
-    "FoodbeefCooked",
-    "FoodmuttonCooked",
-    "FoodchickenCooked",
-    "FoodrabbitCooked",
-    "FoodbaconCooked",
-	"FoodgoatCooked",
+
+Dayz_meatcooked =
+[
+    "FoodBeefCooked",
+    "FoodMuttonCooked",
+    "FoodChickenCooked",
+    "FoodRabbitCooked",
+    "FoodBaconCooked",
+	"FoodGoatCooked",
 	"FishCookedTrout",
 	"FishCookedSeaBass",
 	"FishCookedTuna"
 ];
 
-//Eating
-no_output_food = [
-	"FoodMRE",
-	"FoodPistachio",
-	"FoodNutmix",
-	"FoodCandyAnders",
-	"FoodCandyLegacys",
-	"FoodCandyMintception"
-]+Dayz_meatcooked+Dayz_meatraw;
-
-food_with_output=[
-    "FoodCanBakedBeans",
-    "FoodCanSardines",
-    "FoodCanFrankBeans",
-    "FoodCanPasta",
-	"FoodCanGriff",
-	"FoodCanBadguy",
-	"FoodCanBoneboy",
-	"FoodCanCorn",
-	"FoodCanCurgon",
-	"FoodCanDemon",
-	"FoodCanFraggleos",
-	"FoodCanHerpy",
-	"FoodCanDerpy",
-	"FoodCanOrlok",
-	"FoodCanPowell",
-	"FoodCanTylers",
-	"FoodCanUnlabeled",
-	"FoodCanRusUnlabeled",
-	"FoodCanRusPork",
-	"FoodCanRusPeas",
-	"FoodCanRusMilk",
-	"FoodCanRusCorn",
-	"FoodCanRusStew",
-	"FoodChipsSulahoops",
-	"FoodChipsMysticales",
-	"FoodCanPotatoes",
-	"FoodCanBeef"
-];
-
-food_output = [
-    "FoodCanUnlabeledEmpty",
-    "FoodCanUnlabeledEmpty",
-    "FoodCanUnlabeledEmpty",
-    "FoodCanUnlabeledEmpty",
-	"FoodCanGriffEmpty",
-	"FoodCanBadguyEmpty",
-	"FoodCanBoneboyEmpty",
-	"FoodCanCornEmpty",
-	"FoodCanCurgonEmpty",
-	"FoodCanDemonEmpty",
-	"FoodCanFraggleosEmpty",
-	"FoodCanHerpyEmpty",
-	"FoodCanDerpyEmpty",
-	"FoodCanOrlokEmpty",
-	"FoodCanPowellEmpty",
-	"FoodCanTylersEmpty",
-	"FoodCanUnlabeledEmpty",
-	"FoodCanRusUnlabeledEmpty",
-	"FoodCanRusPorkEmpty",
-	"FoodCanRusPeasEmpty",
-	"FoodCanRusMilkEmpty",
-	"FoodCanRusCornEmpty",
-	"FoodCanRusStewEmpty",
-	"FoodChipsSulahoopsEmpty",
-	"FoodChipsMysticalesEmpty",
-	"FoodCanPotatoesEmpty",
-	"FoodCanBeefEmpty"
-];
-//Drinking
-no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled", "ItemWaterBottleInfected", "ItemWaterBottleSafe","ItemWaterBottleHerbal"];
-
-drink_with_output = [
-    "ItemSoda",  //just to define item for ItemSodaEmpty
-	"ItemSodaClays",
-	"ItemSodaDrwaste",
-	"ItemSodaFranka",
-	"ItemSodaGrapeDrink",
-	"ItemSodaLemonade",
-	"ItemSodaLirik",
-	"ItemSodaLvg",
-	"ItemSodaMtngreen",
-	"ItemSodaMzly",
-	"ItemSodaPeppsy",
-	"ItemSodaR4z0r",
-	"ItemSodaRabbit",
-	"ItemSodaRocketFuel",
-	"ItemSodaSacrite",
-	//"ItemSodaSherbet",
-	"ItemSodaSmasht"
-];
- 
-drink_output = [
-    "ItemSodaEmpty",
-	"ItemSodaClaysEmpty",
-	"ItemSodaDrwasteEmpty",
-	"ItemSodaFrankaEmpty",
-	"ItemSodaGrapeDrinkEmpty",
-	"ItemSodaLemonadeEmpty",
-	"ItemSodaLirikEmpty",
-	"ItemSodaLvgEmpty",
-	"ItemSodaMtngreenEmpty",
-	"ItemSodaMzlyEmpty",
-	"ItemSodaPeppsyEmpty",
-	"ItemSodaR4z0rEmpty",
-	"ItemSodaRabbitEmpty",
-	"ItemSodaRocketFuelEmpty",
-	"ItemSodaSacriteEmpty",
-	//"ItemSodaSherbetEmpty",
-	"ItemSodaSmashtEmpty"
-];
-boil_tin_cans = [
+boil_tin_cans =
+[
     "TrashTinCan",
 	"FoodCanGriffEmpty",
 	"FoodCanBadguyEmpty",
@@ -255,16 +144,20 @@ canPickup = false;
 pickupInit = false;
 
 //Hunting Variables
-dayZ_partClasses = [
+dayZ_partClasses =
+[
 	"PartFueltank",
 	"PartWheel",
 	//"PartGeneric", //No need to add, it is default for everything
 	"PartEngine"
 ];
-dayZ_explosiveParts = [
+
+dayZ_explosiveParts =
+[
 	"palivo",
 	"motor"
 ];
+
 //Survival Variables
 SleepFood = 2160; //minutes (48 hours)
 SleepWater = 1440; //minutes (24 hours)

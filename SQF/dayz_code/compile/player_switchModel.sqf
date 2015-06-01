@@ -56,7 +56,7 @@ if (count (getArray(configFile >> "cfgWeapons" >> _currentWeapon >> "muzzles")) 
 (findDisplay 106) closeDisplay 0;
 
 _oldUnit = player;
-_newUnit = (group player) createUnit [_this, RANDOM_POSITION, [], 0, "NONE"];
+_newUnit = (createGroup west) createUnit [_this, RANDOM_POSITION, [], 0, "NONE"];
 
 //clear new unit
 removeAllWeapons _newUnit;
