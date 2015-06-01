@@ -1,16 +1,42 @@
 #include "Configs\basicDefines.hpp"
 
-class CfgPatches {
-	class dayz_code {
+class CfgPatches
+{
+	class dayz_code
+	{
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"dayz_equip","dayz_weapons","community_crossbow","dayz_communityweapons","CAMisc3","CABuildingParts","CABuildingParts_Signs","CAStructuresHouse","CAStructuresLand_Ind_Stack_Big","CAStructures_Misc_Powerlines","CAStructures","CABuildings","CABuildings2","Ind_MalyKomin","CAStructures_A_CraneCon","CAStructures_Mil","CAStructures_Nav","CAStructures_Rail","A_Crane_02","A_TVTower","CAStructures_Railway","CAStructuresHouse_HouseBT","dayz_buildings"};
+		requiredAddons[] =
+		{
+			"map_eu",
+			
+			//dayz_anim references all CA addons
+			"dayz_anim",
+			
+			//dayz addons
+			"dayz",
+			"dayz_buildings",
+			"dayz_communityassets",
+			"dayz_communityweapons",
+			"dayz_equip",
+			"dayz_sfx",
+			"dayz_vehicles",
+			"dayz_weapons",
+			"community_crossbow",
+			
+			//shacktac addons
+			"st_bunnyhop",
+			"st_collision",
+			"st_evasive"
+		};
 	};
 };
 
-class CfgMods {
-	class DayZ {
+class CfgMods
+{
+	class DayZ
+	{
 		dir = "DayZ";
 		name = "DayZ";
 		picture = "z\addons\dayz_code\gui\mod.paa";
@@ -23,12 +49,28 @@ class CfgMods {
 	};
 };
 
-class CfgAddons {
+class CfgAddons
+{
 	access = 1;
 	class PreloadBanks {};
-	class PreloadAddons	{
-		class dayz {
-			list[] = {"dayz_code","dayz","dayz_equip","dayz_communityassets","dayz_weapons","dayz_communityweapons","dayz_sfx","ST_bunnyhop","st_collision","st_evasive","CfgVehicles"};
+	class PreloadAddons
+	{
+		class dayz
+		{
+			list[] =
+			{
+				"dayz_code",
+				"dayz",
+				"dayz_equip",
+				"dayz_communityassets",
+				"dayz_weapons",
+				"dayz_communityweapons",
+				"dayz_sfx",
+				"ST_bunnyhop",
+				"st_collision",
+				"st_evasive",
+				"CfgVehicles"
+			};
 		};
 	};
 };

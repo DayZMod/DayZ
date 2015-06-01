@@ -98,7 +98,13 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		_timer10 = diag_Ticktime;
 	};
 */
-
+	
+	//reset OpenTarget variable if the timer has run out.
+	if (OpenTarget_Time > 0 && {diag_tickTime - OpenTarget_Time >= dayz_OpenTarget_TimerTicks}) then
+	{
+		player setVariable ["OpenTarget",false,true];
+	};
+	
 	if ((diag_tickTime - _timer150) > 60) then {
 		//Digest Food.
 		if (r_player_foodstack > 0) then { r_player_foodstack = r_player_foodstack - 1; };

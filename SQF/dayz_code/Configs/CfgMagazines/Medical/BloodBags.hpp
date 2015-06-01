@@ -1,171 +1,199 @@
-class bloodBagBase : CA_Magazine {
-	scope = 1;	
+class bloodBagBase : CA_Magazine
+{
+	scope = private;
 	count = 1;
-	type = 256;
+	type = WeaponSlotItem;
+	
+	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
 };
 
-class bloodBagANEG : bloodBagBase {
+class bloodBagANEG : bloodBagBase
+{
 	scope = public;
-	displayName = $STR_BLD_name_bloodBagANEG;//"Blood Bag: A-"
+	displayName = $STR_BLD_name_bloodBagANEG;
 	model = "z\addons\dayz_communityassets\models\bbag_full_m_A.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_bloodBagANEG;//"A blood bag ready for transfusion kits, type A- that is compatible A-, A+, AB-, AB+ recipients"
-};
-class bloodBagAPOS : bloodBagBase {
-	scope = public;
-	displayName = $STR_BLD_name_bloodBagAPOS;//"Blood Bag: A+"
-	model = "z\addons\dayz_communityassets\models\bbag_full_p_A.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_bloodBagAPOS;//"A blood bag ready for transfusion kits, type A+ that is compatible A+ and AB+ recipients"
-};
-class bloodBagBNEG : bloodBagBase {
-	scope = public;
-	displayName = $STR_BLD_name_bloodBagBNEG;//"Blood Bag: B-"
-	model = "z\addons\dayz_communityassets\models\bbag_full_m_B.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_bloodBagBNEG;//"A blood bag ready for transfusion kits, type B- that is compatible B-, B+, AB+, AB- recipients"
-};
-class bloodBagBPOS : bloodBagBase {
-	scope = public;
-	displayName = $STR_BLD_name_bloodBagBPOS;//"Blood Bag: B+"
-	model = "z\addons\dayz_communityassets\models\bbag_full_p_B.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_bloodBagBPOS;//"A blood bag ready for transfusion kits, type B+ that is compatible B+ and AB+ recipients"
-};
-class bloodBagABNEG : bloodBagBase {
-	scope = public;
-	displayName = $STR_BLD_name_bloodBagABNEG;//"Blood Bag: AB-"
-	model = "z\addons\dayz_communityassets\models\bbag_full_m_AB.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_bloodBagABNEG;//"A blood bag ready for transfusion kits, type AB- that is compatible AB+ and AB- recipients"
-};
-class bloodBagABPOS : bloodBagBase {
-	scope = public;
-	displayName = $STR_BLD_name_bloodBagABPOS;//"Blood Bag: AB+"
-	model = "z\addons\dayz_communityassets\models\bbag_full_p_AB.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_bloodBagABPOS;//"A blood bag ready for transfusion kits, type AB+ that is compatible AB+ recipients"
-};
-class bloodBagONEG : bloodBagBase {
-	scope = public;
-	displayName = $STR_BLD_name_bloodBagONEG;//"Blood Bag: O-"
-	model = "z\addons\dayz_communityassets\models\bbag_full_m_O.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_bloodBagONEG;//"A blood bag ready for transfusion kits, type O- that is compatible with all recipients"
-};
-class bloodBagOPOS : bloodBagBase {
-	scope = public;
-	displayName = $STR_BLD_name_bloodBagOPOS;//"Blood Bag: O+"
-	model = "z\addons\dayz_communityassets\models\bbag_full_p_O.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_bloodBagOPOS;//"A blood bag ready for transfusion kits, type O+ that is compatible O+, AB+, A+, B+ recipients"
+	descriptionShort = $STR_BLD_desc_bloodBagANEG;
 };
 
-class wholeBloodBagBase : bloodBagBase {
-	class ItemActions {
-		class Use {
-			text = $STR_BLD_use;//"Use Blood Bag"
+class bloodBagAPOS : bloodBagBase
+{
+	scope = public;
+	displayName = $STR_BLD_name_bloodBagAPOS;
+	model = "z\addons\dayz_communityassets\models\bbag_full_p_A.p3d";
+	descriptionShort = $STR_BLD_desc_bloodBagAPOS;
+};
+
+class bloodBagBNEG : bloodBagBase
+{
+	scope = public;
+	displayName = $STR_BLD_name_bloodBagBNEG;
+	model = "z\addons\dayz_communityassets\models\bbag_full_m_B.p3d";
+	descriptionShort = $STR_BLD_desc_bloodBagBNEG;
+};
+
+class bloodBagBPOS : bloodBagBase
+{
+	scope = public;
+	displayName = $STR_BLD_name_bloodBagBPOS;
+	model = "z\addons\dayz_communityassets\models\bbag_full_p_B.p3d";
+	descriptionShort = $STR_BLD_desc_bloodBagBPOS;
+};
+
+class bloodBagABNEG : bloodBagBase
+{
+	scope = public;
+	displayName = $STR_BLD_name_bloodBagABNEG;
+	model = "z\addons\dayz_communityassets\models\bbag_full_m_AB.p3d";
+	descriptionShort = $STR_BLD_desc_bloodBagABNEG;
+};
+
+class bloodBagABPOS : bloodBagBase
+{
+	scope = public;
+	displayName = $STR_BLD_name_bloodBagABPOS;
+	model = "z\addons\dayz_communityassets\models\bbag_full_p_AB.p3d";
+	descriptionShort = $STR_BLD_desc_bloodBagABPOS;
+};
+
+class bloodBagONEG : bloodBagBase
+{
+	scope = public;
+	displayName = $STR_BLD_name_bloodBagONEG;
+	model = "z\addons\dayz_communityassets\models\bbag_full_m_O.p3d";
+	descriptionShort = $STR_BLD_desc_bloodBagONEG;
+};
+
+class bloodBagOPOS : bloodBagBase
+{
+	scope = public;
+	displayName = $STR_BLD_name_bloodBagOPOS;
+	model = "z\addons\dayz_communityassets\models\bbag_full_p_O.p3d";
+	descriptionShort = $STR_BLD_desc_bloodBagOPOS;
+};
+
+
+
+//Whole blood bags -- Can only be obtained by taking blood from another player.
+class wholeBloodBagBase : bloodBagBase
+{
+	class ItemActions
+	{
+		class Use
+		{
+			text = $STR_BLD_use;
 			script = "spawn player_useMeds;";
 		};
 	};
 };
-//Whole blood bags -- Can only be obtained by taking blood from another player.
-class wholeBloodBagANEG : wholeBloodBagBase {
+
+class wholeBloodBagANEG : wholeBloodBagBase
+{
 	scope = public;
-	displayName = $STR_BLD_name_wholeBloodBagANEG;//"Whole Blood: A-"
+	displayName = $STR_BLD_name_wholeBloodBagANEG;
 	model = "z\addons\dayz_communityassets\models\bbag_full_m_A.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_wholeBloodBagANEG;//"Personal blood Bag, type A- that is compatible A- recipients"
+	descriptionShort = $STR_BLD_desc_wholeBloodBagANEG;
 };
-class wholeBloodBagAPOS : wholeBloodBagBase {
+class wholeBloodBagAPOS : wholeBloodBagBase
+{
 	scope = public;
-	displayName = $STR_BLD_name_wholeBloodBagAPOS;//"Whole Blood: A+"
+	displayName = $STR_BLD_name_wholeBloodBagAPOS;
 	model = "z\addons\dayz_communityassets\models\bbag_full_p_A.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_wholeBloodBagAPOS;//"Personal blood Bag, type A+ that is compatible A+ recipients"
+	descriptionShort = $STR_BLD_desc_wholeBloodBagAPOS;
 };
-class wholeBloodBagBNEG : wholeBloodBagBase {
+class wholeBloodBagBNEG : wholeBloodBagBase
+{
 	scope = public;
-	displayName = $STR_BLD_name_wholeBloodBagBNEG;//"Whole Blood: B-"
+	displayName = $STR_BLD_name_wholeBloodBagBNEG;
 	model = "z\addons\dayz_communityassets\models\bbag_full_m_B.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_wholeBloodBagBNEG;//"Personal blood Bag, type B- that is compatible B- recipients"
+	descriptionShort = $STR_BLD_desc_wholeBloodBagBNEG;
 };
-class wholeBloodBagBPOS : wholeBloodBagBase {
+class wholeBloodBagBPOS : wholeBloodBagBase
+{
 	scope = public;
-	displayName = $STR_BLD_name_wholeBloodBagBPOS;//"Whole Blood: B+"
+	displayName = $STR_BLD_name_wholeBloodBagBPOS;
 	model = "z\addons\dayz_communityassets\models\bbag_full_p_B.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_wholeBloodBagBPOS;//"Personal blood Bag, type B+ that is compatible B+ recipients"
+	descriptionShort = $STR_BLD_desc_wholeBloodBagBPOS;
 };
-class wholeBloodBagABNEG : wholeBloodBagBase {
+class wholeBloodBagABNEG : wholeBloodBagBase
+{
 	scope = public;
-	displayName = $STR_BLD_name_wholeBloodBagABNEG;//"Whole Blood: AB-"
+	displayName = $STR_BLD_name_wholeBloodBagABNEG;
 	model = "z\addons\dayz_communityassets\models\bbag_full_m_AB.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_wholeBloodBagABNEG;//"Personal blood Bag, type AB- that is compatible AB- recipients"
+	descriptionShort = $STR_BLD_desc_wholeBloodBagABNEG;
 };
-class wholeBloodBagABPOS : wholeBloodBagBase {
+class wholeBloodBagABPOS : wholeBloodBagBase
+{
 	scope = public;
-	displayName = $STR_BLD_name_wholeBloodBagABPOS;//"Whole Blood: AB+"
+	displayName = $STR_BLD_name_wholeBloodBagABPOS;
 	model = "z\addons\dayz_communityassets\models\bbag_full_p_AB.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_wholeBloodBagABPOS;//"Personal blood Bag, type AB+ that is compatible AB+ recipients"
+	descriptionShort = $STR_BLD_desc_wholeBloodBagABPOS;
 };
-class wholeBloodBagONEG : wholeBloodBagBase {
+class wholeBloodBagONEG : wholeBloodBagBase
+{
 	scope = public;
-	displayName = $STR_BLD_name_wholeBloodBagONEG;//"Whole Blood: O-"
+	displayName = $STR_BLD_name_wholeBloodBagONEG;
 	model = "z\addons\dayz_communityassets\models\bbag_full_m_O.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_wholeBloodBagONEG;//"Personal blood Bag, type O- that is compatible with O- recipients"
+	descriptionShort = $STR_BLD_desc_wholeBloodBagONEG;
 };
-class wholeBloodBagOPOS : wholeBloodBagBase {
+class wholeBloodBagOPOS : wholeBloodBagBase
+{
 	scope = public;
-	displayName = $STR_BLD_name_wholeBloodBagOPOS;//"Whole Blood Bag: O+"
+	displayName = $STR_BLD_name_wholeBloodBagOPOS;
 	model = "z\addons\dayz_communityassets\models\bbag_full_p_O.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_full_ca.paa";
-	descriptionShort = $STR_BLD_desc_wholeBloodBagOPOS;//"Personal blood Bag, type O+ that is compatible O+ recipients"
+	descriptionShort = $STR_BLD_desc_wholeBloodBagOPOS;
 };
 
 //MISC tools needed
-class bloodTester : CA_Magazine {
+class bloodTester : CA_Magazine
+{
 	scope = public;
 	count = 1;
-	type = 256;
-	displayName = $STR_BLD_name_bloodTester;//"Blood Testing Kit"
+	type = WeaponSlotItem;
+	
 	model = "z\addons\dayz_communityassets\models\blood_test.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\equip_blood_test_ca.paa";
-	descriptionShort = $STR_BLD_desc_bloodTester;//"Used to determine RH and blood type"
-	class ItemActions {
-		class Use {
-			text = $STR_BLD_use_bloodTester;//"Test Blood"
+	displayName = $STR_BLD_name_bloodTester;
+	descriptionShort = $STR_BLD_desc_bloodTester;
+	
+	class ItemActions
+	{
+		class Use
+		{
+			text = $STR_BLD_use_bloodTester;
 			script = "spawn player_useMeds;";
 		};
 	};
 };
 
-class transfusionKit : CA_Magazine {
+class transfusionKit : CA_Magazine
+{
 	scope = public;
 	count = 1;
-	type = 256;
-	displayName = $STR_BLD_name_transfusionKit;//"Transfusion Kit"
+	type = WeaponSlotItem;
+	
 	model = "z\addons\dayz_communityassets\models\blood_transfuse.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\equip_bloodbag_transfuse_CA.paa";
-	descriptionShort = $STR_BLD_desc_transfusionKit;//"A blood transfusion kit that is required to perform blood transfusions and fill blood bags"
-	class ItemActions {
-		class Use {
-			text = $STR_BLD_use_transfusionKit;//"Fill Blood Bag"
+	displayName = $STR_BLD_name_transfusionKit;
+	descriptionShort = $STR_BLD_desc_transfusionKit;
+	
+	class ItemActions
+	{
+		class Use
+		{
+			text = $STR_BLD_use_transfusionKit;
 			script = "spawn player_useMeds;";
 		};
 	};
 };
 
-class emptyBloodBag : CA_Magazine {
+class emptyBloodBag : CA_Magazine
+{
 	scope = public;
 	count = 1;
-	type = 256;
-	displayName = $STR_BLD_name_emptyBloodBag;//"Empty Blood Bag"
+	type = WeaponSlotItem;
+	
 	model = "z\addons\dayz_communityassets\models\bbag_empty.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_empty_ca.paa";
-	descriptionShort = $STR_BLD_desc_emptyBloodBag;//"An empty bag that is yet to be filled with blood"
+	displayName = $STR_BLD_name_emptyBloodBag;
+	descriptionShort = $STR_BLD_desc_emptyBloodBag;
 };

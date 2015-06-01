@@ -14,6 +14,20 @@ class 10Rnd_762x54_SVD : CA_Magazine
 	};
 };
 
+class 5Rnd_762x54_Mosin : 10Rnd_762x54_SVD
+{
+	count = 5;
+	model = "\dayz_equip\models\mag5rnd.p3d";
+	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\ammo.paa";
+	displayName = "5Rnd. Mosin Nagant TODO"; //TODO move to stringtable
+	descriptionShort = "5 Individual 7.62mm Mosin Nagant Cartridges";
+	
+	class ItemActions
+	{
+		COMBINE_MAG
+	};
+};
+
 class Mosin_Nagant_Ammo: CA_Magazine
 {
 	scope = 2;
