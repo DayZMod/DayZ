@@ -18,6 +18,7 @@ dayz_enableRules = true; //Enables a nice little news/rules feed on player login
 dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkeys 1,2,3) False = enable animations, True = disable animations
 dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
 dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
+dayz_randomDoorStates = true; // Building doors are randomly open/closed on server restarts
 dayz_POIs = true;
 dayz_infectiousWaterholes = true;
 dayz_DamageMultiplier = 1; //Damage Multiplier for Zombies.

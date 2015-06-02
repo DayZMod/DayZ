@@ -334,6 +334,24 @@ if (dayz_serversideloot) then {
 };
 */
 
+if (dayz_randomDoorStates) then {
+
+	_houses = (getMarkerPos "center") nearObjects ["Building", 10000];
+	_doorStates = ["dvere","dvere1l","dvere1r","dvere2l","dvere2r","dvere_spodni_r","dvere_spodni_l","dvere_vrchni","vrata1","vrata2","vratal1","vratar1","vratal2","vratar2","vratal3","vratar3","door","door_1_1","door_1_2","door_2_1","door_2_2","dvere1","dvere2","dvere3","dvere4","dvere5","dvere6","dvere7","dvere8","dvere9","dvere10","dvere11","dvere12","dvere13","dvere14","doorl","doorr","door_01","door01_a","door_02","door02_a","door_03","door_04","door_05","door_06","door_1a","door_1","door_2"];
+
+	{
+		_y = _x;
+
+		{
+			_y animate [format ["%1", _x], floor (random 2)];
+		} foreach _doorStates;
+		
+		sleep 0.0001;
+
+	} foreach _houses;
+
+};
+
 "PVDZ_sec_atp" addPublicVariableEventHandler { 
 	_x = _this select 1;
 	switch (1==1) do {

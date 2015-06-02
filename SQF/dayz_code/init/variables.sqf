@@ -430,6 +430,10 @@ if(isNil "dayz_maxGlobalZeds") then {
 	dayz_maxGlobalZeds = 1000;
 };
 
+if (isNil "dayz_randomDoorStates") then {
+	dayz_randomDoorStates = true;
+};
+
 //init global arrays for Loot Chances
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\loot_init.sqf";
 
