@@ -17,7 +17,7 @@ item12[] = {"Response",4,218,-175.000000,400.000000,-75.000000,450.000000,0.0000
 item13[] = {"Parse_Login",2,250,-75.000000,550.000000,25.000000,600.000000,0.000000,"Parse Login"};
 item14[] = {"Hive_Bad",4,218,125.000000,550.000000,225.000000,600.000000,10.000000,"Hive" \n "Bad"};
 item15[] = {"ERROR__Wrong_HIVE",2,250,325.000000,550.000000,425.000000,600.000000,0.000000,"ERROR:" \n "Wrong HIVE" \n "Version"};
-item16[] = {"Character_Setup",4,4314,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
+item16[] = {"Character_Setup",4,218,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
 item17[] = {"Phase_One",2,250,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
 item18[] = {"Response",4,218,-175.000000,700.000000,-75.000000,750.000000,0.000000,"Response"};
 item19[] = {"Phase_Two",2,250,-75.000000,750.000000,25.000000,800.000000,0.000000,"Phase Two"};
@@ -33,7 +33,7 @@ item28[] = {"Display_Ready",4,218,-175.000000,1200.000000,-75.000000,1250.000000
 item29[] = {"Preload_Display",2,250,-75.000000,1250.000000,25.000000,1300.000000,0.000000,"Preload" \n "Display"};
 item30[] = {"Preload_Done",4,218,-175.000000,1300.000000,-75.000000,1350.000000,0.000000,"Preload" \n "Done"};
 item31[] = {"Initialize",2,250,-75.000000,1350.000000,25.000000,1400.000000,0.000000,"Initialize"};
-item32[] = {"Finish",1,250,-75.000000,1525.000000,25.000000,1575.000000,0.000000,"Finish"};
+item32[] = {"Finish",1,4346,-75.000000,1525.000000,25.000000,1575.000000,0.000000,"Finish"};
 item33[] = {"no_Time_Date",4,218,125.000000,950.000000,225.000000,1000.000000,0.000000,"no Time/Date"};
 item34[] = {"sleep",4,218,525.000000,150.000000,625.000000,200.000000,0.000000,"sleep"};
 item35[] = {"sleep",4,218,525.000000,550.000000,625.000000,600.000000,0.000000,"sleep"};
@@ -232,8 +232,8 @@ link121[] = {102,96};
 link122[] = {103,104};
 link123[] = {104,11};
 link124[] = {105,96};
-globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-836.271484,-57.415649,992.292297,244.640610,624,599,1};
-window[] = {2,-1,-1,-1,-1,651,125,1145,125,3,642};
+globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-485.536743,293.319092,1709.988037,962.336365,624,599,1};
+window[] = {2,-1,-1,-1,-1,601,75,1095,75,3,642};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -1098,7 +1098,11 @@ class FSM
        "Dayz_logonTown = ""Wilderness"";" \n
        "if (count _nearestCity > 0) then {Dayz_logonTown = text (_nearestCity select 0)};" \n
        "[_world,Dayz_logonTown,format[localize ""str_player_06"",dayz_Survived]] spawn { sleep 5; _this spawn BIS_fnc_infoText;};" \n
-       "Dayz_loginCompleted = true;"/*%FSM</STATEINIT""">*/;
+       "Dayz_loginCompleted = true;" \n
+       "" \n
+       "//Other Counters" \n
+       "	dayz_currentGlobalAnimals = count entities ""CAAnimalBase"";" \n
+       "	dayz_currentGlobalZombies = count entities ""zZombie_Base"";"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {

@@ -93,6 +93,7 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 		//add to global counter 
 		dayz_spawnZombies = dayz_spawnZombies + 1;
 		dayz_CurrentNearByZombies = dayz_CurrentNearByZombies + 1;
+		dayz_currentGlobalZombies = dayz_currentGlobalZombies + 1;
 		
 		//Add some loot
 		_loot = "";
