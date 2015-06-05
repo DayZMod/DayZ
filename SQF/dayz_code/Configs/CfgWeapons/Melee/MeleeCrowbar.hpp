@@ -1,52 +1,51 @@
-class MeleeCrowbar: MeleeWeapon
+class MeleeCrowbar : MeleeWeapon
+{
+	scope = public;
+	melee = "true";
+	autoreload = 1;
+	magazineReloadTime = 0;
+	model = "\dayz_weapons\models\crowbar_weaponized";
+	picture = "\dayz_weapons\textures\equip_crowbar_CA.paa";
+	displayName = $STR_EQUIP_NAME_CROWBAR;
+	descriptionShort = $STR_EQUIP_DESC_CROWBAR; 
+	droppeditem = "ItemCrowbar";
+	soundBullet[] = {"bullet1", 1};
+	magazines[] = {"Crowbar_Swing"};
+	handAnim[] =
 	{
-		scope=2;
-		melee= "true";
-		autoreload=1;
-		magazineReloadTime=0;
-		model="\dayz_weapons\models\crowbar_weaponized";
-		picture="\dayz_weapons\textures\equip_crowbar_CA.paa";
-		displayName=$STR_EQUIP_NAME_CROWBAR;
-		descriptionShort=$STR_EQUIP_DESC_CROWBAR; 
-		droppeditem= "ItemCrowbar";
-		soundBullet[] = {"bullet1", 1};
-		magazines[]=
+		"OFP2_ManSkeleton",
+		"\dayz_weapons\anim\melee_hatchet_holding.rtm"
+	};
+	
+	class ItemActions
+	{
+		class Toolbelt
 		{
-			"Crowbar_Swing"
-		};
-		handAnim[]=
-		{
-			"OFP2_ManSkeleton",
-			"\dayz_weapons\anim\melee_hatchet_holding.rtm"
-		};
-		class ItemActions
-		{
-			class Toolbelt
+			text = $STR_ACTIONS_2TB;
+			script = "spawn player_addToolbelt;";
+			use[] =
 			{
-				text=$STR_ACTIONS_2TB;
-				script="spawn player_addToolbelt;";
-				use[]=
-				{
-					"MeleeCrowbar"
-				};
-				output[]=
-				{
-					"ItemCrowbar"
-				};
+				"MeleeCrowbar"
 			};
-			
-			class Drop
+			output[] =
 			{
-				text=$STR_ACTIONS_DROP;
-				script="spawn player_dropWeapon; r_action_count = r_action_count + 1;";
-				use[]=
-				{
-					"Crowbar_Swing"
-				};
+				"ItemCrowbar"
 			};
 		};
-		class Library
+		
+		class Drop
 		{
-			libTextDesc=$STR_EQUIP_DESC_CROWBAR;
+			text = $STR_ACTIONS_DROP;
+			script = "spawn player_dropWeapon; r_action_count = r_action_count + 1;";
+			use[] =
+			{
+				"Crowbar_Swing"
+			};
 		};
 	};
+	
+	class Library
+	{
+		libTextDesc = $STR_EQUIP_DESC_CROWBAR;
+	};
+};

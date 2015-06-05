@@ -905,6 +905,9 @@
 			<French>Boire %1</French>
 			<Czech>Vypít %1</Czech>
 		</Key>
+		<Key ID="STR_ACTIONS_DRINK2">
+			<English>Drink</English>
+		</Key>
 		<Key ID="STR_ACTIONS_FILL_W">
 			<English>Fill Water</English>
 			<German>Wasser auffuellen</German>
@@ -5093,7 +5096,22 @@
 			<Czech>Upečený mořčák mořský, který vám přidá až 1400 krve.</Czech>
 			<French>Un Bar cuit (valeur:1400).</French>
 			<German>Ein gebratener Wolfsbarsch. Reich an Eiweiss und Omega-3-Fettsaeuren.</German>
-		</Key>		
+		</Key>
+		<Key ID="STR_ITEM_CANTEEN_NAME">
+			<English>Canteen</English>
+		</Key>
+		<Key ID="STR_ITEM_CANTEEN_DESC">
+			<English>A sturdy military canteen used to hold liquids for consumption.</English>
+		</Key>
+		<Key ID="STR_ITEM_CANTEEN_EMPTY_NAME">
+			<English>Canteen (Empty)</English>
+		</Key>
+		<Key ID="STR_ITEM_CANTEEN_BOILED_NAME">
+			<English>Canteen (Boiled)</English>
+		</Key>
+		<Key ID="STR_ITEM_CANTEEN_HERBAL_NAME">
+			<English>Canteen (Herbal drink)</English>
+		</Key>
 		<Key ID="STR_ITEMWATERBOTTLEBOILED_CODE_NAME">
 			<English>Water Bottle (Boiled)</English>
 			<German>Wasserflasche (Abgekocht)</German>

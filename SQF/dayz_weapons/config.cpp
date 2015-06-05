@@ -22,12 +22,14 @@
 #define TFriendly		6
 #define TLogic		7
 
-class CfgPatches {
-	class dayz_weapons {
+class CfgPatches
+{
+	class dayz_weapons
+	{
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"CAWeapons", "dayz_equip"};
+		requiredAddons[] = {"dayz_anim"};
 	};
 };
 
@@ -589,89 +591,6 @@ class cfgMagazines {
 				output[] = {"8Rnd_B_Beneli_Pellets"};
 			};
 		};
-	};
-	class HandGrenade;	// External class reference
-	
-	class TrashJackDaniels : HandGrenade {
-		scope = public;
-		displayName = $STR_EQUIP_NAME_34;
-		model = "\dayz_equip\models\bottle_jd.p3d";
-		picture = "\dayz_equip\textures\equip_bottle_jd_ca.paa";
-		descriptionShort = $STR_EQUIP_DESC_34;
-		ammo = "JackDaniels";
-	};
-	
-	class TrashTinCan : HandGrenade {
-		scope = public;
-		displayName = $STR_EQUIP_NAME_33;
-		model = "\dayz_equip\models\trash_tincan.p3d";
-		picture = "\dayz_equip\textures\equip_tincan_ca.paa";
-		descriptionShort = $STR_EQUIP_DESC_33;
-		ammo = "TinCan";
-	};
-	
-	class ItemSodaEmpty : HandGrenade {
-		scope = public;
-		displayName = $STR_EQUIP_NAME_35;
-		model = "\dayz_equip\models\soda_coke_e.p3d";
-		picture = "\dayz_equip\textures\equip_soda_empty_ca.paa";
-		descriptionShort = $STR_EQUIP_DESC_35;
-		ammo = "SodaCan";
-	};
-	
-	class HandRoadFlare : HandGrenade {
-		displayName = $STR_MAG_NAME_4;
-		picture = "\dayz_weapons\textures\equip_roadflare_ca.paa";
-		model = "\dayz_weapons\models\roadflare";
-		ammo = "RoadFlare";
-		count = 10;
-		descriptionShort = $STR_MAG_DESC_4;
-	};
-	
-	class ChemLightMag : HandGrenade {
-		count = 5;
-	};
-	
-	class HandChemBlue : ChemLightMag {
-		scope = public;
-		displayName = $STR_MAG_NAME_7;
-		picture = "\dayz_weapons\textures\equip_chem_blue_ca.paa";
-		model = "\dayz_weapons\models\chem_gear_blue";
-		ammo = "ChemBlue";
-		count = 10;
-		descriptionShort = $STR_MAG_DESC_5;
-	};
-	
-	class HandChemGreen : ChemLightMag {
-		scope = public;
-		displayName = $STR_MAG_NAME_5;
-		picture = "\dayz_weapons\textures\equip_chem_green_ca.paa";
-		model = "\dayz_weapons\models\chem_gear_green";
-		ammo = "ChemGreen";
-		count = 10;
-		descriptionShort = $STR_MAG_DESC_5;
-	};
-	
-	class HandChemRed : ChemLightMag {
-		scope = public;
-		displayName = $STR_MAG_NAME_6;
-		picture = "\dayz_weapons\textures\equip_chem_red_ca.paa";
-		model = "\dayz_weapons\models\chem_gear_red";
-		ammo = "ChemRed";
-		count = 10;
-		descriptionShort = $STR_MAG_DESC_5;
-	};
-	
-	class BoltSteel : CA_Magazine {
-		scope = public;
-		displayName = $STR_MAG_NAME_3;
-		model = "\dayz_weapons\models\bolt_gear";
-		picture = "\dayz_weapons\textures\equip_bolt_ca.paa";
-		ammo = "BoltSteel";
-		count = 1;
-		initSpeed = 150;
-		descriptionShort = $STR_MAG_DESC_3;
-		displayNameShort = $STR_MAG_ACTION_3;
 	};
 };
 

@@ -13,12 +13,14 @@
 
 #define EAST 0 // (Russian)
 
-class CfgPatches {
-	class dayz_sfx {
+class CfgPatches
+{
+	class dayz_sfx
+	{
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {};
+		requiredAddons[] = {"dayz_anim"};
 		dayzVersion = 1.8;
 	};
 };

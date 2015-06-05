@@ -1,4 +1,4 @@
-private ["_pos","_display","_body","_playerID","_array","_source","_method","_canHitFree","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup","_model"];
+private ["_pos","_display","_body","_playerID","_array","_source","_method","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup","_model"];
 disableSerialization;
 if (deathHandled) exitWith {};
 
@@ -52,15 +52,20 @@ r_player_cardiac = false;
 _model = typeOf player;
 
 _array = _this;
-if (count _array > 0) then {
+if (count _array > 0) then
+{
 	_source = _array select 0;
 	_method = _array select 1;
-	if ((!isNull _source) and (_source != player)) then {
-		_canHitFree = player getVariable ["freeTarget",false];
-		_isBandit = (player getVariable["humanity",0]) <= -2000;
-        _accidentalMurder = (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ","Bandit1_DZ","BanditW1_DZ"]);
-
-		_punishment = _canHitFree || _isBandit || _accidentalMurder; //if u are bandit or start first - player will not recieve humanity drop
+	if ((!isNull _source) and (_source != player)) then
+	{
+		//_isBandit = (player getVariable["humanity",0]) <= -2000;
+		_isBandit = (_model in ["Bandit1_DZ","BanditW1_DZ"]);
+		
+		//if u are bandit or start first - player will not recieve humanity drop
+		_punishment =
+			_isBandit ||
+			{player getVariable ["OpenTarget",false]} ||
+			{_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
 		_humanityHit = 0;
 
 		if (!_punishment) then {

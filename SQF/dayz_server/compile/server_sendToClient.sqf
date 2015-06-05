@@ -119,4 +119,13 @@ switch (_variable) do {
 		PVCDZ_plr_Legs = _arraytosend;
 		_owner publicVariableClient "PVCDZ_plr_Legs";
 	};
+	
+	//reset OpenTarget timer
+	case "OpenTarget":
+	{
+		_unit setVariable["OpenTarget",true,true];
+		
+		PVCDZ_OpenTarget_Reset = true;
+		_owner publicVariableClient "PVCDZ_OpenTarget_Reset";
+	};
 };

@@ -1,10 +1,8 @@
 class CfgMagazines
 {
-	class CA_Magazine;	// External class reference
-	//class FoodDrink; //External class reference
-	//class FoodEdible; //External class reference
-	class TrashTinCan; //External class reference
-	class HandGrenade; //External class reference
+	//External references
+	class CA_Magazine;
+	class HandGrenade;
 	
 	
 	
@@ -12,11 +10,13 @@ class CfgMagazines
 	#include "Magazines\Magazines.hpp"
 	
 	//Trash
-	#include "TrashTinCan.hpp"
-	#include "TrashLoot.hpp"
+	#include "Trash\Trash.hpp"
+	
+	//Vehicle parts
+	#include "VehicleParts.hpp"
 	
 	//Chemlight and Roadflare
-	#include "HandGrenade.hpp"
+	#include "Throwable.hpp"
 	
 	//Clothing
 	#include "Clothing\Clothing.hpp"
@@ -32,4 +32,7 @@ class CfgMagazines
 	
 	//Crafting materials
 	#include "Crafting\Crafting.hpp"
+	
+	//Consumables: food, drinks etc.
+	#include "Consumables\Consumables.hpp"
 };

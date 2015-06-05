@@ -65,7 +65,9 @@ class CfgVehicles {
 	class Ship;
 	//class Bag_Base_EP1;
 	//class Bag_Base_BAF;
-	class House {
+	class HouseBase;
+	class House : HouseBase
+	{
 		class DestructionEffects;
 	};
 	class SpawnableWreck : House {};

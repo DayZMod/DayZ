@@ -11,6 +11,9 @@
 "PVCDZ_veh_SetFuel"		addPublicVariableEventHandler {(_this select 1) spawn local_setFuel};
 //"dayzInfectedCamps"		addPublicVariableEventHandler {(_this select 1) call infectedcamps};
 
+//reset OpenTarget timer
+"PVCDZ_OpenTarget_Reset" addPublicVariableEventHandler { OpenTarget_Time = diag_tickTime; };
+
 "PVCDZ_veh_engineSwitch"		addPublicVariableEventHandler {(_this select 1) spawn dayz_engineSwitch};
 	
 {

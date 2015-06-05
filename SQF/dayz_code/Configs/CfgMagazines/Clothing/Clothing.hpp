@@ -1,19 +1,23 @@
 class SkinBase : CA_Magazine
 {
-	scope = public;
 	count = 1;
-	type = 256;
-	displayName = $STR_EQUIP_NAME_CLOTHES;
-	descriptionShort = $STR_EQUIP_DESC_CLOTHES;
+	type = WeaponSlotItem;
+	
 	model = "\dayz_equip\models\cloth_parcel.p3d";
 	picture = "\dayz_equip\textures\equip_cloth_parcel_ca.paa";
+	
 	Craftoutput = "equip_rag";
-	class ItemActions {
-		class Use {
+	
+	class ItemActions
+	{
+		class Use
+		{
 			text = $STR_EQUIP_TEXT_CLOTHES;
 			script = "spawn player_wearClothes;";
 		};
-		class tearClothes {
+		
+		class tearClothes
+		{
 			text = "Tear Clothes";
 			script = "spawn player_tearClothes;";
 		};

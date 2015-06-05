@@ -66,7 +66,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {};
+		requiredAddons[] = {"dayz_anim"};
 	};
 };
 
@@ -5428,7 +5428,7 @@ class AmovPercMstpSlowWrflDnon : StandBase {
 			duty = PercDuty + MstpDuty + SlowDuty + WrflDuty;
 			actions = "RifleLowStandActions";
 						file = "\ca\Anims\Characters\data\Anim\Sdr\Mov\Erc\stp\low\rfl\AmovPercMstpSlowWrflDnon.rtm";
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Idle.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Idle.p3d";
 			showWeaponAim = "false";
 			disableWeapons = "false";
 			disableWeaponsLong = "true";
@@ -5537,7 +5537,7 @@ class AmovPercMstpSrasWrflDnon : AmovPercMstpSlowWrflDnon {
 			visibleSize = 0.700121;
 			actions = "RifleStandActions";
 						file = "\ca\Anims\Characters\data\Anim\Sdr\Mov\Erc\stp\ras\rfl\AmovPercMstpSrasWrflDnon.rtm";
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Wrfl.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Wrfl.p3d";
 			showWeaponAim = "true";
 			disableWeapons = "false";
 			disableWeaponsLong = "false";
@@ -12618,7 +12618,7 @@ class AmovPercMevaSrasWrflDf : SprintBaseDf {
 			weaponIK = 1;
 			headBobStrength = 0.253731;
 						ConnectTo[] = {};
-			InterpolateTo[] = {"AmovPercMstpSrasWrflDnon", 0.02, "AmovPercMrunSlowWrflDf", 0.025, "AmovPercMwlkSrasWrflDf", 0.025, "AmovPercMrunSrasWrflDf", 0.025, "AmovPercMsprSlowWrflDf_AmovPpneMstpSrasWrflDnon", 0.02, "AmovPknlMevaSrasWrflDf", 0.025, "AmovPercMevaSlowWrflDf", 0.025, "AmovPercMevaSrasWrflDfl", 0.025, "AmovPercMevaSrasWrflDfr", 0.025, "AdthPercMrunSlowWrflDf_6", 0.01, "AdthPercMrunSlowWrflDf_A1short", 0.01, "AdthPercMrunSlowWrflDf_A2short", 0.01, "AdthPercMrunSlowWrflDf_A3short", 0.01, "AdthPercMrunSlowWrflDf_A4short", 0.01};
+			//InterpolateTo[] = {"AmovPercMstpSrasWrflDnon", 0.02, "AmovPercMrunSlowWrflDf", 0.025, "AmovPercMwlkSrasWrflDf", 0.025, "AmovPercMrunSrasWrflDf", 0.025, "AmovPercMsprSlowWrflDf_AmovPpneMstpSrasWrflDnon", 0.02, "AmovPknlMevaSrasWrflDf", 0.025, "AmovPercMevaSlowWrflDf", 0.025, "AmovPercMevaSrasWrflDfl", 0.025, "AmovPercMevaSrasWrflDfr", 0.025, "AdthPercMrunSlowWrflDf_6", 0.01, "AdthPercMrunSlowWrflDf_A1short", 0.01, "AdthPercMrunSlowWrflDf_A2short", 0.01, "AdthPercMrunSlowWrflDf_A3short", 0.01, "AdthPercMrunSlowWrflDf_A4short", 0.01};
 		};
 				
 class AmovPknlMevaSrasWrflDf : AmovPercMevaSrasWrflDf {
@@ -12724,7 +12724,7 @@ class AmovPercMstpSlowWrflDnon_AmovPercMevaSrasWrflDl : AmovPercMstpSlowWrflDnon
 			soundEnabled = "true";
 			looped = "false";
 			headBobStrength = 0.512438;
-			ConnectTo[] = {"AmovPercMwlkSrasWrflDl", 0.02};
+			//ConnectTo[] = {"AmovPercMwlkSrasWrflDl", 0.02};
 			InterpolateTo[] = {};
 		};
 				
@@ -12801,7 +12801,7 @@ class AmovPercMstpSrasWrflDnon_AmovPercMevaSrasWrflDr : AmovPercMstpSrasWrflDnon
 			soundEnabled = "true";
 			looped = "false";
 			headBobStrength = 0.512438;
-			ConnectTo[] = {"AmovPercMwlkSrasWrflDr", 0.02};
+			//ConnectTo[] = {"AmovPercMwlkSrasWrflDr", 0.02};
 			InterpolateTo[] = {};
 		};
 				
@@ -32360,7 +32360,7 @@ class CfgMovesZombie : CfgMovesBasic {
 		class AmovPknlMwlkSrasWrflDf : AmovPknlMstpSrasWrflDnon {
 			file = "\ca\Anims\Characters\data\Anim\Sdr\Mov\knl\Wlk\ras\Rfl\AmovPknlMwlkSrasWrflDf";
 			speed = 0.9;
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Wrfl.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Wrfl.p3d";
 			duty = CrawlDuty;
 			soundOverride = "walk";
 			leaningFactorBeg = 0.75;
@@ -32442,7 +32442,7 @@ class CfgMovesZombie : CfgMovesBasic {
 			leaningFactorBeg = 0;
 			leaningFactorEnd = 0;
 			soundEnabled = 1;
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
 			relSpeedMin = 0.697171;
 			relSpeedMax = 1.09651;
 			actions = "RifleKneelActionsRunF";
@@ -32456,7 +32456,7 @@ class CfgMovesZombie : CfgMovesBasic {
 		class AmovPknlMrunSrasWrflDfl : AmovPknlMrunSrasWrflDf {
 			file = "\ca\Anims\Characters\data\Anim\Sdr\Mov\knl\run\low\Rfl\AmovPknlMrunSlowWrflDfl";
 			speed = 0.821918;
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
 			actions = "RifleKneelActionsRunFL";
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPknlMstpSrasWrflDnon", 0.02, "AmovPercMrunSrasWrflDfl", 0.03, "AmovPknlMwlkSrasWrflDfl", 0.025, "AmovPknlMrunSrasWrflDf", 0.025, "AmovPknlMrunSrasWrflDl", 0.025, "AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon", 0.02, "AmovPknlMevaSrasWrflDfl", 0.025, "AdthPercMrunSlowWrflDf_6", 0.01};
@@ -32466,7 +32466,7 @@ class CfgMovesZombie : CfgMovesBasic {
 			file = "\ca\Anims\Characters\data\Anim\Sdr\Mov\knl\run\low\Rfl\AmovPknlMrunSlowWrflDl";
 			speed = 0.769231;
 			actions = "RifleKneelActionsRunL";
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPknlMstpSrasWrflDnon", 0.02, "AmovPercMrunSrasWrflDl", 0.03, "AmovPknlMwlkSrasWrflDl", 0.025, "AmovPknlMrunSrasWrflDfl", 0.025, "AmovPknlMrunSrasWrflDbl", 0.025};
 		};
@@ -32475,7 +32475,7 @@ class CfgMovesZombie : CfgMovesBasic {
 			file = "\ca\Anims\Characters\data\Anim\Sdr\Mov\knl\run\low\Rfl\AmovPknlMrunSlowWrflDbl";
 			speed = 0.882353;
 			actions = "RifleKneelActionsRunBL";
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPknlMstpSrasWrflDnon", 0.02, "AmovPercMrunSrasWrflDbl", 0.03, "AmovPknlMwlkSrasWrflDbl", 0.025, "AmovPknlMrunSrasWrflDl", 0.025, "AmovPknlMrunSrasWrflDb", 0.025};
 		};
@@ -32484,7 +32484,7 @@ class CfgMovesZombie : CfgMovesBasic {
 			file = "\ca\Anims\Characters\data\Anim\Sdr\Mov\knl\run\low\Rfl\AmovPknlMrunSlowWrflDb";
 			speed = 0.882353;
 			actions = "RifleKneelActionsRunB";
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPknlMstpSrasWrflDnon", 0.02, "AmovPercMrunSrasWrflDb", 0.03, "AmovPknlMwlkSrasWrflDb", 0.025, "AmovPknlMrunSrasWrflDbl", 0.025, "AmovPknlMrunSrasWrflDbr", 0.025};
 		};
@@ -32493,7 +32493,7 @@ class CfgMovesZombie : CfgMovesBasic {
 			file = "\ca\Anims\Characters\data\Anim\Sdr\Mov\knl\run\low\Rfl\AmovPknlMrunSlowWrflDbr";
 			speed = 0.882353;
 			actions = "RifleKneelActionsRunBR";
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPknlMstpSrasWrflDnon", 0.02, "AmovPercMrunSrasWrflDbr", 0.03, "AmovPknlMwlkSrasWrflDbr", 0.025, "AmovPknlMrunSrasWrflDb", 0.025, "AmovPknlMrunSrasWrflDr", 0.025};
 		};
@@ -32502,7 +32502,7 @@ class CfgMovesZombie : CfgMovesBasic {
 			file = "\ca\Anims\Characters\data\Anim\Sdr\Mov\knl\run\low\Rfl\AmovPknlMrunSlowWrflDr";
 			speed = 0.857143;
 			actions = "RifleKneelActionsRunR";
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPknlMstpSrasWrflDnon", 0.02, "AmovPercMrunSrasWrflDr", 0.03, "AmovPknlMwlkSrasWrflDr", 0.025, "AmovPknlMrunSrasWrflDbr", 0.025, "AmovPknlMrunSrasWrflDfr", 0.025};
 		};
@@ -32511,7 +32511,7 @@ class CfgMovesZombie : CfgMovesBasic {
 			file = "\ca\Anims\Characters\data\Anim\Sdr\Mov\knl\run\low\Rfl\AmovPknlMrunSlowWrflDfr";
 			speed = 0.821918;
 			actions = "RifleKneelActionsRunFR";
-			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
+			//collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Pknl_Mrun_Slow_Wrfl.p3d";
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPknlMstpSrasWrflDnon", 0.02, "AmovPercMrunSrasWrflDfr", 0.03, "AmovPknlMwlkSrasWrflDfr", 0.025, "AmovPknlMrunSrasWrflDf", 0.025, "AmovPknlMrunSrasWrflDr", 0.025, "AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon", 0.02, "AmovPknlMevaSrasWrflDfr", 0.025, "AdthPercMrunSlowWrflDf_6", 0.01};
 		};
