@@ -530,10 +530,6 @@ if(isNil "dayz_attackRange") then {
 	dayz_attackRange = 3;
 };
 
-if(isNil "dayz_maxGlobalZeds") then {
-	dayz_maxGlobalZeds = 1000;
-};
-
 //init global arrays for Loot Chances
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\loot_init.sqf";
 
@@ -654,7 +650,9 @@ if(!isDedicated) then {
 //Current total
 	dayz_currentGlobalZombies = 0;
 //Max global zeds.
-	dayz_maxGlobalZeds = 1000;
+	if(isNil "dayz_maxGlobalZeds") then {
+		dayz_maxGlobalZeds = 1000;
+	};
 //Animals
 	dayz_currentGlobalAnimals =	0;
 	dayz_maxGlobalAnimals =		50;
