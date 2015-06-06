@@ -717,7 +717,7 @@ class CfgBuildingLoot {
 			{"SVD_DZ","weapon",0.02},
 			{"M1014_DZ","weapon",0.05},
 			{"M14_DZ","weapon",0.02},
-			{"UZI_DZ","weapon",0.08},
+			{"PDW_DZ","weapon",0.08},
 			{"Remington870_lamp","weapon",0.07},
 			{"G17_DZ","weapon",0.03},
 			{"M240_DZ","weapon",0.01},
