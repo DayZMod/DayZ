@@ -135,6 +135,15 @@ class cfgWeapons {
 		model = "z\addons\community_crossbow\models\crossbow_cco_fl.p3d";
 		displayName = "Crossbow (CCO FL)";
 		picture = "\z\addons\community_crossbow\icons\crossbow_cco_fl.paa";
+		class FlashLight {
+            color[] = {0.9, 0.9, 0.7, 0.9};
+            ambient[] = {0.1, 0.1, 0.1, 1.0};
+            position = "fl_start";
+            direction = "fl_dir";
+            angle = 40;
+            scale[] = {1, 1, 0.5};
+            brightness = 0.1;
+        };
 		class ItemActions {
 			class removeFL {
 				text = "Remove FL";
@@ -185,6 +194,15 @@ class cfgWeapons {
 		opticsZoomMax = 0.071945;
 		distanceZoomMin = 110;
 		distanceZoomMax = 110;
+		class FlashLight {
+            color[] = {0.9, 0.9, 0.7, 0.9};
+            ambient[] = {0.1, 0.1, 0.1, 1.0};
+            position = "fl_start";
+            direction = "fl_dir";
+            angle = 40;
+            scale[] = {1, 1, 0.5};
+            brightness = 0.1;
+        };
 		class ItemActions {
 			class removeSCOPED {
 				text = "Remove Scope";
