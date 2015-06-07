@@ -79,11 +79,10 @@ class Survivor_DZ : Civilian {
 	backpack = "";
 	canCarryBackPack = 1;
 	enableGPS = 1;
-	class Eventhandlers {
-		local = "_z = _this select 0;" \n
-			    "if ((!isServer and !isNull _z) and {!(side _z in [west,east,civilian])}) exitWith { " \n
-			    "PVDZ_sec_atp = [ 'wrong side', player ]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; };";
-			    // note: the character switch to civilian side when the player quits the game and the locally goes to the server.
+	
+	class Eventhandlers
+	{
+		local = "_z = _this select 0; if (!isServer && {!isNull _z} && {!(side _z in [west,east,civilian])}) exitWith { PVDZ_sec_atp = ['wrong side', player]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; };";
 	};
 };
 
@@ -103,13 +102,6 @@ class Survivor3_DZ : Survivor2_DZ {
 	model = "\dayz\characters\man_hero";
 	HiddenSelections[] = {"camo1", "camo2", "camo3"};
 	HiddenSelectionsTextures[] = {"ca\characters_pmc\pmc_soldier\data\bauer_co.paa", "ca\characters_pmc\pmc_soldier\data\bauer_gear_co.paa", "ca\characters_pmc\pmc_soldier\data\headgear_co.paa"};
-	
-	class EventHandlers {
-		init = "(_this select 0) setObjectTexture [0,[""\Ca\Characters_PMC\PMC_soldier\Data\bauer_2_co.paa"",""\Ca\Characters_PMC\PMC_soldier\Data\bauer_3_co.paa"",""\Ca\Characters_PMC\PMC_soldier\Data\bauer_4_co.paa"",""\Ca\Characters_PMC\PMC_soldier\Data\bauer_5_co.paa""] select floor random 4]; (_this select 0) setObjectTexture [1,[""ca\characters_pmc\pmc_soldier\data\bauer_gear_co.paa"",""\Ca\Characters_PMC\PMC_soldier\Data\Bauer_Gear_1_co.paa"",""\Ca\Characters_PMC\PMC_soldier\Data\Bauer_Gear_2_co.paa"",""\Ca\Characters_PMC\PMC_soldier\Data\Bauer_Gear_3_co.paa""] select floor random 4]; (_this select 0) setObjectTexture [2,[""\Ca\Characters_PMC\PMC_soldier\Data\HeadGear_CO.paa"",""\Ca\Characters_PMC\PMC_soldier\Data\HeadGear_1_CO.paa""] select floor random 2]";
-		local = "_z = _this select 0;" \n
-			    "if ((!isServer and !isNull _z) and {!(side _z in [west,east,civilian])}) exitWith { " \n
-			    "PVDZ_sec_atp = [ 'wrong side', player ]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; };";
-	};
 };
 
 class SurvivorW2_DZ : Survivor_DZ {
