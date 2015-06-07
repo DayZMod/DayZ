@@ -1,3 +1,10 @@
+/*
+	Upkeep on built items.
+*/
+
+#define MAINTENANCE_NUTRITION_VALUES [20,40,15,0]
+
+
 private ["_isMedic","_cursorTarget"];
 
 _cursorTarget = _this select 3;
@@ -66,7 +73,7 @@ if (_startMaintenance) then {
 	_sfx = "tentpack";
 	[player,_sfx,0,false,_dis] call dayz_zombieSpeak;
 	[player,_dis,true,(getPosATL player)] call player_alertZombies;
-	["Working",0,[20,40,15,0]] call dayz_NutritionSystem; // Added Nutrition-Factor for work
+	["Working",0,MAINTENANCE_NUTRITION_VALUES] call dayz_NutritionSystem; // Added Nutrition-Factor for work
 	
 	{ player removeMagazine _x; } count _requiredParts;
 	
