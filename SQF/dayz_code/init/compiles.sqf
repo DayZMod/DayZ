@@ -385,8 +385,8 @@ if (!isDedicated) then {
    dayz_meleeMagazineCheck = {
         //private["_meleeNum","_magType","_wpnType","_ismelee"];
         _wpnType = primaryWeapon player;
-        _ismelee = (gettext (configFile >> "CfgWeapons" >> _wpnType >> "melee"));
-        if (_ismelee == "true") then {
+        _ismelee = (getNumber (configFile >> "CfgWeapons" >> _wpnType >> "melee") == 1);
+        if (_ismelee) then {
             private ["_meleeNum","_magType"];
             _magType = ([] + getArray (configFile >> "CfgWeapons" >> _wpnType >> "magazines")) select 0;
             _meleeNum = ({_x == _magType} count magazines player);
