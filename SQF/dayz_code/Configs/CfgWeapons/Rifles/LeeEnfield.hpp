@@ -1,4 +1,4 @@
 class LeeEnfield_DZ : LeeEnfield
 {
-	magazines[] = {10x_303};
+	magazines[] = {10Rnd_303British};
 };

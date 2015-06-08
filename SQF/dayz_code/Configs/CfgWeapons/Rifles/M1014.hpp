@@ -6,10 +6,10 @@ class M1014_DZ : M1014
 	
 	magazines[] =
 	{
-		8Rnd_B_Beneli_74Slug,
-		8Rnd_B_Beneli_Pellets,
-		2Rnd_shotgun_74Slug,
-		2Rnd_shotgun_74Pellets
+		8Rnd_12Gauge_Slug,
+		8Rnd_12Gauge_Buck,
+		2Rnd_12Gauge_Slug,
+		2Rnd_12Gauge_Buck
 	};
 	
 	class Single : Single
