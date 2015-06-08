@@ -38,7 +38,7 @@ if (!isNull _findNearestRock) then {
     _countOut = 2 + floor(random 3);
 
     //Remove melee magazines (BIS_fnc_invAdd fix) (add new melee ammo to array if needed)
-    {player removeMagazines _x} forEach ["hatchet_swing","crowbar_swing","Machete_swing","Fishing_Swing"];
+    {player removeMagazines _x} forEach ["Hatchet_Swing","Crowbar_Swing","Machete_Swing","Fishing_Swing"];
 
     // Start stone mining loop
     _counter = 0;
@@ -149,9 +149,9 @@ if (!isNull _findNearestRock) then {
 	
     //adding melee mags back if needed
     switch (primaryWeapon player) do {
-        case "MeleeHatchet": {player addMagazine 'hatchet_swing';};
-        case "MeleeCrowbar": {player addMagazine 'crowbar_swing';};
-        case "MeleeMachete": {player addMagazine 'Machete_swing';};
+        case "MeleeHatchet": {player addMagazine 'Hatchet_Swing';};
+        case "MeleeCrowbar": {player addMagazine 'Crowbar_Swing';};
+        case "MeleeMachete": {player addMagazine 'Machete_Swing';};
         case "MeleeFishingPole": {player addMagazine 'Fishing_Swing';};
     };
 } else {
