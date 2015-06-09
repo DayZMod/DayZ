@@ -130,6 +130,7 @@ class CfgBuildingLoot {
 			{"equip_herb_box","magazine",0.03},
 			{"equip_pvc_box","magazine",0.03},
 			{"ItemPainkiller","magazine",0.04},
+			{"ItemPadlock","magazine",0.01},
 			{"ItemBandage","magazine",0.06},
 			//Bags
 			{"DZ_ALICE_Pack_EP1","object",0.06},
@@ -326,6 +327,7 @@ class CfgBuildingLoot {
 			{"WeaponHolder_ItemCamoNet","object",0.01},
 			{"equip_pvc_box","magazine",0.03},
 			{"equip_herb_box","magazine",0.03},
+			{"ItemPadlock","magazine",0.01},
 			{"equip_duct_tape","magazine",0.03},
 			{"PartWoodPile","magazine",0.04},
 			{"DZ_Patrol_Pack_EP1","object",0.05}, //12
