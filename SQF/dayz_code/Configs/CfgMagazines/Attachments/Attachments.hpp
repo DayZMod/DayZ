@@ -19,12 +19,3 @@
 #include "Attachment_SupBizon.hpp"
 
 #include "Attachment_Ghillie.hpp"
-
-/*LEGACY*/
-
-#include "legacy\Attachment_ACG.hpp"
-#include "legacy\Attachment_AIM.hpp"
-#include "legacy\Attachment_Camo.hpp"
-#include "legacy\Attachment_CrossbowCCO.hpp"
-#include "legacy\Attachment_Silencer.hpp"
-#include "legacy\Attachment_SniperScope.hpp"

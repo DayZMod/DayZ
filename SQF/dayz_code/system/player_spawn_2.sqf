@@ -358,8 +358,8 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	if(isNil {login_ammochecked}) then {
 		login_ammochecked = true;
 		 _wpnType = primaryWeapon player;
-		_ismelee = (gettext (configFile >> "CfgWeapons" >> _wpnType >> "melee"));
-		if (_ismelee == "true") then {
+		_ismelee = (getNumber (configFile >> "CfgWeapons" >> _wpnType >> "melee") == 1);
+		if (_ismelee) then {
 			call dayz_meleeMagazineCheck;
 		};
 	};

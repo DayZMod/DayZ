@@ -8,9 +8,6 @@ if (!isDedicated) then {
 	"filmic" setToneMappingParams [0.07, 0.31, 0.23, 0.37, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
 	
 	call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_padlock.sqf";
-	
-	//Remove later
-	player_convertAttchment = compile preprocessFileLineNumbers "\z\addons\dayz_code\Configs\CfgMagazines\Attachments\legacy\fn_convertAttachment.sqf";
 
 	BIS_Effects_Burn = compile preprocessFile "\ca\Data\ParticleEffects\SCRIPTS\destruction\burn.sqf";
 	spawn_flies = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\spawn_flies.sqf";
@@ -388,8 +385,8 @@ if (!isDedicated) then {
    dayz_meleeMagazineCheck = {
         //private["_meleeNum","_magType","_wpnType","_ismelee"];
         _wpnType = primaryWeapon player;
-        _ismelee = (gettext (configFile >> "CfgWeapons" >> _wpnType >> "melee"));
-        if (_ismelee == "true") then {
+        _ismelee = (getNumber (configFile >> "CfgWeapons" >> _wpnType >> "melee") == 1);
+        if (_ismelee) then {
             private ["_meleeNum","_magType"];
             _magType = ([] + getArray (configFile >> "CfgWeapons" >> _wpnType >> "magazines")) select 0;
             _meleeNum = ({_x == _magType} count magazines player);

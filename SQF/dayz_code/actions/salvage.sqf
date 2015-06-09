@@ -103,7 +103,7 @@ dayz_salvageInProgress = false;
 //adding melee mags back if needed
 _wpn = primaryWeapon player;
 //diag_log format["Classname: %1, WPN: %2", _classname,_wpn];
-_ismelee = (gettext (configFile >> "CfgWeapons" >> _wpn >> "melee"));
-if (_ismelee == "true") then {
+_ismelee = (getNumber (configFile >> "CfgWeapons" >> _wpn >> "melee") == 1);
+if (_ismelee) then {
 	call dayz_meleeMagazineCheck;
 };

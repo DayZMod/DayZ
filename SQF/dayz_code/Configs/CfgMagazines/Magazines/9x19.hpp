@@ -2,6 +2,8 @@
 
 class 30Rnd_9x19_UZI : CA_Magazine
 {
+	cartridgeName = "9x19";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -10,6 +12,8 @@ class 30Rnd_9x19_UZI : CA_Magazine
 
 class 30Rnd_9x19_MP5 : CA_Magazine
 {
+	cartridgeName = "9x19";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -18,6 +22,8 @@ class 30Rnd_9x19_MP5 : CA_Magazine
 
 class 30Rnd_9x19_UZI_SD : CA_Magazine
 {
+	cartridgeName = "9x19_SD";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -27,6 +33,8 @@ class 30Rnd_9x19_UZI_SD : CA_Magazine
 class 30Rnd_9x19_MP5SD : CA_Magazine
 {
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_mp5sd_ca.paa";
+	
+	cartridgeName = "9x19_SD";
 	
 	class ItemActions
 	{
@@ -40,6 +48,8 @@ class 30Rnd_9x19_MP5SD : CA_Magazine
 
 class 15Rnd_9x19_M9 : CA_Magazine
 {
+	cartridgeName = "9x19";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -65,6 +75,8 @@ class 17Rnd_9x19_glock17 : CA_Magazine
 	model = "z\addons\dayz_communityweapons\magazines\g17.p3d";
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_glock17_ca.paa";
 	
+	cartridgeName = "9x19";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -87,6 +99,8 @@ class 17Rnd_9x19_glock17 : CA_Magazine
 
 class 15Rnd_9x19_M9SD : 15Rnd_9x19_M9
 {
+	cartridgeName = "9x19_SD";
+	
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_m9sd_ca.paa";
 	
 	class ItemActions
@@ -117,6 +131,8 @@ class 17Rnd_9x19_glock17SD : 15Rnd_9x19_M9SD
 	
 	count = 17;
 	
+	cartridgeName = "9x19_SD";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -145,6 +161,8 @@ class 64Rnd_9x19_Bizon : CA_Magazine
 {
 	model = "z\addons\dayz_communityweapons\magazines\bizon.p3d";
 	
+	cartridgeName = "9x19";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -154,6 +172,8 @@ class 64Rnd_9x19_Bizon : CA_Magazine
 class 64Rnd_9x19_SD_Bizon : CA_Magazine
 {
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_bizonsd_ca.paa";
+	
+	cartridgeName = "9x19_SD";
 	
 	class ItemActions
 	{

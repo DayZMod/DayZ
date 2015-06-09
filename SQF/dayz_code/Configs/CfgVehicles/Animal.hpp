@@ -2,11 +2,9 @@
 class CAAnimalBase;
 class animal_DZ: CAAnimalBase
 {
-	class Eventhandlers {
-		local = "_z = _this select 0;" \n
-			    "if ((!isServer and !isNull _z) and {(side _z != civilian)}) exitWith { " \n
-			    "PVDZ_sec_atp = [ 'wrong side', player ]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; };" \n
-			    "if ((_this select 1) and isServer) exitWith { _z call sched_co_deleteVehicle; };"; // <- does not work here but on zeds it works
+	class Eventhandlers
+	{
+		local = "_z = _this select 0; if ((!isServer and !isNull _z) and {(side _z != civilian)}) exitWith { PVDZ_sec_atp = [ 'wrong side', player ]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; }; if ((_this select 1) and isServer) exitWith { _z call sched_co_deleteVehicle; };";
 	};
 };
 

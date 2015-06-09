@@ -8,7 +8,7 @@ _control = uiNamespace getVariable 'uiControl';
 _qty_quiverarrows = gearSlotAmmoCount _control;
 
 //Remove melee magazines (BIS_fnc_invAdd fix) (add new melee ammo to array if needed)
-{player removeMagazines _x} forEach ["hatchet_swing","crowbar_swing","Machete_swing","Fishing_Swing"];
+{player removeMagazines _x} forEach ["Hatchet_Swing","Crowbar_Swing","Machete_Swing","Fishing_Swing"];
 
 _empty = [player] call BIS_fnc_invSlotsEmpty;
 _emptymagslotcount = _empty select 4; //empty magazines slots

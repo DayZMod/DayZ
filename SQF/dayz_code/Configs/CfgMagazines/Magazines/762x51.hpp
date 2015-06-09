@@ -1,5 +1,7 @@
 class 20Rnd_762x51_FNFAL : CA_Magazine
 {
+	cartridgeName = "762x51";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -9,6 +11,8 @@ class 20Rnd_762x51_FNFAL : CA_Magazine
 class 20Rnd_762x51_DMR : CA_Magazine
 {
 	model = "\dayz_equip\models\mag20.p3d";
+	
+	cartridgeName = "762x51";
 	
 	class ItemActions
 	{
@@ -28,6 +32,8 @@ class 5Rnd_762x51_M24 : CA_Magazine
 {
 	model = "\dayz_equip\models\mag5rnd.p3d";
 	
+	cartridgeName = "762x51";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -44,6 +50,8 @@ class 5Rnd_762x51_M24 : CA_Magazine
 
 class 100Rnd_762x51_M240: CA_Magazine
 {
+	cartridgeName = "762x51";
+	
 	class ItemActions
 	{
 		COMBINE_MAG

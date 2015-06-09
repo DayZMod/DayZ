@@ -1,15 +1,18 @@
-class CfgLoot {
+class CfgLoot
+{
 	#include "BuildingLoot\Residential.hpp"
 	#include "BuildingLoot\militaryEAST.hpp"
 	#include "BuildingLoot\militaryWEST.hpp"
 	#include "BuildingLoot\Supermarket.hpp"
 	#include "CfgBuildingTrashLoot.hpp"
-	ammo[] = {
+	
+	ammo[] =
+	{
 		{"7Rnd_45ACP_1911",0.03},
 		{"6Rnd_45ACP",0.03},
 		{"15Rnd_W1866_Slug",0.03},
 		{"15Rnd_W1866_Slug",0.03},
-		{"8Rnd_B_Beneli_74Slug",0.03},
+		{"8Rnd_12Gauge_Slug",0.03},
 		{"7Rnd_45ACP_1911",0.04},
 		{"30Rnd_556x45_Stanag",0.02},
 		{"75Rnd_545x39_RPK",0.02},
@@ -23,10 +26,10 @@ class CfgLoot {
 		{"30Rnd_762x39_AK47",0.02},
 		{"30Rnd_545x39_AK",0.02},
 		{"5Rnd_762x51_M24",0.01},
-		{"8Rnd_B_Beneli_74Slug",0.04},
+		{"8Rnd_12Gauge_Slug",0.04},
 		{"1Rnd_HE_M203",0.01},
 		{"1Rnd_HE_GP25",0.02},
-		{"8Rnd_B_Beneli_Pellets",0.04},
+		{"8Rnd_12Gauge_Buck",0.04},
 		{"30Rnd_556x45_StanagSD",0.01},
 		{"30Rnd_545x39_AKSD",0.02},
 		{"30Rnd_9x19_MP5",0.02},
@@ -36,16 +39,19 @@ class CfgLoot {
 		{"64Rnd_9x19_Bizon",0.03},
 		{"64Rnd_9x19_SD_Bizon",0.01}
 	};
+	
 	//Zed Loot
-	policeman[] = {
+	policeman[] =
+	{
 		{"ItemBandage",0.10},
 		{"7Rnd_45ACP_1911",0.03},
 		{"6Rnd_45ACP",0.03},
 		{"15Rnd_W1866_Slug",0.03},
-		{"8Rnd_B_Beneli_74Slug",0.03},
+		{"8Rnd_12Gauge_Slug",0.03},
 		{"HandRoadFlare",0.05},
 		{"ItemWaterbottleUnfilled",0.01}
 	};
+	
 	attachmentsGeneric[] =
 	{
 		{"Attachment_BELT",0.03},
@@ -53,6 +59,7 @@ class CfgLoot {
 		{"Attachment_FL",0.02},
 		{"Attachment_FL_Pist",0.02}
 	};
+	
 	attachmentsEast[] =
 	{
 		{"Attachment_Kobra",0.01},
@@ -62,6 +69,7 @@ class CfgLoot {
 		{"Attachment_Sup545",0.01},
 		{"Attachment_GP25",0.01}
 	};
+	
 	attachmentsWest[] =
 	{
 		{"Attachment_CCO",0.01},
@@ -71,34 +79,42 @@ class CfgLoot {
 		{"Attachment_Sup556",0.01},
 		{"Attachment_Sup9",0.03}
 	};
-	civilian[] = {
+	
+	civilian[] =
+	{
 		{"ItemBandage",0.06},
 		{"ItemPainkiller",0.03},
 		{"8Rnd_9x18_Makarov",0.04},
 		{"6Rnd_45ACP",0.04},
-		{"2Rnd_shotgun_74Pellets",0.08},
+		{"2Rnd_12Gauge_Buck",0.08},
 		{"ItemSodaLirik",0.02},
 		{"ItemSodaPeppsy",0.02},
 		{"FoodCanBeef",0.03},
 		//{"Item1Matchbox",0.01}, Removed due to item not mag
 		{"FoodCanCurgon",0.03}
 	};
-	viralloot[] = {
+	
+	viralloot[] =
+	{
 		{"ItemBandage",0.02},
 		{"8Rnd_9x18_Makarov",0.04},
 		{"6Rnd_45ACP",0.04},
-		{"2Rnd_shotgun_74Pellets",0.08},
+		{"2Rnd_12Gauge_Buck",0.08},
 		{"ItemSodaPeppsy",0.04},
 		{"FoodCanRusCorn",0.05},
 		{"FoodCanCurgon",0.05},
 		{"ItemAntibiotic1",0.01},
 		{"FoodCanBoneboy",0.05}
 	};
-	food[] = {
+	
+	food[] =
+	{
 		{"FoodCakeCremeCakeClean",0.01},
 		{"ItemSodaMtngreen",0.01}
 	};
-	generic[] = {
+	
+	generic[] =
+	{
 		{"ItemBandage",0.03},
 		{"ItemTrashPaper",0.03},
 		{"ItemTrashPaperMusic",0.03},
@@ -106,11 +122,11 @@ class CfgLoot {
 		{"ItemHeatPack",0.04},
 		{"8Rnd_9x18_Makarov",0.09},
 		{"6Rnd_45ACP",0.04},
-		{"2Rnd_shotgun_74Pellets",0.08},
-		{"5x_22_LR_17_HMR",0.01},
-		{"10x_303",0.04},
+		{"2Rnd_12Gauge_Buck",0.08},
+		{"5Rnd_17HMR",0.01},
+		{"10Rnd_303British",0.04},
 		{"15Rnd_W1866_Slug",0.06},
-		{"WoodenArrow",0.04},
+		{"1Rnd_Arrow_Wood",0.04},
 		{"HandRoadFlare",0.10},
 		{"ItemPainkiller",0.02},
 		{"HandChemGreen",0.01},
@@ -141,7 +157,9 @@ class CfgLoot {
 		{"ItemSodaSacrite",0.01},
 		{"ItemCards",0.02}
 	};
-	medical[] = {
+	
+	medical[] =
+	{
 		{"ItemBandage",0.08},
 		{"ItemPainkiller",0.05},
 		{"ItemMorphine",0.05},
@@ -152,7 +170,9 @@ class CfgLoot {
 		{"ItemAntibacterialWipe",0.04},
 		{"ItemHeatPack",0.03}
 	};
-	military[] = {
+	
+	military[] =
+	{
 		{"ItemBandage",0.04},
 		{"ItemPainkiller",0.02},
 		{"ItemMorphine",0.01},
@@ -169,7 +189,7 @@ class CfgLoot {
 		{"30Rnd_762x39_AK47",0.02},
 		{"30Rnd_545x39_AK",0.02},
 		{"5Rnd_762x51_M24",0.01},
-		{"8Rnd_B_Beneli_74Slug",0.04},
+		{"8Rnd_12Gauge_Slug",0.04},
 		{"1Rnd_HE_M203",0.01},
 		{"1Rnd_HE_GP25",0.02},
 		{"FlareWhite_M203",0.02},
@@ -184,7 +204,7 @@ class CfgLoot {
 		{"SmokeShell",0.04},
 		{"SmokeShellRed",0.04},
 		{"SmokeShellGreen",0.04},
-		{"8Rnd_B_Beneli_Pellets",0.04},
+		{"8Rnd_12Gauge_Buck",0.04},
 		{"30Rnd_556x45_StanagSD",0.01},
 		{"30Rnd_545x39_AKSD",0.02},
 		{"30Rnd_9x19_MP5",0.02},

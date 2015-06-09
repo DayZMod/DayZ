@@ -1,5 +1,7 @@
 class 200Rnd_556x45_M249: CA_Magazine
 {
+	cartridgeName = "556x45";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -14,6 +16,8 @@ class 20Rnd_556x45_Stanag;
 class 30Rnd_556x45_Stanag : 20Rnd_556x45_Stanag
 {
 	//model = "\dayz_equip\models\mag30.p3d";
+	
+	cartridgeName = "556x45";
 	
 	class ItemActions
 	{
@@ -37,6 +41,8 @@ class 30Rnd_556x45_Stanag : 20Rnd_556x45_Stanag
 
 class 30Rnd_556x45_G36 : 30Rnd_556x45_Stanag
 {
+	cartridgeName = "556x45";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -61,6 +67,8 @@ class 30Rnd_556x45_StanagSD : 30Rnd_556x45_Stanag
 {
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_30stanagsd_ca.paa";
 	
+	cartridgeName = "556x45_SD";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -84,6 +92,8 @@ class 30Rnd_556x45_StanagSD : 30Rnd_556x45_Stanag
 class 30Rnd_556x45_G36SD : 30Rnd_556x45_G36
 {
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_g36sd_ca.paa";
+	
+	cartridgeName = "556x45_SD";
 	
 	class ItemActions
 	{

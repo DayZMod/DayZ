@@ -6,6 +6,8 @@ class 30Rnd_762x39_AK47 : CA_Magazine
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_ak47_ca.paa";
 	displayName = $STR_DZ_MAG_30RND_762X39_AK47;
 	
+	cartridgeName = "762x39";
+	
 	class ItemActions
 	{
 		COMBINE_MAG
@@ -29,6 +31,8 @@ class 30Rnd_762x39_AK47 : CA_Magazine
 class 30Rnd_762x39_SA58 : CA_Magazine
 {
 	model = "z\addons\dayz_communityweapons\magazines\vz58.p3d";
+	
+	cartridgeName = "762x39";
 	
 	class ItemActions
 	{
