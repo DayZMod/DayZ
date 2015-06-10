@@ -22,4 +22,5 @@
 #include "equip_brick.hpp"
 #include "equip_lever.hpp"
 #include "WaterBottle.hpp"
+#include "barrel.hpp"
 //#include "Canteen.hpp"
