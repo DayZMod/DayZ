@@ -181,7 +181,6 @@ class CfgBuildingLoot
 			{"ItemSledgeHammer","weapon",0.01},
 			{"ItemSledgeHammerBroken","weapon",0.02},
 			{"equip_lever","magazine",0.01},
-			{"ItemEmptyBarrel","magazine",0.01},
 		/*	{"ItemDIY_wood","weapon",0.04}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
 			{"","Trash",0.10},
@@ -270,7 +269,6 @@ class CfgBuildingLoot
 			{"equip_2inch_metal_pipe","magazine",0.02},
 			{"equip_1inch_metal_pipe","magazine",0.02},
 			{"ItemPlank","magazine", 0.16},
-			{"ItemEmptyBarrel","magazine",0.01},
 		//multiple spawns	
 			{"","Trash",0.10},
 			{"","ammo",0.05},
@@ -315,7 +313,6 @@ class CfgBuildingLoot
 			{"equip_nails","magazine",0.06},
 			{"equip_string","magazine",0.04},
 			{"equip_lever","magazine",0.02},
-			{"ItemEmptyBarrel","magazine",0.01},
 		//bags
 		//multiple spawns		
 			{"","Trash",0.10},
