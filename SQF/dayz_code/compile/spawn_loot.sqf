@@ -8,7 +8,7 @@ _uniq = [];
 
 switch (_iItem) do {
 	case "ItemAntibiotic": { _iItem = ["ItemAntibiotic6","ItemAntibiotic5","ItemAntibiotic4","ItemAntibiotic3","ItemAntibiotic2","ItemAntibiotic1","ItemAntibioticEmpty"] select floor(random(6)); };
-	case "ItemMatchbox": { _iItem = ["ItemMatchbox","Item5Matchbox","Item5Matchbox","Item5Matchbox","Item5Matchbox","Item5Matchbox","ItemMatchboxEmpty"] select floor(random(6)); };
+	case "ItemMatchbox": { _iItem = ["ItemMatchbox","Item5Matchbox","Item4Matchbox","Item3Matchbox","Item2Matchbox","Item1Matchbox","ItemMatchboxEmpty"] select floor(random(6)); };
 };
 
 switch (_iClass) do {
