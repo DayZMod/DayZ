@@ -34,7 +34,7 @@ class CfgLoot
 		{"30Rnd_545x39_AKSD",0.02},
 		{"30Rnd_9x19_MP5",0.02},
 		{"30Rnd_9x19_MP5SD",0.01},
-		{"Mosin_Nagant_Ammo",0.03},
+		{"5Rnd_762x54_Mosin",0.03},
 		{"100Rnd_762x51_M240",0.01},
 		{"64Rnd_9x19_Bizon",0.03},
 		{"64Rnd_9x19_SD_Bizon",0.01}
