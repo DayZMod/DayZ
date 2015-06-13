@@ -372,17 +372,3 @@ class GlassSmash {
 		lifeTime = 1;
 	};
 };
-
-class CfgVehicles {
-	class WeaponHolderBase;	// External class reference
-	
-	class BoltSteelF : WeaponHolderBase {
-		scope = public;
-		displayName = $STR_MAG_NAME_3;
-		model = "\dayz_weapons\models\bolt";
-		
-		class eventHandlers {
-			init = "[(_this select 0),'cfgMagazines','BoltSteel'] execVM '\z\addons\dayz_code\init\object_pickupAction.sqf';";
-		};
-	};
-};
