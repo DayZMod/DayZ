@@ -44,6 +44,36 @@ class 12Rnd_Quiver_Wood : 1Rnd_Arrow_Wood
 	};
 };
 
+class 1Rnd_Bolt_Tranquilizer : CA_Magazine
+{
+	scope = public;
+	type = WeaponSlotItem;
+	count = 1;
+	
+	model = "z\addons\community_crossbow\models\ammo.p3d";
+	picture = "\z\addons\community_crossbow\textures\bolt_tranq.paa";
+	displayName = $STR_DZ_MAG_BOLT_TRQ_NAME;
+	descriptionShort = $STR_DZ_MAG_BOLT_TRQ_DESC;
+	
+	ammo = "tranquiliser_bolt";
+};
+
+class 1Rnd_Bolt_Explosive : CA_Magazine
+{
+	scope = public;
+	type = WeaponSlotItem;
+	count = 1;
+	
+	picture = "\z\addons\community_crossbow\textures\bolt_expl.paa";
+	model = "z\addons\community_crossbow\models\ammo.p3d";
+	displayName = $STR_DZ_MAG_BOLT_EXP_NAME;
+	descriptionShort = $STR_DZ_MAG_BOLT_EXP_DESC;
+	
+	ammo = "explosive_bolt";
+};
+
 //TODO: Remove legacy
 class WoodenArrow : 1Rnd_Arrow_Wood {};
 class Quiver : 12Rnd_Quiver_Wood {};
+class Tranquiliser_Bolt : 1Rnd_Bolt_Tranquilizer {};
+class Crossbow_EX_Bolt : 1Rnd_Bolt_Explosive {};
