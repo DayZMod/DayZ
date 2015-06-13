@@ -14,11 +14,6 @@ class Bizon_DZ : bizon
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_SupBizon"
-		};
-		
 		Attachment_SupBizon = "Bizon_SD_DZ";
 	};
 };

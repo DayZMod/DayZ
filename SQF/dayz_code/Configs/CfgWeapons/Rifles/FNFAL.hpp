@@ -13,12 +13,6 @@ class FNFAL_DZ : FN_FAL
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo"
-		};
-		
 		Attachment_CCO = "FNFAL_CCO_DZ";
 		Attachment_Holo = "FNFAL_Holo_DZ";
 	};

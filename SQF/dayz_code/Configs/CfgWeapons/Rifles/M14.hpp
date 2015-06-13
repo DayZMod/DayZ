@@ -15,13 +15,6 @@ class M14_DZ : M14_EP1
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_Ghillie"
-		};
-		
 		Attachment_CCO = "M14_CCO_DZ";
 		Attachment_Holo = "M14_Holo_DZ";
 		Attachment_Ghillie = "M14_Gh_DZ";
@@ -36,12 +29,6 @@ class M14_Gh_DZ : M14_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo"
-		};
-		
 		Attachment_CCO = "M14_CCO_Gh_DZ";
 		Attachment_Holo = "M14_Holo_Gh_DZ";
 	};
@@ -66,11 +53,6 @@ class M14_CCO_DZ : M14_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Ghillie"
-		};
-		
 		Attachment_Ghillie = "M14_CCO_Gh_DZ";
 	};
 	
@@ -117,11 +99,6 @@ class M14_Holo_DZ : M14_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Ghillie"
-		};
-		
 		Attachment_Ghillie = "M14_Holo_Gh_DZ";
 	};
 	

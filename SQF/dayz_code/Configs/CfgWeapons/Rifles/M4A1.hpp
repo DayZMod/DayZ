@@ -16,15 +16,6 @@ class M4A1_DZ : M4A1
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_M203",
-			"Attachment_Sup556",
-			"Attachment_FL"
-		};
-		
 		Attachment_CCO = "M4A1_CCO_DZ";
 		Attachment_Holo = "M4A1_Holo_DZ";
 		Attachment_M203 = "M4A1_GL_DZ";
@@ -52,14 +43,6 @@ class M4A1_FL_DZ : M4A1_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_M203",
-			"Attachment_Sup556"
-		};
-		
 		Attachment_CCO = "M4A1_CCO_FL_DZ";
 		Attachment_Holo = "M4A1_Holo_FL_DZ";
 		Attachment_M203 = "M4A1_GL_FL_DZ";
@@ -98,14 +81,6 @@ class M4A1_SD_DZ : M4A1_AIM_SD_camo
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_M203",
-			"Attachment_FL"
-		};
-		
 		Attachment_CCO = "M4A1_CCO_SD_DZ";
 		Attachment_Holo = "M4A1_Holo_SD_DZ";
 		Attachment_M203 = "M4A1_GL_SD_DZ";
@@ -141,13 +116,6 @@ class M4A1_SD_FL_DZ : M4A1_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_M203"
-		};
-		
 		Attachment_CCO = "M4A1_CCO_SD_FL_DZ";
 		Attachment_Holo = "M4A1_Holo_SD_FL_DZ";
 		Attachment_M203 = "M4A1_GL_SD_FL_DZ";
@@ -182,14 +150,6 @@ class M4A1_GL_DZ : M4A1_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_Sup556",
-			"Attachment_FL"
-		};
-		
 		Attachment_CCO = "M4A1_GL_CCO_DZ";
 		Attachment_Holo = "M4A1_GL_Holo_DZ";
 		Attachment_Sup556 = "M4A1_GL_SD_DZ";
@@ -225,13 +185,6 @@ class M4A1_GL_FL_DZ : M4A1_GL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_Sup556"
-		};
-		
 		Attachment_CCO = "M4A1_GL_CCO_FL_DZ";
 		Attachment_Holo = "M4A1_GL_Holo_FL_DZ";
 		Attachment_Sup556 = "M4A1_GL_SD_FL_DZ";
@@ -264,13 +217,6 @@ class M4A1_GL_SD_DZ : M4A1_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_FL"
-		};
-		
 		Attachment_CCO = "M4A1_GL_CCO_SD_DZ";
 		Attachment_Holo = "M4A1_GL_Holo_SD_DZ";
 		Attachment_FL = "M4A1_GL_SD_FL_DZ";
@@ -310,12 +256,6 @@ class M4A1_GL_SD_FL_DZ : M4A1_GL_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo"
-		};
-		
 		Attachment_CCO = "M4A1_GL_CCO_SD_FL_DZ";
 		Attachment_Holo = "M4A1_GL_Holo_SD_FL_DZ";
 	};
@@ -352,13 +292,6 @@ class M4A1_CCO_DZ : M4A1_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203",
-			"Attachment_Sup556",
-			"Attachment_FL"
-		};
-		
 		Attachment_M203 = "M4A1_GL_CCO_DZ";
 		Attachment_Sup556 = "M4A1_CCO_SD_DZ";
 		Attachment_FL = "M4A1_CCO_FL_DZ";
@@ -382,12 +315,6 @@ class M4A1_CCO_FL_DZ : M4A1_FL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203",
-			"Attachment_Sup556"
-		};
-		
 		Attachment_M203 = "M4A1_GL_CCO_FL_DZ";
 		Attachment_Sup556 = "M4A1_CCO_SD_FL_DZ";
 	};
@@ -415,12 +342,6 @@ class M4A1_CCO_SD_DZ : M4A1_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203",
-			"Attachment_FL"
-		};
-		
 		Attachment_M203 = "M4A1_GL_CCO_SD_DZ";
 		Attachment_FL = "M4A1_CCO_SD_FL_DZ";
 	};
@@ -448,11 +369,6 @@ class M4A1_CCO_SD_FL_DZ : M4A1_SD_FL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203"
-		};
-		
 		Attachment_M203 = "M4A1_GL_CCO_SD_FL_DZ";
 	};
 	
@@ -486,12 +402,6 @@ class M4A1_GL_CCO_DZ : M4A1_GL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup556",
-			"Attachment_FL"
-		};
-		
 		Attachment_Sup556 = "M4A1_GL_CCO_SD_DZ";
 		Attachment_FL = "M4A1_GL_CCO_FL_DZ";
 	};
@@ -519,11 +429,6 @@ class M4A1_GL_CCO_FL_DZ : M4A1_GL_FL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup556"
-		};
-		
 		Attachment_Sup556 = "M4A1_GL_CCO_SD_FL_DZ";
 	};
 	
@@ -555,11 +460,6 @@ class M4A1_GL_CCO_SD_DZ : M4A1_GL_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_FL"
-		};
-		
 		Attachment_FL = "M4A1_GL_CCO_SD_FL_DZ";
 	};
 	
@@ -628,13 +528,6 @@ class M4A1_Holo_DZ : M4A1_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203",
-			"Attachment_Sup556",
-			"Attachment_FL"
-		};
-		
 		Attachment_M203 = "M4A1_GL_Holo_DZ";
 		Attachment_Sup556 = "M4A1_Holo_SD_DZ";
 		Attachment_FL = "M4A1_Holo_FL_DZ";
@@ -658,12 +551,6 @@ class M4A1_Holo_FL_DZ : M4A1_FL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203",
-			"Attachment_Sup556"
-		};
-		
 		Attachment_M203 = "M4A1_GL_Holo_FL_DZ";
 		Attachment_Sup556 = "M4A1_Holo_SD_FL_DZ";
 	};
@@ -691,12 +578,6 @@ class M4A1_Holo_SD_DZ : M4A1_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203",
-			"Attachment_FL"
-		};
-		
 		Attachment_M203 = "M4A1_GL_Holo_SD_DZ";
 		Attachment_FL = "M4A1_Holo_SD_FL_DZ";
 	};
@@ -724,11 +605,6 @@ class M4A1_Holo_SD_FL_DZ : M4A1_SD_FL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203"
-		};
-		
 		Attachment_M203 = "M4A1_GL_Holo_SD_FL_DZ";
 	};
 	
@@ -762,12 +638,6 @@ class M4A1_GL_Holo_DZ : M4A1_GL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup556",
-			"Attachment_FL"
-		};
-		
 		Attachment_Sup556 = "M4A1_GL_Holo_SD_DZ";
 		Attachment_FL = "M4A1_GL_Holo_FL_DZ";
 	};
@@ -795,11 +665,6 @@ class M4A1_GL_Holo_FL_DZ : M4A1_GL_FL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup556"
-		};
-		
 		Attachment_Sup556 = "M4A1_GL_Holo_SD_FL_DZ";
 	};
 	
@@ -831,11 +696,6 @@ class M4A1_GL_Holo_SD_DZ : M4A1_GL_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_FL"
-		};
-		
 		Attachment_FL = "M4A1_GL_Holo_SD_FL_DZ";
 	};
 	

@@ -37,12 +37,6 @@ class M249_DZ : M249_CCO_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo"
-		};
-		
 		Attachment_CCO = "M249_CCO_DZ";
 		Attachment_Holo = "M249_Holo_DZ";
 	};

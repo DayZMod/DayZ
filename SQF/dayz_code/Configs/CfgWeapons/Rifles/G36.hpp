@@ -75,11 +75,6 @@ class G36K_Camo_DZ : G36C
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup556"
-		};
-		
 		Attachment_Sup556 = "G36K_Camo_SD_DZ";
 	};
 };

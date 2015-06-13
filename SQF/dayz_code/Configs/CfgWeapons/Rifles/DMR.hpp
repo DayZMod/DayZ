@@ -16,11 +16,6 @@ class DMR_DZ : DMR
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Ghillie"
-		};
-		
 		Attachment_Ghillie = "DMR_Gh_DZ";
 	};
 };

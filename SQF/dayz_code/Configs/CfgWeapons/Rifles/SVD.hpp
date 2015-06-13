@@ -11,11 +11,6 @@ class SVD_DZ : SVD
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Ghillie"
-		};
-		
 		Attachment_Ghillie = "SVD_Gh_DZ";
 	};
 };

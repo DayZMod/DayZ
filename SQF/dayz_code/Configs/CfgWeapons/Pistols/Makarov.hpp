@@ -8,11 +8,6 @@ class Makarov_DZ : Makarov
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_SupMakarov"
-		};
-		
 		Attachment_SupMakarov = "Makarov_SD_DZ";
 	};
 };

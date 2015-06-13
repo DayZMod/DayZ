@@ -12,11 +12,6 @@ class AKS74U_Kobra_DZ : AKS_74_U
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup545"
-		};
-		
 		Attachment_Sup545 = "AKS74U_Kobra_SD_DZ";
 	};
 	
@@ -70,12 +65,6 @@ class AKS74U_DZ : AKS74U_Kobra_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Kobra",
-			"Attachment_Sup545"
-		};
-		
 		Attachment_Kobra = "AKS74U_Kobra_DZ";
 		Attachment_Sup545 = "AKS74U_SD_DZ";
 	};
@@ -95,11 +84,6 @@ class AKS74U_SD_DZ : AKS74U_Kobra_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Kobra"
-		};
-		
 		Attachment_Kobra = "AKS74U_Kobra_SD_DZ";
 	};
 	

@@ -37,12 +37,6 @@ class RPK74_DZ : RPK74_Kobra_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Kobra",
-			"Attachment_PSO1"
-		};
-		
 		Attachment_Kobra = "RPK74_Kobra_DZ";
 		Attachment_PSO1 = "RPK74_PSO1_DZ";
 	};

@@ -10,11 +10,6 @@ class M9_DZ : M9
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup9"
-		};
-		
 		Attachment_Sup9 = "M9_SD_DZ";
 	};
 };

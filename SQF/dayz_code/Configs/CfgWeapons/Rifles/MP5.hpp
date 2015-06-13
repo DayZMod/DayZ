@@ -11,11 +11,6 @@ class MP5_DZ : MP5A5
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup9"
-		};
-		
 		Attachment_Sup9 = "MP5_SD_DZ";
 	};
 };

@@ -13,14 +13,6 @@ class M16A4_DZ : M16A2
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_M203",
-			"Attachment_FL"
-		};
-		
 		Attachment_CCO = "M16A4_CCO_DZ";
 		Attachment_Holo = "M16A4_Holo_DZ";
 		Attachment_M203 = "M16A4_GL_DZ";
@@ -47,13 +39,6 @@ class M16A4_FL_DZ : M16A4_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_M203"
-		};
-		
 		Attachment_CCO = "M16A4_CCO_FL_DZ";
 		Attachment_Holo = "M16A4_Holo_FL_DZ";
 		Attachment_M203 = "M16A4_GL_FL_DZ";
@@ -80,13 +65,6 @@ class M16A4_GL_DZ : M16A4_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_FL"
-		};
-		
 		Attachment_CCO = "M16A4_GL_CCO_DZ";
 		Attachment_Holo = "M16A4_GL_Holo_DZ";
 		Attachment_FL = "M16A4_GL_FL_DZ";
@@ -121,12 +99,6 @@ class M16A4_GL_FL_DZ : M16A4_GL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo"
-		};
-		
 		Attachment_CCO = "M16A4_GL_CCO_FL_DZ";
 		Attachment_Holo = "M16A4_GL_Holo_FL_DZ";
 	};
@@ -157,12 +129,6 @@ class M16A4_CCO_DZ : M16A4_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203",
-			"Attachment_FL"
-		};
-		
 		Attachment_M203 = "M16A4_GL_CCO_DZ";
 		Attachment_FL = "M16A4_CCO_FL_DZ";
 	};
@@ -185,11 +151,6 @@ class M16A4_CCO_FL_DZ : M16A4_FL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203"
-		};
-		
 		Attachment_M203 = "M16A4_GL_CCO_FL_DZ";
 	};
 	
@@ -216,11 +177,6 @@ class M16A4_GL_CCO_DZ : M16A4_GL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_FL"
-		};
-		
 		Attachment_FL = "M16A4_GL_CCO_FL_DZ";
 	};
 	
@@ -278,12 +234,6 @@ class M16A4_Holo_DZ : M16A4_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203",
-			"Attachment_FL"
-		};
-		
 		Attachment_M203 = "M16A4_GL_Holo_DZ";
 		Attachment_FL = "M16A4_Holo_FL_DZ";
 	};
@@ -306,11 +256,6 @@ class M16A4_Holo_FL_DZ : M16A4_FL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_M203"
-		};
-		
 		Attachment_M203 = "M16A4_GL_Holo_FL_DZ";
 	};
 	
@@ -337,11 +282,6 @@ class M16A4_GL_Holo_DZ : M16A4_GL_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_FL"
-		};
-		
 		Attachment_FL = "M16A4_GL_Holo_FL_DZ";
 	};
 	

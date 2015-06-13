@@ -7,11 +7,6 @@ class M24_DZ : M24
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Ghillie"
-		};
-		
 		Attachment_Ghillie = "M24_Gh_DZ";
 	};
 };

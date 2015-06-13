@@ -14,12 +14,6 @@ class AKM_DZ : AK_47_M
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Kobra",
-			"Attachment_PSO1"
-		};
-		
 		Attachment_Kobra = "AKM_Kobra_DZ";
 		Attachment_PSO1 = "AKM_PSO1_DZ";
 	};

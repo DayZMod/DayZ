@@ -12,13 +12,6 @@ class G36C_DZ : G36C
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo",
-			"Attachment_Sup556"
-		};
-		
 		Attachment_CCO = "G36C_CCO_DZ";
 		Attachment_Holo = "G36C_Holo_DZ";
 		Attachment_Sup556 = "G36C_SD_DZ";
@@ -39,12 +32,6 @@ class G36C_SD_DZ : G36_C_SD_eotech
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo"
-		};
-		
 		Attachment_CCO = "G36C_CCO_SD_DZ";
 		Attachment_Holo = "G36C_Holo_SD_DZ";
 	};
@@ -67,11 +54,6 @@ class G36C_CCO_DZ : G36C_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup556"
-		};
-		
 		Attachment_Sup556 = "G36C_CCO_SD_DZ";
 	};
 	
@@ -116,11 +98,6 @@ class G36C_Holo_DZ : G36C_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup556"
-		};
-		
 		Attachment_Sup556 = "G36C_Holo_SD_DZ";
 	};
 	

@@ -14,12 +14,6 @@ class G17_DZ : glock17_EP1
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup9",
-			"Attachment_FL_Pist"
-		};
-		
 		Attachment_Sup9 = "G17_SD_DZ";
 		Attachment_FL_Pist = "G17_FL_DZ";
 	};
@@ -44,11 +38,6 @@ class G17_FL_DZ : G17_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup9"
-		};
-		
 		Attachment_Sup9 = "G17_SD_FL_DZ";
 	};
 	
@@ -84,11 +73,6 @@ class G17_SD_DZ : M9SD
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_FL_Pist"
-		};
-		
 		Attachment_FL_Pist = "G17_SD_FL_DZ";
 	};
 	
@@ -128,6 +112,7 @@ class G17_SD_FL_DZ : G17_SD_DZ
 			text = $STR_DZ_ATT_SUP9_RMVE;
 			script = "; ['Attachment_Sup9',_id,'G17_FL_DZ'] call player_removeAttachment";
 		};
+		
 		class RemoveFlashlight
 		{
 			text = $STR_DZ_ATT_FL_PST_RMVE;

@@ -25,11 +25,6 @@ class M40A3_DZ : M40A3_Gh_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Ghillie"
-		};
-		
 		Attachment_Ghillie = "M40A3_Gh_DZ";
 	};
 	

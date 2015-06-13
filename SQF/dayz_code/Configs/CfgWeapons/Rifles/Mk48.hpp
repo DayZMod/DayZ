@@ -35,12 +35,6 @@ class Mk48_DZ : Mk48_CCO_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_CCO",
-			"Attachment_Holo"
-		};
-		
 		Attachment_CCO = "Mk48_CCO_DZ";
 		Attachment_Holo = "Mk48_Holo_DZ";
 	};
@@ -62,9 +56,4 @@ class Mk48_Holo_DZ : Mk48_CCO_DZ
 			script = "; ['Attachment_Holo',_id,'Mk48_DZ'] call player_removeAttachment";
 		};
 	};
-};
-
-/*legacy*/
-class Mk_48_DZ : Mk_48
-{
 };

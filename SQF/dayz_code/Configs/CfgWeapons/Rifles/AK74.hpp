@@ -14,12 +14,6 @@ class AK74_Kobra_DZ : AK_74
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_GP25",
-			"Attachment_Sup545"
-		};
-		
 		Attachment_GP25 = "AK74_GL_Kobra_DZ";
 		Attachment_Sup545 = "AK74_Kobra_SD_DZ";
 	};
@@ -48,11 +42,6 @@ class AK74_Kobra_SD_DZ : AKS_74_UN_kobra
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_GP25"
-		};
-		
 		Attachment_GP25 = "AK74_GL_Kobra_SD_DZ";
 	};
 	
@@ -83,11 +72,6 @@ class AK74_GL_Kobra_DZ : AK74_Kobra_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup545"
-		};
-		
 		Attachment_Sup545 = "AK74_GL_Kobra_SD_DZ";
 	};
 	
@@ -154,14 +138,6 @@ class AK74_DZ : AK74_Kobra_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Kobra",
-			"Attachment_PSO1",
-			"Attachment_GP25",
-			"Attachment_Sup545"
-		};
-		
 		Attachment_Kobra = "AK74_Kobra_DZ";
 		Attachment_PSO1 = "AK74_PSO1_DZ";
 		Attachment_GP25 = "AK74_GL_DZ";
@@ -185,13 +161,6 @@ class AK74_SD_DZ : AK74_Kobra_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Kobra",
-			"Attachment_PSO1",
-			"Attachment_GP25"
-		};
-		
 		Attachment_Kobra = "AK74_Kobra_SD_DZ";
 		Attachment_PSO1 = "AK74_PSO1_SD_DZ";
 		Attachment_GP25 = "AK74_GL_SD_DZ";
@@ -221,13 +190,6 @@ class AK74_GL_DZ : AK74_GL_Kobra_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Kobra",
-			"Attachment_PSO1",
-			"Attachment_Sup545"
-		};
-		
 		Attachment_Kobra = "AK74_GL_Kobra_DZ";
 		Attachment_PSO1 = "AK74_GL_PSO1_DZ";
 		Attachment_Sup545 = "AK74_GL_SD_DZ";
@@ -257,12 +219,6 @@ class AK74_GL_SD_DZ : AK74_GL_Kobra_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Kobra",
-			"Attachment_PSO1"
-		};
-		
 		Attachment_Kobra = "AK74_GL_Kobra_SD_DZ";
 		Attachment_PSO1 = "AK74_GL_PSO1_SD_DZ";
 	};
@@ -338,12 +294,6 @@ class AK74_PSO1_DZ : AK74_Kobra_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_GP25",
-			"Attachment_Sup545"
-		};
-		
 		Attachment_GP25 = "AK74_GL_PSO1_DZ";
 		Attachment_Sup545 = "AK74_PSO1_SD_DZ";
 	};
@@ -412,11 +362,6 @@ class AK74_PSO1_SD_DZ : AK74_Kobra_SD_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_GP25"
-		};
-		
 		Attachment_GP25 = "AK74_GL_PSO1_SD_DZ";
 	};
 	
@@ -489,11 +434,6 @@ class AK74_GL_PSO1_DZ : AK74_GL_Kobra_DZ
 	
 	class Attachments
 	{
-		attachments[] =
-		{
-			"Attachment_Sup545"
-		};
-		
 		Attachment_Sup545 = "AK74_GL_PSO1_SD_DZ";
 	};
 	
