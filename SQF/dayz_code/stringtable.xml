@@ -9233,6 +9233,7 @@
 			<Czech>Kovový plot</Czech>
 		</Key>
 	</Package>
+	
 	<Package name="weapons">
 		<!-- **** WEAPONS **** -->
 		
@@ -9687,6 +9688,59 @@
 		
 		
 		
+		<!-- Mosin -->
+		<Key ID="STR_DZ_WPN_MOSIN_NAME">
+			<Original>Mosin Nagant</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MOSIN_FL_NAME">
+			<Original>Mosin Nagant FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MOSIN_BELT_NAME">
+			<Original>Mosin Nagant Belt</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MOSIN_BELT_FL_NAME">
+			<Original>Mosin Nagant Belt FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MOSIN_PU_NAME">
+			<Original>Mosin Nagant PU</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MOSIN_PU_FL_NAME">
+			<Original>Mosin Nagant PU FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MOSIN_PU_BELT_NAME">
+			<Original>Mosin Nagant PU Belt</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MOSIN_PU_BELT_FL_NAME">
+			<Original>Mosin Nagant PU Belt FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_MOSIN_DESC">
+			<Original>Bolt-action military rifle developed by the Imperial Russian Army in 1891.&lt;br/&gt;Caliber: 7.62x54mmR</Original>
+		</Key>
+		
+		
+		
+		<!-- Crossbow -->
+		<Key ID="STR_DZ_WPN_CROSSBOW_NAME">
+			<Original>Crossbow</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_CROSSBOW_FL_NAME">
+			<Original>Crossbow FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_CROSSBOW_CCO_NAME">
+			<Original>Crossbow CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_CROSSBOW_CCO_FL_NAME">
+			<Original>Crossbow CCO FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_CROSSBOW_SCOPE_NAME">
+			<Original>Crossbow Scoped</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_CROSSBOW_SCOPE_FL_NAME">
+			<Original>Crossbow Scoped FL</Original>
+		</Key>
+		
+		
+		
 		
 		
 		
@@ -9698,6 +9752,20 @@
 		</Key>
 		<Key ID="STR_DZ_MAG_30RND_762X39_AK47">
 			<Original>AK-47 Mag.</Original>
+		</Key>
+		
+		<Key ID="STR_DZ_MAG_BOLT_TRQ_NAME">
+			<Original>Tranquilizer bolt</Original>
+		</Key>
+		<Key ID="STR_DZ_MAG_BOLT_TRQ_DESC">
+			<Original>Crossbow bolt fitted with a sedative injector. Used to safely capture large animals.</Original>
+		</Key>
+		
+		<Key ID="STR_DZ_MAG_BOLT_EXP_NAME">
+			<Original>Explosive bolt</Original>
+		</Key>
+		<Key ID="STR_DZ_MAG_BOLT_EXP_DESC">
+			<Original>Crossbow bolt fitted with an explosive head.</Original>
 		</Key>
 		
 		
@@ -9845,6 +9913,28 @@
 		</Key>
 		<Key ID="STR_DZ_ATT_GHIL_RMVE">
 			<Original>Remove Ghillie</Original>
+		</Key>
+		
+		<!-- PU Scope -->
+		<Key ID="STR_DZ_ATT_PU_NAME">
+			<Original>PU-Scope</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_PU_DESC">
+			<Original>Standard issue Soviet sniper scope during World War II.&lt;br/&gt;Magnification: 3.5x</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_PU_RMVE">
+			<Original>Remove Scope</Original>
+		</Key>
+		
+		<!-- Cartridge belt -->
+		<Key ID="STR_DZ_ATT_BELT_NAME">
+			<Original>Cartridge holder</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_BELT_DESC">
+			<Original>Holds cartridges for easier access. Can be attached to the stock of a rifle.</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_BELT_RMVE">
+			<Original>Remove belt</Original>
 		</Key>
 	</Package>
 </Project>
