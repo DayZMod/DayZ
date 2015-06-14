@@ -25,7 +25,7 @@ BEGIN
 	DELETE FROM object_data
 	WHERE CharacterID = 0
 		AND Damage = 1
-		AND SYSDATE() < last_updated + INTERVAL (
+		AND SYSDATE() > last_updated + INTERVAL (
 			SELECT CleanupTime
 			FROM vehicle_spawns
 			WHERE vehicle_spawns.Classname = object_data.Classname
