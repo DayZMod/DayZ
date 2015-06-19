@@ -30,6 +30,8 @@ if (!isNull _playerObj) then {
 		(getPosATL _playerObj) call fa_coor2str,
 		if ((_lastDamage > 5 AND (_lastDamage < 30)) AND ((alive _playerObj) AND (_playerObj distance (getMarkerpos "respawn_west") >= 2000))) then {" while in combat ("+str(_lastDamage)+" seconds left)"} else {""}
 	]; 
+
+	[_playerUID,_characterID,2] call dayz_recordLogin;
 #endif
 	//Update Vehicle
 	if (vehicle _playerObj != _playerObj) then {
