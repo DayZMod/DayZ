@@ -9679,11 +9679,8 @@
 		<Key ID="STR_DZ_WPN_SVD_NAME">
 			<Original>SVD</Original>
 		</Key>
-		<Key ID="STR_DZ_WPN_SVD_KOBRA_NAME">
-			<Original>SVD Kobra</Original>
-		</Key>
-		<Key ID="STR_DZ_WPN_SVD_PSO1_NAME">
-			<Original>SVD PSO-1</Original>
+		<Key ID="STR_DZ_WPN_SVD_GH_NAME">
+			<Original>SVD Camo</Original>
 		</Key>
 		
 		
