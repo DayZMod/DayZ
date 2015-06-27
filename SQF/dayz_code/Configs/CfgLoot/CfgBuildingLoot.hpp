@@ -73,6 +73,7 @@ class CfgBuildingLoot
 			{"ItemPadlock","magazine",0.01},
 			{"ItemPickaxe","weapon",0.01},
 			{"ItemPickaxeBroken","weapon",0.02},
+			{"ItemShovel","weapon",0.02},
 		//Bags
 			{"DZ_Assault_Pack_EP1","object",0.04},
 			{"DZ_Czech_Vest_Puch","object",0.04},
@@ -142,6 +143,7 @@ class CfgBuildingLoot
 			{"ItemPainkiller","magazine",0.04},
 			{"ItemPadlock","magazine",0.01},
 			{"ItemBandage","magazine",0.06},
+			{"ItemShovel","weapon",0.02},
 			//Bags
 			{"DZ_ALICE_Pack_EP1","object",0.06},
 			{"DZ_Patrol_Pack_EP1","object",0.08},
@@ -180,6 +182,7 @@ class CfgBuildingLoot
 			{"ItemPickaxeBroken","weapon",0.02},
 			{"ItemSledgeHammer","weapon",0.01},
 			{"ItemSledgeHammerBroken","weapon",0.02},
+			{"ItemShovel","weapon",0.02},
 			{"equip_lever","magazine",0.01},
 		/*	{"ItemDIY_wood","weapon",0.04}, // temporary
 			{"ItemEtool","weapon",0.02}, // temporary*/
