@@ -33,7 +33,7 @@ _tools = getArray (configFile >> "CfgVehicles" >> (typeOf _object) >> "dismantle
 
 {
 	private ["_end"];
-	if ((_x select 0) in items player) then {_end = false;} else { cutText [format ["Missing tool %1 to dismantle",_x] , "PLAIN DOWN"]; _end = true; _proceed = false; };
+	if ((_x select 0) in items player) then {_end = false;} else { cutText [format ["Missing tool %1 to dismantle",(_x select 0)] , "PLAIN DOWN"]; _end = true; _proceed = false; };
 	
 	if (_end) exitwith { _exit = true; };
 } foreach _tools;
