@@ -230,6 +230,7 @@ class CfgVehicles
 	//Fences
 	class CardboardBox;
 	#include "configs\woodenFence.hpp"
+	#include "configs\woodenFenceDamaged.hpp"
 	#include "configs\metalFence.hpp"
 	
 	//Gates

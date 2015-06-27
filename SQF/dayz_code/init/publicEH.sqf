@@ -86,6 +86,17 @@ if (isServer) then {
 	//[player,[medical Array]];
 	"PVDZ_playerMedicalSync" addPublicVariableEventHandler { (_this select 1) call server_medicalSync; ((_this select 1) select 0) setVariable["Medical",((_this select 1) select 1),false]; }; //diag_log format["%1 - %2",((_this select 1) select 0),((_this select 1) select 1)]; };
 	
+	//Added as part of the maintenance system to allow the server to replace the damaged model with a normal model.
+	"PVDZ_object_replace" 		addPublicVariableEventHandler {
+		_vars = ((_this select 1)select 0) getVariable "MaintenanceVars"; 
+		
+		if (!isnil "_vars" and _object isKindOf "DZ_buildables") then {
+			deleteVehicle ((_this select 1)select 0);
+			_object = createVehicle [(_vars select 0), (_vars select 1), [], 0, if (_type in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
+			_object setVariable["Maintenance",false,true];
+		};
+	};
+	
 	"PVDZ_sendUnconscious" addPublicVariableEventHandler {	
 		_owner = ((_this select 1) select 0);
 		_duration = ((_this select 1) select 1);

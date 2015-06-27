@@ -97,15 +97,16 @@ if (_startMaintenance) then {
 	r_doLoop = false;
 	
 	if (_finished) then {
-		PVDZ_veh_Save = [_cursorTarget,"maintenance"];
-		publicVariableServer "PVDZ_veh_Save";
 		if (isServer) then {
 			PVDZ_veh_Save call server_updateObject;
+		} else {
+			PVDZ_veh_Save = [_cursorTarget,"maintenance"];
+			publicVariableServer "PVDZ_veh_Save";
 		};
 		
-		_cursorTarget setVariable["Maintenance",false,true];
-	}
-	
+		PVDZ_object_replace = [_cursorTarget];
+		publicVariableServer "PVDZ_object_replace";
+	};
 	cutText [localize "str_maintenanceDone", "PLAIN DOWN"];
 };
 

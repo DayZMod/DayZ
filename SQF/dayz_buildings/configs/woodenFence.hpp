@@ -104,7 +104,8 @@ class WoodenFence_1: WoodenFence_thirdpanel
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
 	};
-}; 	
+};
+ 
 class WoodenFence_2: WoodenFence_1
 {
 		scope = 2;
