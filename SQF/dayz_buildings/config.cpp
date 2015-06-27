@@ -63,50 +63,6 @@ class CfgMagazines {
 		model = "z\addons\dayz_buildings\models\screws.p3d";
 		descriptionShort = $STR_BLD_desc_ItemScrews;//"Box of screws"
 	};	
-
-	//Temp Item, Items not finished these are End Game Buildings
-	class ItemBuildingBlueprint: CA_Magazine
-	{
-		scope = 1;
-		count = 1;
-		type = 256;
-		displayName = $STR_BLD_name_ItemBuildingBlueprint;//"Blueprint"
-		picture = "\z\addons\dayz_buildings\equip\buildingplan1.paa";
-		model = "z\addons\dayz_buildings\models\buildingplan1.p3d";
-		descriptionShort = $STR_BLD_desc_ItemBuildingBlueprint;//""
-	};
-	class ItemWorkshop: ItemBuildingBlueprint
-	{
-		displayName = $STR_BLD_name_ItemWorkshop;//"Workshop"
-		descriptionShort = $STR_BLD_desc_ItemWorkshop;//"Building Plans for a Basic Shanty House."
-		scope = 2;
-		
-		class ItemActions {
-			class Build {
-				text = $STR_BLD_build_ItemWorkshop;//"WorkshopBase"
-				script = "; ['ItemWorkshop','Build'] spawn player_build; r_action_count = r_action_count + 1;";
-				require[] = {"ItemEtool"};
-				consume[] = {"ItemWorkshop"};
-				create = "SurvivorWorkshop";
-			};
-		};
-	};
-	class ItemShantyHouse: ItemBuildingBlueprint
-	{
-		displayName = $STR_BLD_name_ItemShantyHouse;//"ShantyHouse"
-		descriptionShort = $STR_BLD_desc_ItemShantyHouse;//"Building Plans for a Basic Shanty House."
-		scope = 2;
-		
-		class ItemActions {
-			class Build {
-				text = $STR_BLD_build_ItemShantyHouse;//"ShantyHouseBase"
-				script = "; ['ItemShantyHouse','Build'] spawn player_build; r_action_count = r_action_count + 1;";
-				require[] = {"ItemEtool"};
-				consume[] = {"ItemShantyHouse"};
-				create = "ShantyHouse";
-			};
-		};
-	};
 */
 };	
 
@@ -270,10 +226,6 @@ class CfgVehicles
 		model = "z\addons\dayz_buildings\models\stove.p3d";
 		destrType="DestructNo";
 	};
-	
-	//Houses
-	#include "configs\shantyHouse.hpp"
-	#include "configs\survivorWorkshop.hpp"
 	
 	//Fences
 	class CardboardBox;
