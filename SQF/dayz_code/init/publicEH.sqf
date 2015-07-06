@@ -88,9 +88,10 @@ if (isServer) then {
 	
 	//Added as part of the maintenance system to allow the server to replace the damaged model with a normal model.
 	"PVDZ_object_replace" 		addPublicVariableEventHandler {
+		_cursorTarget = _this select 1;
 		_vars = ((_this select 1)select 0) getVariable "MaintenanceVars"; 
 		
-		if (!isnil "_vars" and _object isKindOf "DZ_buildables") then {
+		if (!isnil "_vars" and _cursorTarget isKindOf "DZ_buildables") then {
 			deleteVehicle ((_this select 1)select 0);
 			_object = createVehicle [(_vars select 0), (_vars select 1), [], 0, if (_type in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
 			_object setVariable["Maintenance",false,true];
