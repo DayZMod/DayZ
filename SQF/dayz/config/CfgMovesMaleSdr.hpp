@@ -1,3 +1,9 @@
+//	//\tspeed = (\d+(?:\.\d+)?(?: \* \d+(?:\.\d+)?)?);\r?\n\t\t\tspeed = (\d+(?:\.\d+)?);
+// 	//\tspeed = $1; //OA 1.63\r\n\t\t//\tspeed = $2; //Dayz original
+
+//	A(mov|idl|ldr|rop|par|obs|crg|inj|cin|dth|inv|cts|swm|sig|wop|ddg)P(erc|knl|pne|sit|fal)M(stp|wlk|run|spr|len|trn|jmp|wtl|uwt|mnt|dnt|crg|eva)S(non|ras|low|opt|sur|sig|pat|lay|car|obk|rld|gth|grl)W(non|pst|rfl|lnr)D(non|f|b|l|r|fl|fr|bl|br|up|dn)
+//	A$1P$2M$3S$4W$5D$6
+
 class CfgMovesMaleSdr : CfgMovesBasic
 {
 	class States
@@ -2293,34 +2299,33 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PpneDuty + MrunDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpknlmstpsraswpstdnon_amovpknlmstpslowwpstdnon : TransAnimBase
+		class AmovPknlMstpSrasWpstDnon_AmovPknlMstpSlowWpstDnon : TransAnimBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
-		
-		class amovpknlmstpslowwpstdnon_amovpknlmstpsraswpstdnon : amovpknlmstpsraswpstdnon_amovpknlmstpslowwpstdnon
+		class AmovPknlMstpSlowWpstDnon_AmovPknlMstpSrasWpstDnon : AmovPknlMstpSrasWpstDnon_AmovPknlMstpSlowWpstDnon
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpsraswpstdnon_amovpknlmstpsnonwnondnon : TransAnimBase
+		class AmovPknlMstpSrasWpstDnon_AmovPknlMstpSnonWnonDnon : TransAnimBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		//	speed = 2;
 			speed = 1;
 		};
 		
-		class amovpknlmstpsnonwnondnon_amovpknlmstpsraswpstdnon : amovpknlmstpsraswpstdnon_amovpknlmstpsnonwnondnon
+		class AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWpstDnon : AmovPknlMstpSrasWpstDnon_AmovPknlMstpSnonWnonDnon
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpsnonwnondnon_amovpknlmstpsraswpstdnon_end : amovpknlmstpsnonwnondnon_amovpknlmstpsraswpstdnon
+		class AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWpstDnon_end : AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWpstDnon
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpsraswpstdnon_amovpknlmstpsnonwnondnon_end : amovpknlmstpsraswpstdnon_amovpknlmstpsnonwnondnon
+		class AmovPknlMstpSrasWpstDnon_AmovPknlMstpSnonWnonDnon_end : AmovPknlMstpSrasWpstDnon_AmovPknlMstpSnonWnonDnon
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
@@ -2708,8 +2713,9 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		class AmovPercMstpSnonWnonDnon_AmovPknlMstpSnonWnonDnon : TransAnimBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
-		//	speed = 1;
-			speed = 0.769231;
+		//	speed = 1; //OA 1.63
+		//	speed = 0.769231; //Dayz original
+			speed = 1.10;
 		};
 		
 		class AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon : TransAnimBase
@@ -2725,15 +2731,16 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		class AmovPercMstpSnonWnonDnon_AmovPpneMstpSnonWnonDnon : TransAnimBase
 		{
 			duty = transDuty + PpneDuty + MstpDuty + SnonDuty + WnonDuty;
-		//	speed = 0.65;
-			speed = 0.483871;
+		//	speed = 0.65; //OA 1.63
+		//	speed = 0.483871; //Dayz original
 		};
 		
 		class AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon : TransAnimBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
-		//	speed = 0.75;
-			speed = 0.652174;
+		//	speed = 0.75; //OA 1.63
+		//	speed = 0.652174; //Dayz original
+			speed = 0.85;
 		};
 		
 		class AmovPknlMstpSnonWnonDnon_AmovPercMsprSnonWnonDf : TransAnimBase
@@ -2749,8 +2756,8 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		class AmovPknlMstpSnonWnonDnon_AmovPpneMstpSnonWnonDnon : TransAnimBase
 		{
 			duty = transDuty + PpneDuty + MstpDuty + SnonDuty + WnonDuty;
-		//	speed = 0.85;
-			speed = 0.588235;
+		//	speed = 0.85; //OA 1.63
+		//	speed = 0.588235; //Dayz original
 		};
 		
 		class AmovPpneMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon : TransAnimBase
@@ -3315,6 +3322,25 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		class AmovPercMevaSrasWrflDf : SprintBaseDf
 		{
 			duty = PercDuty + MevaDuty + SrasDuty + WrflDuty;
+			
+			InterpolateTo[] =
+			{
+				"BunnyhopRifle",0.02,
+				"AmovPercMstpSrasWrflDnon",0.02,
+				"AmovPercMrunSlowWrflDf",0.025,
+				"AmovPercMwlkSrasWrflDf",0.025,
+				"AmovPercMrunSrasWrflDf",0.025,
+				"AmovPercMsprSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,
+				"AmovPknlMevaSrasWrflDf",0.025,
+				"AmovPercMevaSlowWrflDf",0.025,
+				"AmovPercMevaSrasWrflDfl",0.025,
+				"AmovPercMevaSrasWrflDfr",0.025,
+				"AdthPercMrunSlowWrflDf_6",0.01,
+				"AdthPercMrunSlowWrflDf_A1short",0.01,
+				"AdthPercMrunSlowWrflDf_A2short",0.01,
+				"AdthPercMrunSlowWrflDf_A3short",0.01,
+				"AdthPercMrunSlowWrflDf_A4short",0.01
+			};
 		};
 		
 		class AmovPknlMevaSrasWrflDf : AmovPercMevaSrasWrflDf
@@ -3455,6 +3481,17 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		class AmovPercMevaSrasWpstDf : SprintCivilBaseDf
 		{
 			duty = PercDuty + MevaDuty + SrasDuty + WpstDuty;
+			
+			InterpolateTo[] =
+			{
+				"BunnyhopPistol",0.02,
+				"AmovPercMsprSlowWpstDf_AmovPpneMstpSrasWpstDnon",0.02,
+				"AmovPercMstpSrasWpstDnon",0.02,
+				"AmovPercMwlkSrasWpstDf",0.025,
+				"AmovPercMrunSrasWpstDf",0.02,
+				"AmovPercMevaSrasWpstDfl",0.02,
+				"AmovPercMevaSrasWpstDfr",0.02
+			};
 		};
 		
 		class AmovPercMevaSlowWpstDf : AmovPercMevaSrasWpstDf
@@ -3495,6 +3532,17 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		class AmovPercMevaSnonWnonDf : SprintCivilBaseDf
 		{
 			duty = PercDuty + MevaDuty + SnonDuty + WnonDuty;
+			
+			InterpolateTo[] =
+			{
+				"BunnyhopUnarmed",0.02,
+				"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon",0.02,
+				"AmovPercMrunSnonWnonDf",0.02,
+				"AmovPercMstpSnonWnonDnon",0.02,
+				"AmovPercMwlkSnonWnonDf",0.025,
+				"AmovPercMevaSnonWnonDfl",0.02,
+				"AmovPercMevaSnonWnonDfr",0.02
+			};
 		};
 		
 		class AmovPercMevaSnonWnonDfl : SprintCivilBaseDfl
@@ -5019,6 +5067,18 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		class LadderCivilDownLoop : LadderCivilUpLoop
 		{
 			duty = MwlkDuty + PknlDuty;
+		};
+		
+		class LadderRifleTopOff : LadderCivilTopOff
+		{
+			ConnectTo[] = {"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon",1.000000};
+			InterpolateTo[] = {"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon",0.010000};
+		};
+		
+		class LadderRifleDownOff: LadderRifleTopOff
+		{
+			ConnectTo[] = {"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon",1.000000};
+			InterpolateTo[] = {"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon",0.010000};
 		};
 		
 		class AswmPercMstpSnonWnonDnon : AmovPercMstpSrasWrflDnon
@@ -9183,5 +9243,7 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
+		
+		#include "Bunnyhop.hpp"
 	};
 };

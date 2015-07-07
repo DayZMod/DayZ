@@ -22,8 +22,11 @@ class CfgMovesBasic
 	{
 		class NoActions;
 		class RifleBaseStandActions;
+		class RifleStandActions;
+		class RifleLowStandActions;
 		class CivilStandActions;
-		class CivilRunActionsF;
+		class LadderCivilActions;
+		class PistolStandActions;
 		
 		class RifleKneelActions : RifleBaseStandActions
 		{
@@ -35,27 +38,17 @@ class CfgMovesBasic
 			turnSpeed = 4;
 		};
 		
-		class PistolStandActions : NoActions
+		/*class PistolStandActions : NoActions
 		{
-			/*
-			Stand = "AmovPercMstpSrasWpstDnon";
-			
-			why?
-			*/
-			
+			//Stand = "AmovPercMstpSrasWpstDnon";
 			Stand = "AmovPercMstpSlowWpstDnon";
-		};
+		};*/
 		
 		class PistolKneelActions : PistolStandActions
 		{
-			/*
-			fastF = "AmovPknlMrunSrasWpstDf";
-			fastLF = "AmovPknlMrunSrasWpstDfl";
-			fastRF = "AmovPknlMrunSrasWpstDfr";
-			
-			why?
-			*/
-			
+			//fastF = "AmovPknlMrunSrasWpstDf";
+			//fastLF = "AmovPknlMrunSrasWpstDfl";
+			//fastRF = "AmovPknlMrunSrasWpstDfr";
 			fastF = "AmovPercMevaSrasWpstDf";
 			fastLF = "AmovPercMevaSrasWpstDfl";
 			fastRF = "AmovPercMevaSrasWpstDfr";
@@ -66,11 +59,23 @@ class CfgMovesBasic
 		class PistolProneActions : PistolStandActions
 		{
 			turnSpeed = 4;
+			Gear = "";
+			Civil = "AmovPpneMstpSnonWnonDnon";
+		};
+		
+		class CivilEvasiveActions : CivilStandActions
+		{
+			getOver = "BunnyhopUnarmed";
 		};
 		
 		class CivilRunActions : CivilStandActions
 		{
 			Die = "CzmbAdthPercMrunSnonWnonDf";
+		};
+		
+		class CivilRunActionsF : CivilRunActions
+		{
+			getOver = "BunnyhopUnarmed";
 		};
 		
 		class CivilWlkActionsF : CivilRunActionsF
@@ -91,6 +96,37 @@ class CfgMovesBasic
 		class LauncherKneelActions : NoActions
 		{
 			turnSpeed = 6;
+		};
+		
+		class LadderRifleActions : LadderCivilActions
+		{
+			//ladderOff = "AmovPercMstpSrasWrflDnon";
+			ladderOff = "AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon";
+		};
+		
+		class RifleStandEvasiveActions : RifleStandActions
+		{
+			getOver = "BunnyhopRifle";
+		};
+		
+		class RifleStandActionsRunF : RifleStandActions
+		{
+			getOver = "BunnyhopRifle";
+		};
+		
+		class RifleLowStandActionsRunF : RifleLowStandActions
+		{
+			getOver = "BunnyhopRifle";
+		};
+		
+		class PistolStandEvasiveActions : PistolStandActions
+		{
+			getOver = "BunnyhopPistol";
+		};
+		
+		class PistolStandActionsRunF : PistolStandActions
+		{
+			getOver = "BunnyhopPistol";
 		};
 	};
 };
