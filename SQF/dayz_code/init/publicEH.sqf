@@ -309,7 +309,11 @@ if (isServer) then {
 			diag_log format["WARNING: %1, %2 is trying to set a code for a gate he does not own.",(name _unitSending),(getPlayerUID _unitSending)];
 		};
 	};
-
+	"PVDZ_Server_buildLock" addPublicVariableEventHandler {
+		_object = ((_this select 1) select 0);
+		
+		[_object,"buildLock"] call server_updateObject;
+	};
 };
 
 //Client only

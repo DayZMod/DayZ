@@ -1,4 +1,4 @@
-private ["_vehicle","_inVehicle","_cursorTarget","_onLadder","_canDo","_ownerArray","_text"];
+private ["_vehicle","_inVehicle","_cursorTarget","_onLadder","_canDo","_ownerArray","_text","_ownerBuildLock"];
 
 scriptName "Functions\misc\fn_upgradeActions.sqf";
 
@@ -30,11 +30,12 @@ _maintenanceMode = _cursorTarget getVariable["Maintenance",false];
 
 if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4) and _canDo) then { 
     _ownerArray = _cursorTarget getVariable ["ownerArray",[]];
+	_ownerBuildLock = _cursorTarget getVariable ["BuildLock",false];
 //    diag_log [ diag_tickTime, __FILE__, "_ownerArray", _ownerArray, "PlayerUID", getPlayerUID player];
     //building System
     _text = getText (configFile >> "CfgVehicles" >> typeOf _cursorTarget >> "displayName");
     
-    if ((_cursorTarget iskindof "DZ_buildables") and isText(configFile >> "CfgVehicles" >> (typeOf _cursorTarget) >> "Upgrade" >> "create")) then {
+    if ((_cursorTarget iskindof "DZ_buildables") and isText(configFile >> "CfgVehicles" >> (typeOf _cursorTarget) >> "Upgrade" >> "create") and !_ownerBuildLock) then {
         if (s_player_building < 0) then {
             if (isText (configFile >> "CfgVehicles" >> (typeof _cursorTarget) >> "Upgrade" >> "create")) then {
                 s_player_building = player addAction [format[localize "str_upgrade",_text], "\z\addons\dayz_code\actions\object_upgradebuilding.sqf",_cursorTarget, 0, false, true, "",""];
@@ -55,13 +56,16 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
     };
 
     
-    if (((getPlayerUID player) in _ownerArray) or (count _ownerArray == 0) or ((typeof _cursorTarget) in ["WoodenFence_1_foundation","WoodenGate_foundation"])) then {
+    if ((((getPlayerUID player) in _ownerArray) or (count _ownerArray == 0) or ((typeof _cursorTarget) in ["WoodenFence_1_foundation","WoodenGate_foundation"])) and !_ownerBuildLock) then {
         if (s_player_disassembly < 0) then {
             if (isClass (configFile >> "CfgVehicles" >> (typeof _cursorTarget) >> "Disassembly")) then {
                 s_player_disassembly = player addAction [format[localize "str_disassembly",_text], "\z\addons\dayz_code\actions\object_disassembly.sqf",_cursorTarget, 0, false, true, "", "'ItemToolbox' in items player"];
             };
         };
-    };
+    } else {
+		player removeAction s_player_disassembly;
+		s_player_disassembly = -1;
+	};
 } else {
     call dayz_resetUpgradeActions;
 };

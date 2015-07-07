@@ -225,6 +225,8 @@ dayz_resetSelfActions = {
 	s_player_CloseGate = -1;
 	s_player_breakinhouse = -1;
 	s_player_setCode = -1;
+	s_player_BuildUnLock = -1;
+	s_player_BuildLock = -1;
 };
 call dayz_resetSelfActions;
 

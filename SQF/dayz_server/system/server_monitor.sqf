@@ -213,6 +213,7 @@ _countr = 0;
 							case "clanArray" : { _object setVariable ["clanArray", _x select 1, true]; };
 							case "armed" : { _object setVariable ["armed", _x select 1, true]; };
 							case "padlockCombination" : { _object setVariable ["dayz_padlockCombination",_x select 1,false]; };
+							case "BuildLock" : { _object setVariable ["BuildLock",_x select 1,true]; };
 						};
 					};
 				} forEach _inventory;

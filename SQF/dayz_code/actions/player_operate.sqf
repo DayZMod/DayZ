@@ -59,10 +59,25 @@ _fn_Closed = {
 	};
 };
 
+_fn_BuildLock = {
+	_target setVariable ["BuildLock",true,true];
+	
+	PVDZ_Server_buildLock = [_target]
+	publicVariableServer "PVDZ_Server_buildLock";
+};
+_fn_BuildUnLock = {
+	_target setVariable ["BuildLock",false,true];
+	
+	PVDZ_Server_buildLock = [_target]
+	publicVariableServer "PVDZ_Server_buildLock";
+};
+
 switch (_type) do {
     case "Lock": { call _fn_Lock; };
     case "Unlock": { call _fn_UnLock; };
     case "Open": { call _fn_Open; };
     case "Close": { call _fn_Closed; };
 	case "Set": { call _fn_Set; };
+	case "BuildLock": { call _fn_BuildLock; };
+	case "BuildUnLock": { call _fn_BuildUnLock; };
 };

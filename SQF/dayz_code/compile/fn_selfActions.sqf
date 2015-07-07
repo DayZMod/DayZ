@@ -302,7 +302,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	};
 	//other tents
 	if (_istypeTent) then {
-		//destory tents
+		//destroy tents
 		//Located in variables Dayz_Ignators = ["ItemMatchbox","Item5Matchbox","Item4Matchbox","Item3Matchbox","Item2Matchbox","Item1Matchbox"];
 		_hasIgnators = {_x in Dayz_Ignators} count items player > 0;
 		if ((_hasFuel20 or _hasFuel5) AND (_hasIgnators)) then {
@@ -364,6 +364,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	// House locking and unlocking
 	_isHouse = (typeOf cursorTarget) in ["SurvivorWorkshopAStage5", "SurvivorWorkshopBStage5", "SurvivorWorkshopCStage5"];
 	_isGate = (typeOf cursorTarget) in ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4"];
+	_isFence = (typeOf cursorTarget) in ["WoodenFence_1","WoodenFence_2","WoodenFence_3","WoodenFence_4","WoodenFence_5","WoodenFence_6"];
 
 	//Only the owners can lock the gates
 	_isLockableGate = (typeOf cursorTarget) in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"];
@@ -375,6 +376,9 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	
 	//[["ownerArray",["PID"]]]
 	_ownerArray = _cursorTarget getVariable ["ownerArray",["0"]];
+	
+	_ownerBuildLock = _cursorTarget getVariable ["BuildLock",false];
+	
 	_ownerPID = (_ownerArray select 0);
 	
 	// open Gate
@@ -403,6 +407,24 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	} else {
 		player removeAction s_player_setCode;
 		s_player_setCode = -1;
+	};
+	//Lock Build point
+	if ((_isFence or _isGate) and (_ownerPID == (getPlayerUID player)) and !_ownerBuildLock and _canDo) then {
+		if (s_player_BuildLock < 0) then {
+			s_player_BuildLock = player addAction ["Lock Build", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"BuildLock"], 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_BuildLock;
+		s_player_BuildLock = -1;
+	};
+	//UnLock Build point
+	if ((_isFence or _isGate) and (_ownerPID == (getPlayerUID player)) and _ownerBuildLock and _canDo) then {
+		if (s_player_BuildUnLock < 0) then {
+			s_player_BuildUnLock = player addAction ["UnLock Build", "\z\addons\dayz_code\actions\player_operate.sqf",[cursorTarget,"BuildUnLock"], 1, true, true, "", ""];
+		}
+	} else {
+		player removeAction s_player_BuildUnLock;
+		s_player_BuildUnLock = -1;
 	};
 	// Unlock Gate/House
 	if ((_isHouse or _isLockableGate) and !_isUnlocked and _isClosed and _canDo) then {
@@ -497,6 +519,10 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	s_player_CloseGate = -1;
 	player removeAction s_player_breakinhouse;
 	s_player_breakinhouse = -1;
+	player removeAction s_player_BuildUnLock;
+	s_player_BuildUnLock = -1;
+	player removeAction s_player_BuildLock;
+	s_player_BuildLock = -1;
 };
 
 //Monitor

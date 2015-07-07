@@ -194,6 +194,10 @@ if (!isNil "sm_done") then {
 		private["_ownerArray","_key"];
 
 		_ownerArray = _object getVariable ["ownerArray",[]];
+		_accessArray = _object getVariable ["dayz_padlockCombination",[]];
+		
+		_variables set [ count _variables, ["ownerArray", _ownerArray]];
+		_variables set [ count _variables, ["padlockCombination", _accessArray]];
 
 		if (_objectID == "0") then {
 			_key = format["CHILD:309:%1:%2:",_objectUID,_ownerArray];
@@ -211,17 +215,19 @@ if (!isNil "sm_done") then {
 		_key call server_hiveWrite;
 	};
 	
-	_object_access = {
+	_object_variables = {
 		private["_ownerArray","_key","_accessArray","_variables"];
 
 		_ownerArray = _object getVariable ["ownerArray",[]];
 		_accessArray = _object getVariable ["dayz_padlockCombination",[]];
+		_lockedArray = _object getVariable ["BuildLock",false];
 		
-		diag_log format ["[%1,%2]",_ownerArray,_accessArray];
+		//diag_log format ["[%1,%2]",_ownerArray,_accessArray];
 		_variables = [];
 		
 		_variables set [ count _variables, ["ownerArray", _ownerArray]];
 		_variables set [ count _variables, ["padlockCombination", _accessArray]];
+		_variables set [ count _variables, ["BuildLock", _lockedArray]];
 
 		if (_objectID == "0") then {
 			_key = format["CHILD:309:%1:%2:",_objectUID,_variables];
@@ -255,8 +261,8 @@ if (!isNil "sm_done") then {
 		case "killed": {
 			call _object_killed;
 		};
-		case "accessCode": {
-			call _object_access;
+		case "accessCode"; case "buildLock" : {
+			call _object_variables;
 		};
 	};
 };
