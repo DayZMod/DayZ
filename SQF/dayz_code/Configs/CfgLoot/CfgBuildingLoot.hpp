@@ -108,7 +108,7 @@ class CfgBuildingLoot
 			{"ItemTankTrap","magazine",0.04},
 			{"ItemSodaLirik","magazine",0.05},
 			{"ItemSodaPeppsy","magazine",0.10},
-			("FoodMRE","magazine",0.03},
+			{"FoodMRE","magazine",0.03},
 			{"","ammo",0.05},
 			{"","attachmentsGeneric",0.03}
 		};
@@ -593,7 +593,7 @@ class CfgBuildingLoot
 			{"G36K_Camo_DZ","weapon",0.03},
 			{"M9_DZ","weapon",0.02},
 			{"M24_DZ","weapon",0.01},
-			("FoodMRE","magazine",0.03},
+			{"FoodMRE","magazine",0.03},
 		//special
 			{"MedBox2","object",0.05},
 			{"AmmoBoxSmall_556","object",0.05},
@@ -634,7 +634,7 @@ class CfgBuildingLoot
 			{"Bizon_DZ","weapon",0.04},
 			{"RPK74_DZ","weapon",0.02},
 			{"Makarov_DZ","weapon",0.02},
-			("FoodMRE","magazine",0.03},
+			{"FoodMRE","magazine",0.03},
 		//special
 			{"MedBox2","object",0.05},
 			{"AmmoBoxSmall_762","object",0.03},
@@ -726,7 +726,7 @@ class CfgBuildingLoot
 		//special
 		//mags special
 			{"ItemSandbag","magazine",0.04},
-			("FoodMRE","magazine",0.03},
+			{"FoodMRE","magazine",0.03},
 		//bags
 			{"DZ_British_ACU","object",0.02}, // 18
 			{"DZ_CivilBackpack_EP1","object",0.01}, // 24			
