@@ -43,6 +43,7 @@
 //#include "equip_pipecap.hpp"
 
 //100% Mats to be added
+#include "equip_crossbow_stock.hpp"
 #include "equip_scrapelectronics.hpp"
 #include "equip_carbomb.hpp"
 #include "equip_rag.hpp"

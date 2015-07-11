@@ -13,8 +13,6 @@ class CfgPatches
 class CfgWeapons
 {
 	class FakeWeapon;
-	
-	class Crossbow_Stock : FakeWeapon {};
 	class Crossbow_FL : FakeWeapon {};
 	class Crossbow_CCO : FakeWeapon {};
 	class Crossbow_CCO_FL : FakeWeapon {};
