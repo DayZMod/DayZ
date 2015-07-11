@@ -7,7 +7,7 @@ class ItemSodaCoke : ItemSoda
 	displayName = $STR_EQUIP_NAME_36a;
 	descriptionShort = $STR_EQUIP_DESC_36;
 	
-	Nutrition[] = {90,0,100,0};
+	Nutrition[] = {90,0,300,0};
 };
 
 class ItemSodaPepsi : ItemSoda
@@ -19,7 +19,7 @@ class ItemSodaPepsi : ItemSoda
 	displayName = $STR_EQUIP_NAME_36b;
 	descriptionShort = $STR_EQUIP_DESC_36;
 	
-	Nutrition[] = {90,0,100,0};
+	Nutrition[] = {90,0,300,0};
 };
 
 class ItemSodaMdew : ItemSoda
@@ -31,7 +31,7 @@ class ItemSodaMdew : ItemSoda
 	displayName = $STR_EQUIP_NAME_37;
 	descriptionShort = $STR_EQUIP_NAME_37;
 	
-	Nutrition[] = {90,0,200,0};
+	Nutrition[] = {90,0,400,0};
 };
 
 class ItemSodaMtngreen : ItemSoda
@@ -43,7 +43,7 @@ class ItemSodaMtngreen : ItemSoda
 	displayName = $STR_EQUIP_NAME_37;
 	descriptionShort = $STR_EQUIP_NAME_37;
 	
-	Nutrition[] = {90,0,300,0};
+	Nutrition[] = {90,0,500,0};
 	
 	consumeOutput = "ItemSodaMtngreenEmpty";
 };
@@ -57,7 +57,7 @@ class ItemSodaR4z0r : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_1;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_1;
 	
-	Nutrition[] = {90,0,150,0};
+	Nutrition[] = {90,0,350,0};
 	
 	consumeOutput = "ItemSodaR4z0rEmpty";
 };
@@ -71,7 +71,7 @@ class ItemSodaClays : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_2;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_2;
 	
-	Nutrition[] = {90,0,120,0};
+	Nutrition[] = {90,0,320,0};
 	
 	consumeOutput = "ItemSodaClaysEmpty";
 };
@@ -85,7 +85,7 @@ class ItemSodaSmasht : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_3;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_3;
 	
-	Nutrition[] = {90,0,180,0};
+	Nutrition[] = {90,0,380,0};
 	
 	consumeOutput = "ItemSodaSmashtEmpty";
 };
@@ -99,7 +99,7 @@ class ItemSodaDrwaste : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_4;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_4;
 	
-	Nutrition[] = {90,0,140,0};
+	Nutrition[] = {90,0,340,0};
 	
 	consumeOutput = "ItemSodaDrwasteEmpty";
 };
@@ -113,7 +113,7 @@ class ItemSodaFranka : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_5;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_5;
 	
-	Nutrition[] = {90,0,140,0};
+	Nutrition[] = {90,0,340,0};
 	
 	consumeOutput = "ItemSodaFrankaEmpty";
 };
@@ -127,7 +127,7 @@ class ItemSodaLemonade : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_6;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_6;
 	
-	Nutrition[] = {90,0,300,0};
+	Nutrition[] = {90,0,500,0};
 	
 	consumeOutput = "ItemSodaLemonadeEmpty";
 };
@@ -141,7 +141,7 @@ class ItemSodaLirik : ItemSoda
 	displayName = $STR_EQUIP_NAME_36a;
 	descriptionShort = $STR_EQUIP_DESC_36;
 	
-	Nutrition[] = {90,0,100,0};
+	Nutrition[] = {90,0,300,0};
 	
 	consumeOutput = "ItemSodaLirikEmpty";
 };
@@ -155,7 +155,7 @@ class ItemSodaLvg : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_8;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_8;
 	
-	Nutrition[] = {90,0,350,0};
+	Nutrition[] = {90,0,550,0};
 	
 	consumeOutput = "ItemSodaLvgEmpty";
 };
@@ -169,7 +169,7 @@ class ItemSodaMzly : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_9;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_9;
 	
-	Nutrition[] = {90,0,180,0};
+	Nutrition[] = {90,0,380,0};
 	
 	consumeOutput = "ItemSodaMzlyEmpty";
 };
@@ -183,7 +183,7 @@ class ItemSodaPeppsy : ItemSoda
 	displayName = $STR_EQUIP_NAME_36b;
 	descriptionShort = $STR_EQUIP_DESC_36;
 	
-	Nutrition[] = {90,0,100,0};
+	Nutrition[] = {90,0,300,0};
 	
 	consumeOutput = "ItemSodaPeppsyEmpty";
 };
@@ -197,7 +197,7 @@ class ItemSodaRabbit : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_11;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_11;
 	
-	Nutrition[] = {90,0,350,0};
+	Nutrition[] = {90,0,550,0};
 	
 	consumeOutput = "ItemSodaRabbitEmpty";
 };
@@ -211,7 +211,7 @@ class ItemSodaSacrite : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_12;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_12;
 	
-	Nutrition[] = {90,0,350,0};
+	Nutrition[] = {90,0,550,0};
 	
 	consumeOutput = "ItemSodaSacriteEmpty";
 };
@@ -225,7 +225,7 @@ class ItemSodaRocketFuel : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_13;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_13;
 	
-	Nutrition[] = {90,0,350,0};
+	Nutrition[] = {90,0,550,0};
 	
 	consumeOutput = "ItemSodaRocketFuelEmpty";
 };
@@ -239,7 +239,7 @@ class ItemSodaGrapeDrink : ItemSoda
 	displayName = $STR_ITEMSODA_FULL_CLEAN_CODE_NAME_14;
 	descriptionShort = $STR_ITEMSODA_FULL_CLEAN_CODE_DESC_14;
 	
-	Nutrition[] = {90,0,600,0};
+	Nutrition[] = {90,0,700,0};
 	
 	consumeOutput = "ItemSodaGrapeDrinkEmpty";
 };
@@ -253,7 +253,7 @@ class ItemSherbet : ItemSoda
 	displayName = "Sherbet";//TODO: move to stringtable
 	descriptionShort = "Sherbet";
 	
-	Nutrition[] = {90,0,300,0};
+	Nutrition[] = {90,0,500,0};
 	
 	consumeOutput = "ItemSodaSherbetEmpty";
 };
