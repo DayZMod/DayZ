@@ -31,6 +31,7 @@ class CfgMovesBasic
 		class RifleKneelActions : RifleBaseStandActions
 		{
 			turnSpeed = 6;
+			Civil = "AmovPknlMstpSnonWnonDnon";
 		};
 		
 		class RifleProneActions : RifleBaseStandActions
@@ -86,6 +87,7 @@ class CfgMovesBasic
 		class CivilKneelActions : CivilStandActions
 		{
 			turnSpeed = 6;
+			weaponOn = "AmovPknlMstpSrasWrflDnon";
 		};
 		
 		class CivilProneActions : CivilStandActions

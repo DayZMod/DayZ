@@ -4,6 +4,12 @@
 //	A(mov|idl|ldr|rop|par|obs|crg|inj|cin|dth|inv|cts|swm|sig|wop|ddg)P(erc|knl|pne|sit|fal)M(stp|wlk|run|spr|len|trn|jmp|wtl|uwt|mnt|dnt|crg|eva)S(non|ras|low|opt|sur|sig|pat|lay|car|obk|rld|gth|grl)W(non|pst|rfl|lnr)D(non|f|b|l|r|fl|fr|bl|br|up|dn)
 //	A$1P$2M$3S$4W$5D$6
 
+//	\.([1-9]+)0+([^0-9\.])
+//	\.$1$2
+
+//	\.0+([^0-9])
+//	$1
+
 class CfgMovesMaleSdr : CfgMovesBasic
 {
 	class States
@@ -195,68 +201,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPercMstpSlowWrflDnon : StandBase
 		{
-			InterpolateTo[] =
-			{
-				"AmovPercMstpSlowWrflDnon_turnL",0.02,
-				"AmovPercMstpSlowWrflDnon_turnR",0.02,
-				"AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_1",0.01,
-				"AmovPercMwlkSlowWrflDf",0.02,
-				"AmovPercMwlkSlowWrflDfl",0.02,
-				"AmovPercMwlkSlowWrflDl",0.02,
-				"AmovPercMwlkSlowWrflDbl",0.02,
-				"AmovPercMwlkSlowWrflDb",0.02,
-				"AmovPercMwlkSlowWrflDbr",0.02,
-				"AmovPercMwlkSlowWrflDr",0.02,
-				"AmovPercMwlkSlowWrflDfr",0.02,
-				"AmovPercMrunSlowWrflDf",0.02,
-				"AmovPercMrunSlowWrflDfl",0.02,
-				"AmovPercMrunSlowWrflDl",0.02,
-				"AmovPercMrunSlowWrflDbl",0.02,
-				"AmovPercMrunSlowWrflDb",0.02,
-				"AmovPercMrunSlowWrflDbr",0.02,
-				"AmovPercMrunSlowWrflDr",0.02,
-				"AmovPercMrunSlowWrflDfr",0.02,
-				"AmovPercMevaSlowWrflDf",0.025,
-				"AmovPercMevaSlowWrflDfl",0.025,
-				"AmovPercMevaSlowWrflDfr",0.025,
-				"AmovPercMstpSlowWrflDnon_AmovPercMevaSrasWrflDl",0.05,
-				"AmovPercMstpSlowWrflDnon_AmovPercMevaSrasWrflDr",0.05,
-				"AmovPercMstpSlowWrflDnon_AmovPercMevaSrasWrflDb",0.05,
-				"AdthPercMstpSlowWrflDnon_1",0.01,
-				"AdthPercMstpSlowWrflDnon_2",0.01,
-				"AdthPercMstpSlowWrflDnon_4",0.01,
-				"AdthPercMstpSlowWrflDnon_8",0.01,
-				"AdthPercMstpSlowWrflDnon_rS0",0.01,
-				"AwopPercMstpSgthWrflDnon_Start1",0.1,
-				"AwopPercMstpSgthWrflDnon_Throw1",0.1,
-				"AwopPercMstpSgthWrflDnon_End1",0.1,
-				"AwopPercMstpSgthWrflDnon_Throw2",0.1,
-				"AwopPercMstpSgthWrflDnon_End2",0.1,
-				"AidlPercMstpSlowWrflDnon01",0.02,
-				"AidlPercMstpSlowWrflDnon02",0.02,
-				"AidlPercMstpSlowWrflDnon03",0.02,
-				"AidlPercMstpSlowWrflDnon04",0.02,
-				"AidlPercMstpSlowWrflDnon_i01",0.02,
-				"AidlPercMstpSlowWrflDnon_i02",0.02,
-				"AidlPercMstpSlowWrflDnon_i03",0.02,
-				"AidlPercMstpSlowWrflDnon_i04",0.02,
-				"AidlPercMstpSlowWrflDnon_i05",0.02,
-				"AidlPercMstpSlowWrflDnon_i06",0.02,
-				"AidlPercMstpSlowWrflDnon_i07",0.02,
-				"AidlPercMstpSlowWrflDnon_i08",0.02,
-				"AidlPercMstpSlowWrflDnon_i09",0.02,
-				"AidlPercMstpSlowWrflDnon_i10",0.02,
-				"AidlPercMstpSlowWrflDnon_i11",0.02,
-				"AidlPercMstpSlowWrflDnon_i12",0.02,
-				"AidlPercMstpSlowWrflDnon_i13",0.02,
-				"AidlPercMstpSlowWrflDnon05",0.02,
-				"AidlPercMstpSlowWrflDnon06",0.02,
-				"AdthPercMstpSlowWrflDnon_16",0.01,
-				"AdthPercMstpSlowWrflDnon_32",0.01,
-				"ActsPercMstpSlowWrflDnon_talking_C3BeginBriefing",0.1,
-				"AidlPercSlowWrflDnon_talkListeningS",0.01,
-				"AidlPercSnonWnonDnon_talkAS",0.01
-			};
 			duty = PercDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
@@ -420,22 +364,22 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class aidlpknlmstpslowwrfldnon01 : AidlPknlMstpSlowWrflDnon0S
+		class AidlPknlMstpSlowWrflDnon01 : AidlPknlMstpSlowWrflDnon0S
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class aidlpknlmstpslowwrfldnon03 : aidlpknlmstpslowwrfldnon01
+		class AidlPknlMstpSlowWrflDnon03 : AidlPknlMstpSlowWrflDnon01
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class aidlpknlmstpslowwrfldnon02 : aidlpknlmstpslowwrfldnon01
+		class AidlPknlMstpSlowWrflDnon02 : AidlPknlMstpSlowWrflDnon01
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class AidlPknlMstpSlowWrflDnon_i01 : aidlpknlmstpslowwrfldnon01
+		class AidlPknlMstpSlowWrflDnon_i01 : AidlPknlMstpSlowWrflDnon01
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
@@ -567,62 +511,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPknlMstpSrasWrflDnon : AmovPknlMstpSlowWrflDnon
 		{
-		//	ConnectTo[] = {"AidlPknlMstpSlowWrflDnon0S",0.1,"AidlPknlMstpSrasWrflDnon_player_0S",0.1,"AmovPknlMwlkSrasWrflDnon_transition",0.02,"AmovPknlMstpSrasWrflDnon_turnL",0.02,"AmovPknlMstpSrasWrflDnon_turnR",0.02,"WeaponMagazineReloadKneel",0.1,"amovpknlmstpsraswrfldnon_amovpknlmstpslowwrfldnon",0.02,"AmovPknlMstpSrasWrflDnon_AmovPercMstpSrasWrflDnon",0.02,"AmovPknlMstpSrasWrflDnon_AmovPpneMstpSrasWrflDnon",0.02,"AmovPknlMstpSrasWrflDnon_AmovPknlMstpSrasWpstDnon",0.02,"AmovPknlMstpSrasWrflDnon_AmovPknlMstpSrasWlnrDnon",0.02,"AmovPknlMstpSrasWrflDnon_AwopPknlMstpSoptWbinDnon",0.02,"AwopPknlMstpSgthWrflDnon_Start",0.1,"AwopPknlMstpSgthWrflDnon_End",0.1,"AidlPknlMstpSrasWrflDnon0S",0.1,"AidlPknlMstpSrasWrflDnon01",0.1,"AidlPknlMstpSrasWrflDnon02",0.1,"AidlPknlMstpSrasWrflDnon03",0.1,"AmovPknlMstpSrasWrflDnon_AinvPknlMstpSlayWrflDnon",0.02,"AmovPknlMstpSrasWrflDnon_AmovPknlMstpSnonWnonDnon",0.02};
-			ConnectTo[] = {"AidlPknlMstpSlowWrflDnon0S",0.1,"AidlPknlMstpSrasWrflDnon_player_0S",0.1,"AmovPknlMwlkSrasWrflDnon_transition",0.02,"AmovPknlMstpSrasWrflDnon_turnL",0.02,"AmovPknlMstpSrasWrflDnon_turnR",0.02,"WeaponMagazineReloadKneel",0.1,"amovpknlmstpsraswrfldnon_amovpknlmstpslowwrfldnon",0.02,"AmovPknlMstpSrasWrflDnon_AmovPercMstpSrasWrflDnon",0.02,"AmovPknlMstpSrasWrflDnon_AmovPpneMstpSrasWrflDnon",0.02,"AmovPknlMstpSrasWrflDnon_AmovPknlMstpSrasWpstDnon",0.02,"AmovPknlMstpSrasWrflDnon_AmovPknlMstpSrasWlnrDnon",0.02,"AmovPknlMstpSrasWrflDnon_AwopPknlMstpSoptWbinDnon",0.02,"AwopPknlMstpSgthWrflDnon_Start",0.1,"AwopPknlMstpSgthWrflDnon_End",0.1,"AidlPknlMstpSrasWrflDnon0S",0.1,"AidlPknlMstpSrasWrflDnon01",0.1,"AidlPknlMstpSrasWrflDnon02",0.1,"AidlPknlMstpSrasWrflDnon03",0.1,"AmovPknlMstpSrasWrflDnon_AinvPknlMstpSlayWrflDnon",0.02};
-			InterpolateTo[] =
-			{
-				"AmovPknlMstpSrasWrflDnon_turnL",0.02,
-				"AmovPknlMstpSrasWrflDnon_turnR",0.02,
-				"AidlPknlMstpSrasWrflDnon0S",0.02,
-				"AidlPknlMstpSrasWrflDnon01",0.02,
-				"AidlPknlMstpSrasWrflDnon02",0.02,
-				"AidlPknlMstpSrasWrflDnon03",0.02,
-				"AinvPknlMstpSnonWrflDnon_AinvPknlMstpSnonWrflDnon_medic",0.02,
-				"aidlpknlmstpslowwrfldnon01",0.1,
-				"aidlpknlmstpslowwrfldnon03",0.1,
-				"aidlpknlmstpslowwrfldnon02",0.1,
-				"AidlPknlMstpSlowWrflDnon_i01",0.01,
-				"AidlPknlMstpSlowWrflDnon_i02",0.1,
-				"AidlPknlMstpSlowWrflDnon_i03",0.1,
-				"AidlPknlMstpSlowWrflDnon_i04",0.1,
-				"AidlPknlMstpSlowWrflDnon_i05",0.1,
-				"AidlPknlMstpSlowWrflDnon_i06",0.1,
-				"AidlPknlMstpSlowWrflDnon_i07",0.1,
-				"AidlPknlMstpSlowWrflDnon_i08",0.1,
-				"AidlPknlMstpSlowWrflDnon_i09",0.1,
-				"AidlPknlMstpSlowWrflDnon_i10",0.1,
-				"AidlPknlMstpSlowWrflDnon_i11",0.1,
-				"AidlPknlMstpSlowWrflDnon_i12",0.01,
-				"AidlPknlMstpSlowWrflDnon_i13",0.1,
-				"AidlPknlMstpSlowWrflDnon_i14",0.1,
-				"AidlPknlMstpSlowWrflDnon_idleSteady01",0.1,
-				"AidlPknlMstpSlowWrflDnon_idleSteady02",0.1,
-				"AidlPknlMstpSlowWrflDnon_idleSteady03",0.1,
-				"AidlPknlMstpSlowWrflDnon_idleSteady04",0.1,
-				"AidlPknlMstpSlowWrflDnon_i15",0.1,
-				"AmovPknlMstpSrasWrflDnon_AmovPknlMrunSlowWrflDf",0.01,
-				"AmovPknlMwlkSrasWrflDf",0.02,
-				"AmovPknlMwlkSrasWrflDfl",0.02,
-				"AmovPknlMwlkSrasWrflDl",0.02,
-				"AmovPknlMwlkSrasWrflDbl",0.02,
-				"AmovPknlMwlkSrasWrflDb",0.02,
-				"AmovPknlMwlkSrasWrflDbr",0.02,
-				"AmovPknlMwlkSrasWrflDr",0.02,
-				"AmovPknlMwlkSrasWrflDfr",0.02,
-				"AmovPknlMrunSrasWrflDfl",0.02,
-				"AmovPknlMrunSrasWrflDl",0.02,
-				"AmovPknlMrunSrasWrflDbl",0.02,
-				"AmovPknlMrunSrasWrflDb",0.02,
-				"AmovPknlMrunSrasWrflDbr",0.02,
-				"AmovPknlMrunSrasWrflDr",0.02,
-				"AmovPknlMrunSrasWrflDfr",0.02,
-				"AmovPknlMstpSrasWrflDnon_AmovPknlMevaSrasWrflDl",0.02,
-				"AmovPknlMstpSrasWrflDnon_AmovPknlMevaSrasWrflDr",0.02,
-				"AmovPknlMstpSrasWrflDnon_AmovPknlMevaSrasWrflDb",0.02,
-				"AdthPknlMstpSrasWrflDnon_1",0.01,
-				"AdthPknlMstpSrasWrflDnon_2",0.01,
-				"AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2",0.2
-			};
 			duty = PknlDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
@@ -676,12 +564,12 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PpneDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthpercmstpsraswlnrdnon_1 : DefaultDie
+		class AdthPercMstpSrasWlnrDnon_1 : DefaultDie
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class adthpercmstpsraswlnrdnon_2 : adthpercmstpsraswlnrdnon_1
+		class AdthPercMstpSrasWlnrDnon_2 : AdthPercMstpSrasWlnrDnon_1
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
@@ -718,29 +606,21 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AidlPercMstpSrasWpstDnon_player_idleSteady01 : AidlPercMstpSrasWpstDnon_player_0S
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02};
-			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02};
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
 		class AidlPercMstpSrasWpstDnon_player_idleSteady02 : AidlPercMstpSrasWpstDnon_player_idleSteady01
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02};
-			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02};
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
 		class AidlPercMstpSrasWpstDnon_player_idleSteady03 : AidlPercMstpSrasWpstDnon_player_idleSteady01
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02,"AdthPercMstpSlowWpstDnon_A1",0.02};
-			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02};
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
 		class AmovPercMstpSlowWpstDnon : AmovPercMstpSrasWpstDnon
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon_AcinPknlMwlkSnonWpstDb_1",0.01,"AmovPercMwlkSlowWpstDf",0.02,"AmovPercMwlkSlowWpstDfl",0.02,"AmovPercMwlkSlowWpstDl",0.02,"AmovPercMwlkSlowWpstDbl",0.02,"AmovPercMwlkSlowWpstDb",0.02,"AmovPercMwlkSlowWpstDbr",0.02,"AmovPercMwlkSlowWpstDr",0.02,"AmovPercMwlkSlowWpstDfr",0.02,"AmovPercMrunSlowWpstDf",0.02,"AmovPercMrunSlowWpstDfl",0.02,"AmovPercMrunSlowWpstDl",0.02,"AmovPercMrunSlowWpstDbl",0.02,"AmovPercMrunSlowWpstDb",0.02,"AmovPercMrunSlowWpstDbr",0.02,"AmovPercMrunSlowWpstDr",0.02,"AmovPercMrunSlowWpstDfr",0.02,"AmovPercMevaSlowWpstDf",0.02,"AmovPercMevaSlowWpstDfl",0.02,"AmovPercMevaSlowWpstDfr",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02};
-			InterpolateTo[] = {"AmovPercMwlkSlowWpstDf",0.02,"AmovPercMwlkSlowWpstDfl",0.02,"AmovPercMwlkSlowWpstDl",0.02,"AmovPercMwlkSlowWpstDbl",0.02,"AmovPercMwlkSlowWpstDb",0.02,"AmovPercMwlkSlowWpstDbr",0.02,"AmovPercMwlkSlowWpstDr",0.02,"AmovPercMwlkSlowWpstDfr",0.02,"AmovPercMrunSlowWpstDf",0.02,"AmovPercMrunSlowWpstDfl",0.02,"AmovPercMrunSlowWpstDl",0.02,"AmovPercMrunSlowWpstDbl",0.02,"AmovPercMrunSlowWpstDb",0.02,"AmovPercMrunSlowWpstDbr",0.02,"AmovPercMrunSlowWpstDr",0.02,"AmovPercMrunSlowWpstDfr",0.02,"AmovPercMevaSlowWpstDf",0.02,"AmovPercMevaSlowWpstDfl",0.02,"AmovPercMevaSlowWpstDfr",0.02,"AmovPercMstpSrasWpstDnon_AcinPknlMwlkSnonWpstDb_1",0.01};
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
@@ -751,22 +631,16 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AidlPercMstpSlowWpstDnon_player_idleSteady01 : AidlPercMstpSlowWpstDnon_player_0S
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSlowWpstDnon",0.02,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02};
-			InterpolateTo[] = {"AmovPercMstpSlowWpstDnon",0.02};
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
 		class AidlPercMstpSlowWpstDnon_player_idleSteady02 : AidlPercMstpSlowWpstDnon_player_idleSteady01
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSlowWpstDnon",0.02,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02};
-			InterpolateTo[] = {"AmovPercMstpSlowWpstDnon",0.02};
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
 		class AidlPercMstpSlowWpstDnon_player_idleSteady03 : AidlPercMstpSlowWpstDnon_player_idleSteady01
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSlowWpstDnon",0.02,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02};
-			InterpolateTo[] = {"AmovPercMstpSlowWpstDnon",0.02};
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
@@ -925,7 +799,7 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpsraswpstdnon_amovpknlmstpslowwpstdnon_gear : AmovPknlMstpSrasWpstDnon_gear
+		class AmovPknlMstpSrasWpstDnon_AmovPknlMstpSlowWpstDnon_gear : AmovPknlMstpSrasWpstDnon_gear
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
@@ -1102,15 +976,11 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPknlMstpSnonWnonDnon : AmovPercMstpSnonWnonDnon
 		{
-		//	ConnectTo[] = {"AmovPknlMstpSnonWnonDnon_gear",0.02,"AmovPercMstpSnonWnonDnon_gear",0.02,"AmovPknlMstpSnonWnonDnon_turnL",0.02,"AmovPknlMstpSnonWnonDnon_turnR",0.02,"amovpknlmstpsnonwnondnon_amovpknlmstpsraswpstdnon",0.02,"AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon",0.02,"AmovPknlMstpSnonWnonDnon_AmovPercMsprSnonWnonDf",0.01,"AmovPknlMstpSnonWnonDnon_AmovPpneMstpSnonWnonDnon",0.02,"amovpknlmstpsnonwnondnon_amovpknlmstpsraswlnrdnon",0.01,"AidlPknlMstpSnonWnonDnon",0.01,"AidlPknlMstpSnonWnonDnon_player",0.01,"AmovPknlMstpSnonWnonDnon_AinvPknlMstpSnonWnonDnon",0.02,"c7a_bravoErcTOknl",0.01,"AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWrflDnon",0.02};
-			ConnectTo[] = {"AmovPknlMstpSnonWnonDnon_gear",0.02,"AmovPercMstpSnonWnonDnon_gear",0.02,"AmovPknlMstpSnonWnonDnon_turnL",0.02,"AmovPknlMstpSnonWnonDnon_turnR",0.02,"AmovPknlMstpSnonWnonDnon_AmovPercMsprSnonWnonDf",0.01,"amovpknlmstpsnonwnondnon_amovpknlmstpsraswpstdnon",0.02,"AmovPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon",0.02,"AmovPknlMstpSnonWnonDnon_AmovPpneMstpSnonWnonDnon",0.02,"amovpknlmstpsnonwnondnon_amovpknlmstpsraswlnrdnon",0.01,"AidlPknlMstpSnonWnonDnon",0.01,"AidlPknlMstpSnonWnonDnon_player",0.01,"AmovPknlMstpSnonWnonDnon_AinvPknlMstpSnonWnonDnon",0.02,"c7a_bravoErcTOknl",0.01};
 			duty = PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
 		class AmovPknlMstpSnonWnonDnon_gear : AmovPknlMstpSnonWnonDnon
 		{
-		//	InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon_gear",0.02,"AmovPknlMstpSlowWrflDnon_gear",0.05};
-			InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon_gear",0.02};
 			duty = PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
@@ -1121,8 +991,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPercMstpSnonWnonDnon_gear : AmovPknlMstpSnonWnonDnon_gear
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon_gear",0.02,"AmovPercMstpSrasWrflDnon_gear",0.05};
-			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon_gear",0.02};
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
@@ -1153,8 +1021,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPercMwlkSlowWrflDf : AmovPercMstpSlowWrflDnon
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AidlPercMwlkSrasWrflDf",0.01,"AmovPercMwlkSlowWrflDfl",0.025,"AmovPercMwlkSlowWrflDfr",0.025,"AmovPercMrunSlowWrflDf",0.025,"AmovPknlMwlkSlowWrflDf",0.03,"AmovPercMevaSlowWrflDf",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
-			InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AidlPercMwlkSrasWrflDf",0.01,"AmovPercMwlkSlowWrflDfl",0.025,"AmovPercMwlkSlowWrflDfr",0.025,"AmovPercMrunSlowWrflDf",0.025,"AmovPknlMwlkSlowWrflDf",0.03,"AmovPercMevaSlowWrflDf",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
 			duty = PercDuty + MwlkDuty + SlowDuty + WrflDuty;
 		};
 		
@@ -1165,8 +1031,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPercMwlkSlowWrflDfl : AmovPercMwlkSlowWrflDf
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AmovPercMwlkSlowWrflDf",0.025,"AmovPercMwlkSlowWrflDl",0.025,"AmovPercMrunSlowWrflDfl",0.025,"AmovPknlMwlkSlowWrflDfl",0.03,"AmovPercMevaSlowWrflDfl",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
-			InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AmovPercMwlkSlowWrflDf",0.025,"AmovPercMwlkSlowWrflDl",0.025,"AmovPercMrunSlowWrflDfl",0.025,"AmovPknlMwlkSlowWrflDfl",0.03,"AmovPercMevaSlowWrflDfl",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
 			duty = PercDuty + MwlkDuty + SlowDuty + WrflDuty;
 		};
 		
@@ -1197,15 +1061,11 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPercMwlkSlowWrflDfr : AmovPercMwlkSlowWrflDf
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AmovPercMwlkSlowWrflDf",0.025,"AmovPercMwlkSlowWrflDr",0.025,"AmovPercMrunSlowWrflDfr",0.025,"AmovPknlMwlkSlowWrflDfr",0.03,"AmovPercMevaSlowWrflDfr",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
-			InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AmovPercMwlkSlowWrflDf",0.025,"AmovPercMwlkSlowWrflDr",0.025,"AmovPercMrunSlowWrflDfr",0.025,"AmovPknlMwlkSlowWrflDfr",0.03,"AmovPercMevaSlowWrflDfr",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
 			duty = PercDuty + MwlkDuty + SlowDuty + WrflDuty;
 		};
 		
 		class AmovPercMrunSlowWrflDf : AmovPercMstpSlowWrflDnon
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AmovPercMwlkSlowWrflDf",0.025,"AidlPercMrunSrasWrflDf",0.01,"AmovPercMrunSlowWrflDfl",0.025,"AmovPercMrunSlowWrflDfr",0.025,"AmovPercMrunSrasWrflDf",0.025,"AmovPknlMrunSlowWrflDf",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.025,"AmovPercMevaSlowWrflDf",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMrunSlowWrflDf_6",0.01,"AmovPercMrunSlowWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1};
-			InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AmovPercMwlkSlowWrflDf",0.025,"AidlPercMrunSrasWrflDf",0.01,"AmovPercMrunSlowWrflDfl",0.025,"AmovPercMrunSlowWrflDfr",0.025,"AmovPercMrunSrasWrflDf",0.025,"AmovPknlMrunSlowWrflDf",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.025,"AmovPercMevaSlowWrflDf",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMrunSlowWrflDf_6",0.01,"AmovPercMrunSlowWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1};
 			duty = PercDuty + MrunDuty + SlowDuty + WrflDuty;
 		//	speed = 0.821918 * 0.8;
 			speed = 0.821918;
@@ -1218,10 +1078,8 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPercMrunSlowWrflDfl : AmovPercMrunSlowWrflDf
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AmovPercMwlkSlowWrflDfl",0.025,"AmovPercMrunSlowWrflDf",0.025,"AmovPercMrunSlowWrflDl",0.025,"AmovPercMrunSrasWrflDfl",0.025,"AmovPknlMrunSlowWrflDfl",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.02,"AmovPercMevaSrasWrflDfl",0.025,"AmovPercMevaSlowWrflDfl",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMrunSlowWrflDf_6",0.01,"AmovPercMrunSlowWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1};
-			InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AmovPercMwlkSlowWrflDfl",0.025,"AmovPercMrunSlowWrflDf",0.025,"AmovPercMrunSlowWrflDl",0.025,"AmovPercMrunSrasWrflDfl",0.025,"AmovPknlMrunSlowWrflDfl",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.02,"AmovPercMevaSrasWrflDfl",0.025,"AmovPercMevaSlowWrflDfl",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMrunSlowWrflDf_6",0.01,"AmovPercMrunSlowWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1};
 			duty = PercDuty + MrunDuty + SlowDuty + WrflDuty;
-		//	speed = 0.700000 * 0.8;
+		//	speed = 0.7 * 0.8;
 			speed = 0.7;
 		};
 		
@@ -1262,24 +1120,18 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPercMrunSlowWrflDfr : AmovPercMrunSlowWrflDfl
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AmovPercMwlkSlowWrflDfr",0.025,"AmovPercMrunSlowWrflDf",0.025,"AmovPercMrunSlowWrflDr",0.025,"AmovPercMrunSrasWrflDfr",0.025,"AmovPknlMrunSlowWrflDfr",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.02,"AmovPercMevaSrasWrflDfr",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMrunSlowWrflDf_6",0.01,"AmovPercMrunSlowWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1};
-			InterpolateTo[] = {"AmovPercMstpSlowWrflDnon",0.02,"AmovPercMwlkSlowWrflDfr",0.025,"AmovPercMrunSlowWrflDf",0.025,"AmovPercMrunSlowWrflDr",0.025,"AmovPercMrunSrasWrflDfr",0.025,"AmovPknlMrunSlowWrflDfr",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.02,"AmovPercMevaSrasWrflDfr",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMrunSlowWrflDf_6",0.01,"AmovPercMrunSlowWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1};
 			duty = PercDuty + MrunDuty + SlowDuty + WrflDuty;
-		//	speed = 0.700000 * 0.8;
+		//	speed = 0.7 * 0.8;
 			speed = 0.7;
 		};
 		
 		class AmovPercMwlkSrasWrflDf : AmovPercMstpSrasWrflDnon
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMwlkSrasWrflDnon_transition",0.015,"AmovPercMwlkSrasWrflDfl",0.025,"AmovPercMwlkSrasWrflDfr",0.025,"AmovPercMrunSrasWrflDf",0.025,"AmovPknlMwlkSrasWrflDf",0.03,"AmovPercMevaSrasWrflDf",0.025,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMstpSrasWrflDf_1",0.01,"AdthPercMstpSrasWrflDf_2",0.01,"AdthPercMstpSrasWrflDf_4",0.01,"AmovPercMwlkSrasWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1,"AdthPercMstpSrasWrflDf_8",0.01};
-			InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMwlkSrasWrflDnon_transition",0.015,"AmovPercMwlkSrasWrflDfl",0.025,"AmovPercMwlkSrasWrflDfr",0.025,"AmovPercMrunSrasWrflDf",0.025,"AmovPknlMwlkSrasWrflDf",0.03,"AmovPercMevaSrasWrflDf",0.025,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMstpSrasWrflDf_1",0.01,"AdthPercMstpSrasWrflDf_2",0.01,"AdthPercMstpSrasWrflDf_4",0.01,"AmovPercMwlkSrasWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1,"AdthPercMstpSrasWrflDf_8",0.01};
 			duty = PercDuty + MwlkDuty + SrasDuty + WrflDuty;
 		};
 		
 		class AmovPercMwlkSrasWrflDfl : AmovPercMwlkSrasWrflDf
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMwlkSrasWrflDf",0.025,"AmovPercMwlkSrasWrflDl",0.025,"AmovPercMrunSrasWrflDfl",0.025,"AmovPknlMwlkSrasWrflDfl",0.03,"AmovPercMevaSrasWrflDfl",0.025,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMstpSrasWrflDf_1",0.01,"AdthPercMstpSrasWrflDf_2",0.01,"AdthPercMstpSrasWrflDf_4",0.01,"AmovPercMwlkSrasWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1,"AdthPercMstpSrasWrflDf_8",0.01};
-			InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMwlkSrasWrflDf",0.025,"AmovPercMwlkSrasWrflDl",0.025,"AmovPercMrunSrasWrflDfl",0.025,"AmovPknlMwlkSrasWrflDfl",0.03,"AmovPercMevaSrasWrflDfl",0.025,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMstpSrasWrflDf_1",0.01,"AdthPercMstpSrasWrflDf_2",0.01,"AdthPercMstpSrasWrflDf_4",0.01,"AmovPercMwlkSrasWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1,"AdthPercMstpSrasWrflDf_8",0.01};
 			duty = PercDuty + MwlkDuty + SrasDuty + WrflDuty;
 		};
 		
@@ -1310,15 +1162,11 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPercMwlkSrasWrflDfr : AmovPercMwlkSrasWrflDf
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMwlkSrasWrflDf",0.025,"AmovPercMwlkSrasWrflDr",0.025,"AmovPercMrunSrasWrflDfr",0.025,"AmovPknlMwlkSrasWrflDfr",0.03,"AmovPercMevaSrasWrflDfr",0.025,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMstpSrasWrflDf_1",0.01,"AdthPercMstpSrasWrflDf_2",0.01,"AdthPercMstpSrasWrflDf_4",0.01,"AmovPercMwlkSrasWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1,"AdthPercMstpSrasWrflDf_8",0.01};
-			InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMwlkSrasWrflDf",0.025,"AmovPercMwlkSrasWrflDr",0.025,"AmovPercMrunSrasWrflDfr",0.025,"AmovPknlMwlkSrasWrflDfr",0.03,"AmovPercMevaSrasWrflDfr",0.025,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSrasWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMstpSrasWrflDf_1",0.01,"AdthPercMstpSrasWrflDf_2",0.01,"AdthPercMstpSrasWrflDf_4",0.01,"AmovPercMwlkSrasWrflDf_AmovPercMstpSrasWrflDnon_gthStart",0.1,"AdthPercMstpSrasWrflDf_8",0.01};
 			duty = PercDuty + MwlkDuty + SrasDuty + WrflDuty;
 		};
 		
 		class AmovPercMrunSrasWrflDf : AmovPercMstpSrasWrflDnon
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMrunSlowWrflDf",0.025,"AmovPercMwlkSrasWrflDf",0.025,"AmovPercMrunSrasWrflDfl",0.025,"AmovPercMrunSrasWrflDfr",0.025,"AmovPknlMrunSrasWrflDf",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
-			InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMrunSlowWrflDf",0.025,"AmovPercMwlkSrasWrflDf",0.025,"AmovPercMrunSrasWrflDfl",0.025,"AmovPercMrunSrasWrflDfr",0.025,"AmovPknlMrunSrasWrflDf",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
 			duty = PercDuty + MrunDuty + SrasDuty + WrflDuty;
 		//	speed = 0.713771 * 0.9;
 			speed = 0.713771;
@@ -1326,8 +1174,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPercMrunSrasWrflDfl : AmovPercMrunSrasWrflDf
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMrunSlowWrflDfl",0.025,"AmovPercMwlkSrasWrflDfl",0.025,"AmovPercMrunSrasWrflDf",0.025,"AmovPercMrunSrasWrflDl",0.025,"AmovPknlMrunSrasWrflDfl",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.02,"AmovPercMevaSrasWrflDfl",0.025,"AmovPercMevaSlowWrflDfl",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
-			InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMrunSlowWrflDfl",0.025,"AmovPercMwlkSrasWrflDfl",0.025,"AmovPercMrunSrasWrflDf",0.025,"AmovPercMrunSrasWrflDl",0.025,"AmovPknlMrunSrasWrflDfl",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.02,"AmovPercMevaSrasWrflDfl",0.025,"AmovPercMevaSlowWrflDfl",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
 			duty = PercDuty + MrunDuty + SrasDuty + WrflDuty;
 		};
 		
@@ -1364,8 +1210,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPercMrunSrasWrflDfr : AmovPercMrunSrasWrflDfl
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMrunSlowWrflDfr",0.025,"AmovPercMwlkSrasWrflDfr",0.025,"AmovPercMrunSrasWrflDf",0.025,"AmovPercMrunSrasWrflDr",0.025,"AmovPknlMrunSrasWrflDfr",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.02,"AmovPercMevaSrasWrflDfr",0.025,"AmovPercMevaSlowWrflDfr",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
-			InterpolateTo[] = {"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMrunSlowWrflDfr",0.025,"AmovPercMwlkSrasWrflDfr",0.025,"AmovPercMrunSrasWrflDf",0.025,"AmovPercMrunSrasWrflDr",0.025,"AmovPknlMrunSrasWrflDfr",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.02,"AmovPercMevaSrasWrflDfr",0.025,"AmovPercMevaSlowWrflDfr",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.02,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.02,"AdthPercMstpSlowWrflDf_1",0.01,"AdthPercMstpSlowWrflDf_2",0.01,"AdthPercMstpSlowWrflDf_4",0.01};
 			duty = PercDuty + MrunDuty + SrasDuty + WrflDuty;
 		};
 		
@@ -1802,15 +1646,11 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPknlMwlkSrasWpstDf : AmovPknlMstpSrasWpstDnon
 		{
-		//	InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.03,"AmovPknlMwlkSrasWpstDfl",0.025,"AmovPknlMwlkSrasWpstDfr",0.025,"AmovPknlMrunSrasWpstDf",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01,"AmovPknlMevaSrasWpstDf",0.02};
-			InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.03,"AmovPknlMwlkSrasWpstDfl",0.025,"AmovPknlMwlkSrasWpstDfr",0.025,"AmovPknlMrunSrasWpstDf",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01};
 			duty = PknlDuty + MwlkDuty + SrasDuty + WpstDuty;
 		};
 		
 		class AmovPknlMwlkSrasWpstDfl : AmovPknlMwlkSrasWpstDf
 		{
-		//	InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMwlkSrasWpstDfl",0.03,"AmovPknlMwlkSrasWpstDf",0.025,"AmovPknlMwlkSrasWpstDl",0.025,"AmovPknlMrunSrasWpstDfl",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01,"AmovPknlMevaSrasWpstDfl",0.02};
-			InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMwlkSrasWpstDfl",0.03,"AmovPknlMwlkSrasWpstDf",0.025,"AmovPknlMwlkSrasWpstDl",0.025,"AmovPknlMrunSrasWpstDfl",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01};
 			duty = PknlDuty + MwlkDuty + SrasDuty + WpstDuty;
 		};
 		
@@ -1841,15 +1681,11 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPknlMwlkSrasWpstDfr : AmovPknlMwlkSrasWpstDf
 		{
-		//	InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMwlkSrasWpstDfr",0.03,"AmovPknlMwlkSrasWpstDf",0.025,"AmovPknlMwlkSrasWpstDr",0.025,"AmovPknlMrunSrasWpstDfr",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01,"AmovPknlMevaSrasWpstDfr",0.02};
-			InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMwlkSrasWpstDfr",0.03,"AmovPknlMwlkSrasWpstDf",0.025,"AmovPknlMwlkSrasWpstDr",0.025,"AmovPknlMrunSrasWpstDfr",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01};
 			duty = PknlDuty + MwlkDuty + SrasDuty + WpstDuty;
 		};
 		
 		class AmovPknlMrunSrasWpstDf : AmovPercMrunSlowWpstDnon_transition
 		{
-		//	InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMrunSlowWpstDnon_transition",0.02,"AmovPercMrunSrasWpstDf",0.03,"AmovPknlMwlkSrasWpstDf",0.025,"AmovPknlMrunSrasWpstDfl",0.025,"AmovPknlMrunSrasWpstDfr",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01,"AdthPercMstpSrasWpstDf_2",0.01,"AdthPercMstpSrasWpstDf_6",0.01,"AdthPercMstpSrasWpstDf_7",0.01,"AmovPknlMevaSrasWpstDf",0.02};
-			InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMrunSlowWpstDnon_transition",0.02,"AmovPercMrunSrasWpstDf",0.03,"AmovPknlMwlkSrasWpstDf",0.025,"AmovPknlMrunSrasWpstDfl",0.025,"AmovPknlMrunSrasWpstDfr",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01,"AdthPercMstpSrasWpstDf_2",0.01,"AdthPercMstpSrasWpstDf_6",0.01,"AdthPercMstpSrasWpstDf_7",0.01};
 			duty = PknlDuty + MrunDuty + SrasDuty + WpstDuty;
 		};
 		
@@ -1865,8 +1701,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPknlMrunSrasWpstDfl : AmovPknlMrunSrasWpstDf
 		{
-		//	InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMrunSlowWpstDnon_transition",0.02,"AmovPercMrunSrasWpstDfl",0.03,"AmovPknlMwlkSrasWpstDfl",0.025,"AmovPknlMrunSrasWpstDf",0.025,"AmovPknlMrunSrasWpstDl",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01,"AdthPercMstpSrasWpstDf_2",0.01,"AdthPercMstpSrasWpstDf_6",0.01,"AdthPercMstpSrasWpstDf_7",0.01,"AmovPknlMevaSrasWpstDfl",0.02};
-			InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMrunSlowWpstDnon_transition",0.02,"AmovPercMrunSrasWpstDfl",0.03,"AmovPknlMwlkSrasWpstDfl",0.025,"AmovPknlMrunSrasWpstDf",0.025,"AmovPknlMrunSrasWpstDl",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01,"AdthPercMstpSrasWpstDf_2",0.01,"AdthPercMstpSrasWpstDf_6",0.01,"AdthPercMstpSrasWpstDf_7",0.01};
 			duty = PknlDuty + MrunDuty + SrasDuty + WpstDuty;
 		};
 		
@@ -1897,8 +1731,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPknlMrunSrasWpstDfr : AmovPknlMrunSrasWpstDf
 		{
-		//	InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMrunSlowWpstDnon_transition",0.02,"AmovPercMrunSrasWpstDfr",0.03,"AmovPknlMwlkSrasWpstDfr",0.025,"AmovPknlMrunSrasWpstDf",0.025,"AmovPknlMrunSrasWpstDr",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01,"AdthPercMstpSrasWpstDf_2",0.01,"AdthPercMstpSrasWpstDf_6",0.01,"AdthPercMstpSrasWpstDf_7",0.01,"AmovPknlMevaSrasWpstDfr",0.02};
-			InterpolateTo[] = {"AmovPknlMstpSrasWpstDnon",0.02,"AmovPercMrunSlowWpstDnon_transition",0.02,"AmovPercMrunSrasWpstDfr",0.03,"AmovPknlMwlkSrasWpstDfr",0.025,"AmovPknlMrunSrasWpstDf",0.025,"AmovPknlMrunSrasWpstDr",0.025,"AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf",0.01,"AdthPercMstpSrasWpstDf_2",0.01,"AdthPercMstpSrasWpstDf_6",0.01,"AdthPercMstpSrasWpstDf_7",0.01};
 			duty = PknlDuty + MrunDuty + SrasDuty + WpstDuty;
 		};
 		
@@ -2344,36 +2176,36 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			speed = 2;
 		};
 		
-		class amovpercmstpslowwlnrdnon_amovpercmstpsraswlnrdnon : TransAnimBase
+		class AmovPercMstpSlowWlnrDnon_AmovPercMstpSrasWlnrDnon : TransAnimBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_amovpercmstpslowwlnrdnon : TransAnimBase
+		class AmovPercMstpSrasWlnrDnon_AmovPercMstpSlowWlnrDnon : TransAnimBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_amovpercmstpsraswrfldnon : TransAnimBase_noIK
+		class AmovPercMstpSrasWlnrDnon_AmovPercMstpSrasWrflDnon : TransAnimBase_noIK
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		//	speed = 0.4;
 			speed = 0.3;
 		};
 		
-		class amovpercmstpsraswrfldnon_amovpercmstpsraswlnrdnon : TransAnimBase_noIK
+		class AmovPercMstpSrasWrflDnon_AmovPercMstpSrasWlnrDnon : TransAnimBase_noIK
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_amovpknlmstpsraswlnrdnon : TransAnimBase
+		class AmovPercMstpSrasWlnrDnon_AmovPknlMstpSrasWlnrDnon : TransAnimBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SrasDuty + WlnrDuty;
 		//	soundOverride = "walk";
 			soundOverride = "laydown";
 		};
 		
-		class amovpknlmstpsraswlnrdnon_amovpercmstpsraswlnrdnon : TransAnimBase
+		class AmovPknlMstpSrasWlnrDnon_AmovPercMstpSrasWlnrDnon : TransAnimBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
@@ -2423,12 +2255,12 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			speed = 1.5;
 		};
 		
-		class amovpknlmstpsraswrfldnon_amovpknlmstpslowwrfldnon : AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon
+		class AmovPknlMstpSrasWrflDnon_AmovPknlMstpSlowWrflDnon : AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class amovpknlmstpslowwrfldnon_amovpknlmstpsraswrfldnon : amovpknlmstpsraswrfldnon_amovpknlmstpslowwrfldnon
+		class AmovPknlMstpSlowWrflDnon_AmovPknlMstpSrasWrflDnon : AmovPknlMstpSrasWrflDnon_AmovPknlMstpSlowWrflDnon
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
@@ -2546,10 +2378,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf_2 : AmovPknlMstpSrasWpstDnon_AmovPercMsprSrasWpstDf
 		{
-		//	ConnectTo[] = {"AmovPercMevaSrasWpstDf",0.02,"AmovPknlMevaSrasWpstDf",0.02};
-			ConnectTo[] = {"AmovPercMevaSrasWpstDf",0.02};
-		//	InterpolateTo[] = {"AmovPercMevaSrasWpstDf",0.02,"AmovPknlMevaSrasWpstDf",0.02,"AdthPercMstpSrasWpstDf_2",0.01};
-			InterpolateTo[] = {"AmovPercMevaSrasWpstDf",0.02,"AdthPercMstpSrasWpstDf_2",0.01};
 			duty = transDuty + PercDuty + MsprDuty + SrasDuty + WpstDuty;
 		//	actions = "PistolKneelActions";
 			actions = "PistolRunFActions";
@@ -2583,10 +2411,6 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AmovPpneMstpSrasWpstDnon_AmovPercMsprSlowWpstDf_2 : AmovPpneMstpSrasWpstDnon_AmovPercMsprSlowWpstDf
 		{
-		//	ConnectTo[] = {"AmovPercMrunSrasWpstDf",0.02,"AmovPercMevaSrasWpstDf",0.02,"AmovPknlMevaSrasWpstDf",0.02};
-			ConnectTo[] = {"AmovPercMrunSrasWpstDf",0.02,"AmovPercMevaSrasWpstDf",0.02};
-		//	InterpolateTo[] = {"AmovPercMrunSrasWpstDf",0.02,"AmovPercMevaSrasWpstDf",0.02,"AmovPknlMevaSrasWpstDf",0.02,"AdthPercMstpSrasWpstDf_2",0.01};
-			InterpolateTo[] = {"AmovPercMrunSrasWpstDf",0.02,"AmovPercMevaSrasWpstDf",0.02,"AdthPercMstpSrasWpstDf_2",0.01};
 			duty = transDuty + PercDuty + MsprDuty + SlowDuty + WpstDuty;
 		};
 		
@@ -2715,7 +2539,7 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		//	speed = 1; //OA 1.63
 		//	speed = 0.769231; //Dayz original
-			speed = 1.10;
+			speed = 1.1;
 		};
 		
 		class AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon : TransAnimBase
@@ -3277,7 +3101,7 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			speed = 0.34;
 		};
 		
-		class amovpknlmstpsnonwnondnon_amovpknlmstpsraswlnrdnon : AmovPercMstpSnonWnonDnon_AmovPknlMstpSrasWlnrDnon
+		class AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWlnrDnon : AmovPercMstpSnonWnonDnon_AmovPknlMstpSrasWlnrDnon
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
@@ -5071,13 +4895,13 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class LadderRifleTopOff : LadderCivilTopOff
 		{
-			ConnectTo[] = {"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon",1.000000};
+			ConnectTo[] = {"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon",1};
 			InterpolateTo[] = {"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon",0.010000};
 		};
 		
 		class LadderRifleDownOff: LadderRifleTopOff
 		{
-			ConnectTo[] = {"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon",1.000000};
+			ConnectTo[] = {"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon",1};
 			InterpolateTo[] = {"AmovPercMstpSlowWrflDnon_AmovPercMstpSrasWrflDnon",0.010000};
 		};
 		
@@ -6535,43 +6359,31 @@ class CfgMovesMaleSdr : CfgMovesBasic
 		
 		class AidlPercMstpSrasWpstDnon01 : AidlPercMstpSrasWpstDnon0S
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02,"AdthPercMstpSrasWpstDnon_1",0.01,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02};
-			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02,"AdthPercMstpSrasWpstDnon_1",0.01};
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
 		class AidlPercMstpSrasWpstDnon_idleSteady01 : AidlPercMstpSrasWpstDnon01
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02};
-			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02};
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
 		class AidlPercMstpSrasWpstDnon_idleSteady02 : AidlPercMstpSrasWpstDnon_idleSteady01
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02};
-			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02};
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
 		class AidlPercMstpSrasWpstDnon_idleSteady03 : AidlPercMstpSrasWpstDnon_idleSteady01
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02};
-			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02};
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
 		class AidlPercMstpSrasWpstDnon02 : AidlPercMstpSrasWpstDnon01
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02,"AdthPercMstpSrasWpstDnon_1",0.01,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02};
-			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02,"AdthPercMstpSrasWpstDnon_1",0.01};
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
 		class AidlPercMstpSrasWpstDnon03 : AidlPercMstpSrasWpstDnon01
 		{
-		//	InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02,"AdthPercMstpSrasWpstDnon_1",0.01,"AdthPercMstpSlowWpstDnon_A1",0.02,"AdthPercMstpSlowWpstDnon_A5",0.02,"AdthPercMstpSlowWpstDnon_A4",0.02,"AdthPercMstpSlowWpstDnon_A3",0.02,"AdthPercMstpSlowWpstDnon_A2",0.02};
-			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMstpSlowWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.02,"AmovPercMrunSrasWpstDf",0.02,"AdthPercMstpSrasWpstDnon_1",0.01};
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
@@ -7505,122 +7317,122 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PercDuty + MstpDuty + SnonDuty + WpstDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsnonwnondnon_5tdrcodr_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon_5tdrcodr_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsnonwnondnon_5ttruckbed_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon_5ttruckbed_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsnonwnondnon_carcodr_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon_carcodr_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsnonwnondnon_cardr_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon_cardr_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsnonwnondnon_carhigh_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon_carhigh_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsnonwnondnon_carlow_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon_carlow_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsraswpstdnon_5t_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSrasWpstDnon_5t_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsraswpstdnon_5t_end_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSrasWpstDnon_5t_end_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsraswpstdnon_carhigh_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSrasWpstDnon_carhigh_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsraswpstdnon_carlow_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSrasWpstDnon_carlow_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsraswpstdnon_carlow_end_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSrasWpstDnon_carlow_end_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsraswrfldnon_5t_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSrasWrflDnon_5t_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsraswrfldnon_carhigh_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSrasWrflDnon_carhigh_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class acrgpknlmstpsnonwnondnon_amovpercmstpsraswrfldnon_carlow_forgoten : StandBase
+		class AcrgPknlMstpSnonWnonDnon_AmovPercMstpSrasWrflDnon_carlow_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthpercmrunsraswlnrdb_i_forgoten : StandBase
+		class AdthPercMrunSrasWlnrDb_i_forgoten : StandBase
 		{
 			duty = PercDuty + MrunDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class adthpercmrunsraswlnrdf_a_forgoten : StandBase
+		class AdthPercMrunSrasWlnrDf_a_forgoten : StandBase
 		{
 			duty = PercDuty + MrunDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class adthpercmrunsraswlnrdf_b_forgoten : StandBase
+		class AdthPercMrunSrasWlnrDf_b_forgoten : StandBase
 		{
 			duty = PercDuty + MrunDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class adthpercmrunsraswlnrdf_c_forgoten : StandBase
+		class AdthPercMrunSrasWlnrDf_c_forgoten : StandBase
 		{
 			duty = PercDuty + MrunDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class adthpercmrunsraswlnrdf_e_forgoten : StandBase
+		class AdthPercMrunSrasWlnrDf_e_forgoten : StandBase
 		{
 			duty = PercDuty + MrunDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class adthpercmrunsraswlnrdf_f_forgoten : StandBase
+		class AdthPercMrunSrasWlnrDf_f_forgoten : StandBase
 		{
 			duty = PercDuty + MrunDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class adthpercmrunsraswlnrdf_g_forgoten : StandBase
+		class AdthPercMrunSrasWlnrDf_g_forgoten : StandBase
 		{
 			duty = PercDuty + MrunDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class adthpercmstpslowwpstdb_10_forgoten : StandBase
+		class AdthPercMstpSlowWpstDb_10_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class adthpercmstpslowwpstdb_11_forgoten : StandBase
+		class AdthPercMstpSlowWpstDb_11_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class adthpercmstpslowwpstdnon_4_forgoten : StandBase
+		class AdthPercMstpSlowWpstDnon_4_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
@@ -7635,27 +7447,27 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PercDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class adthpercmstpsnonwnondf_1_forgoten : StandBase
+		class AdthPercMstpSnonWnonDf_1_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class adthpercmstpsnonwnondnon_bianm_forgoten : StandBase
+		class AdthPercMstpSnonWnonDnon_bianm_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class adthpercmstpsnonwnondnon_forgoten : StandBase
+		class AdthPercMstpSnonWnonDnon_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class adthpercmstpsraswrfldb_8_forgoten : StandBase
+		class AdthPercMstpSrasWrflDb_8_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthpercmstpsraswrfldnon_forgoten : StandBase
+		class AdthPercMstpSrasWrflDnon_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
@@ -7680,12 +7492,12 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthpknlmrunslowwlnrdf_1_forgoten : StandBase
+		class AdthPknlMrunSlowWlnrDf_1_forgoten : StandBase
 		{
 			duty = PknlDuty + MrunDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class adthpknlmrunslowwlnrdf_2_forgoten : StandBase
+		class AdthPknlMrunSlowWlnrDf_2_forgoten : StandBase
 		{
 			duty = PknlDuty + MrunDuty + SlowDuty + WlnrDuty;
 		};
@@ -7695,32 +7507,32 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PknlDuty + MnonDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class adthpknlmstpslowwpstdnon_3_forgoten : StandBase
+		class AdthPknlMstpSlowWpstDnon_3_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class adthpknlmstpslowwrfldf_3_forgoten : StandBase
+		class AdthPknlMstpSlowWrflDf_3_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class adthpknlmstpslowwrfldnon_1_forgoten : StandBase
+		class AdthPknlMstpSlowWrflDnon_1_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class adthpknlmstpslowwrfldnon_2_forgoten : StandBase
+		class AdthPknlMstpSlowWrflDnon_2_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class adthpknlmstpslowwrfldnon_3_forgoten : StandBase
+		class AdthPknlMstpSlowWrflDnon_3_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class adthpknlmstpsnonwnondnon_forgoten : StandBase
+		class AdthPknlMstpSnonWnonDnon_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
@@ -7730,227 +7542,227 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PknlDuty + MnonDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class adthpknlmstpsraswrfldnon_forgoten : StandBase
+		class AdthPknlMstpSrasWrflDnon_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthpknlmstpsraswrfldnon_v1_forgoten : StandBase
+		class AdthPknlMstpSrasWrflDnon_v1_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthpknlmstpsraswrfldnon_v2_forgoten : StandBase
+		class AdthPknlMstpSrasWrflDnon_v2_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthpknlmstpsraswrfldnon_v3_forgoten : StandBase
+		class AdthPknlMstpSrasWrflDnon_v3_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthpknlmstpsraswrfldnon_v4_forgoten : StandBase
+		class AdthPknlMstpSrasWrflDnon_v4_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthppnemstpsnonwnondnon_forgoten : StandBase
+		class AdthPpneMstpSnonWnonDnon_forgoten : StandBase
 		{
 			duty = PpneDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class adthppnemstpsraswrfldnon_forgoten : StandBase
+		class AdthPpneMstpSrasWrflDnon_forgoten : StandBase
 		{
 			duty = PpneDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthppnemstpsraswrfldnon_v1_forgoten : StandBase
+		class AdthPpneMstpSrasWrflDnon_v1_forgoten : StandBase
 		{
 			duty = PpneDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class adthpsitmstpsnonwnondnon_forgoten : StandBase
+		class AdthPsitMstpSnonWnonDnon_forgoten : StandBase
 		{
 			duty = PsitDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class aidlpercmstpslowwlnrdnon01_forgoten : StandBase
+		class AidlPercMstpSlowWlnrDnon01_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class aidlpercmstpslowwlnrdnon02_forgoten : StandBase
+		class AidlPercMstpSlowWlnrDnon02_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class aidlpercmstpslowwlnrdnon03_forgoten : StandBase
+		class AidlPercMstpSlowWlnrDnon03_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class aidlpercmstpsraswrfldnon01_forgoten : StandBase
+		class AidlPercMstpSrasWrflDnon01_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class aidlpercmstpsraswrfldnon02_forgoten : StandBase
+		class AidlPercMstpSrasWrflDnon02_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class aidlpercmstpsraswrfldnon03_forgoten : StandBase
+		class AidlPercMstpSrasWrflDnon03_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class aidlpknlmstpslowwlnrdnon01_forgoten : StandBase
+		class AidlPknlMstpSlowWlnrDnon01_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class aidlpknlmstpslowwlnrdnon02_forgoten : StandBase
+		class AidlPknlMstpSlowWlnrDnon02_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class aidlpknlmstpslowwlnrdnon03_forgoten : StandBase
+		class AidlPknlMstpSlowWlnrDnon03_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class aidlpknlmstpslowwlnrdnon04_forgoten : StandBase
+		class AidlPknlMstpSlowWlnrDnon04_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class aidlpknlmstpslowwlnrdnon05_forgoten : StandBase
+		class AidlPknlMstpSlowWlnrDnon05_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class aidlpknlmstpslowwpstdnon01_forgoten : StandBase
+		class AidlPknlMstpSlowWpstDnon01_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class aidlpknlmstpslowwpstdnon02_forgoten : StandBase
+		class AidlPknlMstpSlowWpstDnon02_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class aidlpknlmstpslowwpstdnon03_forgoten : StandBase
+		class AidlPknlMstpSlowWpstDnon03_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class aidlpsitmstpsnonwnondnon_ground00 : StandBase
+		class AidlPsitMstpSnonWnonDnon_ground00 : StandBase
 		{
 			duty = PsitDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class aidlpsitmstpsnonwnondnon_ground01_forgoten : StandBase
+		class AidlPsitMstpSnonWnonDnon_ground01_forgoten : StandBase
 		{
 			duty = PsitDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class aidlpsitmstpsnonwnondnon_ground02_forgoten : StandBase
+		class AidlPsitMstpSnonWnonDnon_ground02_forgoten : StandBase
 		{
 			duty = PsitDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class aidlpsitmstpsnonwnondnon_ground03_forgoten : StandBase
+		class AidlPsitMstpSnonWnonDnon_ground03_forgoten : StandBase
 		{
 			duty = PsitDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class ainvpknlmstpslaywrfldnon_amovpercmstpslowwrfldnon_forgoten : StandBase
+		class AinvPknlMstpSlayWrflDnon_AmovPercMstpSlowWrflDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class ainvpknlmstpslaywrfldnon_amovpknlmstpslowwrfldnon_forgoten : StandBase
+		class AinvPknlMstpSlayWrflDnon_AmovPknlMstpSlowWrflDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class ainvpknlmstpslaywrfldnon_healed_forgoten : StandBase
+		class AinvPknlMstpSlayWrflDnon_healed_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlayDuty + WrflDuty;
 		};
 		
-		class ainvpknlmstpsnonwnondnon_amovpercmstpsnonwnondnon_bag_forgoten : StandBase
+		class AinvPknlMstpSnonWnonDnon_AmovPercMstpSnonWnonDnon_bag_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class ainvpknlmstpsnonwnondnon_healed_forgoten : StandBase
+		class AinvPknlMstpSnonWnonDnon_healed_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class aldrpercmstpsnonwnondnon_slide_forgoten : StandBase
+		class AldrPercMstpSnonWnonDnon_slide_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class aldrpercmwlksnonwnondd_amovpercmstpsnonwnondnon_forgoten : StandBase
+		class aldrpercmwlksnonwnondd_AmovPercMstpSnonWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class aldrpercmwlksnonwnondu_amovpercmstpsnonwnondnon_forgoten : StandBase
+		class aldrpercmwlksnonwnondu_AmovPercMstpSnonWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmrunslowwpstdf_awoppercmrunsgthwnondf_1_forgoten : StandBase
+		class AmovPercMrunSlowWpstDf_AwopPercMrunSgthWnonDf_1_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MrunDuty + SgthDuty + WnonDuty;
 		};
 		
-		class amovpercmrunslowwpstdf_awoppercmrunsgthwnondf_2_forgoten : StandBase
+		class AmovPercMrunSlowWpstDf_AwopPercMrunSgthWnonDf_2_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MrunDuty + SgthDuty + WnonDuty;
 		};
 		
-		class amovpercmrunslowwrfldf_awoppercmrunsgthwrfldf_forgoten : StandBase
+		class AmovPercMrunSlowWrflDf_AwopPercMrunSgthWrflDf_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MrunDuty + SgthDuty + WrflDuty;
 		};
 		
-		class amovpercmrunsnonwnondf_awoppercmrunsgthwnondf_forgoten : StandBase
+		class AmovPercMrunSnonWnonDf_AwopPercMrunSgthWnonDf_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MrunDuty + SgthDuty + WnonDuty;
 		};
 		
-		class amovpercmrunssurwnondf_forgoten : StandBase
+		class AmovPercMrunSsurWnonDf_forgoten : StandBase
 		{
 			duty = PercDuty + MrunDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpercmstpslowwlnrdnon_forgoten : StandBase
+		class AmovPercMstpSlowWlnrDnon_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpslowwlnrdnon_aiturn180l_forgoten : StandBase
+		class AmovPercMstpSlowWlnrDnon_aiturn180l_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpslowwlnrdnon_aiturn180r_forgoten : StandBase
+		class AmovPercMstpSlowWlnrDnon_aiturn180r_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon : AmovPknlMstpSrasWlnrDnon
+		class AmovPercMstpSrasWlnrDnon : AmovPknlMstpSrasWlnrDnon
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class AidlPercMstpSrasWlnrDnon_player_S0 : amovpercmstpsraswlnrdnon
+		class AidlPercMstpSrasWlnrDnon_player_S0 : AmovPercMstpSrasWlnrDnon
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
@@ -7970,7 +7782,7 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class AidlPercMstpSrasWlnrDnon_S0 : amovpercmstpsraswlnrdnon
+		class AidlPercMstpSrasWlnrDnon_S0 : AmovPercMstpSrasWlnrDnon
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
@@ -8130,52 +7942,52 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class AovrPercMstpSrasWlnrDf : amovpercmstpsraswlnrdnon
+		class AovrPercMstpSrasWlnrDf : AmovPercMstpSrasWlnrDnon
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class aidlpercmstpsraswlnrdnon_S : amovpercmstpsraswlnrdnon
+		class AidlPercMstpSrasWlnrDnon_S : AmovPercMstpSrasWlnrDnon
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class aidlpercmstpsraswlnrdnon_3 : aidlpercmstpsraswlnrdnon_S
+		class AidlPercMstpSrasWlnrDnon_3 : AidlPercMstpSrasWlnrDnon_S
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class aidlpercmstpsraswlnrdnon_1 : aidlpercmstpsraswlnrdnon_3
+		class AidlPercMstpSrasWlnrDnon_1 : AidlPercMstpSrasWlnrDnon_3
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class aidlpercmstpsraswlnrdnon_2 : aidlpercmstpsraswlnrdnon_3
+		class AidlPercMstpSrasWlnrDnon_2 : AidlPercMstpSrasWlnrDnon_3
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpslowwlnrdnon : amovpercmstpsraswlnrdnon
+		class AmovPercMstpSlowWlnrDnon : AmovPercMstpSrasWlnrDnon
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class AovrPercMstpSlowWlnrDf : amovpercmstpslowwlnrdnon
+		class AovrPercMstpSlowWlnrDf : AmovPercMstpSlowWlnrDnon
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpslowwlnrdnon_turnl : amovpercmstpslowwlnrdnon
+		class AmovPercMstpSlowWlnrDnon_turnl : AmovPercMstpSlowWlnrDnon
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpslowwlnrdnon_turnR : amovpercmstpslowwlnrdnon_turnl
+		class AmovPercMstpSlowWlnrDnon_turnR : AmovPercMstpSlowWlnrDnon_turnl
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class AmovPercMwlkSlowWlnrDf : amovpercmstpslowwlnrdnon
+		class AmovPercMwlkSlowWlnrDf : AmovPercMstpSlowWlnrDnon
 		{
 			duty = PercDuty + MwlkDuty + SlowDuty + WlnrDuty;
 		};
@@ -8215,7 +8027,7 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PercDuty + MwlkDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class AmovPercMwlkSrasWlnrDf : amovpercmstpsraswlnrdnon
+		class AmovPercMwlkSrasWlnrDf : AmovPercMstpSrasWlnrDnon
 		{
 			duty = PercDuty + MwlkDuty + SrasDuty + WlnrDuty;
 		};
@@ -8303,292 +8115,292 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PercDuty + MrunDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_turnl : amovpercmstpsraswlnrdnon
+		class AmovPercMstpSrasWlnrDnon_turnl : AmovPercMstpSrasWlnrDnon
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpSraswlnrdnon_turnr : amovpercmstpsraswlnrdnon
+		class AmovPercMstpSrasWlnrDnon_turnr : AmovPercMstpSrasWlnrDnon
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpslowwlnrdnon_amovpknlmstpslowwlnrdnon_forgoten : StandBase
+		class AmovPercMstpSlowWlnrDnon_AmovPknlMstpSlowWlnrDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpslowwpstdnon_forgoten : StandBase
+		class AmovPercMstpSlowWpstDnon_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpercmstpslowwpstdnon_aiturn180l_forgoten : StandBase
+		class AmovPercMstpSlowWpstDnon_aiturn180l_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpercmstpslowwpstdnon_aiturn180r_forgoten : StandBase
+		class AmovPercMstpSlowWpstDnon_aiturn180r_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpercmstpslowwpstdnon_aiturn90l_forgoten : StandBase
+		class AmovPercMstpSlowWpstDnon_aiturn90l_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpercmstpslowwpstdnon_aiturn90r_forgoten : StandBase
+		class AmovPercMstpSlowWpstDnon_aiturn90r_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpercmstpslowwpstdnon_amovpercmstpssurwnondnon_forgoten : StandBase
+		class AmovPercMstpSlowWpstDnon_AmovPercMstpSsurWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpercmstpslowwpstdnon_amovpknlmstpslowwpstdnon_forgoten : StandBase
+		class AmovPercMstpSlowWpstDnon_AmovPknlMstpSlowWpstDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpercmstpslowwpstdnon_amovppnemstpsraswpstdnon_forgoten : StandBase
+		class AmovPercMstpSlowWpstDnon_AmovPpneMstpSrasWpstDnon_forgoten : StandBase
 		{
 			duty = transDuty + PpneDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpercmstpslowwrfldnon_ainvpknlmstpslaywrfldnon_forgoten : StandBase
+		class AmovPercMstpSlowWrflDnon_AinvPknlMstpSlayWrflDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlayDuty + WrflDuty;
 		};
 		
-		class amovpercmstpslowwrfldnon_aiturn180l_forgoten : StandBase
+		class AmovPercMstpSlowWrflDnon_aiturn180l_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class amovpercmstpslowwrfldnon_aiturn180r_forgoten : StandBase
+		class AmovPercMstpSlowWrflDnon_aiturn180r_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class amovpercmstpslowwrfldnon_amovpercmstpssurwnondnon_forgoten : StandBase
+		class AmovPercMstpSlowWrflDnon_AmovPercMstpSsurWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpercmstpslowwrfldnon_awoppercmstpsoptwbindnon_forgoten : StandBase
+		class AmovPercMstpSlowWrflDnon_awoppercmstpsoptwbindnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SoptDuty + WbinDuty;
 		};
 		
-		class amovpercmstpslowwrfldnon_awoppercmstpsoptwbindnon_end_forgoten : StandBase
+		class AmovPercMstpSlowWrflDnon_awoppercmstpsoptwbindnon_end_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SoptDuty + WbinDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_acrgpknlmstpsnonwnondnon_5tdrcodr_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_5tdrcodr_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_acrgpknlmstpsnonwnondnon_5ttruckbed_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_5ttruckbed_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_acrgpknlmstpsnonwnondnon_carcodr_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_carcodr_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_acrgpknlmstpsnonwnondnon_cardr_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_cardr_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_acrgpknlmstpsnonwnondnon_carhigh_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_carhigh_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_acrgpknlmstpsnonwnondnon_carlow_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_carlow_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_ainvpknlmstpsnonwnondnon_bag_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_AinvPknlMstpSnonWnonDnon_bag_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_aiturn180l_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_aiturn180l_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_aiturn180r_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_aiturn180r_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_amovpercmstpsraswlnrdnon : TransAnimBase
+		class AmovPercMstpSnonWnonDnon_AmovPercMstpSrasWlnrDnon : TransAnimBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class AwopPercMstpSoptWbinDnon_AmovPercMstpSrasWlnrDnon_end : amovpercmstpsnonwnondnon_amovpercmstpsraswlnrdnon
+		class AwopPercMstpSoptWbinDnon_AmovPercMstpSrasWlnrDnon_end : AmovPercMstpSnonWnonDnon_AmovPercMstpSrasWlnrDnon
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_opendoor01_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_opendoor01_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_opendoor02_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_opendoor02_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_opendoor03_forgoten : StandBase
+		class AmovPercMstpSnonWnonDnon_opendoor03_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsnonwnondnon_smoking : StandBase
+		class AmovPercMstpSnonWnonDnon_smoking : StandBase
 		{
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpercmstpspatwrfldnon_forgoten : StandBase
+		class AmovPercMstpSpatWrflDnon_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SpatDuty + WrflDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_aiturn180l_forgoten : StandBase
+		class AmovPercMstpSrasWlnrDnon_aiturn180l_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_aiturn180r_forgoten : StandBase
+		class AmovPercMstpSrasWlnrDnon_aiturn180r_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_aiturn90l_forgoten : StandBase
+		class AmovPercMstpSrasWlnrDnon_aiturn90l_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_aiturn90r_forgoten : StandBase
+		class AmovPercMstpSrasWlnrDnon_aiturn90r_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_amovpercmstpsnonwnondnon : TransAnimBase
+		class AmovPercMstpSrasWlnrDnon_AmovPercMstpSnonWnonDnon : TransAnimBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class AmovPercMstpSrasWlnrDnon_AwopPercMstpSoptWbinDnon : amovpercmstpsraswlnrdnon_amovpercmstpsnonwnondnon
+		class AmovPercMstpSrasWlnrDnon_AwopPercMstpSoptWbinDnon : AmovPercMstpSrasWlnrDnon_AmovPercMstpSnonWnonDnon
 		{
 			duty = transDuty + PercDuty + MstpDuty + SoptDuty + WbinDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_amovpercmstpsraswpstdnon : TransAnimBase
+		class AmovPercMstpSrasWlnrDnon_AmovPercMstpSrasWpstDnon : TransAnimBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpercmstpsraswlnrdnon_amovpercmstpsraswpstdnon_end : TransAnimBase
+		class AmovPercMstpSrasWlnrDnon_AmovPercMstpSrasWpstDnon_end : TransAnimBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpercmstpsraswpstdnon_amovpercmstpsraswlnrdnon : TransAnimBase
+		class AmovPercMstpSrasWpstDnon_AmovPercMstpSrasWlnrDnon : TransAnimBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswpstdnon_aiturn180l_forgoten : StandBase
+		class AmovPercMstpSrasWpstDnon_aiturn180l_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpercmstpsraswpstdnon_aiturn180r_forgoten : StandBase
+		class AmovPercMstpSrasWpstDnon_aiturn180r_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpercmstpsraswpstdnon_amovpercmstpsraswlnrdnon_end : TransAnimBase
+		class AmovPercMstpSrasWpstDnon_AmovPercMstpSrasWlnrDnon_end : TransAnimBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpercmstpsraswpstdnon_amovpercmstpssurwnondnon_forgoten : StandBase
+		class AmovPercMstpSrasWpstDnon_AmovPercMstpSsurWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpercmstpsraswrfldnon_aiturn180l_forgoten : StandBase
+		class AmovPercMstpSrasWrflDnon_aiturn180l_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpercmstpsraswrfldnon_aiturn180r_forgoten : StandBase
+		class AmovPercMstpSrasWrflDnon_aiturn180r_forgoten : StandBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpercmstpsraswrfldnon_amovpercmstpssurwnondnon_forgoten : StandBase
+		class AmovPercMstpSrasWrflDnon_AmovPercMstpSsurWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpercmstpssurwnondnon_amovpknlmstpssurwnondnon_forgoten : StandBase
+		class AmovPercMstpSsurWnonDnon_AmovPknlMstpSsurWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpercmwlkslowwrfldf_awoppercmrunsgthwrfldf_forgoten : StandBase
+		class AmovPercMwlkSlowWrflDf_AwopPercMrunSgthWrflDf_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MrunDuty + SgthDuty + WrflDuty;
 		};
 		
-		class amovpercmwlksnonwnondf_awoppercmrunsgthwnondf_forgoten : StandBase
+		class AmovPercMwlkSnonWnonDf_AwopPercMrunSgthWnonDf_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MrunDuty + SgthDuty + WnonDuty;
 		};
 		
-		class amovpercmwlksraswpstdf_awoppercmrunsgthwnondf_2_forgoten : StandBase
+		class AmovPercMwlkSrasWpstDf_AwopPercMrunSgthWnonDf_2_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MrunDuty + SgthDuty + WnonDuty;
 		};
 		
-		class amovpercmwlksraswrfldf_awoppercmrunsgthwrfldf_forgoten : StandBase
+		class AmovPercMwlkSrasWrflDf_AwopPercMrunSgthWrflDf_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MrunDuty + SgthDuty + WrflDuty;
 		};
 		
-		class amovpercmwlkssurwnondf_forgoten : StandBase
+		class AmovPercMwlkSsurWnonDf_forgoten : StandBase
 		{
 			duty = PercDuty + MwlkDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpknlmrunslowwrfldf_amovpknlmevasraswrfldb_forgoten : StandBase
+		class AmovPknlMrunSlowWrflDf_AmovPknlMevaSrasWrflDb_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MevaDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmrunslowwrfldf_amovpknlmevasraswrfldl_forgoten : StandBase
+		class AmovPknlMrunSlowWrflDf_AmovPknlMevaSrasWrflDl_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MevaDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmrunslowwrfldf_amovpknlmevasraswrfldr_forgoten : StandBase
+		class AmovPknlMrunSlowWrflDf_AmovPknlMevaSrasWrflDr_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MevaDuty + SrasDuty + WrflDuty;
 		};
@@ -8598,7 +8410,7 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class adthpercmstpsraswrfldnon_NikitinDead : CutSceneAnimationBase
+		class AdthPercMstpSrasWrflDnon_NikitinDead : CutSceneAnimationBase
 		{
 			duty = PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
@@ -8623,77 +8435,77 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpknlmrunsraswrfldf_amovpknlmevasraswrfldb_forgoten : StandBase
+		class AmovPknlMrunSrasWrflDf_AmovPknlMevaSrasWrflDb_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MevaDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmrunsraswrfldf_amovpknlmevasraswrfldl_forgoten : StandBase
+		class AmovPknlMrunSrasWrflDf_AmovPknlMevaSrasWrflDl_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MevaDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmrunsraswrfldf_amovpknlmevasraswrfldr_forgoten : StandBase
+		class AmovPknlMrunSrasWrflDf_AmovPknlMevaSrasWrflDr_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MevaDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmrunsraswrfldnon_transition_forgoten : StandBase
+		class AmovPknlMrunSrasWrflDnon_transition_forgoten : StandBase
 		{
 			duty = PknlDuty + MrunDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmstpslowwlnrdnon_forgoten : StandBase
+		class AmovPknlMstpSlowWlnrDnon_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpknlmstpslowwlnrdnon_aiturn90l_forgoten : StandBase
+		class AmovPknlMstpSlowWlnrDnon_aiturn90l_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpknlmstpslowwlnrdnon_aiturn90r_forgoten : StandBase
+		class AmovPknlMstpSlowWlnrDnon_aiturn90r_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpknlmstpslowwlnrdnon_amovpercmstpslowwlnrdnon_forgoten : StandBase
+		class AmovPknlMstpSlowWlnrDnon_AmovPercMstpSlowWlnrDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpknlmstpslowwlnrdnon_amovpknlmstpsraswlnrdnon_forgoten : StandBase
+		class AmovPknlMstpSlowWlnrDnon_AmovPknlMstpSrasWlnrDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpknlmstpslowwpstdnon_forgoten : StandBase
+		class AmovPknlMstpSlowWpstDnon_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpslowwpstdnon_aiturn90l_forgoten : StandBase
+		class AmovPknlMstpSlowWpstDnon_aiturn90l_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpslowwpstdnon_aiturn90r_forgoten : StandBase
+		class AmovPknlMstpSlowWpstDnon_aiturn90r_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpslowwpstdnon_amovpercmstpslowwpstdnon_forgoten : StandBase
+		class AmovPknlMstpSlowWpstDnon_AmovPercMstpSlowWpstDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpslowwpstdnon_amovpknlmstpsraswpstdnon_forgoten : StandBase
+		class AmovPknlMstpSlowWpstDnon_AmovPknlMstpSrasWpstDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpslowwpstdnon_amovpknlmstpssurwnondnon_forgoten : StandBase
+		class AmovPknlMstpSlowWpstDnon_AmovPknlMstpSsurWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SsurDuty + WnonDuty;
 		};
@@ -8703,252 +8515,252 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmstpslowwpstdnon_amovppnemstpsraswpstdnon_forgoten : StandBase
+		class AmovPknlMstpSlowWpstDnon_AmovPpneMstpSrasWpstDnon_forgoten : StandBase
 		{
 			duty = transDuty + PpneDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpslowwrfldnon_ainvpknlmstpslaywrfldnon_forgoten : StandBase
+		class AmovPknlMstpSlowWrflDnon_AinvPknlMstpSlayWrflDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlayDuty + WrflDuty;
 		};
 		
-		class amovpknlmstpslowwrfldnon_amovpknlmevasraswrfldb_forgoten : StandBase
+		class AmovPknlMstpSlowWrflDnon_AmovPknlMevaSrasWrflDb_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MevaDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmstpslowwrfldnon_amovpknlmevasraswrfldl_forgoten : StandBase
+		class AmovPknlMstpSlowWrflDnon_AmovPknlMevaSrasWrflDl_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MevaDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmstpslowwrfldnon_amovpknlmevasraswrfldr_forgoten : StandBase
+		class AmovPknlMstpSlowWrflDnon_AmovPknlMevaSrasWrflDr_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MevaDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmstpslowwrfldnon_amovpknlmstpssurwnondnon_forgoten : StandBase
+		class AmovPknlMstpSlowWrflDnon_AmovPknlMstpSsurWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpknlmstpslowwrfldnon_amovppnemstpsraswrfldnon_forgoten : StandBase
+		class AmovPknlMstpSlowWrflDnon_AmovPpneMstpSrasWrflDnon_forgoten : StandBase
 		{
 			duty = transDuty + PpneDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmstpslowwrfldnon_awoppknlmstpsoptwbindnon_forgoten : StandBase
+		class AmovPknlMstpSlowWrflDnon_awoppknlmstpsoptwbindnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SoptDuty + WbinDuty;
 		};
 		
-		class amovpknlmstpslowwrfldnon_awoppknlmstpsoptwbindnon_end_forgoten : StandBase
+		class AmovPknlMstpSlowWrflDnon_awoppknlmstpsoptwbindnon_end_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SoptDuty + WbinDuty;
 		};
 		
-		class amovpknlmstpsnonwnondnon_amovpercmstpssurwnondnon_forgoten : StandBase
+		class AmovPknlMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpknlmstpsnonwnondnon_amovpknlmstpsraswlnrdnon_forgoten : StandBase
+		class AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWlnrDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovpknlmstpsnonwnondnon_amovpknlmstpsraswrfldnon_forgoten : StandBase
+		class AmovPknlMstpSnonWnonDnon_AmovPknlMstpSrasWrflDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class amovpknlmstpsnonwnondnon_awoppknlmstpsoptwbindnon_forgoten : StandBase
+		class AmovPknlMstpSnonWnonDnon_awoppknlmstpsoptwbindnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SoptDuty + WbinDuty;
 		};
 		
-		class amovpknlmstpsnonwnondnon_awoppknlmstpsoptwbindnon_end_forgoten : StandBase
+		class AmovPknlMstpSnonWnonDnon_awoppknlmstpsoptwbindnon_end_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SoptDuty + WbinDuty;
 		};
 		
-		class amovpknlmstpsraswlnrdnon_amovpknlmstpslowwlnrdnon_forgoten : StandBase
+		class AmovPknlMstpSrasWlnrDnon_AmovPknlMstpSlowWlnrDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlowDuty + WlnrDuty;
 		};
 		
-		class amovpknlmstpsraswlnrdnon_amovpknlmstpsnonwnondnon_forgoten : StandBase
+		class AmovPknlMstpSrasWlnrDnon_AmovPknlMstpSnonWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpknlmstpsraswlnrdnon_amovpknlmstpsnonwnondnon : AmovPknlMstpSrasWlnrDnon_AmovPercMstpSnonWnonDnon
+		class AmovPknlMstpSrasWlnrDnon_AmovPknlMstpSnonWnonDnon : AmovPknlMstpSrasWlnrDnon_AmovPercMstpSnonWnonDnon
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpknlmstpsraswpstdnon_amovpknlmstpslowwpstdnon_forgoten : StandBase
+		class AmovPknlMstpSrasWpstDnon_AmovPknlMstpSlowWpstDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlowDuty + WpstDuty;
 		};
 		
-		class amovpknlmstpsraswpstdnon_amovpknlmstpssurwnondnon_forgoten : StandBase
+		class AmovPknlMstpSrasWpstDnon_AmovPknlMstpSsurWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpknlmstpsraswrfldnon_amovpercmstpssurwnondnon_forgoten : StandBase
+		class AmovPknlMstpSrasWrflDnon_AmovPercMstpSsurWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SsurDuty + WnonDuty;
 		};
 		
-		class amovpknlmstpsraswrfldnon_amovpknlmstpsnonwnondnon_forgoten : StandBase
+		class AmovPknlMstpSrasWrflDnon_AmovPknlMstpSnonWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovpknlmwlksraswlnrdnon_transition_forgoten : StandBase
+		class AmovPknlMwlkSrasWlnrDnon_transition_forgoten : StandBase
 		{
 			duty = PknlDuty + MwlkDuty + SrasDuty + WlnrDuty;
 		};
 		
-		class amovppnemsprslowwrfldb_forgoten : StandBase
+		class AmovPpneMsprSlowWrflDb_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SlowDuty + WrflDuty;
 		};
 		
-		class amovppnemsprslowwrfldbl_forgoten : StandBase
+		class AmovPpneMsprSlowWrflDbl_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SlowDuty + WrflDuty;
 		};
 		
-		class amovppnemsprslowwrfldbr_forgoten : StandBase
+		class AmovPpneMsprSlowWrflDbr_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SlowDuty + WrflDuty;
 		};
 		
-		class amovppnemsprslowwrfldl_forgoten : StandBase
+		class AmovPpneMsprSlowWrflDl_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SlowDuty + WrflDuty;
 		};
 		
-		class amovppnemsprslowwrfldr_forgoten : StandBase
+		class AmovPpneMsprSlowWrflDr_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SlowDuty + WrflDuty;
 		};
 		
-		class amovppnemsprsnonwnondb_forgoten : StandBase
+		class AmovPpneMsprSnonWnonDb_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovppnemsprsnonwnondbl_forgoten : StandBase
+		class AmovPpneMsprSnonWnonDbl_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovppnemsprsnonwnondbr_forgoten : StandBase
+		class AmovPpneMsprSnonWnonDbr_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovppnemsprsnonwnondf_forgoten : StandBase
+		class AmovPpneMsprSnonWnonDf_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovppnemsprsnonwnondfl_forgoten : StandBase
+		class AmovPpneMsprSnonWnonDfl_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovppnemsprsnonwnondfr_forgoten : StandBase
+		class AmovPpneMsprSnonWnonDfr_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovppnemsprsnonwnondl_forgoten : StandBase
+		class AmovPpneMsprSnonWnonDl_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovppnemsprsnonwnondr_forgoten : StandBase
+		class AmovPpneMsprSnonWnonDr_forgoten : StandBase
 		{
 			duty = PpneDuty + MsprDuty + SnonDuty + WnonDuty;
 		};
 		
-		class amovppnemstpslowwrfldnon_forgoten : StandBase
+		class AmovPpneMstpSlowWrflDnon_forgoten : StandBase
 		{
 			duty = PpneDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class amovppnemstpsraswrfldnon_tst_forgoten : StandBase
+		class AmovPpneMstpSrasWrflDnon_tst_forgoten : StandBase
 		{
 			duty = PpneDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class aswmpercmrunsnonwnondf_amovpercmstpsnonwnondnon_forgoten : StandBase
+		class AswmPercMrunSnonWnonDf_AmovPercMstpSnonWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class awoppercmrunsgthwnondf_forgoten : StandBase
+		class AwopPercMrunSgthWnonDf_forgoten : StandBase
 		{
 			duty = PercDuty + MrunDuty + SgthDuty + WnonDuty;
 		};
 		
-		class awoppercmrunsgthwnondf_amovpercmstpsnonwnondnon_1_forgoten : StandBase
+		class AwopPercMrunSgthWnonDf_AmovPercMstpSnonWnonDnon_1_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class awoppercmrunsgthwnondf_amovpercmstpsnonwnondnon_2_forgoten : StandBase
+		class AwopPercMrunSgthWnonDf_AmovPercMstpSnonWnonDnon_2_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class awoppercmrunsgthwnondf_amovpercmstpsraswpstdnon_1_forgoten : StandBase
+		class AwopPercMrunSgthWnonDf_AmovPercMstpSrasWpstDnon_1_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class awoppercmrunsgthwnondf_amovpercmstpsraswpstdnon_2_forgoten : StandBase
+		class AwopPercMrunSgthWnonDf_AmovPercMstpSrasWpstDnon_2_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class awoppercmrunsgthwnondf_amovpercmstpsraswpstdnon_3_forgoten : StandBase
+		class AwopPercMrunSgthWnonDf_AmovPercMstpSrasWpstDnon_3_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WpstDuty;
 		};
 		
-		class awoppercmrunsgthwrfldf_forgoten : StandBase
+		class AwopPercMrunSgthWrflDf_forgoten : StandBase
 		{
 			duty = PercDuty + MrunDuty + SgthDuty + WrflDuty;
 		};
 		
-		class awoppercmrunsgthwrfldf_amovpercmstpsraswrfldnon_1_forgoten : StandBase
+		class AwopPercMrunSgthWrflDf_AmovPercMstpSrasWrflDnon_1_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class awoppercmrunsgthwrfldf_amovpercmstpsraswrfldnon_2_forgoten : StandBase
+		class AwopPercMrunSgthWrflDf_AmovPercMstpSrasWrflDnon_2_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SrasDuty + WrflDuty;
 		};
 		
-		class awoppercmstpsoptwbindnon_amovpercmstpslowwrfldnon_forgoten : StandBase
+		class awoppercmstpsoptwbindnon_AmovPercMstpSlowWrflDnon_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class awoppercmstpsoptwbindnon_amovpercmstpslowwrfldnon_end_forgoten : StandBase
+		class awoppercmstpsoptwbindnon_AmovPercMstpSlowWrflDnon_end_forgoten : StandBase
 		{
 			duty = transDuty + PercDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class awoppknlmstpsgthwnondnon_end_forgoten : StandBase
+		class AwopPknlMstpSgthWnonDnon_end_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SgthDuty + WnonDuty;
 		//	speed = 0.4;
@@ -8960,7 +8772,7 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PpneDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class awoppknlmstpsgthwnondnon_start_forgoten : StandBase
+		class AwopPknlMstpSgthWnonDnon_start_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SgthDuty + WnonDuty;
 		//	speed = 0.4;
@@ -8992,7 +8804,7 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PpneDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class awoppknlmstpsgthwnondnon_throw_forgoten : StandBase
+		class AwopPknlMstpSgthWnonDnon_throw_forgoten : StandBase
 		{
 			duty = PknlDuty + MstpDuty + SgthDuty + WnonDuty;
 		//	speed = 0.4;
@@ -9049,7 +8861,7 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PpneDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class awoppknlmstpsoptwbindnon_amovpknlmstpslowwrfldnon_forgoten : StandBase
+		class awoppknlmstpsoptwbindnon_AmovPknlMstpSlowWrflDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
@@ -9094,17 +8906,17 @@ class CfgMovesMaleSdr : CfgMovesBasic
 			duty = PpneDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class awoppknlmstpsoptwbindnon_amovpknlmstpslowwrfldnon_end_forgoten : StandBase
+		class awoppknlmstpsoptwbindnon_AmovPknlMstpSlowWrflDnon_end_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SlowDuty + WrflDuty;
 		};
 		
-		class awoppknlmstpsoptwbindnon_amovpknlmstpsnonwnondnon_forgoten : StandBase
+		class awoppknlmstpsoptwbindnon_AmovPknlMstpSnonWnonDnon_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
 		
-		class awoppknlmstpsoptwbindnon_amovpknlmstpsnonwnondnon_end_forgoten : StandBase
+		class awoppknlmstpsoptwbindnon_AmovPknlMstpSnonWnonDnon_end_forgoten : StandBase
 		{
 			duty = transDuty + PknlDuty + MstpDuty + SnonDuty + WnonDuty;
 		};
