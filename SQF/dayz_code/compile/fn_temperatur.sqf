@@ -33,7 +33,7 @@ _looptime = _this;
 //Negative effects
 	_water_factor		= 	8;
 	_stand_factor 		= 	2;
-	_rain_factor		=	2.5;
+	_rain_factor		=	0.5;
 	_night_factor		= 	1.5;
 	_wind_factor		=	2;
 
