@@ -109,7 +109,8 @@ if (!isNull _findNearestRock) then {
             _counter = _counter + 1;
             _itemOut = "ItemStone";
 
-            _wpPos = player modeltoWorld [0,1,0]; _wpPos set [2,0]; // assuming the player in on the ground.
+			//spawn the items behind the player
+            _wpPos = player modeltoWorld [0,-1,0]; _wpPos set [2,0]; // assuming the player in on the ground.
             _nearByPile= nearestObjects [_wpPos, ["WeaponHolder","WeaponHolderBase"],2];
             if (count _nearByPile ==0) then {
                 _item = createVehicle ["WeaponHolder", _wpPos, [], 1, "CAN_COLLIDE"];
