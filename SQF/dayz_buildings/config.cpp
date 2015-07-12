@@ -260,7 +260,6 @@ class CfgWeapons
 				ghost = "WoodenFence_ghost";
 				create = "WoodenFence_1_foundation";
 			};
-
 		};
 	};
 	

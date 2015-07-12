@@ -227,9 +227,71 @@ _craftItem = {
 	};
 };
 
+_construction = {
+	private ["_classList","_countList","_item","_classname","_tablecount","_arrayToSend"];
+	_classList = [];
+	_countList = [];
+	
+	for "_i" from 0 to (count _itemArray) - 1 do {
+		_item = _itemArray select _i;
+		_classname = _item select 0;
+		_tablecount = _item select 2;
+
+		if (_tablecount > 0) then {
+			_classList set [count _classList, _classname];
+			_countList set [count _countList, _tablecount];
+		};
+	};
+
+	if (count _classList > 0) then {
+		_arrayToSend = [_classList,_countList];
+		[_arrayToSend] call player_checkConstructionRecipe;
+		
+	};
+};
+
 _getRecipes = {
 	private["_config","_control","_controlPos","_msg","_lines"];
 	_config = configFile >> "CfgCrafting";
+	_control = _display displayCtrl 430;
+	_controlPos = ctrlPosition _control;
+	_msg = "";
+	_lines = 0;
+
+	for "_i" from 0 to ((count _config) - 1) do {
+		_entry = _config select _i;
+		_input = getArray (_entry >> "input");
+		_itemMsg = "";
+
+		if (count _input > 0) then {
+			_isRecipe = true;
+
+			{
+				_item = _x select 0;
+				_amount = _x select 2;
+				
+				if (typeName _item == "ARRAY") then {
+					_amount = _item select 2;
+					_item = _item select 0;
+				};
+				
+				_itemMsg = _itemMsg + format ["%1 %2<br />", _amount, [_item] call _getItemName];
+				_lines = _lines + 1;
+			} forEach _input;
+
+			_msg = _msg + format ["<t size='1.25'>%1</t><br />%2<br />", getText (_entry >> "displayName"), _itemMsg];
+			_lines = _lines + 2.25;
+		};
+	};
+
+	_control ctrlSetPosition [_controlPos select 0, _controlPos select 1, _controlPos select 2, 0.03921 * _lines]; // text size * numoflines
+	_control ctrlSetStructuredText parseText _msg;
+	_control ctrlCommit 0;
+};
+
+_getconstructionRecipes = {
+	private["_config","_control","_controlPos","_msg","_lines"];
+	_config = configFile >> "CfgConstruction";
 	_control = _display displayCtrl 430;
 	_controlPos = ctrlPosition _control;
 	_msg = "";
@@ -273,10 +335,15 @@ _list = _display displayCtrl 432;
 _event = _this select 0;
 
 switch (_event) do {
-	case "init": {
+	case "initcrafting": {
 		[] call _init;
 		[] call _update;
 		[] call _getRecipes;
+	};
+	case "initconstruction": {
+		[] call _init;
+		[] call _update;
+		[] call _getconstructionRecipes;
 	};
 	case "add": {
 		[] call _addItem;
@@ -291,5 +358,8 @@ switch (_event) do {
 	};
 	case "close": {
 		[] call _cleanup;
+	};
+	case "construction": {
+		[] call _construction;
 	};
 };

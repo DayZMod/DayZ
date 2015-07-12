@@ -19,6 +19,7 @@ class horde_journal_front_cover
 	{
 		"book_page_image",
 		"open_craft",
+		"open_Construction",
 		"open_book",
 		"click_here_to_close_book_1",
 		"click_here_to_close_book_2",
@@ -47,6 +48,14 @@ class horde_journal_front_cover
 		y = 0.8 * safezoneH + safezoneY;
 		text = $STR_UI_CRAFT_OPEN;
 		action = "closeDialog 0; createDialog 'RscDisplayCraftingMenu';";
+	};
+	
+	class open_Construction: RscIGUIShortcutButton {
+		idc = -1;
+		x = 0.48 * safezoneW + safezoneX;
+		y = 0.85 * safezoneH + safezoneY;
+		text = "Construction";
+		action = "closeDialog 0; createDialog 'RscDisplayConstructionMenu';";
 	};
 	
 	class open_book: horde_RscButton
@@ -81,7 +90,7 @@ class horde_journal_front_cover
 	{
 		idc = 1903;
 		x = -0.0013379 * safezoneW + safezoneX;
-		y = 0.832544 * safezoneH + safezoneY;
+		y = 0.882544 * safezoneH + safezoneY;
 		w = 1.04825 * safezoneW;
 		h = 0.892618 * safezoneH;
 		action = "playSound 'horde_sound_close_book'; closeDialog 0;";

@@ -1,9 +1,7 @@
-class RscListNBox;
-
-class RscDisplayCraftingMenu {
+class RscDisplayConstructionMenu {
 	idd = 6903;
 	enableDisplay = 1;
-	onLoad = "uiNamespace setVariable ['DAYZ_CraftingDialog', _this select 0]; ['initcrafting'] call fn_updateCraftUI;";
+	onLoad = "uiNamespace setVariable ['DAYZ_CraftingDialog', _this select 0]; ['initconstruction'] call fn_updateCraftUI;";
 	onUnload = "['close'] call fn_updateCraftUI;";
 
 	class Controls
@@ -83,22 +81,13 @@ class RscDisplayCraftingMenu {
 			onButtonClick = "['add'] call fn_updateCraftUI;";
 		};
 
-		class craftButton: RscIGUIShortcutButton {
+		class ConstructionButton: RscIGUIShortcutButton {
 			idc = 430;
 			x = 0.601 * safezoneW + safezoneX;
 			y = 0.744 * safezoneH + safezoneY;
-			text = $STR_UI_START_CRAFTING;
-			action = "['craft'] call fn_updateCraftUI;";
-		};
-		/*
-		class ConstructionButton: RscIGUIShortcutButton {
-			idc = 430;
-			x = 0.631 * safezoneW + safezoneX;
-			y = 0.744 * safezoneH + safezoneY;
-			text = "Construction";
+			text = "Build";
 			action = "['construction'] call fn_updateCraftUI;";
 		};
-		*/
 
 		class craftingslot01: RscPicture
 		{

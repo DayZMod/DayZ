@@ -81,6 +81,7 @@ class CfgAddons
 #include "Configs\CfgVehicles\CfgVehicles.hpp"
 #include "Configs\CfgWeapons\CfgWeapons.hpp"
 #include "Configs\CfgCrafting\CfgCrafting.hpp"
+#include "Configs\CfgConstruction\CfgConstruction.hpp"
 #include "Configs\CfgMagazines\CfgMagazines.hpp"
 #include "Configs\CfgLoot\CfgBuildingLoot.hpp"
 #include "Configs\CfgMarkers.hpp"

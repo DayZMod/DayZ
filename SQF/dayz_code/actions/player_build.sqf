@@ -1,5 +1,5 @@
 // (c) facoptere@gmail.com, licensed to DayZMod for the community
-private ["_item","_action","_missingTools","_missingItem","_emergingLevel","_isClass","_classname","_requiredTools","_requiredParts ","_ghost","_placement","_text","_onLadder","_isWater","_object","_string","_actionBuildHidden","_getBeams","_o","_offset","_rot","_r","_p","_bn","_bb","_h","_bx","_by","_minElevation","_maxElevation","_insideCheck","_building","_unit","_bbb","_ubb","_check","_min","_max","_myX","_myY","_checkBuildingCollision","_objColliding","_inside","_checkOnRoad","_roadCollide","_checkBeam2Magnet","_a","_beams","_best","_b","_d","_checkNotBuried","_elevation","_position","_delta","_overElevation","_maxplanting","_safeDistance","_dir","_angleRef","_tmp","_actionCancel","_sfx","_actionBuild"];
+private ["_classType","_item","_action","_missingTools","_missingItem","_emergingLevel","_isClass","_classname","_requiredTools","_requiredParts ","_ghost","_placement","_text","_onLadder","_isWater","_object","_string","_actionBuildHidden","_getBeams","_o","_offset","_rot","_r","_p","_bn","_bb","_h","_bx","_by","_minElevation","_maxElevation","_insideCheck","_building","_unit","_bbb","_ubb","_check","_min","_max","_myX","_myY","_checkBuildingCollision","_objColliding","_inside","_checkOnRoad","_roadCollide","_checkBeam2Magnet","_a","_beams","_best","_b","_d","_checkNotBuried","_elevation","_position","_delta","_overElevation","_maxplanting","_safeDistance","_dir","_angleRef","_tmp","_actionCancel","_sfx","_actionBuild"];
 
 /*
 Needs a full rewrite to keep up with the demand of everything we plan to add.
@@ -10,6 +10,12 @@ closeDialog 1;
 
 _item = _this select 0;
 _action = _this select 1;
+_classType = "ItemActions";
+
+if (count _this > 2) then {
+	_classType = _this select 2;
+};
+
 _emergingLevel = 1.1;
 r_action_count = 1;
 
@@ -18,12 +24,13 @@ _isClass = switch (1==1) do {
     case (isClass (configFile >> "CfgWeapons" >> _item)): {"CfgWeapons"};
 };
 
-_classname = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "create");
-_requiredTools = getArray (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "require");
-_requiredParts   = getArray (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "consume");
-_ghost = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "ghost");
+//need to swap all build systems to this "ItemActions"
+_classname = getText (configFile >> _isClass >> _item >> _classType >> _action >> "create");
+_requiredTools = getArray (configFile >> _isClass >> _item >> _classType >> _action >> "require");
+_requiredParts   = getArray (configFile >> _isClass >> _item >> _classType >> _action >> "consume");
+_ghost = getText (configFile >> _isClass >> _item >> _classType >> _action >> "ghost");
 //need to move to array and separate what checks need to be done.
-_byPassChecks = getText (configFile >> _isClass >> _item >> "ItemActions" >> _action >> "byPass");
+_byPassChecks = getText (configFile >> _isClass >> _item >> _classType >> _action >> "byPass");
 
 if (_byPassChecks == "") then { _byPassChecks = "BaseItems" };
 if (_ghost == "") then { _ghost = _classname; };
