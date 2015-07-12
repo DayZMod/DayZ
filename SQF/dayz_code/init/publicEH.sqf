@@ -107,7 +107,7 @@ if (isServer) then {
 		PVDZ_receiveUnconscious = [_owner,_duration];
 		(owner _owner) publicVariableClient "PVDZ_receiveUnconscious";
 	};
-	
+/*
 	"PVDZ_gridsActive" addPublicVariableEventHandler {
 		_gridref = ((_this select 1) select 0);
 		_gridloc = ((_this select 1) select 1);
@@ -129,6 +129,7 @@ if (isServer) then {
 		};
 		diag_log format ["%1, %2", _gridref, dayz_gridsActive];
 	};
+*/
 
 	"PVDZ_Server_Simulation" addPublicVariableEventHandler {
 		_agent = ((_this select 1) select 0);
@@ -255,29 +256,9 @@ if (isServer) then {
 		
 		diag_log format["WARNING: %1",_info];
 	};
-	"PVDZ_Server_processCode" addPublicVariableEventHandler {
-		private ["_unitSending","_object","_object","_code"];
-		_unitSending = ((_this select 1) select 0);
-		_object = ((_this select 1) select 1);
-		_code = ((_this select 1) select 2);
-		
-		//diag_log format["%1, %2-%3",_unitSending,_object,_code];
-		
-		_ownerID = owner _unitSending;
-		
-		if (_unitSending distance _object < 5) then {
-			_currentCode = _object getVariable ["dayz_padlockCombination",[]];
-			
-			_result = [_currentCode,_code] call BIS_fnc_areEqual;
-			
-			PVCDZ_Client_processCode = [_object,_result,_code];
-			_ownerID publicVariableClient "PVCDZ_Client_processCode";
-			
-			diag_log format["INFO: %1, %5 is trying to guess with %3 for %2 at time %4",(name _unitSending),(typeof _object),_code,time,(getPlayerUID _unitSending)];
-		} else {
-			diag_log format["WARNING: %1, %5 is asking for code for %2 but is a range of %3 at time %4",(name _unitSending),(typeof _object),(_unit distance _object),time,(getPlayerUID _unitSending)];
-		};
-	};
+	
+	"PVDZ_Server_processCode" addPublicVariableEventHandler {(_this select 1) call pvs_processSetAccessCode};
+	
 	"PVDZ_Server_processSetAccessCode" addPublicVariableEventHandler {
 		private ["_unitSending","_object","_object","_code"];
 		_unitSending = ((_this select 1) select 0);
@@ -309,6 +290,7 @@ if (isServer) then {
 			diag_log format["WARNING: %1, %2 is trying to set a code for a gate he does not own.",(name _unitSending),(getPlayerUID _unitSending)];
 		};
 	};
+	
 	"PVDZ_Server_buildLock" addPublicVariableEventHandler {
 		_object = ((_this select 1) select 0);
 		
