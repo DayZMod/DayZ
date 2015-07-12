@@ -87,7 +87,9 @@ if (_infectionChance != 0 && {abs(_infectionChance) > random 1}) then
 };
 
 //Publish messing
-player setVariable ["messing",[dayz_hunger,dayz_thirst,dayz_nutrition],true];
+player setVariable ["messing",[dayz_hunger,dayz_thirst,dayz_nutrition],false]; //No need to be sent to everyplayer
+PVDZ_serverStoreVar = ["messing",[dayz_hunger,dayz_thirst,dayz_nutrition]]; //update server side only
+publicVariableServer "PVDZ_serverStoreVar";
 
 //Play sound and alert zombies
 if (_sound != "") then
