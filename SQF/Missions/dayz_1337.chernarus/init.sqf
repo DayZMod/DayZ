@@ -18,12 +18,13 @@ dayz_enableRules = true; //Enables a nice little news/rules feed on player login
 dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkeys 1,2,3) False = enable animations, True = disable animations
 dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
 dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
+
+//temp settings
 dayz_POIs = true;
 dayz_infectiousWaterholes = true;
-dayz_DamageMultiplier = 1; //Damage Multiplier for Zombies.
 
+dayz_DamageMultiplier = 1; //Damage Multiplier for Zombies.
 dayz_maxGlobalZeds = 500; //Limit the total zeds server wide.
-dayz_attackRange = 3; // attack range of zeds vehicles are * 2 of this number
 dayz_temperature_override = false; // Set to true to disable all temperature changes.
 
 dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
