@@ -17,7 +17,7 @@ item12[] = {"",7,210,-29.000006,-29.000004,-20.999996,-20.999996,0.000000,""};
 item13[] = {"",7,210,-279.000061,-29.000004,-270.999969,-20.999996,0.000000,""};
 item14[] = {"",7,210,-254.000031,146.000000,-245.999985,154.000000,0.000000,""};
 item15[] = {"Has_Target",4,218,-150.000000,175.000000,-50.000000,225.000000,1.000000,"Has" \n "Target"};
-item16[] = {"Chase",2,4346,-150.000000,300.000000,-50.000000,350.000000,0.000000,"Chase"};
+item16[] = {"Chase",2,250,-150.000000,300.000000,-50.000000,350.000000,0.000000,"Chase"};
 item17[] = {"Time_Check",4,218,50.000000,75.000000,150.000000,125.000000,1.000000,"Time" \n "Check"};
 item18[] = {"",7,210,-29.000006,146.000000,-20.999996,154.000000,0.000000,""};
 item19[] = {"",7,210,-29.000006,196.000000,-20.999996,204.000000,0.000000,""};
@@ -61,7 +61,7 @@ item56[] = {"moveToCompleted",4,218,-200.000000,75.000000,-100.000000,125.000000
 item57[] = {"Failed_to_move",4,218,-200.000000,25.000000,-100.000000,75.000000,0.000000,"Failed to move"};
 item58[] = {"Target_Dead",4,218,-275.000000,425.000000,-175.000000,475.000000,3.000000,"Target Dead"};
 item59[] = {"",7,210,-479.000000,446.000031,-471.000000,454.000000,0.000000,""};
-item60[] = {"Start_Attack",4,218,-275.000000,350.000000,-175.000000,400.000000,0.000000,"Start Attack"};
+item60[] = {"Start_Attack",4,4314,-275.000000,350.000000,-175.000000,400.000000,0.000000,"Start Attack"};
 item61[] = {"End_Attack",4,218,-275.000000,250.000000,-175.000000,300.000000,0.000000,"End Attack"};
 item62[] = {"____FAKE____",9,2480,0.000000,0.000000,0.000000,0.000000,0.000000,"____FAKE____"};
 link0[] = {0,10};
@@ -147,8 +147,8 @@ link79[] = {60,16};
 link80[] = {62,58};
 link81[] = {61,62};
 link82[] = {62,61};
-globals[] = {25.000000,1,0,0,0,640,480,1,136,6316128,1,-565.680786,17.917299,599.718506,118.872169,727,599,1};
-window[] = {2,-1,-1,-1,-1,726,25,1233,25,3,745};
+globals[] = {25.000000,1,0,0,0,640,480,1,136,6316128,1,-565.680786,17.917299,599.718506,118.872169,727,639,1};
+window[] = {2,-1,-1,-1,-1,754,1410,2618,53,3,745};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -512,7 +512,7 @@ class FSM
        "_isAlive = alive _agent;" \n
        "_targetPos = getPosATL _target;" \n
        "" \n
-       "if (_agent distance _target >= dayz_attackRange) then {" \n
+       "if (_agent distance _target >= 3.3) then {" \n
        "	_agent moveTo _targetPos;" \n
        "};" \n
        "" \n
@@ -575,7 +575,7 @@ class FSM
           priority = 0.000000;
           to="Chase";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((local _target) and (_agent distance _target <= dayz_attackRange) and ((diag_tickTime - _last) > 2) and (_delta < 1.5) and (_delta > -1.5) and (alive _target))"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((local _target) and (_agent distance _target <= 3.3) and ((diag_tickTime - _last) > 2) and (_delta < 1.5) and (_delta > -1.5) and (alive _target))"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"[_agent,  ""zombie""] spawn player_attackdelay;" \n
            "_agent setVariable[""lastAttack"", diag_tickTime];" \n
            "" \n

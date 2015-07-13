@@ -111,7 +111,7 @@ _tPos = (getPosASL _vehicle);
 _zPos = (getPosASL _unit);
 // compute damage for vehicle and/or the player
 if (_isVehicle) then {
-	if ((_unit distance player) < (dayz_attackRange * 2)) then {
+	if ((_unit distance player) < (3.3 * 2)) then {
 		_hpList = 	_vehicle call vehicle_getHitpoints;
 		_hp = 		_hpList call BIS_fnc_selectRandom;
 		_wound = 	getText(configFile >> "cfgVehicles" >> (typeOf _vehicle) >> "HitPoints" >> _hp >> "name");
@@ -166,7 +166,7 @@ if (_isVehicle) then {
 	};
 } else { 
 	// player by foot
-	if ((_unit distance player) <= dayz_attackRange) then {
+	if ((_unit distance player) <= 3.3) then {
 			
 		//Make sure sure evrything is processed as we attack.
 		_damage = 0.2 + random (1.2);
