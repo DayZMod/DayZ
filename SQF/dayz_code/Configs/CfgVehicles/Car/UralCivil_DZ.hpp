@@ -6,9 +6,9 @@ class UralCivil_DZ: UralCivil
 	displayName= $STR_DN_URAL_CIV;
 	vehicleClass = "Car";
 	
-	transportMaxWeapons = 25;
-	transportMaxMagazines = 150;
-	transportmaxbackpacks = 8;
+	transportMaxWeapons = 40;
+	transportMaxMagazines = 200;
+	transportmaxbackpacks = 10;
 
 	crew = "";
 	typicalCargo[]={};
