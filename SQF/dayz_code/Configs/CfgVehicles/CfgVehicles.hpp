@@ -62,6 +62,7 @@ class CfgVehicles {
 	class TT650_Base;
 	class V3S_Base;
 	class SUV_Base_EP1;
+	class UralCivil;
 	class Ship;
 	//class Bag_Base_EP1;
 	//class Bag_Base_BAF;
@@ -102,6 +103,7 @@ class CfgVehicles {
 	#include "Car\SUV_DZ.hpp"
 	#include "Car\Pickup_PK_INS.hpp"
 	#include "Car\Offroad_DSHKM_INS.hpp"
+	#inculde "Car\UralCivil_DZ.hpp"
 	//Helicopter's
 	#include "Helicopter\MI17.hpp"
 	#include "Helicopter\UH1H.hpp"
