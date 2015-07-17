@@ -371,7 +371,7 @@
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagOPOS">
 			<English>A blood bag ready for transfusion kits, type O+ that is compatible O+, AB+, A+, B+ recipients</English>
-			<Russian>Пакет крови, готовый к переливанию. Группа крови 0(I)Rh- подходит пациентам с группами 0(I)Rh+, A(II)Rh+, B(III)Rh+ и AB(IV)Rh+.</Russian>
+			<Russian>Пакет крови, готовый к переливанию. Группа крови 0(I)Rh+ подходит пациентам с группами 0(I)Rh+, A(II)Rh+, B(III)Rh+ и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type O+ pour transfuser des receveurs de type  O+, AB+, A+ ou B+</French>
 			<Czech>Krev připravená pro použití spolu s transfúzní soupravou; skupina O+ vhodná pro příjemce se skupinou O+, A+, B+ a AB+</Czech>
 		</Key>
@@ -676,7 +676,7 @@
 		<Key ID="str_actions_medical_transfusion_failed_transfusionkit">
 			<English>Transfusion failed missing Transfusion Kit!</English>
 			<German>Transfusion failed missing Transfusion Kit!</German>
-			<Russian>Transfusion failed missing Transfusion Kit!</Russian>
+			<Russian>Переливание отменено, отсутствует набор для переливания!</Russian>
 			<Spanish>Transfusion failed missing Transfusion Kit!</Spanish>
 			<French>Transfusion failed missing Transfusion Kit!</French>
 			<Czech>Transfúze selhala, chybí transfúzní souprava!</Czech>
@@ -907,6 +907,7 @@
 		</Key>
 		<Key ID="STR_ACTIONS_DRINK2">
 			<English>Drink</English>
+			<Russian>Выпить</Russian>
 		</Key>
 		<Key ID="STR_ACTIONS_FILL_W">
 			<English>Fill Water</English>
@@ -939,14 +940,17 @@
 		</Key>
 		<Key ID="STR_ACTIONS_MINE_STONE">
 			<English>Harvest Stone</English>
+			<Russian>Добыть камень</Russian>
 			<Czech>Nalámat kámen</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_FIX_PICKAXE">
 			<English>Fix Pickaxe</English>
+			<Russian>Починить кирку</Russian>
 			<Czech>Spravit krumpáč</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_FIX_SLEDGE_HAMMER">
 			<English>Fix Sledge Hammer</English>
+			<Russian>Починить кувалду</Russian>
 			<Czech>Spravit palici</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_BUILD">
@@ -1325,39 +1329,49 @@
 		</Key>
 		<Key ID="str_missingweapon">
 			<English>Unable to attach %1</English>
+			<Russian>Невозможно установить %1</Russian>
 			<Czech>Nelze připevnit %1</Czech>
 		</Key>
 		<Key ID="str_AttachmentmissingWeapon">
 			<English>You seem to be missing a primary weapon!</English>
+			<Russian>Отсутствует основное оружие!</Russian>
 			<Czech>Vypadá to, že chybí hlavní zbraň!</Czech>
 		</Key>
 		<Key ID="str_AttachmentmissingWeapon2">
 			<English>You seem to be missing a sidearm!</English>
+			<Russian>Отсутствует дополнительное оружие!</Russian>
 		</Key>
 		<Key ID="str_AttachmentMissingWeapon3">
 			<English>You seem to have misplaced the weapon you were working on.</English>
+			<Russian>Похоже произошла замена оружия, над которым вы работали.</Russian>
 		</Key>
 		<Key ID="str_AttachmentWeaponConfig">
 			<English>Your primary weapon can not be used with this attachment!</English>
+			<Russian>Основное оружие не поддерживает это оборудование!</Russian>
 			<Czech>Na tuto hlavní zbraň nelze upevnit tento nástavec!</Czech>
 		</Key>
 		<Key ID="str_AttachmentWeaponConfig2">
 			<English>Your sidearm can not be used with this attachment!</English>
+			<Russian>Дополнительное оружие не поддерживает это оборудование!</Russian>
 		</Key>
 		<Key ID="str_fixToolFail">
 			<English>Maybe you can fix it with tape and a handle.</English>
+			<Russian>Попробуйте использовать скотч и рукоять для починки.</Russian>
 			<Czech>Možná to půjde spravit s pomocí pásky a násady.</Czech>
 		</Key>
 		<Key ID="str_fixtoolMissingTape">
 			<English>You will need some tape for this.</English>
+			<Russian>Для этого нужен скотч.</Russian>
 			<Czech>K tomuto bude třeba nějaká páska.</Czech>
 		</Key>
 		<Key ID="str_fixtoolMissingHandle">
 			<English>You will need a lever to fix this.</English>
+			<Russian>Для этого нужна рукоять.</Russian>
 			<Czech>K tomuto bude třeba nějaká násada nebo topůrko.</Czech>
 		</Key>
 		<Key ID="str_fixToolSuccess">
 			<English>You have fixed your %1.</English>
+			<Russian>Вы починили %1.</Russian>
 			<Czech>Podařilo se vám opravit %1.</Czech>
 		</Key>
 		<Key ID="str_HatchetHandleBreaks">
@@ -1370,6 +1384,7 @@
 		</Key>
 		<Key ID="str_PickAxeHandleBreaks">
 			<English>Whilst mining the handle breaks.</English>
+			<Russian>Кирка сломалась во время добычи</Russian>
 			<Czech>Během kopání se zlomila násada.</Czech>
 		</Key>
 		<Key ID="str_cannotCraft">
@@ -1505,10 +1520,12 @@
 		</Key>
 		<Key ID="str_sleepStats">
 			<English>Blood regenerated: %1, Blood: %2</English>
+			<Russian>Крови восстановлено: %1, Кровь: %2</Russian>
 			<Czech>Obnovená krev: %1, krev celkem: %2</Czech>
 		</Key>
 		<Key ID="str_sleepInfection">
 			<English>Blood: %1, Infection: %2</English>
+			<Russian>Кровь: %1, Инфекция: %2</Russian>
 			<Czech>Krev: %1, infekce: %2</Czech>
 		</Key>
 		<Key ID="str_buildCameraOn">
@@ -1573,18 +1590,22 @@
 		</Key>
 		<Key ID="STR_name_ItemPickaxeBroken">
 			<English>Broken Pickaxe</English>
+			<Russian>Сломанная кирка</Russian>
 			<Czech>Zlomený krumpáč</Czech>
 		</Key>
 		<Key ID="STR_desc_ItemPickaxeBroken">
 			<English>Too much force has broken this pickaxe. Hopefully you find something to repair it.</English>
+			<Russian>Вы перестарались и сломали кирку. Но скорее всего, вы найдете как ее починить.</Russian>
 			<Czech>Nadměrnou zátěží se tento krumpáč zlomil. Snad najdete něco, čím by se dal spravit.</Czech>
 		</Key>
 		<Key ID="STR_name_ItemSledgeHammerBroken">
 			<English>Broken SledgeHammer</English>
+			<Russian>Сломанная кувалда</Russian>
 			<Czech>Zlomená palice</Czech>
 		</Key>
 		<Key ID="STR_desc_ItemSledgeHammerBroken">
 			<English>Too much force has broken this SledgeHammer. Hopefully you find something to repair it.</English>
+			<Russian>Вы перестарались и сломали кувалду. Но скорее всего, вы найдете как ее починить.</Russian>
 			<Czech>Nadměrnou zátěží se tato palice zlomila. Snad najdete něco, čím by se dala spravit.</Czech>
 		</Key>
 		<Key ID="STR_name_ItemTrashPaper">
@@ -1607,7 +1628,7 @@
 		</Key>
 		<Key ID="STR_desc_ItemTrashPaperMusic">
 			<English>Score of the song "Santa Claus is Coming to Town". Sing along, no more Christmas in the near future!</English>
-			<Russian>Листок бумаги с ровными рядками нот.</Russian>
+			<Russian>Листок бумаги с песней "Santa Claus is Coming to Town". Пой в одиночестве, Рождество не наступит!</Russian>
 			<French>Une partition</French>
 			<Czech>Notový záznam písně "Santa Claus is Coming to Town". Zazpívejte si, Vánoce nějakou dobu nebudou!</Czech>
 		</Key>
@@ -1655,78 +1676,97 @@
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_M16A4">
 			<English>Attach to M16A4</English>
+			<Russian>Установить на M16A4</Russian>
 			<Czech>Připevnit k M16A4</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_M16A2">
 			<English>Attach to M16A2</English>
+			<Russian>Установить на M16A2</Russian>
 			<Czech>Připevnit k M16A2</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_SA58">
 			<English>Attach to Sa-58</English>
+			<Russian>Установить на Sa-58</Russian>
 			<Czech>Připevnit k Sa-58</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_M4">
 			<English>Attach to M4A1</English>
+			<Russian>Установить на M4A1</Russian>
 			<Czech>Připevnit k M4A1</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_BELT">
 			<English>Attach belt</English>
+			<Russian>Закрепить патронташ</Russian>
 			<Czech>Připevnit pás</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_CCO">
 			<English>Attach CCO</English>
+			<Russian>Установить CCO</Russian>
 			<Czech>Připevnit CCO</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_CROSSBOW">
 			<English>Attach to Crossbow</English>
+			<Russian>Установить на арбалет</Russian>
 			<Czech>Připevnit ke kuši</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_FL">
 			<English>Attach flashlight</English>
+			<Russian>Установить фонарь</Russian>
 			<Czech>Připevnit baterku</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_AK74">
 			<English>Attach to AK-74</English>
+			<Russian>Установить на AK-74</Russian>
 			<Czech>Připevnit k AK-74</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_L85A2">
 			<English>Attach to L85A2</English>
+			<Russian>Установить на L85A2</Russian>
 			<Czech>Připevnit k L85A2</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_M8">
 			<English>Attach to M8</English>
+			<Russian>Установить на M8</Russian>
 			<Czech>Připevnit k M8</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_SCAR">
 			<English>Attach to SCAR</English>
+			<Russian>Установить на SCAR</Russian>
 			<Czech>Připevnit k SCAR</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_SCOPE">
 			<English>Attach Scope</English>
+			<Russian>Установить прицел</Russian>
 			<Czech>Připevnit puškohled</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_MAKAROV">
 			<English>Attach to Makarov</English>
+			<Russian>Установить на Макаров</Russian>
 			<Czech>Připevnit k Makarov</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_M9">
 			<English>Attach to M9</English>
+			<Russian>Установить на M9</Russian>
 			<Czech>Připevnit k M9</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_BIZON">
 			<English>Attach to Bizon</English>
+			<Russian>Установить на Бизон</Russian>
 			<Czech>Připevnit k Bizon</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_MP5">
 			<English>Attach to MP5</English>
+			<Russian>Установить на MP5</Russian>
 			<Czech>Připevnit k MP5</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_ATTACH_M14">
 			<English>Attach to M14</English>
+			<Russian>Установить на M14</Russian>
 			<Czech>Připevnit k M14</Czech>
 		</Key>
 		<Key ID="STR_ACTIONS_BRACE_LEG">
 			<English>Brace Leg</English>
+			<Russian>Зафиксировать ногу</Russian>
 			<Czech>Zafixovat nohu</Czech>
 		</Key>
 	</Package>
@@ -1990,7 +2030,7 @@
 		<Key ID="STR_ITEM_DESC_equip_pvc_box">
 			<English>A box made of PVC, perfect for school lunches.</English>
 			<German>Eine Schachtel aus PVC.</German>
-			<Russian>Коробка из поливинилхлорида.</Russian>
+			<Russian>Коробка из поливинилхлорида. Прекрасно подходит для тормозка.</Russian>
 			<Spanish>Una caja hecha de PVC</Spanish>
 			<French>Une boîte en PVC</French>
 			<Czech>Krabice z PVC materiálu, výborná pro školní svačiny.</Czech>
@@ -2381,6 +2421,7 @@
 		</Key>
 		<Key ID="STR_ITEM_DESC_HerbalDrink">
 			<English>A drink mixed with herbs that may help heal infection.</English>
+			<Russian>Напиток из смеси трав, который может помочь при инфекции.</Russian>
 			<Czech>Nápoj smíchá s bylinkami , které mohou pomoci léčit infekci .</Czech>
 			<French>Une boisson mélangée avec des herbes qui peuvent aider à guérir l'infection .</French>
 			<German>Ein Getränk gemischt mit Kräutern , die helfen, zu heilen Infektion kann .</German>
@@ -2388,7 +2429,7 @@
 		<Key ID="STR_ITEM_NAME_HerbalDrink">
 			<English>Herbal Drink</English>
 			<Spanish>bebida Herbal</Spanish>
-			<Russian>травяной напиток</Russian>
+			<Russian>Травяной напиток</Russian>
 			<Czech>Herbal Drink</Czech>
 			<French>boisson à base de plantes</French>
 			<German>Herbal Drink</German>
@@ -2427,7 +2468,7 @@
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_garlic_bulb">
 			<English>Bulb of Garlic, has medicinal qualities can be used for crafting home remedies. Or against vampires.</English>
-			<Russian>Головка чеснока, обладает лечащими свойствами, может использоваться для создания самодельных лекарств.</Russian>
+			<Russian>Головка чеснока, обладает лечащими свойствами, может использоваться для создания самодельных лекарств. Или против вампиров.</Russian>
 			<Spanish>Bulbo del ajo, tiene cualidades medicinales puede ser utilizado para la elaboración de remedios caseros</Spanish>
 			<Czech>Hlavička česneku, kterou lze využít v alternativní medicíně. Nebo na upíry.</Czech>
 			<French>Gousse d&apos;ail, a des vertues médicinales et peut être utilisé pour créer des remèdes.</French>
@@ -2435,7 +2476,7 @@
 		</Key>
 		<Key ID="STR_CRAFT_DESC_Bandage">
 			<English>Blueprint to create a Bandage. Required - 2 Rags, 2 gauze, 1 string. Tools Needed: ToolBox</English>
-			<Russian>Инструкция по созданию бинтов. Нужно: пара тряпок, пара марль, нитка и ящик с инструментами</Russian>
+			<Russian>Инструкция по созданию бинтов. Нужно: пара тряпок, пара марль, шнур и ящик с инструментами</Russian>
 			<Spanish>Plano para crear Vendaje. Requerido: 2 trapos, 2 gasas, 1 hilo y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un Pansement. Requis : 2 Tissus, 2 Gazes, 1 Fil + Boîte à outils</French>
 			<Czech>Návod pro vyrobení obvazu. Potřeba: 2x hadr, 2x gáza, 1x provázek a sada nástrojů</Czech>
@@ -2452,7 +2493,7 @@
 		<Key ID="STR_CRAFT_DESC_SEPSISBandage">
 			<English>Blueprint to create an Sepsis cure and Bandage. Required - 3 Rags, 2 gauze, 1 string, 2 Comfrey Leafs.</English>
 			<Spanish>Plano para crear un vendaje que combate la septicemia. Requerido: - 3 trapos, 2 gasas, 1 cuerda, 2 hojas de consuelda.</Spanish>
-			<Russian>Инструкция по созданию антисептических бинтов. Нужно: три тряпки, пара марль, нитка и пара листков живокоста</Russian>
+			<Russian>Инструкция по созданию антисептических бинтов. Нужно: три тряпки, пара марль, шнур и пара листков живокоста</Russian>
 			<Czech>Návod pro vyrobení antiseptického obvazu. Potřeba: 3x hadr, 2x gáza, 1x provázek, 2x listy kostivalu.</Czech>
 			<French>Plan de fabrication d&apos;un pansement antiseptique. Requis: 3 tissus, 2 gazes, 1 ficelle, 2 consoudes.</French>
 			<German>Blaupause fuer eine antiseptische Bandage. Gebraucht werden: 3x Lumpen, 2x Verbandmull, 1x Schnur, 2x Beinwellblaetter.</German>
@@ -2637,14 +2678,14 @@
 		<Key ID="STR_CRAFT_NAME_HerbalDrink">
 			<English>Herbal Drink</English>
 			<Spanish>bebida Herbal</Spanish>
-			<Russian>травяной напиток</Russian>
+			<Russian>Травяной напиток</Russian>
 			<Czech>Herbal Drink</Czech>
 			<French>boisson à base de plantes</French>
 			<German>Herbal Drink</German>
 		</Key>
 		<Key ID="STR_CRAFT_DESC_HerbalDrink">
 			<English>Blueprint to create a Herbal Drink. Required - 1 Water bottle boiled and one herb box.</English>
-			<Russian>Blueprint для создания травяной напиток . Требуется - 1 бутылка воды кипяченой и одна трава окно .</Russian>
+			<Russian>Инструкция по приготовлению травяного напитка . Требуется - 1 бутылка воды кипяченой и коробка трав.</Russian>
 			<Spanish>Blueprint para crear una bebida a base de plantas . Requerido - 1 Botella de agua hervida y una caja de hierbas.</Spanish>
 			<French>Blueprint pour créer une boisson à base de plantes . Required - 1 bouteille d'eau bouillie et une boîte d'herbe .</French>
 			<Czech>Blueprint vytvořit Herbal drink. Povinné - 1 láhev vody vařené a jedna bylina box .</Czech>
@@ -2828,7 +2869,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_ACG_M16">
 			<English>ACOG Attachment for M16</English>
-			<Russian>ACG (Приспособление)</Russian>
+			<Russian>ACOG M16(МОД)</Russian>
 			<Spanish>ACG (Accesorio)</Spanish>
 			<French>ACG (Fixation)</French>
 			<Czech>Příslušenství - ACOG pro M16</Czech>
@@ -2844,7 +2885,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_ACG_SA58">
 			<English>ACOG Attachment for Sa-58</English>
-			<Russian>ACG (Приспособление)</Russian>
+			<Russian>ACOG Sa-58(МОД)</Russian>
 			<Spanish>ACG (Accesorio)</Spanish>
 			<French>ACG (Fixation)</French>
 			<Czech>Příslušenství - ACOG pro Sa-58</Czech>
@@ -2860,7 +2901,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Silencer">
 			<English>Suppressor Attachment</English>
-			<Russian>Глушитель (Приспособление)</Russian>
+			<Russian>Глушитель (МОД)</Russian>
 			<Spanish>Silenciador (Accesorio)</Spanish>
 			<French>Silencieux (Fixation)</French>
 			<Czech>Příslušenství - Tlumič</Czech>
@@ -2876,7 +2917,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Pso">
 			<English>PSO Attachment</English>
-			<Russian>ПСО (Приспособление)</Russian>
+			<Russian>ПСО (МОД)</Russian>
 			<Spanish>PSO (Accesorio)</Spanish>
 			<French>PSO (Fixation)</French>
 			<Czech>Příslušenství - PSO</Czech>
@@ -2892,7 +2933,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Kobra">
 			<English>KOBRA Attachment</English>
-			<Russian>Кобра (Приспособление)</Russian>
+			<Russian>Кобра (МОД)</Russian>
 			<Spanish>KOBRA (Accesorio)</Spanish>
 			<French>KOBRA (Fixation)</French>
 			<Czech>Příslušenství - KOBRA</Czech>
@@ -2908,7 +2949,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_GL">
 			<English>GL Attachment</English>
-			<Russian>Подствольник (Приспособление)</Russian>
+			<Russian>Подствольник (МОД)</Russian>
 			<Spanish>GL (Accesorio)</Spanish>
 			<French>GL (Fixation)</French>
 			<Czech>Příslušenství - granátomet</Czech>
@@ -2924,7 +2965,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_CAMO_M4">
 			<English>Camo Attachment for M4</English>
-			<Russian>Камуфляж (Приспособление)</Russian>
+			<Russian>Камуфляж (МОД)</Russian>
 			<Spanish>Camuflaje (Accesorio)</Spanish>
 			<French>Camouflage (Fixation)</French>
 			<Czech>Příslušenství - kamufláž pro M4</Czech>
@@ -2932,7 +2973,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_CAMO_M4">
 			<English>Camo paint for M4A1 with AIM.</English>
-			<Russian>Камуфляж для оружия.</Russian>
+			<Russian>Камуфляж для M4A1 с ССО.</Russian>
 			<Spanish>Camuflaje para armas (Accesorio)</Spanish>
 			<French>Camouflage (Fixation)</French>
 			<Czech>Používá se pro vylepšení M4A1 s CCO.</Czech>
@@ -2940,7 +2981,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_AIM_M4A1">
 			<English>AIM Attachment for M4</English>
-			<Russian>AIM (Приспособление)</Russian>
+			<Russian>AIM M4(МОД)</Russian>
 			<Spanish>AIM (Accesorio)</Spanish>
 			<French>AIM (Fixation)</French>
 			<Czech>Příslušenství - CCO pro M4</Czech>
@@ -2948,7 +2989,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_AIM_M4A1">
 			<English>AIM attachment that can be attached to M4A1.</English>
-			<Russian>Прицел AIM.</Russian>
+			<Russian>Прицел AIM для M4.</Russian>
 			<Spanish>Mira AIM (Accesorio)</Spanish>
 			<French>AIM (Fixation)</French>
 			<Czech>Kolimátor Close Combat Optics, používá se pro vylepšení M4A1.</Czech>
@@ -2956,7 +2997,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_AIM_SA58">
 			<English>AIM Attachment for Sa-58</English>
-			<Russian>AIM (Приспособление)</Russian>
+			<Russian>AIM Sa-58(МОД)</Russian>
 			<Spanish>AIM (Accesorio)</Spanish>
 			<French>AIM (Fixation)</French>
 			<Czech>Příslušenství - CCO pro Sa-58</Czech>
@@ -2964,7 +3005,7 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_AIM_SA58">
 			<English>AIM attachment that can be attached to Sa-58.</English>
-			<Russian>Прицел AIM.</Russian>
+			<Russian>Прицел AIM для Sa-58.</Russian>
 			<Spanish>Mira AIM (Accesorio)</Spanish>
 			<French>AIM (Fixation)</French>
 			<Czech>Kolimátor Close Combat Optics, používá se pro vylepšení Sa-58.</Czech>
@@ -2972,98 +3013,122 @@
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_BELT">
 			<English>Ammo Belt</English>
+			<Russian>Патронташ</Russian>
 			<Czech>Příslušenství - nábojový pás</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_BELT">
 			<English>Ammo Belt Attachment.</English>
+			<Russian>Патронташ на приклад.</Russian>
 			<Czech>Nábojový pás, používá se pro vylepšení zbraní.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_CCO_RED">
 			<English>CCO RedDot Attachment</English>
+			<Russian>CCO(МОД)</Russian>
 			<Czech>Příslušenství - CCO</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_CCO_RED">
 			<English>CCO RedDot Attachment</English>
+			<Russian>Прицел CCO</Russian>
 			<Czech>Kolimátor Close Combat Optics, používá se pro vylepšení zbraní.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_CCO_RED_CROSSBOW">
 			<English>Crossbow CCO Attachment</English>
+			<Russian>CCO Арбалет(МОД)</Russian>
 			<Czech>Příslušenství - CCO pro kuši</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_CCO_RED_CROSSBOW">
 			<English>Fits a Compound Crossbow.</English>
+			<Russian>CCO прицел для арбалета.</Russian>
 			<Czech>Kolimátor Close Combat Optics, používá se pro vylepšení kuše.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_FL">
 			<English>Flashlight Attachment</English>
+			<Russian>Фонарик(МОД)</Russian>
 			<Czech>Příslušenství - baterka</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_FL">
 			<English>FlashLight Attachment.</English>
+			<Russian>Фонарик на оружие.</Russian>
 			<Czech>Baterka, používá se pro vylepšení zbraní.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SCOPE">
 			<English>Scoped Sight Attachment</English>
+			<Russian>Прицел (МОД)</Russian>
 			<Czech>Příslušenství - puškohled</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_SCOPE">
 			<English>Scoped Sight Attachment.</English>
+			<Russian>Прицел для винтовки.</Russian>
 			<Czech>Puškohled, používá se pro vylepšení zbraní.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SILENCER_MAKAROV">
 			<English>Silencer Attachment for Makarov</English>
+			<Russian>Глушитель Макаров(МОД)</Russian>
 			<Czech>Příslušenství - tlumič pro Makarov</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_SILENCER_MAKAROV">
 			<English>A silencer that can be attached to Makarov.</English>
+			<Russian>Прибор бесшумной стрельбы для пистолета Макарова.</Russian>
 			<Czech>Tlumič, používá se pro vylepšení pistole Makarov.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SILENCER_M9">
 			<English>Silencer Attachment for M9</English>
+			<Russian>Глушитель М9(МОД)</Russian>
 			<Czech>Příslušenství - tlumič pro M9</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_SILENCER_M9">
 			<English>A silencer that can be attached to M9.</English>
+			<Russian>Прибор бесшумной стрельбы для М9.</Russian>
 			<Czech>Tlumič, používá se pro vylepšení pistole M9.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SILENCER_M4">
 			<English>Silencer Attachment for M4A1</English>
+			<Russian>Глушитель M4А1(МОД)</Russian>
 			<Czech>Příslušenství - tlumič pro M4A1</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_SILENCER_M4">
 			<English>A silencer that can be attached to an M4A1 that already has AIM and camo.</English>
+			<Russian>Прибор бесшумной стрельбы для M4A1.</Russian>
 			<Czech>Tlumič, používá se pro vylepšení M4A1, jež již má CCO a kamufláž.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SILENCER_BIZON">
 			<English>Silencer Attachment for Bizon</English>
+			<Russian>Глушитель Бизон(МОД)</Russian>
 			<Czech>Příslušenství - tlumič pro Bizon</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_SILENCER_BIZON">
 			<English>A silencer that can be attached to Bizon.</English>
+			<Russian>Прибор бесшумной стрельбы для Бизона.</Russian>
 			<Czech>Tlumič, používá se pro vylepšení pušky Bizon.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SILENCER_SCAR">
 			<English>Silencer Attachment for SCAR</English>
+			<Russian>Глушитель SCAR(МОД)</Russian>
 			<Czech>Příslušenství - tlumič pro SCAR</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_SILENCER_SCAR">
 			<English>A silencer that can be attached to SCAR CQC.</English>
+			<Russian>Прибор бесшумной стрельбы для SCAR CQC.</Russian>
 			<Czech>Tlumič, používá se pro vylepšení SCAR CQC.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SILENCER_MP5">
 			<English>Silencer Attachment for MP5</English>
+			<Russian>Глушитель MP5(МОД)</Russian>
 			<Czech>Příslušenství - tlumič pro MP5</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_SILENCER_MP5">
 			<English>A silencer that can be attached to MP5A5.</English>
+			<Russian>Прибор бесшумной стрельбы для MP5A5.</Russian>
 			<Czech>Tlumič, používá se pro vylepšení samopalu MP5A5.</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SCOPE_M14">
 			<English>Scope Attachment for M14</English>
+			<Russian>Прицел M14(МОД)</Russian>
 			<Czech>Příslušenství - dalekohled pro M14</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_SCOPE_M14">
 			<English>A sniper scope that can be attached to M14 AIM.</English>
+			<Russian>Прицел, который можно установить на M14.</Russian>
 			<Czech>Puškohled, používá se pro vylepšení pušky M14 AIM.</Czech>
 		</Key>
 		<Key ID="STR_CREATE_STASH">
@@ -3205,7 +3270,7 @@
 		<Key ID="STR_EQUIP_DESC_3_EMPTY">											
 			<English>Empty Box of safety matches.</English>						
 			<German>Eine leere Schachtel Streichhoelzer.</German>
-			<Russian>Абсолютно пустой коробок спичек.</Russian>
+			<Russian>Абсолютно пустой коробок спичек. Выбрасывайте!</Russian>
 			<Czech>Smutná krabička bez zápalek. Bude vám zima.</Czech>
 			<Spanish>Caja vacía de Resultados</Spanish>
 			<French>Boîte d&apos;allumettes vide</French>
@@ -3229,7 +3294,7 @@
 		<Key ID="STR_EQUIP_DESC_4">
 			<English>A knife used during hunting for preparing the game to be used as food by cutting up the meat.</English>
 			<German>Das ist ein Messer! Kann zum Ausnehmen von erlegtem Wild verwendet werden.</German>
-			<Russian>Нож используется для разделки туш животных.</Russian>
+			<Russian>Нож можно использовать для разделки туш животных.</Russian>
 			<Spanish>Un cuchillo usado para preparar la carne de caza para ser guardada.</Spanish>
 			<French>Un couteau servant à dépecer le gibier.</French>
 			<Czech>Nůž, který se používá pro kuchání zvířat.</Czech>
@@ -3991,15 +4056,19 @@
 		</Key>
 		<Key ID="STR_MAG_CONV_G36_STANAG">
 			<English>Combine to STANAG</English>
+			<Russian>в STANAG маг.</Russian>
 		</Key>
 		<Key ID="STR_MAG_CONV_STANAG_G36">
 			<English>Combine for G36</English>
+			<Russian>в G36 маг.</Russian>
 		</Key>
 		<Key ID="STR_MAG_CONV_AK47_SA58">
 			<English>Combine for SA-58</English>
+			<Russian>в SA-58 маг.</Russian>
 		</Key>
 		<Key ID="STR_MAG_CONV_SA58_AK47">
 			<English>Combine for AK-47</English>
+			<Russian>в AK-47 маг.</Russian>
 		</Key>
 		<Key ID="STR_MAG_COMBINE_1">
 			<English>Combine to 8 rounds</English>
@@ -4291,26 +4360,32 @@
 		</Key>
 		<Key ID="STR_EQUIP_NAME_PICKAXE">
 			<English>Pickaxe</English>
+			<Russian>Кирка</Russian>
 			<Czech>Krumpáč</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_PICKAXE">
 			<English>A tool with a long handle at right angles to a curved iron or steel bar with a point at one end and a chisel or point at the other, used for breaking up hard ground or rock.</English>
+			<Russian>Ручной ударный инструмент, предназначенный для работы по камню, каменистому грунту, очень плотному грунту, для разрушения старой кладки.</Russian>
 			<Czech>Nástroj s dlouhou násadou, který se používá pro lámání kamene a rozrušování ztvrdlé zeminy.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_SledgeHammer">
 			<English>SledgeHammer</English>
+			<Russian>Кувалда</Russian>
 			<Czech>Palice</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_SledgeHammer">
 			<English>A sledgehammer is a tool with a large, flat, often metal head, attached to a lever.</English>
+			<Russian>Ручной ударный инструмент (двуручный молот), предназначенный для нанесения исключительно сильных ударов при обработке металла, на демонтаже и монтаже конструкций.</Russian>
 			<Czech>Nástroj s dlouhou násadou a obvykle kovovou hlavicí.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_LEVER">
 			<English>Lever (Handle)</English>
+			<Russian>Рукоять</Russian>
 			<Czech>Násada (topůrko)</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_LEVER">
 			<English>A brand new handle that can be used to fix broken tools.</English>
+			<Russian>Новенькая рукоять для починки сломанных инструментов.</Russian>
 			<Czech>Zbrusu nová násada, která se může hodit k opravení nějakého rozbitého nářadí.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_CROWBAR">
@@ -4331,10 +4406,12 @@
 		</Key>
 		<Key ID="STR_EQUIP_NAME_CROWBARBENT">
 			<English>Bent Crowbar</English>
+			<Russian>Согнутый ломик</Russian>
 			<Czech>Zohýbané páčidlo</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_CROWBARBENT">
 			<English>A bent crowbar.</English>
+			<Russian>Похоже, вы перестарались и согнули этот ломик.</Russian>
 			<Czech>Tímto páčidlem někdo páčil a páčil, až ho ohnul.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_MACHETE">
@@ -4796,7 +4873,7 @@
 		<Key ID="STR_FOOD_EQUIP_CODE_NAME_2">
 			<English>Raw Chicken Leg</English>
 			<German>Rohe Huehnchenkeule</German>
-			<Russian>Куриный окорочек</Russian>
+			<Russian>Куриный окорочок</Russian>
 			<Spanish>Pata de Pollo Cruda</Spanish>
 			<French>Poulet cru</French>
 			<Czech>Syrové kuřecí</Czech>
@@ -4804,7 +4881,7 @@
 		<Key ID="STR_FOOD_EQUIP_CODE_DESC_2">
 			<English>Chicken Leg to be used for sustenance, should be cooked prior to safe eating.</English>
 			<German>Eine rohe Huehnchenkeule, die vor dem Verzehr gebraten werden sollte.</German>
-			<Russian>Сырой куриный окорочек. Будет вкуснее и безопаснее, если его приготовить.</Russian>
+			<Russian>Сырой куриный окорочок. Будет вкуснее и безопаснее, если его приготовить.</Russian>
 			<Spanish>Pata de Pollo que se utilizará para sobrevivir, debería cocinarse primero.</Spanish>
 			<French>La Cuisse de Poulet crue peut être consommée mais devrait être cuite avant de pouvoir la manger.</French>
 			<Czech>Toto kuřecí stehno byl mělo být nejprve opečeno.</Czech>
@@ -5099,18 +5176,23 @@
 		</Key>
 		<Key ID="STR_ITEM_CANTEEN_NAME">
 			<English>Canteen</English>
+			<Russian>Котелок</Russian>
 		</Key>
 		<Key ID="STR_ITEM_CANTEEN_DESC">
 			<English>A sturdy military canteen used to hold liquids for consumption.</English>
+			<Russian>Армейский котелок для хранения жидкостей и еды.</Russian>
 		</Key>
 		<Key ID="STR_ITEM_CANTEEN_EMPTY_NAME">
 			<English>Canteen (Empty)</English>
+			<Russian>Котелок (Пустой)</Russian>
 		</Key>
 		<Key ID="STR_ITEM_CANTEEN_BOILED_NAME">
 			<English>Canteen (Boiled)</English>
+			<Russian>Котелок (Прокипяченый)</Russian>
 		</Key>
 		<Key ID="STR_ITEM_CANTEEN_HERBAL_NAME">
 			<English>Canteen (Herbal drink)</English>
+			<Russian>Котелок (Травяной напиток)</Russian>
 		</Key>
 		<Key ID="STR_ITEMWATERBOTTLEBOILED_CODE_NAME">
 			<English>Water Bottle (Boiled)</English>
@@ -6364,6 +6446,7 @@
 		</Key>
 		<Key ID="STR_ITEM_DESC_WOODENSPLINT">
 			<English>A Wooden splint that can be used to brace a broken leg.</English>
+			<Russian>Шина из дерева для фиксации сломанных конечностей.</Russian>						
 			<Czech>Dřevěná dlaha, která se bude hodit na zafixování zlomené nohy.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_MAKESHIFTBACKPACK">
@@ -6384,10 +6467,12 @@
 		</Key>
 		<Key ID="STR_ITEM_NAME_CROSSBOW_KIT">
 			<English>Crossbow string and arms</English>
+			<Russian>Набор (Арбалет)</Russian>
 			<Czech>Tětiva a lučiště</Czech>
 		</Key>
 		<Key ID="STR_ITEM_DESC_CROSSBOW_KIT">
 			<English>This kit is used to craft a crossbow</English>
+			<Russian>Набор (струны и плечи) для создания арбалета.</Russian>
 			<Czech>Tato sada obsahuje tětivu a lučiště. Součást nutná pro výrobu kuše.</Czech>
 		</Key>
 	</Package>
@@ -6951,14 +7036,17 @@
 		</Key>
 		<Key ID="str_mining_finished">
 			<English>You have finished collecting stone.</English>
+			<Russian>Вы закончили добычу камня.</Russian>
 			<Czech>Nalámali jste kámen.</Czech>
 		</Key>
 		<Key ID="str_mining_progress">
 			<English>%1 piles of stone have been successfully mined. Still to go: %2</English>
+			<Russian>%1 порций камня успешно добыто. Осталось еще %2.</Russian>
 			<Czech>%1 hromady kamení byly úspěšně nalámány. Ještě zbývá nalámat: %2</Czech>
 		</Key>
 		<Key ID="str_mining_canceled">
 			<English>Canceled mining stone.</English>
+			<Russian>Добыча камня отменена.</Russian>
 			<Czech>Lámání kamene bylo přerušeno.</Czech>
 		</Key>
 		<Key ID="str_mining_no_rocks">
@@ -8387,9 +8475,11 @@
 		</Key>
 		<Key ID="STR_BUILT_SANDBAG_Dismantle">
 			<English>Dismantle Bag Fence</English>
+			<Russian>Демонтировать преграду из мешков</Russian>
 		</Key>
 		<Key ID="STR_BUILT_HEDGEHOG_Dismantle">
 			<English>Dismantle Hedgehog (Steel)</English>
+			<Russian>Демонтировать противотанковый ёж</Russian>
 		</Key>
 		<Key ID="STR_BUILT_HEDGEHOG">
 			<English>Hedgehog (Steel)</English>
@@ -8531,7 +8621,7 @@
 		</Key>
 		<Key ID="STR_BLD_desc_ItemLog">
 			<English>Rough Wooden Log</English>
-			<Russian>Обработанное бревно</Russian>
+			<Russian>Необработанное бревно</Russian>
 			<French>Un rondin en bois brut</French>
 			<Czech>Neotesané dřevěné poleno</Czech>
 		</Key>
@@ -8543,6 +8633,7 @@
 		</Key>
 		<Key ID="STR_BLD_craft_equip_rope">
 			<English>String</English>
+			<Russian>Шнурок</Russian>
 		</Key>
 		<Key ID="STR_BLD_name_ItemPlank">
 			<English>Sawn Planks</English>
@@ -8582,7 +8673,7 @@
 		</Key>
 		<Key ID="STR_BLD_desc_ItemStone">
 			<English>Rough Stone</English>
-			<Russian>Обработанный камень</Russian>
+			<Russian>Необработанный камень</Russian>
 			<French>Des grosses pierres pour la construction</French>
 			<Czech>Hrubé neopracované kameny, použitelné na stavbu.</Czech>
 		</Key>
@@ -8606,18 +8697,18 @@
 		</Key>
 		<Key ID="STR_BLD_desc_ItemRSJ">
 			<English>Steel RSJ Support Beam</English>
-			<Russian>Стальная рельсовая балка</Russian>
+			<Russian>Стальная двутавровая балка</Russian>
 			<French>Poutrelle IPN en acier</French>
 			<Czech>Ocelová traverza s I-profilem</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemScrews">
-			<English>Box of screws for metal</English>
+			<English>Box of screws</English>
 			<Russian>Коробка шурупов</Russian>
 			<French>Vis</French>
 			<Czech>Krabička šroubů</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemScrews">
-			<English>Box of screws</English>
+			<English>Box of screws for metal</English>
 			<Russian>Коробка шурупов по металлу</Russian>
 			<French>Une boite de vis métal</French>
 			<Czech>Krabička plná šroubů pro spojování kovových materiálů.</Czech>
@@ -8666,19 +8757,19 @@
 		</Key>
 		<Key ID="STR_BLD_name_ItemShantyHouse">
 			<English>ShantyHouse</English>
-			<Russian>Шалаш</Russian>
+			<Russian>Хибара</Russian>
 			<French>Abris de fortune</French>
 			<Czech>Chatrč</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemShantyHouse">
 			<English>Building Plans for a Basic Shanty House.</English>
-			<Russian>Чертежи для постройки шалаша</Russian>
+			<Russian>Чертежи для постройки хибары.</Russian>
 			<French>Plan de construction d&apos;un abris de fortune.</French>
 			<Czech>Stavební plány pro vybudování chatrče</Czech>
 		</Key>
 		<Key ID="STR_BLD_build_ItemShantyHouse">
 			<English>ShantyHouseBase</English>
-			<Russian>Шалаш</Russian>
+			<Russian>Хибара</Russian>
 			<French>Construire Abris</French>
 			<Czech>Chatrč</Czech>
 		</Key>
@@ -8720,7 +8811,7 @@
 		</Key>
 		<Key ID="STR_BLD_name_SurvivorWorkshopBase_ghost">
 			<English>Workshop Framework (Ghost)</English>
-			<Russian>Мастерская (призрачная)</Russian>
+			<Russian>Мастерская (очертания)</Russian>
 			<French>Atelier (esquisse)</French>
 			<Czech>Dílna (náhled)</Czech>
 		</Key>
@@ -8750,7 +8841,7 @@
 		</Key>
 		<Key ID="STR_BLD_name_SurvivorWorkshopAStage5">
 			<English>Workshop Complete</English>
-			<Russian>Мастерская (завершение)</Russian>
+			<Russian>Мастерская</Russian>
 			<French>Atelier (Finitions)</French>
 			<Czech>Dílna (hotovo)</Czech>
 		</Key>
@@ -8762,55 +8853,55 @@
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouse_Base">
 			<English>Shanty House Base</English>
-			<Russian>Шалаш (основание)</Russian>
+			<Russian>Хибара (основание)</Russian>
 			<French>Abris de fortune (classe de base)</French>
 			<Czech>Chatrč (základna)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouse">
 			<English>Shanty House Base</English>
-			<Russian>Шалаш (цоколь)</Russian>
+			<Russian>Хибара (цоколь)</Russian>
 			<French>Abris de fortune (Socle)</French>
 			<Czech>Chatrč (základ)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouse_ghost">
 			<English>Shanty House (Ghost)</English>
-			<Russian>Шалаш (призрачный)</Russian>
+			<Russian>Хибара (очертания)</Russian>
 			<French>Abris de fortine (esquisse)</French>
 			<Czech>Chatrč (náhled)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage2">
 			<English>Shanty House lvl.2</English>
-			<Russian>Шалаш ур.2</Russian>
+			<Russian>Хибара ур.2</Russian>
 			<French>Abris de fortune niv.2</French>
 			<Czech>Chatrč (úroveň 2)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage3">
 			<English>Shanty House lvl.3</English>
-			<Russian>Шалаш ур.3</Russian>
+			<Russian>Хибара ур.3</Russian>
 			<French>Abris de fortune niv.3</French>
 			<Czech>Chatrč (úroveň 3)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage4">
 			<English>Shanty House lvl.4</English>
-			<Russian>Шалаш ур.4</Russian>
+			<Russian>Хибара ур.4</Russian>
 			<French>Abris de fortune niv.4</French>
 			<Czech>Chatrč (úroveň 4)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage5">
 			<English>Shanty House lvl.5</English>
-			<Russian>Шалаш ур.5</Russian>
+			<Russian>Хибара ур.5</Russian>
 			<French>Abris de fortune niv.5</French>
 			<Czech>Chatrč (úroveň 5)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage6">
 			<English>Shanty House lvl.6</English>
-			<Russian>Шалаш ур.6</Russian>
+			<Russian>Хибара ур.6</Russian>
 			<French>Abris de fortune niv.6</French>
 			<Czech>Chatrč (úroveň 6)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ShantyHouseStage7">
 			<English>Shanty House lvl.7</English>
-			<Russian>Шалаш ур.7</Russian>
+			<Russian>Хибара ур.7</Russian>
 			<French>Abris de fortune niv.7</French>
 			<Czech>Chatrč (úroveň 7)</Czech>
 		</Key>
@@ -8912,7 +9003,7 @@
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_ghost">
 			<English>Wooden Fence (Ghost)</English>
-			<Russian>Деревянный забор (призрак)</Russian>
+			<Russian>Деревянный забор (очертания)</Russian>
 			<French>Palissade en bois (esquisse)</French>
 			<Czech>Dřevěný plot (náhled)</Czech>
 		</Key>
@@ -8944,7 +9035,7 @@
 			<English>Wooden Fence 4th Panel</English>
 			<Russian>Деревянный забор (четвертая панель)</Russian>
 			<French>Palissade (3è panneau)</French>
-			<Czech></Czech>
+			<Czech>Dřevěný plot (čtvrtý deska)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_1">
 			<English>Wooden Fence lvl.1</English>
@@ -9038,7 +9129,7 @@
 		</Key>
 		<Key ID="STR_BLD_name_MetalFence_ghost">
 			<English>Metal Fence (Ghost)</English>
-			<Russian>Металлический забор (призрак)</Russian>
+			<Russian>Металлический забор (очертания)</Russian>
 			<French>Palissade métallique (esquisse)</French>
 			<Czech>Kovový plot (náhled)</Czech>
 		</Key>
@@ -9122,12 +9213,13 @@
 		</Key>
 		<Key ID="STR_BLD_name_WoodenGate_1_ghost">
 			<English>Wooden Gate (Ghost)</English>
-			<Russian>Деревянные ворота (призрак)</Russian>
+			<Russian>Деревянные ворота (очертания)</Russian>
 			<French>Portail en bois (esquisse)</French>
 			<Czech>Dřevěná brána (náhled)</Czech>
 		</Key>
 			<Key ID="STR_BLD_name_WoodenGate_Foundation">
 			<English>Wooden Gate Foundation</English>
+			<Russian>Деревянные ворота (основание)</Russian>
 			<Czech>Dřevěná brána (základy)</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenGate_1">
@@ -9156,7 +9248,7 @@
 		</Key>
 		<Key ID="STR_BLD_name_MetalGate_1_ghost">
 			<English>Metal Gate (Ghost)</English>
-			<Russian>Металлические ворота (призрак)</Russian>
+			<Russian>Металлические ворота (очертания)</Russian>
 			<French>Portail métallique (esquisse)</French>
 			<Czech>Kovová brána (náhled)</Czech>
 		</Key>
@@ -9204,14 +9296,17 @@
 		</Key>
 		<Key ID="STR_BLD_name_ItemDIY_woodGate">
 			<English>DIY Manual (Gate's)</English>
+			<Russian>"Сделай сам" (ворота)</Russian>
 			<Czech>DIY návod (brány)</Czech>
 		</Key>
 		<Key ID="STR_BLD_desc_ItemDIY_woodGate">
 			<English>For wooden Gates</English>
+			<Russian>Инструкции по созданию ворот</Russian>
 			<Czech>Do-It-Yourself návod na postavení dřevěné brány.</Czech>
 		</Key>
 		<Key ID="STR_BLD_build_ItemDIY_woodGate">
 			<English>Wooden Gate</English>
+			<Russian>Деревянные ворота</Russian>
 			<Czech>Dřevěná brána</Czech>
 		</Key>
 		<Key ID="STR_BLD_name_ItemDIY_metal">
