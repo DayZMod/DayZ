@@ -44,17 +44,17 @@ if (_isSea) then { } else {  };
 				};
 			};
 			
-			if (_x distance _refObj => 3.3) then {
+			if (_x distance _refObj >= 3.3) then {
 				_x setVariable ["speedLimit", _forcedSpeed, false];
 			};
-			if (!local _x) then {		
+			//if (!local _x) then {		
 				if (_refObj in _targets) then {
 					_last = _x getVariable["lastAttack", 0];
 					_entHeight = (getPosATL _x) select 2;
 					_pHeight = (getPosATL _refObj) select 2;
 					_delta = _pHeight - _entHeight;
 					_x setVariable ["speedLimit", 0, false];			
-					
+ 
 					if (_x distance _refObj <= 3.3) then {
 						if (!(animationState _x == "ZombieFeed")) then {
 							if (((diag_tickTime - _last) > 1.5) and ((_delta < 1.5) and (_delta > -1.5))) then {
@@ -69,7 +69,7 @@ if (_isSea) then { } else {  };
 				} else {
 					_x setVariable ["speedLimit", _forcedSpeed, false];
 				};
-			};
+			//};
 			
 			//Block all target atteps while in a vehicle
 			if (!_isAir) then {

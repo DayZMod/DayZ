@@ -19,7 +19,7 @@ _isVehicle = (_vehicle != player);
 _playerDodged = false;
 
 if (_type != "zombie") exitWith { diag_log ("not a zombie"); }; // we deal only with zombies in this function
-if (_unit distance _vehicle > 3.6) exitWith { diag_log ("too far:"); }; // distance too far according to any logic dealt here //+str(_unit distance _nextPlayerPos)+"/"+str(_areaAffect)
+if (_unit distance _vehicle > 3.6) exitWith {  }; // distance too far according to any logic dealt here //+str(_unit distance _nextPlayerPos)+"/"+str(_areaAffect)
 
 // compute the animation move
 _rnd = 0;
@@ -189,10 +189,11 @@ if (_isVehicle) then {
 			//Stop the Zed
 			_unit setVariable ["speedLimit", 0, false];
 				
-			_attackanimations = ["zombiestandingattack1","zombiestandingattack2","zombiestandingattack3","zombiestandingattack4","zombiestandingattack5","zombiestandingattack6","zombiestandingattack7","zombiestandingattack8","zombiestandingattack9","zombiestandingattack10","zombiefeed1","zombiefeed2","zombiefeed3","zombiefeed4","zombiefeed5"];
+			//_attackanimations = ["zombiestandingattack1","zombiestandingattack2","zombiestandingattack3","zombiestandingattack4","zombiestandingattack5","zombiestandingattack6","zombiestandingattack7","zombiestandingattack8","zombiestandingattack9","zombiestandingattack10","zombiefeed1","zombiefeed2","zombiefeed3","zombiefeed4","zombiefeed5"];
+			
 			//diag_log ((animationState _unit));
-			if ((animationState _unit) in _attackanimations) then {
-					
+			
+			//if ((animationState _unit) in _attackanimations) then {
 				if (alive _unit) then {	
 					//Damage the player
 					[player,  _wound,  _damage,  _unit, "zombie"] call fnc_usec_damageHandler;
@@ -201,7 +202,7 @@ if (_isVehicle) then {
 					if (unitPos _unit != "UP") then {
 						_unit setUnitPos "UP";
 					};
-				};
+				//};
 				
 				// broadcast hit noise
 				_pos = getPosATL player;

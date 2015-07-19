@@ -144,9 +144,9 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 			_agent setVariable ["stance", _favStance];
 			_agent setVariable ["BaseLocation", _position];
 			_agent setVariable ["doLoiter", _doLoiter]; // true: Z will be wandering, false: stay still
-			_agent setVariable ["myDest", _position];
-			_agent setVariable ["newDest", _position];
-			[_agent, _position] call zombie_loiter;
+			//_agent setVariable ["myDest", _position];
+			//_agent setVariable ["newDest", _position];
+			//[_agent, _position] call zombie_loiter;
 		};
 		
 		//Disable simulation 

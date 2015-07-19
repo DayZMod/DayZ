@@ -12,6 +12,7 @@ if (count _this > 2) then {
 	_pos = [_originalPos,10,(10 - (random (90 * 2))),0] call fn_selectRandomLocation;
 };
 
+/*
 if(isNull group _unit) then {
 	_unit moveTo _pos;
 } else {
@@ -19,3 +20,6 @@ if(isNull group _unit) then {
 };	
 _unit forceSpeed 2;
 _unit setVariable ["myDest",_pos];
+*/
+
+_pos
