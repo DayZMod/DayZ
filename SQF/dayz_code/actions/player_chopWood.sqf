@@ -125,20 +125,8 @@ if (_woodCutting) then {
             
             _counter = _counter + 1;
             _itemOut = "ItemLog";
-
-            _wpPos = player modeltoWorld [0,-1,0];
-			_wpPos set [2,0]; // assuming the player in on the ground.
-            _nearByPile= nearestObjects [_wpPos, ["WeaponHolder","WeaponHolderBase"],2];
-            if (count _nearByPile ==0) then {
-                _item = createVehicle ["WeaponHolder", _wpPos, [], 1, "CAN_COLLIDE"];
-            } else {
-                _item = _nearByPile select 0;
-            };
-
-            _item addMagazineCargoGlobal [_itemOut,1];
-            //_item modelToWorld getPosATL player;
-            _item setdir (getDir player);
-            player reveal _item;
+			//Drop Item to ground
+			_itemOut call fn_dropItem;
         };
             
         if ((_counter == _countOut) || _breaking) exitWith {

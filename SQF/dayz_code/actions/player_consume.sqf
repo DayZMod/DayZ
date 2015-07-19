@@ -118,28 +118,8 @@ if (_output != "") then
 		{
 			//wait a while before dropping the output item
 			sleep 3;
-			
-			private ["_pile","_pilePos"];
-			
-			//find nearby lootpiles
-			_pile = nearestObjects [getPosATL player,["WeaponHolder"],PILE_SEARCH_RADIUS];
-			
-			//if piles were found select the first one
-			if (count _pile != 0) then
-			{
-				_pile = _pile select 0;
-			}
-			//otherwise create new pile
-			else
-			{
-				_pilePos = player modeltoWorld PILE_PLAYER_OFFSET;
-				_pilePos set [2, 0];
-				_pile = createVehicle ["WeaponHolder",_pilePos,[],0.0,"CAN_COLLIDE"];
-				_pile setPosATL _pilePos;
-			};
-			
-			//add output item to pile
-			_pile addMagazineCargoGlobal [_output,1];
+			//Drop Item to ground
+			_output call fn_dropItem;
 		};
 	};
 };
