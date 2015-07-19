@@ -1,5 +1,4 @@
-class UralCivil_DZ: UralCivil
-{
+class UralCivil_DZ: UralCivil {
 	scope=public;
 	side=TCivilian;
 	faction=CIV;

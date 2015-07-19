@@ -103,7 +103,7 @@ class CfgVehicles {
 	#include "Car\SUV_DZ.hpp"
 	#include "Car\Pickup_PK_INS.hpp"
 	#include "Car\Offroad_DSHKM_INS.hpp"
-	#inculde "Car\UralCivil_DZ.hpp"
+	#include "Car\UralCivil_DZ.hpp"
 	//Helicopter's
 	#include "Helicopter\MI17.hpp"
 	#include "Helicopter\UH1H.hpp"
