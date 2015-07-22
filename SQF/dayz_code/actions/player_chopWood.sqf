@@ -143,11 +143,11 @@ if (_woodCutting) then {
     };
 
     if (_proceed) then {            
-        //if ("" == typeOf _findNearestTree) then { 
+        if ("" == typeOf _findNearestTree) then { 
         //remove vehicle, Need to ask server to remove.
-        //  PVDZ_objgather_Knockdown = [_findNearestTree,player];
-        //  publicVariableServer "PVDZ_objgather_Knockdown";
-        //};            
+          PVDZ_objgather_Knockdown = [_findNearestTree,player];
+          publicVariableServer "PVDZ_objgather_Knockdown";
+        };            
         //cutText [format["\n\nChopping down tree.], "PLAIN DOWN"];
         //cutText [localize "str_player_25", "PLAIN DOWN"];
     } else {
