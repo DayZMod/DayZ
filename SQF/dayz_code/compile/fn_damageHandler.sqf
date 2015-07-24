@@ -76,23 +76,41 @@ if (_unit == player) then
         };
     };
     
-    if ((_ammo == "tranquiliser_bolt") and (!_unconscious) and (vehicle player == player)) then {
-        [_unit] spawn {
-            private ["_unit"];
-            _unit = _this select 0;
-            cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; 
-			//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
-            //sleep 2; 
-            // 0 fadeSound 0.05;
-            //sleep 5; 
-            [_unit,0.01] call fnc_usec_damageUnconscious;
-            _unit setVariable ["NORRN_unconscious", true, true];
-            r_player_timeout = round(random 60);
-            r_player_unconscious = true;
-            player setVariable["medForceUpdate",true,true];
-            player setVariable ["unconsciousTime", r_player_timeout, true];
-        };
-    };
+	if ((vehicle player == player) and (!_unconscious)) then {
+		if (_ammo == "tranquiliser_bolt") then {
+			[_unit] spawn {
+				private ["_unit"];
+				_unit = _this select 0;
+				cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; 
+				//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
+				//sleep 2; 
+				// 0 fadeSound 0.05;
+				//sleep 5; 
+				[_unit,0.01] call fnc_usec_damageUnconscious;
+				_unit setVariable ["NORRN_unconscious", true, true];
+				r_player_timeout = round(random 60);
+				r_player_unconscious = true;
+				player setVariable["medForceUpdate",true,true];
+				player setVariable ["unconsciousTime", r_player_timeout, true];
+			};
+		};
+		
+		if (_damage > 0.4) then {
+			//Melee knockout system
+			if ((_isHeadHit) and (_ammo in ["Crowbar_Swing_Ammo","Bat_Swing_Ammo"])) then {
+				[_unit] spawn {
+					 _unit = _this select 0;
+					cutText ["you have been knocked out", "PLAIN DOWN"]; 
+					[_unit,0.01] call fnc_usec_damageUnconscious;
+					_unit setVariable ["NORRN_unconscious", true, true];
+					r_player_timeout = 20 + round(random 60);
+					r_player_unconscious = true;
+					player setVariable["medForceUpdate",true,true];
+					player setVariable ["unconsciousTime", r_player_timeout, true];
+				};
+			};
+		};
+	};
   
 
     //Log to server :-( OverProcessing really not needed.
