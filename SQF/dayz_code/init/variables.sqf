@@ -440,6 +440,7 @@ switch (dayz_presets) do {
 		if(isNil "dayz_ForcefullmoonNights") then { dayz_ForcefullmoonNights = false; };
 		if(isNil "dayz_OpenTarget_TimerTicks") then { dayz_OpenTarget_TimerTicks = 60 * 10; };
 		if(isNil "dayz_temperature_override") then { dayz_temperature_override = true; };
+		if(isNil "dayz_nutritionSystem") then { dayz_nutritionSystem = false;  };
 	};
     case "Classic": { //Classic
 		dayz_enableGhosting = false; //Enable disable the ghosting system.
@@ -452,6 +453,7 @@ switch (dayz_presets) do {
 		dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = true; // Set to true to disable all temperature changes.
+		dayz_nutritionSystem = false; //Enables nutrition system
 	};
 	case "Elite": { //Elite
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
@@ -464,6 +466,7 @@ switch (dayz_presets) do {
 		dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = false; // Set to true to disable all temperature changes.
+		dayz_nutritionSystem = true; //Enables nutrition system
 	};
     default { //Vanilla
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
@@ -476,6 +479,7 @@ switch (dayz_presets) do {
 		dayz_ForcefullmoonNights = true; // Forces night time to be full moon.
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = false; // Set to true to disable all temperature changes.
+		dayz_nutritionSystem = true; //Enables nutrition system
 	};
 };
 

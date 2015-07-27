@@ -13,6 +13,9 @@ dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkey
 dayz_POIs = true;
 dayz_infectiousWaterholes = true;
 
+//Temp Settings
+dayz_DamageMultiplier = 2; //1 - 0 = Disabled, anything over 1 will multiply damage. Damage Multiplier for Zombies.
+
 //DayazMod Presets 
 dayz_presets = "Vanilla"; //"Custom","Classic","Vanilla","Elite"
 
@@ -27,6 +30,7 @@ if ( dayz_presets == "Custom") then {
 	dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
 	dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
 	dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
+	dayz_nutritionSystem = false; //Enables nutrition system
 };
 
 //temp settings

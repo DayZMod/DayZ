@@ -68,8 +68,22 @@ _sound = getText (_cfg >> "consumeSound");
 _output = getText (_cfg >> "consumeOutput");
 
 //Apply nutrition and blood regen
-["FoodDrink",_bloodRegen,_nutrition] call dayz_NutritionSystem;
-r_player_foodstack = r_player_foodstack + 1;
+if (dayz_nutritionSystem) then {
+	_hungerCount = _nutrition select 1;
+	_thirstCount = _nutrition select 2;
+	
+	if (_hungerCount > 0) then { dayz_lastMeal =	time; };
+	if (_thirstCount > 0) then { dayz_lastDrink = time; };
+	
+	["FoodDrink",_bloodRegen,_nutrition] call dayz_NutritionSystem;
+	r_player_foodstack = r_player_foodstack + 1;
+} else {
+	_hungerCount = _nutrition select 1;
+	_thirstCount = _nutrition select 2;
+	
+	if (_hungerCount > 0) then { dayz_hunger = 0; dayz_lastMeal =	time; };
+	if (_thirstCount > 0) then { dayz_thirst = 0; dayz_lastDrink = time; };
+};
 
 //Apply or cure infection base on infectionChance
 if (_infectionChance != 0 && {abs(_infectionChance) > random 1}) then
