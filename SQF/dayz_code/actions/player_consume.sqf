@@ -68,7 +68,7 @@ _sound = getText (_cfg >> "consumeSound");
 _output = getText (_cfg >> "consumeOutput");
 
 //Apply nutrition and blood regen
-if (dayz_nutritionSystem) then {
+if (dayz_nutritionValuesSystem) then {
 	_hungerCount = _nutrition select 1;
 	_thirstCount = _nutrition select 2;
 	
