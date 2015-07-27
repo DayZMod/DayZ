@@ -78,26 +78,24 @@ if (_maxlocalspawned > 0) then { _spawnZedRadius = _spawnZedRadius * 3; };
 
     //Loot
     if (_canSpawn) then {
-        if (!dayz_serversideloot) then {
-            if (_currentWeaponHolders < _maxWeaponHolders) then {
-                //Baisc loot check
-                if ((_dis < 125) and (_dis > 30) and !_inVehicle and _checkLoot) then {
-                    _serverTime = serverTime;
-                    _looted = (_x getVariable ["looted",_serverTime]);      
-                    _age = _serverTime - _looted;
-                    if ((_age == 0) or (_age > 900)) then { 
-                        _x setVariable ["looted",_serverTime,!_islocal];                 
-                        _x call building_spawnLoot;
-                        if (!(_x in dayz_buildingBubbleMonitor)) then {
-                            dayz_buildingBubbleMonitor set [count dayz_buildingBubbleMonitor, _x];
-                        };
-                        //diag_log [ diag_tickTime, "new loot at",_x,"age:", _age, "serverTime:", _serverTime];
-                    }/*
-                    else {
-                        diag_log [ diag_tickTime, "won't spawn loot at",_x,"age:", _age, "serverTime:", _serverTime];
-                    }*/;
-                };
-            };
+		if (_currentWeaponHolders < _maxWeaponHolders) then {
+			//Baisc loot check
+			if ((_dis < 125) and (_dis > 30) and !_inVehicle and _checkLoot) then {
+				_serverTime = serverTime;
+				_looted = (_x getVariable ["looted",_serverTime]);      
+				_age = _serverTime - _looted;
+				if ((_age == 0) or (_age > 900)) then { 
+					_x setVariable ["looted",_serverTime,!_islocal];                 
+					_x call building_spawnLoot;
+					if (!(_x in dayz_buildingBubbleMonitor)) then {
+						dayz_buildingBubbleMonitor set [count dayz_buildingBubbleMonitor, _x];
+					};
+					//diag_log [ diag_tickTime, "new loot at",_x,"age:", _age, "serverTime:", _serverTime];
+				}/*
+				else {
+					diag_log [ diag_tickTime, "won't spawn loot at",_x,"age:", _age, "serverTime:", _serverTime];
+				}*/;
+			};
         };
 
     //Zeds
