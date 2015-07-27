@@ -8,26 +8,32 @@ dayZ_serverName = "1337"; // Servername (country code + server number)
 //Gamesettings
 dayz_antihack = 0; // DayZ Antihack / 1 = enabled // 0 = disabled
 dayz_REsec = 1; // DayZ RE Security / 1 = enabled // 0 = disabled
-dayz_enableGhosting = true; //Enable disable the ghosting system.
-dayz_ghostTimer = 120; //Sets how long in seconds a player must be dissconnected before being able to login again.
-dayz_spawnselection = 1; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
-dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
-dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
-dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
 dayz_enableRules = true; //Enables a nice little news/rules feed on player login (make sure to keep the lists quick).
 dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkeys 1,2,3) False = enable animations, True = disable animations
-dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
-dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
-
-//temp settings
 dayz_POIs = true;
 dayz_infectiousWaterholes = true;
 
+//DayazMod Presets 
+dayz_presets = "Vanilla"; //"Custom","Classic","Vanilla","Elite"
+
+//Only need to edit if you running a custom server.
+if ( dayz_presets == "Custom") then {
+	dayz_enableGhosting = true; //Enable disable the ghosting system.
+	dayz_ghostTimer = 120; //Sets how long in seconds a player must be dissconnected before being able to login again.
+	dayz_spawnselection = 1; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
+	dayz_spawncarepkgs_clutterCutter = 2; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+	dayz_spawnCrashSite_clutterCutter = 2;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+	dayz_spawnInfectedSite_clutterCutter = 2; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
+	dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
+	dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
+	dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
+};
+
+//temp settings
 dayz_DamageMultiplier = 1; //Damage Multiplier for Zombies.
 dayz_maxGlobalZeds = 500; //Limit the total zeds server wide.
 dayz_temperature_override = false; // Set to true to disable all temperature changes.
 
-dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 
 
 

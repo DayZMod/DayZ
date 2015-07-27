@@ -395,37 +395,88 @@ dayz_cantseeDist = 150; // distance from which we can spawn a Z in front of any 
 dayz_cantseefov = 70; // half player field-of-view. Visible Z won't be spawned in front of any near players
 dayz_canDelete = 350; // Z, further than this distance from its "owner", will be deleted
 
-if(isNil "dayz_serversideloot") then {
-	dayz_serversideloot = false; //enables server side loot spawning.
-};
-if(isNil "dayz_POIs") then {
-    dayz_POIs = true; //Enable POI's
-};
+//Remove
 if(isNil "dayz_ForcefullmoonNights") then {
     dayz_ForcefullmoonNights = false; //force full moon nights.
 };
-if(isNil "dayz_infectiouswaterholes") then {
-	dayz_infectiouswaterholes = true; //Enable infected waterholes
-};
-
-if(isNil "dayz_quickSwitch") then {
-	dayz_quickSwitch = false; //Enable quick weapon switch,
-};
-
 if(isNil "dayz_bleedingeffect") then { 
 	dayz_bleedingeffect = 3;
 };//dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
-
-if(isNil "dayz_DamageMultiplier") then { 
-	dayz_DamageMultiplier = 1;
-};
 
 if(isNil "dayz_temperature_override") then { 
 	dayz_temperature_override = false;
 };
 
+//Settings Not under dayz_settings
 if(isNil "dayz_attackRange") then { 
 	dayz_attackRange = 3;
+};
+if(isNil "dayz_DamageMultiplier") then { 
+	dayz_DamageMultiplier = 1;
+};
+if(isNil "dayz_quickSwitch") then {
+	dayz_quickSwitch = false; //Enable quick weapon switch,
+};
+//Will be moved to map
+if(isNil "dayz_infectiouswaterholes") then {
+	dayz_infectiouswaterholes = true; //Enable infected waterholes
+};
+if(isNil "dayz_infectiouswaterholes") then {
+    dayz_POIs = true; //Enable POI's
+};
+
+//Replace server individual settings with ranked settings
+if(isNil "dayz_presets") then { dayz_presets = "Vanilla"; };
+
+switch (dayz_presets) do {
+	case "Custom": { //Custom 
+		if(isNil "dayz_enableGhosting") then { dayz_enableGhosting = false; };
+		if(isNil "dayz_ghostTimer") then { dayz_ghostTimer = 120; };
+		if(isNil "dayz_spawnselection") then { dayz_spawnselection = 0; };
+		if(isNil "dayz_spawncarepkgs_clutterCutter") then { dayz_spawncarepkgs_clutterCutter = 0; };
+		if(isNil "dayz_spawnCrashSite_clutterCutter") then { dayz_spawnCrashSite_clutterCutter = 0; };
+		if(isNil "dayz_spawnInfectedSite_clutterCutter") then { dayz_spawnInfectedSite_clutterCutter = 0; };
+		if(isNil "dayz_bleedingeffect") then { dayz_bleedingeffect = 2; };
+		if(isNil "dayz_ForcefullmoonNights") then { dayz_ForcefullmoonNights = false; };
+		if(isNil "dayz_OpenTarget_TimerTicks") then { dayz_OpenTarget_TimerTicks = 60 * 10; };
+		if(isNil "dayz_temperature_override") then { dayz_temperature_override = true; };
+	};
+    case "Classic": { //Classic
+		dayz_enableGhosting = false; //Enable disable the ghosting system.
+		dayz_ghostTimer = 120; //Sets how long in seconds a player must be dissconnected before being able to login again.
+		dayz_spawnselection = 0; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
+		dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
+		dayz_bleedingeffect = 2; //1= blood on the ground, 2= partical effect, 3 = both.
+		dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
+		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
+		dayz_temperature_override = true; // Set to true to disable all temperature changes.
+	};
+	case "Elite": { //Elite
+		dayz_enableGhosting = true; //Enable disable the ghosting system.
+		dayz_ghostTimer = 600; //Sets how long in seconds a player must be dissconnected before being able to login again.
+		dayz_spawnselection = 0; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
+		dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
+		dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
+		dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
+		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
+		dayz_temperature_override = false; // Set to true to disable all temperature changes.
+	};
+    default { //Vanilla
+		dayz_enableGhosting = true; //Enable disable the ghosting system.
+		dayz_ghostTimer = 300; //Sets how long in seconds a player must be disconnected before being able to login again.
+		dayz_spawnselection = 1; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
+		dayz_spawncarepkgs_clutterCutter = 2; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnCrashSite_clutterCutter = 2;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnInfectedSite_clutterCutter = 2; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
+		dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
+		dayz_ForcefullmoonNights = true; // Forces night time to be full moon.
+		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
+		dayz_temperature_override = false; // Set to true to disable all temperature changes.
+	};
 };
 
 //init global arrays for Loot Chances
