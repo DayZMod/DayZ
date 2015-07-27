@@ -48,7 +48,7 @@ class ItemSodaDrwasteEmpty : ItemSodaEmpty
 class ItemSodaFrankaEmpty : ItemSodaEmpty
 {
 	model = "z\addons\dayz_communityassets\models\soda_franka_clean_empty.p3d";
-	picture = "\z\addons\dayz_communityassets\pictures\equip_soda_franka_clean_empty_ca";
+	picture = "\z\addons\dayz_communityassets\pictures\equip_soda_franka_clean_empty_ca.paa";
 };
 
 class ItemSodaLemonadeEmpty : ItemSodaEmpty

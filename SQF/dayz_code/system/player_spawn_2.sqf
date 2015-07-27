@@ -149,38 +149,34 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		};
 	};
 	
-	//Hunger
-	//Quick Fix - Temp system to reduce consumption rate. (ill need to double the tinned food values and reset this later) 
-	if ((diag_tickTime - _timer2) > 4) then {
-		_hunger = (abs((((r_player_bloodTotal - r_player_blood) / r_player_bloodTotal) * 5) + _speed + dayz_myLoad) * 3);
-		if (diag_ticktime - dayz_panicCooldown < 120) then {
-			_hunger = _hunger * 2;
-		};
-		dayz_hunger = dayz_hunger + (_hunger / 60);
-		dayz_hunger = (dayz_hunger min SleepFood) max 0;
-
-		if (dayz_hunger >= SleepFood) then {
-			if (r_player_blood < 10) then {
-				_id = [player,"starve"] spawn player_death;
-			};
-		};
-		
-	//Thirst
-		_thirst = 2;
-		if (_refObj == player) then {
-			_thirst = (_speed + 4) * 3;
-		};
-		dayz_thirst = dayz_thirst + (_thirst / 60) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
-		dayz_thirst = (dayz_thirst min SleepWater) max 0;
-
-		if (dayz_thirst >= SleepWater) then {
-			if (r_player_blood < 10) then {
-				_id = [player,"dehyd"] spawn player_death;
-			};
-		};
-		
-		//diag_log format ["playerSpawn2 %1/%2",dayz_hunger,dayz_thirst];
+	_hunger = (abs((((r_player_bloodTotal - r_player_blood) / r_player_bloodTotal) * 5) + _speed + dayz_myLoad) * 3);
+	if (diag_ticktime - dayz_panicCooldown < 120) then {
+		_hunger = _hunger * 2;
 	};
+	dayz_hunger = dayz_hunger + (_hunger / 80); //60 Updated to 80
+	dayz_hunger = (dayz_hunger min SleepFood) max 0;
+
+	if (dayz_hunger >= SleepFood) then {
+		if (r_player_blood < 10) then {
+			_id = [player,"starve"] spawn player_death;
+		};
+	};
+	
+//Thirst
+	_thirst = 2;
+	if (_refObj == player) then {
+		_thirst = (_speed + 4) * 3;
+	};
+	dayz_thirst = dayz_thirst + (_thirst / 120) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
+	dayz_thirst = (dayz_thirst min SleepWater) max 0;
+
+	if (dayz_thirst >= SleepWater) then {
+		if (r_player_blood < 10) then {
+			_id = [player,"dehyd"] spawn player_death;
+		};
+	};
+	
+	//diag_log format ["playerSpawn2 %1/%2",dayz_hunger,dayz_thirst];
 	
 	//Calories
 	if (dayz_nutrition > 0) then {

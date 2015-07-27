@@ -8,7 +8,7 @@ class FoodGoatRaw : FoodRaw
 	descriptionShort = $STR_FOOD_EQUIP_GOAT_RAW;
 	
 	bloodRegen = 300;
-	Nutrition[] = {143,150,0,0};
+	Nutrition[] = {143,300,0,0};
 	
 	cookOutput = "FoodGoatCooked";
 };
@@ -23,10 +23,8 @@ class FoodGoatCooked : FoodCooked
 	descriptionShort = $STR_FOOD_EQUIP_GOAT_COOKED;
 	
 	bloodRegen = 600;
-	Nutrition[] = {143,300,0,0};
+	Nutrition[] = {143,600,0,0};
 };
-
-
 
 class FoodMuttonRaw : FoodRaw
 {
@@ -38,7 +36,7 @@ class FoodMuttonRaw : FoodRaw
 	descriptionShort = $STR_FOOD_EQUIP_CODE_DESC_1;
 	
 	bloodRegen = 400;
-	Nutrition[] = {294,200,0,0};
+	Nutrition[] = {294,350,0,0};
 	
 	cookOutput = "FoodMuttonCooked";
 };
@@ -53,7 +51,7 @@ class FoodMuttonCooked : FoodCooked
 	descriptionShort = $STR_FOODCOOKED_EQUIP_CODE_DESC_1;
 	
 	bloodRegen = 800;
-	Nutrition[] = {294,400,0,0};
+	Nutrition[] = {294,700,0,0};
 };
 
 
@@ -68,7 +66,7 @@ class FoodChickenRaw : FoodRaw
 	descriptionShort = $STR_FOOD_EQUIP_CODE_DESC_2;
 	
 	bloodRegen = 400;	
-	Nutrition[] = {219,200,0,0};
+	Nutrition[] = {219,350,0,0};
 	
 	cookOutput = "FoodChickenCooked";
 };
@@ -83,7 +81,7 @@ class FoodChickenCooked : FoodCooked
 	descriptionShort = $STR_FOODCOOKED_EQUIP_CODE_DESC_2;
 	
 	bloodRegen = 800;
-	Nutrition[] = {219,400,0,0};
+	Nutrition[] = {219,700,0,0};
 };
 
 
@@ -98,7 +96,7 @@ class FoodBaconRaw : FoodRaw
 	descriptionShort = $STR_FOOD_EQUIP_CODE_DESC_4;
 	
 	bloodRegen = 300;
-	Nutrition[] = {417,50,50,0};
+	Nutrition[] = {417,350,0,0};
 	
 	cookOutput = "FoodBaconCooked";
 };
@@ -113,7 +111,7 @@ class FoodBaconCooked : FoodCooked
 	descriptionShort = $STR_FOODCOOKED_EQUIP_CODE_DESC_4;
 	
 	bloodRegen = 600;
-	Nutrition[] = {417,400,0,0};
+	Nutrition[] = {417,700,0,0};
 };
 
 
@@ -128,7 +126,7 @@ class FoodRabbitRaw : FoodRaw
 	descriptionShort = $STR_FOOD_EQUIP_CODE_DESC_3;
 	
 	bloodRegen = 500;
-	Nutrition[] = {517,300,0,0};
+	Nutrition[] = {517,450,0,0};
 	
 	cookOutput = "FoodRabbitCooked";
 };
@@ -143,7 +141,7 @@ class FoodRabbitCooked : FoodCooked
 	descriptionShort = $STR_FOODCOOKED_EQUIP_CODE_DESC_3;
 	
 	bloodRegen = 1000;
-	Nutrition[] = {517,600,0,0};
+	Nutrition[] = {517,900,0,0};
 };
 
 
@@ -158,7 +156,7 @@ class FoodBeefRaw : FoodRaw
 	descriptionShort = $STR_FOOD_EQUIP_CODE_DESC_6;
 	
 	bloodRegen = 400;
-	Nutrition[] = {332,200,0,0};
+	Nutrition[] = {332,350,0,0};
 	
 	cookOutput = "FoodBeefCooked";
 };
@@ -173,5 +171,5 @@ class FoodBeefCooked : FoodCooked
 	descriptionShort = $STR_FOODCOOKED_EQUIP_CODE_DESC_6;
 	
 	bloodRegen = 800;
-	Nutrition[] = {332,400,0,0};
+	Nutrition[] = {332,700,0,0};
 };

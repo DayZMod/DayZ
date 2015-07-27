@@ -8,7 +8,7 @@ class FishRawTrout : FoodRaw
 	descriptionShort = $STR_FOOD_EQUIP_TROUT_RAW;
 	
 	bloodRegen = 500;
-	Nutrition[] = {117,200,0,0};
+	Nutrition[] = {117,350,0,0};
 	
 	cookOutput = "FishCookedTrout";
 };
@@ -23,7 +23,7 @@ class FishCookedTrout : FoodCooked
 	descriptionShort = $STR_FOOD_EQUIP_TROUT_COOKED;
 	
 	bloodRegen = 1000;
-	Nutrition[] = {117,400,0,0};
+	Nutrition[] = {117,700,0,0};
 };
 
 
@@ -38,7 +38,7 @@ class FishRawSeaBass : FoodRaw
 	descriptionShort = $STR_FOOD_EQUIP_SEABASS_RAW;
 	
 	bloodRegen = 700;
-	Nutrition[] = {110,300,0,0};
+	Nutrition[] = {110,450,0,0};
 	
 	cookOutput = "FishCookedSeaBass";
 };
@@ -53,7 +53,7 @@ class FishCookedSeaBass : FoodCooked
 	descriptionShort = $STR_FOOD_EQUIP_SEABASS_COOKED;
 	
 	bloodRegen = 1400;
-	Nutrition[] = {110,600,0,0};
+	Nutrition[] = {110,900,0,0};
 };
 
 
@@ -68,7 +68,7 @@ class FishRawTuna : FoodRaw
 	descriptionShort = $STR_FOOD_EQUIP_TUNA_RAW;
 	
 	bloodRegen = 1000;
-	Nutrition[] = {123,400,0,0};
+	Nutrition[] = {123,550,0,0};
 	
 	cookOutput = "FishCookedTuna";
 };
@@ -83,5 +83,5 @@ class FishCookedTuna : FoodCooked
 	descriptionShort = $STR_FOOD_EQUIP_TUNA_COOKED;
 	
 	bloodRegen = 2000;
-	Nutrition[] = {123,800,0,0};
+	Nutrition[] = {123,1100,0,0};
 };

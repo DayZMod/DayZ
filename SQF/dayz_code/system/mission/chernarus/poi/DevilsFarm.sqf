@@ -3095,28 +3095,6 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
   _this setPos [1734.4928, 11736.971, -1.5258789e-005];
 };
 
-_vehicle_438 = objNull;
-if (true) then
-{
-  _this = "WeaponHolder_M4A1" createVehicle [1778.0024, 11714.693, 1.5258789e-005];
-_this setVariable ["", true]; // prevent network SV by loot/zeds spawner
-
-  _vehicle_438 = _this;
-  _this setDir 44.453243;
-  _this setPos [1778.0024, 11714.693, 1.5258789e-005];
-};
-
-_vehicle_439 = objNull;
-if (true) then
-{
-  _this = "WeaponHolder_M4A1" createVehicle [1783.1667, 11711.604, 4.5776367e-005];
-_this setVariable ["", true]; // prevent network SV by loot/zeds spawner
-
-  _vehicle_439 = _this;
-  _this setDir 119.79089;
-  _this setPos [1783.1667, 11711.604, 4.5776367e-005];
-};
-
 _vehicle_441 = objNull;
 if (true) then
 {

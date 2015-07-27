@@ -3646,17 +3646,6 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
   _this setPos [8295.9268, 3044.8689, 1.9073486e-006];
 };
 
-_vehicle_394 = objNull;
-if (true) then
-{
-  _this = "WeaponHolder_ItemJerrycanSide" createVehicle [8305.5977, 3041.6509, 3.8146973e-006];
-_this setVariable ["", true]; // prevent network SV by loot/zeds spawner
-
-  _vehicle_394 = _this;
-  _this setDir -114.45797;
-  _this setPos [8305.5977, 3041.6509, 3.8146973e-006];
-};
-
 _vehicle_397 = objNull;
 if (true) then
 {
