@@ -12,9 +12,10 @@ if (!_isDead) then {
 	_unit setVariable ["NORRN_unconscious", false, true];
 	_unit setVariable ["USEC_isCardiac",false,true];
 	sleep 5;
-	//["PVCDZ_hlt_Epi",[_unit,player,"ItemEpinephrine"]] call broadcastRpcCallAll;
-	//PVCDZ_hlt_Epi = [_unit,player,"ItemEpinephrine"];
-	//publicVariable "PVCDZ_hlt_Epi";
+	
+	//give humanity
+	[player,25] call player_humanityChange;
+	
 	PVDZ_send = [_unit,"Epinephrine",[_unit,player,"ItemEpinephrine"]];
 	publicVariableServer "PVDZ_send";
 };

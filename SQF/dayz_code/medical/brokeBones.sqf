@@ -44,6 +44,10 @@ if (_finished) then {
 		//Self Healing
 		_id = [player,player] execVM "\z\addons\dayz_code\medical\publicEH\medMorphine.sqf";
 	};
+	
+	if (_item in ["ItemMorphine"]) then {
+		[player,50] call player_humanityChange;
+	};
 
 	PVDZ_send = [_unit,"Morphine",[_unit,player]];
 	publicVariableServer "PVDZ_send";
