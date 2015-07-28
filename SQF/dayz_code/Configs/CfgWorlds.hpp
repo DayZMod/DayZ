@@ -11,7 +11,7 @@ class CfgWorlds {
 		access = 3;
 		worldId = 4;
 		cutscenes[] = {"DayZModIntro1"};
-		description = "DayZMod v1.8.1";
+		description = "DayZMod v1.8.7.dev1";
 		icon = "";
 		worldName = "\ca\chernarus\chernarus.wrp";
 		pictureMap = "";
