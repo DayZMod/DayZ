@@ -18,7 +18,7 @@ class FoodMRE : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_MRE;
 	
 	bloodRegen = 300;
-	Nutrition[] = {150,500,300,0};
+	Nutrition[] = {150,800,600,0};
 };
 
 class FoodPistachio : FoodPackaged
@@ -31,7 +31,7 @@ class FoodPistachio : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_PISTACHIO;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,150,0,0};
+	Nutrition[] = {0,450,0,0};
 };
 	
 class FoodNutmix : FoodPackaged
@@ -44,7 +44,7 @@ class FoodNutmix : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_NUTMIX;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,150,0,0};
+	Nutrition[] = {0,450,0,0};
 };
 
 class FoodCanBeef : FoodPackaged
@@ -57,7 +57,7 @@ class FoodCanBeef : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_BEEF;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,300,50,0};
+	Nutrition[] = {0,600,350,0};
 	
 	consumeOutput = "FoodCanBeefEmpty";
 };
@@ -72,7 +72,7 @@ class FoodCanPotatoes : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_POTATOES;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,450,150,0};
+	Nutrition[] = {0,750,450,0};
 	
 	consumeOutput = "FoodCanPotatoesEmpty";
 };
@@ -87,7 +87,7 @@ class FoodCanGriff : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_GRIFF;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,200,0,0};
+	Nutrition[] = {0,500,0,0};
 	
 	consumeOutput = "FoodCanGriffEmpty";
 };
@@ -102,7 +102,7 @@ class FoodCanBadguy : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_BADGUY;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,100,0,0};
+	Nutrition[] = {0,400,0,0};
 	
 	consumeOutput = "FoodCanBadguyEmpty";
 };
@@ -117,7 +117,7 @@ class FoodCanBoneboy : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_BONEBOY;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,100,0,0};
+	Nutrition[] = {0,400,0,0};
 	
 	consumeOutput = "FoodCanBoneboyEmpty";
 };
@@ -132,7 +132,7 @@ class FoodCanCorn : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_CORN;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,300,100,0};
+	Nutrition[] = {0,600,400,0};
 	
 	consumeOutput = "FoodCanCornEmpty";
 };
@@ -147,7 +147,7 @@ class FoodCanCurgon : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_CURGON;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,180,0,0};
+	Nutrition[] = {0,480,0,0};
 	
 	consumeOutput = "FoodCanCurgonEmpty";
 };
@@ -162,7 +162,7 @@ class FoodCanDemon : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_DEMON;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,165,0,0};
+	Nutrition[] = {0,465,0,0};
 	
 	consumeOutput = "FoodCanDemonEmpty";
 };
@@ -177,7 +177,7 @@ class FoodCanFraggleos : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_FRAGGLEOS;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,250,0,0};
+	Nutrition[] = {0,550,0,0};
 	
 	consumeOutput = "FoodCanFraggleosEmpty";
 };
@@ -192,7 +192,7 @@ class FoodCanHerpy : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_HERPY;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,300,0,0};
+	Nutrition[] = {0,600,0,0};
 	
 	consumeOutput = "FoodCanHerpyEmpty";
 };
@@ -207,7 +207,7 @@ class FoodCanDerpy : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_DERPY;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,110,0,0};
+	Nutrition[] = {0,410,0,0};
 	
 	consumeOutput = "FoodCanDerpyEmpty";
 };
@@ -222,7 +222,7 @@ class FoodCanOrlok : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_ORLOK;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,160,0,0};
+	Nutrition[] = {0,460,0,0};
 	
 	consumeOutput = "FoodCanOrlokEmpty";
 };
@@ -237,7 +237,7 @@ class FoodCanPowell : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_POWELL;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,300,0,0};
+	Nutrition[] = {0,600,0,0};
 	
 	consumeOutput = "FoodCanPowellEmpty";
 };
@@ -252,7 +252,7 @@ class FoodCanTylers : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_TYLERS;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,30,0,0};
+	Nutrition[] = {0,330,0,0};
 	
 	consumeOutput = "FoodCanTylersEmpty";
 };
@@ -267,7 +267,7 @@ class FoodCanUnlabeled : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_UNLABELED;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,250,0,0};
+	Nutrition[] = {0,550,0,0};
 	
 	consumeOutput = "FoodCanUnlabeledEmpty";
 };
@@ -282,7 +282,7 @@ class FoodCanRusUnlabeled : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_UNLABELED;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,150,0,0};
+	Nutrition[] = {0,450,0,0};
 	
 	consumeOutput = "FoodCanRusUnlabeledEmpty";
 };
@@ -297,7 +297,7 @@ class FoodCanRusStew : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_RUS_STEW;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,400,50,0};
+	Nutrition[] = {0,700,350,0};
 	
 	consumeOutput = "FoodCanRusStewEmpty";
 };
@@ -312,7 +312,7 @@ class FoodCanRusPork : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_RUS_PORK;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,400,50,0};
+	Nutrition[] = {0,700,350,0};
 	
 	consumeOutput = "FoodCanRusPorkEmpty";
 };
@@ -327,7 +327,7 @@ class FoodCanRusPeas : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_RUS_PEAS;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,150,0,0};
+	Nutrition[] = {0,450,0,0};
 	
 	consumeOutput = "FoodCanRusPeasEmpty";
 };
@@ -342,7 +342,7 @@ class FoodCanRusMilk : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_RUS_MILK;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,80,20,0};
+	Nutrition[] = {0,380,320,0};
 	
 	consumeOutput = "FoodCanRusMilkEmpty";
 };
@@ -357,7 +357,7 @@ class FoodCanRusCorn : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAN_RUS_CORN;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,80,0,0};
+	Nutrition[] = {0,380,0,0};
 	
 	consumeOutput = "FoodCanRusCornEmpty";
 };
@@ -372,7 +372,7 @@ class FoodChipsSulahoops : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CHIPS_SULAHOOPS;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,150,0,0};
+	Nutrition[] = {0,450,0,0};
 	
 	consumeOutput = "FoodChipsSulahoopsEmpty";
 	consumeSound = "eat_chips";
@@ -388,7 +388,7 @@ class FoodChipsMysticales : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CHIPS_MYSTICALES;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,160,0,0};
+	Nutrition[] = {0,460,0,0};
 	
 	consumeOutput = "FoodChipsMysticalesEmpty";
 	consumeSound = "eat_chips";
@@ -404,7 +404,7 @@ class FoodChipsChocolate : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CHIPS_CHOCOLATE;
 	
 	bloodRegen = 100;
-	Nutrition[] = {300,200,0,0};
+	Nutrition[] = {300,500,0,0};
 	
 	consumeSound = "eat_chips";
 };
@@ -419,7 +419,7 @@ class FoodCandyChubby : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CANDY_CHUBBY;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,100,0,0};
+	Nutrition[] = {0,400,0,0};
 	
 	//consumeSound = "eat_chips";
 };
@@ -434,7 +434,7 @@ class FoodCandyAnders : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CANDY_ANDERS;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,100,0,0};
+	Nutrition[] = {0,400,0,0};
 	
 	//consumeSound = "eat_chips";
 };
@@ -449,7 +449,7 @@ class FoodCandyLegacys : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CANDY_LEGACYS;
 	
 	bloodRegen = 100;
-	Nutrition[] = {350,80,20,0};
+	Nutrition[] = {350,380,320,0};
 	
 	//consumeSound = "eat_chips";
 };
@@ -464,7 +464,7 @@ class FoodCakeCremeCakeClean : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CAKE_Creme_Cake_CLEAN;
 	
 	bloodRegen = 100;
-	Nutrition[] = {350,80,20,0};
+	Nutrition[] = {350,380,320,0};
 	
 	//consumeSound = "eat_chips";
 };
@@ -479,7 +479,7 @@ class FoodCandyMintception : FoodPackaged
 	descriptionShort = $STR_FOOD_DESC_CANDY_MINTCEPTION;
 	
 	bloodRegen = 100;
-	Nutrition[] = {300,80,40,0};
+	Nutrition[] = {300,380,340,0};
 	
 	//consumeSound = "eat_chips";
 };
@@ -507,7 +507,7 @@ class FoodCanBakedBeans : FoodPackaged
 	descriptionShort = $STR_EQUIP_DESC_26;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,100,20,0};
+	Nutrition[] = {0,400,320,0};
 	
 	consumeOutput = "FoodCanUnlabeledEmpty";
 };
@@ -522,7 +522,7 @@ class FoodCanSardines : FoodPackaged
 	descriptionShort = $STR_EQUIP_DESC_27;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,150,20,0};
+	Nutrition[] = {0,450,320,0};
 	
 	consumeOutput = "FoodCanUnlabeledEmpty";
 };
@@ -537,7 +537,7 @@ class FoodCanFrankBeans : FoodPackaged
 	descriptionShort = $STR_EQUIP_DESC_28;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,150,20,0};
+	Nutrition[] = {0,450,320,0};
 	
 	consumeOutput = "FoodCanUnlabeledEmpty";
 };
@@ -552,7 +552,7 @@ class FoodCanPasta : FoodPackaged
 	descriptionShort = $STR_EQUIP_DESC_29;
 	
 	bloodRegen = 100;
-	Nutrition[] = {0,200,0,0};
+	Nutrition[] = {0,500,0,0};
 	
 	consumeOutput = "FoodCanUnlabeledEmpty";
 };
