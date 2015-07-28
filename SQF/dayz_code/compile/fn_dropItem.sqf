@@ -3,7 +3,7 @@ private ["_item","_pos","_nearByPile","_holder"];
 //Radius to search for holder
 #define PILE_SEARCH_RADIUS 2
 //Location to offset the holder
-#define PILE_PLAYER_OFFSET [0,-0.5,0]
+#define PILE_PLAYER_OFFSET [0,0,0]
 
 _item = _this;
 _holder = objNull;
