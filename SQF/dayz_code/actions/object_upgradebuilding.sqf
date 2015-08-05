@@ -122,9 +122,9 @@ _ownerPasscode = _cursorTarget getVariable ["padlockCombination",[]];
 _dir = round getDir _cursorTarget;
 _vector = [vectorDir _cursorTarget,vectorUp _cursorTarget];
 _pos = getposATL _cursorTarget;
-diag_log [ "dir/angle/pos", _dir, _vector, _pos];
+//diag_log [ "dir/angle/pos", _dir, _vector, _pos];
 if (abs(((_vector select 1) select 2) - 1) > 0.001) then { _pos set [2,0]; };
-diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
+//diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
 
 _object = createVehicle [_upgradeType, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
 if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
