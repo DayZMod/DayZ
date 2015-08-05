@@ -40,13 +40,17 @@ if (isArray(configFile >> "CfgVehicles" >> _type >> "Upgrade" >> "randomcreate")
 
 _upgradeClass = configFile >> "CfgVehicles" >> _upgradeType;
 if (!isClass _upgradeClass) exitWith {
-    cutText [localize "str_upgradeNoOption", "PLAIN DOWN"];
+    //cutText [localize "str_upgradeNoOption", "PLAIN DOWN"];
+	_msg = localize "str_upgradeNoOption";
+	_msg call dayz_rollingMessages;
 };
 
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _isWater = (surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 if(_isWater or _onLadder) exitWith {
-    systemchat[localize "str_CannotUpgrade"];
+    //systemchat[localize "str_CannotUpgrade"];
+	_msg = localize "str_CannotUpgrade";
+	_msg call dayz_rollingMessages;
 };
 
 // lets check player has requiredTools for upgrade
@@ -60,7 +64,9 @@ _missing = "";
     };
 } count _requiredTools;
 if (!_ok) exitWith {
-    systemChat format[localize "str_upgradeMissingTool", _missing]; //"Missing %1 to upgrade building."
+    //systemChat format[localize "str_upgradeMissingTool", _missing]; //"Missing %1 to upgrade building."
+	_msg = format [localize "str_upgradeMissingTool", _missing];
+	_msg call dayz_rollingMessages;
 };
 
 // lets check player has requiredParts for upgrade
@@ -78,13 +84,17 @@ _upgradeParts = [];
 } count _requiredParts;
 if (!_ok) exitWith {
     { player addMagazine _x; } foreach _upgradeParts;
-    systemChat format[localize "str_upgradeMissingPart", _missing]; //"Missing %1 to upgrade building."
+    //systemChat format[localize "str_upgradeMissingPart", _missing]; //"Missing %1 to upgrade building."
+	_msg = format [localize "str_upgradeMissingPart", _missing];
+	_msg call dayz_rollingMessages;
 };
     
 //Upgrade Started
 if ((player getVariable["alreadyBuilding",0]) == 1) exitWith {
     {  player addMagazine _x; } foreach _upgradeParts;
-    cutText [localize "str_upgradeInProgress" , "PLAIN DOWN"]
+    //cutText [localize "str_upgradeInProgress" , "PLAIN DOWN"]
+	_msg = localize "str_upgradeInProgress";
+	_msg call dayz_rollingMessages;
 };
 player setVariable["alreadyBuilding",1];
 
@@ -112,9 +122,9 @@ _ownerPasscode = _cursorTarget getVariable ["padlockCombination",[]];
 _dir = round getDir _cursorTarget;
 _vector = [vectorDir _cursorTarget,vectorUp _cursorTarget];
 _pos = getposATL _cursorTarget;
-diag_log [ "dir/angle/pos", _dir, _vector, _pos];
+//diag_log [ "dir/angle/pos", _dir, _vector, _pos];
 if (abs(((_vector select 1) select 2) - 1) > 0.001) then { _pos set [2,0]; };
-diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
+//diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
 
 _object = createVehicle [_upgradeType, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
 if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
@@ -163,4 +173,7 @@ player reveal _object;
 
 //Make sure  its unlocked 
 player setVariable["alreadyBuilding",0];
-cutText [localize "str_upgradeDone", "PLAIN DOWN"];
+//cutText [localize "str_upgradeDone", "PLAIN DOWN"];
+
+_msg = localize "str_upgradeDone";
+_msg call dayz_rollingMessages;

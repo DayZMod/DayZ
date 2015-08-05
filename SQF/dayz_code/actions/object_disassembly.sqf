@@ -29,13 +29,13 @@ if(_isWater or _onLadder) exitWith {
 	_msg call dayz_rollingMessages;
 };
 
-_alreadyRemoving = _cursorTarget getVariable["alreadyRemoving",0];
+_alreadyRemoving = _cursorTarget getVariable["ObjectLocked",0];
 if (_alreadyRemoving == 1) exitWith {
 	_msg = localize "str_disassembleInProgress";
 	_msg call dayz_rollingMessages;
 };
 
-_cursorTarget setVariable["alreadyRemoving",1];
+_cursorTarget setVariable["ObjectLocked",1,true];
 _characterID = _cursorTarget getVariable ["characterID","0"];
 _objectID = _cursorTarget getVariable ["ObjectID","0"];
 _objectUID = _cursorTarget getVariable ["ObjectUID","0"];
@@ -56,6 +56,7 @@ for "_i" from 1 to 20 do {
     _requiredTools = [] + (getArray (_parent >> "Upgrade" >> "requiredTools"));
     _model = getText (_parent >> "model"); // model of parent
     _displayname = getText (_entry >> "displayName"); // name of current
+	diag_log format["%1 - %2 - %3 - %4 - %5",_parent,_requiredParts,_requiredTools,_model,_displayname];
 
     // check the tools needed
     _toolsOK = true;
@@ -168,5 +169,5 @@ _msg = localize "str_disassembleDone";
 _msg call dayz_rollingMessages;
 //cutText [localize "str_disassembleDone", "PLAIN DOWN"];
 
-player setVariable["alreadyBuilding",0];
+_cursorTarget setVariable["ObjectLocked",0,true];
 

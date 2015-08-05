@@ -55,15 +55,22 @@ if (_hasbottleitem and _hastinitem) then {
 		
 		if ([0.1] call fn_chance) then {
 			player addMagazine "ItemWaterbottleDmg";
-			systemChat (localize ("str_waterbottle_broke"));
+			//systemChat (localize ("str_waterbottle_broke"));
+			_msg = localize "str_waterbottle_broke";
+			_msg call dayz_rollingMessages;
 		} else {
 			player addMagazine "ItemWaterbottleBoiled";
 		};	
 
 	};
-    cutText [format [localize "str_player_boiledwater",_qty], "PLAIN DOWN"];
+    //cutText [format [localize "str_player_boiledwater",_qty], "PLAIN DOWN"];
+	_msg = format [localize "str_player_boiledwater",_qty];
+	_msg call dayz_rollingMessages;
 } else {
-    cutText [localize "str_player_02", "PLAIN DOWN"];
+    //cutText [localize "str_player_02", "PLAIN DOWN"];
+	_msg = format [localize "str_player_boiledwater",_qty];
+	_msg = localize "str_player_02";
+	_msg call dayz_rollingMessages;
 };
 
 a_player_boil = false;

@@ -62,13 +62,13 @@ _fn_Closed = {
 _fn_BuildLock = {
 	_target setVariable ["BuildLock",true,true];
 	
-	PVDZ_Server_buildLock = [_target]
+	PVDZ_Server_buildLock = [_target];
 	publicVariableServer "PVDZ_Server_buildLock";
 };
 _fn_BuildUnLock = {
 	_target setVariable ["BuildLock",false,true];
 	
-	PVDZ_Server_buildLock = [_target]
+	PVDZ_Server_buildLock = [_target];
 	publicVariableServer "PVDZ_Server_buildLock";
 };
 

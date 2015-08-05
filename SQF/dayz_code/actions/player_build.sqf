@@ -43,7 +43,9 @@ _isWater = {(surfaceIsWater (getPosATL _object)) or dayz_isSwimming};
 
 if (0 != count Dayz_constructionContext) then {
     r_action_count = 0;
-    cutText [localize "str_already_building", "PLAIN DOWN"];
+    //cutText [localize "str_already_building", "PLAIN DOWN"];
+	_msg = localize "str_already_building";
+	_msg call dayz_rollingMessages;
     diag_log [ diag_ticktime, __FILE__, 'already building, exiting', Dayz_constructionContext, typeName Dayz_constructionContext];
 };
 
@@ -54,7 +56,9 @@ if (isClass (configFile >> _isClass >> _item)) then {
             case (_item isKindOf "Land_A_tent"): {"str_player_31_pitch"};
             default {"str_player_31_build"};
         };
-        cutText [format [localize "str_player_31",_text,(localize _string)] , "PLAIN DOWN"];
+        //cutText [format [localize "str_player_31",_text,(localize _string)] , "PLAIN DOWN"];
+		_msg = format [localize "str_player_31",_text,(localize _string)];
+		_msg call dayz_rollingMessages;
         //diag_log(format["player_build: item:%1 require:%2  Player items:%3  magazines:%4", _item, _requiredTools, (items player), (magazines player)]);
     };
 };
@@ -72,7 +76,9 @@ _missing = "";
 
 if (!_ok) exitWith {
     r_action_count = 0;
-    cutText [format [localize "str_player_31_missingtools",_text,_missing] , "PLAIN DOWN"]; 
+    //cutText [format [localize "str_player_31_missingtools",_text,_missing] , "PLAIN DOWN"]; 
+	_msg = format [localize "str_player_31_missingtools",_text,_missing];
+	_msg call dayz_rollingMessages;
 };
 
 // lets check player has requiredParts for upgrade
@@ -91,11 +97,15 @@ _upgradeParts = [];
 if (!_ok) exitWith {
     { player addMagazine _x; } foreach _upgradeParts;
     r_action_count = 0;
-    cutText [format [localize "str_player_31", _missing, localize "str_player_31_build"] , "PLAIN DOWN"];
+   // cutText [format [localize "str_player_31", _missing, localize "str_player_31_build"] , "PLAIN DOWN"];
+	_msg = format [localize "str_player_31", _missing, localize "str_player_31_build"];
+	_msg call dayz_rollingMessages;
 };
 
 
-cutText [localize "str_player_build_rotate", "PLAIN DOWN"];
+//cutText [localize "str_player_build_rotate", "PLAIN DOWN"];
+_msg = localize "str_player_build_rotate";
+_msg call dayz_rollingMessages;
 
 //Get fence beams based on model
 _getBeams = {
