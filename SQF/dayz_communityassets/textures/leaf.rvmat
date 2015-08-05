@@ -8,6 +8,6 @@ PixelShaderID="Normal";
 VertexShaderID="Basic";
 class Stage0
 {
-	texture="dayz_communityassets\textures\leaf_co.paa";
+	texture="z\addons\dayz_communityassets\textures\leaf_co.paa";
 	uvSource="tex";
 };
