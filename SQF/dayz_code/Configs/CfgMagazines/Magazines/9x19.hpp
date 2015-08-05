@@ -32,6 +32,7 @@ class 30Rnd_9x19_UZI_SD : CA_Magazine
 
 class 30Rnd_9x19_MP5SD : CA_Magazine
 {
+	model = "\ca\CommunityConfigurationProject_E\Gameplay_ActualModelsOfWeaponMagazinesVisibleOnTheGround\p3d\30Rnd_9x19_MP5.p3d";
 	picture = "\z\addons\dayz_communityweapons\magazines\data\m_mp5sd_ca.paa";
 	
 	cartridgeName = "9x19_SD";
