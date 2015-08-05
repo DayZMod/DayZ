@@ -73,7 +73,9 @@ if ((count _knifeArray > 0) and !_hasHarvested) then {
 				player removeWeapon _activeKnife;
 				player addWeapon _sharpnessRemaining;
 				
-				systemChat (localize "str_info_bluntknife");	
+				//systemChat (localize "str_info_bluntknife");	
+				_msg = localize "str_info_bluntknife";
+				_msg call dayz_rollingMessages;
 			};	
 		};
 		case "ItemKnifeBlunt" : { 
@@ -90,5 +92,6 @@ if ((count _knifeArray > 0) and !_hasHarvested) then {
 	
 	closedialog 0;
 	sleep 0.02;
-	cutText [_string, "PLAIN DOWN"];
+	//cutText [_string, "PLAIN DOWN"];
+	_string call dayz_rollingMessages;
 };
