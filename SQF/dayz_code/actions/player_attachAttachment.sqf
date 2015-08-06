@@ -1,118 +1,77 @@
 /*
-player_attachAttachment
-	
-	-foxy
+	Attempts to attach attachment to the player's primary weapon or sidearm.
 
-parameters:
-	string		attachment item classname
-	integer		type of weapon: 1 if primary, 0 if secondary
+	Parameters:
+		string		attachment item classname
+		integer		type of weapon: 1 if primary, 0 if secondary
+
+	Author:
+		Foxy
 */
 
-#define WeaponSlotHandGun 2
+#include "\z\addons\dayz_code\util\Player.hpp"
 
 private
 [
 	"_attachment",
-	"_weaponType",
 	"_weapon",
-	"_attachmentConfig",
-	"_weaponConfig",
-	"_addableAttachments",
+	"_config",
 	"_newWeapon",
 	"_weaponInUse",
 	"_muzzle"
 ];
 
 //check if player is on a ladder and if so, exit
-if ((getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1) exitWith
+if (Player_IsOnLadder()) exitWith
 {
 	closeDialog 0;
-	cutText [localize "str_player_21", "PLAIN DOWN"];
+	(localize "str_player_21") call dayz_rollingMessages;
 };
 
 //name of attachment item
 _attachment = _this select 0;
-_weapon = "";
 
-//get the player's weapon
-if ((_this select 1) == 1) then
+if (!(_attachment in magazines player)) exitWith
 {
-	_weapon = primaryWeapon player;
-}
-else
-{
-	{
-		_weaponType = getNumber (configFile >> "CfgWeapons" >> _x >> "type");
-		
-		//note: assumes no handgun would have multiple binary flags set.
-		if (_weaponType == WeaponSlotHandGun) exitWith
-		{
-			_weapon = _x;
-		};
-	} foreach weapons player;
+	closeDialog 0;
+	"You seem to have misplaced the attachment." call dayz_rollingMessages;
 };
 
-//check if player has a weapon
+//Get player's primary weapon or sidearm
+_weapon = if ((_this select 1) == 1)
+then { primaryWeapon player }
+else { _weapon = Player_GetSidearm(); if (isNil "_weapon") then { "" } else { _weapon } };
+
+//check if player has the weapon
 if (_weapon == "") exitWith
 {
 	closedialog 0;
 	
-	if ((_this select 1) == 1) then
-	{
-		cutText [localize "str_AttachmentmissingWeapon", "PLAIN DOWN"];
-	}
-	else
-	{
-		cutText [localize "str_AttachmentmissingWeapon2", "PLAIN DOWN"];
-	};
+	localize
+	(
+		if ((_this select 1) == 1)
+		then {"str_AttachmentmissingWeapon"}
+		else {"str_AttachmentmissingWeapon2"}
+	) call dayz_rollingMessages;
 };
 
-//retrieve attachment and weapon configs
-_attachmentConfig = configFile >> "CfgMagazines" >> _attachment;
-_weaponConfig = configFile >> "CfgWeapons" >> _weapon;
+//retrieve Attachments class config
+_config = configFile >> "CfgWeapons" >> _weapon >> "Attachments";
 
-//check if weapon has Attachments class
-if (!isClass(_weaponConfig >> "Attachments")) exitWith
+//check that weapon has Attachments class and attachments class has <_attachment> field.
+if (!isClass(_config) || {!isText(_config >> _attachment)}) exitWith
 {
 	closeDialog 0;
 	
-	if ((_this select 1) == 1) then
-	{
-		cutText [localize "str_AttachmentWeaponConfig", "PLAIN DOWN"];
-	}
-	else
-	{
-		cutText [localize "str_AttachmentWeaponConfig2", "PLAIN DOWN"];
-	};
+	localize
+	(
+		if ((_this select 1) == 1)
+		then {"str_AttachmentWeaponConfig"}
+		else {"str_AttachmentWeaponConfig2"}
+	) call dayz_rollingMessages;
 };
 
-//list of attachments that can be added to current weapon
-_addableAttachments = getArray(_weaponConfig >> "Attachments" >> "attachments");
-
-//Find new weapon class from weapon config Attachments class
-_newWeapon = "";
-{
-	if (_attachment == _x) exitWith
-	{
-		_newWeapon = getText(_weaponConfig >> "Attachments" >> _x);
-	};
-} foreach _addableAttachments;
-
-//Attachment cannot be attached to this weapon
-if (_newWeapon == "") exitWith
-{
-	closedialog 0;
-	
-	if ((_this select 1) == 1) then
-	{
-		cutText [localize "str_AttachmentWeaponConfig", "PLAIN DOWN"];
-	}
-	else
-	{
-		cutText [localize "str_AttachmentWeaponConfig2", "PLAIN DOWN"];
-	};
-};
-
+_newWeapon = getText (_config >> _attachment);
 _weaponInUse = (currentWeapon player == _weapon);
 
 call gear_ui_init;
