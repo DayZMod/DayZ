@@ -1,13 +1,16 @@
 /*
-player_removeAttachment
+	Attempts to remove an attachment from the player's current primary weapon or sidearm.
 	
-	-foxy
-
-parameters:
-	string		attachment item classname
-	string		current weapon classname
-	string		resulting weapon classname
+	Parameters:
+		string		attachment item classname
+		string		current weapon classname
+		string		resulting weapon classname
+	
+	Author:
+		Foxy
 */
+
+#include "\z\addons\dayz_code\util\Player.hpp"
 
 private
 [
@@ -20,10 +23,10 @@ private
 ];
 
 //check if player is on a ladder and if so, exit
-if ((getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1) exitWith
+if (Player_IsOnLadder()) exitWith
 {
 	closeDialog 0;
-	cutText [localize "str_player_21", "PLAIN DOWN"];
+	(localize "str_player_21") call dayz_rollingMessages;
 };
 
 _attachment = _this select 0;
@@ -34,22 +37,22 @@ _newWeapon = _this select 2;
 if ((([player] call BIS_fnc_invSlotsEmpty) select 4) < 1) exitWith
 {
 	closeDialog 0;
-	cutText [localize "str_player_24", "PLAIN DOWN"];
+	(localize "str_player_24") call dayz_rollingMessages;
 };
 
 //check that player has the weapon
 if (!(player hasWeapon _weapon)) exitWith
 {
 	closeDialog 0;
-	cutText [localize "str_AttachmentMissingWeapon3", "PLAIN DOWN"];
+	(localize "str_AttachmentMissingWeapon3") call dayz_rollingMessages;
 };
 
 //Check that newWeapon + attachment actually results in current weapon
-_newWeaponConfig = configFile >> "CfgWeapons" >> _newWeapon;
-if (!isClass(_newWeaponConfig >> "Attachments") || {getText(_newWeaponConfig >> "Attachments" >> _attachment) != _weapon}) exitWith
+_newWeaponConfig = configFile >> "CfgWeapons" >> _newWeapon >> "Attachments";
+if (!isClass(_newWeaponConfig) || {getText(_newWeaponConfig >> _attachment) != _weapon}) exitWith
 {
 	closeDialog 0;
-	cutText ["Cannot remove attachment.", "PLAIN DOWN"];
+	"Cannot remove attachment." call dayz_rollingMessages;
 };
 
 _weaponInUse = (currentWeapon player == _weapon);
