@@ -67,6 +67,12 @@ BEGIN
                 FROM object_data
                 WHERE (Classname = 'BearTrap_DZ' or Classname = 'TrapBearTrapFlare' or Classname = 'TrapBearTrapSmoke' or Classname = 'Trap_Cans' or Classname = 'TrapTripwireFlare' or Classname = 'TrapTripwireGrenade' or Classname = 'TrapTripwireSmoke')
                         AND DATE(last_updated) < CURDATE() - INTERVAL 5 DAY; 
+						
+#remove WaterBarrels older than five days
+        DELETE
+                FROM object_data
+                WHERE (Classname = 'WaterBarrel'
+                        AND DATE(last_updated) < CURDATE() - INTERVAL 5 DAY; 					
                         
 #remove incomplete fences after 1 Day								
         DELETE

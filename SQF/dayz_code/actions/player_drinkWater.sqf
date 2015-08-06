@@ -4,7 +4,7 @@ call gear_ui_init;
 closeDialog 0;
 _item = _this;
 _playerPos = getPosATL player;
-_canFill = count nearestObjects [_playerPos, ["Land_pumpa","Land_water_tank"], 4] > 0;
+_canFill = count nearestObjects [_playerPos, ["Land_pumpa","Land_water_tank","WaterBarrel"], 4] > 0;
 _isPond = false;
 _isWell = false;
 _isInfected = false;

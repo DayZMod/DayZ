@@ -740,6 +740,28 @@ class CfgVehicles {
 		};
 	};
 	
+	class EmptyBarrel : BuiltItems {
+		scope = public;
+		destrType = "DestructNo";
+		cost = 100;
+	    model = "z\addons\dayz_buildings\models\barrel_empty.p3d";
+	    displayName = "Empty Barrel";//add to stringtable later
+		mapSize = 2;
+		armor = 50;
+		vehicleClass = "Fortifications";
+};
+
+	class WaterBarrel : BuiltItems {
+		scope = public;
+		destrType = "DestructNo";
+		cost = 100;
+	    model = "z\addons\dayz_buildings\models\barrel_water.p3d";
+	    displayName = "Water Barrel";//add to stringtable later	
+		mapSize = 2;
+		armor = 50;
+		vehicleClass = "Fortifications";
+};
+	
 	class Fence_DZ: BuiltItems {
 		scope = public;
 		destrType = "DestructNo";
