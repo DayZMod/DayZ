@@ -13,7 +13,7 @@ AmmoCivilian[] =
 	
 	//Shotgun
 	{Loot_MAGAZINE,		1,		8Rnd_12Gauge_Buck},
-	{Loot_MAGAZINE,		3,		8Rnd_12Gauge_Slug}
+	{Loot_MAGAZINE,		3,		8Rnd_12Gauge_Slug},
 	{Loot_MAGAZINE,		3,		2Rnd_12Gauge_Buck},
 	{Loot_MAGAZINE,		5,		2Rnd_12Gauge_Slug}
 };
@@ -89,7 +89,7 @@ AmmoMilitaryHigh[] =
 	
 	//Sniper rifles
 	{Loot_MAGAZINE,		8,		5Rnd_762x51_M24},
-	{Loot_MAGAZINE,		6,		10Rnd_762x54_SVD}
+	{Loot_MAGAZINE,		6,		10Rnd_762x54_SVD},
 	
 	//Handgrenades
 	{Loot_MAGAZINE,		2,		HandGrenade_East},
