@@ -231,7 +231,7 @@ class Trap_Cans : TrapItems {
 		class ArmTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_ARM;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "!(this getVariable ['armed', false])";
 			statement = "['arm', this] spawn tripcans;";
@@ -240,7 +240,7 @@ class Trap_Cans : TrapItems {
 		class DisarmTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_DISARM;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "(this getVariable ['armed', false])";
 			statement = "['disarm', this] spawn tripcans;";
@@ -249,7 +249,7 @@ class Trap_Cans : TrapItems {
 		class CollectTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_TAKE;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "!(this getVariable ['armed', false])";
 			statement = "['remove', this] spawn tripcans;";
@@ -280,7 +280,7 @@ class TrapTripwireFlare : TrapItems {
 		class ArmTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_ARM;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "!(this getVariable ['armed', false])";
 			statement = "['arm', this] spawn tripflare;";
@@ -289,7 +289,7 @@ class TrapTripwireFlare : TrapItems {
 		class DisarmTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_DISARM;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "(this getVariable ['armed', false])";
 			statement = "['disarm', this] spawn tripflare;";
@@ -298,7 +298,7 @@ class TrapTripwireFlare : TrapItems {
 		class CollectTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_TAKE;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "!(this getVariable ['armed', false])";
 			statement = "['remove', this] spawn tripflare;";
@@ -329,7 +329,7 @@ class TrapTripwireGrenade : TrapItems {
 		class ArmTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_ARM;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "!(this getVariable ['armed', false])";
 			statement = "['arm', this] spawn tripgrenade;";
@@ -338,7 +338,7 @@ class TrapTripwireGrenade : TrapItems {
 		class DisarmTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_DISARM;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "(this getVariable ['armed', false])";
 			statement = "['disarm', this] spawn tripgrenade;";
@@ -347,7 +347,7 @@ class TrapTripwireGrenade : TrapItems {
 		class CollectTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_TAKE;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "!(this getVariable ['armed', false])";
 			statement = "['remove', this] spawn tripgrenade;";
@@ -374,11 +374,13 @@ class TrapTripwireSmoke : TrapItems {
 		init = "['init', _this select 0] spawn tripsmoke;";
 	};
 
-	class UserActions {
-		class ArmTrap {
+	class UserActions
+	{
+		class ArmTrap 
+		{
 			position = "TripA";
 			displayName = $STR_BEARTRAP_ARM;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "!(this getVariable ['armed', false])";
 			statement = "['arm', this] spawn tripsmoke;";
@@ -387,7 +389,7 @@ class TrapTripwireSmoke : TrapItems {
 		class DisarmTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_DISARM;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "(this getVariable ['armed', false])";
 			statement = "['disarm', this] spawn tripsmoke;";
@@ -396,7 +398,7 @@ class TrapTripwireSmoke : TrapItems {
 		class CollectTrap {
 			position = "TripA";
 			displayName = $STR_BEARTRAP_TAKE;
-			radius = 1;
+			radius = 1.5;
 			onlyForPlayer = 0;
 			condition = "!(this getVariable ['armed', false])";
 			statement = "['remove', this] spawn tripsmoke;";
