@@ -12,6 +12,8 @@
 
 class FoodMRE : FoodPackaged
 {
+	scope = public;
+	
 	model = "z\addons\dayz_communityassets\models\mre.p3d";
 	picture = "\z\addons\dayz_communityassets\pictures\equip_mre_CA.paa";
 	displayName = $STR_FOOD_NAME_MRE;
