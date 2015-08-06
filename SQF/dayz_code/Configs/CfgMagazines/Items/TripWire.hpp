@@ -63,9 +63,9 @@ class ItemTrapTripwireSmoke : ItemTrapTripwireCans
 	displayName = $STR_ITEM_NAME_TRIPWIRE_SMOKE;
 	descriptionShort = $STR_ITEM_DESC_TRIPWIRE_SMOKE;
 
-	class ItemActions
+	class ItemActions : ItemActions
 	{
-		class Build
+		class Build : Build
 		{
 			consume[] = {"ItemTrapTripwireSmoke"};
 			create = "TrapTripwireSmoke";
