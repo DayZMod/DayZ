@@ -80,8 +80,8 @@ class CfgLoot
 		#undef ItemBloodbagOPos
 		#undef ItemBloodbagONeg
 		
-		#undef ItemBloodTester bloodTester
-		#undef ItemTransfusionKit transfusionKit
+		#undef ItemBloodTester
+		#undef ItemTransfusionKit
 	};
 	
 	class Buildings
