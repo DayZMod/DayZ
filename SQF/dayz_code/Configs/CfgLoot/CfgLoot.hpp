@@ -25,6 +25,7 @@ class CfgLoot
 		
 		#define ItemBloodTester bloodTester
 		#define ItemTransfusionKit transfusionKit
+		#define ItemBloodbagEmpty emptyBloodBag
 		
 		// General groups
 		#include "Groups\Ammo.hpp"
@@ -82,6 +83,7 @@ class CfgLoot
 		
 		#undef ItemBloodTester
 		#undef ItemTransfusionKit
+		#undef ItemBloodbagEmpty
 	};
 	
 	class Buildings
