@@ -247,6 +247,7 @@ allowConnection = true;
 sm_done = true;
 publicVariable "sm_done";
 
+
 // Trap loop
 [] spawn {
 	private ["_array","_array2","_array3","_script","_armed"];
@@ -290,7 +291,6 @@ publicVariable "sm_done";
 	sleep 1;
 	};
 };
-
 
 //Spawn camps and carepak once
 [] spawn {

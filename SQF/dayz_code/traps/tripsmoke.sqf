@@ -1,5 +1,5 @@
 _init = {
-	if (isServer) then {
+	//if (isServer) then {
 		[_trap] call setup_trap;
 
 		if (_trap getVariable ["armed", false]) then {
@@ -7,11 +7,11 @@ _init = {
 		} else {
 			[] call _disarm;
 		};
-	};
+	//};
 };
 
 _arm = {
-	if (isServer) then {
+	//if (isServer) then {
 		_pos = getPosATL _trap;
 		_pos1 = _trap modelToWorld (_trap selectionPosition "TripA");
 		_pos2 = _trap modelToWorld (_trap selectionPosition "TripB");
@@ -27,9 +27,9 @@ _arm = {
 		];
 
 		[_trap, _trigger] call arm_trap;
-	} else {
+	//} else {
 		_trap setVariable ["armed", true, true];
-	};
+	//};
 };
 
 _disarm = {
@@ -50,7 +50,7 @@ _remove = {
 };
 
 _trigger = {
-	if (isServer) then {
+	//if (isServer) then {
 		private ["_entity"];
 		_entity = _this select 0;
 
@@ -62,7 +62,7 @@ _trigger = {
 		_flare = createVehicle ["SmokeShell", _position, [], 0, "CAN_COLLIDE"];
 
 		[_trap] call trigger_trap;
-	};
+	//};
 };
 
 private ["_event", "_trap", "_args"];

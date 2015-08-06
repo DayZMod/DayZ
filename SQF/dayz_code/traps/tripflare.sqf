@@ -1,5 +1,5 @@
 _init = {
-	if (isServer) then {
+	//if (isServer) then {
 		[_trap] call setup_trap;
 
 		if (_trap getVariable ["armed", false]) then {
@@ -7,11 +7,11 @@ _init = {
 		} else {
 			[] call _disarm;
 		};
-	};
+	//};
 };
 
 _arm = {
-	if (isServer) then {
+	//if (isServer) then {
 		_pos = getPosATL _trap;
 		_pos1 = _trap modelToWorld (_trap selectionPosition "TripA");
 		_pos2 = _trap modelToWorld (_trap selectionPosition "TripB");
@@ -27,9 +27,9 @@ _arm = {
 		];
 
 		[_trap, _trigger] call arm_trap;
-	} else {
+	//} else {
 		_trap setVariable ["armed", true, true];
-	};
+	//};
 };
 
 _disarm = {
