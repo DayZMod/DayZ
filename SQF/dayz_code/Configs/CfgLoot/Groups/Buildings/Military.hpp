@@ -56,7 +56,7 @@ Military[] =
 	{Loot_GROUP,		2,		AttachmentsEast},
 	{Loot_PILE,			3,		MedicalLow, 1, 2},
 	{Loot_PILE,			8,		Trash, 1, 2},
-	{Loot_PILE,			14,		Consumable, 1, 2}
+	{Loot_PILE,			14,		Consumable, 1, 2},
 	{Loot_GROUP,		14,		Generic}
 };
 
@@ -128,6 +128,6 @@ MilitarySpecial[] =
 	{Loot_GROUP,		2,		AttachmentsWest},
 	{Loot_PILE,			5,		MedicalLow, 1, 2},
 	{Loot_PILE,			4,		Trash, 1, 2},
-	{Loot_PILE,			10,		Consumable, 1, 2}
+	{Loot_PILE,			10,		Consumable, 1, 2},
 	{Loot_GROUP,		10,		Generic}
 };
