@@ -79,6 +79,7 @@ class CfgVehicles {
 	class Pastor;
 	class BuiltItems;
 	class Building;
+	class ReammoBox;
 
 	#include "RepairParts.hpp" //names for all reapir parts. Needs moving to hitpoints
 	//ZEDS
@@ -111,9 +112,10 @@ class CfgVehicles {
 	#include "Helicopter\AH6X.hpp"
 	#include "Helicopter\MH6J_DZ.hpp"
 	//Wreck's
-	#include "Helicopter\MI8Wreck.hpp"
-	#include "Helicopter\UH1Wreck.hpp"
-	#include "Helicopter\UH60Wreck.hpp"
+	//#include "Helicopter\MI8Wreck.hpp"
+	//#include "Helicopter\UH1Wreck.hpp"
+	//#include "Helicopter\UH60Wreck.hpp"
+	#include "CrashSite.hpp"
 	//Plane's
 	#include "Plane\AN2_DZ.hpp"
 	//Bikes
@@ -162,6 +164,7 @@ class CfgVehicles {
 
 	//itemBox's
 	//#include "CardboardBox.hpp"
+	#include "LootContainer.hpp"
 
 	//Tents,storage
 	//#include "Storage.hpp"
