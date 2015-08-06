@@ -247,7 +247,6 @@ allowConnection = true;
 sm_done = true;
 publicVariable "sm_done";
 
-
 // Trap loop
 [] spawn {
 	private ["_array","_array2","_array3","_script","_armed"];
@@ -292,34 +291,11 @@ publicVariable "sm_done";
 	};
 };
 
-//Spawn camps and carepak once
-[] spawn {
-	if(isNil "dayz_spawnInfectedSite_clutterCutter") then {
-		dayz_spawnInfectedSite_clutterCutter = 0;
-	};
+//Points of interest
+[] execVM "\z\addons\dayz_server\compile\server_spawnInfectedCamps.sqf";
+[] execVM "\z\addons\dayz_server\compile\server_spawnCarePackages.sqf";
+[] execVM "\z\addons\dayz_server\compile\server_spawnCrashSites.sqf";
 
-	// quantity, marker, radius, min distance between 2 camps
-	Server_InfectedCamps = [3, "center", 4500, 300] call fn_bases;
-	//dayzInfectedCamps = Server_InfectedCamps;
-	//publicVariable "dayzInfectedCamps";
-
-	if(isNil "dayz_spawncarepkgs_clutterCutter") then {
-		dayz_spawncarepkgs_clutterCutter = 0;
-	};
-	
-	//Packages
-	[6,["Misc_cargo_cont_net1","Misc_cargo_cont_net2","Misc_cargo_cont_net3"],["Industrial","Supermarket","Hospital","CarePackages"]] call spawn_carePackages;
-};
-
-//Spawn helicopter crashes periodically
-[] spawn {
-	if(isNil "dayz_spawnCrashSite_clutterCutter") then {
-		dayz_spawnCrashSite_clutterCutter = 0;
-	};
-
-	// [_guaranteedLoot, _randomizedLoot, spawnOnStart, _frequency, _variance, _spawnChance, _spawnMarker, _spawnRadius, _spawnFire, _fadeFire]
-	[3, 4, 3, (40 * 60), (15 * 60), 0.75, 'center', 4000, true, false] call server_spawnCrashSite;
-};
 
 [] execVM "\z\addons\dayz_server\system\lit_fireplaces.sqf";
 

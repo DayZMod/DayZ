@@ -83,7 +83,7 @@ class CfgAddons
 #include "Configs\CfgCrafting\CfgCrafting.hpp"
 #include "Configs\CfgConstruction\CfgConstruction.hpp"
 #include "Configs\CfgMagazines\CfgMagazines.hpp"
-#include "Configs\CfgLoot\CfgBuildingLoot.hpp"
+#include "Configs\CfgLoot\CfgLoot.hpp"
 #include "Configs\CfgMarkers.hpp"
 #include "Configs\CfgAmmo.hpp"
 #include "Configs\CfgObjectCompositions.hpp"

@@ -67,14 +67,14 @@ if (_maxlocalspawned > 0) then { _spawnZedRadius = _spawnZedRadius * 3; };
 //Spawn zeds in buildings
 {
     _type = typeOf _x;
-    _config = configFile >> "CfgBuildingLoot" >> _type;
-    _canSpawn = isClass (_config);
+    _config = configFile >> "CfgLoot" >> "Buildings" >> _type;
+    _canSpawn = (isClass (_config) && {getNumber(_config >> "lootChance") > 0});
     _dis = _x distance player;
-    _checkLoot = ((count (getArray (_config >> "lootPos"))) > 0);
+    _checkLoot = (count (getArray (_config >> "lootPos"))) > 0;
     _islocal = _x getVariable ["", false]; // object created locally via TownGenerator. See stream_locationFill.sqf
 
     //Make sure wrecks always spawn Zeds
-    _isWreck = _x isKindOf "SpawnableWreck";
+    _isWreck = _x isKindOf "CrashSite";
 
     //Loot
     if (_canSpawn) then {
@@ -82,10 +82,10 @@ if (_maxlocalspawned > 0) then { _spawnZedRadius = _spawnZedRadius * 3; };
 			//Baisc loot check
 			if ((_dis < 125) and (_dis > 30) and !_inVehicle and _checkLoot) then {
 				_serverTime = serverTime;
-				_looted = (_x getVariable ["looted",_serverTime]);      
+				_looted = (_x getVariable ["looted",_serverTime]);
 				_age = _serverTime - _looted;
 				if ((_age == 0) or (_age > 900)) then { 
-					_x setVariable ["looted",_serverTime,!_islocal];                 
+					_x setVariable ["looted",_serverTime,!_islocal];
 					_x call building_spawnLoot;
 					if (!(_x in dayz_buildingBubbleMonitor)) then {
 						dayz_buildingBubbleMonitor set [count dayz_buildingBubbleMonitor, _x];

@@ -73,7 +73,7 @@ fa_spawninventory = {
 
 	_partType = _this select 0;
 	_partChance = _this select 1;
-	_config = configFile >> "CfgBuildingLoot" >> "HeliCrash";
+	_config = configFile >> "CfgLoot" >> "Buildings" >> "HeliCrash";
 	// append parts to loot item
 	_itemType =	(getArray (_config >> "itemType"));
 	{ _itemType set [count _itemType, [_x,"object"]] } forEach _partType;

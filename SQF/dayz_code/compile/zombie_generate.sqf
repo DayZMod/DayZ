@@ -75,8 +75,9 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 		_tooClose = {isPlayer _x} count (_position nearEntities ["CAManBase",30]) > 0;
 		if (_tooClose) exitwith { diag_log ("Zombie_Generate: was too close to player."); };
 		
-		if (count _unitTypes == 0) then {
-			_unitTypes = []+ getArray (configFile >> "CfgBuildingLoot" >> "Default" >> "zombieClass");
+		if (count _unitTypes == 0) then
+		{
+			_unitTypes = getArray (configFile >> "CfgLoot" >> "Buildings" >> "Default" >> "zombieClass");
 		};
 		
 		// lets create an agent
@@ -96,30 +97,16 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 		dayz_currentGlobalZombies = dayz_currentGlobalZombies + 1;
 		
 		//Add some loot
-		_loot = "";
-		_array = [];
-		_rnd = random 1;
-		if (_rnd > 0.3) then {
-			_lootType = configFile >> "CfgVehicles" >> _type >> "zombieLoot";
-			if (isText _lootType) then {
-				_array = [];
-				{
-					_array set [count _array, _x select 0];
-					sleep 0.001;
-				} foreach getArray (configFile >> "cfgLoot" >> getText(_lootType));
-				if (count _array > 0) then {
-					_index = dayz_CLBase find getText(_lootType);
-					_weights = dayz_CLChances select _index;
-					_loot = _array select (_weights select (floor(random (count _weights))));
-					if(!isNil "_array") then {
-						_loot_count =	getNumber(configFile >> "CfgMagazines" >> _loot >> "count");
-						if(_loot_count>1) then {
-							_agent addMagazine [_loot, ceil(random _loot_count)];
-						} else {
-							_agent addMagazine _loot;
-						};
-					};
-				};
+		//_loot = "";
+		//_array = [];
+		//_rnd = random 1;
+		if (0.7 > random 1) then
+		{
+			_lootGroup = configFile >> "CfgVehicles" >> _type >> "zombieLoot";
+			if (isText _lootGroup) then
+			{
+				_lootGroup = dayz_lootGroups find getText (_lootGroup);
+				[_agent, _lootGroup, 1] call loot_insert;
 			};
 		};
 		
