@@ -3,7 +3,6 @@ class CrashSite : Default
 	zombieChance = 1;
 	minRoaming = 4;
 	maxRoaming = 8;
-	lootChance = 1;
 	zombieClass[] = {"z_soldier_pilot","z_soldier_heavy"};
 };
 
