@@ -11,7 +11,6 @@ Farm[] =
 	//Tools
 	{Loot_WEAPON,		5,		ItemMachete},
 	{Loot_WEAPON,		6,		ItemHatchet},
-	{Loot_WEAPON,		4,		ItemMatchbox},
 	{Loot_WEAPON,		5,		ItemKnife},
 	
 	//Items
@@ -31,5 +30,6 @@ Farm[] =
 	{Loot_GROUP,		15,		AmmoCivilian},
 	{Loot_GROUP,		3,		AttachmentsGeneric},
 	{Loot_GROUP,		8,		Consumable},
+	{Loot_GROUP,		4,		Matchbox},
 	{Loot_GROUP,		8,		Generic}
 };

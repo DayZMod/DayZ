@@ -13,7 +13,6 @@ CarePackage[] =
 	{Loot_WEAPON,		2,		ItemCompass},
 	{Loot_WEAPON,		3,		ItemMap},
 	{Loot_WEAPON,		4,		ItemWatch},
-	{Loot_WEAPON,		3,		ItemMatchbox},
 	{Loot_WEAPON,		5,		ItemKnife},
 	
 	//Backpacks
@@ -32,5 +31,6 @@ CarePackage[] =
 	{Loot_MAGAZINE,		4,		ItemDomeTent},
 	{Loot_PILE,			10,		MedicalLow, 1, 3},
 	{Loot_PILE,			15,		Consumable, 1, 3},
+	{Loot_GROUP,		3,		Matchbox},
 	{Loot_GROUP,		12,		Generic}
 };

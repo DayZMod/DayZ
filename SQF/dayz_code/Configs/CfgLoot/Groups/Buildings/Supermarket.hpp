@@ -6,7 +6,6 @@ Supermarket[] =
 	{Loot_WEAPON,		6,		ItemMap},
 	{Loot_WEAPON,		5,		ItemFlashlight},
 	{Loot_WEAPON,		2,		ItemKnife},
-	{Loot_WEAPON,		5,		ItemMatchbox},
 	{Loot_WEAPON,		3,		Binocular},
 	{Loot_WEAPON,		2,		ItemDIY_wood},
 	{Loot_WEAPON,		1,		ItemDIY_Gate},
@@ -44,6 +43,7 @@ Supermarket[] =
 	{Loot_GROUP,		20,		Generic},
 	{Loot_GROUP,		10,		AmmoCivilian},
 	{Loot_GROUP,		3,		AttachmentsGeneric},
+	{Loot_GROUP,		5,		Matchbox},
 	{Loot_GROUP,		10,		Trash}
 //	{Loot_GROUP,		3,		MedicalLow}
 };

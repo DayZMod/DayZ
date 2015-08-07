@@ -14,7 +14,6 @@ Residential[] =
 	{Loot_WEAPON,		1,		ItemMap},
 	{Loot_WEAPON,		5,		ItemWatch},
 	{Loot_WEAPON,		6,		ItemFlashlight},
-	{Loot_WEAPON,		3,		ItemMatchbox},
 	{Loot_WEAPON,		5,		ItemKnife},
 	{Loot_WEAPON,		3,		ItemShovel},
 	{Loot_WEAPON,		1,		ItemDIY_wood},
@@ -34,5 +33,6 @@ Residential[] =
 	{Loot_PILE,			10,		Trash, 1, 3},
 	{Loot_PILE,			10,		Consumable, 1, 2},
 	{Loot_GROUP,		3,		AttachmentsGeneric},
+	{Loot_GROUP,		3,		Matchbox},
 	{Loot_GROUP,		8,		Generic}
 };

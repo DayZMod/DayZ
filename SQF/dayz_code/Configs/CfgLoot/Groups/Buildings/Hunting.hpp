@@ -13,7 +13,6 @@ Hunting[] =
 	{Loot_WEAPON,		6,		ItemMap},
 	{Loot_WEAPON,		6,		ItemFlashlight},
 	{Loot_WEAPON,		7,		ItemKnife},
-	{Loot_WEAPON,		7,		ItemMatchbox},
 	{Loot_WEAPON,		2,		ItemCompass},
 	
 	//Backpacks
@@ -31,5 +30,6 @@ Hunting[] =
 	
 	{Loot_PILE,			10,		AmmoCivilian, 1, 3},
 	{Loot_PILE,			10,		Consumable, 1, 3},
+	{Loot_GROUP,		7,		Matchbox},
 	{Loot_GROUP,		10,		Generic}
 };

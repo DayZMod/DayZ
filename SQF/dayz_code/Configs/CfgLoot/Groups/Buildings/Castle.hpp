@@ -1,7 +1,6 @@
 Castle[] =
 {
 	//Tools
-	{Loot_WEAPON,		1,		ItemMatchbox},
 	{Loot_WEAPON,		1,		ItemKnife},
 	{Loot_WEAPON,		1,		ItemMap},
 	{Loot_WEAPON,		1,		ItemCompass},
@@ -33,5 +32,6 @@ Castle[] =
 	{Loot_GROUP,		10,		Trash},
 	{Loot_GROUP,		2,		AttachmentsGeneric},
 	{Loot_GROUP,		5,		Generic},
+	{Loot_GROUP,		1,		Matchbox},
 	{Loot_GROUP,		5,		Consumable}
 };
