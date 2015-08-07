@@ -1,4 +1,4 @@
-ConsumableItems[] =
+Matchbox[] =
 {
 	{Loot_WEAPON,		1,		ItemMatchbox},
 	{Loot_WEAPON,		1,		Item5Matchbox},

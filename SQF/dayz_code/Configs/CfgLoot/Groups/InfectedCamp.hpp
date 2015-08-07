@@ -64,5 +64,5 @@ InfectedCamp[] =
 	{Loot_GROUP,		20,		MedicalHigh},
 	{Loot_GROUP,		10,		Parts},
 	{Loot_GROUP,		100,	Consumable},
-	{loot_GROUP,		6,		ConsumableItems}
+	{Loot_GROUP,		6,		Matchbox}
 };
