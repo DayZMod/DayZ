@@ -1,4 +1,4 @@
-private["_location"];
+private["_location","_minDistance","_maxDistance","_minobjectDistance","_X","_Y","_index"];
 
 _position = _this select 0;
 _minDistance = _this select 1;
@@ -11,6 +11,7 @@ _Y = _position select 1;
 //_location = [_position, _minDistance, _maxDistance, 5, 0, 2000, 0] call BIS_fnc_findSafePos;
 _index = 0;
 while {_index < 50} do {
+	private["_PosX","_PosY","_isFlat"];
 	_PosX = _X + (_maxDistance - (random (_maxDistance * 2)));
 	_PosY = _Y + (_maxDistance - (random (_maxDistance * 2)));
 	_location = [_PosX, _PosY, 0];

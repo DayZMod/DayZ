@@ -30,8 +30,8 @@ Author:
 #define OBJECT_RADIUS_MAX 13
 
 #define SEARCH_CENTER getMarkerPos "center"
-#define SEARCH_RADIUS 4500
-#define SEARCH_EXPRESSION "(5 * forest) + (4 * trees) + (3 * meadow) - (20 * houses) - (30 * sea)"
+#define SEARCH_RADIUS 7500
+#define SEARCH_EXPRESSION "(5 * forest) + (4 * trees) + (3 * meadow) - (20 * houses) - (30 * sea)" //+ (3 * meadow) - (20 * houses) - (30 * sea)
 #define SEARCH_PRECISION 30
 #define SEARCH_ATTEMPTS 10
 
@@ -58,7 +58,8 @@ for "_i" from 1 to (CAMP_NUM) do
 	_composition = _type select 1;
 	
 	//Find a position
-	for "j" from 1 to (SEARCH_ATTEMPTS) do
+
+	for "_j" from 1 to (SEARCH_ATTEMPTS) do
 	{
 		_position = ((selectBestPlaces [SEARCH_CENTER, SEARCH_RADIUS, SEARCH_EXPRESSION, SEARCH_PRECISION, 1]) select 0) select 0;
 		_position set [2, 0];
@@ -78,14 +79,13 @@ for "_i" from 1 to (CAMP_NUM) do
 		{
 			Loot_InsertCargo(_x, _lootGroup, round Math_RandomRange(LOOT_MIN, LOOT_MAX));
 		};
-	}
-	foreach _compositionObjects;
+	} foreach _compositionObjects;
 	
 	//Spawn objects around the camp
 	{
 		_objectPos = [_position, OBJECT_RADIUS_MIN, OBJECT_RADIUS_MAX, 5] call fn_selectRandomLocation;
 		
 		Loot_Spawn(_x, _objectPos);
-	}
-	foreach Loot_Select(_objectGroup, round Math_RandomRange(OBJECT_MIN, OBJECT_MAX));
+		
+	} foreach Loot_Select(_objectGroup, round Math_RandomRange(OBJECT_MIN, OBJECT_MAX));
 };
