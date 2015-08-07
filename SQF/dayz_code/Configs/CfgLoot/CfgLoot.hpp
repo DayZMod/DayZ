@@ -35,6 +35,7 @@ class CfgLoot
 		#include "Groups\Generic.hpp"
 		#include "Groups\Trash.hpp"
 		#include "Groups\Consumable.hpp"
+		#include "Groups\ConsumableItems.hpp"
 		#include "Groups\Parts.hpp"
 		
 		// Points of interest

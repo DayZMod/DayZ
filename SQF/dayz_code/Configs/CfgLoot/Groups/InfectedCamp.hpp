@@ -33,7 +33,6 @@ InfectedCamp[] =
 	{Loot_WEAPON,		3,		ItemCompass},
 	{Loot_WEAPON,		7,		ItemFlashlight},
 	{Loot_WEAPON,		5,		ItemKnife},
-	{Loot_WEAPON,		6,		ItemMatchbox},
 	{Loot_WEAPON,		4,		Binocular},
 	{Loot_WEAPON,		8,		ItemCrowbar},
 	
@@ -64,5 +63,6 @@ InfectedCamp[] =
 	{Loot_GROUP,		30,		MedicalLow},
 	{Loot_GROUP,		20,		MedicalHigh},
 	{Loot_GROUP,		10,		Parts},
-	{Loot_GROUP,		100,	Consumable}
+	{Loot_GROUP,		100,	Consumable},
+	{loot_GROUP,		6,		ConsumableItems}
 };
