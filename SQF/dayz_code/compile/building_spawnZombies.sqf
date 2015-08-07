@@ -33,6 +33,7 @@ if (_canLoot ) then {
 	//Walking Zombies
 	_num = (round(random _max)) max _min; // + round(_max / 3);
 	//diag_log ("Class: " + _type + " / Zombies: " + str(_unitTypes) + " / Walking: " + str(_num));
+	
 	for "_i" from 0 to _num do
 	{
 		//_iPos = _obj modelToWorld _originalPos;

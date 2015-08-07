@@ -2,7 +2,7 @@ private ["_isWreck","_maxControlledZombies","_looted","_zombied","_doNothing","_
 _age = -1;
 //_nearbyBuildings = [];
 _position = getPosATL player;
-_spawnableObjects = ["building", "SpawnableWreck", "IC_Fireplace1", "IC_DomeTent", "IC_Tent"];
+_spawnableObjects = ["building", "CrashSite", "IC_Fireplace1", "IC_DomeTent", "IC_Tent"];
 _speed = speed (vehicle player);
 _radius = 300; //150*0.707; Pointless Processing (106.5)
 _spawnZedRadius = 20;
