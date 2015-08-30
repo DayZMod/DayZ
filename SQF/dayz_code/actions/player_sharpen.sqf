@@ -31,6 +31,7 @@ if (player hasWeapon _item) then {
 	Player removeWeapon _item;
 	
 	Player addWeapon _repair;
+	player addMagazine "ItemWaterBottleUnfilled";
 	//Remove Later
 	player removeMagazine "equip_brick";
 
