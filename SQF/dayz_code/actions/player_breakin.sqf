@@ -146,4 +146,8 @@ if (_proceed and !_brokein) then {
 //Completed and successful
 if (_proceed and _brokein) then {
 	titleText ["Break in attempt successful.", "PLAIN DOWN", 0.3];
+	
+	//Open Gate.
+	_target animate ["DoorR", 0];
+	_target animate ["DoorL", 0];
 };
