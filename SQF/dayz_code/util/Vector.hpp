@@ -7,6 +7,11 @@
 #define Vector_RIGHT	[ 1, 0, 0]
 #define Vector_LEFT		[-1, 0, 0]
 
+//Accessors
+#define Vector_X(v) ((v) select 0)
+#define Vector_Z(v) ((v) select 1)
+#define Vector_Y(v) ((v) select 2)
+
 //Calculates the dot product of the given vectors
 #define Vector_DotProduct(a,b) ([a,b] call vector_dotProduct)
 
