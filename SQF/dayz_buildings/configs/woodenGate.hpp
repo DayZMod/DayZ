@@ -34,6 +34,10 @@ class WoodenGate_Base: DZ_buildables
 	class Disassembly {
 		requiredTools[] = {"ItemEtool"};
 	};	
+	class Maintenance {
+		requiredTools[] = {"ItemToolbox"};
+		requiredParts[] = {"ItemPlank","equip_nails"};
+	};
 };
 
 class WoodenGate_ghost: WoodenGate_Base

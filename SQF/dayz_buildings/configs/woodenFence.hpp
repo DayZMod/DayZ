@@ -11,7 +11,7 @@ class WoodenFence_base: DZ_buildables
 	};
 	class Maintenance {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"ItemPlank"};
+		requiredParts[] = {"ItemPlank","equip_nails"};
 	};
 }; 	
 class WoodenFence_ghost: WoodenFence_base

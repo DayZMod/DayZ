@@ -105,7 +105,49 @@ BEGIN
 			set Classname = 'WoodenFence_6'
 				where Classname = 'WoodenFence_7'
 				AND Hitpoints = '["Maintenance"]'
-				AND DATE(last_updated) < CURDATE() - INTERVAL 3 DAY;												       
+				AND DATE(last_updated) < CURDATE() - INTERVAL 3 DAY;	
+				
+#DayZ_WoodenGates = ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4"];
+#Start Maintenance Mode Gates				
+	Update
+		object_data 
+			set Hitpoints = '["Maintenance"]'                    
+				WHERE (Classname = 'WoodenGate_1' or Classname = 'WoodenGate_1' or Classname = 'WoodenGate_1' or Classname = 'WoodenGate_1')
+				AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
+ 				AND Hitpoints = '[]';
+				
+#Check WoodenGate_1
+	update
+		object_data
+			set Classname = 'WoodenGate_1'
+				where Classname = 'WoodenGate_foundation'
+				AND Hitpoints = '["Maintenance"]'
+				AND DATE(last_updated) < CURDATE() - INTERVAL 3 DAY;
+				
+#Check WoodenGate_2
+	update
+		object_data
+			set Classname = 'WoodenGate_1'
+				where Classname = 'WoodenGate_2'
+				AND Hitpoints = '["Maintenance"]'
+				AND DATE(last_updated) < CURDATE() - INTERVAL 3 DAY;
+				
+#Check WoodenGate_3
+	update
+		object_data
+			set Classname = 'WoodenGate_2'
+				where Classname = 'WoodenGate_3'
+				AND Hitpoints = '["Maintenance"]'
+				AND DATE(last_updated) < CURDATE() - INTERVAL 3 DAY;
+				
+#Check WoodenGate_4
+	update
+		object_data
+			set Classname = 'WoodenGate_3'
+				where Classname = 'WoodenGate_4'
+				AND Hitpoints = '["Maintenance"]'
+				AND DATE(last_updated) < CURDATE() - INTERVAL 3 DAY;
+				
 END//
 DELIMITER ;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
