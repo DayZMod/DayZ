@@ -104,6 +104,9 @@ class CfgWeapons
 	class Mk_48;
 	#include "Rifles\Mk48.hpp"
 	
+	class PK;
+	#include "Rifles\PKM.hpp"
+	
 	class RPK_74;
 	#include "Rifles\RPK74.hpp"
 	

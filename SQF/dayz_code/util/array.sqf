@@ -53,3 +53,74 @@ array_shuffle =
 	};
 	_this
 };
+
+array_mergeSort =
+{
+	if ((count _this) == 2) then
+	{
+		_offset = 0;
+		_length = count (_this select 0);
+	}
+	else
+	{
+		_offset = _this select 2;
+		_length = _this select 3;
+	};
+	
+	if (_length <= 1) exitWith {};
+	
+	_alen = round (_length / 2);
+	_blen = _length - _alen;
+	
+	[_this select 0, _this select 1, _offset, _alen] call array_mergeSort;
+	[_this select 0, _this select 1, _offset + _alen, _blen] call array_mergeSort;
+	
+	_ai = 0;
+	_bi = 0;
+	
+	_temp = [];
+	_temp resize _length;
+	
+	#define A_NEXT (_this select 0) select (_offset + _ai)
+	#define B_NEXT (_this select 0) select (_offset + _alen + _bi)
+	
+	for "_i" from 0 to _length - 1 do
+	{
+		if (_ai == _alen) then
+		{
+			_temp set [_i, B_NEXT];
+			_bi = _bi + 1;
+		}
+		else
+		{
+			if (_bi == _blen) then
+			{
+				_temp set [_i, A_NEXT];
+				_ai = _ai + 1;
+			}
+			else
+			{
+				if (([A_NEXT, B_NEXT] call (_this select 1)) > 0) then
+				{
+					_temp set [_i, A_NEXT];
+					_ai = _ai + 1;
+				}
+				else
+				{
+					_temp set [_i, B_NEXT];
+					_bi = _bi + 1;
+				};
+			};
+		};
+	};
+	
+	#undef A_NEXT
+	#undef B_NEXT
+	
+	for "_i" from 0 to _length - 1 do
+	{
+		(_this select 0) set [_offset + _i, _temp select _i];
+	};
+	
+	_this select 0
+};

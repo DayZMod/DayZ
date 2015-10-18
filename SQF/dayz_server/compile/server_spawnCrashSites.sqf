@@ -9,12 +9,6 @@ Author:
 #include "\z\addons\dayz_code\util\Vector.hpp"
 #include "\z\addons\dayz_code\loot\Loot.hpp"
 
-//Spawn fire at the crash site?
-#define SPAWN_FIRE true
-
-//???
-#define FADE_FIRE false
-
 //Spawn frequency ± variance in minutes
 #define SPAWN_FREQUENCY 40
 #define SPAWN_VARIANCE 15

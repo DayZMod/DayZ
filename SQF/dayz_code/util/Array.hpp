@@ -14,3 +14,8 @@
 //To preserve the original pass in a copy: Array_Shuffle(+myArray)
 //Algorithm: Fisher-Yates		Complexity: O(n)
 #define Array_Shuffle(arr) ((arr) call array_shuffle)
+
+//Sorts the given array using specified comparer function.
+//To preserve the original pass in a copy: Array_MergeSort(+myArray, myComparer)
+//Algorithm: Merge Sort			Complexity: O(n log n)
+#define Array_MergeSort(arr, comparer) ([arr, comparer] call array_mergeSort)

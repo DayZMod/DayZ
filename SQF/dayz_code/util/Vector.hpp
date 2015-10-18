@@ -2,10 +2,19 @@
 #define Vector_NULL		[ 0, 0, 0]
 #define Vector_UP		[ 0, 0, 1]
 #define Vector_DOWN		[ 0, 0,-1]
-#define Vector_FRONT	[ 0, 1, 0]
-#define Vector_BACK		[ 0,-1, 0]
-#define Vector_RIGHT	[ 1, 0, 0]
-#define Vector_LEFT		[-1, 0, 0]
+#define Vector_NORTH	[ 0, 1, 0]
+#define Vector_SOUTH	[ 0,-1, 0]
+#define Vector_EAST		[ 1, 0, 0]
+#define Vector_WEST		[-1, 0, 0]
+#define Vector_FRONT	Vector_NORTH
+#define Vector_BACK		Vector_SOUTH
+#define Vector_RIGHT	Vector_EAST
+#define Vector_LEFT		Vector_WEST
+
+//Accessors
+#define Vector_X(v) ((v) select 0)
+#define Vector_Z(v) ((v) select 1)
+#define Vector_Y(v) ((v) select 2)
 
 //Calculates the dot product of the given vectors
 #define Vector_DotProduct(a,b) ([a,b] call vector_dotProduct)

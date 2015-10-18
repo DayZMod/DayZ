@@ -14,6 +14,8 @@ class DMR_DZ : DMR
 		recoilProne = "recoil_single_primary_prone_4outof10";
 	};
 	
+	visionMode[] = {"Normal"};
+	
 	class Attachments
 	{
 		Attachment_Ghillie = "DMR_Gh_DZ";
