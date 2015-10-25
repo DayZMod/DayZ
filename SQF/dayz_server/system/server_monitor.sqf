@@ -112,8 +112,9 @@ _countr = 0;
 		
 		DayZ_nonCollide = ["TentStorage","TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3", "StashMedium4", "DomeTentStorage", "DomeTentStorage0", "DomeTentStorage1", "DomeTentStorage2", "DomeTentStorag3", "DomeTentStorage4", "CamoNet_DZ"];
 		DayZ_WoodenFence = ["WoodenFence_1","WoodenFence_2","WoodenFence_3","WoodenFence_4","WoodenFence_5","WoodenFence_6","WoodenFence_7"];
+		DayZ_WoodenGates = ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4"];
 		
-		if (_type in DayZ_WoodenFence) then {
+		if (_type in DayZ_WoodenFence OR _type in DayZ_WoodenGates) then {
 			//Use hitpoints for Maintenance system and other systems later.
 			{
 				if (_x == "Maintenance") then { 
@@ -130,8 +131,10 @@ _countr = 0;
 			//TODO add remove object and readd old fence (hideobject would be nice to use here :-( )
 			//Pending change to new fence models\Layout
 		};
+		
 		//Create it
 		_object = createVehicle [_type, _pos, [], 0, if (_type in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
+		
 		// prevent immediate hive write when vehicle parts are set up
 		_object setVariable ["lastUpdate",diag_ticktime];
 		_object setVariable ["ObjectID", _idKey, true];
@@ -299,27 +302,6 @@ publicVariable "sm_done";
 
 [] execVM "\z\addons\dayz_server\system\lit_fireplaces.sqf";
 
-/*
-if (isDedicated) then {
-	//Wild Zeds Ownership isnt working as expected yet
-	execFSM "\z\addons\dayz_server\system\zombie_wildagent.fsm";
-};
-*/
-
-/*
-if (dayz_serversideloot) then {
-	//looot
-	_i = 0;
-	{
-		_radius = 1500;
-		//_nearByPlayer = (count (_x nearEntities ["CAManBase",_radius])) > 0;
-		//if (_nearByPlayer) then {
-			dayz_i = [_x,_radius,_i,1800] call server_lootSpawner;
-			_i = _i + 1;
-		//};	
-	} foreach dayz_grid;
-};
-*/
 
 "PVDZ_sec_atp" addPublicVariableEventHandler { 
 	_x = _this select 1;
