@@ -1,3 +1,6 @@
+#ifndef _INCLUDE_GUARD_VECTOR
+#define _INCLUDE_GUARD_VECTOR
+
 //Vector constants
 #define Vector_NULL		[ 0, 0, 0]
 #define Vector_UP		[ 0, 0, 1]
@@ -51,3 +54,5 @@
 
 //Rotates the vector horizontally by the specified angle in degrees
 #define Vector_Rotate(v, d) ([v, d] call vector_rotate)
+
+#endif

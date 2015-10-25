@@ -1,5 +1,8 @@
 /* What is a mutex? https://en.wikipedia.org/wiki/Mutual_exclusion */
 
+#ifndef _INCLUDE_GUARD_MUTEX
+#define _INCLUDE_GUARD_MUTEX
+
 //Returns a new unlocked mutex.
 #define Mutex_New() [true]
 
@@ -11,3 +14,5 @@
 
 //Unlocks the mutex. Use only when you have previously obtained lock yourself.
 #define Mutex_Unlock(mtx) ((mtx) set [0, true])
+
+#endif

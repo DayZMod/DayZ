@@ -1,3 +1,6 @@
+#ifndef _INCLUDE_GUARD_TASK
+#define _INCLUDE_GUARD_TASK
+
 //Creates a new task using the specified function
 #define Task_New(fnc) [fnc, nil, 0, nil]
 
@@ -29,3 +32,5 @@
 
 //Determines whether the task has canceled prior to completion.
 #define Task_IsCanceled(task) (((task) select 2) == 3)
+
+#endif

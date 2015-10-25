@@ -1,3 +1,6 @@
+#ifndef _INCLUDE_GUARD_ARRAY
+#define _INCLUDE_GUARD_ARRAY
+
 //Returns true if any of the array elements matches the specified predicate
 #define Array_Any(arr, predicate) ([arr, predicate] call array_any)
 
@@ -19,3 +22,5 @@
 //To preserve the original pass in a copy: Array_MergeSort(+myArray, myComparer)
 //Algorithm: Merge Sort			Complexity: O(n log n)
 #define Array_MergeSort(arr, comparer) ([arr, comparer] call array_mergeSort)
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef _INCLUDE_GUARD_MATH
+#define _INCLUDE_GUARD_MATH
+
 //Calculates the greatest common divisor of two numbers
 #define Math_GCD(a, b) ([a, b] call math_gcd)
 
@@ -8,3 +11,5 @@
 #define Math_RandomRange(min, max) ([min, max] call math_randomRange)
 
 #define Math_Clamp(value, pmin, pmax) (pmin max (pmax min value))
+
+#endif

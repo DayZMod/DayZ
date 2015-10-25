@@ -1,3 +1,6 @@
+#ifndef _INCLUDE_GUARD_DICTIONARY
+#define _INCLUDE_GUARD_DICTIONARY
+
 #define Dictionary_New() [0, [], []]
 
 #define Dictionary_Add(d, key, value) ([d, key, value] call dictionary_add)
@@ -9,3 +12,5 @@
 #define Dictionary_ContainsKey(d, key) ([d, key] call dictionary_containsKey)
 
 #define Dictionary_Compact(d) ((d) call dictionary_compact)
+
+#endif
