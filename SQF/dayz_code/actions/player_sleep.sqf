@@ -103,5 +103,6 @@ if (r_interrupt) then {
 	player playActionNow "stop";
 };
 
-PVDZ_plr_Save = [player,nil,true,dayz_playerAchievements];
-publicVariableServer "PVDZ_plr_Save";
+//Removed due to player sync returning []
+//PVDZ_plr_Save = [player,nil,true,dayz_playerAchievements];
+//publicVariableServer "PVDZ_plr_Save";
