@@ -1,3 +1,8 @@
+/* Defines functions working with the player object.
+
+Author: Foxy
+*/
+
 #ifndef _INCLUDE_GUARD_PLAYER
 #define _INCLUDE_GUARD_PLAYER
 

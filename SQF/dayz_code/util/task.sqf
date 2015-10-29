@@ -22,7 +22,7 @@
 #define GET_RESULT(task) ((task) select 3)
 #define SET_RESULT(task, result) ((task) set [3, result])
 
-task_start =
+dz_fn_task_start =
 {
 	if (GET_STATUS(_this select 0) != STATUS_WAITING) exitWith { nil };
 	
@@ -42,7 +42,7 @@ task_start =
 	_this select 0
 };
 
-task_cancel =
+dz_fn_task_cancel =
 {
 	if (GET_STATUS(_this) != STATUS_STARTED) exitWith { false };
 	
@@ -52,8 +52,45 @@ task_cancel =
 	true
 };
 
-task_wait =
+dz_fn_task_wait =
 {
 	waitUntil {GET_STATUS(_this) > 1};
 	GET_RESULT(_this)
 };
+
+/*dz_fn_task_waitAny =
+{
+	_index = nil;
+	_w = false;
+	
+	waitUntil
+	{
+		for "_i" from 0 to count _this - 1 do
+		{
+			if (GET_STATUS(_this select _i) > 1)
+				exitWith {_w = true; _index = _this select _i; };
+		};
+		
+		_w
+	};
+	
+	_index
+};
+
+dz_fn_task_waitAll =
+{
+	waitUntil
+	{
+		_w = true;
+		
+		for "_i" from 0 to count _this - 1 do
+		{
+			if (GET_STATUS(_this select _i) <= 1)
+				exitWith {_w = false};
+		};
+		
+		_w
+	};
+	
+	nil
+};*/

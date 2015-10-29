@@ -1,3 +1,7 @@
+/* Implemented as a circular buffer.
+See https://en.wikipedia.org/wiki/Circular_buffer
+*/
+
 #define GET_COUNT(q) ((q) select 0)
 #define GET_FRONT(q) ((q) select 1)
 #define GET_ARRAY(q) ((q) select 2)
@@ -6,7 +10,7 @@
 #define SET_FRONT(q, p) ((q) set [1, p])
 #define GET_INDEX(q) ((GET_FRONT(q) + GET_COUNT(q) - 1) % GET_SIZE(q))
 
-queue_new =
+dz_fn_queue_new =
 {
 	private "_q";
 	_q = [0, 0, []];
@@ -14,7 +18,7 @@ queue_new =
 	_q
 };
 
-queue_enqueue =
+dz_fn_queue_enqueue =
 {
 	if (GET_COUNT(_this select 0) == GET_SIZE(_this select 0)) exitWith {false};
 	SET_COUNT(_this select 0, GET_COUNT(_this select 0) + 1);
@@ -22,7 +26,7 @@ queue_enqueue =
 	true
 };
 
-queue_dequeue =
+dz_fn_queue_dequeue =
 {
 	if (GET_COUNT(_this) == 0) exitWith {nil};
 	private "_e";
@@ -33,13 +37,19 @@ queue_dequeue =
 	_e
 };
 
-queue_peek =
+dz_fn_queue_peek =
 {
 	if (GET_COUNT(_this) == 0) exitWith {nil};
 	GET_ARRAY(_this) select GET_INDEX(_this);
 };
 
-queue_isFull =
+dz_fn_queue_isFull =
 {
 	GET_COUNT(_this) == GET_SIZE(_this)
+};
+
+//TODO: Queue::Resize()
+dz_fn_queue_resize =
+{
+	assert (false);
 };

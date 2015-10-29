@@ -1,3 +1,8 @@
+/* Provides means for monitoring the execution and retrieving the result of asynchronous operations.
+
+Author: Foxy
+*/
+
 #ifndef _INCLUDE_GUARD_TASK
 #define _INCLUDE_GUARD_TASK
 
@@ -6,11 +11,11 @@
 
 //Starts the task with the specified parameters.
 //Returns the task if succesfully started, otherwise nil.
-#define Task_Start(task, params) ([task, params] call task_start)
+#define Task_Start(task, params) ([task, params] call dz_fn_task_start)
 
 //Cancels a currently running task.
 //Returns true if succesfully canceled, otherwise false.
-#define Task_Cancel(task) ([task] call task_cancel)
+#define Task_Cancel(task) ([task] call dz_fn_task_cancel)
 
 //Gets the task result. Returns nil if not completed.
 //Note that nil may also be returned if the task function did not return a value.
@@ -19,7 +24,7 @@
 //Waits for the task to complete and returns the result.
 //Cannot be called in the unscheduled environment.
 //Waits for completion even if the task has not yet been started.
-#define Task_Wait(task) ((task) call task_wait)
+#define Task_Wait(task) ((task) call dz_fn_task_wait)
 
 //Determines whether the task has been started (may have since completed or been canceled).
 #define Task_IsStarted(task) (((task) select 2) != 0)

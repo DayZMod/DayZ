@@ -1,41 +1,46 @@
 //Returns true if the given predicate evaluates to true for any element in the array
-array_any =
+/*array_any =
 {
 	{
 		if (_x call (_this select 1)) exitWith { true };
 		false
 	}
 	foreach (_this select 0);
-};
+};*/
 
 //Returns true if the given predicate evaluates to true for all elements in the array
-array_all =
+/*array_all =
 {
 	{
 		if !(_x call (_this select 1)) exitWith { false };
 		true
 	}
 	foreach (_this select 0);
-};
+};*/
 
 //Returns the first element in the array for which the given predicate evaluates to true. nil if not found
-array_first =
+/*array_first =
 {
 	{
 		if (_x call (_this select 1)) exitWith { _x };
 		nil
 	}
 	foreach (_this select 0)
+};*/
+
+dz_fn_array_getSet =
+{
+	Array_GetSet_Fast(_this select 0, _this select 1, _this select 2);
 };
 
 //Selects a random element from the array
-array_selectRandom =
+dz_fn_array_selectRandom =
 {
 	_this select floor random count _this
 };
 
 //Shuffle using the Fisher-Yates algorithm. Complexity: O(n)
-array_shuffle =
+dz_fn_array_shuffle =
 {
 	private ["_i", "_r", "_t"];
 	for "_i" from (count _this) - 1 to 1 step -1 do
@@ -54,13 +59,17 @@ array_shuffle =
 	_this
 };
 
-array_mergeSort =
+dz_fn_array_mergeSort =
 {
-	if ((count _this) == 2) then
+	private ["_offset", "_length", "_alen", "_blen", "_ai", "_bi", "_temp"];
+	
+	//Root call
+	if (count _this == 2) then
 	{
 		_offset = 0;
 		_length = count (_this select 0);
 	}
+	//Recursive call
 	else
 	{
 		_offset = _this select 2;
@@ -72,8 +81,8 @@ array_mergeSort =
 	_alen = round (_length / 2);
 	_blen = _length - _alen;
 	
-	[_this select 0, _this select 1, _offset, _alen] call array_mergeSort;
-	[_this select 0, _this select 1, _offset + _alen, _blen] call array_mergeSort;
+	[_this select 0, _this select 1, _offset, _alen] call dz_fn_array_mergeSort;
+	[_this select 0, _this select 1, _offset + _alen, _blen] call dz_fn_array_mergeSort;
 	
 	_ai = 0;
 	_bi = 0;
@@ -86,30 +95,30 @@ array_mergeSort =
 	
 	for "_i" from 0 to _length - 1 do
 	{
-		if (_ai == _alen) then
+		switch (true) do
 		{
-			_temp set [_i, B_NEXT];
-			_bi = _bi + 1;
-		}
-		else
-		{
-			if (_bi == _blen) then
+			case (_ai == _alen):
+			{
+				_temp set [_i, B_NEXT];
+				_bi = _bi + 1;
+			};
+			
+			case (_bi == _blen):
 			{
 				_temp set [_i, A_NEXT];
 				_ai = _ai + 1;
-			}
-			else
+			};
+			
+			case (([A_NEXT, B_NEXT] call (_this select 1)) > 0):
 			{
-				if (([A_NEXT, B_NEXT] call (_this select 1)) > 0) then
-				{
-					_temp set [_i, A_NEXT];
-					_ai = _ai + 1;
-				}
-				else
-				{
-					_temp set [_i, B_NEXT];
-					_bi = _bi + 1;
-				};
+				_temp set [_i, A_NEXT];
+				_ai = _ai + 1;
+			};
+			
+			default
+			{
+				_temp set [_i, B_NEXT];
+				_bi = _bi + 1;
 			};
 		};
 	};

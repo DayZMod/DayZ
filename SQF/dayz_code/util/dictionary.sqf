@@ -5,12 +5,12 @@
 #define GET_VALUES(d) ((d) select 2)
 #define GET_INDEX(d, k) (GET_KEYS(d) find (k))
 
-dictionary_containsKey =
+dz_fn_dictionary_containsKey =
 {
 	GET_INDEX(_this select 0, _this select 1) != -1
 };
 
-dictionary_add =
+dz_fn_dictionary_add =
 {
 	if (GET_INDEX(_this select 0, _this select 1) == -1) exitWith {false};
 	
@@ -23,7 +23,7 @@ dictionary_add =
 	true
 };
 
-dictionary_get =
+dz_fn_dictionary_get =
 {
 	private "_index";
 	_index = GET_INDEX(_this select 0, _this select 1);
@@ -31,7 +31,7 @@ dictionary_get =
 	GET_VALUES(_this select 0) select _index
 };
 
-dictionary_remove =
+dz_fn_dictionary_remove =
 {
 	private "_index";
 	_index = GET_INDEX(_this select 0, _this select 1);
@@ -43,7 +43,7 @@ dictionary_remove =
 	true
 };
 
-dictionary_compact =
+dz_fn_dictionary_compact =
 {
 	private ["_keys", "_values", "_i"];
 	_keys = [];

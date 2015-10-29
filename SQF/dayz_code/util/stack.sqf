@@ -3,7 +3,7 @@
 #define GET_SIZE(s) (count GET_ARRAY(s))
 #define SET_COUNT(s, p) ((s) set [0, p])
 
-stack_push =
+dz_fn_stack_push =
 {
 	if (GET_COUNT(_this select 0) == GET_SIZE(_this select 0)) then
 	{
@@ -14,7 +14,7 @@ stack_push =
 	SET_COUNT(_this select 0, GET_COUNT(_this select 0) + 1);
 };
 
-stack_pop =
+dz_fn_stack_pop =
 {
 	if (GET_COUNT(_this) == 0) exitWith {nil};
 	
@@ -25,12 +25,12 @@ stack_pop =
 	_e
 };
 
-stack_peek =
+dz_fn_stack_peek =
 {
 	GET_ARRAY(_this) select (GET_COUNT(_this) - 1)
 };
 
-stack_size =
+dz_fn_stack_size =
 {
 	count GET_ARRAY(_this)
 };
