@@ -1,3 +1,5 @@
+#include "Array.hpp"
+
 //Returns true if the given predicate evaluates to true for any element in the array
 dz_fn_array_any =
 {
@@ -25,7 +27,7 @@ dz_fn_array_first =
 		if (_x call (_this select 1)) exitWith { _x };
 		nil
 	}
-	foreach (_this select 0)
+	foreach (_this select 0);
 };
 
 dz_fn_array_getSet =

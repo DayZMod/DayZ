@@ -22,7 +22,7 @@ dz_fn_debug_checkTypes =
 	private "_exp";
 	
 	{
-		_exp = (_this select 1) select (_foreachIndex min count ((_this select 1) - 1))
+		_exp = (_this select 1) select (_foreachIndex min count ((_this select 1) - 1));
 		
 		if (!call dz_fn_debug_checkType) then
 		{

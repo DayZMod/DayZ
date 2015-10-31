@@ -52,11 +52,11 @@ Author: Foxy
 
 //Multiplies the vector by a real number
 #define Vector_Multiply(v,d) ([v,d] call dz_fn_vector_multiply)
-#define Vector_Multiply_Fast(v,d) [Vector_X(v) * d, Vector_Y(v) * d, Vector_Z(v) * d]
+#define Vector_Multiply_Fast(v,d) [Vector_X(v) * (d), Vector_Y(v) * (d), Vector_Z(v) * (d)]
 
 //Divides the vector by a real number
 #define Vector_Divide(v,d) ([v,d] call dz_fn_vector_divide)
-#define Vector_Divide_Fast(v,d) [Vector_X(v) / d, Vector_Y(v) / d, Vector_Z(v) / d]
+#define Vector_Divide_Fast(v,d) [Vector_X(v) / (d), Vector_Y(v) / (d), Vector_Z(v) / (d)]
 
 //Calculates the angle between two given vectors
 #define Vector_Angle(a,b) ([a,b] call dz_fn_vector_angle)
@@ -69,10 +69,10 @@ Author: Foxy
 
 //Returns a horizontal unit vector pointing in the specified direction (degrees).
 #define Vector_FromDir(deg) ((deg) call dz_fn_vector_fromDir)
-#define Vector_FromDir_Fast(deg) [sin deg, cos deg, 0]
+#define Vector_FromDir_Fast(deg) [sin (deg), cos (deg), 0]
 
 //Rotates the vector horizontally by the specified angle in degrees
 #define Vector_Rotate(v, deg) ([v, deg] call dz_fn_vector_rotate)
-#define Vector_Rotate_Fast(v, deg) [Vector_X(v) * cos deg - Vector_Y(v) * sin deg, Vector_X(v) * sin deg - Vector_Y(v) * cos deg, Vector_Z(v)]
+#define Vector_Rotate_Fast(v, deg) [Vector_X(v) * cos (deg) - Vector_Y(v) * sin (deg), Vector_X(v) * sin (deg) - Vector_Y(v) * cos (deg), Vector_Z(v)]
 
 #endif

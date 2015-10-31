@@ -17,5 +17,6 @@ CCPP PATH(queue.sqf);
 CCPP PATH(dictionary.sqf);
 
 //Specialized
+CCPP PATH(vector.sqf);
 CCPP PATH(task.sqf);
 CCPP PATH(request.sqf);
