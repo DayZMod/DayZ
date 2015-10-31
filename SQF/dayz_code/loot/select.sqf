@@ -30,16 +30,16 @@ if (_lootNum < 1 || _lootGroup < 0) exitWith { [] };
 _result = [];
 _result resize _lootNum;
 
-_weighted = dayz_lootWeighted select _lootGroup;
+_weighted = dz_loot_weighted select _lootGroup;
 
 for "_i" from 0 to _lootNum - 1 do
 {
-	_def = dayz_lootDefinitions select (_weighted select floor random count _weighted);
+	_def = dz_loot_definitions select (_weighted select floor random count _weighted);
 	
 	while {(_def select 0) == Loot_GROUP} do
 	{
-		_sub = dayz_lootWeighted select (_def select 1);
-		_def = dayz_lootDefinitions select (_sub select floor random count _sub);
+		_sub = dz_loot_weighted select (_def select 1);
+		_def = dz_loot_definitions select (_sub select floor random count _sub);
 	};
 	
 	_result set [_i, _def];

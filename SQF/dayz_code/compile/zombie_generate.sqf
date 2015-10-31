@@ -1,3 +1,5 @@
+#include "\z\addons\dayz_code\loot\Loot.hpp"
+
 private ["_bypass","_position","_unitTypes","_radius","_method","_agent","_maxlocalspawned","_doLoiter","_wildspawns","_maxControlledZombies","_cantSee","_isok","_zPos","__FILE__","_fov","_safeDistance","_farDistance","_xasl","_eye","_ed","_deg","_skipFOV","_wildSpawns","_tooClose","_type","_loot","_array","_rnd","_lootType","_index","_weights","_loot_count","_favStance"];
 
 _position = _this select 0;
@@ -105,8 +107,10 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 			_lootGroup = configFile >> "CfgVehicles" >> _type >> "zombieLoot";
 			if (isText _lootGroup) then
 			{
-				_lootGroup = dayz_lootGroups find getText (_lootGroup);
-				[_agent, _lootGroup, 1] call loot_insert;
+				//_lootGroup = dayz_lootGroups find getText (_lootGroup);
+				_lootGroup = Loot_GetGroup(getText _lootGroup);
+				//[_agent, _lootGroup, 1] call loot_insert;
+				Loot_Insert(_agent, _lootGroup, 1);
 			};
 		};
 		

@@ -1,6 +1,8 @@
 #include "Request.hpp"
+#include "Array.hpp"
 #include "Mutex.hpp"
 #include "Dictionary.hpp"
+#include "Debug.hpp"
 
 //Default reply sent if request is invalid or handler returns nil.
 #define DEFAULT_REPLY []
@@ -16,6 +18,7 @@
 
 #define Request_Server_GetFunc(request) ((request) select 2)
 #define Request_Server_GetArgs(request) ((request) select 3)
+#define Request_Server_ExpectsReply(request) (Request_GetID(request) >= 0)
 
 //TODO: make work for non-dedicated server as well?
 
@@ -24,29 +27,50 @@ if (!isServer) then //CLIENT
 	dz_request_mutex = Mutex_New();
 	dz_request_list = [];
 	
-	//send request
-	dz_fn_request_send = // [functionID, args]
+	//Send request
+	dz_fn_request_send = // [requestIdentifier, args, reply]
 	{
+		Debug_Assert(Request_IsInitialized());
+		Debug_CheckParams3(Array_New2("SCALAR","STRING"),"ANY","BOOL");
+		
 		private ["_id", "_request"];
 		
-		//acquire lock
-		Mutex_WaitLock(dz_request_mutex);
+		//Expecting reply
+		if (_this select 2) exitWith
+		{
+			//Acquire lock
+			Mutex_WaitLock_Fast(dz_request_mutex);
+			
+			//Find first valid id and assign the new request to it
+			_id = dz_request_list find 0;
+			if (_id < 0) then { _id = count dz_request_list; };
+			_request = Request_New(_id);
+			dz_request_list set [_id, _request];
+			
+			//send request to server
+			dz_pvs_request = _request + [_this select 0, _this select 1];
+			publicVariableServer "dz_pvs_request";
+			
+			Mutex_Unlock(dz_request_mutex);
+			
+			//return the request object
+			_request
+		};
 		
-		//Get find first valid id and assign new request to it
-		_id = dz_request_list find 0;
-		if (_id < 0) then { _id = count dz_request_list; };
-		_request = Request_New(_id);
-		dz_request_list set [_id, _request];
+		//Not expecting reply
 		
-		//send request to server
-		dz_pvs_request = _request + _this;
+		//Acquire lock
+		Mutex_WaitLock_Fast(dz_request_mutex);
+		
+		//Send request to server
+		dz_pvs_request = Request_New(-1) + [_this select 0, _this select 1];
 		publicVariableServer "dz_pvs_request";
 		
-		//unlock
+		//Unlock
 		Mutex_Unlock(dz_request_mutex);
 		
-		//return the request object
-		_request
+		//Return nil
+		nil
 	};
 	
 	//receive reply
@@ -73,38 +97,21 @@ else //SERVER
 		//request handler [handler, async]
 		__handler = Dictionary_Get(dz_request_handlers, Request_Server_GetFunc(_this select 1));
 		
-		//Determines whether the client is expecting a reply
-		#define EXPECT_REPLY(request) (Request_GetOwner(request) > 0)
-		
 		//No handler found
 		if (isNil "__handler") exitWith
 		{
 			diag_log format ["ERROR: Received an invalid request:%1 ClientID:%2",
 				Request_Server_GetFunc(_this select 1),
-				if (EXPECT_REPLY(_this select 1)) then { Request_GetOwner(_this select 1) } else { "?" } ];
+				Request_GetOwner(_this select 1) ];
 			
 			//Send reply to prevent client deadlock
-			if (EXPECT_REPLY(_this select 1)) then
+			if (Request_Server_ExpectsReply(_this select 1)) then
 			{
 				//Return default value (empty array)
-				__temp = dz_pvc_request;
+				_temp = dz_pvc_request;
 				dz_pvc_request = DEFAULT_REPLY;
 				Request_GetOwner(_this select 1) publicVariableClient "dz_pvc_request";
-				dz_pvc_request = __temp;
-			};
-		};
-		
-		//Client not expecting reply
-		if (!EXPECT_REPLY(_this select 1)) exitWith
-		{
-			//Async
-			if (__handler select 1) then
-			{
-				Request_Server_GetArgs(_this select 1) spawn (__handler select 0);
-			}
-			else //Sync
-			{
-				Request_Server_GetArgs(_this select 1) call (__handler select 0);
+				dz_pvc_request = _temp;
 			};
 		};
 		
@@ -114,17 +121,18 @@ else //SERVER
 			//Spawn a new thread to handle request asynchronously
 			[_this select 1, __handler select 0] spawn
 			{
-				__result = Request_Server_GetArgs(_this select 0) call (_this select 1);
+				__reply = Request_Server_ExpectsReply(_this select 0);
+				_result = Request_Server_GetArgs(_this select 0) call (_this select 1);
 				
-				if (!EXPECT_REPLY(_this select 0)) exitWith {};
+				if (!__reply) exitWith {};
 				
-				if (isNil "__result") then { __result = DEFAULT_REPLY; };
+				if (isNil "_result") then { _result = DEFAULT_REPLY; };
 				
 				//Acquire lock to prevent race conditions with other asynchronous handlers
-				Mutex_WaitLock(dz_request_mutex);
+				Mutex_WaitLock_Fast(dz_request_mutex);
 				
 				//Send reply
-				dz_pvc_request = __result;
+				dz_pvc_request = _result;
 				Request_GetOwner(_this select 0) publicVariableClient "dz_pvc_request";
 				
 				//Unlock
@@ -133,22 +141,26 @@ else //SERVER
 		}
 		else //Sync
 		{
-			//store previous value in case it's being used by a scheduled thread
-			__temp = dz_pvc_request;
+			//Whether client expects a reply.
+			//If the handler knows that the player has disconnected they can set this to false to prevent replying.
+			__reply = Request_Server_ExpectsReply(_this select 1);
 			
 			//Execute handler
-			dz_pvc_request = Request_Server_GetArgs(_this select 1) call (__handler select 0);
+			_result = Request_Server_GetArgs(_this select 1) call (__handler select 0);
 			
-			//Make sure we don't attempt to send nil (not supported in arma 2)
-			if (isNil "dz_pvc_request") then { dz_pvc_request = DEFAULT_REPLY; };
+			if (!__reply) exitWith {};
+			
+			if (isNil "_result") then { _result = DEFAULT_REPLY; };
+			
+			//store previous value in case it's being used by a scheduled thread
+			_temp = dz_pvc_request;
 			
 			//Send reply
+			dz_pvc_request = _result;
 			Request_GetOwner(_this select 1) publicVariableClient "dz_pvc_request";
 			
 			//restore previous value
-			dz_pvc_request = __temp;
+			dz_pvc_request = _temp;
 		};
-		
-		#undef EXPECT_REPLY
 	};
 };

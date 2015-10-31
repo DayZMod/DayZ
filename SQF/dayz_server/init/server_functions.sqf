@@ -10,8 +10,6 @@ BIS_MPF_remoteExecutionServer = {
 
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\compile.sqf";
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\loot\compile.sqf";
-//Shitty bandaid fix :(
-loot_spawn = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\loot_spawn.sqf";
 
 BIS_Effects_Burn =			{};
 server_playerLogin =		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerLogin.sqf";

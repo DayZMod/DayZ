@@ -1,11 +1,21 @@
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\debug.sqf"
+#define STRINGIFY(x) #x
+#define PATH(sub_path) STRINGIFY(\z\addons\dayz_code\util\sub_path)
+#define CCPP call compile preprocessFileLineNumbers
 
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\math.sqf";
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\array.sqf";
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\vector.sqf";
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\stack.sqf";
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\queue.sqf";
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\dictionary.sqf";
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\request.sqf";
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\task.sqf";
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\prng.sqf";
+//Debug
+CCPP PATH(debug.sqf);
+
+//Very generic utilities
+CCPP PATH(util.sqf);
+CCPP PATH(mutex.sqf);
+CCPP PATH(math.sqf);
+CCPP PATH(array.sqf);
+
+//Collections
+CCPP PATH(stack.sqf);
+CCPP PATH(queue.sqf);
+CCPP PATH(dictionary.sqf);
+
+//Specialized
+CCPP PATH(task.sqf);
+CCPP PATH(request.sqf);

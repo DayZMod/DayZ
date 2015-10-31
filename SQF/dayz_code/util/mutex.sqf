@@ -2,7 +2,7 @@
 
 dz_fn_mutex_tryLock =
 {
-	[_this select 0, _this set [0, false]] select 0
+	Mutex_TryLock_Fast(_this);
 };
 
 dz_fn_mutex_waitLock =

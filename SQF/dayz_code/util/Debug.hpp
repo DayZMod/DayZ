@@ -29,26 +29,33 @@ P.s. Why does this piece of shit not have variadic macros?!
 
 /* Validates the array member types.
 Example:
-	Debug_CheckTypes3(SCALAR, STRING, ARRAY);
+	//Scalar, string and array
+	Debug_CheckTypes3("SCALAR","STRING","ARRAY");
+	
+	//Boolean and scalar or string
+	Debug_CheckTypes2("BOOL",Array_New2("SCALAR","STRING"));
+	
+	//Object or nil and any
+	Debug_CheckTypes2(Array_New2("OBJECT","NIL"),"ANY");
 
 See https://community.bistudio.com/wiki/Data_Types
 */
-#define Debug_CheckTypes1(arr, p0) ([arr,[#p0],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes2(arr, p0,p1) ([arr,[#p0,#p1],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes3(arr, p0,p1,p2) ([arr,[#p0,#p1,#p2],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes4(arr, p0,p1,p2,p3) ([arr,[#p0,#p1,#p2,#p3],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes5(arr, p0,p1,p2,p3,p4) ([arr,[#p0,#p1,#p2,#p3,#p4],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes6(arr, p0,p1,p2,p3,p4,p5) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes7(arr, p0,p1,p2,p3,p4,p5,p6) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5,#p6],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes8(arr, p0,p1,p2,p3,p4,p5,p6,p7) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5,#p6,#p7],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes9(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5,#p6,#p7,#p8],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes10(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5,#p6,#p7,#p8,#p9],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes11(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5,#p6,#p7,#p8,#p9,#p10],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes12(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5,#p6,#p7,#p8,#p9,#p10,#p11],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes13(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5,#p6,#p7,#p8,#p9,#p10,#p11,#p12],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes14(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5,#p6,#p7,#p8,#p9,#p10,#p11,#p12,#p13],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes15(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5,#p6,#p7,#p8,#p9,#p10,#p11,#p12,#p13,#p14],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
-#define Debug_CheckTypes16(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15) ([arr,[#p0,#p1,#p2,#p3,#p4,#p5,#p6,#p7,#p8,#p9,#p10,#p11,#p12,#p13,#p14,#p15],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes1(arr, p0) ([arr,[p0],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes2(arr, p0,p1) ([arr,[p0,p1],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes3(arr, p0,p1,p2) ([arr,[p0,p1,p2],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes4(arr, p0,p1,p2,p3) ([arr,[p0,p1,p2,p3],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes5(arr, p0,p1,p2,p3,p4) ([arr,[p0,p1,p2,p3,p4],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes6(arr, p0,p1,p2,p3,p4,p5) ([arr,[p0,p1,p2,p3,p4,p5],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes7(arr, p0,p1,p2,p3,p4,p5,p6) ([arr,[p0,p1,p2,p3,p4,p5,p6],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes8(arr, p0,p1,p2,p3,p4,p5,p6,p7) ([arr,[p0,p1,p2,p3,p4,p5,p6,p7],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes9(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8) ([arr,[p0,p1,p2,p3,p4,p5,p6,p7,p8],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes10(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9) ([arr,[p0,p1,p2,p3,p4,p5,p6,p7,p8,p9],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes11(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10) ([arr,[p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes12(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11) ([arr,[p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes13(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12) ([arr,[p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes14(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13) ([arr,[p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes15(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14) ([arr,[p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
+#define Debug_CheckTypes16(arr, p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15) ([arr,[p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15],__FILE__,__LINE__] call dz_fn_debug_checkTypes)
 
 //See Debug_CheckTypes. Used for checking script parameters.
 #define Debug_CheckParams1(p0) Debug_CheckTypes1(_this,p0)

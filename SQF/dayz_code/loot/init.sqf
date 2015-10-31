@@ -1,10 +1,8 @@
+#include "\z\addons\dayz_code\util\math.hpp"
 #include "Loot.hpp"
 
 //If defined, minimizes memory usage at the expense of initialization time.
 //#define MINIMIZE_MEMORY
-
-//Requires the GCD function
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\math.sqf";
 
 private
 [
@@ -52,19 +50,19 @@ _lootDefCompare =
 };
 #endif
 
-dayz_lootGroups = [];
-dayz_lootWeighted = [];
-dayz_lootDefinitions = [];
+dz_loot_groups = [];
+dz_loot_weighted = [];
+dz_loot_definitions = [];
 
 _cfgGroups = (configFile >> "CfgLoot" >> "Groups");
 
 for "_i" from 0 to (count _cfgGroups) - 1 do
 {
 	_cfg = _cfgGroups select _i;
-	dayz_lootGroups set [_i, configName _cfg];
+	dz_loot_groups set [_i, configName _cfg];
 };
 
-dayz_lootWeighted resize count dayz_lootGroups;
+dz_loot_weighted resize count dz_loot_groups;
 
 for "_i" from 0 to (count _cfgGroups) - 1 do
 {
@@ -94,14 +92,14 @@ for "_i" from 0 to (count _cfgGroups) - 1 do
 					_index = _forEachIndex;
 				};
 			}
-			foreach dayz_lootDefinitions;
+			foreach dz_loot_definitions;
 			#endif
 			
 			//Existing loot definition not found, add it and set the index to point to the new definition
 			if (_index == -1) then
 			{
-				_index = count dayz_lootDefinitions;
-				dayz_lootDefinitions set [_index, _x];
+				_index = count dz_loot_definitions;
+				dz_loot_definitions set [_index, _x];
 			};
 			
 			_lootGroup set [_forEachIndex, round(_weight * 100)];
@@ -110,7 +108,8 @@ for "_i" from 0 to (count _cfgGroups) - 1 do
 		foreach _lootGroup;
 		
 		//Calculate GCD of all the weights
-		_gcd = _lootGroup call math_gcdx;
+		_gcd = Math_GCDArray(_lootGroup);
+		//_gcd = _lootGroup call math_gcdx;
 		
 		_count = 0;
 		{
@@ -127,16 +126,16 @@ for "_i" from 0 to (count _cfgGroups) - 1 do
 		foreach _lootGroup;
 	};
 	
-	dayz_lootWeighted set [_i, _weighted];
+	dz_loot_weighted set [_i, _weighted];
 };
 
 {
 	switch (_x select 0) do
 	{
-		case Loot_GROUP:		{ _x set [1, dayz_lootGroups find (_x select 1)]; };
-		case Loot_PILE:			{ _x set [1, dayz_lootGroups find (_x select 1)]; };
-		case Loot_CONTAINER:	{ _x set [2, dayz_lootGroups find (_x select 2)]; };
+		case Loot_GROUP:		{ _x set [1, dz_loot_groups find (_x select 1)]; };
+		case Loot_PILE:			{ _x set [1, dz_loot_groups find (_x select 1)]; };
+		case Loot_CONTAINER:	{ _x set [2, dz_loot_groups find (_x select 2)]; };
 		case Loot_CUSTOM:		{ _x set [1, compile (_x select 1)]; };
 	};
 }
-foreach dayz_lootDefinitions;
+foreach dz_loot_definitions;

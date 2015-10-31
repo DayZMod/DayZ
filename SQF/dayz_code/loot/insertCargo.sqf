@@ -32,4 +32,5 @@ Author:
 		};
 	};
 }
-foreach ([_this select 1, _this select 2] call loot_select);
+foreach Loot_Select(_this select 1, _this select 2);
+//foreach ([_this select 1, _this select 2] call loot_select);

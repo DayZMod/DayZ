@@ -6,6 +6,8 @@ Author: Foxy
 #ifndef _INCLUDE_GUARD_ARRAY
 #define _INCLUDE_GUARD_ARRAY
 
+
+
 //Get or set the element at specific index.
 #define Array_Get(array, index) ((array) select (index))
 #define Array_Set(array, index, value) ((array) set [index, value])
@@ -15,13 +17,13 @@ Author: Foxy
 #define Array_GetSet_Fast(array, index, value) ([(array) select (index), (array) set [index, value]] select 0)
 
 //Returns true if any of the array elements matches the specified predicate
-//#define Array_Any(arr, predicate) ([arr, predicate] call array_any)
+#define Array_Any(arr, predicate) ([arr, predicate] call dz_fn_array_any)
 
 //Returns true if all of the array elements match the specified predicate
-//#define Array_All(p_arr,p_pred) ([arr, predicate] call array_all)
+#define Array_All(p_arr,p_pred) ([arr, predicate] call dz_fn_array_all)
 
 //Returns the first element of the array that matches the specified predicate
-//#define Array_First(arr, predicate) ([arr, predicate] call array_first)
+#define Array_First(arr, predicate) ([arr, predicate] call dz_fn_array_first)
 
 //Selects a random element from the specified array
 #define Array_SelectRandom(arr) ((arr) call dz_fn_array_selectRandom)

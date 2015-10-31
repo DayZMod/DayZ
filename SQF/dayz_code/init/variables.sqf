@@ -487,9 +487,6 @@ switch (dayz_presets) do {
 	};
 };
 
-//init global arrays for Loot Chances
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\loot\init.sqf";
-
 //start achievements_init
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\achievements_init.sqf";
 

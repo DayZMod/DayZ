@@ -1,32 +1,32 @@
 //Returns true if the given predicate evaluates to true for any element in the array
-/*array_any =
+dz_fn_array_any =
 {
 	{
 		if (_x call (_this select 1)) exitWith { true };
 		false
 	}
 	foreach (_this select 0);
-};*/
+};
 
 //Returns true if the given predicate evaluates to true for all elements in the array
-/*array_all =
+dz_fn_array_all =
 {
 	{
 		if !(_x call (_this select 1)) exitWith { false };
 		true
 	}
 	foreach (_this select 0);
-};*/
+};
 
 //Returns the first element in the array for which the given predicate evaluates to true. nil if not found
-/*array_first =
+dz_fn_array_first =
 {
 	{
 		if (_x call (_this select 1)) exitWith { _x };
 		nil
 	}
 	foreach (_this select 0)
-};*/
+};
 
 dz_fn_array_getSet =
 {

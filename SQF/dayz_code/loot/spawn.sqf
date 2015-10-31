@@ -16,6 +16,12 @@ Author:
 
 #define MAX_WEAPON_MAGAZINES 2
 
+#ifdef SERVER
+	#define INCREMENT_WEAPON_HOLDERS()
+#else
+	#define INCREMENT_WEAPON_HOLDERS() dayz_currentWeaponHolders = dayz_currentWeaponHolders + 1
+#endif
+
 private
 [
 	"_lootInfo",
@@ -36,7 +42,7 @@ switch (_lootInfo select 0) do
 		_vehicle = createVehicle ["WeaponHolder", _this select 1, [], 0, "CAN_COLLIDE"];
 		_vehicle addWeaponCargoGlobal [_lootInfo select 1, 1];
 		_vehicle setPosATL (_this select 1);
-		dayz_currentWeaponHolders = dayz_currentWeaponHolders + 1;
+		INCREMENT_WEAPON_HOLDERS();
 		
 		_magazines = getArray (configFile >> "CfgWeapons" >> _lootInfo select 1 >> "magazines");
 		
@@ -52,7 +58,7 @@ switch (_lootInfo select 0) do
 		_vehicle = createVehicle ["WeaponHolder", _this select 1, [], 0, "CAN_COLLIDE"];
 		_vehicle addMagazineCargoGlobal [_lootInfo select 1, 1];
 		_vehicle setPosATL (_this select 1);
-		dayz_currentWeaponHolders = dayz_currentWeaponHolders + 1;
+		INCREMENT_WEAPON_HOLDERS();
 	};
 	
 	case Loot_BACKPACK:
@@ -67,9 +73,9 @@ switch (_lootInfo select 0) do
 	{
 		_spawnCount = (_lootInfo select 2) + floor random ((_lootInfo select 3) - (_lootInfo select 2) + 1);
 		_vehicle = createVehicle ["WeaponHolder", _this select 1, [], 0, "CAN_COLLIDE"];
-		[_vehicle, _lootInfo select 1, _spawnCount] call loot_insertCargo;
+		Loot_InsertCargo(_vehicle, _lootInfo select 1, _spawnCount);
 		_vehicle setPosATL (_this select 1);
-		dayz_currentWeaponHolders = dayz_currentWeaponHolders + 1;
+		INCREMENT_WEAPON_HOLDERS();
 	};
 	
 	//Spawn a vehicle
@@ -84,12 +90,12 @@ switch (_lootInfo select 0) do
 	case Loot_CONTAINER:
 	{
 		_vehicle = createVehicle [_lootInfo select 1, _this select 1, [], 0, "CAN_COLLIDE"];
-		dayz_currentWeaponHolders = dayz_currentWeaponHolders + 1;
+		INCREMENT_WEAPON_HOLDERS();
 		
 		//Number of items to spawn
 		_spawnCount = (_lootInfo select 3) + floor random ((_lootInfo select 4) - (_lootInfo select 3) + 1);
 		
-		[_vehicle, _lootInfo select 2, _spawnCount] call loot_insertCargo;
+		Loot_InsertCargo(_vehicle, _lootInfo select 2, _spawnCount);
 		
 		_vehicle setDir random 360;
 		_vehicle setPosATL (_this select 1);

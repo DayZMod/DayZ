@@ -12,4 +12,5 @@ Author:
 	Foxy
 */
 
-[([_this select 0, 1] call loot_select) select 0, _this select 1] call loot_spawn
+Loot_Spawn(Loot_Select(_this select 0, 1) select 0, _this select 1);
+//[([_this select 0, 1] call loot_select) select 0, _this select 1] call loot_spawn
