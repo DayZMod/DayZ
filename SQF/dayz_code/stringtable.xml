@@ -9821,6 +9821,12 @@
 		<Key ID="STR_DZ_WPN_M16A4_HOLO_FL">
 			<Original>M16A4 Holo FL</Original>
 		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_ACOG_NAME">
+			<Original>M16A4 ACOG</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_ACOG_FL_NAME">
+			<Original>M16A4 ACOG FL</Original>
+		</Key>
 		<!-- M203 -->
 		<Key ID="STR_DZ_WPN_M16A4_GL">
 			<Original>M16A4 M203</Original>
@@ -9840,6 +9846,12 @@
 		<Key ID="STR_DZ_WPN_M16A4_GL_HOLO_FL">
 			<Original>M16A4 M203 Holo FL</Original>
 		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_GL_ACOG_NAME">
+			<Original>M16A4 M203 ACOG</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M16A4_GL_ACOG_FL_NAME">
+			<Original>M16A4 M203 ACOG FL</Original>
+		</Key>
 		
 		
 		
@@ -9852,9 +9864,6 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_FNFAL_HOLO_NAME">
 			<Original>FN FAL Holo</Original>
-		</Key>
-		<Key ID="STR_DZ_WPN_FNFAL_ACOG_NAME">
-			<Original>FN FAL ACOG</Original>
 		</Key>
 		<Key ID="STR_DZ_WPN_FNFAL_ANPVS4_NAME">
 			<Original>FN FAL AN/PVS-4</Original>
@@ -9942,6 +9951,53 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_AKM_PSO1_NAME">
 			<Original>AK-47M PSO-1</Original>
+		</Key>
+		
+		
+		
+		<!-- RPK -->
+		<Key ID="STR_DZ_WPN_RPK_NAME">
+			<Original>RPK</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_RPK_DESC">
+			<Original>Light machine gun&lt;br/&gt;Caliber: 7.62x39mm</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_RPK_KOBRA_NAME">
+			<Original>RPK Kobra</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_RPK_PSO1_NAME">
+			<Original>RPK PSO-1</Original>
+		</Key>
+		
+		
+		
+		<!-- SA58 -->
+		<Key ID="STR_DZ_WPN_SA58_NAME">
+			<Original>SA-58</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_SA58_RIS_NAME">
+			<Original>SA-58 RIS</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_SA58_RIS_FL_NAME">
+			<Original>SA-58 RIS FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_SA58_CCO_NAME">
+			<Original>SA-58 CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_SA58_CCO_FL_NAME">
+			<Original>SA-58 CCO FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_SA58_HOLO_NAME">
+			<Original>SA-58 Holo</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_SA58_HOLO_FL_NAME">
+			<Original>SA-58 Holo FL</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_SA58_ACOG_NAME">
+			<Original>SA-58 ACOG</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_SA58_ACOG_FL_NAME">
+			<Original>SA-58 ACOG FL</Original>
 		</Key>
 		
 		
@@ -10042,6 +10098,19 @@
 		
 		
 		
+		<!-- L110A1 -->
+		<Key ID="STR_DZ_WPN_L110A1_NAME">
+			<Original>L110A1</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_L110A1_CCO_NAME">
+			<Original>L110A1 CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_L110A1_HOLO_NAME">
+			<Original>L110A1 Holo</Original>
+		</Key>
+		
+		
+		
 		<!-- M1014 -->
 		<Key ID="STR_DZ_WPN_M1014_NAME">
 			<Original>M1014</Original>
@@ -10068,8 +10137,18 @@
 		<Key ID="STR_DZ_WPN_MK48_HOLO_NAME">
 			<Original>Mk48 Holo</Original>
 		</Key>
-		<Key ID="STR_DZ_WPN_MK48_ACOG_NAME">
-			<Original>Mk48 ACOG</Original>
+		
+		
+		
+		<!-- M240 -->
+		<Key ID="STR_DZ_WPN_M240_NAME">
+			<Original>M240</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M240_CCO_NAME">
+			<Original>M240 CCO</Original>
+		</Key>
+		<Key ID="STR_DZ_WPN_M240_HOLO_NAME">
+			<Original>M240 Holo</Original>
 		</Key>
 		
 		
@@ -10078,11 +10157,15 @@
 		<Key ID="STR_DZ_WPN_PKM_NAME">
 			<Original>PKM</Original>
 		</Key>
-		<Key ID="STR_DZ_WPN_PKM_KOBRA_NAME">
-			<Original>PKM Kobra</Original>
+		
+		
+		
+		<!-- UK59 -->
+		<Key ID="STR_DZ_WPN_UK59_NAME">
+			<Original>UK-59</Original>
 		</Key>
-		<Key ID="STR_DZ_WPN_PKM_PSO1_NAME">
-			<Original>PKM PSO-1</Original>
+		<Key ID="STR_DZ_WPN_UK59_DESC">
+			<Original>Chernarussian medium machine gun&lt;br/&gt;Caliber: 7.62x54mmR</Original>
 		</Key>
 		
 		
@@ -10177,6 +10260,20 @@
 			<Original>Crossbow bolt fitted with an explosive head.</Original>
 		</Key>
 		
+		<Key ID="STR_DZ_MAG_50RND_762X54_UK59_NAME">
+			<Original>50Rnd. UK-59</Original>
+		</Key>
+		<Key ID="STR_DZ_MAG_50RND_762X54_UK59_DESC">
+			<Original>Caliber: 7.62x54mm&lt;br/&gt;Rounds: 50&lt;br/&gt;Used in: UK-59</Original>
+		</Key>
+		
+		<Key ID="STR_DZ_MAG_75RND_762X39_RPK_NAME">
+			<Original>75Rnd. RPK</Original>
+		</Key>
+		<Key ID="STR_DZ_MAG_75RND_762X39_RPK_DESC">
+			<Original>Caliber: 7.62x39mm&lt;br/&gt;Rounds: 75&lt;br/&gt;Used in: RPK</Original>
+		</Key>
+		
 		
 		
 		
@@ -10245,6 +10342,17 @@
 		</Key>
 		<Key ID="STR_DZ_ATT_HOLO_RMVE">
 			<Original>Remove Holo</Original>
+		</Key>
+		
+		<!-- ACOG -->
+		<Key ID="STR_DZ_ATT_ACOG_NAME">
+			<Original>TA31A ACOG</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_ACOG_DESC">
+			<Original>Advanced Combat Optical Gunsight&lt;br/&gt;Manufactured by American Trijicon Inc.</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_ACOG_RMVE">
+			<Original>Remove ACOG</Original>
 		</Key>
 		
 		<!-- Kobra -->
@@ -10344,6 +10452,14 @@
 		</Key>
 		<Key ID="STR_DZ_ATT_BELT_RMVE">
 			<Original>Remove belt</Original>
+		</Key>
+		
+		<!-- SA58 RIS -->
+		<Key ID="STR_DZ_ATT_SA58RIS_NAME">
+			<Original>SA-58 RIS upgrade kit</Original>
+		</Key>
+		<Key ID="STR_DZ_ATT_SA58RIS_DESC">
+			<Original>A Rail Integration System kit designed for the SA-58 assault rifle.</Original>
 		</Key>
 	</Package>
 </Project>

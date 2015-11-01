@@ -9,6 +9,7 @@ class M249_CCO_DZ : M249
 	magazines[] =
 	{
 		200Rnd_556x45_M249,
+		100Rnd_556x45_M249,
 		30Rnd_556x45_Stanag,
 		30Rnd_556x45_StanagSD
 	};
