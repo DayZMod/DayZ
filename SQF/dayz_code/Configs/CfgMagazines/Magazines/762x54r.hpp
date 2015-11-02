@@ -10,6 +10,16 @@ class 100Rnd_762x54_PK : CA_Magazine
 	};
 };
 
+class 50Rnd_762x54_UK59 : 100Rnd_762x54_PK
+{
+	count = 50;
+	
+	model = "z\addons\dayz_communityweapons\magazines\uk59.p3d";
+	picture = "\z\addons\dayz_communityweapons\magazines\data\m_uk59_ca.paa";
+	displayName = $STR_DZ_MAG_75RND_762X54_UK59_NAME;
+	descriptionShort = $STR_DZ_MAG_75RND_762X54_UK59_DESC;
+};
+
 class 10Rnd_762x54_SVD : CA_Magazine
 {
 	cartridgeName = "762x54";

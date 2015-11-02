@@ -268,7 +268,7 @@ class CfgMagazines {
 	class 20Rnd_762x51_B_SCAR: FakeMagazine {};
 	class 20Rnd_762x51_SB_SCAR: FakeMagazine {};
 	//class 30Rnd_762x39_SA58: FakeMagazine {};
-	class 100Rnd_556x45_M249: FakeMagazine {};
+	//class 100Rnd_556x45_M249: FakeMagazine {};
 	/*class IR_Strobe_Target: FakeMagazine {};
 	class IR_Strobe_Marker: FakeMagazine {};
 	class IRStrobe: FakeMagazine {};

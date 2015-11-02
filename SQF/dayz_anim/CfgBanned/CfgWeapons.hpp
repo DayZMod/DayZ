@@ -261,7 +261,7 @@ class CfgWeapons {
 	class BAF_L85A2_RIS_CWS: FakeWeapon {};
 	class BAF_L86A2_ACOG: FakeWeapon {};
 	class BAF_L110A1: FakeWeapon {};
-	class BAF_L110A1_Aim: FakeWeapon {};
+	//class BAF_L110A1_Aim: FakeWeapon {};
 	class BAF_L7A2_GPMG: FakeWeapon {};
 	class BAF_ied_v1: FakeWeapon {};
 	class BAF_ied_v2: FakeWeapon {};

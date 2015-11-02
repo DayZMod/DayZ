@@ -8,6 +8,11 @@ class 200Rnd_556x45_M249: CA_Magazine
 	};
 };
 
+class 100Rnd_556x45_M249 : 200Rnd_556x45_M249
+{
+	model = "z\addons\dayz_communityweapons\magazines\100rnd_m249.p3d";
+};
+
 
 
 /* STANAG <-> G36 */

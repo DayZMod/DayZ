@@ -51,6 +51,8 @@ class CfgWeapons
 	class AK_47_M;
 	#include "Rifles\AKM.hpp"
 	
+	#include "Rifles\RPK.hpp"
+	
 	class DMR : Rifle
 	{
 		class Single;
@@ -92,6 +94,9 @@ class CfgWeapons
 	class M249;
 	#include "Rifles\M249.hpp"
 	
+	class BAF_L110A1_Aim;
+	#include "Rifles\L110A1.hpp"
+	
 	class M240;
 	#include "Rifles\M240.hpp"
 	
@@ -104,8 +109,13 @@ class CfgWeapons
 	class Mk_48;
 	#include "Rifles\Mk48.hpp"
 	
-	class PK;
+	class PK : Rifle
+	{
+		class manual;
+	};
 	#include "Rifles\PKM.hpp"
+	
+	#include "Rifles\UK59.hpp"
 	
 	class RPK_74;
 	#include "Rifles\RPK74.hpp"
@@ -125,8 +135,6 @@ class CfgWeapons
 	#include "Rifles\M16A4.hpp"
 	
 	class Sa58V_EP1;
-	class Sa58V_CCO_EP1;
-	class Sa58V_RCO_EP1;
 	#include "Rifles\SA58.hpp"
 	
 	class BAF_L85A2_RIS_Holo;
