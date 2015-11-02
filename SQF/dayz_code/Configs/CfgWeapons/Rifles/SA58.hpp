@@ -9,7 +9,7 @@
 	brightness = 0.1;\
 }
 
-class SA58_DZ : Sa58P_EP1
+class SA58_DZ : Sa58V_EP1
 {
 	model = "z\addons\dayz_communityweapons\sa58\sa58.p3d";
 	picture = "\z\addons\dayz_communityweapons\sa58\data\w_sa58_ca.paa";

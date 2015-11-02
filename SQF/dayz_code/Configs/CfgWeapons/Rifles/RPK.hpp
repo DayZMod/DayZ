@@ -1,3 +1,5 @@
+//TODO: configure recoil, rate of fire etc (different from akm)
+
 class RPK_DZ : AK_47_M
 {
 	model = "z\addons\dayz_communityweapons\rpk\rpk.p3d";
