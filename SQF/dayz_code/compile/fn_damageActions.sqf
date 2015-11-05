@@ -187,7 +187,7 @@ if (_inVehicle) then {
 			//Allow player to give antibiotics
 			if (_infected and _hasAntibiotics) then {
 				r_action = true;
-				_action = _unit addAction [localize "str_actions_medical_give_antibiotics", "\z\addons\dayz_code\medical\antibiotics.sqf",[_unit], 0, true, true, "", "Array_Any(magazines player, {_this in _antibiotics})"];
+				_action = _unit addAction [localize "str_actions_medical_give_antibiotics", "\z\addons\dayz_code\medical\antibiotics.sqf",[_unit], 0, true, true];
 				r_player_actions set [count r_player_actions, _action];
 			};
 			if (r_action) then {
