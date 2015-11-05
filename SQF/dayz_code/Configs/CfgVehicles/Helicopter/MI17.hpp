@@ -42,4 +42,17 @@ class Mi17_DZ: Mi17_base_CDF {
 			magazines[] = {"100Rnd_762x54_PK"};
 		};
 	};
+	
+	armor=25;
+	damageResistance = 0.00394;
+	
+	class HitPoints:HitPoints
+	{
+		class HitGlass1:HitGlass1 {armor=0.12;};
+		class HitGlass2:HitGlass2 {armor=0.12;};
+		class HitGlass3:HitGlass3 {armor=0.12;};
+		class HitGlass4:HitGlass4 {armor=0.12;};
+		class HitGlass5:HitGlass5 {armor=0.12;};
+		class HitGlass6:HitGlass6 {armor=0.12;};
+	};
 };
