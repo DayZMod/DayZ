@@ -153,7 +153,7 @@ link83[] = {64,62};
 link84[] = {63,64};
 link85[] = {64,63};
 globals[] = {25.000000,1,0,0,0,640,480,1,156,6316128,1,-711.297424,227.958618,551.201111,-146.831589,806,598,1};
-window[] = {2,-1,-1,-1,-1,711,26,1234,10,3,824};
+window[] = {2,-1,-1,-1,-1,779,78,1286,78,3,824};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -519,14 +519,14 @@ class FSM
        "_isTargetAlive = alive _target;" \n
        "" \n
        "//Move to location" \n
-       "if (_movingTo distance _targetPos > 3) then {" \n
+       "if (_movingTo distance _targetPos > 2) then {" \n
        "	//diag_log format[""Chase - %1 - [%2,%3] - Range %4"",(typeof _agent),_myDest,_movingTo,(_myDest distance _movingTo)];" \n
        "" \n
        "	_agent moveTo _targetPos;" \n
        "	_movingTo = _targetPos;" \n
        "};" \n
        "" \n
-       "if ((moveToCompleted _agent) or (Speed _agent == 0) or ((_agent distance _target) <= 3.3)) then {" \n
+       "if ((moveToCompleted _agent) or (Speed _agent == 0) or ((_agent distance _target) <= 2)) then {" \n
        "	_agroCheck= _agroCheck + 1;" \n
        "" \n
        "	//Check if LOS" \n
