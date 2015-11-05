@@ -444,7 +444,9 @@ switch (dayz_presets) do {
 		if(isNil "dayz_ForcefullmoonNights") then { dayz_ForcefullmoonNights = false; };
 		if(isNil "dayz_OpenTarget_TimerTicks") then { dayz_OpenTarget_TimerTicks = 60 * 10; };
 		if(isNil "dayz_temperature_override") then { dayz_temperature_override = true; };
-		if(isNil "dayz_nutritionValuesSystem") then { dayz_nutritionValuesSystem = false;  };
+		if(isNil "dayz_nutritionValuesSystem") then { dayz_nutritionValuesSystem = false; };
+		//Not implmented yet
+		if(isNil "dayz_classicBloodBagSystem") then { dayz_classicBloodBagSystem = false; };
 	};
     case "Classic": { //Classic
 		dayz_enableGhosting = false; //Enable disable the ghosting system.
@@ -458,6 +460,8 @@ switch (dayz_presets) do {
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = true; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = false; //Enables nutrition system
+		//Not implmented yet
+		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
 	};
 	case "Elite": { //Elite
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
@@ -471,6 +475,8 @@ switch (dayz_presets) do {
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = false; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
+		//Not implmented yet
+		dayz_classicBloodBagSystem = true; //Enables one type of bloodbag
 	};
     default { //Vanilla
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
@@ -484,6 +490,8 @@ switch (dayz_presets) do {
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = false; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
+		//Not implmented yet
+		dayz_classicBloodBagSystem = true; //Enables one type of bloodbag
 	};
 };
 
