@@ -107,9 +107,8 @@ if (_inVehicle) then {
 		_hasMorphine = "ItemMorphine" in magazines player;
 		_hasSplint = "equip_woodensplint" in magazines player;
 		_hasPainkillers = "ItemPainkiller" in magazines player;
-        _hasEmptyBag = "emptyBloodBag" in magazines player;
-        _hasTranfusionKit = "transfusionKit" in magazines player;
-		_hasTester = "bloodTester" in magazines player;
+       // _hasEmptyBag = "emptyBloodBag" in magazines player;
+		//_hasTester = "bloodTester" in magazines player;
 		
 		_hasAntibiotics = Array_Any(magazines player, {_this in _antibiotics});
 		_hasBloodBag = Array_Any(magazines player, {_this in _bloodBags});
@@ -182,7 +181,7 @@ if (_inVehicle) then {
 				r_player_actions set [count r_player_actions,_action];
 			};
 			//Allow player to transfuse blood
-			if(_lowBlood and _hasTranfusionKit and _hasBloodBag) then {
+			if(_lowBlood and _hasBloodBag) then {
 				r_action = true;
 				_action = _unit addAction [localize "str_actions_medical_08", "\z\addons\dayz_code\medical\transfusion.sqf",[_unit], 0, true, true];
 				r_player_actions set [count r_player_actions,_action];

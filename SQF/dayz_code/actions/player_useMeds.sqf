@@ -59,6 +59,9 @@ switch (_item) do {
 	case "transfusionKit": {
 		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\fillBloodBag.sqf";
 	};
+	case "emptyBloodBag": {
+		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\fillBloodBag.sqf";
+	};
 	case "ItemSepsisBandage": {
 		_id = [0,0,0,[player,"ItemSepsisBandage"]] execVM "\z\addons\dayz_code\medical\bandage.sqf";
 	};

@@ -3,7 +3,7 @@ private ["_bloodAmount","_unit","_blood","_lowBlood","_injured","_inPain","_last
 _unit = (_this select 3) select 0;
 
 //Does the player have a transfusionKit
-_hasTransfusionKit = "transfusionKit" in magazines player;
+//_hasTransfusionKit = "transfusionKit" in magazines player;
 
 //Get receving units blood value
 _blood = _unit getVariable ["USEC_BloodQty", 0];
@@ -21,7 +21,7 @@ _bagFound = false;
 _forceClose = false;
 
 //End if the player does not have a transfusion kit
-if (!_hasTransfusionKit) exitWith { cutText [localize "str_actions_medical_transfusion_failed_transfusionkit", "PLAIN DOWN"]; };
+//if (!_hasTransfusionKit) exitWith { cutText [localize "str_actions_medical_transfusion_failed_transfusionkit", "PLAIN DOWN"]; };
 
 //Unconscious timeout for receving unit
 _duration = if (_blood <= 4000) then { 3 } else { 2 };
@@ -127,7 +127,7 @@ while {r_doLoop} do {
 				_bagFound = true;
 			};
 		};
-		if (!_bagFound) then {_forceClose = true;} else { player removeMagazine _bagToRemove; player removeMagazine "transfusionKit";};
+		if (!_bagFound) then {_forceClose = true;} else { player removeMagazine _bagToRemove;};
 		cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
 		//see Note 1
 		//[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_bagToRemove],"PLAIN DOWN"] call RE; 
