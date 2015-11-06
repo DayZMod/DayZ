@@ -95,14 +95,12 @@ class CfgVehicles {
 	{
 		class HitPoints : HitPoints
 		{
-			class HitLFWheel:HitLFWheel{armor=0.15;};
-			class HitLBWheel:HitLBWheel{armor=0.15;};
-
-			class HitRFWheel:HitRFWheel{armor=0.15;};
-			class HitRBWheel:HitRBWheel{armor=0.15;};
-
-			class HitFuel {armor=0.14;material=-1;name="palivo";visual="";passThrough=1;};
-			class HitEngine {armor=0.5;material=-1;name="motor";visual="";passThrough=1;};
+			class HitLFWheel;
+			class HitLBWheel;
+			class HitRFWheel;
+			class HitRBWheel;
+			class HitFuel;
+			class HitEngine;
 
 			//armored glass - hight armor value
 			class HitGlass1:HitGlass1 {armor=1;};
