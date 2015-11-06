@@ -13,16 +13,13 @@ dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkey
 dayz_POIs = true;
 dayz_infectiousWaterholes = true;
 
-//Temp Settings
-dayz_DamageMultiplier = 2; //1 - 0 = Disabled, anything over 1 will multiply damage. Damage Multiplier for Zombies.
-
 //DayazMod Presets 
 dayz_presets = "Vanilla"; //"Custom","Classic","Vanilla","Elite"
 
 //Only need to edit if you running a custom server.
 if ( dayz_presets == "Custom") then {
 	dayz_enableGhosting = true; //Enable disable the ghosting system.
-	dayz_ghostTimer = 120; //Sets how long in seconds a player must be dissconnected before being able to login again.
+	dayz_ghostTimer = 30; //Sets how long in seconds a player must be dissconnected before being able to login again.
 	dayz_spawnselection = 1; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
 	dayz_spawncarepkgs_clutterCutter = 2; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
 	dayz_spawnCrashSite_clutterCutter = 2;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
@@ -31,18 +28,15 @@ if ( dayz_presets == "Custom") then {
 	dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
 	dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 	dayz_nutritionValuesSystem = false; //Enables nutrition system
+	
+	//not implmented yet.
+	dayz_classicBloodBagSystem = false; // removes all blood type bloodbags
 };
 
 //temp settings
-dayz_DamageMultiplier = 1; //Damage Multiplier for Zombies.
+dayz_DamageMultiplier = 2; //1 - 0 = Disabled, anything over 1 will multiply damage. Damage Multiplier for Zombies.
 dayz_maxGlobalZeds = 500; //Limit the total zeds server wide.
 dayz_temperature_override = false; // Set to true to disable all temperature changes.
-
-
-
-
-
-
 
 
 // DO NOT EDIT BELOW HERE //

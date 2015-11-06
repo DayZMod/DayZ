@@ -1,4 +1,4 @@
-private ["_unit","_blood","_lowBlood","_injured","_inPain","_lastused","_hasTransfusionKit","_animState","_started","_finished","_timer","_i","_isMedic","_isClose","_duration","_rhVal","_bloodBagArrayNeeded","_BBneeded","_bbselect","_bloodBagNeeded","_badBag","_wholeBag","_bagFound","_bagToRemove","_forceClose","_bloodType","_rh","_bloodBagArray","_bbarray_length","_bloodBagWholeNeeded","_haswholebag","_r"];
+private ["_unit","_blood","_lowBlood","_injured","_inPain","_lastused","_animState","_started","_finished","_timer","_i","_isMedic","_isClose","_duration","_rhVal","_bloodBagArrayNeeded","_BBneeded","_bbselect","_bloodBagNeeded","_badBag","_wholeBag","_bagFound","_bagToRemove","_forceClose","_bloodType","_rh","_bloodBagArray","_bbarray_length","_bloodBagWholeNeeded","_haswholebag","_r"];
 // bleed.sqf
 _unit = (_this select 3) select 0;
 _blood = _unit getVariable ["USEC_BloodQty", 0];
@@ -6,7 +6,7 @@ _lowBlood = _unit getVariable ["USEC_lowBlood", false];
 _injured = _unit getVariable ["USEC_injured", false];
 _inPain = _unit getVariable ["USEC_inPain", false];
 _lastused = _unit getVariable ["LastTransfusion", time];
-_hasTransfusionKit = "transfusionKit" in magazines player;
+
 call gear_ui_init;
 closeDialog 0;
 
@@ -18,7 +18,7 @@ _wholeBag = false;
 _bagFound = false;
 _BBneeded = false;
 _forceClose = false;
-if (!_hasTransfusionKit) exitWith { systemChat (localize "str_info_missingtransfusionkit");	 };
+
 
 if (_blood <= 4000) then {
 	_duration = 3;
@@ -128,7 +128,7 @@ while {r_doLoop and (_i < 12)} do {
 				_bagFound = true;
 			};
 		};
-		if (!_bagFound) then {_forceClose = true;} else { player removeMagazine _bagToRemove; player removeMagazine "transfusionKit";};
+		if (!_bagFound) then {_forceClose = true;} else { player removeMagazine _bagToRemove;};
 		cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
 		[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_start","PLAIN DOWN"] call RE;
 		_started = true;

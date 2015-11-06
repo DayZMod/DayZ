@@ -211,9 +211,11 @@ _checkBuildingCollision = {
 				if ((_x isKindOf "Building") or (_x isKindOf "AllVehicles")) then { 
 					_inside = [_x, _object] call _insideCheck;
 					
+					/*
 					if (!_inside) then {
 						_inside = [_object, _x] call _insideCheck;
 					};
+					*/
 				};
 			};
 		};

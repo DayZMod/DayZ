@@ -133,11 +133,13 @@ class Land_Fire_DZ : Land_Fire {
 			statement = "[this,false] call dayz_inflame";
 		};
 	};
+	/*
 	class Upgrade {
 		requiredTools[] = {"ItemEtool"}; 
 		requiredParts[] = {"ItemLog", "ItemLog", "ItemStone", "ItemStone", "ItemStone"};
 		create = "Base_Fire_DZ";
 	};
+	*/
 };
 	
 class Base_Fire_DZ : Land_Fire {

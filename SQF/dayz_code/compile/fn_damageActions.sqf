@@ -1,4 +1,7 @@
 scriptName "Functions\misc\fn_damageActions.sqf";
+
+#include "\z\addons\dayz_code\util\array.hpp";
+
 /***********************************************************
 	ADD ACTIONS FOR A CASUALTY
 	- Function
@@ -82,8 +85,12 @@ if (_inVehicle) then {
 	if (!r_drag_sqf and !r_action and !_inVehicle and !r_player_unconscious and (player distance _menClose < 3)) then {
 		_unit = cursorTarget;
 		player reveal _unit;
-		_vehClose = (getPosATL player) nearEntities [["Car","Tank","Helicopter","Plane","StaticWeapon","Ship"],5]; //nearestObjects [player, ["Car","Tank","Helicopter","Plane","StaticWeapon","Ship"], 5];
-		_hasVehicle = ({alive _x} count _vehClose > 0);
+		
+		//Arrays
+		_antibiotics =["ItemAntibiotic","ItemAntibiotic1","ItemAntibiotic2","ItemAntibiotic3","ItemAntibiotic4","ItemAntibiotic5","ItemAntibiotic6"];
+		_bloodBags = ["ItemBloodbag","bloodBagANEG","bloodBagAPOS","bloodBagBNEG","bloodBagBPOS","bloodBagABNEG","bloodBagABPOS","bloodBagONEG","bloodBagOPOS"];
+		
+		//Var checks
 		_unconscious = _unit getVariable ["NORRN_unconscious", false];
 		_lowBlood = _unit getVariable ["USEC_lowBlood", false];
 		_injured = _unit getVariable ["USEC_injured", false];
@@ -92,27 +99,23 @@ if (_inVehicle) then {
 		_legsBroke = _unit getVariable ["hit_legs", 0] >= 1;
 		_armsBroke = _unit getVariable ["hit_hands", 0] >= 1;
 		_infected = _unit getVariable ["USEC_infected", false];
+		
+		//Magazine checks
 		_hasBandage = "ItemBandage" in magazines player;
 		_hasSepsisBandage = "ItemSepsisBandage" in magazines player;
 		_hasEpi = "ItemEpinephrine" in magazines player;
 		_hasMorphine = "ItemMorphine" in magazines player;
 		_hasSplint = "equip_woodensplint" in magazines player;
-		_hasBlood = "ItemBloodbag" in magazines player;
-		_hasBloodANEG = "bloodBagANEG" in magazines player;
-		_hasBloodAPOS = "bloodBagAPOS" in magazines player;
-		_hasBloodBNEG = "bloodBagBNEG" in magazines player;
-		_hasBloodBPOS = "bloodBagBPOS" in magazines player;
-		_hasBloodABNEG = "bloodBagABNEG" in magazines player;
-		_hasBloodABPOS = "bloodBagABPOS" in magazines player;
-		_hasBloodONEG = "bloodBagONEG" in magazines player;
-		_hasBloodOPOS = "bloodBagOPOS" in magazines player;
-		_hasAntibiotics = "ItemAntibiotic" in magazines player;
 		_hasPainkillers = "ItemPainkiller" in magazines player;
-        _hasEmptyBag = "emptyBloodBag" in magazines player;
-        _hasTranfusionKit = "transfusionKit" in magazines player;
-		_hasTester = "bloodTester" in magazines player;
-		_isAnimal = _menClose isKindOf "Animal";
-		_isZombie = _menClose isKindOf "zZombie_base";
+       // _hasEmptyBag = "emptyBloodBag" in magazines player;
+		//_hasTester = "bloodTester" in magazines player;
+		
+		_hasAntibiotics = Array_Any(magazines player, {_this in _antibiotics});
+		_hasBloodBag = Array_Any(magazines player, {_this in _bloodBags});
+		
+				
+		_vehClose = (getPosATL player) nearEntities [["Car","Tank","Helicopter","Plane","StaticWeapon","Ship"],5]; //nearestObjects [player, ["Car","Tank","Helicopter","Plane","StaticWeapon","Ship"], 5];
+		_hasVehicle = ({alive _x} count _vehClose > 0);
 
 		if (_hasPatient) then {
 			//Allow player to drag
@@ -178,7 +181,7 @@ if (_inVehicle) then {
 				r_player_actions set [count r_player_actions,_action];
 			};
 			//Allow player to transfuse blood
-			if(_lowBlood and _hasTranfusionKit and (_hasBlood or _hasBloodANEG or _hasBloodAPOS or _hasBloodBNEG or _hasBloodBPOS or _hasBloodABNEG or _hasBloodABPOS or _hasBloodONEG or _hasBloodOPOS)) then {
+			if(_lowBlood and _hasBloodBag) then {
 				r_action = true;
 				_action = _unit addAction [localize "str_actions_medical_08", "\z\addons\dayz_code\medical\transfusion.sqf",[_unit], 0, true, true];
 				r_player_actions set [count r_player_actions,_action];
@@ -186,7 +189,7 @@ if (_inVehicle) then {
 			//Allow player to give antibiotics
 			if (_infected and _hasAntibiotics) then {
 				r_action = true;
-				_action = _unit addAction [localize "str_actions_medical_give_antibiotics", "\z\addons\dayz_code\medical\antibiotics.sqf",[_unit], 0, true, true, "", "'ItemAntibiotic' in magazines player"];
+				_action = _unit addAction [localize "str_actions_medical_give_antibiotics", "\z\addons\dayz_code\medical\antibiotics.sqf",[_unit], 0, true, true];
 				r_player_actions set [count r_player_actions, _action];
 			};
 			if (r_action) then {

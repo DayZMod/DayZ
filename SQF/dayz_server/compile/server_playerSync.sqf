@@ -32,13 +32,15 @@ if (isNil {_Achievements}) exitWith {
 	_Achievements = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 };
 
-
-private["_debug","_distance"];
-_debug = getMarkerpos "respawn_west";
-_distance = _debug distance _charPos;
-if (_distance < 2000) exitWith { 
-//	diag_log format["ERROR: server_playerSync: Cannot Sync Player %1 [%2]. Position in debug! %3",name _character,_characterID,_charPos];
-};
+/*
+	//No longer used
+	private["_debug","_distance"];
+	_debug = getMarkerpos "respawn_west";
+	_distance = _debug distance _charPos;
+	if (_distance < 2000) exitWith { 
+	//	diag_log format["ERROR: server_playerSync: Cannot Sync Player %1 [%2]. Position in debug! %3",name _character,_characterID,_charPos];
+	};
+*/
 
 //Check for server initiated updates
 _isNewMed =		_character getVariable["medForceUpdate",false];		//Med Update is forced when a player receives some kind of med incident
@@ -79,16 +81,31 @@ if (_characterID != "0") then {
 		};
 		_character setVariable ["posForceUpdate",false,true];
 	};
+	
+	//Added by delpi as a temp system while we find the [] sync issue for mags.
+	
+	 private ["_magCount"];
+    _magCount = 1;
+    if (_isNewGear) then {
+        _magCount = count _magazines;
+        if (_magCount > 0) then {_magCount = count (_magazines select 0);};
+    };
+	
+    if (magCount == 0) then {
+        _isNewGear = false;
+    };
+	
 	if (_isNewGear) then {
 		//diag_log ("gear..."); sleep 0.05;
 		 if (typeName _magazines != "ARRAY") then {
 			diag_log ("PlayerSync - Mag is not array");
 		 } else {
 			_playerGear = [weapons _character, _magazines select 0, _magazines select 1];
-			_backpack = unitBackpack _character;
+			_backpack = unitBackpack _character;			
 			_playerBackp = [typeOf _backpack,getWeaponCargo _backpack,getMagazineCargo _backpack];
 		};
 	};
+	
 	if (_isNewMed or _force) then {
 		//diag_log ("medical..."); sleep 0.05;
 		if (!(_character getVariable["USEC_isDead",false])) then {

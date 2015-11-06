@@ -196,4 +196,13 @@ class emptyBloodBag : CA_Magazine
 	picture = "\z\addons\dayz_communityassets\pictures\equip_bbag_empty_ca.paa";
 	displayName = $STR_BLD_name_emptyBloodBag;
 	descriptionShort = $STR_BLD_desc_emptyBloodBag;
+	
+	class ItemActions
+	{
+		class Use
+		{
+			text = "Take Blood";
+			script = "spawn player_useMeds;";
+		};
+	};
 };

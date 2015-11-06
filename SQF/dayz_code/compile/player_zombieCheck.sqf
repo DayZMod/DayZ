@@ -56,6 +56,8 @@ if (_isSea) then { } else {  };
 					_x setVariable ["speedLimit", 0, false];			
  
 					if (_x distance _refObj <= 3.3) then {
+					//Force Ai to Stand
+						_x setUnitPos "UP";
 						if (!(animationState _x == "ZombieFeed")) then {
 							if (((diag_tickTime - _last) > 1.5) and ((_delta < 1.5) and (_delta > -1.5))) then {
 								_attackResult = [_x,  _type] call player_zombieAttack;

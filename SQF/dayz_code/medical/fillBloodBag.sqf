@@ -1,4 +1,4 @@
-private ["_victim","_started","_UID","_hasEmptyBag","_hasTransfusionKit","_bloodDrained","_bloodLevel","_forceExit","_bloodType","_rh","_timer","_i","_complete","_animState","_isMedic","_blood","_bloodAfter","_isClose"];
+private ["_victim","_started","_UID","_hasEmptyBag","_bloodDrained","_bloodLevel","_forceExit","_bloodType","_rh","_timer","_i","_complete","_animState","_isMedic","_blood","_bloodAfter","_isClose"];
 /* ********************************************************
 Used to fill blood bags with whole blood, only 4k per bag.
 By icomrade for DayZ Mod
@@ -10,7 +10,6 @@ closeDialog 0;
 r_interrupt = false;
 _victim = (_this select 3) select 0;
 _hasEmptyBag = "emptyBloodBag" in magazines player;
-_hasTransfusionKit = "transfusionKit" in magazines player;
 _bloodLevel = _victim getVariable ["USEC_BloodQty", 0];
 _bloodType = _victim getVariable ["blood_type", false];
 _rh = _victim getVariable ["rh_factor", false];
@@ -24,7 +23,6 @@ _forceExit = false;
 _UID = getPlayerUID player;
 if ((isNil "_UID") or (_UID == "0")) exitWith {};
 if (!_hasEmptyBag) exitWith { cutText [localize "str_actions_medical_bagEmpty", "PLAIN DOWN"]; };
-if (!_hasTransfusionKit) exitWith { cutText [localize "str_actions_medical_bagMissingKit", "PLAIN DOWN"]; };
 
 if (_bloodLevel <= 4200) exitWith {cutText [localize "str_actions_medical_bagMissingBlood", "PLAIN DOWN"];};
 
@@ -47,7 +45,6 @@ while {r_doLoop and (_i < 25)} do {
 
 	if (_isMedic and !_started) then {
 		player removeMagazine "emptyBloodBag";
-		player removeMagazine "transfusionKit";
 		cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
 		[player,_victim,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_start","PLAIN DOWN"] call RE;
 		_started = true;
