@@ -7,6 +7,9 @@ scriptName "Functions\misc\fn_damageActions.sqf";
 	- Function
 	- [] call fnc_usec_damageActions;
 ************************************************************/
+
+private ["_menClose","_hasPatient","_vehicle","_inVehicle","_isClose","_assignedRole","_driver","_action","_turret","_weapons","_weaponName","_crew","_unconscious_crew","_patients","_vehType","_unit","_antibiotics","_bloodBags","_unconscious","_lowBlood","_injured","_hasSepsis","_inPain","_legsBroke","_armsBroke","_infected","_hasBandage","_hasSepsisBandage","_hasEpi","_hasMorphine","_hasSplint","_hasPainkillers","_hasEmptyBag","_hasTester","_hasAntibiotics","_hasBloodBag","_vehClose","_hasVehicle","_action1","_action2","_action3","_y"];
+
 _menClose = cursorTarget;
 _hasPatient = alive _menClose;
 _vehicle = vehicle player;
@@ -82,6 +85,9 @@ if (_inVehicle) then {
 	r_player_lastVehicle = objNull;
 	r_player_lastSeat = [];
 };
+
+//Lets make sure the player is looking at the target
+if (isPlayer cursorTarget) then {
 	if (!r_drag_sqf and !r_action and !_inVehicle and !r_player_unconscious and (player distance _menClose < 3)) then {
 		_unit = cursorTarget;
 		player reveal _unit;
@@ -107,11 +113,14 @@ if (_inVehicle) then {
 		_hasMorphine = "ItemMorphine" in magazines player;
 		_hasSplint = "equip_woodensplint" in magazines player;
 		_hasPainkillers = "ItemPainkiller" in magazines player;
-       // _hasEmptyBag = "emptyBloodBag" in magazines player;
+	   // _hasEmptyBag = "emptyBloodBag" in magazines player;
 		//_hasTester = "bloodTester" in magazines player;
 		
 		_hasAntibiotics = Array_Any(magazines player, {_this in _antibiotics});
 		_hasBloodBag = Array_Any(magazines player, {_this in _bloodBags});
+		
+		
+		diag_log format["DamageActions %1 - %2",_hasAntibiotics,_hasBloodBag];
 		
 				
 		_vehClose = (getPosATL player) nearEntities [["Car","Tank","Helicopter","Plane","StaticWeapon","Ship"],5]; //nearestObjects [player, ["Car","Tank","Helicopter","Plane","StaticWeapon","Ship"], 5];
@@ -199,8 +208,9 @@ if (_inVehicle) then {
 				r_action_unload = false;
 				call fnc_usec_medic_removeActions;
 			};
-		} else {	};
+		};
 	};
+};
 
 //Remove Actions
 if ((!_isClose or !_hasPatient) and r_action) then {
