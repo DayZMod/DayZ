@@ -19,7 +19,6 @@ class horde_journal_front_cover
 	{
 		"book_page_image",
 		"open_craft",
-		"open_Construction",
 		"open_book",
 		"click_here_to_close_book_1",
 		"click_here_to_close_book_2",
