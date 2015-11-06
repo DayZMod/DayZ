@@ -23,8 +23,13 @@ Author: Foxy
 
 //Accessors
 #define Vector_X(v) ((v) select 0)
-#define Vector_Z(v) ((v) select 1)
-#define Vector_Y(v) ((v) select 2)
+#define Vector_Y(v) ((v) select 1)
+#define Vector_Z(v) ((v) select 2)
+
+//Setters
+#define Vector_SetX(v, x) ((v) set [0, x])
+#define Vector_SetY(v, x) ((v) set [1, x])
+#define Vector_SetZ(v, x) ((v) set [2, x])
 
 //Calculates the dot product of the given vectors
 #define Vector_DotProduct(a,b) ([a,b] call dz_fn_vector_dotProduct)
