@@ -6,7 +6,7 @@ class ATV_CZ_EP1: ATV_Base_EP1 {
 	scope = 2;
 	side = 1;
 	typicalcargo[] = {""};
-	class HitPoints {
+	class HitPoints: Hitpoints {
 		class HitBody {
 			armor = 1;
 			material = -1;
@@ -28,47 +28,33 @@ class ATV_CZ_EP1: ATV_Base_EP1 {
 			passthrough = 0;
 			visual = "";
 		};
-		class HitLFWheel {
+		class HitLFWheel:HitLFWheel {
 			armor = 1;
 			material = -1;
 			name = "wheel_1_1_steering";
 			passthrough = 0.3;
 			visual = "";
 		};
-		class HitLBWheel {
+		class HitLBWheel:HitLBWheel {
 			armor = 1;
 			material = -1;
 			name = "wheel_1_2_steering";
 			passthrough = 0.3;
 			visual = "";
 		};
-		class HitRFWheel {
+		class HitRFWheel:HitRFWheel {
 			armor = 1;
 			material = -1;
 			name = "wheel_2_1_steering";
 			passthrough = 0.3;
 			visual = "";
 		};
-		class HitRBWheel {
+		class HitRBWheel:HitRBWheel {
 			armor = 1;
 			material = -1;
 			name = "wheel_2_2_steering";
 			passthrough = 0.3;
 			visual = "";
 		};
-		/*
-		delete HitRGlass;
-		delete HitLGlass;
-		delete HitLF2Wheel;
-		delete HitRF2Wheel;
-		delete HitLMWheel;
-		delete HitRMWheel;
-		class HitRGlass {};
-		class HitLGlass {};
-		class HitLF2Wheel {};
-		class HitRF2Wheel {};
-		class HitLMWheel {};
-		class HitRMWheel {};
-		*/
 	};
 };

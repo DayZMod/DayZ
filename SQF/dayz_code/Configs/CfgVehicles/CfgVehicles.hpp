@@ -39,6 +39,23 @@ class CfgVehicles {
         //};
 	};
 	class Car : LandVehicle {
+		class HitPoints
+		{
+			class HitLFWheel;
+			class HitLBWheel;
+			class HitLMWheel;
+			class HitLF2Wheel;
+
+			class HitRFWheel;
+			class HitRBWheel;
+			class HitRMWheel;
+			class HitRF2Wheel;
+
+			class HitGlass1;
+			class HitGlass2;
+			class HitGlass3;
+			class HitGlass4;
+		};
 		class Turrets
         {
             class MainTurret: NewTurret
@@ -52,7 +69,20 @@ class CfgVehicles {
 
 	//External Class
 	class SkodaBase;
-	class ATV_Base_EP1;
+	class ATV_Base_EP1 : Car
+	{
+		class HitPoints : HitPoints
+		{
+			class HitEngine {armor=2;material=-1;name="motor";visual="motor";passThrough=0;};
+			class HitFuel {armor=1;material=-1;name="palivo";passThrough=0;};
+
+			class HitLFWheel:HitLFWheel{armor=1;};
+			class HitLBWheel:HitLBWheel{armor=1;};
+
+			class HitRFWheel:HitRFWheel{armor=1;};
+			class HitRBWheel:HitRBWheel{armor=1;};
+		};
+	};
 	class Motorcycle;
 	class RubberBoat;
 	class UAZ_Unarmed_Base;
@@ -61,7 +91,27 @@ class CfgVehicles {
 	class An2_Base_EP1;
 	class TT650_Base;
 	class V3S_Base;
-	class SUV_Base_EP1;
+	class SUV_Base_EP1 : Car
+	{
+		class HitPoints : HitPoints
+		{
+			class HitLFWheel:HitLFWheel{armor=0.15;};
+			class HitLBWheel:HitLBWheel{armor=0.15;};
+
+			class HitRFWheel:HitRFWheel{armor=0.15;};
+			class HitRBWheel:HitRBWheel{armor=0.15;};
+
+			class HitFuel {armor=0.14;material=-1;name="palivo";visual="";passThrough=1;};
+			class HitEngine {armor=0.5;material=-1;name="motor";visual="";passThrough=1;};
+
+			//armored glass - hight armor value
+			class HitGlass1:HitGlass1 {armor=1;};
+			class HitGlass2:HitGlass2 {armor=1;};
+			class HitGlass3:HitGlass3 {armor=1;};
+			class HitGlass4:HitGlass4 {armor=1;};
+
+		};
+	};
 	class UralCivil;
 	class Ship;
 	//class Bag_Base_EP1;

@@ -1,3 +1,20 @@
+class AH6X_DZ_Base: AH6_Base_EP1
+{
+	class Helicopter: Air
+	{
+		class NewTurret;
+		class Turrets {class MainTurret;};
+		class HitPoints
+		{
+			class HitGlass1;
+			class HitGlass2;
+			class HitGlass3;
+			class HitGlass4;
+			class HitGlass5;
+		};
+	};
+};
+
 class AH6X_DZ: AH6_Base_EP1
 {
 	displayname = $STR_VEH_NAME_AH6X;
