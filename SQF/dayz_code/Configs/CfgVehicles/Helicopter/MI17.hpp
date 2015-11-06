@@ -1,5 +1,14 @@
 class Mi17_base: Helicopter 
 {
+	class HitPoints : HitPoints
+	{
+		class HitGlass1;
+		class HitGlass2;
+		class HitGlass3;
+		class HitGlass4;
+		class HitGlass5;
+		class HitGlass6;
+	};
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -14,8 +23,8 @@ class Mi17_base: Helicopter
 	};
 };
 
-class Mi17_base_CDF: Mi17_base {};
-class Mi17_DZ: Mi17_base_CDF {
+//class Mi17_base_CDF: Mi17_base {};
+class Mi17_DZ: Mi17_base {
 	displayname = $STR_VEH_NAME_MI17;
 	scope = 2;
 	side = 2;
@@ -45,13 +54,13 @@ class Mi17_DZ: Mi17_base_CDF {
 	
 	armor=25;
 	damageResistance = 0.00394;
-	class HitPoints:HitPoints
+	class HitPoints : HitPoints
 	{
-		class HitGlass1 {armor=0.12;};
-		class HitGlass2 {armor=0.12;};
-		class HitGlass3 {armor=0.12;};
-		class HitGlass4 {armor=0.12;};
-		class HitGlass5 {armor=0.12;};
-		class HitGlass6 {armor=0.12;};
+		class HitGlass1 : HitGlass1 { armor=0.12; };
+		class HitGlass2 : HitGlass2 { armor=0.12; };
+		class HitGlass3 : HitGlass3 { armor=0.12; };
+		class HitGlass4 : HitGlass4 { armor=0.12; };
+		class HitGlass5 : HitGlass5 { armor=0.12; };
+		class HitGlass6 : HitGlass6 { armor=0.12; };
 	};
 };
