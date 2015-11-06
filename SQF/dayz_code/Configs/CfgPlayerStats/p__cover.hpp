@@ -49,7 +49,7 @@ class horde_journal_front_cover
 		text = $STR_UI_CRAFT_OPEN;
 		action = "closeDialog 0; createDialog 'RscDisplayCraftingMenu';";
 	};
-	
+	/*
 	class open_Construction: RscIGUIShortcutButton {
 		idc = -1;
 		x = 0.48 * safezoneW + safezoneX;
@@ -57,6 +57,7 @@ class horde_journal_front_cover
 		text = "Construction";
 		action = "closeDialog 0; createDialog 'RscDisplayConstructionMenu';";
 	};
+	*/
 	
 	class open_book: horde_RscButton
 	{
