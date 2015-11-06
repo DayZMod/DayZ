@@ -66,6 +66,15 @@ if(_classname isKindOf "Bag_Base_EP1") exitwith {
 		
 		player action ["TakeBag", _holder];
 	};
+	
+	//Lets wait to make sure the player has some kind of backpack.
+	waitUntil { !isNull (unitBackpack player) };
+	
+	sleep 0.03;
+	
+	//Lets call inventory save
+	PVDZ_plr_Save = [player,nil,false];
+	publicVariableServer "PVDZ_plr_Save";
 };
 
 _config = (configFile >> _type >> _classname);
