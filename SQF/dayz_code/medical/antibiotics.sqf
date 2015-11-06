@@ -1,3 +1,5 @@
+#include "\z\addons\dayz_code\util\array.hpp";
+
 private ["_msg","_antibiotics","_hasAntibiotics","_id","_hasMeds","_unit"];
 
 _unit = _this select 0;

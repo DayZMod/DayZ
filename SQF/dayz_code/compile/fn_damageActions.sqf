@@ -1,6 +1,6 @@
 scriptName "Functions\misc\fn_damageActions.sqf";
 
-#include "\z\addons\dayz_code\utils\array.hpp";
+#include "\z\addons\dayz_code\util\array.hpp";
 
 /***********************************************************
 	ADD ACTIONS FOR A CASUALTY
