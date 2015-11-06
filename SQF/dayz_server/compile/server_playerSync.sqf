@@ -96,14 +96,16 @@ if (_characterID != "0") then {
     };
 	
 	if (_isNewGear) then {
-		//diag_log ("gear..."); sleep 0.05;
-		 if (typeName _magazines != "ARRAY") then {
-			diag_log ("PlayerSync - Mag is not array");
-		 } else {
+		 if (typeName _magazines == "ARRAY") then {
 			_playerGear = [weapons _character, _magazines select 0, _magazines select 1];
-			_backpack = unitBackpack _character;			
-			_playerBackp = [typeOf _backpack,getWeaponCargo _backpack,getMagazineCargo _backpack];
 		};
+	};
+	
+	//Check player backpack each time sync runs
+	_backpack = unitBackpack _character;
+	if (!isNull _backpack) then {
+		//If players has a backpack lets update the contents.
+		_playerBackp = [typeOf _backpack,getWeaponCargo _backpack,getMagazineCargo _backpack];
 	};
 	
 	if (_isNewMed or _force) then {
