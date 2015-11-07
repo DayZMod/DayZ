@@ -1,11 +1,9 @@
+#include "Util.hpp"
 #include "Request.hpp"
 #include "Array.hpp"
 #include "Mutex.hpp"
 #include "Dictionary.hpp"
 #include "Debug.hpp"
-
-//Default reply sent if request is invalid or handler returns nil.
-#define DEFAULT_REPLY []
 
 #define Request_New(id) [dz_owner, id]
 #define Request_GetOwner(request) ((request) select 0)
@@ -28,7 +26,7 @@ if (!isServer) then //CLIENT
 	dz_request_list = [];
 	
 	//Send request
-	dz_fn_request_send = // [requestIdentifier, args, reply]
+	dz_fn_request_send = // [type, args, reply]
 	{
 		Debug_Assert(Request_IsInitialized());
 		Debug_CheckParams3(Array_New2("SCALAR","STRING"),"ANY","BOOL");
@@ -44,14 +42,16 @@ if (!isServer) then //CLIENT
 			//Find first valid id and assign the new request to it
 			_id = dz_request_list find 0;
 			if (_id < 0) then { _id = count dz_request_list; };
-			_request = Request_New(_id);
+			_request = [dz_owner, _id];
 			dz_request_list set [_id, _request];
 			
-			//send request to server
-			dz_pvs_request = _request + [_this select 0, _this select 1];
-			publicVariableServer "dz_pvs_request";
-			
 			Mutex_Unlock(dz_request_mutex);
+			
+			Util_PublicVariableServer_Fast("dz_pvs_request", _request + Array_New2(_this select 0, _this select 1));
+			
+			/*//send request to server
+			dz_pvs_request = _request + [_this select 0, _this select 1];
+			publicVariableServer "dz_pvs_request";*/
 			
 			//return the request object
 			_request
@@ -59,7 +59,9 @@ if (!isServer) then //CLIENT
 		
 		//Not expecting reply
 		
-		//Acquire lock
+		Util_PublicVariableServer_Fast("dz_pvs_request", Array_New4(dz_owner, -1, _this select 0, _this select 1));
+		
+		/*//Acquire lock
 		Mutex_WaitLock_Fast(dz_request_mutex);
 		
 		//Send request to server
@@ -67,7 +69,7 @@ if (!isServer) then //CLIENT
 		publicVariableServer "dz_pvs_request";
 		
 		//Unlock
-		Mutex_Unlock(dz_request_mutex);
+		Mutex_Unlock(dz_request_mutex);*/
 		
 		//Return nil
 		nil
@@ -88,17 +90,17 @@ if (!isServer) then //CLIENT
 }
 else //SERVER
 {
-	dz_request_mutex = Mutex_New();
+	//dz_request_mutex = Mutex_New();
 	dz_request_handlers = Dictionary_New();
 	
 	//receive request
 	"dz_pvs_request" addPublicVariableEventHandler
 	{
 		//request handler [handler, async]
-		__handler = Dictionary_Get(dz_request_handlers, Request_Server_GetFunc(_this select 1));
+		_handler = Dictionary_Get(dz_request_handlers, Request_Server_GetFunc(_this select 1));
 		
 		//No handler found
-		if (isNil "__handler") exitWith
+		if (isNil "_handler") exitWith
 		{
 			diag_log format ["ERROR: Received an invalid request:%1 ClientID:%2",
 				Request_Server_GetFunc(_this select 1),
@@ -107,28 +109,32 @@ else //SERVER
 			//Send reply to prevent client deadlock
 			if (Request_Server_ExpectsReply(_this select 1)) then
 			{
+				Util_PublicVariableClient_Fast("dz_pvc_request", DEFAULT_REPLY, Request_GetOwner(_this select 1));
+				
 				//Return default value (empty array)
-				_temp = dz_pvc_request;
+				/*_temp = dz_pvc_request;
 				dz_pvc_request = DEFAULT_REPLY;
 				Request_GetOwner(_this select 1) publicVariableClient "dz_pvc_request";
-				dz_pvc_request = _temp;
+				dz_pvc_request = _temp;*/
 			};
 		};
 		
 		//Async
-		if (__handler select 1) then
+		if (_handler select 1) then
 		{
 			//Spawn a new thread to handle request asynchronously
-			[_this select 1, __handler select 0] spawn
+			[_this select 1, _handler select 0] spawn
 			{
 				__reply = Request_Server_ExpectsReply(_this select 0);
 				_result = Request_Server_GetArgs(_this select 0) call (_this select 1);
 				
 				if (!__reply) exitWith {};
 				
-				if (isNil "_result") then { _result = DEFAULT_REPLY; };
+				_result = [Request_GetID(_this select 0), _result];
 				
-				//Acquire lock to prevent race conditions with other asynchronous handlers
+				Util_PublicVariableClient_Fast("dz_pvc_request", _result, Request_GetOwner(_this select 0));
+				
+				/*//Acquire lock to prevent race conditions with other asynchronous handlers
 				Mutex_WaitLock_Fast(dz_request_mutex);
 				
 				//Send reply
@@ -136,7 +142,7 @@ else //SERVER
 				Request_GetOwner(_this select 0) publicVariableClient "dz_pvc_request";
 				
 				//Unlock
-				Mutex_Unlock(dz_request_mutex);
+				Mutex_Unlock(dz_request_mutex);*/
 			};
 		}
 		else //Sync
@@ -146,21 +152,23 @@ else //SERVER
 			__reply = Request_Server_ExpectsReply(_this select 1);
 			
 			//Execute handler
-			_result = Request_Server_GetArgs(_this select 1) call (__handler select 0);
+			_result = Request_Server_GetArgs(_this select 1) call (_handler select 0);
 			
 			if (!__reply) exitWith {};
 			
-			if (isNil "_result") then { _result = DEFAULT_REPLY; };
+			_result = [Request_GetID(_this select 1), _result];
+			
+			Util_PublicVariableClient_Fast("dz_pvc_request", _result, Request_GetOwner(_this select 1));
 			
 			//store previous value in case it's being used by a scheduled thread
-			_temp = dz_pvc_request;
+			/*_temp = dz_pvc_request;
 			
 			//Send reply
 			dz_pvc_request = _result;
 			Request_GetOwner(_this select 1) publicVariableClient "dz_pvc_request";
 			
 			//restore previous value
-			dz_pvc_request = _temp;
+			dz_pvc_request = _temp;*/
 		};
 	};
 };
