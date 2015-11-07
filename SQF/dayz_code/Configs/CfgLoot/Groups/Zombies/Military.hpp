@@ -7,7 +7,7 @@ ZombieMilitary[] =
 	{Loot_GROUP,		2,		Consumable}
 };
 
-ZombiePoliceViral[] =
+ZombieMilitaryViral[] =
 {
 	{Loot_GROUP,		10,		ZombieMilitary},
 	{Loot_MAGAZINE,		1,		ItemAntibiotic1}
