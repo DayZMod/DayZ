@@ -1,3 +1,6 @@
+// Devlopment only system - Comment out for stable (Search KeyWord - VERSION)
+#define _Devlopment_
+
 class CfgPatches               
 {      
 	class dayz_buildings    
@@ -22,7 +25,7 @@ class CfgAddons
 class CfgMagazines {
 	class CA_Magazine;	// External class reference
 	
-/*
+#ifdef _Devlopment_
 	class ItemMetalSheet: CA_Magazine
 	{
 		scope = 2;
@@ -63,7 +66,7 @@ class CfgMagazines {
 		model = "z\addons\dayz_buildings\models\screws.p3d";
 		descriptionShort = $STR_BLD_desc_ItemScrews;//"Box of screws"
 	};	
-*/
+#endif
 };	
 
 class CfgVehicleClasses {
@@ -251,7 +254,7 @@ class CfgWeapons
 		displayName = $STR_BLD_name_ItemDIY_wood;//"DIY Manual (Wood)"
 		descriptionShort = $STR_BLD_desc_ItemDIY_wood;//"For wooden fences"
 	
-	/*
+	#ifdef _Devlopment_
 		class ItemActions {
 			class Build {
 				text = $STR_BLD_build_ItemDIY_wood;//"Wooden fence"
@@ -262,7 +265,7 @@ class CfgWeapons
 				create = "WoodenFence_1_foundation";
 			};
 		};
-	*/
+	#endif
 	};
 	
 	class ItemDIY_Gate: ItemCore {
@@ -273,7 +276,7 @@ class CfgWeapons
 		displayName = $STR_BLD_name_ItemDIY_woodGate;//"DIY Manual (Gate's)"
 		descriptionShort = $STR_BLD_desc_ItemDIY_woodGate;//"For wooden Gates"
 	
-	/*
+	#ifdef _Devlopment_
 		class ItemActions {
 			class Build {
 				text = $STR_BLD_build_ItemDIY_woodGate;//"Wooden Gate"
@@ -285,7 +288,7 @@ class CfgWeapons
 			};
 
 		};
-	*/
+	#endif
 	};
 	
 	//Left in place to stop problems with dbs
@@ -296,7 +299,8 @@ class CfgWeapons
 		icon = "Ca\misc\data\icons\i_danger_CA.paa";
 		displayName = $STR_BLD_name_ItemDIY_metal;//"DIY Manual (Metal)"
 		descriptionShort = $STR_BLD_desc_ItemDIY_metal;//"For Metal fences"
-		/*
+		
+	#ifdef _Devlopment_
 		class ItemActions {
 			class Build {
 				text = $STR_BLD_build_ItemDIY_metal;//"Metal fence"
@@ -307,6 +311,6 @@ class CfgWeapons
 				create = "MetalFence_1_foundation";
 			};
 		};
-		*/
+	#endif
 	};
 };
