@@ -15,7 +15,7 @@ MedicalHigh[] =
 	{Loot_MAGAZINE,		4,		ItemMorphine},
 	{Loot_MAGAZINE,		3,		ItemEpinephrine},
 	{Loot_MAGAZINE,		3,		ItemBloodTester},
-	{Loot_MAGAZINE,		3,		ItemTransfusionKit},
+//	{Loot_MAGAZINE,		3,		ItemTransfusionKit},
 	{Loot_MAGAZINE,		4,		ItemAntibacterialWipe},
 	{Loot_MAGAZINE,		4,		ItemHeatPack},
 	{Loot_MAGAZINE,		4,		ItemBloodbagEmpty},
@@ -26,7 +26,7 @@ MedicalHigh[] =
 
 Antibiotics[] =
 {
-	{Loot_MAGAZINE,		2,		ItemAntibiotic3},
+	{Loot_MAGAZINE,		1,		ItemAntibiotic3},
 	{Loot_MAGAZINE,		3,		ItemAntibiotic2},
 	{Loot_MAGAZINE,		5,		ItemAntibiotic1}
 };

@@ -9,7 +9,7 @@
 		displayName = $STR_ZNAME_INFECTEDVIRAL;
 		fsmDanger = "";
 		fsmFormation = "";
-		zombieLoot = "viralloot";
+		zombieLoot = ZombieCivilianViral;
 		moves = "CfgMovesZombie";
 		isMan = false;
 		weapons[] = {};
@@ -113,7 +113,6 @@
 	};
 	
 	class z_newBase : zZombie_new_Base {
-		zombieLoot = "viralloot";
 		model = "\ca\characters2\civil\Villager\Villager";
 		hiddenSelections[] = {"Camo"};
 		hiddenSelectionsTextures[] = {"\ca\characters2\civil\villager\data\villager_co.paa"};
@@ -134,7 +133,6 @@
 	};
 	
 	class z_new_worker_base : zZombie_new_Base {
-		zombieLoot = "viralloot";
 		model = "\Ca\characters_E\Overall\Overall";
 		hiddenSelections[] = {"Camo"};
 		hiddenSelectionsTextures[] = {"\Ca\characters_E\Overall\Data\Overall_4_co.paa"};

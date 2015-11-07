@@ -35,7 +35,7 @@ class zZombie_Base : Zed_Base {
 	displayName = $STR_ZNAME_INFECTED;
 	fsmDanger = "";
 	fsmFormation = "";
-	zombieLoot = "civilian";
+	zombieLoot = ZombieCivilian;
 	moves = "CfgMovesZombie";
 	isMan = false;
 	weapons[] = {};
@@ -142,7 +142,7 @@ class zZombie_Base : Zed_Base {
 };
 
 class z_villager1 : zZombie_Base {
-	zombieLoot = "civilian";
+	zombieLoot = ZombieCivilian;
 	model = "\ca\characters2\civil\Villager\Villager";
 	hiddenSelections[] = {"Camo"};
 	hiddenSelectionsTextures[] = {"\ca\characters2\civil\villager\data\villager_co.paa"};
@@ -163,7 +163,7 @@ class z_villager3 : z_villager1 {
 
 class z_priest : zZombie_Base {
 	displayName = $STR_ZNAME_PRIEST;
-	zombieLoot = "Church";
+	zombieLoot = ZombieCivilian;
 	model = "\ca\characters2\civil\Priest\Priest";
 	
 	class Wounds {
@@ -174,7 +174,7 @@ class z_priest : zZombie_Base {
 
 class z_soldier : zZombie_Base {
 	displayName = $STR_ZNAME_SOLDIER;
-	zombieLoot = "military";
+	zombieLoot = ZombieMilitary;
 	model = "\ca\characters2\Blufor\Soldier_Light";
 	
 	class HitPoints : HitPoints {
@@ -215,7 +215,7 @@ class z_soldier : zZombie_Base {
 
 class z_soldier_pilot : z_soldier {
 	displayName = $STR_ZNAME_PILOT;
-	zombieLoot = "military";
+	zombieLoot = ZombieMilitary;
 	model = "\ca\characters_d_BAF\BAF_Pilot_BAF";
 	hiddenSelections[] = {"Camo", "Camo2", "Camo3"};
 	hiddenSelectionsTextures[] = {"\ca\characters_W_baf\data\camo_dpm_co.paa", "\ca\characters_W_baf\data\armour_dpm_co.paa", "\ca\characters_W_baf\data\equip_dpm_co.paa"};
@@ -253,7 +253,7 @@ class z_soldier_pilot : z_soldier {
 
 class z_soldier_heavy : z_soldier {
 	displayName = $STR_ZNAME_SOLDIERHEAVY;
-	zombieLoot = "military";
+	zombieLoot = ZombieMilitary;
 	model = "\ca\characters2\Blufor\Soldier";
 	
 	class HitPoints : HitPoints {
@@ -289,7 +289,7 @@ class z_soldier_heavy : z_soldier {
 
 class z_policeman : zZombie_Base {
 	displayName = $STR_ZNAME_POLICEMAN;
-	zombieLoot = "policeman";
+	zombieLoot = ZombiePolice;
 	
 	class Wounds {
 		tex[] = {};
@@ -298,7 +298,7 @@ class z_policeman : zZombie_Base {
 };
 class z_suit1 : zZombie_Base {
 	displayName = $STR_ZNAME_SUIT;
-	zombieLoot = "civilian";
+	zombieLoot = ZombieCivilian;
 	model = "\ca\characters2\civil\Functionary\Functionary";
 	hiddenSelections[] = {"Camo"};
 	hiddenSelectionsTextures[] = {"\ca\characters2\civil\functionary\data\functionary_co.paa"};
@@ -309,12 +309,12 @@ class z_suit1 : zZombie_Base {
 	};
 }; 
 class z_suit2 : z_suit1 {
-	zombieLoot = "civilian";
+	zombieLoot = ZombieCivilian;
 	hiddenSelectionsTextures[] = {"\ca\characters2\civil\functionary\data\functionary2_co.paa"};
 };
 class z_worker1 : zZombie_Base { 
 	displayName = $STR_ZNAME_WORKER;
-	zombieLoot = "Industrial";
+	zombieLoot = ZombieCivilian;
 	model = "\Ca\characters_E\Overall\Overall";
 	hiddenSelections[] = {"Camo"};
 	
@@ -334,7 +334,7 @@ class z_worker3 : z_worker1 {
 class z_doctor : zZombie_Base { 
 	displayName = $STR_ZNAME_DOCTOR;
 	model = "\ca\characters2\civil\Doctor\Doctor";
-	zombieLoot = "medical";
+	zombieLoot = MedicalHigh;
 	hiddenSelections[] = {"Camo"};
 	hiddenSelectionsTextures[] = {"\dayz\textures\clothes\doctor_co.paa"};
 	
@@ -345,12 +345,12 @@ class z_doctor : zZombie_Base {
 }; 
 class z_teacher : z_doctor { 
 	displayName = $STR_ZNAME_TEACHER;
-	zombieLoot = "civilian";
+	zombieLoot = ZombieCivilian;
 	hiddenSelectionsTextures[] = {"\dayz\textures\clothes\teacher_co.paa"};
 }; 
 class z_hunter : zZombie_Base { 
 	displayName = $STR_ZNAME_HUNTER;
-	zombieLoot = "hunter";
+	zombieLoot = ZombieHunter;
 	model = "\ca\characters2\civil\Woodlander\Woodlander";
 	hiddenSelections[] = {"Camo"};
 	

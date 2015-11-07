@@ -49,6 +49,7 @@ AmmoMilitaryLow[] =
 	
 	//Machine guns
 	{Loot_MAGAZINE,		4,		75Rnd_545x39_RPK},
+	{Loot_MAGAZINE,		1,		50Rnd_762x54_UK59},
 	
 	//Sniper rifles
 	{Loot_MAGAZINE,		3,		5Rnd_762x51_M24},
@@ -82,10 +83,13 @@ AmmoMilitaryHigh[] =
 	{Loot_MAGAZINE,		6,		20Rnd_762x51_FNFAL},
 	
 	//Machine guns
-	{Loot_MAGAZINE,		3,		200Rnd_556x45_M249},
+	{Loot_MAGAZINE,		1,		200Rnd_556x45_M249},
+	{Loot_MAGAZINE,		3,		100Rnd_556x45_M249},
 	{Loot_MAGAZINE,		2,		100Rnd_762x51_M240},
-	{Loot_MAGAZINE,		4,		100Rnd_762x54_PK},
+	{Loot_MAGAZINE,		3,		100Rnd_762x54_PK},
 	{Loot_MAGAZINE,		7,		75Rnd_545x39_RPK},
+	{Loot_MAGAZINE,		5,		75Rnd_762x39_RPK},
+	{Loot_MAGAZINE,		4,		50Rnd_762x54_UK59},
 	
 	//Sniper rifles
 	{Loot_MAGAZINE,		8,		5Rnd_762x51_M24},

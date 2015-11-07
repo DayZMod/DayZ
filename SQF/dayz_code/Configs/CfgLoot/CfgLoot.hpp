@@ -62,7 +62,10 @@ class CfgLoot
 		#include "Groups\Buildings\Hangar.hpp"
 	
 		// Zombies
-		//#include "Groups\Zombies\..."
+		#include "Groups\Zombies\Civilian.hpp"
+		#include "Groups\Zombies\Hunter.hpp"
+		#include "Groups\Zombies\Police.hpp"
+		#include "Groups\Zombies\Military.hpp"
 		
 		#undef DZ_BP_VestPouch
 		#undef DZ_BP_Patrol

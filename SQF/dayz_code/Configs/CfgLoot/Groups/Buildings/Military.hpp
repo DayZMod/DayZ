@@ -52,8 +52,8 @@ Military[] =
 	{Loot_MAGAZINE,		5,		ItemSandbag},
 	{Loot_PILE,			10,		AmmoMilitaryLow, 1, 2},
 	{Loot_GROUP,		3,		AmmoMilitaryHigh},
-	{Loot_GROUP,		4,		AttachmentsGeneric},
-	{Loot_GROUP,		2,		AttachmentsEast},
+	{Loot_GROUP,		3,		AttachmentsGeneric},
+	{Loot_GROUP,		5,		AttachmentsEast},
 	{Loot_PILE,			3,		MedicalLow, 1, 2},
 	{Loot_PILE,			8,		Trash, 1, 2},
 	{Loot_PILE,			14,		Consumable, 1, 2},
@@ -90,6 +90,7 @@ MilitarySpecial[] =
 	
 	//Machine guns
 	{Loot_WEAPON,		2,		RPK74_DZ},
+	{Loot_WEAPON,		0.5,	UK59_DZ},
 //	{Loot_WEAPON,		0.5,	PKM_DZ},
 	
 	//Tools
@@ -112,10 +113,11 @@ MilitarySpecial[] =
 	{Loot_MAGAZINE,		0.5,	Skin_Sniper1_DZ},
 	
 	//Containers
-	{Loot_CONTAINER,	3,		DZ_AmmoBoxRU, AmmoBoxRU1, 10, 20},
-	{Loot_CONTAINER,	2,		DZ_AmmoBoxUS, AmmoBoxUS1, 7, 14},
-	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxRU2, 7, 14},
-	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxRU3, 5, 10},
+	{Loot_CONTAINER,	3,		DZ_AmmoBoxRU, AmmoBoxRU1, 10, 20},	//5.45x39
+	{Loot_CONTAINER,	2,		DZ_AmmoBoxUS, AmmoBoxUS1, 7, 14},	//5.56x45
+	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxCZ1, 7, 14},	//7.62x39
+	{Loot_CONTAINER,	0.7,	DZ_AmmoBoxRU, AmmoBoxCZ2, 2, 5},	//7.62x54R
+	{Loot_CONTAINER,	0.7,	DZ_AmmoBoxRU, AmmoBoxRU3, 3, 7},	//7.62x54R
 	
 	//Other
 	{Loot_MAGAZINE,		3,		FoodMRE},
@@ -123,9 +125,9 @@ MilitarySpecial[] =
 	{Loot_MAGAZINE,		0.5,	PipeBomb},
 	{Loot_PILE,			10,		AmmoMilitaryLow, 1, 4},
 	{Loot_PILE,			7,		AmmoMilitaryHigh, 1, 3},
-	{Loot_GROUP,		3,		AttachmentsGeneric},
-	{Loot_GROUP,		3,		AttachmentsEast},
-	{Loot_GROUP,		2,		AttachmentsWest},
+	{Loot_GROUP,		2,		AttachmentsGeneric},
+	{Loot_GROUP,		6,		AttachmentsEast},
+	{Loot_GROUP,		4,		AttachmentsWest},
 	{Loot_PILE,			5,		MedicalLow, 1, 2},
 	{Loot_PILE,			4,		Trash, 1, 2},
 	{Loot_PILE,			10,		Consumable, 1, 2},
