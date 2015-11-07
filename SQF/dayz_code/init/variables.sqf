@@ -629,7 +629,6 @@ if(!isDedicated) then {
 	dayzDebug = false;
 	dayzState = -1;
 	dayz_onBack = "";
-	dayz_onBackActive = false;
 	dayz_fishingInprogress = false;
 	dayz_siphonFuelInProgress = false;
 	dayz_salvageInProgress = false;

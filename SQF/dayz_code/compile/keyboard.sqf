@@ -22,18 +22,15 @@ if (isNil "keyboard_keys") then {
         _handled = false;
     };
     _rifle = {
-        //["rifle"] spawn player_switchWeapon;
-		2 call player_switchWeapon;
+		2 call dz_fn_switchWeapon;
         _handled = true;
     };
     _pistol = {
-        //["pistol"] spawn player_switchWeapon;
-		3 call player_switchWeapon;
+		3 call dz_fn_switchWeapon;
         _handled = true;
     };
     _melee = {
-        //["melee"] spawn player_switchWeapon;
-		4 call player_switchWeapon;
+		4 call dz_fn_switchWeapon;
         _handled = true;
     };
     _throwable = { // select next non empty throwable weapon

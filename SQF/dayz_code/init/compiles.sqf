@@ -102,7 +102,7 @@ if (!isDedicated) then {
 	player_createquiver = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_createQuiver.sqf";
 	player_fillquiver = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_fillQuiver.sqf";
 	//player_takearrow = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_takeArrow.sqf";
-	player_switchWeapon = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_switchWeapon.sqf";
+	call compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_switchWeapon.sqf";
 	//player_goFishing = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_goFishing.sqf";
 	player_gather = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_gather.sqf";
 	player_fixBottle = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_fixBottle.sqf";
@@ -350,7 +350,7 @@ if (!isDedicated) then {
 		// Prevent carrying 2 rifles 'exploit'
 		if (primaryWeapon player == "" && dayz_onBack != "" && !(dayz_onBack in MeleeWeapons)) then {
 			//["gear"] call player_switchWeapon;
-			0 call player_switchWeapon;
+			0 call dz_fn_switchWeapon;
 		};
 
 		if (primaryWeapon player != "" && (primaryWeapon player in MeleeWeapons || dayz_onBack in MeleeWeapons)) then {
