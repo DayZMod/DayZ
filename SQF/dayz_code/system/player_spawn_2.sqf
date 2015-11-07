@@ -409,9 +409,9 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		cutText [localize "str_player_ammo_2primary","PLAIN DOWN"];
 		player playActionNow "stop";
 		player action ["dropWeapon", player, primaryWeapon player];
-		sleep 3;
-		["gear"] call player_switchWeapon;
-		sleep 1;
+		//sleep 3;
+		//["gear"] call player_switchWeapon;
+		//sleep 1;
 	};
 
 	//Crowbar ammo fix

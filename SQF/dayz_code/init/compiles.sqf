@@ -349,7 +349,8 @@ if (!isDedicated) then {
 
 		// Prevent carrying 2 rifles 'exploit'
 		if (primaryWeapon player == "" && dayz_onBack != "" && !(dayz_onBack in MeleeWeapons)) then {
-			["gear"] call player_switchWeapon;
+			//["gear"] call player_switchWeapon;
+			0 call player_switchWeapon;
 		};
 
 		if (primaryWeapon player != "" && (primaryWeapon player in MeleeWeapons || dayz_onBack in MeleeWeapons)) then {
@@ -385,8 +386,20 @@ if (!isDedicated) then {
 			dayz_heartBeat = false;
 		};
 	};
-
-   dayz_meleeMagazineCheck = {
+	
+	dz_fn_meleeMagazines =
+	{
+		if (_this) then
+		{
+			{ player addMagazine _x } foreach MeleeMagazines;
+		}
+		else
+		{
+			{ player removeMagazines _x } foreach MeleeMagazines;
+		};
+	};
+	
+	dayz_meleeMagazineCheck = {
         //private["_meleeNum","_magType","_wpnType","_ismelee"];
         _wpnType = primaryWeapon player;
         _ismelee = (getNumber (configFile >> "CfgWeapons" >> _wpnType >> "melee") == 1);
