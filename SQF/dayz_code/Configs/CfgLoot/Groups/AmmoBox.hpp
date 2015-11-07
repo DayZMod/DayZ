@@ -41,7 +41,7 @@ AmmoBoxEU1[] =
 {
 	{Loot_MAGAZINE,		4,		30Rnd_556x45_G36},
 	{Loot_MAGAZINE,		2,		30Rnd_556x45_G36SD},
-	{Loot_MAGAZINE,		1,		100Rnd_556x45_M249}
+	{Loot_MAGAZINE,		1,		100Rnd_556x45_M249},
 	{Loot_MAGAZINE,		0.5,	200Rnd_556x45_M249}
 };
 
@@ -56,7 +56,7 @@ AmmoBoxEU2[] =
 AmmoBoxCZ1[] =
 {
 	{Loot_MAGAZINE,		5,		30Rnd_762x39_SA58},
-	{Loot_MAGAZINE,		1,		75Rnd_762x39_RPK},
+	{Loot_MAGAZINE,		1,		75Rnd_762x39_RPK}
 };
 
 //7.62x54Rmm
