@@ -159,8 +159,8 @@ CrashSiteUN[] =
 	{Loot_WEAPON,		3,		ItemMap},
 	
 	//Containers
-	{Loot_CONTAINER,	10,		DZ_MedBox, MedicalHigh, 5, 15}
-	{Loot_CONTAINER,	10,		DZ_CardboardBox, Consumable, 10, 20}
+	{Loot_CONTAINER,	10,		DZ_MedBox, MedicalHigh, 5, 15},
+	{Loot_CONTAINER,	10,		DZ_CardboardBox, Consumable, 10, 20},
 	{Loot_CONTAINER,	2,		DZ_AmmoBoxUS, AmmoBoxUS1, 15, 30},		//556x45	STANAG, M249
 	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxRU1, 15, 30},		//545x39	AK74, RPK74
 	
