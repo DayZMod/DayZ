@@ -119,9 +119,6 @@ if (isPlayer cursorTarget) then {
 		_hasAntibiotics = Array_Any(magazines player, {_this in _antibiotics});
 		_hasBloodBag = Array_Any(magazines player, {_this in _bloodBags});
 		
-		
-		diag_log format["DamageActions %1 - %2",_hasAntibiotics,_hasBloodBag];
-		
 				
 		_vehClose = (getPosATL player) nearEntities [["Car","Tank","Helicopter","Plane","StaticWeapon","Ship"],5]; //nearestObjects [player, ["Car","Tank","Helicopter","Plane","StaticWeapon","Ship"], 5];
 		_hasVehicle = ({alive _x} count _vehClose > 0);
