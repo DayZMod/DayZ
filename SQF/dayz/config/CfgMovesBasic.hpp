@@ -121,7 +121,7 @@ class CfgMovesBasic
 			getOver = "BunnyhopRifle";
 		};
 		
-		class PistolStandEvasiveActions : PistolStandActions
+		/*class PistolStandEvasiveActions : PistolStandActions
 		{
 			getOver = "BunnyhopPistol";
 		};
@@ -129,6 +129,46 @@ class CfgMovesBasic
 		class PistolStandActionsRunF : PistolStandActions
 		{
 			getOver = "BunnyhopPistol";
+		};*/
+		
+		/*class PistolStandActionsWlkF : PistolStandActionsRunF
+		{
+			getOver = "AovrPercMstpSrasWpstDf";
 		};
+		
+		class PistolStandActionsWlkFL : PistolStandActionsRunF
+		{
+			getOver = "AovrPercMstpSrasWpstDf";
+		};
+		
+		class PistolStandActionsWlkL : PistolStandActionsRunF
+		{
+			getOver = "AovrPercMstpSrasWpstDf";
+		};
+		
+		class PistolStandActionsWlkBL : PistolStandActionsRunF
+		{
+			getOver = "AovrPercMstpSrasWpstDf";
+		};
+		
+		class PistolStandActionsWlkB : PistolStandActionsRunF
+		{
+			getOver = "AovrPercMstpSrasWpstDf";
+		};
+		
+		class PistolStandActionsWlkBR : PistolStandActionsRunF
+		{
+			getOver = "AovrPercMstpSrasWpstDf";
+		};
+		
+		class PistolStandActionsWlkR : PistolStandActionsRunF
+		{
+			getOver = "AovrPercMstpSrasWpstDf";
+		};
+		
+		class PistolStandActionsWlkFR : PistolStandActionsRunF
+		{
+			getOver = "AovrPercMstpSrasWpstDf";
+		};*/
 	};
 };
