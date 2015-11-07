@@ -12,9 +12,17 @@ Author:
 	Foxy
 */
 
+#include "\z\addons\dayz_code\util\vector.hpp"
 #include "Loot.hpp"
 
+//Maximum number of magazines spawned along with weapons
 #define MAX_WEAPON_MAGAZINES 2
+
+//If defined spawns random (but applicable) magazines along with weapons instead of their primary type.
+//#define COMPLEX_WEAPON_MAGAZINES
+
+//If defined calculates better placement for backpacks
+//#define COMPLEX_BACKPACK_POSITION
 
 #ifdef SERVER
 	#define INCREMENT_WEAPON_HOLDERS()
@@ -48,7 +56,14 @@ switch (_lootInfo select 0) do
 		
 		if (count _magazines > 0 && {getNumber (configFile >> "CfgWeapons" >> _lootInfo select 1 >> "isMelee") != 1}) then
 		{
+			#ifdef COMPLEX_WEAPON_MAGAZINES
+			for "_i" from 1 to (floor random (MAX_WEAPON_MAGAZINES + 1)) do
+			{
+				_vehicle addMagazineCargoGlobal [_magazines select floor random count _magazines, 1];
+			};
+			#else
 			_vehicle addMagazineCargoGlobal [_magazines select 0, floor random (MAX_WEAPON_MAGAZINES + 1)];
+			#endif
 		};
 	};
 	
@@ -61,11 +76,26 @@ switch (_lootInfo select 0) do
 		INCREMENT_WEAPON_HOLDERS();
 	};
 	
+	//Spawn backpack
 	case Loot_BACKPACK:
 	{
+		#ifdef COMPLEX_BACKPACK_POSITION
+		private ["_b", "_p", "_d"];
+		_vehicle = createVehicle [_lootInfo select 1, [-10000,0,0], [], 0, "CAN_COLLIDE"];
+		
+		_b = boundingBox _vehicle;
+		_b = ((_b select 1) select 1) - ((_b select 0) select 1);
+		
+		_d = Vector_Rotate(Vector_NORTH, random 360);
+		
+		_p = Vector_Subtract(_this select 1, Vector_Multiply_Fast(_d, _b));
+		_p = Vector_SetZ(_p, Vector_Z(_p) + Vector_Z(getPosATL _vehicle));
+		
+		_vehicle setVectorDirAndUp [Vector_DOWN, _d];
+		_vehicle setPosATL _p;
+		#else
 		_vehicle = createVehicle [_lootInfo select 1, _this select 1, [], 0, "CAN_COLLIDE"];
-		_vehicle setDir random 360;
-		_vehicle setPosATL (_this select 1);
+		#endif
 	};
 	
 	//Spawn multiple items from a given group. All but weapons and magazines are ignored.
