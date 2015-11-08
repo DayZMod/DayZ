@@ -12,6 +12,8 @@ Author:
 	Foxy
 */
 
+#include "\z\addons\dayz_code\util\debug.hpp"
+#include "\z\addons\dayz_code\util\string.hpp"
 #include "\z\addons\dayz_code\util\vector.hpp"
 #include "Loot.hpp"
 
@@ -49,6 +51,10 @@ switch (_lootInfo select 0) do
 	{
 		_vehicle = createVehicle ["WeaponHolder", _this select 1, [], 0, "CAN_COLLIDE"];
 		_vehicle addWeaponCargoGlobal [_lootInfo select 1, 1];
+		
+		Debug_Assert(typeName (_lootInfo select 1) == typeName "" && { (_lootInfo select 1) != "" });
+		Debug_Log(String_Format2("DEBUG: Loot_Spawn Weapon: %1 Position: %2", _lootInfo select 1, _this select 1));
+		
 		_vehicle setPosATL (_this select 1);
 		INCREMENT_WEAPON_HOLDERS();
 		

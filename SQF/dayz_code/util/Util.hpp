@@ -18,4 +18,9 @@ variable is restored automatically after transmission. For example:
 #define Util_PublicVariableClient(variable, value, client) ([variable, value, client] call dz_fn_util_pvc)
 #define Util_PublicVariableClient_Fast(variable, value, client) (missionNamespace setVariable [variable, [missionNamespace getVariable (variable), missionNamespace setVariable [variable, value], (client) publicVariableClient (variable)] select 0])
 
+//Waits until the specified predicate is true, or at most the specified time in seconds.
+//Returns true if the predicate is true, false if timed out.
+//Note: the predicate is evaluated once each frame. Expensive operations may cause performance issues.
+#define Util_WaitUntil(predicate, timeout) ([_this, predicate, timeout, diag_tickTime] call dz_fn_util_waitUntil)
+
 #endif
