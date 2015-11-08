@@ -36,7 +36,13 @@ if (player hasWeapon _item) then {
 	Player removeWeapon _item;
 	
 	Player addWeapon _repair;
-	player addMagazine "ItemWaterBottleUnfilled";
+	
+	if (_waterUsed in ["ItemWaterBottle","ItemWaterBottleInfected","ItemWaterBottleSafe","ItemWaterBottleBoiled","ItemWaterBottleHerbal"]) then {
+		player addMagazine "ItemWaterBottleUnfilled";
+	};
+	if (_waterUsed in ["ItemCanteen","ItemCanteenInfected","ItemCanteenSafe","ItemCanteenBoiled","ItemCanteenHerbal"]) then {
+		player addMagazine "ItemCanteenEmpty";
+	};
 	
 	//Remove Later
 	player removeMagazine "equip_brick";
