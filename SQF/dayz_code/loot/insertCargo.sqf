@@ -19,6 +19,9 @@ Author:
 		case Loot_WEAPON:
 		{
 			(_this select 0) addWeaponCargoGlobal [_x select 1, 1];
+			
+			Debug_Assert(typeName (_x select 1) == typeName "" && { (_x select 1) != "" });
+			Debug_Log(String_Format2("DEBUG: Loot_Insert Weapon: %1 Vehicle: %2", _x select 1, _this select 0));
 		};
 		
 		case Loot_MAGAZINE:
