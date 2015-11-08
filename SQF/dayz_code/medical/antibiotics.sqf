@@ -28,13 +28,18 @@ if (_hasAntibiotics) then {
 	if ((_unit == player) or (vehicle player != player)) then {
 		//Self Healing
 		_id = [player,player] execVM "\z\addons\dayz_code\medical\publicEH\medAntibiotics.sqf";
+		
+		_msg = "You have taken antibiotics.";
 	} else {
+	//Send request to other player
 		PVDZ_send = [_unit,"Antibiotics",[_unit,player]];
 		publicVariableServer "PVDZ_send";
+		
+		//Give humnaity for good deeds
 		[player,20] call player_humanityChange;
+		
+		_msg = "You gave antibiotics.";
 	};
-	
-	_msg = "You have taken antibiotics.";
 };
 
 

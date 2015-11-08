@@ -556,18 +556,13 @@ dayz_reduceItems = {
 
 //Does player have the original item? (Not Really needed player_useMeds checks)
 	if (_item IN magazines player) exitWith {
+	
 	//Amount in current box (will be -1 for a random chance to start the reducing)
 		_amount = getNumber(configfile >> "CfgMagazines" >> _item >> _class >> "amount");
-		
-		//_amount = getNumber(configfile >> "CfgMagazines" >> "ItemAntibiotic2" >> "medical" >> "qtyRemaining");
-		//_amount = getnumber(configfile >> "CfgMagazines" >> "ItemAntibiotic3" >> "medical" >> "amount"); 
-		diag_log (_amount);
 
 	//Item to move too if there is some left
 		_qtyRemaining = getText(configfile >> "CfgMagazines" >> _item >> _class >> "qtyRemaining");
-		
-		diag_log format["%1,%2[%3,%4]",_item,_class,_amount,_qtyRemaining];
-		
+				
 	//Only run for the random amount.
 		if (_amount == -1) then { 
 		//Chance to start the reduction 

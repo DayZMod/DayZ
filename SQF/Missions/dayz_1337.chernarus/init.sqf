@@ -72,6 +72,8 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\BIS_Effects\i
 progressLoadingScreen 0.25;
 initialized = true;
 
+setTerrainGrid 25;
+
 if (dayz_REsec == 1) then { call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\REsec.sqf"; };
 execVM "\z\addons\dayz_code\system\DynamicWeatherEffects.sqf";
 
