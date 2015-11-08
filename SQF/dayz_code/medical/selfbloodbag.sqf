@@ -1,6 +1,8 @@
 private ["_unit","_blood","_lowBlood","_injured","_inPain","_lastused","_animState","_started","_finished","_timer","_i","_isMedic","_isClose","_duration","_rhVal","_bloodBagArrayNeeded","_BBneeded","_bbselect","_bloodBagNeeded","_badBag","_wholeBag","_bagFound","_bagToRemove","_forceClose","_bloodType","_rh","_bloodBagArray","_bbarray_length","_bloodBagWholeNeeded","_haswholebag","_r"];
 // bleed.sqf
-_unit = (_this select 3) select 0;
+_unit = _this select 0;
+_bagUsed = _this select 1;
+
 _blood = _unit getVariable ["USEC_BloodQty", 0];
 _lowBlood = _unit getVariable ["USEC_lowBlood", false];
 _injured = _unit getVariable ["USEC_injured", false];
@@ -26,66 +28,19 @@ if (_blood <= 4000) then {
 	_duration = 2;
 };
 
-_bloodBagArray = ["bloodBagANEG","bloodBagAPOS","bloodBagBNEG","bloodBagBPOS","bloodBagABNEG","bloodBagABPOS","bloodBagONEG","bloodBagOPOS","wholeBloodBagANEG","wholeBloodBagAPOS","wholeBloodBagBNEG","wholeBloodBagBPOS","wholeBloodBagABNEG","wholeBloodBagABPOS","wholeBloodBagONEG","wholeBloodBagOPOS"];
+_bloodBagArray = ["wholeBloodBagANEG","wholeBloodBagAPOS","wholeBloodBagBNEG","wholeBloodBagBPOS","wholeBloodBagABNEG","wholeBloodBagABPOS","wholeBloodBagONEG","wholeBloodBagOPOS"];
 
 if (_rh) then {_rhVal = "POS";} else {_rhVal = "NEG";};
 
-switch (_bloodType) do {
-	case "A" : {
-		if (_rh) then {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagAPOS","bloodBagANEG","bloodBagONEG","bloodBagOPOS"];
-		} else {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagANEG","bloodBagONEG"];
-		};
-	};
-
-	case "B" : {
-		if (_rh) then {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagBPOS","bloodBagBNEG","bloodBagONEG","bloodBagOPOS"];
-		} else {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagBNEG","bloodBagONEG"];
-		};
-	};
-
-	case "AB" : {
-		if (_rh) then {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagABPOS","bloodBagABNEG","bloodBagANEG","bloodBagAPOS","bloodBagBNEG","bloodBagBPOS","bloodBagONEG","bloodBagOPOS"];
-		} else {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagABNEG","bloodBagANEG","bloodBagBNEG","bloodBagONEG"];
-		};
-	};
-
-	case "O" : {
-		if (_rh) then {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagOPOS","bloodBagONEG"];
-		} else {
-			_bloodBagArrayNeeded = ["ItemBloodbag","bloodBagONEG"];
-		};
-	};
-};
-
-_bbarray_length = (count _bloodBagArrayNeeded) - 1;
-for "_q" from 0 to _bbarray_length do {
-	_bbselect = _bloodBagArrayNeeded select _q;
-	_bloodBagNeeded = _bbselect in magazines player;
-		if (_bloodBagNeeded) exitWith {_BBneeded = true;};
-};
 
 //No subs for whole blood :(
 _bloodBagWholeNeeded = "wholeBloodBag" + _bloodType + _rhVal;
 _haswholebag = _bloodBagWholeNeeded in magazines player;
 
-if (!_BBneeded and !_haswholebag) then {
-	_badBag = true;
-};
-
-//use packed/separated bags first
-if (_BBneeded) then {
-	_wholeBag = false;
+if (_haswholebag) then {
+	_wholeBag = true;
 } else {
-	if (_haswholebag) then {
-		_wholeBag = true;
-	};
+	_badBag = true;
 };
 
 call fnc_usec_medic_removeActions;
@@ -114,7 +69,7 @@ while {r_doLoop and (_i < 12)} do {
 		diag_log format ["TRANSFUSION: starting blood transfusion (%1 > %2)", name player, name _unit];
 		if (_badBag) then {
 			for "_r" from 0 to 15 do {
-				_bagToRemove = _bloodBagArray select _r;
+				_bagToRemove = _bagUsed;
 				if (_bagToRemove in magazines player) exitWith {   //TODO: add separate action menu options so the removed bag isn't random
 					_bagFound = true;
 					if (_r >= 8) then {
@@ -123,10 +78,8 @@ while {r_doLoop and (_i < 12)} do {
 				};
 			};
 		} else {
-			if (_wholeBag) then {_bagToRemove = _bloodBagWholeNeeded; } else { _bagToRemove = _bbselect; };
-			if (_bagToRemove in magazines player) then {
-				_bagFound = true;
-			};
+			if (_wholeBag) then {_bagToRemove = _bloodBagWholeNeeded; };
+			if (_bagToRemove in magazines player) then { _bagFound = true; };
 		};
 		if (!_bagFound) then {_forceClose = true;} else { player removeMagazine _bagToRemove;};
 		cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
@@ -137,13 +90,7 @@ while {r_doLoop and (_i < 12)} do {
 	if (_started) then {
 		if ((diag_tickTime - _timer) >= 1) then {
 			_timer = diag_tickTime;
-			//PVCDZ_hlt_Transfuse = [_unit,player,1000];
-			//publicVariable "PVCDZ_hlt_Transfuse";
-			if (!_wholeBag) then {
-				_i = _i + 1;
-			} else {
-				_i = _i + 3;	//Whole blood only gives 4k
-			};
+			_i = _i + 3;
 			if (!_badBag) then {
 				if (!_forceClose) then {
 					if (!_wholeBag) then {
