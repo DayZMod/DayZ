@@ -241,6 +241,8 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 		};
 	};
 	
+//	Not needed.
+/*
 	if(_cursorTarget == dayz_hasFire) then {
 		if ((s_player_fireout < 0) and !(_cursorTarget call isInflamed) and (player distance _cursorTarget < 3)) then {
 			s_player_fireout = player addAction [localize "str_actions_self_06", "\z\addons\dayz_code\actions\fire_pack.sqf",_cursorTarget, 0, false, true, "",""];
@@ -249,6 +251,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 		player removeAction s_player_fireout;
 		s_player_fireout = -1;
 	};
+*/
 
 	//remove Own objects
 	if (_ownerID == dayz_characterID) then {
