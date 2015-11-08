@@ -9,8 +9,8 @@ class MR43_DZ : Rifle
 	
 	magazines[] =
 	{
-		"2Rnd_12Gauge_Slug",
-		"2Rnd_12Gauge_Buck"
+		2Rnd_12Gauge_Slug,
+		2Rnd_12Gauge_Buck
 	};
 	
 	handAnim[] = {"OFP2_ManSkeleton", "\Ca\weapons_E\Data\Anim\LeeEnfield.rtm"};

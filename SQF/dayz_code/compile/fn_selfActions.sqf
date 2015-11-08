@@ -37,7 +37,28 @@ if (_canPickLight and !dayz_hasLight) then {
 	s_player_removeflare = -1;
 };
 
-if (dayz_onBack != "" /*&& !dayz_onBackActive*/ && !_inVehicle && !_onLadder && !r_player_unconscious) then {
+if (s_player_equip_carry < 0) then
+{
+	if (dayz_onBack != "" && { !_inVehicle && { !_onLadder && { !r_player_unconscious } } }) then
+	{
+		dz_plr_carryActionItem = dayz_onBack;
+		_text = getText (configFile >> "CfgWeapons" >> dz_plr_carryActionItem >> "displayName");
+		s_player_equip_carry = player addAction [
+			format [localize "STR_ACTIONS_WEAPON", _text],
+			"\z\addons\dayz_code\actions\player_switchWeapon_action.sqf",
+			nil, 0.5, false, true];
+	};
+}
+else
+{
+	if (dayz_onBack != dz_plr_carryActionItem || { _inVehicle || { _onLadder || { r_player_unconscious } } } ) then
+	{
+		player removeAction s_player_equip_carry;
+		s_player_equip_carry = -1;
+	};
+};
+
+/*if (dayz_onBack != "" /*&& !dayz_onBackActive && !_inVehicle && !_onLadder && !r_player_unconscious) then {
 	if (s_player_equip_carry < 0) then {
 		_text = getText (configFile >> "CfgWeapons" >> dayz_onBack >> "displayName");
 		s_player_equip_carry = player addAction [format[localize "STR_ACTIONS_WEAPON", _text], "\z\addons\dayz_code\actions\player_switchWeapon_action.sqf", nil, 0.5, false, true];
@@ -45,7 +66,7 @@ if (dayz_onBack != "" /*&& !dayz_onBackActive*/ && !_inVehicle && !_onLadder && 
 } else {
 	player removeAction s_player_equip_carry;
 	s_player_equip_carry = -1;
-};
+};*/
 
 //fishing
 if ((_currentWeapon in Dayz_fishingItems) && !dayz_fishingInprogress && !_inVehicle && !dayz_isSwimming) then {

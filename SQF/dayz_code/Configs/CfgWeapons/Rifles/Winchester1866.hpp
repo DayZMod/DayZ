@@ -7,10 +7,7 @@ class Winchester1866_DZ : Rifle
 	displayname = $STR_WPN_NAME_1;
 	descriptionShort = $STR_WPN_DESC_1;
 	
-	magazines[] =
-	{
-		"15Rnd_W1866_Slug"
-	};
+	magazines[] = {15Rnd_W1866_Slug};
 	
 	handAnim[] = {"OFP2_ManSkeleton", "\Ca\weapons_E\Data\Anim\LeeEnfield.rtm"};
 	

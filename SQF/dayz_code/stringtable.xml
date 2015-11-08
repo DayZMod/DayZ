@@ -10243,7 +10243,7 @@
 			<Original>G17 SD Mag.</Original>
 		</Key>
 		<Key ID="STR_DZ_MAG_30RND_762X39_AK47">
-			<Original>AK-47 Mag.</Original>
+			<Original>30Rnd. AK-47</Original>
 		</Key>
 		
 		<Key ID="STR_DZ_MAG_BOLT_TRQ_NAME">
@@ -10264,7 +10264,7 @@
 			<Original>50Rnd. UK-59</Original>
 		</Key>
 		<Key ID="STR_DZ_MAG_50RND_762X54_UK59_DESC">
-			<Original>Caliber: 7.62x54mm&lt;br/&gt;Rounds: 50&lt;br/&gt;Used in: UK-59</Original>
+			<Original>Caliber: 7.62x54mmR&lt;br/&gt;Rounds: 50&lt;br/&gt;Used in: UK-59</Original>
 		</Key>
 		
 		<Key ID="STR_DZ_MAG_75RND_762X39_RPK_NAME">
@@ -10272,6 +10272,21 @@
 		</Key>
 		<Key ID="STR_DZ_MAG_75RND_762X39_RPK_DESC">
 			<Original>Caliber: 7.62x39mm&lt;br/&gt;Rounds: 75&lt;br/&gt;Used in: RPK</Original>
+		</Key>
+		
+		<Key ID="STR_DZ_MAG_75RND_545X39_RPK_NAME">
+			<Original>75Rnd. RPK-74</Original>
+		</Key>
+		
+		<Key ID="STR_DZ_MAG_100RND_556X45_M249_NAME">
+			<Original>100Rnd. M249</Original>
+		</Key>
+		
+		<Key ID="STR_DZ_MAG_5RND_762X54_MOSIN_NAME">
+			<Original>5Rnd. Mosin Nagant</Original>
+		</Key>
+		<Key ID="STR_DZ_MAG_5RND_762X54_MOSIN_DESC">
+			<Original>Caliber: 7.62x54mmR&lt;br/&gt;Rounds: 5&lt;br/&gt;Used in: Mosin Nagant</Original>
 		</Key>
 		
 		
