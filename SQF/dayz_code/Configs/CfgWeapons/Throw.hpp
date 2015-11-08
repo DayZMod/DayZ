@@ -1,5 +1,6 @@
 class Throw_DZ : Throw
 {
+	scope = public;
 	muzzles[] =
 	{
 		"RoadFlareMuzzle",
