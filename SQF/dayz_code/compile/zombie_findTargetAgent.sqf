@@ -23,7 +23,8 @@ _targets = _localtargets + _remotetargets;
 	
 //Search for objects
 if (count _targets == 0) then {
-	_objects = nearestObjects [_agent,["ThrownObjects","GrenadeHandTimedWest","SmokeShell"],_range*3];
+//"ThrownObjects","GrenadeHandTimedWest","SmokeShell"]
+	_objects = _agent nearObjects ["GrenadeHand", 300];
 	{
 		if (!(_x in _targets)) then {
 			if (local _x) then {
@@ -32,7 +33,7 @@ if (count _targets == 0) then {
 				_remotetargets set [count _remotetargets,_x];
 			};
 		};
-	} forEach _objects;
+	} foreach _objects;
 };
 
 //Find best target
