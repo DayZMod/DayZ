@@ -1,18 +1,23 @@
-private ["_item","_use","_repair"];
+private ["_item","_use","_repair","_waterUsed"];
 
-//['ItemKnifeBlunt','ItemWaterbottle','ItemKnife']
+//['ItemKnifeBlunt','ItemKnife']
 _item = _this select 0; //Item to be sharpened
-_use = _this select 1; //Item to be used during sharpen (magazine)
-_repair = _this select 2; //Item to be given back.
+_repair = _this select 1; //Item to be given back.
+
+_use = ["ItemWaterBottle","ItemWaterBottleInfected","ItemWaterBottleSafe","ItemWaterBottleBoiled","ItemWaterBottleHerbal","ItemCanteen","ItemCanteenInfected","ItemCanteenSafe","ItemCanteenBoiled","ItemCanteenHerbal"];
+_waterUsed = nil;
 
 call gear_ui_init;
 closeDialog 1;
 
+{
+	if (_x IN magazines player) exitwith { _waterUsed = _x; };
+} foreach _use;
+
 // item is missing or tools are missing
-if (!(_use IN magazines player)) exitWith {
-	_displayName = getText (configFile >> "CfgMagazines" >> _use >> "displayName");
-	//cutText [format["Missing %1",_displayName], "PLAIN DOWN"];
-	_msg = format["Missing %1",_displayName];
+if (isNil "_waterUsed") exitWith {
+	//_displayName = getText (configFile >> "CfgMagazines" >> _use >> "displayName");
+	_msg = "Missing Water";
 	_msg call dayz_rollingMessages;
 };
 
@@ -27,11 +32,18 @@ if (!(_item IN items player)) exitWith {
 if (player hasWeapon _item) then {
 	_displayName = getText (configFile >> "CfgWeapons" >> _item >> "displayName");
 	
-	player removeMagazine _use;
+	player removeMagazine _waterUsed;
 	Player removeWeapon _item;
 	
 	Player addWeapon _repair;
-	player addMagazine "ItemWaterBottleUnfilled";
+	
+	if (_waterUsed in ["ItemWaterBottle","ItemWaterBottleInfected","ItemWaterBottleSafe","ItemWaterBottleBoiled","ItemWaterBottleHerbal"]) then {
+		player addMagazine "ItemWaterBottleUnfilled";
+	};
+	if (_waterUsed in ["ItemCanteen","ItemCanteenInfected","ItemCanteenSafe","ItemCanteenBoiled","ItemCanteenHerbal"]) then {
+		player addMagazine "ItemCanteenEmpty";
+	};
+	
 	//Remove Later
 	player removeMagazine "equip_brick";
 
