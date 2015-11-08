@@ -90,7 +90,7 @@ switch (_item) do {
 		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\selfbloodbag.sqf";
 	};
 	case "equip_woodensplint": {
-		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\brokeBones.sqf";
+		_id = [player,"equip_woodensplint"] execVM "\z\addons\dayz_code\medical\brokeBones.sqf";
 	};
 };
 if (vehicle player != player) then {
