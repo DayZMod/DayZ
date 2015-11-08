@@ -14,7 +14,7 @@ class equip_brick : CA_Magazine
 		class FixKnife
 		{
 			text = "Sharpen Knife";
-			script = "; ['ItemKnifeBlunt','ItemWaterbottle','ItemKnife'] spawn player_sharpen;";
+			script = "; ['ItemKnifeBlunt','ItemKnife'] spawn player_sharpen;";
 		};
 	};
 };
