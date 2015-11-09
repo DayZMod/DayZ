@@ -3,7 +3,7 @@ class Blueprint_HerbalDrink : Recipe {
 	descriptionShort = $STR_CRAFT_DESC_herbalDrink;
 	input[] = 
 	{
-		{"ItemWaterbottleBoiled","CfgMagazines",1},
+		{"ItemWaterBottleBoiled","CfgMagazines",1},
 		{"equip_herb_box","CfgMagazines",1}
 	};
 	output[] = 
