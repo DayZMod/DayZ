@@ -21,6 +21,19 @@ MedicalHigh[] =
 	{Loot_GROUP,		7,		MedicalLow}
 };
 
+MedicalBox[] =
+{
+	{Loot_MAGAZINE,		5,		ItemMorphine},
+	{Loot_MAGAZINE,		3,		ItemBloodTester},
+	{Loot_MAGAZINE,		5,		ItemHeatPack},
+	{Loot_MAGAZINE,		2,		ItemBloodbagEmpty},
+	
+	{Loot_GROUP,		1,		Antibiotics},
+	{Loot_GROUP,		15,		Bloodbags},
+	
+	{Loot_GROUP,		7,		MedicalLow}
+};
+
 Antibiotics[] =
 {
 	{Loot_MAGAZINE,		1,		ItemAntibiotic3},
