@@ -31,8 +31,8 @@ Author:
 #define INITIAL_NUM 3
 
 //Number of loot items to spawn per site
-#define LOOT_MIN 3
-#define LOOT_MAX 7
+#define LOOT_MIN 5
+#define LOOT_MAX 8
 
 private
 [
