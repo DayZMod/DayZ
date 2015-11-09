@@ -106,7 +106,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_34 = objNull;
 if (true) then
 {
-  _this = "Land_Panelak" createVehicle [6977.5898, 2844.4226, 1.9073486e-006];
+  _this = "Land_Panelak2" createVehicle [6977.5898, 2844.4226, 1.9073486e-006];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_34 = _this;
@@ -117,7 +117,7 @@ _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 _vehicle_35 = objNull;
 if (true) then
 {
-  _this = "Land_Panelak" createVehicle [7034.1514, 2793.9668, 2.0980835e-005];
+  _this = "Land_Panelak2" createVehicle [7034.1514, 2793.9668, 2.0980835e-005];
 _this setVariable ["", true]; // prevent network SV by loot/zeds spawner
 
   _vehicle_35 = _this;
