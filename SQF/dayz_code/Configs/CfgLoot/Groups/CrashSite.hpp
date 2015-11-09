@@ -17,12 +17,12 @@ CrashSiteRU[] =
 	//Weapons
 	{Loot_WEAPON,		2,		Makarov_DZ},
 	{Loot_WEAPON,		4,		PDW_DZ},
-	{Loot_WEAPON,		6,		Bizon_DZ},
-	{Loot_WEAPON,		4,		AKS74U_DZ},
-	{Loot_WEAPON,		4,		AK74_DZ},
-	{Loot_WEAPON,		2,		RPK74_DZ},
+	{Loot_WEAPON,		4,		Bizon_DZ},
+	{Loot_WEAPON,		3,		AKS74U_DZ},
+	{Loot_WEAPON,		3,		AK74_DZ},
 	{Loot_WEAPON,		4,		AKM_DZ},
-	{Loot_WEAPON,		1.5,	RPK_DZ},
+	{Loot_WEAPON,		4,		RPK74_DZ},
+	{Loot_WEAPON,		2,		RPK_DZ},
 	{Loot_WEAPON,		0.7,	PKM_DZ},
 	{Loot_WEAPON,		0.7,	SVD_DZ},
 	{Loot_WEAPON,		1,		M40A3_DZ},
@@ -30,7 +30,7 @@ CrashSiteRU[] =
 	
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
-	{Loot_WEAPON,		0.7,	Binocular_Vector},
+	{Loot_WEAPON,		1,		Binocular_Vector},
 	{Loot_WEAPON,		0.5,	NVGoggles},
 	
 	//Backpacks
@@ -40,19 +40,19 @@ CrashSiteRU[] =
 	{Loot_MAGAZINE,		2,		Skin_Sniper1_DZ},
 	
 	//Containers
-	{Loot_CONTAINER,	3,		DZ_MedBox, MedicalHigh, 10, 20},
-	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxRU1, 10, 20},		//545x39	AK74, RPK74
-	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxRU2, 10, 20},		//762x39	AK47
-	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxRU3, 5, 10},		//762x54r	SVD, PKM
+	{Loot_CONTAINER,	3,		DZ_MedBox, MedicalBox, 10, 20},
+	{Loot_CONTAINER,	2.3,	DZ_AmmoBoxRU, AmmoBoxRU1, 10, 20},		//545x39	AK74, RPK74
+	{Loot_CONTAINER,	1.7,	DZ_AmmoBoxRU, AmmoBoxRU2, 10, 20},		//762x39	AK47
+	{Loot_CONTAINER,	1,		DZ_AmmoBoxRU, AmmoBoxRU3, 5, 10},		//762x54r	SVD, PKM
 	
 	//Other
 	{Loot_MAGAZINE,		1,		PartVRotor},
 	{Loot_MAGAZINE,		2,		ItemCamonet},
-	{Loot_GROUP,		6,		AttachmentsEast},
-	{Loot_GROUP,		4,		AttachmentsWest},
+	{Loot_GROUP,		7,		AttachmentsEast},
+	{Loot_GROUP,		3,		AttachmentsWest},
 	
 	//Piles
-	{Loot_PILE,			20,		CrashSiteRUPile, 2, 4}
+	{Loot_PILE,			15,		CrashSiteRUPile, 2, 4}
 };
 
 CrashSiteRUPile[] =
@@ -64,7 +64,7 @@ CrashSiteRUPile[] =
 	{Loot_WEAPON,		4,		ItemMap},
 	
 	//Items
-	{Loot_WEAPON,		8,		FoodMRE},
+	{Loot_MAGAZINE,		8,		FoodMRE},
 	
 	//Other
 	{Loot_GROUP,		10,		Consumable},
@@ -79,13 +79,13 @@ CrashSiteRUPile[] =
 CrashSiteUS[] =
 {
 	//Weapons
-	{Loot_WEAPON,		6,		M9_DZ},
+	{Loot_WEAPON,		4,		M9_DZ},
 	{Loot_WEAPON,		6,		MP5_DZ},
-	{Loot_WEAPON,		4,		M4A1_DZ},
-	{Loot_WEAPON,		6,		M16A4_DZ},
-	{Loot_WEAPON,		1,		M249_DZ},
+	{Loot_WEAPON,		6,		M4A1_DZ},
+	{Loot_WEAPON,		8,		M16A4_DZ},
+	{Loot_WEAPON,		0.9,	M249_DZ},
 	{Loot_WEAPON,		0.7,	Mk48_DZ},
-	{Loot_WEAPON,		2,		M14_DZ},
+	{Loot_WEAPON,		1,		M14_DZ},
 	{Loot_WEAPON,		0.5,	DMR_DZ},
 	{Loot_WEAPON,		1,		M24_DZ},
 	
@@ -101,7 +101,7 @@ CrashSiteUS[] =
 	{Loot_MAGAZINE,		2,		Skin_Sniper1_DZ},
 	
 	//Containers
-	{Loot_CONTAINER,	3,		DZ_MedBox, MedicalHigh, 10, 20},
+	{Loot_CONTAINER,	3,		DZ_MedBox, MedicalBox, 10, 20},
 	{Loot_CONTAINER,	3,		DZ_AmmoBoxUS, AmmoBoxUS1, 10, 20},		//556x45	STANAG, M249
 	{Loot_CONTAINER,	2,		DZ_AmmoBoxUS, AmmoBoxUS2, 5, 10},		//762x51	DMR, M240
 	
@@ -111,7 +111,7 @@ CrashSiteUS[] =
 	{Loot_GROUP,		10,		AttachmentsWest},
 	
 	//Piles
-	{Loot_PILE,			20,		CrashSiteUSPile, 2, 4}
+	{Loot_PILE,			15,		CrashSiteUSPile, 2, 4}
 };
 
 CrashSiteUSPile[] =
@@ -123,7 +123,7 @@ CrashSiteUSPile[] =
 	{Loot_WEAPON,		4,		ItemMap},
 	
 	//Items
-	{Loot_WEAPON,		8,		FoodMRE},
+	{Loot_MAGAZINE,		8,		FoodMRE},
 	
 	//Other
 	{Loot_GROUP,		10,		Consumable},
@@ -138,16 +138,16 @@ CrashSiteUSPile[] =
 CrashSiteEU[] =
 {
 	//Weapons
-	{Loot_WEAPON,		6,		G17_DZ},
+	{Loot_WEAPON,		4,		G17_DZ},
 	{Loot_WEAPON,		6,		MP5_DZ},
 	{Loot_WEAPON,		5,		G36C_DZ},
 	{Loot_WEAPON,		5,		L85_Holo_DZ},
-	{Loot_WEAPON,		2,		G36K_Camo_DZ},
-	{Loot_WEAPON,		3,		G36A_Camo_DZ},
+	{Loot_WEAPON,		1.5,	G36K_Camo_DZ},
+	{Loot_WEAPON,		2.5,	G36A_Camo_DZ},
 	{Loot_WEAPON,		1,		FNFAL_DZ},
 	{Loot_WEAPON,		0.5,	FNFAL_ANPVS4_DZ},
 	{Loot_WEAPON,		0.7,	M240_DZ},
-	{Loot_WEAPON,		1,		L110A1_DZ},
+	{Loot_WEAPON,		0.9,	L110A1_DZ},
 	{Loot_WEAPON,		1,		M24_DZ},
 	
 	//Tools
@@ -162,17 +162,17 @@ CrashSiteEU[] =
 	{Loot_MAGAZINE,		2,		Skin_Sniper1_DZ},
 	
 	//Containers
-	{Loot_CONTAINER,	3,		DZ_MedBox, MedicalHigh, 10, 20},
+	{Loot_CONTAINER,	3,		DZ_MedBox, MedicalBox, 10, 20},
 	{Loot_CONTAINER,	3,		DZ_AmmoBoxUS, AmmoBoxEU1, 10, 20},		//556x45	G36, M249
-	{Loot_CONTAINER,	1.5,	DZ_AmmoBoxUS, AmmoBoxEU2, 5, 10},		//762x51	FAL, M240
+	{Loot_CONTAINER,	2,		DZ_AmmoBoxUS, AmmoBoxEU2, 5, 10},		//762x51	FAL, M240
 	
 	//Other
-	{Loot_MAGAZINE,		2,		PartVRotor},
-	{Loot_MAGAZINE,		3,		ItemCamonet},
-	{Loot_GROUP,		8,		AttachmentsWest},
+	{Loot_MAGAZINE,		1,		PartVRotor},
+	{Loot_MAGAZINE,		2,		ItemCamonet},
+	{Loot_GROUP,		10,		AttachmentsWest},
 	
 	//Piles
-	{Loot_PILE,			20,		CrashSiteEUPile, 2, 4}
+	{Loot_PILE,			15,		CrashSiteEUPile, 2, 4}
 };
 
 CrashSiteEUPile[] =
@@ -184,7 +184,7 @@ CrashSiteEUPile[] =
 	{Loot_WEAPON,		4,		ItemMap},
 	
 	//Items
-	{Loot_WEAPON,		8,		FoodMRE},
+	{Loot_MAGAZINE,		8,		FoodMRE},
 	
 	//Other
 	{Loot_GROUP,		10,		Consumable},
@@ -219,8 +219,8 @@ CrashSiteUN[] =
 	{Loot_MAGAZINE,		2,		Skin_Camo1_DZ},
 	
 	//Containers
-	{Loot_CONTAINER,	8,		DZ_MedBox, MedicalHigh, 10, 20},
-	{Loot_CONTAINER,	8,		DZ_CardboardBox, Consumable, 10, 20},
+	{Loot_CONTAINER,	10,		DZ_MedBox, MedicalBox, 10, 20},
+	{Loot_CONTAINER,	10,		DZ_CardboardBox, Consumable, 10, 20},
 	{Loot_CONTAINER,	2,		DZ_AmmoBoxUS, AmmoBoxUS1, 5, 15},		//556x45	STANAG, M249
 	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxRU1, 5, 15},		//545x39	AK74, RPK74
 	
@@ -243,10 +243,10 @@ CrashSiteUNPile[] =
 	{Loot_WEAPON,		6,		ItemMap},
 	
 	//Items
-	{Loot_WEAPON,		4,		FoodMRE},
+	{Loot_MAGAZINE,		4,		FoodMRE},
 	
 	//Other
 	{Loot_GROUP,		20,		Consumable},
 	{Loot_GROUP,		20,		AmmoUN},
-	{Loot_GROUP,		30,		MedicalLow}
+	{Loot_GROUP,		30,		MedicalHigh}
 };

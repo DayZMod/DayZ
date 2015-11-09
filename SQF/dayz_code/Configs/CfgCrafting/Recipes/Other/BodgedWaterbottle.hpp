@@ -4,7 +4,7 @@ class Blueprint_BodgedWaterbottle : Recipe {
 	input[] = 
 	{
 		{"equip_duct_tape","CfgMagazines",1},
-		{"ItemWaterbottleDmg","CfgMagazines",1}
+		{"ItemWaterBottleDmg","CfgMagazines",1}
 	};
 	output[] = 
 	{

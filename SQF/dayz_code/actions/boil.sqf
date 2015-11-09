@@ -1,12 +1,12 @@
 private ["_bottletext","_tin1text","_tin2text","_tintext","_hasbottleitem","_hastinitem","_qty","_dis","_sfx"];
 
-_bottletext = getText (configFile >> "CfgMagazines" >> "ItemWaterbottle" >> "displayName");
+_bottletext = getText (configFile >> "CfgMagazines" >> "ItemWaterBottle" >> "displayName");
 _tin1text = getText (configFile >> "CfgMagazines" >> "TrashTinCan" >> "displayName");
 _tin2text = getText (configFile >> "CfgMagazines" >> "ItemSodaEmpty" >> "displayName");
 _tintext = format["%1 / %2",_tin1text,_tin2text];
 _bottleInfected = false;
 
-_hasbottleitem = (("ItemWaterbottle" in magazines player) || ("ItemWaterBottleInfected" in magazines player) || ("ItemWaterBottleSafe" in magazines player));
+_hasbottleitem = (("ItemWaterBottle" in magazines player) || ("ItemWaterBottleInfected" in magazines player) || ("ItemWaterBottleSafe" in magazines player));
 _hastinitem = false;
 a_player_boil = true;
 
@@ -31,7 +31,7 @@ if (!_hastinitem) exitWith {cutText [format [localize "str_player_31",_tintext,l
 if (_hasbottleitem and _hastinitem) then {
 	_qty = 0;
 	_qty = _qty  + ({_x == "ItemWaterBottleInfected"} count magazines player);
-	_qty = _qty + ({_x == "ItemWaterbottle"} count magazines player);
+	_qty = _qty + ({_x == "ItemWaterBottle"} count magazines player);
 	_qty = _qty + ({_x == "ItemWaterBottleSafe"} count magazines player);
 	
 	player playActionNow "Medic";
@@ -49,17 +49,17 @@ if (_hasbottleitem and _hastinitem) then {
 			if ("ItemWaterBottleSafe" in magazines player) then {
 				player removeMagazine "ItemWaterBottleSafe";
 			} else {
-				player removeMagazine "ItemWaterbottle";
+				player removeMagazine "ItemWaterBottle";
 			};
 		};
 		
 		if ([0.1] call fn_chance) then {
-			player addMagazine "ItemWaterbottleDmg";
+			player addMagazine "ItemWaterBottleDmg";
 			//systemChat (localize ("str_waterbottle_broke"));
 			_msg = localize "str_waterbottle_broke";
 			_msg call dayz_rollingMessages;
 		} else {
-			player addMagazine "ItemWaterbottleBoiled";
+			player addMagazine "ItemWaterBottleBoiled";
 		};	
 
 	};

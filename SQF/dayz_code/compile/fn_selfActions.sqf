@@ -131,7 +131,7 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	_hasFuel5 = "ItemFuelcan" in magazines player;
 	_hasEmptyFuelCan = (("ItemJerrycanEmpty" in magazines player) || ("ItemFuelcanEmpty" in magazines player));
 	_hasToolbox = "ItemToolbox" in items player;
-	_hasbottleitem = (("ItemWaterbottle" in magazines player) || ("ItemWaterBottleInfected" in magazines player) || ("ItemWaterBottleSafe" in magazines player));
+	_hasbottleitem = (("ItemWaterBottle" in magazines player) || ("ItemWaterBottleInfected" in magazines player) || ("ItemWaterBottleSafe" in magazines player));
 	_isAlive = alive _cursorTarget;
 	_canmove = canmove _cursorTarget;
 	_text = getText (configFile >> "CfgVehicles" >> typeOf _cursorTarget >> "displayName");

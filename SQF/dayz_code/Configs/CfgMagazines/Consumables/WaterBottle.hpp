@@ -39,7 +39,7 @@ class ItemWaterBottleSafe : ItemWaterBottle
 	infectionChance = 0;
 };
 
-class ItemWaterBottleBoiled : ItemWaterbottle
+class ItemWaterBottleBoiled : ItemWaterBottle
 {
 	displayName = $STR_ITEMWATERBOTTLEBOILED_CODE_NAME;
 	descriptionShort = $STR_ITEMWATERBOTTLEBOILED_CODE_DESC;

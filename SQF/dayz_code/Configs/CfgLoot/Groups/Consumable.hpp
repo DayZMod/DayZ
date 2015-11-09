@@ -5,9 +5,9 @@ Consumable[] =
 	{Loot_MAGAZINE,		3,		ItemPainkiller},
 	{Loot_MAGAZINE,		3,		ItemAntibacterialWipe},*/
 	
-	{Loot_MAGAZINE,		3,		ItemWaterbottleUnfilled},
-	{Loot_MAGAZINE,		1,		ItemWaterbottleSafe},
-	{Loot_MAGAZINE,		1,		ItemWaterbottle},
+	{Loot_MAGAZINE,		3,		ItemWaterBottleUnfilled},
+	{Loot_MAGAZINE,		1,		ItemWaterBottleSafe},
+	{Loot_MAGAZINE,		1,		ItemWaterBottle},
 	
 	{Loot_MAGAZINE,		3,		ItemSodaCoke},
 	{Loot_MAGAZINE,		3,		ItemSodaPepsi},

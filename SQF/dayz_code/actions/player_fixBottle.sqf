@@ -2,7 +2,7 @@ private ["_bottle","_tape","_fixedBottle"];
 
 _bottle = _this;
 _tape = "equip_duct_tape";
-_fixedBottle = "ItemWaterbottleUnfilled";
+_fixedBottle = "ItemWaterBottleUnfilled";
 call gear_ui_init;
 closeDialog 0;
 
