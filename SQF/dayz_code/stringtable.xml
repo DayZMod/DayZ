@@ -171,12 +171,12 @@
 			<Czech>Zabalit stan</Czech>
 		</Key>
 		<Key ID="str_actions_self_10">
-			<English>Fill Jerrycan</English>
-			<German>Benzinkanister auffüllen</German>
-			<Russian>Наполнить канистры</Russian>
-			<Spanish>Llenar Bidones</Spanish>
-			<French>Remplir le(s) Jerrican(s)</French>
-			<Czech>Naplnit kanystr</Czech>
+			<English>Fill FuelCan</English>
+			<German>füllen Kraftstoffkanister</German>
+			<Russian>Заполните FuelCan</Russian>
+			<Spanish>Rellene FuelCan</Spanish>
+			<French>remplissez FuelCan</French>
+			<Czech>Vyplňte FuelCan</Czech>
 		</Key>
 		<Key ID="str_actions_switchmodel_fail">
 			<English>Can&apos;t count magazines!</English>
