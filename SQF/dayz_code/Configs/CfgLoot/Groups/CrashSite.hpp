@@ -64,7 +64,7 @@ CrashSiteRUPile[] =
 	{Loot_WEAPON,		4,		ItemMap},
 	
 	//Items
-	{Loot_WEAPON,		8,		FoodMRE},
+	{Loot_MAGAZINE,		8,		FoodMRE},
 	
 	//Other
 	{Loot_GROUP,		10,		Consumable},
@@ -123,7 +123,7 @@ CrashSiteUSPile[] =
 	{Loot_WEAPON,		4,		ItemMap},
 	
 	//Items
-	{Loot_WEAPON,		8,		FoodMRE},
+	{Loot_MAGAZINE,		8,		FoodMRE},
 	
 	//Other
 	{Loot_GROUP,		10,		Consumable},
@@ -184,7 +184,7 @@ CrashSiteEUPile[] =
 	{Loot_WEAPON,		4,		ItemMap},
 	
 	//Items
-	{Loot_WEAPON,		8,		FoodMRE},
+	{Loot_MAGAZINE,		8,		FoodMRE},
 	
 	//Other
 	{Loot_GROUP,		10,		Consumable},
@@ -243,7 +243,7 @@ CrashSiteUNPile[] =
 	{Loot_WEAPON,		6,		ItemMap},
 	
 	//Items
-	{Loot_WEAPON,		4,		FoodMRE},
+	{Loot_MAGAZINE,		4,		FoodMRE},
 	
 	//Other
 	{Loot_GROUP,		20,		Consumable},
