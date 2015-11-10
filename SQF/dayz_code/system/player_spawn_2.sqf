@@ -153,7 +153,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	if (diag_ticktime - dayz_panicCooldown < 120) then {
 		_hunger = _hunger * 2;
 	};
-	dayz_hunger = dayz_hunger + (_hunger / 80); //60 Updated to 80
+	dayz_hunger = dayz_hunger + (_hunger / 60); //60 Updated to 80
 	dayz_hunger = (dayz_hunger min SleepFood) max 0;
 
 	if (dayz_hunger >= SleepFood) then {
@@ -167,7 +167,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	if (_refObj == player) then {
 		_thirst = (_speed + 4) * 3;
 	};
-	dayz_thirst = dayz_thirst + (_thirst / 120) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
+	dayz_thirst = dayz_thirst + (_thirst / 85) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
 	dayz_thirst = (dayz_thirst min SleepWater) max 0;
 
 	if (dayz_thirst >= SleepWater) then {
@@ -290,9 +290,8 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	if (dayz_unsaved or ((diag_ticktime - dayz_lastSave) > 300)) then {
 		if ((diag_ticktime - dayz_lastSave) > _saveTime) then {
 		
-		//Removed due to player sync returning []
-		//	PVDZ_plr_Save = [player,nil,false,dayz_playerAchievements];
-		//	publicVariableServer "PVDZ_plr_Save";
+			PVDZ_plr_Save = [player,nil,false,dayz_playerAchievements];
+			publicVariableServer "PVDZ_plr_Save";
 			
 			PVDZ_serverStoreVar = [player,"Achievements",dayz_playerAchievements];
 			publicVariableServer "PVDZ_serverStoreVar";
