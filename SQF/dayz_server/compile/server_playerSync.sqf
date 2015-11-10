@@ -82,25 +82,6 @@ if (_characterID != "0") then {
 		_character setVariable ["posForceUpdate",false,true];
 	};
 	
-	//Added by delpi as a temp system while we find the [] sync issue for mags.
-	
-	 private ["_magCount"];
-    _magCount = 1;
-    if (_isNewGear) then {
-        _magCount = count _magazines;
-        if (_magCount > 0) then {_magCount = count (_magazines select 0);};
-    };
-	
-    if (magCount == 0) then {
-        _isNewGear = false;
-    };
-	
-	if (_isNewGear) then {
-		 if (typeName _magazines == "ARRAY") then {
-			_playerGear = [weapons _character, _magazines select 0, _magazines select 1];
-		};
-	};
-	
 	//Check player backpack each time sync runs
 	_backpack = unitBackpack _character;
 	if (!isNull _backpack) then {
