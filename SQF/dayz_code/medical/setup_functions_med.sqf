@@ -28,8 +28,9 @@ fnc_usec_pitchWhine = {
 	};
 };
 
-//Modifyed by Alby
-fnc_usec_damageUnconscious = {
+/*
+//Old system 1.8.6
+fnc_usec_damageUnconscious1 = {
 	private["_unit","_damage"];
 	_unit = _this select 0;
 	_damage = _this select 1;
@@ -39,6 +40,40 @@ fnc_usec_damageUnconscious = {
 	if (_unit == player) then {
 		r_player_timeout = 120 min (round((((random 2) max 0.1) * _damage) * 20));
 		r_player_unconscious = true;
+	};
+};
+*/
+fnc_usec_damageUnconscious = {
+	private["_unit","_damage"];
+	_unit = _this select 0;
+	_damage = _this select 1;
+	
+	diag_log format["fnc_usec_damageUnconscious: %1,%2,%3",_unit,_damage, player];
+	
+	_inVehicle = (vehicle _unit != _unit);
+	if (_unit == player) then {
+		r_player_timeout = 120 min (round((((random 2) max 0.1) * _damage) * 20));
+		r_player_unconscious = true;
+		
+		player setVariable["medForceUpdate",true];
+		player setVariable ["unconsciousTime", r_player_timeout, true];
+	};
+	
+	if (_inVehicle) then {
+		_unit spawn {
+			private["_veh","_unit"];
+			_veh = vehicle _this;
+			_unit = _this;
+			waitUntil{(((getPosATL _veh select 2 < 1) and (speed _veh < 1)) or (!r_player_unconscious))};
+			if (r_player_unconscious) then {
+				_unit action ["eject", _veh];
+				waitUntil{((vehicle _this) != _this)};
+				sleep 1;
+				_unit playActionNow "Die";
+			};
+		};
+	} else {
+		_unit playActionNow "Die";
 	};
 };
 
