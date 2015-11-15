@@ -23,8 +23,8 @@ class RPK_DZ : AK_47_M
 	
 	class Attachments
 	{
-		Attachment_Kobra = "RPK_Kobra_DZ";
-		Attachment_PSO1 = "RPK_PSO1_DZ";
+		Attachment_Kobra = RPK_Kobra_DZ;
+		Attachment_PSO1 = RPK_PSO1_DZ;
 	};
 	
 	class ItemActions {};
@@ -43,6 +43,8 @@ class RPK_Kobra_DZ : RPK_DZ
 	distanceZoomMin = 200;
 	distanceZoomMax = 200;
 	//kobra zeroing end
+	
+	class Attachments {};
 	
 	class ItemActions
 	{
@@ -105,6 +107,8 @@ class RPK_PSO1_DZ : RPK_Kobra_DZ
 		};
 	};
 	//PSO-1 end
+	
+	class Attachments {};
 	
 	class ItemActions
 	{
