@@ -2,11 +2,15 @@ class MetalFence_base: DZ_buildables
 {
 	scope = 1;
 	canbevertical = 1;
+	armor = 1000;
 	class Upgrade {
 		requiredParts[] = {"ItemRSJ", "ItemStone", "ItemStone"}; // copy of DIY_metal upgrade section
 		require[] = {"ItemEtool"};
 	};
-	   
+	class Maintenance {
+		requiredTools[] = {"ItemToolbox"};
+		requiredParts[] = {"ItemMetalSheet","ItemScrews"};
+	};   
 }; 	
 class MetalFence_ghost: MetalFence_base
 {
@@ -78,6 +82,7 @@ class MetalFence_thirdpanel: MetalFence_halfpanel
 class MetalFence_1: MetalFence_thirdpanel
 {
 	scope = 2;
+	armor = 1000;
 	model = "z\addons\dayz_buildings\models\metal_fence1.p3d";
 	displayName = $STR_BLD_name_MetalFence_1;//"Metal Fence Level 1"
 	class Upgrade {
@@ -97,6 +102,7 @@ class MetalFence_1: MetalFence_thirdpanel
 class MetalFence_2: MetalFence_1
 {
 		scope = 2;
+		armor = 1250;
 		model = "z\addons\dayz_buildings\models\metal_fence2.p3d";
 		displayName = $STR_BLD_name_MetalFence_2;//"Metal Fence Level 2"
 	class Upgrade {
@@ -117,6 +123,7 @@ class MetalFence_2: MetalFence_1
 class MetalFence_3: MetalFence_2
 {
 		scope = 2;
+		armor = 1500;
 		model = "z\addons\dayz_buildings\models\metal_fence3.p3d";
 		displayName = $STR_BLD_name_MetalFence_3;//"Metal Fence Level 3"
 	class Upgrade {
@@ -137,6 +144,7 @@ class MetalFence_3: MetalFence_2
 class MetalFence_4: MetalFence_3
 {
 		scope = 2;
+		armor = 1750;
 		model = "z\addons\dayz_buildings\models\metal_fence4.p3d";
 		displayName = $STR_BLD_name_MetalFence_4;//"Metal Fence Level 4"
 	class Upgrade {
@@ -155,6 +163,7 @@ class MetalFence_4: MetalFence_3
 class MetalFence_5: MetalFence_4
 {
 		scope = 2;
+		armor = 2000;
 		model = "z\addons\dayz_buildings\models\metal_fence5.p3d";
 		displayName = $STR_BLD_name_MetalFence_5;//"Metal Fence Level 5"
 	class Upgrade {
@@ -175,6 +184,7 @@ class MetalFence_5: MetalFence_4
 class MetalFence_6: MetalFence_5
 {
 		scope = 2;
+		armor = 2250;
 		model = "z\addons\dayz_buildings\models\metal_fence6.p3d";
 		displayName = $STR_BLD_name_MetalFence_6;//"Metal Fence Level 6"
 	class Upgrade {
@@ -195,6 +205,7 @@ class MetalFence_6: MetalFence_5
 class MetalFence_7: MetalFence_6 
 {
 	scope = 2;
+	armor = 2500;
 	model = "z\addons\dayz_buildings\models\metal_fence7.p3d";
 	displayName = $STR_BLD_name_MetalFence_7;//"Metal Fence Level 7"
 	ladders[]={{"ladderstart","ladderend"}};
