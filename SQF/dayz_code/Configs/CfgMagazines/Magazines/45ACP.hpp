@@ -1,7 +1,7 @@
 class 7Rnd_45ACP_1911: CA_Magazine
 {
 	model = "\dayz_equip\models\ammo_1911.p3d";
-	picture = "\dayz_equip\textures\equip_1911_ca.paa";
+	//picture = "\dayz_equip\textures\equip_1911_ca.paa";
 	
 	cartridgeName = "45ACP";
 	
@@ -22,7 +22,7 @@ class 7Rnd_45ACP_1911: CA_Magazine
 class 6Rnd_45ACP: CA_Magazine
 {
 	model = "\dayz_equip\models\ammo_acp45.p3d";
-	picture = "\dayz_equip\textures\equip_45acp_ca.paa";
+	//picture = "\dayz_equip\textures\equip_45acp_ca.paa";
 	
 	cartridgeName = "45ACP";
 	
