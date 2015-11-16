@@ -107,7 +107,7 @@ if (isServer) then {
 		PVDZ_receiveUnconscious = [_owner,_duration];
 		(owner _owner) publicVariableClient "PVDZ_receiveUnconscious";
 	};
-/*
+
 	"PVDZ_gridsActive" addPublicVariableEventHandler {
 		_gridref = ((_this select 1) select 0);
 		_gridloc = ((_this select 1) select 1);
@@ -129,7 +129,7 @@ if (isServer) then {
 		};
 		diag_log format ["%1, %2", _gridref, dayz_gridsActive];
 	};
-*/
+
 
 	"PVDZ_Server_Simulation" addPublicVariableEventHandler {
 		_agent = ((_this select 1) select 0);
