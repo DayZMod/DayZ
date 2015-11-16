@@ -387,11 +387,11 @@ if (!isNull _cursorTarget and !_inVehicle and (player distance _cursorTarget < 4
 	
 	// House locking and unlocking
 	_isHouse = (typeOf cursorTarget) in ["SurvivorWorkshopAStage5", "SurvivorWorkshopBStage5", "SurvivorWorkshopCStage5"];
-	_isGate = (typeOf cursorTarget) in ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4"];
-	_isFence = (typeOf cursorTarget) in ["WoodenFence_1","WoodenFence_2","WoodenFence_3","WoodenFence_4","WoodenFence_5","WoodenFence_6"];
+	_isGate = (typeOf cursorTarget) in ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4",MetalGate_1","MetalGate_2","MetalGate_3","MetalGate_4"];
+	_isFence = (typeOf cursorTarget) in ["WoodenFence_1","WoodenFence_2","WoodenFence_3","WoodenFence_4","WoodenFence_5","WoodenFence_6","MetalFence_1,"MetalFence_2","MetalFence_3","MetalFence_4","MetalFence_5","MetalFence_6","MetalFence_7"];
 
 	//Only the owners can lock the gates
-	_isLockableGate = (typeOf cursorTarget) in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"];
+	_isLockableGate = (typeOf cursorTarget) in ["WoodenGate_2","WoodenGate_3","WoodenGate_4","MetalGate_2","MetalGate_3","MetalGate_4"];
 	_isUnlocked = cursorTarget getVariable ["isOpen","0"] == "1";
 
 	//Allow the gates to be opened when not locked by anyone
