@@ -100,6 +100,7 @@ switch (_lootInfo select 0) do
 		_vehicle setPosATL _p;
 		#else
 		_vehicle = createVehicle [_lootInfo select 1, _this select 1, [], 0, "CAN_COLLIDE"];
+		_vehicle setPosATL (_this select 1);
 		#endif
 	};
 	
