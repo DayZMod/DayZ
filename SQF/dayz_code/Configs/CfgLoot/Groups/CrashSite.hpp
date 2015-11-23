@@ -36,8 +36,8 @@ CrashSiteRU[] =
 	//Backpacks
 	
 	//Clothing
-	{Loot_MAGAZINE,		4,		Skin_Camo1_DZ},
-	{Loot_MAGAZINE,		2,		Skin_Sniper1_DZ},
+	{Loot_MAGAZINE,		2.5,	Skin_Camo1_DZ},
+	{Loot_MAGAZINE,		1.5,	Skin_Sniper1_DZ},
 	
 	//Containers
 	{Loot_CONTAINER,	3,		DZ_MedBox, MedicalBox, 10, 20},
@@ -97,8 +97,8 @@ CrashSiteUS[] =
 	//Backpacks
 	
 	//Clothing
-	{Loot_MAGAZINE,		4,		Skin_Camo1_DZ},
-	{Loot_MAGAZINE,		2,		Skin_Sniper1_DZ},
+	{Loot_MAGAZINE,		2.5,	Skin_Camo1_DZ},
+	{Loot_MAGAZINE,		1.5,	Skin_Sniper1_DZ},
 	
 	//Containers
 	{Loot_CONTAINER,	3,		DZ_MedBox, MedicalBox, 10, 20},
@@ -158,8 +158,8 @@ CrashSiteEU[] =
 	//Backpacks
 	
 	//Clothing
-	{Loot_MAGAZINE,		4,		Skin_Camo1_DZ},
-	{Loot_MAGAZINE,		2,		Skin_Sniper1_DZ},
+	{Loot_MAGAZINE,		2.5,	Skin_Camo1_DZ},
+	{Loot_MAGAZINE,		1.5,	Skin_Sniper1_DZ},
 	
 	//Containers
 	{Loot_CONTAINER,	3,		DZ_MedBox, MedicalBox, 10, 20},
