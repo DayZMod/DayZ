@@ -25,7 +25,7 @@ class CrashSite_RU : CrashSite
 {
 	scope = public;
 	model = "\z\addons\dayz_communityassets\crashsite\mi8\mi8_ru.p3d";
-	lootParams[] = {{0.4, -4.5, 0}, -7, 2.5, 5, 7};
+	lootParams[] = {{0.6, -4.5, 0}, -7, 2.5, 5, 7};
 };
 
 class CrashSite_UN : CrashSite_RU
