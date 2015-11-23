@@ -78,6 +78,6 @@ Author: Foxy
 
 //Rotates the vector horizontally by the specified angle in degrees
 #define Vector_Rotate(v, deg) ([v, deg] call dz_fn_vector_rotate)
-#define Vector_Rotate_Fast(v, deg) [Vector_X(v) * cos (deg) - Vector_Y(v) * sin (deg), Vector_X(v) * sin (deg) - Vector_Y(v) * cos (deg), Vector_Z(v)]
+#define Vector_Rotate_Fast(v, deg) [Vector_X(v) * cos (deg) - Vector_Y(v) * sin (deg), Vector_X(v) * sin (deg) + Vector_Y(v) * cos (deg), Vector_Z(v)]
 
 #endif
