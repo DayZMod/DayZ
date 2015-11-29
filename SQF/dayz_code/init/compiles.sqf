@@ -548,7 +548,7 @@ init_keyboard = {
 };
 
 dayz_reduceItems = {
-    private ["_item", "_class"];
+    private ["_item", "_class","_amount","_qtyRemaining"];
 //Item in current inventory.
 	_item = _this select 0;
 //Class type to use.
