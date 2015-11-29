@@ -76,8 +76,12 @@ Author: Foxy
 #define Vector_FromDir(deg) ((deg) call dz_fn_vector_fromDir)
 #define Vector_FromDir_Fast(deg) [sin (deg), cos (deg), 0]
 
-//Rotates the vector horizontally by the specified angle in degrees
-#define Vector_Rotate(v, deg) ([v, deg] call dz_fn_vector_rotate)
-#define Vector_Rotate_Fast(v, deg) [Vector_X(v) * cos (deg) - Vector_Y(v) * sin (deg), Vector_X(v) * sin (deg) + Vector_Y(v) * cos (deg), Vector_Z(v)]
+//Rotates the vector around the global Z (up) axis by the specified angle in degrees
+#define Vector_Rotate2D(v, deg) ([v, deg] call dz_fn_vector_rotate2d)
+#define Vector_Rotate2D_Fast(v, deg) [Vector_X(v) * cos -(deg) - Vector_Y(v) * sin -(deg), Vector_X(v) * sin -(deg) + Vector_Y(v) * cos -(deg), Vector_Z(v)]
+
+//Rotates the vector around the specified axis by the specified angle in degrees, in three dimensions.
+#define Vector_Rotate3D(v, u, deg) ([v, u, deg] call dz_fn_vector_rotate3d)
+#define Vector_Rotate3D_Fast(v, u, deg) [((v)select0)*(((u)select0)^2*(1-cos(deg))+cos(deg))+((v)select1)*(((u)select0)*((u)select1)*(1-cos(deg))-((u)select2)*sin(deg))+((v)select2)*(((u)select0)*((u)select2)*(1-cos(deg))+((u)select1)*sin(deg)),((v)select0)*(((u)select1)*((u)select0)*(1-cos(deg))+((u)select2)*sin(deg))+((v)select1)*(((u)select1)^2*(1-cos(deg))+cos(deg))+((v)select2)*(((u)select1)*((u)select2)*(1-cos(deg))-((u)select0)*sin(deg)),((v)select0)*(((u)select2)*((u)select0)*(1-cos(deg))-((u)select1)*sin(deg))+((v)select1)*(((u)select2)*((u)select1)*(1-cos(deg))+((u)select0)*sin(deg))+((v)select2)*(((u)select2)^2*(1-cos(deg))+cos(deg))]
 
 #endif
