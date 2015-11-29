@@ -11,7 +11,7 @@ class Military : Default
 		"z_new_worker3",
 		"z_new_worker4"
 	};
-	lootChance = 0.2;
+	lootChance = 0.4;
 	lootGroup = Military;
 };
 
@@ -26,7 +26,7 @@ class MilitarySpecial : Military
 		"z_new_worker3",
 		"z_new_worker4"
 	};
-	lootChance = 0.1;
+	lootChance = 0.4;
 	lootGroup = MilitarySpecial;
 };
 

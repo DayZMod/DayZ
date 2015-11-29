@@ -91,7 +91,7 @@ switch (_lootInfo select 0) do
 		_b = boundingBox _vehicle;
 		_b = ((_b select 1) select 1) - ((_b select 0) select 1);
 		
-		_d = Vector_Rotate(Vector_NORTH, random 360);
+		_d = Vector_Rotate2D(Vector_NORTH, random 360);
 		
 		_p = Vector_Subtract(_this select 1, Vector_Multiply_Fast(_d, _b));
 		_p = Vector_SetZ(_p, Vector_Z(_p) + Vector_Z(getPosATL _vehicle));
