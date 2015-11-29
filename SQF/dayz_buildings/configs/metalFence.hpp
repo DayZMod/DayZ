@@ -13,7 +13,7 @@ class MetalFence_base: DZ_buildables
 	};
 	
 	class eventHandlers {
-		HandleDamage = "{if ((_this select 4) == 'PipeBomb') then {_this select 2}}";
+		HandleDamage = "if ((_this select 4) == 'PipeBomb') then {_this select 2} else { 0 };";
 	};
 }; 	
 class MetalFence_ghost: MetalFence_base
