@@ -465,7 +465,7 @@ switch (dayz_presets) do {
 	};
 	case "Elite": { //Elite
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
-		dayz_ghostTimer = 600; //Sets how long in seconds a player must be dissconnected before being able to login again.
+		dayz_ghostTimer = 60; //Sets how long in seconds a player must be dissconnected before being able to login again.
 		dayz_spawnselection = 0; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
 		dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
 		dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
@@ -480,7 +480,7 @@ switch (dayz_presets) do {
 	};
     default { //Vanilla
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
-		dayz_ghostTimer = 300; //Sets how long in seconds a player must be disconnected before being able to login again.
+		dayz_ghostTimer = 30; //Sets how long in seconds a player must be disconnected before being able to login again.
 		dayz_spawnselection = 1; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
 		dayz_spawncarepkgs_clutterCutter = 2; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
 		dayz_spawnCrashSite_clutterCutter = 2;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
