@@ -1,22 +1,22 @@
 Military[] =
 {
 	//Pistols
-	{Loot_WEAPON,		7,		Makarov_DZ},
+	{Loot_WEAPON,		6,		Makarov_DZ},
 	{Loot_WEAPON,		5,		M1911_DZ},
-	{Loot_WEAPON,		4,		M9_DZ},
+	{Loot_WEAPON,		3,		M9_DZ},
 	{Loot_WEAPON,		2,		G17_DZ},
 	
 	//Submachineguns
-	{Loot_WEAPON,		3,		PDW_DZ},
+	{Loot_WEAPON,		4,		PDW_DZ},
 	{Loot_WEAPON,		8,		Bizon_DZ},
-	{Loot_WEAPON,		8,		MP5_DZ},
+	{Loot_WEAPON,		6,		MP5_DZ},
 	
 	//Assault rifles
 	{Loot_WEAPON,		6,		M16A2_DZ},
-	{Loot_WEAPON,		5,		M16A2_GL_DZ},
-	{Loot_WEAPON,		4,		M16A4_DZ},
-	{Loot_WEAPON,		3,		M4A1_DZ},
-	{Loot_WEAPON,		3,		G36C_DZ},
+	{Loot_WEAPON,		4,		M16A2_GL_DZ},
+	{Loot_WEAPON,		3,		M16A4_DZ},
+	{Loot_WEAPON,		1,		M4A1_DZ},
+//	{Loot_WEAPON,		3,		G36C_DZ},
 	{Loot_WEAPON,		6,		AK74_DZ},
 	{Loot_WEAPON,		6,		AKS74U_DZ},
 	{Loot_WEAPON,		2,		AKM_DZ},
@@ -50,13 +50,13 @@ Military[] =
 	//Other
 	{Loot_MAGAZINE,		2,		FoodMRE},
 	{Loot_MAGAZINE,		5,		ItemSandbag},
-	{Loot_PILE,			10,		AmmoMilitaryLow, 1, 2},
+	{Loot_PILE,			15,		AmmoMilitaryLow, 1, 2},
 	{Loot_GROUP,		3,		AmmoMilitaryHigh},
 	{Loot_GROUP,		3,		AttachmentsGeneric},
-	{Loot_GROUP,		5,		AttachmentsEast},
-	{Loot_PILE,			3,		MedicalLow, 1, 2},
+	{Loot_GROUP,		8,		AttachmentsEast},
+	{Loot_PILE,			8,		MedicalLow, 1, 2},
 	{Loot_PILE,			8,		Trash, 1, 2},
-	{Loot_PILE,			14,		Consumable, 1, 2},
+	{Loot_PILE,			8,		Consumable, 1, 2},
 	{Loot_GROUP,		14,		Generic}
 };
 
