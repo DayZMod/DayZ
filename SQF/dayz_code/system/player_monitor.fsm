@@ -33,7 +33,7 @@ item28[] = {"Display_Ready",4,218,-175.000000,1200.000000,-75.000000,1250.000000
 item29[] = {"Preload_Display",2,250,-75.000000,1250.000000,25.000000,1300.000000,0.000000,"Preload" \n "Display"};
 item30[] = {"Preload_Done",4,218,-175.000000,1300.000000,-75.000000,1350.000000,0.000000,"Preload" \n "Done"};
 item31[] = {"Initialize",2,250,-75.000000,1350.000000,25.000000,1400.000000,0.000000,"Initialize"};
-item32[] = {"Finish",1,4346,-75.000000,1525.000000,25.000000,1575.000000,0.000000,"Finish"};
+item32[] = {"Finish",1,250,-75.000000,1625.000000,25.000000,1675.000000,0.000000,"Finish"};
 item33[] = {"no_Time_Date",4,218,125.000000,950.000000,225.000000,1000.000000,0.000000,"no Time/Date"};
 item34[] = {"sleep",4,218,525.000000,150.000000,625.000000,200.000000,0.000000,"sleep"};
 item35[] = {"sleep",4,218,525.000000,550.000000,625.000000,600.000000,0.000000,"sleep"};
@@ -107,6 +107,8 @@ item102[] = {"Sleep",4,218,-550.000000,325.000000,-450.000000,375.000000,0.00000
 item103[] = {"",7,210,-279.000000,371.000000,-271.000000,379.000000,0.000000,""};
 item104[] = {"retry_Login",4,218,-250.000000,350.000000,-150.000000,400.000000,0.000000,"retry Login"};
 item105[] = {"",7,210,-379.000031,471.000000,-371.000000,479.000000,0.000000,""};
+item106[] = {"Finish_1",2,4346,-75.000000,1500.000000,25.000000,1550.000000,0.000000,"Finish"};
+item107[] = {"dayz_preloadFini",4,218,50.000000,1550.000000,150.000000,1600.000000,0.000000,"dayz_preloadFinished"};
 link0[] = {0,1};
 link1[] = {0,5};
 link2[] = {1,2};
@@ -168,7 +170,7 @@ link57[] = {49,98};
 link58[] = {51,42};
 link59[] = {52,33};
 link60[] = {52,51};
-link61[] = {53,32};
+link61[] = {53,106};
 link62[] = {54,55};
 link63[] = {54,56};
 link64[] = {55,74};
@@ -232,8 +234,10 @@ link121[] = {102,96};
 link122[] = {103,104};
 link123[] = {104,11};
 link124[] = {105,96};
-globals[] = {25.000000,1,0,0,0,640,480,1,255,6316128,1,-485.536743,293.319092,1709.988037,962.336365,624,599,1};
-window[] = {2,-1,-1,-1,-1,601,75,1095,75,3,642};
+link125[] = {106,107};
+link126[] = {107,32};
+globals[] = {25.000000,1,0,0,0,640,480,1,257,6316128,1,-515.955017,323.737183,1743.976196,939.271118,624,598,1};
+window[] = {2,-1,-1,-32000,-32000,682,156,1176,156,3,642};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -796,7 +800,7 @@ class FSM
           to="Position";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"!r_player_dead/* and !_isNew*/"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"diag_log 'player_forceSave called from fsm';call player_forceSave;"/*%FSM</ACTION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
         /*%FSM<LINK "Dead_Player">*/
@@ -1050,7 +1054,6 @@ class FSM
        "r_player_bloodtype = player getVariable [""blood_type"", false];" \n
        "r_player_rh = player getVariable [""rh_factor"", false];" \n
        "" \n
-       "" \n
        "dayz_musicH = [] spawn player_music;" \n
        "dayzGearSave = true;" \n
        "dayz_slowCheck = 	[] spawn player_spawn_2;" \n
@@ -1076,7 +1079,7 @@ class FSM
         class True
         {
           priority = 0.000000;
-          to="Finish";
+          to="Finish_1";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -1089,20 +1092,8 @@ class FSM
     class Finish
     {
       name = "Finish";
-      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Finish'];};PVDZ_plr_LoginRecord = [_playerUID,_charID,0];" \n
-       "progressLoadingScreen 1;" \n
-       "publicVariableServer ""PVDZ_plr_LoginRecord"";" \n
-       "diag_log ['Sent to server: PVDZ_plr_LoginRecord', PVDZ_plr_LoginRecord]; " \n
-       "_world = toUpper(worldName); //toUpper(getText (configFile >> ""CfgWorlds"" >> (worldName) >> ""description""));" \n
-       "_nearestCity = nearestLocations [getPos player, [""NameCityCapital"",""NameCity"",""NameVillage"",""NameLocal""],1000];" \n
-       "Dayz_logonTown = ""Wilderness"";" \n
-       "if (count _nearestCity > 0) then {Dayz_logonTown = text (_nearestCity select 0)};" \n
-       "[_world,Dayz_logonTown,format[localize ""str_player_06"",dayz_Survived]] spawn { sleep 5; _this spawn BIS_fnc_infoText;};" \n
-       "Dayz_loginCompleted = true;" \n
-       "" \n
-       "//Other Counters" \n
-       "	dayz_currentGlobalAnimals = count entities ""CAAnimalBase"";" \n
-       "	dayz_currentGlobalZombies = count entities ""zZombie_Base"";"/*%FSM</STATEINIT""">*/;
+      init = /*%FSM<STATEINIT""">*/"diag_log 'player_forceSave called from fsm';" \n
+       "call player_forceSave;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -1113,10 +1104,23 @@ class FSM
     class Enable_Sim
     {
       name = "Enable_Sim";
-      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Enable_Sim'];}; _myAssets = getText(configFile >> ""CfgPatches"" >> ""dayz_communityassets"" >> ""dayzVersion"");" \n
-       "//Change getNumber to getText if the pbo got updated in 1.8.1" \n
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Enable_Sim'];};" \n
+       "" \n
+       "_myAssets = getText(configFile >> ""CfgPatches"" >> ""dayz_communityassets"" >> ""dayzVersion"");" \n
        "_mySfx = getNumber(configFile >> ""CfgPatches"" >> ""dayz_sfx"" >> ""dayzVersion"");" \n
        "_myAnim = getNumber(configFile >> ""CfgPatches"" >> ""dayz_anim"" >> ""dayzVersion"");" \n
+       "" \n
+       "/*" \n
+       "_myCCrossbow = getNumber(configFile >> ""CfgPatches"" >> ""community_crossbow"" >> ""dayzVersion"");" \n
+       "_myDayz = getNumber(configFile >> ""CfgPatches"" >> ""dayz"" >> ""dayzVersion"");" \n
+       "_myBuildings = getNumber(configFile >> ""CfgPatches"" >> ""dayz_buildings"" >> ""dayzVersion"");" \n
+       "_myCWeapons = getNumber(configFile >> ""CfgPatches"" >> ""dayz_communityweapons"" >> ""dayzVersion"");" \n
+       "_myEquip = getNumber(configFile >> ""CfgPatches"" >> ""dayz_equip"" >> ""dayzVersion"");" \n
+       "_mySFX = getNumber(configFile >> ""CfgPatches"" >> ""dayz_sfx"" >> ""dayzVersion"");" \n
+       "_myVechicles = getNumber(configFile >> ""CfgPatches"" >> ""dayz_vehicles"" >> ""dayzVersion"");" \n
+       "_myWeapons = getNumber(configFile >> ""CfgPatches"" >> ""dayz_weapons"" >> ""dayzVersion"");" \n
+       "*/" \n
+       "" \n
        "if (_debug == 1) then {" \n
        "	diag_log format[""DayZ Version: DayZ_Anim: %1 DayZ_SFX: %2 DayZ_Assets: %3"",_myAnim, _mySfx,_myAssets];" \n
        "};"/*%FSM</STATEINIT""">*/;
@@ -1759,6 +1763,40 @@ class FSM
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 1"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"_timeOut = _timeOut - 1;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Finish_1">*/
+    class Finish_1
+    {
+      name = "Finish_1";
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Finish'];};PVDZ_plr_LoginRecord = [_playerUID,_charID,0];" \n
+       "progressLoadingScreen 1;" \n
+       "publicVariableServer ""PVDZ_plr_LoginRecord"";" \n
+       "diag_log ['Sent to server: PVDZ_plr_LoginRecord', PVDZ_plr_LoginRecord]; " \n
+       "_world = toUpper(worldName); //toUpper(getText (configFile >> ""CfgWorlds"" >> (worldName) >> ""description""));" \n
+       "_nearestCity = nearestLocations [getPos player, [""NameCityCapital"",""NameCity"",""NameVillage"",""NameLocal""],1000];" \n
+       "Dayz_logonTown = ""Wilderness"";" \n
+       "if (count _nearestCity > 0) then {Dayz_logonTown = text (_nearestCity select 0)};" \n
+       "[_world,Dayz_logonTown,format[localize ""str_player_06"",dayz_Survived]] spawn { sleep 5; _this spawn BIS_fnc_infoText;};" \n
+       "Dayz_loginCompleted = true;" \n
+       "" \n
+       "//Other Counters" \n
+       "	dayz_currentGlobalAnimals = count entities ""CAAnimalBase"";" \n
+       "	dayz_currentGlobalZombies = count entities ""zZombie_Base"";"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "dayz_preloadFini">*/
+        class dayz_preloadFini
+        {
+          priority = 0.000000;
+          to="Finish";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"dayz_preloadFinished"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
