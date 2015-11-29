@@ -36,7 +36,6 @@ _state = 		[];
 _direction =	0;
 _model =		"";
 _newUnit =		objNull;
-_botActive = false;
 
 if (_playerID == "") then {
 	_playerID = getPlayerUID _playerObj;
@@ -106,8 +105,6 @@ _isNew = 		count _primary < 6; //_result select 1;
 _charID = 		_primary select 2;
 _randomSpot = false;
 
-
-
 //diag_log ("LOGIN RESULT: " + str(_primary));
 
 /* PROCESS */
@@ -148,9 +145,6 @@ if (!_isNew) then {
 	_key call server_hiveWrite;
 
 };
-#ifdef LOGIN_DEBUG
-diag_log ("LOGIN LOADED: " + str(_playerObj) + " Type: " + (typeOf _playerObj));
-#endif
 
 _isHiveOk = false;	//EDITED
 if (_hiveVer >= dayz_hiveVersionNo) then {
@@ -169,6 +163,9 @@ if (_endMission) exitwith {
 	PVCDZ_plr_Ghost = [_remaining];
 	(owner _playerObj) publicVariableClient "PVCDZ_plr_Ghost";
 };
+
+//Record Player Login/LogOut
+[_playerID,_charID,1] call dayz_recordLogin;
 
 PVCDZ_plr_PlayerAccepted = [_playerName,diag_ticktime];
 (owner _playerObj) publicVariableClient "PVCDZ_plr_PlayerAccepted";

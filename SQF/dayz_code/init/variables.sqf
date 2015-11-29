@@ -496,7 +496,7 @@ switch (dayz_presets) do {
 };
 
 //start achievements_init
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\achievements_init.sqf";
+//call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\achievements_init.sqf";
 
 if(isServer) then {
 	dayz_players = [];

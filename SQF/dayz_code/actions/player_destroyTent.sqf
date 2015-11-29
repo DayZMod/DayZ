@@ -55,7 +55,7 @@ player addMagazine _emptycan;
 //Match system ** Needs redoing 
 //Select random matchbox
 _randomBoxMatches = _matchArray call BIS_fnc_selectRandom; 
-_qtyRemaining = getText (configFile >> "cfgWeapons" >> _randomBoxMatches >> "qtyRemaining");
+_qtyRemaining = getText (configFile >> "cfgWeapons" >> _randomBoxMatches >> "Ignators" >> "qtyRemaining");
 
 switch _randomBoxMatches do {
 	case "ItemMatchbox" : { 

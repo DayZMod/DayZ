@@ -1,48 +1,47 @@
-#include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
 private ["_playerObj","_myGroup","_playerUID","_playerPos","_playerName"];
+
 _playerUID = _this select 0;
 _playerName = _this select 1;
 _playerObj = nil;
 _playerPos = [];
+
+//Lets search all playerable units looking for the objects that matches our playerUID
 {
 	if ((getPlayerUID _x) == _playerUID) exitWith { _playerObj = _x; _playerPos = getPosATL _playerObj;};
 } forEach 	playableUnits;
 
+//If for some reason the playerOBj does not exist lets exit the disconnect system.
 if (isNil "_playerObj") exitWith {
 	diag_log format["%1: nil player object, _this:%2", __FILE__, _this];
 };
 
 diag_log format["get: %1 (%2), sent: %3 (%4)",typeName (getPlayerUID _playerObj), getPlayerUID _playerObj, typeName _playerUID, _playerUID];
 
-if (!isNull _playerObj) then {
-	// log disconnect
-#ifdef LOGIN_DEBUG
-	_characterID = _playerObj getVariable["characterID", "?"];
-	_lastDamage = _playerObj getVariable["noatlf4",0];
-	_Sepsis = _playerObj getVariable["USEC_Sepsis",false];
-//	diag_log format ["%1 %2 %3", isNil "_timeout", typeName _timeout == 'SCALAR', _timeout];
+//If the the playerObj exists lets run all sync systems
+
+_characterID = _playerObj getVariable["characterID", "?"];
+_lastDamage = _playerObj getVariable["noatlf4",0];
+_Sepsis = _playerObj getVariable["USEC_Sepsis",false];
+
+//Make sure we know the ID of the object before we try and sync any info to the DB
+if (_characterID != "?") exitwith {
+
+	//If the player has sepsis before logging off lets give them infected status.
 	if (_Sepsis) then {
 		_playerObj setVariable["USEC_infected",true,true];
 	};
-	_lastDamage = round(diag_ticktime - _lastDamage);
-	diag_log format["Player UID#%1 CID#%2 %3 as %4, logged off at %5%6", 
-		getPlayerUID _playerObj, _characterID, _playerObj call fa_plr2str, typeOf _playerObj, 
-		(getPosATL _playerObj) call fa_coor2str,
-		if ((_lastDamage > 5 AND (_lastDamage < 30)) AND ((alive _playerObj) AND (_playerObj distance (getMarkerpos "respawn_west") >= 2000))) then {" while in combat ("+str(_lastDamage)+" seconds left)"} else {""}
-	]; 
-
+	
+	//Record Player Login/LogOut
 	[_playerUID,_characterID,2] call dayz_recordLogin;
-#endif
-	//Update Vehicle
+
+	//if the player object is inside a vehicle lets eject the player
 	if (vehicle _playerObj != _playerObj) then {
 		_playerObj action ["eject", vehicle _playerObj];
 	};
+	
+	//if player object is alive lets sync the player and remove the body and if ghosting is active add the player id to the array
 	if (alive _playerObj) then {
-		//[_playerObj,(magazines _playerObj),true,(unitBackpack _playerObj)] call server_playerSync;
 		[_playerObj,nil,true] call server_playerSync;
-		_myGroup = group _playerObj;
-		deleteVehicle _playerObj;
-		deleteGroup _myGroup;
 		
 		if (dayz_enableGhosting) then {
 			//diag_log format["GhostPlayers: %1, ActivePlayers: %2",dayz_ghostPlayers,dayz_activePlayers];
@@ -54,5 +53,12 @@ if (!isNull _playerObj) then {
 			};
 		};
 	};
+	
+	//Lets scan the area near the player logout position and save all objects.
 	{ [_x,"gear"] call server_updateObject } foreach (nearestObjects [_playerPos, DayZ_GearedObjects, 10]);
 };
+
+//Lets remove the object now we have all synced info.
+_myGroup = group _playerObj;
+deleteVehicle _playerObj;
+deleteGroup _myGroup;
