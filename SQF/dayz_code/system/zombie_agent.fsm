@@ -22,7 +22,7 @@ item17[] = {"Time_Check",4,218,50.000000,75.000000,150.000000,125.000000,1.00000
 item18[] = {"",7,210,-29.000006,208.500000,-20.999996,216.500000,0.000000,""};
 item19[] = {"",7,210,-29.000006,296.000000,-20.999996,304.000031,0.000000,""};
 item20[] = {"Time_Check",4,218,-275.000000,75.000000,-175.000000,125.000000,0.000000,"Time" \n "Check"};
-item21[] = {"Time_Check",8,218,-300.000000,375.000000,-200.000000,425.000000,1.000000,"Time" \n "Check"};
+item21[] = {"Check",8,218,-300.000000,300.000000,-200.000000,350.000000,1.000000,"Check"};
 item22[] = {"No_Target",4,218,-400.000000,450.000000,-300.000000,500.000000,3.000000,"No" \n "Target"};
 item23[] = {"",7,210,-479.000000,471.000000,-471.000000,479.000000,0.000000,""};
 item24[] = {"",7,210,-479.000000,208.500000,-471.000000,216.500000,0.000000,""};
@@ -65,7 +65,8 @@ item60[] = {"Start_Attack",4,218,-725.000000,175.000000,-625.000000,225.000000,0
 item61[] = {"End_Attack",4,218,-725.000000,100.000000,-625.000000,150.000000,0.000000,"End Attack"};
 item62[] = {"TargetMoved",4,218,50.000000,300.000000,150.000000,350.000000,3.000000,"TargetMoved"};
 item63[] = {"Not_moving",4,218,-300.000000,150.000000,-200.000000,200.000000,1.000000,"Not moving"};
-item64[] = {"____FAKE____",9,2560,0.000000,0.000000,0.000000,0.000000,0.000000,"____FAKE____"};
+item64[] = {"TimeOut",8,4314,-300.000000,375.000000,-200.000000,425.000000,2.000000,"TimeOut"};
+item65[] = {"____FAKE____",9,2600,0.000000,0.000000,0.000000,0.000000,0.000000,"____FAKE____"};
 link0[] = {0,10};
 link1[] = {0,55};
 link2[] = {2,3};
@@ -89,72 +90,74 @@ link19[] = {13,6};
 link20[] = {14,18};
 link21[] = {15,16};
 link22[] = {16,8};
-link23[] = {16,21};
-link24[] = {16,29};
+link23[] = {16,29};
+link24[] = {16,64};
 link25[] = {17,3};
 link26[] = {18,19};
 link27[] = {19,8};
 link28[] = {19,15};
 link29[] = {20,7};
-link30[] = {21,16};
-link31[] = {22,23};
-link32[] = {23,47};
-link33[] = {24,35};
-link34[] = {25,27};
-link35[] = {26,25};
-link36[] = {27,36};
-link37[] = {27,40};
-link38[] = {28,43};
-link39[] = {29,22};
-link40[] = {29,52};
-link41[] = {29,58};
-link42[] = {30,31};
-link43[] = {31,32};
-link44[] = {31,34};
-link45[] = {31,45};
-link46[] = {32,33};
-link47[] = {33,59};
-link48[] = {34,9};
-link49[] = {35,7};
-link50[] = {36,37};
-link51[] = {37,39};
-link52[] = {37,41};
-link53[] = {38,42};
-link54[] = {39,38};
-link55[] = {39,40};
-link56[] = {39,51};
-link57[] = {40,28};
-link58[] = {41,37};
-link59[] = {42,43};
-link60[] = {43,1};
-link61[] = {44,46};
-link62[] = {45,44};
-link63[] = {46,33};
-link64[] = {47,48};
-link65[] = {48,24};
-link66[] = {49,50};
-link67[] = {50,42};
-link68[] = {51,49};
-link69[] = {52,30};
-link70[] = {53,7};
-link71[] = {54,3};
-link72[] = {55,1};
-link73[] = {58,59};
-link74[] = {59,23};
-link75[] = {56,64};
-link76[] = {64,56};
-link77[] = {57,64};
-link78[] = {64,57};
-link79[] = {60,64};
-link80[] = {64,60};
-link81[] = {61,64};
-link82[] = {64,61};
-link83[] = {62,64};
-link84[] = {64,62};
-link85[] = {63,64};
-link86[] = {64,63};
-globals[] = {25.000000,1,0,0,0,640,480,1,156,6316128,1,-690.284851,244.105530,732.341248,39.083908,806,598,1};
-window[] = {2,-1,-1,-1,-1,753,52,1260,52,3,824};
+link30[] = {22,23};
+link31[] = {23,47};
+link32[] = {24,35};
+link33[] = {25,27};
+link34[] = {26,25};
+link35[] = {27,36};
+link36[] = {27,40};
+link37[] = {28,43};
+link38[] = {29,22};
+link39[] = {29,52};
+link40[] = {29,58};
+link41[] = {30,31};
+link42[] = {31,32};
+link43[] = {31,34};
+link44[] = {31,45};
+link45[] = {32,33};
+link46[] = {33,59};
+link47[] = {34,9};
+link48[] = {35,7};
+link49[] = {36,37};
+link50[] = {37,39};
+link51[] = {37,41};
+link52[] = {38,42};
+link53[] = {39,38};
+link54[] = {39,40};
+link55[] = {39,51};
+link56[] = {40,28};
+link57[] = {41,37};
+link58[] = {42,43};
+link59[] = {43,1};
+link60[] = {44,46};
+link61[] = {45,44};
+link62[] = {46,33};
+link63[] = {47,48};
+link64[] = {48,24};
+link65[] = {49,50};
+link66[] = {50,42};
+link67[] = {51,49};
+link68[] = {52,30};
+link69[] = {53,7};
+link70[] = {54,3};
+link71[] = {55,1};
+link72[] = {58,59};
+link73[] = {59,23};
+link74[] = {64,16};
+link75[] = {21,65};
+link76[] = {65,21};
+link77[] = {56,65};
+link78[] = {65,56};
+link79[] = {57,65};
+link80[] = {65,57};
+link81[] = {60,65};
+link82[] = {65,60};
+link83[] = {61,65};
+link84[] = {65,61};
+link85[] = {62,65};
+link86[] = {65,62};
+link87[] = {63,65};
+link88[] = {65,63};
+globals[] = {25.000000,1,0,0,0,640,480,1,157,6316128,1,-710.729492,237.694336,750.737427,47.068176,806,598,1};
+window[] = {2,-1,-1,-1,-1,727,26,1234,26,3,824};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -539,16 +542,7 @@ class FSM
        "};" \n
        "" \n
        "" \n
-       "//diag_log format[""%1"",(typeof _agent)];" \n
-       "" \n
-       "/*" \n
-       "	//Check if LOS" \n
-       "	if ((_agroCheck % 6) == 0) then {" \n
-       "		_agroCheck = 0;" \n
-       "			_cantSee = [_target,_agent] call dayz_losCheck;" \n
-       "			_target = _agent call zombie_findTargetAgent;" \n
-       "	};" \n
-       "*/"/*%FSM</STATEINIT""">*/;
+       "//diag_log format[""%1"",(typeof _agent)];"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -602,29 +596,15 @@ class FSM
           action=/*%FSM<ACTION""">*/"//diag_log (""Cant See"");"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
-        /*%FSM<LINK "Time_Check">*/
-        class Time_Check
+        /*%FSM<LINK "TimeOut">*/
+        class TimeOut
         {
-          priority = 1.000000;
+          priority = 2.000000;
           to="Chase";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"//(diag_tickTime - _timeN) > 3" \n
-           "((_agent distance _target) >= 2)" \n
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _timeN) > 3" \n
            ""/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"// reset stance to favorite one" \n
-           "//if (_agent distance _targetPos > 5) then {" \n
-           "//	_agent setUnitPos (_agent getVariable [""stance"", ""UP""]);" \n
-           "//};" \n
-           "" \n
-           "//diag_log (""Reset Chase"");" \n
-           "" \n
-           "/*" \n
-           "if (_agent distance _targetPos < 5) then {" \n
-           "	//Stand up" \n
-           "	_agent setUnitPos ""UP"";" \n
-           "};" \n
-           "*/" \n
-           ""/*%FSM</ACTION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -769,13 +749,8 @@ class FSM
       init = /*%FSM<STATEINIT""">*/"// reset stance to favorite one" \n
        "_agent setUnitPos (_agent getVariable [""stance"", ""UP""]);" \n
        "" \n
-       "/*" \n
-       "if (!isNull _target) then {" \n
-       "	_targetPos = getPosATL _target;" \n
-       "	_agent setVariable [""myDest"",_targetPos];" \n
-       "	_agent moveTo _targetPos;" \n
-       "};" \n
-       "*/" \n
+       "//Lets move" \n
+       "_myDest = [_agent,_position] call zombie_loiter;" \n
        "" \n
        "//Local" \n
        "_agent setVariable [""localtargets"",[],false];" \n
@@ -824,6 +799,18 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
+        /*%FSM<LINK "MoveCompleted_">*/
+        class MoveCompleted_
+        {
+          priority = 3.000000;
+          to="____FAKE____";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"moveToCompleted _agent;" \n
+           "//_agent distance (_agent getVariable [""myDest"",getposATL _agent]) < 3"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_myDest = [_agent,_position] call zombie_loiter;" \n
+           "//_myDest = _agent getVariable [""myDest"",getposATL _agent];"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
         /*%FSM<LINK "Failed_Move">*/
         class Failed_Move
         {
@@ -847,18 +834,6 @@ class FSM
           action=/*%FSM<ACTION""">*/"diag_log (""TargetMoved"");"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
-        /*%FSM<LINK "MoveCompleted_">*/
-        class MoveCompleted_
-        {
-          priority = 3.000000;
-          to="____FAKE____";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"moveToCompleted _agent;" \n
-           "//_agent distance (_agent getVariable [""myDest"",getposATL _agent]) < 3"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"_myDest = [_agent,_position] call zombie_loiter;" \n
-           "//_myDest = _agent getVariable [""myDest"",getposATL _agent];"/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
         /*%FSM<LINK "Not_moving">*/
         class Not_moving
         {
@@ -868,6 +843,30 @@ class FSM
           condition=/*%FSM<CONDITION""">*/"(Speed _agent == 0)" \n
            ""/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"_myDest = [_agent,_position] call zombie_loiter;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Check">*/
+        class Check
+        {
+          priority = 1.000000;
+          to="____FAKE____";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_agent distance _target) >= 2)" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"// reset stance to favorite one" \n
+           "//if (_agent distance _targetPos > 5) then {" \n
+           "//	_agent setUnitPos (_agent getVariable [""stance"", ""UP""]);" \n
+           "//};" \n
+           "" \n
+           "//diag_log (""Reset Chase"");" \n
+           "" \n
+           "/*" \n
+           "if (_agent distance _targetPos < 5) then {" \n
+           "	//Stand up" \n
+           "	_agent setUnitPos ""UP"";" \n
+           "};" \n
+           "*/" \n
+           ""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
         /*%FSM<LINK "End_Attack">*/
