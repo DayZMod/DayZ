@@ -105,6 +105,7 @@ class Land_Fire_DZ : Land_Fire {
 		transportMaxWeapons = 0;
 		transportMaxBackpacks = 0;
 	class UserActions {
+		/*
 		class upgrade {
 			displayNameDefault = "Create Base Fire";
 			displayName = "Create Base Fire";
@@ -114,6 +115,7 @@ class Land_Fire_DZ : Land_Fire {
 			condition = "alive this";
 			statement = "[this] spawn object_upgradeFireplace";
 		};
+		*/
 		class lightup {
 			displayNameDefault = "Light fire";
 			displayName = "Light fire";
