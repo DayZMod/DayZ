@@ -710,6 +710,33 @@ isInflamed = {
     !(isNull _flame) and {(inflamed _flame)}
 };
 
+//Matchbox combine system.
+dayz_combine_Inventory = {
+	private [ "_qty", "_fullBox", "_remain"];
+	
+	//ItemMatchbox,ItemAntibiotic
+	
+	_qty = 0;
+	{
+		if (configName inheritsFrom (configfile >> "cfgWeapons" >> _x) == "ItemMatchbox") then {
+			 _qty = _qty + getNumber(configfile >> "cfgWeapons" >> _x >> "Ignators" >> "matches");
+			 player removeWeapon _x;
+		};
+	} count (items player);
+	
+	// limit to 1 fullbox and 1 used matchbox
+	_fullBox = floor (_qty / 5);
+	_remain = _qty % 5;
+	
+	if (_fullBox > 0) then { player addWeapon "Item5Matchbox"; };
+	
+	if (_fullBox > 1) then { 
+		player addWeapon "Item4Matchbox"; 
+	} else {
+		if (_remain > 0) then { player addWeapon ("Item"+str(_remain)+"Matchbox"); };
+	};
+};	
+
 dayz_engineSwitch = {
 	//private["_unit","_humanity","_delay"];
 	_vehicle = _this select 0;
