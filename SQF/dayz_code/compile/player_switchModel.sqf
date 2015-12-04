@@ -3,10 +3,15 @@ private ["_class","_position","_dir","_currentAnim","_currentCamera","_playerUID
 _class = _this;
 
 disableSerialization;
-_position = getPosATL player;
+//Old location system causes issues with players getting damaged during movement.
+//_position = getPosATL player;
+//New system testing needed.
+_position = player modeltoWorld [0,0,0];
+
 _dir = getDir player;
 _currentAnim = animationState player;
 //_currentCamera = cameraView;
+
 
 //Get PlayerID
 	_playerUID = getPlayerUID player;
