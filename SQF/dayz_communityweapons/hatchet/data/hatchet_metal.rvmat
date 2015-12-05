@@ -1,0 +1,89 @@
+class StageTI
+{
+	texture="testModels\textures\hatchet_co.paa";
+};
+ambient[]={0.6030001,0.62,0.61000001,1};
+diffuse[]={0.6030001,0.62,0.61000001,1};
+forcedDiffuse[]={0,0,0,1};
+emmisive[]={0,0,0,1};
+specular[]={0.27199993,0.29199991,0.28000003,1};
+specularPower=174;
+PixelShaderID="Super";
+VertexShaderID="Super";
+class Stage1
+{
+	texture="z\addons\dayz_communityweapons\hatchet\data\hatchet_nohq.paa";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,0};
+		pos[]={0,0,0};
+	};
+};
+class Stage2
+{
+	texture="z\addons\dayz_communityweapons\hatchet\data\hatchet_dt.paa";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,0};
+		pos[]={0,0,0};
+	};
+};
+class Stage3
+{
+	texture="#(argb,8,8,3)color(0,0,0,0,MC)";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,0};
+		pos[]={0,0,0};
+	};
+};
+class Stage4
+{
+	texture="z\addons\dayz_communityweapons\hatchet\data\hatchet_as.paa";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,0};
+		pos[]={0,0,0};
+	};
+};
+class Stage5
+{
+	texture="z\addons\dayz_communityweapons\hatchet\data\hatchet_smdi.paa";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,0};
+		pos[]={0,0,0};
+	};
+};
+class Stage6
+{
+	texture="#(argb,32,32,1)fresnel(0.2,0.07)";
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,0};
+		pos[]={0,0,0};
+	};
+};
+class Stage7
+{
+	texture="ca\data\env_land_co.paa";
+	uvSource="none";
+};
