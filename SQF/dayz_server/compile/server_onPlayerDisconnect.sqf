@@ -58,7 +58,13 @@ if (_characterID != "?") exitwith {
 	{ [_x,"gear"] call server_updateObject } foreach (nearestObjects [_playerPos, DayZ_GearedObjects, 10]);
 };
 
-//Lets remove the object now we have all synced info.
-_myGroup = group _playerObj;
-deleteVehicle _playerObj;
-deleteGroup _myGroup;
+if (isNull _playerObj) then { diag_log("Player Object does not esist"); };
+
+
+//Lets remove the object.
+if (!isNull _playerObj) then { 
+	_myGroup = group _playerObj;
+	deleteVehicle _playerObj;
+	deleteGroup _myGroup;
+};
+

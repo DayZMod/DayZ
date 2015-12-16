@@ -12,6 +12,7 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\util\compile.sqf";
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\loot\compile.sqf";
 
 BIS_Effects_Burn =			{};
+dayz_disconnectPlayers = [];
 server_playerLogin =		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerLogin.sqf";
 server_playerSetup =		compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerSetup.sqf";
 server_onPlayerDisconnect = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_onPlayerDisconnect.sqf";
