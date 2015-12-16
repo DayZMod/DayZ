@@ -461,37 +461,37 @@ switch (dayz_presets) do {
 		dayz_temperature_override = true; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = false; //Enables nutrition system
 		//Not implmented yet
-		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
+		dayz_classicBloodBagSystem = true; //Enables one type of bloodbag
 	};
 	case "Elite": { //Elite
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
-		dayz_ghostTimer = 60; //Sets how long in seconds a player must be dissconnected before being able to login again.
+		dayz_ghostTimer = 90; //Sets how long in seconds a player must be dissconnected before being able to login again.
 		dayz_spawnselection = 0; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
 		dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
 		dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
 		dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
 		dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
 		dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
-		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
+		dayz_OpenTarget_TimerTicks = 60 * 25; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = false; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
 		//Not implmented yet
-		dayz_classicBloodBagSystem = true; //Enables one type of bloodbag
+		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
 	};
     default { //Vanilla
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
-		dayz_ghostTimer = 30; //Sets how long in seconds a player must be disconnected before being able to login again.
+		dayz_ghostTimer = 60; //Sets how long in seconds a player must be disconnected before being able to login again.
 		dayz_spawnselection = 1; //Turn on spawn selection 0 = random only spawns, 1 = Spawn choice based on limits
-		dayz_spawncarepkgs_clutterCutter = 2; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
-		dayz_spawnCrashSite_clutterCutter = 2;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
-		dayz_spawnInfectedSite_clutterCutter = 2; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
+		dayz_spawncarepkgs_clutterCutter = 0; //0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnCrashSite_clutterCutter = 0;	// heli crash options 0 =  loot hidden in grass, 1 = loot lifted and 2 = no grass
+		dayz_spawnInfectedSite_clutterCutter = 0; // infected base spawn... 0: loot hidden in grass, 1: loot lifted, 2: no grass 
 		dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
 		dayz_ForcefullmoonNights = true; // Forces night time to be full moon.
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = false; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
 		//Not implmented yet
-		dayz_classicBloodBagSystem = true; //Enables one type of bloodbag
+		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
 	};
 };
 
