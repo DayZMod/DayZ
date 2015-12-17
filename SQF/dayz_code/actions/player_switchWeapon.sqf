@@ -1,6 +1,8 @@
 #include "\z\addons\dayz_code\util\mutex.hpp"
 #include "\z\addons\dayz_code\util\player.hpp"
 
+#define BANDAID
+
 #define TIMEOUT 2
 
 #define IS_PRIMARY(wpn) (getNumber (configFile >> "CfgWeapons" >> wpn >> "type") == 1)
@@ -48,7 +50,12 @@ dz_fn_switchWeapon =
 		case 1:
 		{
 			if (dayz_quickSwitch) then
-				{ true call dz_fn_switchWeapon_swap; }
+			{
+				true call dz_fn_switchWeapon_swap;
+				#ifdef BANDAID
+				call dayz_meleeMagazineCheck;
+				#endif
+			}
 			else
 				{ call dz_fn_switchWeapon_swapSecure; };
 		};
@@ -139,6 +146,9 @@ dz_fn_switchWeapon =
 					case 2:
 					{
 						true call dz_fn_switchWeapon_swap;
+						#ifdef BANDAID
+						call dayz_meleeMagazineCheck;
+						#endif
 					};
 				};
 			};
@@ -150,7 +160,12 @@ dz_fn_switchWeapon =
 				if (!IS_MELEE(_current) && { IS_MELEE(dayz_onBack) }) then
 				{
 					if (dayz_quickSwitch) then
-						{ true call dz_fn_switchWeapon_swap; }
+					{
+						true call dz_fn_switchWeapon_swap;
+						#ifdef BANDAID
+						call dayz_meleeMagazineCheck;
+						#endif
+					}
 					else
 						{ call dz_fn_switchWeapon_swapSecure; };
 				};
@@ -259,6 +274,8 @@ dz_fn_switchWeapon_animDone =
 	player removeEventHandler ["AnimDone", dz_switchWeapon_handler];
 	Mutex_Unlock(dz_switchWeapon_mutex);
 	
+	#ifdef BANDAID
 	if (IS_MELEE(primaryWeapon player)) then
 		{ call dayz_meleeMagazineCheck; };
+	#endif
 };
