@@ -64,3 +64,41 @@ AmmoBoxCZ2[] =
 {
 	{Loot_MAGAZINE,		1,		50Rnd_762x54_UK59}
 };
+
+//GP-25
+AmmoBoxRU4[] =
+{
+	{Loot_MAGAZINE,		3,		1Rnd_HE_GP25},
+	{Loot_MAGAZINE,		0.5,	FlareWhite_GP25},
+	{Loot_MAGAZINE,		0.5,	FlareGreen_GP25},
+	{Loot_MAGAZINE,		1,		1Rnd_Smoke_GP25}
+};
+
+//M203
+AmmoBoxUS3[] =
+{
+	{Loot_MAGAZINE,		3,		1Rnd_HE_M203},
+	{Loot_MAGAZINE,		0.5,	FlareWhite_M203},
+	{Loot_MAGAZINE,		0.5,	FlareGreen_M203},
+	{Loot_MAGAZINE,		1,		1Rnd_Smoke_M203}
+};
+
+//Explosives
+AmmoBoxRU5[] =
+{
+	{Loot_MAGAZINE,		2,		HandGrenade_East},
+	{Loot_MAGAZINE,		1,		SmokeShell},
+	{Loot_MAGAZINE,		1,		SmokeShellRed},
+	{Loot_MAGAZINE,		1,		SmokeShellGreen},
+	{Loot_MAGAZINE,		0.1,	PipeBomb}
+};
+
+//Explosives
+AmmoBoxUS4[] =
+{
+	{Loot_MAGAZINE,		2,		HandGrenade_West},
+	{Loot_MAGAZINE,		1,		SmokeShell},
+	{Loot_MAGAZINE,		1,		SmokeShellRed},
+	{Loot_MAGAZINE,		1,		SmokeShellGreen},
+	{Loot_MAGAZINE,		0.3,	PipeBomb}
+};

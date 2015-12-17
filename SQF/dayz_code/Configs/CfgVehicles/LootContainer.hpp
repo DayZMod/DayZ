@@ -6,11 +6,27 @@ class DZ_AmmoBoxRU : ReammoBox
 	displayName = "Ammo box"; //TODO move to stringtable
 };
 
+class DZ_ExplosiveBoxRU : ReammoBox
+{
+	scope = public;
+	
+	model = "ca\weapons\ammoboxes\proxy_ruexplosives.p3d";
+	displayName = "Ammo box"; //TODO move to stringtable
+};
+
 class DZ_AmmoBoxUS : ReammoBox
 {
 	scope = public;
 	
 	model = "ca\weapons\ammoboxes\proxy_usbasicammoboxsmall.p3d";
+	displayName = "Ammo box"; //TODO move to stringtable
+};
+
+class DZ_ExplosivesBoxUS : ReammoBox
+{
+	scope = public;
+	
+	model = "ca\weapons\ammoboxes\proxy_usbasicexplosives.p3d";
 	displayName = "Ammo box"; //TODO move to stringtable
 };
 
