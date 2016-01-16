@@ -4,6 +4,12 @@ class SVD_DZ : SVD
 	picture = "\ca\weapons\data\equip\w_svd_ca.paa";
 	displayName = $STR_DZ_WPN_SVD_NAME;
 	
+	weaponInfoType = "RscWeaponEmpty";
+	discreteDistance[] = {};
+	discreteDistanceInitIndex = 0;
+	distanceZoomMin = 200;
+	distanceZoomMax = 200;
+	
 	magazines[] = {10Rnd_762x54_SVD};
 	
 	reloadTime = 0.06;
