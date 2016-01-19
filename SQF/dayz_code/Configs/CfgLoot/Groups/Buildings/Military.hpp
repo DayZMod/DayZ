@@ -83,6 +83,7 @@ MilitarySpecial[] =
 	{Loot_WEAPON,		2,		AKS74U_DZ},
 	{Loot_WEAPON,		2,		AKM_DZ},
 	{Loot_WEAPON,		2,		SA58_DZ},
+	{Loot_WEAPON,		1,		SA58_RIS_DZ},
 	
 	//Shotguns
 	{Loot_WEAPON,		1,		Remington870_DZ},
