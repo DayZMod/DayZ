@@ -177,7 +177,7 @@ if (isPlayer cursorTarget) then {
 			//Allow player to give equip_woodensplint
 			if((_legsBroke or _armsBroke) and _hasSplint) then {
 				r_action = true;
-				_action = _unit addAction [localize "str_actions_medical_06", "\z\addons\dayz_code\medical\brokeBones.sqf",[_unit,"equip_woodensplint"], 0, true, true, "", "'equip_woodensplint' in magazines player"];
+				_action = _unit addAction [localize "str_actions_medical_06_splint", "\z\addons\dayz_code\medical\brokeBones.sqf",[_unit,"equip_woodensplint"], 0, true, true, "", "'equip_woodensplint' in magazines player"];
 				r_player_actions set [count r_player_actions,_action];
 			};
 			//Allow player to give Painkillers

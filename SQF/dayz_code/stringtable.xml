@@ -242,6 +242,14 @@
 			<French>Donner de la Morphine</French>
 			<Czech>Dát Morfium</Czech>
 		</Key>
+		<Key ID="str_actions_medical_06_splint">
+			<English>Apply Splint</English>
+			<German>Bewerben Splint</German>
+			<Russian>Применить шину</Russian>
+			<Spanish>Aplicar Férula</Spanish>
+			<French>Appliquer Splint</French>
+			<Czech>Použít dlahu</Czech>
+		</Key>
 		<Key ID="str_actions_medical_07">
 			<English>Give Painkillers</English>
 			<German>Schmerzmittel verabreichen</German>
