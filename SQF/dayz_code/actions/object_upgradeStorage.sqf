@@ -91,12 +91,12 @@ if(_isWater or _onLadder) exitWith {
 // lets check player has requiredTools for upgrade
 {
 	if (!(_x IN items player)) exitWith {
-		_missingPartsConfig = configFile >> "CfgVehicles" >> _x;
+		_missingPartsConfig = configFile >> "CfgWeapons" >> _x;
 		_textMissingParts = getText (_missingPartsConfig >> "displayName");
-		//systemchat("Missing tools for upgrade." +str());
-		//systemChat format["Missing %1 to upgrade storage.", _textMissingParts];
-		_msg = format [localize "Missing %1 to upgrade storage.", _textMissingParts];
+
+		_msg = format ["Missing %1 to upgrade storage.", _textMissingParts];
 		_msg call dayz_rollingMessages;
+		
 		_startUpgrade = false;
 	};
 } count _requiredTools;
@@ -106,8 +106,8 @@ if(_isWater or _onLadder) exitWith {
 	if (!(_x IN magazines player)) exitWith {
 		_missingPartsConfig = configFile >> "CfgMagazines" >> _x;
 		_textMissingParts = getText (_missingPartsConfig >> "displayName");
-		//systemChat format["Missing %1 to upgrade storage.", _textMissingParts];
-		_msg = format [localize "Missing %1 to upgrade storage.", _textMissingParts];
+				
+		_msg = format ["Missing %1 to upgrade storage.", _textMissingParts];
 		_msg call dayz_rollingMessages;
 		_startUpgrade = false;
 	};
