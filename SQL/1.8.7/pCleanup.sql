@@ -25,7 +25,7 @@ BEGIN
 	DELETE FROM object_data
 	WHERE CharacterID = 0
 		AND Damage = 1
-		AND SYSDATE() > last_updated + INTERVAL (
+		AND SYSDATE() > DATE(last_updated) + INTERVAL (
 			SELECT CleanupTime
 			FROM vehicle_spawns
 			WHERE vehicle_spawns.Classname = object_data.Classname
@@ -100,7 +100,6 @@ BEGIN
 #remove Base_Fire_DZ older than 5 days
         DELETE
             FROM object_data
-			USING Object_DATA, Character_DATA
 				WHERE Classname = 'Base_Fire_DZ'
 					AND DATE(last_updated) < CURDATE() - INTERVAL 5 DAY;
 END ;;
