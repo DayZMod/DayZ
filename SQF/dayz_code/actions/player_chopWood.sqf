@@ -40,10 +40,7 @@ if (["forest",dayz_surfaceType] call fnc_inString) then {
 		if (_objName in _trees) exitWith { _findNearestTree = _x; };
 	} foreach nearestObjects [getPosATL player, [], 8];
 	
-	 // get 2d distance
-    _distance2d = [player, _findNearestTree] call BIS_fnc_distance2D;
-    _distance3d = player distance _findNearestTree;
-    _countOut = ceil(_distance3d-_distance2d);
+    _countOut = floor(random 3) + 2;
 	
 	if (!isNull _findNearestTree) then {
 		_woodCutting = true;
