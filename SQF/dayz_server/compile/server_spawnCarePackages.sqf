@@ -45,24 +45,24 @@ for "_i" from 1 to (SPAWN_NUM) do
 	_class = _type select 1;
 	_lootNum = round Math_RandomRange(_type select 2, _type select 3);
 	_position = [SEARCH_CENTER, 0, SEARCH_RADIUS, SEARCH_DIST_MIN, 0, SEARCH_SLOPE_MAX, 0, SEARCH_BLACKLIST] call BIS_fnc_findSafePos;
+	_position set [2, 0];
 	
 	diag_log format ["DEBUG: Spawning a care package (%1) at %2 with %3 items.", _class, _position, _lootNum];
 	
 	_vehicle = createVehicle [_class, _position, [], 0, "CAN_COLLIDE"];
 	dayz_serverObjectMonitor set [count dayz_serverObjectMonitor, _vehicle];
 	_vehicle setVariable ["ObjectID", 1, true];
-	
-	_loot = Loot_Select(_lootGroup, _lootNum);
-	
+		
 	_size = sizeOf _class;
 	
 	{
 		//Calculate random loot position
 		_lootPos = Vector_Add(_position, Vector_Multiply(Vector_FromDir(random 360), _size * 0.6 + random _size));
+		_lootPos set [2, 0];
 		
 		_lootVeh = Loot_Spawn(_x, _lootPos);
 		_lootVeh setVariable ["permaLoot", true];
-		
+				
 		switch (dayz_spawncarepkgs_clutterCutter) do
 		{
 			case 1: //Lift loot up by 5cm
@@ -81,6 +81,5 @@ for "_i" from 1 to (SPAWN_NUM) do
 				createVehicle ["Sign_sphere100cm_EP1", _lootPos, [], 0, "CAN_COLLIDE"];
 			};
 		};
-	}
-	foreach _loot;
+	} foreach  Loot_Select(_lootGroup, _lootNum);
 };
