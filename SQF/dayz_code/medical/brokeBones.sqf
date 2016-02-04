@@ -1,6 +1,7 @@
-private ["_started","_finished","_animState","_isMedic","_id","_unit"];
-_unit = _this select 0;
-_item = _this select 1;
+private ["_started","_finished","_animState","_isMedic","_id","_unit","_item"];
+
+_unit = (_this select 3) select 0;
+_item = (_this select 3) select 1;
 
 player removeMagazine _item;
 
