@@ -795,7 +795,7 @@ class M4A1_ACOG_DZ : M4A1_DZ
 	{
 		class RemoveACOG
 		{
-			text = $STR_DZ_ATT_ACOG_REM;
+			text = $STR_DZ_ATT_ACOG_RMVE;
 			script = "; ['Attachment_ACOG',_id,'M4A1_DZ'] call player_removeAttachment";
 		};
 	};
@@ -819,7 +819,7 @@ class M4A1_ACOG_FL_DZ : M4A1_FL_DZ
 	{
 		class RemoveACOG
 		{
-			text = $STR_DZ_ATT_ACOG_REM;
+			text = $STR_DZ_ATT_ACOG_RMVE;
 			script = "; ['Attachment_ACOG',_id,'M4A1_FL_DZ'] call player_removeAttachment";
 		};
 		class RemoveFlashlight
@@ -848,7 +848,7 @@ class M4A1_ACOG_SD_DZ : M4A1_SD_DZ
 	{
 		class RemoveACOG
 		{
-			text = $STR_DZ_ATT_ACOG_REM;
+			text = $STR_DZ_ATT_ACOG_RMVE;
 			script = "; ['Attachment_ACOG',_id,'M4A1_SD_DZ'] call player_removeAttachment";
 		};
 		class RemoveSuppressor
@@ -876,7 +876,7 @@ class M4A1_ACOG_SD_FL_DZ : M4A1_SD_FL_DZ
 	{
 		class RemoveACOG
 		{
-			text = $STR_DZ_ATT_ACOG_REM;
+			text = $STR_DZ_ATT_ACOG_RMVE;
 			script = "; ['Attachment_ACOG',_id,'M4A1_SD_FL_DZ'] call player_removeAttachment";
 		};
 		class RemoveSuppressor
@@ -912,7 +912,7 @@ class M4A1_GL_ACOG_DZ : M4A1_GL_DZ
 	{
 		class RemoveACOG
 		{
-			text = $STR_DZ_ATT_ACOG_REM;
+			text = $STR_DZ_ATT_ACOG_RMVE;
 			script = "; ['Attachment_ACOG',_id,'M4A1_GL_DZ'] call player_removeAttachment";
 		};
 		class RemoveGL
@@ -940,7 +940,7 @@ class M4A1_GL_ACOG_FL_DZ : M4A1_GL_FL_DZ
 	{
 		class RemoveACOG
 		{
-			text = $STR_DZ_ATT_ACOG_REM;
+			text = $STR_DZ_ATT_ACOG_RMVE;
 			script = "; ['Attachment_ACOG',_id,'M4A1_GL_FL_DZ'] call player_removeAttachment";
 		};
 		class RemoveGL
@@ -973,7 +973,7 @@ class M4A1_GL_ACOG_SD_DZ : M4A1_GL_SD_DZ
 	{
 		class RemoveACOG
 		{
-			text = $STR_DZ_ATT_ACOG_REM;
+			text = $STR_DZ_ATT_ACOG_RMVE;
 			script = "; ['Attachment_ACOG',_id,'M4A1_GL_SD_DZ'] call player_removeAttachment";
 		};
 		class RemoveGL
@@ -1003,7 +1003,7 @@ class M4A1_GL_ACOG_SD_FL_DZ : M4A1_GL_SD_FL_DZ
 	{
 		class RemoveACOG
 		{
-			text = $STR_DZ_ATT_ACOG_REM;
+			text = $STR_DZ_ATT_ACOG_RMVE;
 			script = "; ['Attachment_ACOG',_id,'M4A1_GL_SD_FL_DZ'] call player_removeAttachment";
 		};
 		class RemoveGL
