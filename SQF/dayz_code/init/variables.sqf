@@ -425,7 +425,7 @@ if(isNil "dayz_quickSwitch") then {
 if(isNil "dayz_infectiouswaterholes") then {
 	dayz_infectiouswaterholes = true; //Enable infected waterholes
 };
-if(isNil "dayz_infectiouswaterholes") then {
+if(isNil "dayz_POIs") then {
     dayz_POIs = true; //Enable POI's
 };
 
