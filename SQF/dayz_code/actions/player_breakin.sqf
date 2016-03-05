@@ -1,4 +1,4 @@
-private ["_target", "_pos", "_gps", "_vars", "_hasToolbox", "_hasCrowbar", "_limit", "_proceed", "_counter", "_dis", "_sfx", "_roll", "_animState", "_started", "_finished", "_animState", "_isMedic","_isGate"];
+private ["_brokein", "_isOk", "_hasSledgeHammer", "_target", "_pos", "_gps", "_vars", "_hasToolbox", "_hasCrowbar", "_limit", "_proceed", "_counter", "_dis", "_sfx", "_roll", "_animState", "_started", "_finished", "_isMedic","_isGate"];
 
 _target = _this select 3;
 _pos = getPos _target;
@@ -148,6 +148,6 @@ if (_proceed and _brokein) then {
 	titleText ["Break in attempt successful.", "PLAIN DOWN", 0.3];
 	
 	//Open Gate.
-	_target animate ["DoorR", 0];
-	_target animate ["DoorL", 0];
+	_target animate ["DoorR", 1];
+	_target animate ["DoorL", 1];
 };
