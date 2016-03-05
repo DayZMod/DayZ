@@ -251,9 +251,9 @@ _disabledTemperature = switch (dayz_temperature_override) do {
 
 	// left page
 	((uiNamespace getVariable "horde_myDisplay") displayCtrl 1800) ctrlSetStructuredText parseText format ["
+					<t size='2' font='Zeppelin33' color = '#000000' align='center'>Survival Type: %14</t><br/>
 					<br/>
 					<t size='2' font='Zeppelin33' color = '#000000' align='left'>Health: 	 </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%1</t><br/>
-					<br/>
 					<t size='2' font='Zeppelin33' color = '#000000' align='left'>Hunger: 			 </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%2%</t><br/>
 					<t size='2' font='Zeppelin33' color = '#000000' align='left'>Thirst: 		 </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%3%</t><br/>
 					<br/>
@@ -287,7 +287,8 @@ _disabledTemperature = switch (dayz_temperature_override) do {
 					(round diag_fps),
 					(round diag_fpsmin),
 					(_moon),
-					(_disabledTemperature)
+					(_disabledTemperature),
+					(dayz_presets)
 				];
 
 // right page - blank until humanity is checked
