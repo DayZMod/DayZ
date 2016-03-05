@@ -1,5 +1,4 @@
-private ["_ys","_ms","_ds","_b","_2","_6","_7","_8","_9","_10","_str_left_text","_1","_3","_4","_5","_blood_in_pack","_blood_in_inv","_mag_arr","_backpack","_11","_mags_for_weap","_mssv_cnt","_weapon","_config"];
-
+private ["_ys","_ms","_ds","_b","_2","_6","_7","_8","_9","_10","_str_left_text","_1","_3","_4","_5","_blood_in_pack","_blood_in_inv","_mag_arr","_backpack","_11","_mags_for_weap","_mssv_cnt","_weapon","_config","_survivors","_moon","_spawnselection","_disabledTemperature"];
 _survivors = playersNumber west;
 
 _str_left_text = "

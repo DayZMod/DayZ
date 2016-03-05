@@ -4,8 +4,8 @@
 	Made for DayZ Mod please ask permission to use/edit/distrubute email vbawol@veteranbastards.com.
 	fixed by facoptere@gmail.com for dayzmod
 */
-private ["_linecastmax","_linecastmin","_num","_position","_ispond","_objectsPond","_isPondNearBy","_isOk","_counter",
-"_vehicle","_inVehicle","_rnd","_itemOut","_text","_item","_itemtodrop","_result", "_elevation"];
+private ["_linecastmax","_linecastmin","_num","_position","_ispond","_objectsPond","_isPondNearBy","_isOk","_counter","_vehicle","_inVehicle",
+"_rnd","_itemOut","_text","_item","_itemtodrop","_result","_elevation","_inBoat","_i","_ret","_bb","_w2m","_dir"];
 
 //if (!isNil "faco_goFishing") exitWith { _this call faco_goFishing };
 

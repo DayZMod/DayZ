@@ -1,4 +1,4 @@
-private ["_playArray","_lastRest","_blood"];
+private ["_playArray","_lastRest","_blood","_timesincedrink","_bloodinc","_Moves","_sleepArray","_animState","_started","_finished","_timer","_i","_r","_cureAttempt","_isAsleep","_cureChance","_infectedStatus","_randomamount"];
 //_timesincedrink = time - dayz_lastDrink;
 //_bloodinc =100; Removed for now(untested) due to it not needed yet
 

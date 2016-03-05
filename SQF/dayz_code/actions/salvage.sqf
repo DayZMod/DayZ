@@ -1,3 +1,5 @@
+private ["_array","_vehicle","_part","_hitpoint","_type","_isOK","_brokenPart","_started","_finished","_hasToolbox","_nameType","_namePart","_animState","_isMedic","_damage","_BreakableParts","_selection","_wpn","_classname","_ismelee"];
+
 if (dayz_salvageInProgress) exitWith { cutText [localize "str_salvage_inprogress", "PLAIN DOWN"]; };
 dayz_salvageInProgress = true;
 

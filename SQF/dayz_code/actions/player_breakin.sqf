@@ -1,5 +1,5 @@
-private ["_brokein", "_isOk", "_hasSledgeHammer", "_target", "_pos", "_gps", "_vars", "_hasToolbox", "_hasCrowbar", "_limit", "_proceed", "_counter", "_dis", "_sfx", "_roll", "_animState", "_started", "_finished", "_isMedic","_isGate"];
-
+private ["_brokein","_isOk","_hasSledgeHammer","_gps","_vars","_hasToolbox","_hasCrowbar","_limit","_proceed","_counter",
+"_dis","_sfx","_roll","_animState","_started","_finished","_isMedic","_isGate"];
 _target = _this select 3;
 _pos = getPos _target;
 _isGate = (typeOf cursorTarget) in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"];

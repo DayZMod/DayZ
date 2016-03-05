@@ -1,4 +1,5 @@
 private ["_item","_config","_onLadder","_hastoolweapon","_onBack","_text","_create","_config2","_melee2tb","_isOk"];
+
 disableSerialization;
 _item = _this;
 _config = configFile >> "cfgWeapons" >> _item;

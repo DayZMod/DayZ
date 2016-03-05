@@ -2,7 +2,8 @@
 _item call player_wearClothes;
 TODO: female
 */
-private["_item","_onLadder","_hasclothesitem","_config","_text","_isFemale","_myModel","_humanity","_isBandit","_isHero","_itemNew","_model"];
+private ["_item","_onLadder","_hasclothesitem","_config","_text","_isFemale","_myModel","_humanity","_isBandit","_isHero",
+"_itemNew","_model","_skinToArray","_finalArray","_skinToModel"];
 
 _item = _this;
 call gear_ui_init;

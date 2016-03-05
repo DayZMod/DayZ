@@ -25,7 +25,7 @@ dz_fn_switchWeapon =
 	if (vehicle player != player) exitWith {};
 	if Player_IsOnLadder() exitWith {};
 	
-	private ["_current", "_primary", "_secondary"];
+	private ["_current","_primary","_secondary","_swapWeapons"];
 	
 	_current = currentWeapon player;
 	

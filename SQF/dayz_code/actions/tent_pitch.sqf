@@ -1,3 +1,4 @@
+private ["_item","_config","_text","_booleans","_worldspace","_dir","_location","_dis","_sfx","_tent","_classname","_object","_boundingBox","_maxPoint","_actionBuild","_actionCancel"];
 /*
 private ["_item", "_config", "_text", "_booleans", "_worldspace", "_dir", "_location", "_dis", "_sfx", "_tent"];
 

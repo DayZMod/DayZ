@@ -1,5 +1,5 @@
-private ["_item","_result","_dis","_sfx","_num","_breaking","_counter","_rocks","_findNearestRock","_objInfo","_lenInfo","_objName","_i","_k","_countOut","_isOk","_proceed","_animState","_started","_finished","_isMedic","_itemOut","_wpPos","_nearByPile"];
-
+private ["_item","_result","_dis","_sfx","_num","_breaking","_counter","_rocks","_findNearestRock","_objInfo","_lenInfo",
+"_objName","_i","_k","_countOut","_isOk","_proceed","_animState","_started","_finished","_isMedic","_itemOut","_wpPos","_nearByPile"];
 
 _item = _this;
 call gear_ui_init;
