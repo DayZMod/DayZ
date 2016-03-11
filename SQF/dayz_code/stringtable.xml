@@ -1126,6 +1126,7 @@
 			<Czech>Nic jsi nechytil.</Czech>
 			<French>Vous n&apos;avez rien pris</French>
 			<German>Schade... nichts dran.</German>
+			<Dutch>Je hebt niets gevangen.</Dutch>
 		</Key>
 		<Key ID="str_fishing_nibble">
 			<English>Nibble... Nibble...</English>
@@ -1134,6 +1135,7 @@
 			<Czech>Bere... Nebere...</Czech>
 			<French>Ça mord</French>
 			<German>Knabber... knabber...</German>
+			<Dutch>Dobber.. Dobber..</Dutch>
 		</Key>
 		<Key ID="str_fishing_success">
 			<English>You caught a %1.</English>
@@ -1158,6 +1160,7 @@
 			<Czech>Rybaření přerušeno.</Czech>
 			<French>Pêche annulée</French>
 			<German>Angeln abgebrochen</German>
+			<Dutch>Gestopt met vissen.</Dutch>
 		</Key>
 		<Key ID="str_fishing_watercheck">
 			<English>Must be facing a pond, near a shore or on a boat to fish.</English>
@@ -1199,6 +1202,7 @@
 			<Czech>Rybaření již probíhá.</Czech>
 			<French>Vous êtes déjà en train de pêcher</French>
 			<German>Du angelst schon.</German>
+			<Dutch>Afmaken van creatie is al bezig.</Dutch>
 		</Key>
 		<Key ID="str_siphon_start">
 			<English>Siphon Vehicle Fuel</English>
