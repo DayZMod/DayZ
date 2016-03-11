@@ -8,6 +8,7 @@
 			<Czech>Přidat do nástrojů</Czech>
 			<French>Placer à la ceinture</French>
 			<German>Zum Werkzeuggürtel hinzufügen</German>
+			<Dutch>Voeg toe aan gereedschapsgordel</Dutch>
 		</Key>
 		<Key ID="STR_ACTIONS_2BACK">
 			<English>Add to back</English>
@@ -48,6 +49,7 @@
 			<French>Lancer la ligne</French>
 			<Czech>Uchytit rybářský prut</Czech>
 			<German>Angel auswerfen</German>
+			<Dutch>Werp vislijn uit</Dutch>
 		</Key>
 		<Key ID="STR_ACTION_CREATEQUIVER">
 			<English>Create quiver</English>
@@ -6504,6 +6506,7 @@
 			<French>Canne à pêche</French>
 			<Czech>Rybářský prut</Czech>
 			<German>Angel</German>
+			<Dutch>Vishengel</Dutch>
 		</Key>
 		<Key ID="STR_ITEM_DESC_FISHINGPOLE">
 			<English>This carbon fiber rod may be old but she still works like a charm.</English>
@@ -6512,6 +6515,7 @@
 			<French>Canne en fibre de carbone, sans doute assez ancienne mais fonctionnant parfaitement.</French>
 			<Czech>Sice vypadá starobyle, ale svůj účet splní dokonale.</Czech>
 			<German>Die Carbonrute mag alt aussehen, funktioniert aber noch tadellos.</German>
+			<Dutch>Dit carbonnen hengeltje is al oud, maar werkt nog prima!</Dutch>
 		</Key>
 		<Key ID="STR_ITEM_NAME_CAMONET">
 			<English>CamoNet</English>
