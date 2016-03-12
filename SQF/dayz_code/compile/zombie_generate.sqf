@@ -1,6 +1,8 @@
 #include "\z\addons\dayz_code\loot\Loot.hpp"
 
-private ["_bypass","_position","_unitTypes","_radius","_method","_agent","_maxlocalspawned","_doLoiter","_wildspawns","_maxControlledZombies","_cantSee","_isok","_zPos","__FILE__","_fov","_safeDistance","_farDistance","_xasl","_eye","_ed","_deg","_skipFOV","_wildSpawns","_tooClose","_type","_loot","_array","_rnd","_lootType","_index","_weights","_loot_count","_favStance"];
+private ["_bypass","_position","_unitTypes","_radius","_method","_agent","_maxlocalspawned","_doLoiter","_wildspawns","_maxControlledZombies",
+"_cantSee","_isok","_zPos","__FILE__","_fov","_safeDistance","_farDistance","_xasl","_eye","_ed","_deg","_skipFOV","_wildSpawns","_tooClose",
+"_type","_loot","_array","_rnd","_lootType","_index","_weights","_loot_count","_favStance","_lootGroup"];
 
 _position = _this select 0;
 _doLoiter = _this select 1; // wonder around
@@ -90,7 +92,7 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 			_method = "CAN_COLLIDE";
 		};
 		
-		_agent = createAgent [_type, _position, [], _radius, _method]; 
+		_agent = createAgent [_type, _position, [], _radius, "CAN_COLLIDE"]; 
 		sleep 0.03;
 		
 		//add to global counter 
@@ -102,7 +104,7 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 		//_loot = "";
 		//_array = [];
 		//_rnd = random 1;
-		if (0.7 > random 1) then
+		if (0.9 > random 1) then
 		{
 			_lootGroup = configFile >> "CfgVehicles" >> _type >> "zombieLoot";
 			if (isText _lootGroup) then
@@ -141,8 +143,8 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 		};
 		
 		//Disable simulation 
-		PVDZ_Server_Simulation = [_agent, false];
-		publicVariableServer "PVDZ_Server_Simulation";
+		//PVDZ_Server_Simulation = [_agent, false];
+		//publicVariableServer "PVDZ_Server_Simulation";
 		
 		//Start behavior
 		_id = [_position,_agent] execFSM "\z\AddOns\dayz_code\system\zombie_agent.fsm";
