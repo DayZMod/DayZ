@@ -1,6 +1,6 @@
 // (c) facoptere@gmail.com, licensed to DayZMod for the community
 
-private ["_count","_anim","_weapon","_sprint","_stance","_transmove","_start","_timeout","_short","_sandLevel","_veh","_disableHdlr","_speed","_doRE"];
+private ["_count","_anim","_weapon","_sprint","_stance","_transmove","_start","_timeout","_short","_sandLevel","_veh","_disableHdlr","_speed"];
 
 if (r_player_unconsciousInProgress) exitWith {};
 r_player_unconsciousInProgress = true;
@@ -45,7 +45,7 @@ while { (diag_tickTime - _start) < _timeout and r_player_unconscious and alive p
 		} else {
             player action ["eject", _veh];
             player leaveVehicle _veh;
-            [] spawn { sleep 0.1; player switchmove "amovppnemstpsnonwnondnon"; }; // instant prone
+            [] spawn { sleep 0.1; player playMoveNow "amovppnemstpsnonwnondnon"; }; // instant prone
         };
     };
 	
@@ -76,8 +76,6 @@ r_player_unconsciousInputDisabled = false;
 
 [nil, player, rSWITCHMOVE, "AinjPpneMstpSnonWnonDnon"] call RE;
 player SWITCHMOVE "AinjPpneMstpSnonWnonDnon";
-
-sleep 1;
 
 player playMoveNow "AmovPpneMstpSnonWnonDnon_healed";
 
