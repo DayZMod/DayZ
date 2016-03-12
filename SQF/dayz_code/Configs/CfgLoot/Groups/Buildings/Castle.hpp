@@ -7,7 +7,7 @@ Castle[] =
 	{Loot_WEAPON,		2,		ItemFlashlight},
 	{Loot_WEAPON,		1,		ItemPickaxe},
 	{Loot_WEAPON,		2,		ItemPickaxeBroken},
-	{Loot_WEAPON,		2,		ItemShovel},
+//	{Loot_WEAPON,		2,		ItemShovel},
 //	{Loot_WEAPON,		1,		ItemHatchet},
 	{Loot_VEHICLE,		1,		WeaponHolder_ItemHatchet},
 	
