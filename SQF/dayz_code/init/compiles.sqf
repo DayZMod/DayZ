@@ -184,8 +184,9 @@ if (!isDedicated) then {
 		_inAngle = [_zPos,_eyeDir,_degree,_tPos] call fnc_inAngleSector;
 		_inAngle
 	};
+	
 	dayz_losCheck = {
-		private "_cantSee";
+		private ["_cantSee","_target","_agent"];
 		_target = _this select 0; // PUT THE PLAYER IN FIRST ARGUMENT!!!!
 		_agent = _this select 1;
 		_cantSee = true;
