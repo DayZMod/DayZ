@@ -2,10 +2,10 @@
         Created exclusively for ArmA2:OA - DayZMod.
         Please request permission to use/alter/distribute from project leader (R4Z0R49) AND the author (facoptere@gmail.com)
 */
-private ["_rnd","_move","_wound","_cnt","_index","_damage","_total","_movePlayer","_start","_unit","_type","_vehicle","_speed","_nextPlayerPos",
-"_distance","_viralZeds","_isVehicle","_agentPos","_playerDodged","_areaAffect","_dist","_dir","_timeout","_deg","_lastDodge",
-"_dodgeAnimations","_tPos","_zPos","_hpList","_hp","_chance","_openVehicles","_strH","_dam","_cantSee","_attackanimations","_lastTackle",
-"_knockdown","_vel","_t","_step","_i","_doRE","_stop"];
+private ["_rnd","_move","_wound","_cnt","_index","_damage","_total","_movePlayer","_start","_unit","_type","_vehicle","_speed",
+"_nextPlayerPos","_distance","_viralZeds","_isVehicle","_agentPos","_playerDodged","_areaAffect","_dist","_dir","_timeout","_deg",
+"_lastDodge","_dodgeAnimations","_tPos","_zPos","_hpList","_hp","_chance","_openVehicles","_strH","_dam","_cantSee","_attackanimations",
+"_lastTackle","_knockdown","_vel","_t","_step","_i","_doRE","_stop"];
 
 _unit = _this select 0;
 _type = _this select 1;
@@ -78,14 +78,18 @@ _dir = [_unit,player] call BIS_Fnc_dirTo;
 _unit setDir _dir;
 
 // let's animate the Z
+/*
 if (local _unit) then {
 	_unit switchMove _move;
 } else {
 	[objNull,  _unit,  rswitchMove,  _move] call RE;
 };
+*/
+
+[objNull, _unit, rplaymove, _move] call RE;
 
 //Wait
-sleep 0.3;
+sleep 0.5;
 
 //slow it down make sure the animation isnt running after the damage
 //_timeout = diag_tickTime + 0.3;

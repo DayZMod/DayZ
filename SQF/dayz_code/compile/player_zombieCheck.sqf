@@ -63,12 +63,12 @@ if (_isSea) then { } else {  };
 					//Force Ai to Stand
 						_x setUnitPos "UP";
 						if (!(animationState _x == "ZombieFeed")) then {
-							if (((diag_tickTime - _last) > 1) and ((_delta < 1.5) and (_delta > -1.5))) then {
-							
-								//systemchat format["ZC Start Attack Distance - %1",(_x distance _refObj)];
-							
-								_attackResult = [_x, _type] spawn player_zombieAttack;
-								_x setVariable["lastAttack", diag_tickTime];
+							if (((diag_tickTime - _last) > 1.5) and ((_delta < 1.5) and (_delta > -1.5))) then {
+								_cantSee = [_x,_refObj] call dayz_losCheck;
+								if (!_cantSee) then {							
+									_attackResult = [_x, _type] spawn player_zombieAttack;
+									_x setVariable["lastAttack", diag_tickTime];
+								};
 							};
 						};
 					} else {
