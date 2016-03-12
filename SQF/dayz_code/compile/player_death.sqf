@@ -163,7 +163,7 @@ for  "_x" from 5 to 1 step -1 do {
 	sleep 1;
 };
 
-PVDZ_Server_Simulation = [_body, false];
-publicVariableServer "PVDZ_Server_Simulation";
+//PVDZ_Server_Simulation = [_body, false];
+//publicVariableServer "PVDZ_Server_Simulation";
 
 endMission "END1";
