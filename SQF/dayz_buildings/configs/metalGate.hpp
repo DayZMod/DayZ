@@ -24,6 +24,19 @@ class MetalGate_Base: Land_Gate_IndVar2_5
 			initPhase=0;
 		};
 	};
+	class Upgrade { //to next stage
+		requiredParts[] = {"ItemRSJ"};
+	};
+	class Disassembly {
+		requiredTools[] = {"ItemEtool"};
+	};	
+	class Maintenance {
+		requiredTools[] = {"ItemToolbox"};
+		requiredParts[] = {"ItemMetalSheet","ItemScrews"};
+	};
+	class eventHandlers {
+		HandleDamage = "if ((_this select 4) == 'PipeBomb') then {_this call fnc_Obj_handleDam;} else { false };";
+	};
 };
 class MetalGate_ghost: MetalGate_Base
 {	
