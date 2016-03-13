@@ -104,7 +104,7 @@ if ((_maxlocalspawned < _maxControlledZombies) and (dayz_CurrentNearByZombies < 
 		//_loot = "";
 		//_array = [];
 		//_rnd = random 1;
-		if (0.1 > random 1) then
+		if (0.3 > random 1) then
 		{
 			_lootGroup = configFile >> "CfgVehicles" >> _type >> "zombieLoot";
 			if (isText _lootGroup) then
