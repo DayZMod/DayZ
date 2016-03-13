@@ -153,7 +153,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	if (diag_ticktime - dayz_panicCooldown < 120) then {
 		_hunger = _hunger * 2;
 	};
-	dayz_hunger = dayz_hunger + (_hunger / 60); //60 Updated to 80
+	dayz_hunger = dayz_hunger + (_hunger / 70); //60 Updated to 80
 	dayz_hunger = (dayz_hunger min SleepFood) max 0;
 
 	if (dayz_hunger >= SleepFood) then {
@@ -167,7 +167,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	if (_refObj == player) then {
 		_thirst = (_speed + 4) * 3;
 	};
-	dayz_thirst = dayz_thirst + (_thirst / 85) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
+	dayz_thirst = dayz_thirst + (_thirst / 60) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
 	dayz_thirst = (dayz_thirst min SleepWater) max 0;
 
 	if (dayz_thirst >= SleepWater) then {
