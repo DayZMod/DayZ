@@ -74,6 +74,7 @@ feature.
  * Shauneh
  * [Nick Chow] (https://github.com/Purplish)
  * bittedanke (https://github.com/bittedanke) - fixing a problem with chances.
+ * ebaydayz (https://github.com/ebaydayz)
  
 ------------------------
 Art Work
