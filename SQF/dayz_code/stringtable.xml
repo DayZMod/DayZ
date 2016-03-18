@@ -8,6 +8,7 @@
 			<Czech>Přidat do nástrojů</Czech>
 			<French>Placer à la ceinture</French>
 			<German>Zum Werkzeuggürtel hinzufügen</German>
+			<Dutch>Voeg toe aan gereedschapsgordel</Dutch>
 		</Key>
 		<Key ID="STR_ACTIONS_2BACK">
 			<English>Add to back</English>
@@ -48,6 +49,7 @@
 			<French>Lancer la ligne</French>
 			<Czech>Uchytit rybářský prut</Czech>
 			<German>Angel auswerfen</German>
+			<Dutch>Werp vislijn uit</Dutch>
 		</Key>
 		<Key ID="STR_ACTION_CREATEQUIVER">
 			<English>Create quiver</English>
@@ -629,6 +631,7 @@
 			<French>Réparer le véhicule</French>
 			<Czech>Opravit vozidlo</Czech>
 			<German>Fahrzeug reparieren</German>
+			<Dutch>Repareer voertuig</Dutch>
 		</Key>
 		<Key ID="str_actions_salvageveh">
 			<English>Salvage Vehicle</English>
@@ -637,6 +640,7 @@
 			<French>Récupérer le véhicule</French>
 			<Czech>Rozebrat vozidlo</Czech>
 			<German>Fahrzeug ausschlachten</German>
+			<Dutch>Demonteer voertuig</Dutch>
 		</Key>
 		<Key ID="str_actions_helipilotseat">
 			<English>To pilot&apos;s seat</English>
@@ -886,6 +890,7 @@
 			<Czech>Zničit stan</Czech>
 			<French>Détruisez Tente</French>
 			<German>Zelt zerstören</German>
+			<Dutch>Vernietig Tent</Dutch>
 		</Key>	
 		<Key ID="str_actions_self_sleep">
 			<English>Rest</English>
@@ -1019,6 +1024,7 @@
 			<Spanish>Construir %1</Spanish>
 			<French>Construire %1</French>
 			<Czech>Postavit %1</Czech>
+			<Dutch>%1 opbouwen</Dutch>
 		</Key>
 		<Key ID="STR_TAKE_PAINKILLER">
 			<English>Take Painkillers</English>
@@ -1125,6 +1131,7 @@
 			<Czech>Nic jsi nechytil.</Czech>
 			<French>Vous n&apos;avez rien pris</French>
 			<German>Schade... nichts dran.</German>
+			<Dutch>Je hebt niets gevangen.</Dutch>
 		</Key>
 		<Key ID="str_fishing_nibble">
 			<English>Nibble... Nibble...</English>
@@ -1133,6 +1140,7 @@
 			<Czech>Bere... Nebere...</Czech>
 			<French>Ça mord</French>
 			<German>Knabber... knabber...</German>
+			<Dutch>Dobber.. Dobber..</Dutch>
 		</Key>
 		<Key ID="str_fishing_success">
 			<English>You caught a %1.</English>
@@ -1157,6 +1165,7 @@
 			<Czech>Rybaření přerušeno.</Czech>
 			<French>Pêche annulée</French>
 			<German>Angeln abgebrochen</German>
+			<Dutch>Gestopt met vissen.</Dutch>
 		</Key>
 		<Key ID="str_fishing_watercheck">
 			<English>Must be facing a pond, near a shore or on a boat to fish.</English>
@@ -1198,6 +1207,7 @@
 			<Czech>Rybaření již probíhá.</Czech>
 			<French>Vous êtes déjà en train de pêcher</French>
 			<German>Du angelst schon.</German>
+			<Dutch>Afmaken van creatie is al bezig.</Dutch>
 		</Key>
 		<Key ID="str_siphon_start">
 			<English>Siphon Vehicle Fuel</English>
@@ -1657,7 +1667,7 @@
 		</Key>
 		<Key ID="str_upgrade">
 			<English>Upgrade %1</English>
-			<Russian>Улучшить %1 </Russian>
+			<Russian>Улучшить %1</Russian>
 			<French>Améliorer la %1</French>
 			<Czech>Vylepšit %1</Czech>
 			<German>%1 erweitern</German>
@@ -4241,7 +4251,7 @@
 		</Key>
 		<Key ID="STR_MAG_COMBINE_1">
 			<English>Combine to 8 rounds</English>
-			<Russian>Собрать в 8п. </Russian>
+			<Russian>Собрать в 8п.</Russian>
 			<Spanish>Combinar a 8 rondas</Spanish>
 			<French>Assembler en 8 balles</French>
 			<Czech>Zkombinovat do 8 nábojů</Czech>
@@ -4345,7 +4355,7 @@
 		</Key>
 		<Key ID="STR_MAG_DESC_8">
 			<English>Caliber: 12 gauge &lt;br/&gt;Rounds: 2 &lt;br/&gt;Used in: M1014</English>
-			<Russian>Патрон: 12-й калибр &lt;br/&gt;Количество: 2 &lt;br/&gt;Используется в: M1014, Двустволках </Russian>
+			<Russian>Патрон: 12-й калибр &lt;br/&gt;Количество: 2 &lt;br/&gt;Используется в: M1014, Двустволках</Russian>
 			<Spanish>Calibre: 12 gauge &lt;br/&gt;Rondas: 2 &lt;br/&gt;Usada en: M1014</Spanish>
 			<French>Calibre: 12&lt;br/&gt;Munitions: 2&lt;br/&gt;Pour: M1014</French>
 			<Czech>Ráže: 12 &lt;br/&gt;Munice: 2 &lt;br/&gt;Pro: M1014</Czech>
@@ -4366,22 +4376,6 @@
 			<French>Calibre: 12&lt;br/&gt;Munitions: 2 cartouches&lt;br/&gt;Pour: M1014</French>
 			<Czech>Ráže: 12&lt;br/&gt;Munice: 2 patrony&lt;br/&gt;Pro: M1014</Czech>
 			<German>Kaliber 12 Schrotmunition&lt;br/&gt;2 Schuss&lt;br/&gt;Verwendet in: M1014</German>
-		</Key>
-		<Key ID="STR_EQUIP_NAME_41">
-			<English>Hatchet</English>
-			<German>Beil</German>
-			<Russian>Топорик</Russian>
-			<Spanish>Hacha</Spanish>
-			<French>Hâche</French>
-			<Czech>Sekera</Czech>
-		</Key>
-		<Key ID="STR_EQUIP_DESC_41">
-			<English>A single-handed striking tool with a sharp blade used to cut and split wood.</English>
-			<German>Ein einhaendig gefuehrtes Schlagwerkzeug mit scharfer Klinge, das zum Hacken und Spalten von Holz verwendet wird.</German>
-			<Russian>Топор отлично подойдет для рубки дров.</Russian>
-			<Spanish>Una herramienta con una hoja afilada usada para cortar madera.</Spanish>
-			<French>Un outil à une main doté d&apos;une lame tranchante, utilisé pour couper et fendre du bois.</French>
-			<Czech>Jednoruční nástroj, který se používá pro sekání dřeva.</Czech>
 		</Key>
 		<Key ID="STR_CHAR_1">
 			<English>Survivor</English>
@@ -6499,6 +6493,7 @@
 			<French>Canne à pêche</French>
 			<Czech>Rybářský prut</Czech>
 			<German>Angel</German>
+			<Dutch>Vishengel</Dutch>
 		</Key>
 		<Key ID="STR_ITEM_DESC_FISHINGPOLE">
 			<English>This carbon fiber rod may be old but she still works like a charm.</English>
@@ -6507,6 +6502,7 @@
 			<French>Canne en fibre de carbone, sans doute assez ancienne mais fonctionnant parfaitement.</French>
 			<Czech>Sice vypadá starobyle, ale svůj účet splní dokonale.</Czech>
 			<German>Die Carbonrute mag alt aussehen, funktioniert aber noch tadellos.</German>
+			<Dutch>Dit carbonnen hengeltje is al oud, maar werkt nog prima!</Dutch>
 		</Key>
 		<Key ID="STR_ITEM_NAME_CAMONET">
 			<English>CamoNet</English>
@@ -8044,7 +8040,7 @@
 		<Key ID="str_playerstats_journal_3_1">
 			<English>At least I haven&apos;t got any broken bones</English>
 			<German>Wenigstens sind meine Knochen noch heil</German>
-			<Russian>По крайней мере нет переломов </Russian>
+			<Russian>По крайней мере нет переломов</Russian>
 			<Spanish>Al menos no tengo ningún hueso roto</Spanish>
 			<French>Au moins je n&apos;ai rien de cassé</French>
 			<Czech>Aspoň, že jsem si nic nezlomil</Czech>
@@ -8052,7 +8048,7 @@
 		<Key ID="str_playerstats_journal_3_2">
 			<English>The situation looks dire.  I&apos;ve got multiple broken bones</English>
 			<German>Die Lage ist ernst, mehrere meiner Knochen scheinen gebrochen</German>
-			<Russian>Ситуация хреновая. У меня несколько переломов </Russian>
+			<Russian>Ситуация хреновая. У меня несколько переломов</Russian>
 			<Spanish>La situación parece grave.  Tengo multiples huesos rotos</Spanish>
 			<French>La situation est terrible.  J&apos;ai plusieurs fractures</French>
 			<Czech>Situace vypadá bledě.  Mám několik zlomenin</Czech>
@@ -8060,7 +8056,7 @@
 		<Key ID="str_playerstats_journal_3_3">
 			<English>Things could be better. My leg is broken</English>
 			<German>Die Situation könnte besser sein. Mein Bein ist gebrochen</German>
-			<Russian>Все могло быть и лучше. Моя нога сломана </Russian>
+			<Russian>Все могло быть и лучше. Моя нога сломана</Russian>
 			<Spanish>La cosas no podrían estar mejor... Tengo una pierna rota</Spanish>
 			<French>J&apos;ai connu mieux. Ma jambe est cassée</French>
 			<Czech>Mohlo by být lépe. Má noha je zlomená</Czech>
@@ -8068,7 +8064,7 @@
 		<Key ID="str_playerstats_journal_3_4">
 			<English>Things aren&apos;t so good.  My arm is broken</English>
 			<German>Das sieht nicht gut aus. Mein Arm ist gebrochen</German>
-			<Russian>Дела обстоят не так уж и хорошо. Моя рука сломана </Russian>
+			<Russian>Дела обстоят не так уж и хорошо. Моя рука сломана</Russian>
 			<Spanish>Las cosas no estan bien.  Mi brazo está roto</Spanish>
 			<French>Ça ne va pas bien.  Mon bras est cassé</French>
 			<Czech>Má ruka je zlomená a že by mi bylo do zpěvu, to se říct nedá</Czech>
@@ -8076,7 +8072,7 @@
 		<Key ID="str_playerstats_journal_4_1">
 			<English>, although I do feel really sick</English>
 			<German>, aber ich fühle mich überhaupt nicht wohl</German>
-			<Russian>, хотя я чувствую себя действительно больным </Russian>
+			<Russian>, хотя я чувствую себя действительно больным</Russian>
 			<Spanish>, encima me siento realmente mal</Spanish>
 			<French>, bien que je me sens malade</French>
 			<Czech>, i přesto, že se cítím nemocný</Czech>
@@ -8084,7 +8080,7 @@
 		<Key ID="str_playerstats_journal_4_2">
 			<English>, I feel really feverish</English>
 			<German>, aber ich scheine Fieber zu haben</German>
-			<Russian>, чувствую, как меня лихорадит </Russian>
+			<Russian>, чувствую, как меня лихорадит</Russian>
 			<Spanish>, me siento muy febril</Spanish>
 			<French>, je me sens très fébril</French>
 			<Czech>, i když mám horečku</Czech>
@@ -9029,7 +9025,7 @@
 		</Key>
 		<Key ID="STR_BLD_name_WeaponHolder_ItemRSJ">
 			<English>Steel Beam</English>
-			<Russian>Стальная балка </Russian>
+			<Russian>Стальная балка</Russian>
 			<French>Poutrelle</French>
 			<Czech>Traverza</Czech>
 			<German>Stahlträger</German>
@@ -10486,4 +10482,3 @@
 		</Key>
 	</Package>
 </Project>
-

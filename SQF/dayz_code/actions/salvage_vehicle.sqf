@@ -1,4 +1,5 @@
-private ["_part","_color"];
+private ["_part","_color","_vehicle","_PlayerNear","_hitpoints","_cursorTarget","_isATV","_is6WheelType","_HasNoGlassKind",
+"_6WheelTypeArray","_NoGlassArray","_NoExtraWheelsArray","_RemovedPartsArray","_damage","_cmpt","_configVeh","_damagePercent","_string","_handle","_cancel"];
 
 _vehicle = _this select 3;
 {dayz_myCursorTarget removeAction _x} forEach s_player_repairActions;s_player_repairActions = [];

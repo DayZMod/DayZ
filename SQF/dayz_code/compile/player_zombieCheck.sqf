@@ -1,4 +1,7 @@
-private ["_attacked","_chance","_near","_targeted","_localtargets","_remotetargets","_forcedSpeed"];
+private ["_attacked","_chance","_near","_targeted","_localtargets","_remotetargets","_forcedSpeed","_vehicle","_isVehicle","_speed","_refObj",
+"_listTalk","_multiplier","_inVehicle","_isAir","_isLand","_isSea","_hearingThreshold","_sightThreshold","_type","_dist","_attackDist",
+"_targetedBySight","_targetedBySound","_targets","_last","_entHeight","_pHeight","_delta","_attackResult","_cantSee","_tPos","_zPos",
+"_targetAngle","_inAngle","_lowBlood"];
 
 _vehicle = vehicle player;
 _isVehicle = (_vehicle != player);
@@ -13,6 +16,7 @@ _inVehicle = (vehicle player != player);
 _isAir = vehicle player iskindof "Air";
 _isLand =  vehicle player iskindof "Land";
 _isSea =  vehicle player iskindof "Sea";
+
 if (_isLand) then { } else {  };
 if (_isAir) then { } else {  };
 if (_isSea) then { } else {  };
@@ -55,13 +59,16 @@ if (_isSea) then { } else {  };
 					_delta = _pHeight - _entHeight;
 					_x setVariable ["speedLimit", 0, false];			
  
-					if (_x distance _refObj <= 3.3) then {
+					if (_x distance _refObj <= 3) then {
 					//Force Ai to Stand
 						_x setUnitPos "UP";
 						if (!(animationState _x == "ZombieFeed")) then {
 							if (((diag_tickTime - _last) > 1.5) and ((_delta < 1.5) and (_delta > -1.5))) then {
-								_attackResult = [_x,  _type] call player_zombieAttack;
-								_x setVariable["lastAttack", diag_tickTime];
+								_cantSee = [_x,_refObj] call dayz_losCheck;
+								if (!_cantSee) then {							
+									_attackResult = [_x, _type] spawn player_zombieAttack;
+									_x setVariable["lastAttack", diag_tickTime];
+								};
 							};
 						};
 					} else {

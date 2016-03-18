@@ -1,4 +1,5 @@
-private["_vehicle","_canSize","_configVeh","_capacity","_nameType","_curFuel","_newFuel","_dis","_sfx","_fueling"];
+private ["_vehicle","_canSize","_configVeh","_capacity","_nameType","_curFuel","_newFuel","_dis","_sfx","_fueling","_array","_cantype",
+"_emptycan","_isMan","_isAnimal","_isZombie","_started","_finished","_animState","_isRefuel"];
 
 _vehicle = cursorTarget;
 _array = _this select 3;

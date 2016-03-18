@@ -1,4 +1,4 @@
-private ["_item","_config","_text","_booleans","_worldspace","_dir","_location","_dis","_fire"];
+private ["_item","_config","_text","_booleans","_worldspace","_dir","_location","_dis","_fire","_tool","_itemPile"];
 
 _tool = _this;
 call gear_ui_init;

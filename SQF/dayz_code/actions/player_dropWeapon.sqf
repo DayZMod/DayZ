@@ -1,4 +1,5 @@
 private ["_item","_config","_onLadder","_consume","_bag","_droppedtype"];
+
 disableSerialization;
 _item = _this;
 _config = configFile >> "CfgWeapons" >> _item;

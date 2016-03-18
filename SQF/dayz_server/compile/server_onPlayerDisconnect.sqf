@@ -22,6 +22,14 @@ diag_log format["get: %1 (%2), sent: %3 (%4)",typeName (getPlayerUID _playerObj)
 _characterID = _playerObj getVariable["characterID", "?"];
 _lastDamage = _playerObj getVariable["noatlf4",0];
 _Sepsis = _playerObj getVariable["USEC_Sepsis",false];
+_lastDamage = round(diag_ticktime - _lastDamage);
+
+//Readded Logout debug info.
+diag_log format["Player UID#%1 CID#%2 %3 as %4, logged off at %5%6", 
+	getPlayerUID _playerObj, _characterID, _playerObj call fa_plr2str, typeOf _playerObj, 
+	(getPosATL _playerObj) call fa_coor2str,
+	if ((_lastDamage > 5 AND (_lastDamage < 30)) AND ((alive _playerObj) AND (_playerObj distance (getMarkerpos "respawn_west") >= 2000))) then {" while in combat ("+str(_lastDamage)+" seconds left)"} else {""}
+]; 
 
 //Make sure we know the ID of the object before we try and sync any info to the DB
 if (_characterID != "?") exitwith {
