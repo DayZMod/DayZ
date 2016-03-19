@@ -122,7 +122,6 @@ while {r_doLoop and (_i < 12)} do {
 		diag_log format ["TRANSFUSION: completed blood transfusion successfully (_i = %1)", _i];
 		cutText [localize "str_actions_medical_transfusion_successful", "PLAIN DOWN"];
 		[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_successful","PLAIN DOWN"] call RE;
-		[player,25] call player_humanityChange;
 		r_doLoop = false;
 	};
 
