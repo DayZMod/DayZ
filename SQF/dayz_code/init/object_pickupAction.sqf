@@ -29,13 +29,13 @@ actionMonitor = {
 		if (alive _holder) then {
 			_distance = player distance _holder;
 			// Add action to player
-			if ((_distance < 1.75) and (_action == -1)) then {
+			if ((_distance < 1.75) && (_action == -1)) then {
 				_action = player addAction [format[(localize "str_init_take"),_name], "\z\addons\dayz_code\actions\object_pickup.sqf",[_type,_classname,_holder], 20, true, true];
 				player reveal _holder;
 				_timeout = 0.3;
 			};
 			// Remove action from player
-			if ((_distance >= 1.75) and (_action != -1)) then {
+			if ((_distance >= 1.75) && (_action != -1)) then {
 				player removeAction _action;
 				pickupInit = true;
 				_action = -1;
@@ -57,7 +57,7 @@ actionMonitor = {
 			_timeout = 0;
 			_run = false;
 		};
-		sleep _timeout;
+		uiSleep _timeout;
 	};
 };
 
