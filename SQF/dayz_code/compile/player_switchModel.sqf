@@ -197,5 +197,5 @@ _currentAnim = animationState player;
 	call dayz_meleeMagazineCheck;
 
 	//reveal all near objects.
-	{player reveal _x} forEach (nearestObjects [getPosATL player, ["AllVehicles","WeaponHolder","Land_A_tent","BuiltItems"], 75]);
+	{player reveal _x} count (nearestObjects [getPosATL player,["AllVehicles","WeaponHolder","Land_A_tent","BuiltItems"],75]);
 	//All is arbitrary and will need to be changed to ["AllVehicles","WeaponHolder","Land_A_tent"] ++ others (stashes etc.)
