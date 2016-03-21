@@ -35,10 +35,8 @@ if ((_ammo isKindOf "SmokeShell") or (_ammo isKindOf "GrenadeHandTimedWest") or 
 		if (_ammo isKindOf "SmokeShell") then {
 			while { ((getPosATL _projectile) select 2) >= 1 } do {
 				_pos = getPosATL _projectile;
-				sleep 0.01;
+				uiSleep 0.01;
 			};
-
-			_listTalk = _pos nearEntities ["zZombie_Base",50];
 
 			{
 				_group = group _x;
@@ -62,19 +60,16 @@ if ((_ammo isKindOf "SmokeShell") or (_ammo isKindOf "GrenadeHandTimedWest") or 
 						};
 					};
 				};
-			} forEach _listTalk;
-			
+			} forEach (_pos nearEntities ["zZombie_Base",50]);
 		} else {
 			while { alive _projectile } do {
 				_pos = getPosATL _projectile;
-				sleep 0.01;
+				uiSleep 0.01;
 			};
-
-			_listTalk = _pos nearEntities ["zZombie_Base",50];
 
 			{
 				_x setVariable ["myDest",_pos]; // removed networked var.  targets should be enough
-			} forEach _listTalk;
+			} forEach (_pos nearEntities ["zZombie_Base",50]);
 		};
 	};
 } else {

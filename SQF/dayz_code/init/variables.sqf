@@ -546,7 +546,6 @@ if (!isDedicated) then {
 	dayz_currentWeaponHolders = 0;
 	dayz_maxMaxWeaponHolders = 80;
 	dayz_inVehicle = false;
-	dayzGearSave = false;
 	dayz_unsaved = false;
 	dayz_scaleLight = 0;
 	dayzDebug = false;

@@ -7,8 +7,8 @@ _countWeapons = {
 	_return = 0;
 
 	_weapons = (getWeaponCargo _object) select 1;
-	{ _return = _return + _x } foreach _weapons;
-	_return;
+	{ _return = _return + _x } count _weapons;
+	_return
 };
 
 _countMagazines = {
@@ -16,8 +16,8 @@ _countMagazines = {
 	_return = 0;
 
 	_magazines = (getMagazineCargo _object) select 1;
-	{ _return = _return + _x } foreach _magazines;
-	_return;
+	{ _return = _return + _x } count _magazines;
+	_return
 };
 
 _countBackpacks = {
@@ -25,19 +25,19 @@ _countBackpacks = {
 	_return = 0;
 
 	_backpacks = (getBackpackCargo _object) select 1;
-	{ _return = _return + _x } foreach _backpacks;
-	_return;
+	{ _return = _return + _x } count _backpacks;
+	_return
 };
 
 _countFreeSlots = {
 	_return = [(_weaponsMax - _weapons), (_magazinesMax - _magazines), (_backpacksMax - _backpacks)];
-	_return;
+	_return
 };
 
 _getControlText = {
 	_control = _display displayCtrl 156;
 	_return = ctrlText _control;
-	_return;
+	_return
 };
 
 _setControlText = {
@@ -69,7 +69,7 @@ waitUntil { !(isNull (findDisplay 106)) or (_timeout < time) };
 if (!(isNull (findDisplay 106))) then {
 	_display = findDisplay 106;
 
-	if ((_isVehicle or _isStorage) and (!_isMan)) then {
+	if ((_isVehicle or _isStorage) && !_isMan) then {
 		_objectName = getText (configFile >> "CfgVehicles" >> (typeof _object) >> "displayName");
 		_controlText = [] call _getControlText;
 
@@ -85,7 +85,7 @@ if (!(isNull (findDisplay 106))) then {
 				_freeSlots = [] call _countFreeSlots;
 
 				[] call _setControlText;
-				sleep 0.01;
+				uiSleep 0.01;
 			};
 		} else {
 			(_display displayCtrl _titleIDC) ctrlShow false;
