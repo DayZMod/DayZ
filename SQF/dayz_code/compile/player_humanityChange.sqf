@@ -14,7 +14,7 @@ if (_object == player) then {
 				private ["_endtime","_wait"];
 				_wait = _this select 0;
 				_endTime = diag_tickTime + _wait;
-				waitUntil { sleep 1; diag_tickTime > _endTime };
+				waitUntil { uiSleep 1; diag_tickTime > _endTime };
 				player setVariable ["FTcounter",((player getVariable ["FTcounter",0]) - _wait)];
 				if ((player getVariable ["FTcounter",0]) <= 0) then {
 					player setVariable ["FTcounter",0];
@@ -31,8 +31,7 @@ if (_object == player) then {
 	_model = typeOf player;
 
 	//if model will not be changed by humanity
-	if (_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ","RusSoldierHeadset_DZ","RusSoldierWinter_DZ","RusSoldierWoodwarrior_DZ","RusCommander_DZ","RusSoldierLight_DZ","HalfGhillie_DZ","RusSpecOps_DZ","RusOfficer_DZ","RusSoldierCasual_DZ","JoggingSuit_DZ","CivWorker_DZ","CivLeatherLeisure_DZ","CivLeatherLeisure2_DZ","CivDoctor_DZ","CivCasualDoctor_DZ","CivPress_DZ","CivCasualCheck_DZ","CivSuit_DZ","CivPressLeather_DZ","CivPilotSuit_DZ","CivPoliceUniform_DZ","CivPriest_DZ","CivLeisureBlue_DZ","CivLeisureGrey_DZ","CivLeisureBrown_DZ","CivRocker1_DZ","CivRocker2_DZ","CivTeacher_DZ","CivRusWoodland_DZ","CivRusWoodland2_DZ","CivCasualCheck2_DZ","CivWorkerOverall_DZ","CivLeisureVest_DZ","CivRedWorkerOverall_DZ","SoldierWoodwarriorCap_DZ","SoldierWoodwarrior_DZ","SoldierWoodwarriorHat_DZ","SoldierCasualShirt_DZ","WoodWarriorIndi_DZ","UNOfficer_DZ","CamoFaceCover_DZ","LeasureKevlar_DZ"]) exitWith{};
-
+	if !(_model in ["Survivor1_DZ","Survivor2_DZ","Survivor3_DZ","SurvivorW2_DZ","SurvivorW3_DZ","Bandit1_DZ","BanditW1_DZ"]) exitWith {};
 	
 	//Not sure if this will work needs testing
 	_isMen =		_model == "Survivor1_DZ" || _model == "Survivor2_DZ";
@@ -42,7 +41,6 @@ if (_object == player) then {
 	_isWomenH =		_model == "SurvivorW3_DZ"; //TODO
 	_isWomenB =		_model == "BanditW1_DZ";
 	
-
 	// Bandit
 	if (_humanity <= -2000) then {
 		if (_isMen || _isMenH) then {
