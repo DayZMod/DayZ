@@ -1,4 +1,4 @@
-private ["_idc"];
+private "_idc";
 _inventory = _this;
 if (count _inventory > 0) then {
 	_wpns = _inventory select 0;
@@ -23,8 +23,7 @@ if (count _inventory > 0) then {
 		if (_item == "ItemBloodbag") then { _item = "bloodBagONEG" }; // Convert ItemBloodbag into universal blood type/rh bag
 
 		//Is item legal?
-		_isOK = isClass(configFile >> "CfgMagazines" >> _item);
-		if (_isOK) then {
+		if (isClass(configFile >> "CfgMagazines" >> _item)) then {
 			if (_val != -1) then {
 				player addMagazine [_item,_val];
 			} else {
@@ -32,7 +31,7 @@ if (count _inventory > 0) then {
 			};
 		};
 		_idc = _idc + 1;
-	} forEach _mags;
+	} count _mags;
 
 	//Add weapons
 	{
@@ -44,9 +43,8 @@ if (count _inventory > 0) then {
 		if (_x == "SVD_CAMO") then { _x = "SVD_CAMO_DZ" };
 
 		//Is item legal?
-		_isOK = isClass(configFile >> "CfgWeapons" >> _x);
-		if (_isOK) then {
+		if (isClass(configFile >> "CfgWeapons" >> _x)) then {
 			player addWeapon _x;
 		};
-	} forEach _wpns;
+	} count _wpns;
 };
