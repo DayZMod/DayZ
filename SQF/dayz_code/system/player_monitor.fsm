@@ -997,7 +997,7 @@ class FSM
        "	while {true} do { " \n
        "		//sleep (if (call player_zombieCheck) then {dayz_monitorPeriod/3} else {dayz_monitorPeriod});" \n
        "		call player_zombieCheck;" \n
-       "		sleep 1;" \n
+       "		uiSleep 1;" \n
        "	};" \n
        "};"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -1777,7 +1777,7 @@ class FSM
        "_nearestCity = nearestLocations [getPos player, [""NameCityCapital"",""NameCity"",""NameVillage"",""NameLocal""],1000];" \n
        "Dayz_logonTown = ""Wilderness"";" \n
        "if (count _nearestCity > 0) then {Dayz_logonTown = text (_nearestCity select 0)};" \n
-       "[_world,Dayz_logonTown,format[localize ""str_player_06"",dayz_Survived]] spawn { sleep 5; _this spawn BIS_fnc_infoText;};" \n
+       "[_world,Dayz_logonTown,format[localize ""str_player_06"",dayz_Survived]] spawn {uiSleep 5; _this spawn BIS_fnc_infoText;};" \n
        "Dayz_loginCompleted = true;" \n
        "" \n
        "//Other Counters" \n
