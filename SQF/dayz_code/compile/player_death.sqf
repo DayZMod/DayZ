@@ -2,6 +2,7 @@ private ["_pos","_display","_body","_playerID","_array","_source","_method","_is
 disableSerialization;
 if (deathHandled) exitWith {};
 deathHandled = true;
+_bodyName = if (alive player) then {name player} else {"unknown"};
 
 //Prevent client freezes
 _display = findDisplay 49;
@@ -27,7 +28,7 @@ if (dayz_onBack != "") then {
 	*/
 };
 //Send Death Notice
-PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID];
+PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID,toArray _bodyName]; //Send name as array to avoid publicVariable value restrictions
 publicVariableServer "PVDZ_plr_Death";
 
 _id = [player,20,true,getPosATL player] call player_alertZombies;
