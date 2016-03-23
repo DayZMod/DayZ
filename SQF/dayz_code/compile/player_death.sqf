@@ -2,7 +2,7 @@ private ["_pos","_display","_body","_playerID","_array","_source","_method","_is
 disableSerialization;
 if (deathHandled) exitWith {};
 deathHandled = true;
-_bodyName = if (alive player) then {name player} else {"Unknown"};
+_bodyName = if (alive player) then {name player} else {"unknown"};
 
 //Prevent client freezes
 _display = findDisplay 49;
