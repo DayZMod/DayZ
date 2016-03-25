@@ -428,7 +428,6 @@ switch (dayz_presets) do {
 //call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\achievements_init.sqf";
 
 if (isServer) then {
-	dayz_players = [];
 	dead_bodyCleanup = [];
 	needUpdate_objects = [];
 	Server_InfectedCamps = [];
