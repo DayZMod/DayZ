@@ -9,6 +9,7 @@ dayz_enableRules = true; //Enables a nice little news/rules feed on player login
 dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkeys 1,2,3) False = enable animations, True = disable animations
 dayz_POIs = true;
 dayz_infectiousWaterholes = true;
+dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
 
 //DayZMod presets
 dayz_presets = "Vanilla"; //"Custom","Classic","Vanilla","Elite"
@@ -22,7 +23,6 @@ if (dayz_presets == "Custom") then {
 	dayz_spawnCrashSite_clutterCutter = 2;	// heli crash options 0 = loot hidden in grass, 1 = loot lifted, 2 = no grass
 	dayz_spawnInfectedSite_clutterCutter = 2; // infected base spawn 0 = loot hidden in grass, 1 = loot lifted, 2 = no grass 
 	dayz_bleedingeffect = 3; //1 = blood on the ground, 2 = partical effect, 3 = both
-	dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
 	dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked
 	dayz_nutritionValuesSystem = false; //Enables nutrition system
 	dayz_classicBloodBagSystem = false; // removes all blood type bloodbags (not implmented yet)
