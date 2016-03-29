@@ -24,17 +24,16 @@ if ((count _knifeArray) < 1) exitwith { cutText [localize "str_cannotgut", "PLAI
 
 
 if ((count _knifeArray > 0) and !_hasHarvested) then {
-	private ["_qty"];
+	private "_qty";
 	
 	//Select random can from array
 	_activeKnife = _knifeArray call BIS_fnc_selectRandom; 
 	
 	//Get Animal Type
-	_isListed = isClass (_config);
+	_isListed = isClass _config;
 	_text = getText (configFile >> "CfgVehicles" >> _type >> "displayName");
 
 	player playActionNow "Medic";
-
 	_dis=10;
 	_sfx = "gut";
 	[player,_sfx,0,false,_dis] call dayz_zombieSpeak;
@@ -45,11 +44,7 @@ if ((count _knifeArray > 0) and !_hasHarvested) then {
 
 	_item setVariable ["meatHarvested",true,true];
 
-	_qty = 2;
-	if (_isListed) then {
-		_qty = getNumber (_config >> "yield");
-	};
-
+	_qty = if (_isListed) then {getNumber (_config >> "yield")} else {2};
 	if (_activeKnife == "ItemKnifeBlunt") then { _qty = round(_qty / 2); };
 
 	if (local _item) then {
@@ -85,13 +80,12 @@ if ((count _knifeArray > 0) and !_hasHarvested) then {
 			player removeWeapon _activeKnife;
 			player addWeapon _sharpnessRemaining;
 		};
-	};	
+	};
 	
-	sleep 6;
+	uiSleep 6;
 	_string = format[localize "str_success_gutted_animal",_text,_qty];
-	
-	closedialog 0;
-	sleep 0.02;
+	closeDialog 0;
+	uiSleep 0.02;
 	//cutText [_string, "PLAIN DOWN"];
 	_string call dayz_rollingMessages;
 };

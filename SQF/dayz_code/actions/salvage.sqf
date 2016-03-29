@@ -8,25 +8,21 @@ _vehicle = 	_array select 0;
 _part =		_array select 1;
 _hitpoint = _array select 2;
 _type = typeOf _vehicle; 
-
 _isOK = false;
 _brokenPart = false;
 _started = false;
 _finished = false;
-
 _hasToolbox = "ItemToolbox" in items player;
 
 _nameType = getText(configFile >> "cfgVehicles" >> _type >> "displayName");
 _namePart = getText(configFile >> "cfgMagazines" >> _part >> "displayName");
 
-{_vehicle removeAction _x} forEach s_player_repairActions;
- s_player_repairActions = [];
+{_vehicle removeAction _x} count s_player_repairActions;
+s_player_repairActions = [];
 s_player_repair_crtl = 1;
 
 if (_hasToolbox) then {
-
 	player playActionNow "Medic";
-
 	[player,"repair",0,false] call dayz_zombieSpeak;
 	[player,50,true,(getPosATL player)] call player_alertZombies;
 
@@ -43,7 +39,7 @@ if (_hasToolbox) then {
 		if (_isMedic) then { _started = true; };
 		if (_started and !_isMedic) then { r_doLoop = false; _finished = true; };
 		if (r_interrupt) then { r_doLoop = false; };
-		sleep 0.1;
+		uiSleep 0.1;
 	};
 	r_doLoop = false;
 
@@ -77,9 +73,9 @@ if (_hasToolbox) then {
 				_vehicle call fnc_veh_ResetEH;
 				_vehicle setvelocity [0,0,1];
 				if(_brokenPart) then {
-						cutText [format [localize "str_salvage_destroyed",_namePart,_nameType], "PLAIN DOWN"];
+					cutText [format [localize "str_salvage_destroyed",_namePart,_nameType], "PLAIN DOWN"];
 				} else {
-						cutText [format [localize "str_salvage_removed",_namePart,_nameType], "PLAIN DOWN"];
+					cutText [format [localize "str_salvage_removed",_namePart,_nameType], "PLAIN DOWN"];
 				};
 			} else {
 				cutText [localize "str_player_24", "PLAIN DOWN"];
@@ -99,7 +95,6 @@ if (_hasToolbox) then {
 
 dayz_myCursorTarget = objNull;
 s_player_repair_crtl = -1;
-
 dayz_salvageInProgress = false;
 
 //adding melee mags back if needed
