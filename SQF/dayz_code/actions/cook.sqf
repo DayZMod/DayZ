@@ -21,7 +21,7 @@ a_player_cooking = true;
 		[player,_sfx,0,false,_dis] call dayz_zombieSpeak;
 		[player,_dis,true,(getPosATL player)] call player_alertZombies;
 
-		sleep _qty;
+		uiSleep _qty;
 		for "_x" from 1 to _qty do {
 			player removeMagazine _meat;
 			player addMagazine _meatcooked;

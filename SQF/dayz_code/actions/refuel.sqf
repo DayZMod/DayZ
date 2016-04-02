@@ -17,10 +17,9 @@ _isAnimal = _vehicle isKindOf "Animal";
 _isZombie = _vehicle isKindOf "zZombie_base";
 
 if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_refuel_notvehicle", "PLAIN DOWN"] };
-if (fuel _vehicle == 1) exitwith {};
+if (fuel _vehicle == 1) exitWith {};
 
 player removeAction s_player_fillfuel + _capacity;
-
 a_player_jerryfilling = true;
 player setVariable ["fueling", true];
 
@@ -55,7 +54,7 @@ if (!_fueling) then {
 			r_doLoop = false;
 			_finished = true;
 		};
-		sleep 0.1;
+		uiSleep 0.1;
 	};
 	r_doLoop = false;
 
@@ -68,8 +67,7 @@ if (!_fueling) then {
 		};
 
 		cutText [format [localize "str_player_05",_nameType,_canSize], "PLAIN DOWN"];
-		sleep 1;
-
+		uiSleep 1;
 		call fnc_usec_medic_removeActions;
 	};
 	[player] allowGetIn true;

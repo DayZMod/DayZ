@@ -1,3 +1,8 @@
+/* Block local script execution bug. Still not fixed in A20A as of 1.63.131129 */
+inGameUISetEventHandler ["PrevAction","false"];
+inGameUISetEventHandler ["NextAction","false"];
+inGameUISetEventHandler ["Action","false"];
+
 // (c) facoptere@gmail.com, licensed to DayZMod for the community
 //
 // check that plants libs are properly loaded
