@@ -329,18 +329,6 @@ dayz_traps = [];
 dayz_traps_active = [];
 dayz_traps_trigger = [];
 
-//Remove
-if(isNil "dayz_ForcefullmoonNights") then {
-    dayz_ForcefullmoonNights = false; //force full moon nights.
-};
-if(isNil "dayz_bleedingeffect") then { 
-	dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
-};
-
-if(isNil "dayz_temperature_override") then { 
-	dayz_temperature_override = false;
-};
-
 //Settings Not under dayz_settings
 if(isNil "dayz_attackRange") then { 
 	dayz_attackRange = 3;
