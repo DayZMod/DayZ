@@ -83,7 +83,6 @@ while {r_doLoop and (_i < 12)} do {
 		};
 		if (!_bagFound) then {_forceClose = true;} else { player removeMagazine _bagToRemove;};
 		cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
-		[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_start","PLAIN DOWN"] call RE;
 		_started = true;
 	};
 
@@ -121,7 +120,6 @@ while {r_doLoop and (_i < 12)} do {
 	if (((_blood >= r_player_bloodTotal) and !_badBag and _bagFound) or (_i == 12)) then {
 		diag_log format ["TRANSFUSION: completed blood transfusion successfully (_i = %1)", _i];
 		cutText [localize "str_actions_medical_transfusion_successful", "PLAIN DOWN"];
-		[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_successful","PLAIN DOWN"] call RE;
 		r_doLoop = false;
 	};
 
@@ -130,7 +128,6 @@ while {r_doLoop and (_i < 12)} do {
 	if (r_interrupt or !_isClose or _forceClose) then {
 		diag_log format ["TRANSFUSION: transfusion was interrupted (r_interrupt: %1 | distance: %2 (%3) | _i = %4)", r_interrupt, player distance _unit, _isClose, _i];
 		cutText [localize "str_actions_medical_transfusion_interrupted", "PLAIN DOWN"];
-		[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_interrupted","PLAIN DOWN"] call RE;
 		r_doLoop = false;
 	};
 
