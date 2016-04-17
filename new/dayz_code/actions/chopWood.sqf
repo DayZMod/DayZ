@@ -1,0 +1,1 @@
+call compile preprocessFileLineNumbers ( ["\dayz\dayz_code\actions\chopWood\felloff.sqf", "\dayz\dayz_code\actions\chopWood\fellon.sqf"] select dz_cfg_fellTrees );
