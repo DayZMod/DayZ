@@ -34,7 +34,7 @@ MeleeMagazines = ["Hatchet_Swing","Crowbar_Swing","Machete_Swing","Bat_Swing","B
 Dayz_fishingItems = ["MeleeFishingPole"];
 Dayz_plants = ["Dayz_Plant1","Dayz_Plant2","Dayz_Plant3"];
 Dayz_attachment_array = ["Attachment_ACG","Attachment_AIM"];
-//DayZ_Tents = ["TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","DomeTentStorage","DomeTentStorage0","DomeTentStorage1","DomeTentStorage2","DomeTentStorag3","DomeTentStorage4"]
+//DayZ_Tents = ["TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","DomeTentStorage","DomeTentStorage0","DomeTentStorage1","DomeTentStorage2","DomeTentStorage3","DomeTentStorage4"]
 //DayZ_Stashs = ["StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3","StashMedium4"]
 //DayZ_cutter = ["Wire_cat1","Sandbag1_DZ","Fence_DZ","Generator_DZ","Hedgehog_DZ","CamoNet_DZ"]
 DayZ_Backpacks = ["DZ_Patrol_Pack_EP1","DZ_Assault_Pack_EP1","DZ_Czech_Vest_Puch","DZ_ALICE_Pack_EP1","DZ_TK_Assault_Pack_EP1","DZ_British_ACU","DZ_CivilBackpack_EP1","DZ_Backpack_EP1"];
@@ -328,18 +328,6 @@ dayz_canDelete = 350; // Z, further than this distance from its "owner", will be
 dayz_traps = [];
 dayz_traps_active = [];
 dayz_traps_trigger = [];
-
-//Remove
-if(isNil "dayz_ForcefullmoonNights") then {
-    dayz_ForcefullmoonNights = false; //force full moon nights.
-};
-if(isNil "dayz_bleedingeffect") then { 
-	dayz_bleedingeffect = 3; //1= blood on the ground, 2= partical effect, 3 = both.
-};
-
-if(isNil "dayz_temperature_override") then { 
-	dayz_temperature_override = false;
-};
 
 //Settings Not under dayz_settings
 if(isNil "dayz_attackRange") then { 
