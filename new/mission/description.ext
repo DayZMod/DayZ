@@ -1,0 +1,22 @@
+respawn = BASE;
+respawndelay = 5;
+onLoadMission = "DayZ Chernarus";
+OnLoadIntro = "Welcome to Chernarus";
+OnLoadIntroTime = 0;
+OnLoadMissionTime = 0;
+disabledAI = 1;
+disableChannels[] = {0,1,2,6};
+enableItemsDropping = 0;
+briefing = 0;
+debriefing = 0;
+
+loadScreen = "\dayz\dayz_code\ui\data\loadingscreen.paa";
+
+class Header
+{
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 100;
+};
+
+#include "\z\addons\dayz_code\gui\description.hpp"
