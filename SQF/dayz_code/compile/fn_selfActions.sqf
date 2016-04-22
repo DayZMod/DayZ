@@ -168,7 +168,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < 4) 
 		//Allow player to fill vehicle 20L
 		if (_hasFuel20 && {!_isZombie} && {!_isAnimal} && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1} && {!a_player_jerryfilling}) then {
 			if (s_player_fillfuel20 < 0) then {
-				s_player_fillfuel20 = player addAction [format[localize "str_actions_medical_10",_text,"20"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemJerrycan"], 0, true, true, "", "'ItemJerrycan' in magazines player"];
+				s_player_fillfuel20 = player addAction [format[localize "str_actions_medical_10",_text,"20"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemJerrycan",_cursorTarget], 0, true, true, "", "'ItemJerrycan' in magazines player"];
 			};
 		} else {
 			player removeAction s_player_fillfuel20;
@@ -178,7 +178,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < 4) 
 		//Allow player to fill vehicle 5L
 		if (_hasFuel5 && {!_isZombie} && {!_isAnimal} && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1} && {!a_player_jerryfilling}) then {
 			if (s_player_fillfuel5 < 0) then {
-				s_player_fillfuel5 = player addAction [format[localize "str_actions_medical_10",_text,"5"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemFuelcan"], 0, true, true, "", "'ItemFuelcan' in magazines player"];
+				s_player_fillfuel5 = player addAction [format[localize "str_actions_medical_10",_text,"5"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemFuelcan",_cursorTarget], 0, true, true, "", "'ItemFuelcan' in magazines player"];
 			};
 		} else {
 			player removeAction s_player_fillfuel5;
