@@ -1,3 +1,5 @@
+if (dayz_lastClothesChange + 5 > diag_tickTime) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_lastClothesChange = diag_tickTime;
 /*
 _item call player_wearClothes;
 TODO: female

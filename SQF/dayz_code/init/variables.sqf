@@ -488,6 +488,7 @@ if (!isDedicated) then {
 	dayz_temperaturmin = 27; //TeeChange
 
 	//player special variables
+	dayz_lastClothesChange = 0;
 	dayZ_lastPlayerUpdate = 0;
 	dayz_hunger = 0;
 	dayz_thirst = 0;
