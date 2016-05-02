@@ -246,7 +246,7 @@
 		</Key>
 		<Key ID="str_actions_medical_06_splint">
 			<English>Apply Splint</English>
-			<German>Bewerben Splint</German>
+			<German>Schiene anlegen</German>
 			<Russian>Применить шину</Russian>
 			<Spanish>Aplicar Férula</Spanish>
 			<French>Appliquer Splint</French>
@@ -1306,7 +1306,7 @@
 			<Spanish>Usted cree que necesita cinta para conductos para fijar la botella.</Spanish>
 			<Czech>Ke spravení láhve bude zřejmě třeba lepící páska.</Czech>
 			<French>Vous pensez que vous avez besoin de ruban adhésif pour réparer la bouteille.</French>
-			<German>Du könntest Duct Tape gebrauchen, um die Flasche zu reparieren.</German>
+			<German>Du könntest Klebeband gebrauchen, um die Flasche zu reparieren.</German>
 		</Key>
 		<Key ID="str_tear_clothes_0">
 			<English>You didn&apos;t get anything out of tearing the clothes.</English>
@@ -1433,13 +1433,13 @@
 			<English>Maybe you can fix it with tape and a handle.</English>
 			<Russian>Попробуйте использовать скотч и рукоять для починки.</Russian>
 			<Czech>Možná to půjde spravit s pomocí pásky a násady.</Czech>
-			<German>Vielleicht kann das mit etwas Duct Tape und einem neuen Schaft repariert werden.</German>
+			<German>Vielleicht kann das mit etwas Klebeband und einem neuen Schaft repariert werden.</German>
 		</Key>
 		<Key ID="str_fixtoolMissingTape">
 			<English>You will need some tape for this.</English>
 			<Russian>Для этого нужен скотч.</Russian>
 			<Czech>K tomuto bude třeba nějaká páska.</Czech>
-			<German>Dafür brauchst du Duct Tape.</German>
+			<German>Dafür brauchst du Klebeband.</German>
 		</Key>
 		<Key ID="str_fixtoolMissingHandle">
 			<English>You will need a lever to fix this.</English>
@@ -1560,7 +1560,7 @@
 			<Russian>Бомба установлена! \nВыжившего, который решится завести двигатель разорвет на кусочки!</Russian>
 			<French>\nLa bombe est posée ! La prochaine personne qui démarre\nle véhicule sera éparpillée façon puzzle.</French>
 			<Czech>\n\nBomba umístěna! Ten, kdo příště nastartuje motor, se upeče!</Czech>
-			<German>\n\nSprengsatz angebracht! Der nächste Survivor, der den Motor startet, wird in die Luft fliegen!</German>
+			<German>Sprengsatz angebracht! Die nächste Person, der den Motor startet, wird in die Luft fliegen!</German>
 		</Key>
 		<Key ID="str_bombAlready">
 			<English>\n\nThis vehicle already has a bomb attached!</English>
@@ -2467,7 +2467,7 @@
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_duct_tape">
 			<English>Duct Tape</English>
-			<German>Duct Tape</German>
+			<German>Klebeband</German>
 			<Russian>Скотч</Russian>
 			<Spanish>Cinta Adhesiva</Spanish>
 			<French>Chatterton</French>
@@ -2566,7 +2566,7 @@
 			<Russian>Напиток из смеси трав, который может помочь при инфекции.</Russian>
 			<Czech>Nápoj smíchá s bylinkami , které mohou pomoci léčit infekci .</Czech>
 			<French>Une boisson mélangée avec des herbes qui peuvent aider à guérir l'infection .</French>
-			<German>Ein Getränk gemischt mit Kräutern , die helfen, zu heilen Infektion kann .</German>
+			<German>Ein Getränk aus Kräutern. Hilft bei Infektionen.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_HerbalDrink">
 			<English>Herbal Drink</English>
@@ -2574,7 +2574,7 @@
 			<Russian>Травяной напиток</Russian>
 			<Czech>Herbal Drink</Czech>
 			<French>boisson à base de plantes</French>
-			<German>Herbal Drink</German>
+			<German>Kräutertrunk</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_comfreyleafs">
 			<English>Comfrey Leaves</English>
@@ -3666,6 +3666,7 @@
 		<Key ID="STR_EQUIP_NAME_13_EMPTY">
 			<English>Empty</English>
 			<Russian>Пустая</Russian>
+			<German>Ausleeren</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_13">
 			<English>A bottle of water that is Empty. It might be useful to fill it with water again.</English>
@@ -4149,7 +4150,7 @@
 		</Key>
 		<Key ID="STR_WPN_DESC_1">
 			<English>Shotgun 12 gauge</English>
-			<German>Reminton 870</German>
+			<German>Remington 870</German>
 			<Russian>Дробовик 12 калибра</Russian>
 			<Spanish>Escopeta calibre 12</Spanish>
 			<French>Fusil cal. 12</French>
@@ -4189,7 +4190,7 @@
 		</Key>
 		<Key ID="STR_WPN_DESC_4">
 			<English>The compound crossbow is, once the aim is mastered, a powerful short-range single-shot weapon with a long reload time.</English>
-			<German>Die Kompositarbmbrust ist, wenn man das Zielen beherrscht, eine starke und lautlose Waffe - allerdings mit kurzer Reichweite und langer Nachladezeit.</German>
+			<German>Die Kompositarmbrust ist, wenn man das Zielen beherrscht, eine starke und lautlose Waffe - allerdings mit kurzer Reichweite und langer Nachladezeit.</German>
 			<Russian>Спортивный арбалет требует сноровки для точной стрельбы, превращаясь в мощное однозарядное оружие на коротких дистанциях.</Russian>
 			<Spanish>La ballesta compuesta es, una vez que se domina el apuntado, una poderasa arma de único tiro a corta distancia con largo tiempo de recarga.</Spanish>
 			<French>Une fois maîtrisée, l&apos;arbalète composite permet de tirer un coup puissant mais avec un long temps de chargement.</French>
@@ -4985,7 +4986,7 @@
 		</Key>
 		<Key ID="STR_EQUIP_CODE_NAME_41">
 			<English>Dull Hatchet</English>
-			<German>Stumpfer Beil</German>
+			<German>Stumpfes Beil</German>
 			<Russian>Затупившийся топор</Russian>
 			<Spanish>Hacha Desafilada</Spanish>
 			<French>Hache émoussée</French>
@@ -5364,6 +5365,7 @@
 		<Key ID="STR_ITEM_CANTEEN_EMPTY">
 			<English>Empty</English>
 			<Russian>Пустой</Russian>
+			<German>Ausleeren</German>
 		</Key>
 		<Key ID="STR_ITEM_CANTEEN_EMPTY_NAME">
 			<English>Canteen (empty)</English>
@@ -6648,13 +6650,13 @@
 			<Russian>Шина из дерева</Russian>
 			<Czech>Dřevěná dlaha</Czech>
 			<French>Attelle</French>
-			<German>Holzspahn</German>
+			<German>Holzschiene</German>
 		</Key>
 		<Key ID="STR_ITEM_DESC_WOODENSPLINT">
 			<English>A Wooden splint that can be used to brace a broken leg.</English>
 			<Russian>Шина из дерева для фиксации сломанных конечностей.</Russian>						
 			<Czech>Dřevěná dlaha, která se bude hodit na zafixování zlomené nohy.</Czech>
-			<German>Ein Holzspahn, mit dem ein gebrochenes Bein geschient werden kann.</German>
+			<German>Eine Holzschiene, mit der ein gebrochenes Bein geschient werden kann.</German>
 		</Key>
 		<Key ID="STR_ITEM_MAKESHIFTBACKPACK">
 			<English>Makeshift Backpack</English>
@@ -7095,7 +7097,7 @@
 			<Spanish>Usted está en el modo de fantasma, de volver a intentarlo en% 1 segundos!</Spanish>
 			<Czech>Nacházíte se v módu duchů, další pokus znovu za %1 sekund!</Czech>
 			<French>Vous êtes en quarantaine, nouvelle tentative dans %1 secondes !</French>
-			<German>Sie sind in Ghost-Modus, versucht wieder in% 1 Sekunden!.</German>
+			<German>Sie sind im Ghost-Modus, versuche nochmals in %1 Sekunden!</German>
 		</Key>
 		<Key ID="str_login_characterData">
 			<English>Character Data received from server</English>
@@ -7148,7 +7150,7 @@
 		</Key>
 		<Key ID="str_player_20">
 			<English>You must be near a water-source such as a pond, or well, or watering hole, to refill your water bottles</English>
-			<German>Du musst dich in der Nähe einer Wasserquelle sein, um Wasserflaschen zu füllen. Halte Ausschau nach einem Teich oder Brunnen!</German>
+			<German>Du musst dich in der Nähe einer Wasserquelle befinden, um Wasserflaschen zu füllen. Halte Ausschau nach einem Teich oder Brunnen!</German>
 			<Russian>Вы должны находиться возле водоема или источника воды, чтобы наполнить свои фляги.</Russian>
 			<Spanish>Necesitas estar cerca de una fuente de agua como un pozo para rellenar tu cantimplora</Spanish>
 			<French>Vous devez être à côté d&apos;une source comme un plan d&apos;eau ou un puits pour remplir vos Bouteilles.</French>
@@ -7610,7 +7612,7 @@
 		</Key>
 		<Key ID="str_death_sick">
 			<English>infection</English>
-			<German>infektion</German>
+			<German>an einer Infektion</German>
 			<Russian>инфекционное заболевание</Russian>
 			<Spanish>infección</Spanish>
 			<French>maladie</French>
@@ -7848,7 +7850,7 @@
 			<Russian>Основное</Russian>
 			<Spanish>Primaria</Spanish>
 			<Czech>Hlavní</Czech>
-			<German>Primäraffe</German>
+			<German>Primärwaffe</German>
 			<French>Primaire</French>
 		</Key>
 		<Key ID="STR_UI_SECONDARY">
