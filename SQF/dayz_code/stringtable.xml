@@ -9688,6 +9688,76 @@
 			<Czech>Kovový plot</Czech>
 			<German>Metallzaun</German>
 		</Key>
+		<Key ID="STR_BLD_ACTIONS_OPENGATE">
+			<English>Open Gate</English>
+			<German>Open Gate</German>
+			<Russian>Открыть</Russian>
+			<Spanish>Open Gate</Spanish>
+			<Dutch>Open Gate</Dutch>
+			<French>Open Gate</French>
+			<Czech>Open Gate</Czech>
+		</Key>
+		<Key ID="STR_BLD_ACTIONS_CLOSEGATE">
+			<English>Close Gate</English>
+			<German>Close Gate</German>
+			<Russian>Закрыть</Russian>
+			<Spanish>Close Gate</Spanish>
+			<Dutch>Close Gate</Dutch>
+			<French>Close Gate</French>
+			<Czech>Close Gate</Czech>
+		</Key>
+		<Key ID="STR_BLD_ACTIONS_SETLOCKCODE">
+			<English>Set Lock Code</English>
+			<German>Set Lock Code</German>
+			<Russian>Установить код</Russian>
+			<Spanish>Set Lock Code</Spanish>
+			<Dutch>Set Lock Code</Dutch>
+			<French>Set Lock Code</French>
+			<Czech>Set Lock Code</Czech>
+		</Key>
+		<Key ID="STR_BLD_ACTIONS_LOCKBUILD">
+			<English>Lock Build</English>
+			<German>Lock Build</German>
+			<Russian>Закрыть постройку</Russian>
+			<Spanish>Lock Build</Spanish>
+			<Dutch>Lock Build</Dutch>
+			<French>Lock Build</French>
+			<Czech>Lock Build</Czech>
+		</Key>
+		<Key ID="STR_BLD_ACTIONS_UNLOCKBUILD">
+			<English>Unlock Build</English>
+			<German>Unlock Build</German>
+			<Russian>Открыть постройку</Russian>
+			<Spanish>Unlock Build</Spanish>
+			<Dutch>Unlock Build</Dutch>
+			<French>Unlock Build</French>
+			<Czech>Unlock Build</Czech>
+		</Key>
+		<Key ID="STR_BLD_ACTIONS_UNLOCKGATE">
+			<English>Unlock Gate</English>
+			<German>Unlock Gate</German>
+			<Russian>Разблокировать</Russian>
+			<Spanish>Unlock Gate</Spanish>
+			<French>Unlock Gate</French>
+			<Czech>Unlock Gate</Czech>
+		</Key>
+		<Key ID="STR_BLD_ACTIONS_LOCKGATE">
+			<English>Lock Gate</English>
+			<German>Lock Gate</German>
+			<Russian>Заблокировать</Russian>
+			<Spanish>Lock Gate</Spanish>
+			<French>Lock Gate</French>
+			<Czech>Lock Gate</Czech>
+		</Key>
+		<Key ID="STR_BLD_ACTIONS_BREAKIN">
+			<English>Break In</English>
+			<German>Break In</German>
+			<Russian>Взломать</Russian>
+			<Spanish>Break In</Spanish>
+			<Dutch>Break In</Dutch>
+			<French>Break In</French>
+			<Czech>Break In</Czech>
+		</Key>
 	</Package>	
 	<Package name="weapons">
 		<!-- **** WEAPONS **** -->
