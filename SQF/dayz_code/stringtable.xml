@@ -41,6 +41,7 @@
 			<Czech>Odstranit z nástrojů</Czech>
 			<French>Retirer de la ceinture</French>
 			<German>Vom Werkzeuggürtel abnehmen</German>
+			<Dutch>Verwijder van gereedschapsgordel</Dutch>
 		</Key>
 		<Key ID="STR_ACTION_CAST">
 			<English>Cast Fishing Pole</English>
@@ -4558,6 +4559,9 @@
 			<Russian>Кувалда</Russian>
 			<Czech>Palice</Czech>
 			<German>Vorschlaghammer</German>
+			<Spanish>Almádena</Spanish>
+			<French>Masse</French>
+			<Dutch>Voorhamer</Dutch>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_SledgeHammer">
 			<English>A sledgehammer is a tool with a large, flat, often metal head, attached to a lever.</English>
@@ -6390,6 +6394,7 @@
 			<Spanish>Mochila de Patrullaje (Coyote)</Spanish>
 			<Czech>Batůžek (coyote)</Czech>
 			<German>Trekkingrucksack (Coyote)</German>
+			<Dutch>Patrouillerugzak (coyote)</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_PATROL">
 			<English>Patrol Pack (coyote)</English>
@@ -6406,6 +6411,7 @@
 			<Spanish>Mochila de Asalto (ACU)</Spanish>
 			<Czech>Batoh Assault Pack (ACU)</Czech>
 			<German>Kampfrucksack (ACU)</German>
+			<Dutch>Aanvalsrugzak (ACU)</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_ACU">
 			<English>Assault Pack (ACU)</English>
@@ -6422,6 +6428,7 @@
 			<Spanish>Bolsa Chaleco</Spanish>
 			<Czech>Česká vesta</Czech>
 			<German>Tschechischer Westenrucksack</German>
+			<Dutch>Tsjechische Borstzak</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_VEST">
 			<English>Czech Vest Pouch</English>
@@ -6438,6 +6445,7 @@
 			<Spanish>Mochila Alice</Spanish>
 			<Czech>Batoh Alice</Czech>
 			<German>Alice Pack</German>
+			<Dutch>ALICE Rugzak</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_ALICE">
 			<English>Alice pack</English>
@@ -6454,6 +6462,7 @@
 			<Spanish>Mochila de Supervivencia ACU</Spanish>
 			<Czech>Batoh Survival ACU</Czech>
 			<German>Kampfrucksack (Woodland)</German>
+			<Dutch>Overlevings ACU</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_SURVACU">
 			<English>Survival ACU</English>
@@ -6470,6 +6479,7 @@
 			<Spanish>Mochila de Asalto Británica</Spanish>
 			<Czech>Britský batoh</Czech>
 			<German>Britischer Kampfrucksack</German>
+			<Dutch>Britse Aanvalsrugzak</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_BRITISH">
 			<English>British Assault Pack</English>
@@ -6486,6 +6496,7 @@
 			<Spanish>Mochila Checa</Spanish>
 			<Czech>Český batoh</Czech>
 			<German>Tschechischer Rucksack</German>
+			<Dutch>Tsjechische Rugzak</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_CZECH">
 			<English>Czech Backpack</English>
@@ -6502,6 +6513,7 @@
 			<Spanish>Mochila (Coyote)</Spanish>
 			<Czech>Batoh (coyote)</Czech>
 			<German>Kampfrucksack (Coyote)</German>
+			<Dutch>Rugzak (Coyote)</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_COYOTE">
 			<English>Backpack (coyote)</English>
@@ -7454,6 +7466,7 @@
 			<Spanish>No puedes cambiar de ropa mientras estás en un vehículo</Spanish>
 			<French>Vous ne pouvez pas vous changer dans un véhicule</French>
 			<Czech>Nelze se převléci, když jste ve vozidle.</Czech>
+			<Dutch>Je kunt je niet omkleden in een voertuig</Dutch>
 		</Key>
 		<Key ID="str_player_fail_wear2">
 			<English>Currently Female Characters cannot change to this skin. This will change in a future update.</English>
@@ -7809,6 +7822,7 @@
 			<Czech>Vybavení</Czech>
 			<German>Ausrüstung</German>
 			<French>Equipement</French>
+			<Dutch>Inventaris</Dutch>
 		</Key>
 		<Key ID="STR_UI_FILTER">
 			<English>Filter</English>
