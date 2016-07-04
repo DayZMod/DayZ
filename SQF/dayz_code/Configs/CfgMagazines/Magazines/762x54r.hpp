@@ -1,6 +1,7 @@
 class 100Rnd_762x54_PK : CA_Magazine
 {
 	model = "z\addons\dayz_communityweapons\magazines\pk.p3d";
+	displayName = $STR_DZ_MAG_100RND_762x54_PK_NAME;
 	
 	cartridgeName = "762x54";
 	
@@ -22,6 +23,8 @@ class 50Rnd_762x54_UK59 : 100Rnd_762x54_PK
 
 class 10Rnd_762x54_SVD : CA_Magazine
 {
+	displayName = $STR_DZ_MAG_10RND_762x54_SVD_NAME;
+
 	cartridgeName = "762x54";
 	
 	class ItemActions
