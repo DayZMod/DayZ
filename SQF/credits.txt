@@ -4,8 +4,26 @@ Community Dev Project Managers:
 * [R4Z0R49] - (https://github.com/R4Z0R49)
 * [AlbyBDPK] - (https://github.com/AlbyBDPK)
 
+-------------------------
+Current Contributions
+-------------------------
+ 
+These contributors have made many changes, over a fairly long time span, or
+for many different parts of the code.
+ 
+ * kichilron (https://github.com/kichilron)
+ * [JST](https://github.com/Cybersam248)
+ * [DDesmond] (https://github.com/ddesmond)
+ * Skinkicker
+ * Maca
+ * Andrew
+ * William
+ * cyrq (https://github.com/cyrq)
+ * markus.ua (Russian Translations)
+ * Illetier (German Translations)
+ 
 ------------------------
-Contributions
+Past Contributions
 ------------------------
  
 These contributors have made specific changes for a particular bug fix or
@@ -54,19 +72,10 @@ feature.
  * Aj (Leadz)
  * Ander
  * Shauneh
- * kichilron (https://github.com/kichilron)
- * [JST](https://github.com/Cybersam248)
- * [DDesmond] (https://github.com/ddesmond)
- * Skinkicker
- * Maca
- * Andrew
- * William
- * cyrq (https://github.com/cyrq)
- * markus.ua (Russian Translations)
- * Illetier (German Translations)
- * ILoveBeans (https://github.com/ILoveBeans)
- * Flamberg (https://github.com/Flamberg)
- 
+ * [Nick Chow] (https://github.com/Purplish)
+ * bittedanke (https://github.com/bittedanke) - fixing a problem with chances.
+ * ebaydayz (https://github.com/ebaydayz)
+ * xyberviri (https://github.com/xyberviri) - ((action_open_backpack_0.ogg - action_open_backpack_4.ogg), (action_open_inventory_0.ogg - action_open_inventory_4.ogg)) Licesne Info - https://github.com/DayZMod/DayZ/issues/696
  
 ------------------------
 Art Work
