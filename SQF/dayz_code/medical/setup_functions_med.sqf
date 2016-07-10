@@ -69,11 +69,11 @@ fnc_usec_damageUnconscious = {
 				_unit action ["eject", _veh];
 				waitUntil{((vehicle _this) != _this)};
 				sleep 1;
-				_unit playActionNow "Die";
+				_unit switchMove "AmovPpneMrunSnonWnonDfr";
 			};
 		};
 	} else {
-		_unit playActionNow "Die";
+		_unit switchMove "AmovPpneMrunSnonWnonDfr";
 	};
 };
 
