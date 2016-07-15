@@ -1,5 +1,5 @@
 // Devlopment only system - Comment out for stable (Search KeyWord - VERSION)
-//#define _Devlopment_
+#define _Devlopment_
 
 class ItemDIY_wood: ItemCore {
 	scope = 2;
