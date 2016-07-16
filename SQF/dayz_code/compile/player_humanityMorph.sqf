@@ -87,6 +87,8 @@ eh_player_killed = player addeventhandler ["FiredNear",{_this call player_weapon
 player allowDamage true;
 
 player addWeapon "Loot";
+player addWeapon "Throw";
+
 uiSleep 0.1;
 call dayz_meleeMagazineCheck;
 
