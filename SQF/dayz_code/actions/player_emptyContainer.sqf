@@ -34,7 +34,7 @@ if ((getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState p
 if (!(_this in magazines player)) exitWith
 {
 	//TODO move to stringtable
-	"You seem to have misplaced the container." call dayz_rollingMessages;
+	localize "str_misplaced_container" call dayz_rollingMessages;
 };
 
 //Remove container

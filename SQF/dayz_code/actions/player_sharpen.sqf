@@ -17,7 +17,7 @@ closeDialog 1;
 // item is missing or tools are missing
 if (isNil "_waterUsed") exitWith {
 	//_displayName = getText (configFile >> "CfgMagazines" >> _use >> "displayName");
-	_msg = "Missing Water";
+	_msg = localize "str_sharpen_missing_water";
 	_msg call dayz_rollingMessages;
 };
 
@@ -25,7 +25,7 @@ if (isNil "_waterUsed") exitWith {
 if (!(_item IN items player)) exitWith {
 	_displayName = getText (configFile >> "CfgWeapons" >> _item >> "displayName");
 	//cutText [format["Missing Item",_displayName], "PLAIN DOWN"];
-	_msg = format["Missing %1",_displayName];
+	_msg = format[localize "str_missing_to_do_this",_displayName];
 	_msg call dayz_rollingMessages;
 };
 
@@ -49,6 +49,6 @@ if (player hasWeapon _item) then {
 
 	
 	//cutText [format ["%1 has been Sharpened",_displayName], "PLAIN DOWN"];
-	_msg = format ["%1 has been Sharpened",_displayName];
+	_msg = format [localize "str_sharpen_success",_displayName];
 	_msg call dayz_rollingMessages;
 };

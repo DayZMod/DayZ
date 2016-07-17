@@ -100,7 +100,7 @@ if (_unit == player) then
 			if ((_isHeadHit) and (_ammo in ["Crowbar_Swing_Ammo","Bat_Swing_Ammo"])) then {
 				[_unit] spawn {
 					 _unit = _this select 0;
-					cutText ["you have been knocked out", "PLAIN DOWN"]; 
+					cutText [localize "str_actions_medical_knocked_out", "PLAIN DOWN"]; 
 					[_unit,0.01] call fnc_usec_damageUnconscious;
 					_unit setVariable ["NORRN_unconscious", true, true];
 					r_player_timeout = 20 + round(random 60);

@@ -285,6 +285,18 @@
 			<French>Donner des antibiotiques</French>
 			<Czech>Dát antibiotika</Czech>
 		</Key>
+		<Key ID="str_actions_medical_misplaced_antibiotics">
+			<English>You seem to have misplaced your antibiotics.</English>
+		</Key>
+		<Key ID="str_actions_medical_taken_antibiotics">
+			<English>You have taken antibiotics.</English>
+		</Key>
+		<Key ID="str_actions_medical_gave_antibiotics">
+			<English>You gave antibiotics.</English>
+		</Key>
+		<Key ID="str_actions_medical_knocked_out">
+			<English>You have been knocked out.</English>
+		</Key>
 
 		<Key ID="str_actions_medical_drag">
 			<English>Carry body</English>
@@ -674,6 +686,9 @@
 			<French>Vers la place du tireur</French>
 			<Czech>Na sedadlo střelce</Czech>
 			<German>Zum Schützenplatz wechseln</German>
+		</Key>
+		<Key ID="str_actions_exitBlocked">
+			<English>Unable to exit vehicle, too close to buildables objects</English>
 		</Key>
 		<Key ID="str_actions_addammo">
 			<English>Add ammo to %1</English>
@@ -1413,6 +1428,9 @@
 			<Czech>Nelze připevnit %1</Czech>
 			<German>%1 kann nicht angebaut werden.</German>
 		</Key>
+		<Key ID="str_Attachmentcantremove">
+			<English>Cannot remove attachment.</English>
+		</Key>
 		<Key ID="str_AttachmentmissingWeapon">
 			<English>You seem to be missing a primary weapon!</English>
 			<Russian>Отсутствует основное оружие!</Russian>
@@ -1478,7 +1496,7 @@
 			<Czech>Během kopání se zlomila násada.</Czech>
 			<German>Du schlägst zu und der Schaft der Spitzhacke bricht.</German>
 		</Key>
-		<Key ID="str_cannotCraft">
+		<Key ID="str_missing_to_do_this">
 			<English>Missing %1 to do this.</English>
 			<Russian>Не хватает %1.</Russian>
 			<Spanish>Missing %1 to do this.</Spanish>
@@ -1493,6 +1511,12 @@
 			<French>Il faut un couteau pour dépecer l&apos;animal</French>
 			<Czech>K vykuchání zvířete budete potřebovat nůž.</Czech>
 			<German>Dir fehlt ein Messer, um das Tier auszunehmen.</German>
+		</Key>
+		<Key ID="str_sharpen_missing_water">
+			<English>You need a water bottle to sharpen objects.</English>
+		</Key>
+		<Key ID="str_sharpen_success">
+			<English>%1 has been sharpened.</English>
 		</Key>
 		<Key ID="str_disassembleDone">
 			<English>Disassemble done.</English>
@@ -1514,6 +1538,9 @@
 			<French>Le démontage est déjà en cours</French>
 			<Czech>Objekt je právě demontován.</Czech>
 			<German>Die Demontage läuft schon.</German>
+		</Key>
+		<Key ID="str_water_ladder_cant_do">
+			<English>You cannot do this while on a ladder or on water.</English>
 		</Key>
 
 		<Key ID="str_already_building">
@@ -1785,7 +1812,7 @@
 			<German>Du wurdest betäubt.</German>
 		</Key>
 		<Key ID="str_disassembleMissingTool">
-			<English>Missing %1 to dissassemble building.</English>
+			<English>Missing tool: %1 to dissassemble building.</English>
 			<Russian>Для разборки нужно иметь %1</Russian>
 			<French>Outil manquant pour le démontage: %1</French>
 			<Czech>Pro demontáž budovy schází %1.</Czech>
@@ -1799,7 +1826,7 @@
 			<German>%1 fehlt, um das Objekt abzubauen.</German>
 		</Key>
 		<Key ID="str_maintenanceMissingTool">
-			<English>Missing %1 tool for maintenance.</English>
+			<English>Missing tool: %1 for maintenance.</English>
 			<Russian>Для обслуживания нужно иметь %1</Russian>
 			<French>Outil manquant pour l&apos;entretien: %1</French>
 			<Czech>Pro údržbu budovy schází %1.</Czech>
@@ -7173,6 +7200,9 @@
 			<English>You seem to have misplaced the foodstuff.</English>
 			<Russian>Кажется вы выронили еду.</Russian>
 		</Key>
+		<Key ID="str_misplaced_container">
+			<English>You seem to have misplaced the container.</English>
+		</Key>
 		<Key ID="str_mining_finished">
 			<English>You have finished collecting stone.</English>
 			<Russian>Вы закончили добычу камня.</Russian>
@@ -7196,6 +7226,9 @@
 			<Russian>Рядом нет камней.</Russian>
 			<Czech>V blízkosti nejsou žádné skály.</Czech>
 			<German>Es befinden sich keine Felsen in der Nähe.</German>
+		</Key>
+		<Key ID="STR_MINING_IN_PROGRESS">
+			<English>Mining already in progress!</English>
 		</Key>
 		<Key ID="str_player_toback_fail">
 			<English>Cannot add %1 to back.</English>
@@ -9608,6 +9641,37 @@
 			<Czech>Kovový plot</Czech>
 			<German>Metallzaun</German>
 		</Key>
+		<Key ID="STR_BLD_UNLOCKED">
+			<English>%1 has been unlocked.</English>
+			<German>%1 wurde aufgeschlossen.</German>
+			<Russian>%1 открыт.</Russian>
+			<Dutch>%1 staat niet meer op slot</Dutch>
+			<French>%1 a été déverrouillé.</French>
+			<Czech>%1 bylo odemčeno.</Czech>
+		</Key>
+		<Key ID="STR_BLD_WRONG_COMBO">
+			<English>Combination incorrect, %1 is still locked.</English>
+			<German>Kombination inkorrekt, %1 ist immer noch verschlossen.</German>
+			<Russian>Комбинация неправильна, %1 по-прежнему закрыт.</Russian>
+			<Dutch>Verkeerde code, %1 zit nog op slot.</Dutch>
+			<French>Combinaison incorrecte, %1 reste verrouillé.</French>
+			<Czech>Nesprávná kombinace, %1 je stále zamknut.</Czech>
+		</Key>
+		<Key ID="STR_BLD_COMBO_SET">
+			<English>You have set the combination to %1</English>
+		</Key>
+		<Key ID="STR_BLD_GATES_LOCKED">
+			<English>Gates locked.</English>
+		</Key>
+		<Key ID="STR_BLD_GATES_UNLOCKED">
+			<English>Gates unlocked.</English>
+		</Key>
+		<Key ID="STR_BLD_GATES_OPENED">
+			<English>Gates opened.</English>
+		</Key>
+		<Key ID="STR_BLD_GATES_CLOSED">
+			<English>Gates closed.</English>
+		</Key>
 		<Key ID="STR_BLD_ACTIONS_OPENGATE">
 			<English>Open Gate</English>
 			<German>Tor öffnen</German>
@@ -9677,6 +9741,42 @@
 			<Dutch>Break In</Dutch>
 			<French>Break In</French>
 			<Czech>Break In</Czech>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_NEED_SLEDGE">
+			<English>You need a Sledgehammer to break into this compound.</English>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_NEED_CROWBAR">
+			<English>You need a Crowbar to break into this compound.</English>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_BROKEN_SLEDGE">
+			<English>Your Sledgehammer handle has snapped.</English>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_BENT_CROWBAR">
+			<English>Your crowbar has bent.</English>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN">
+			<English>Breaking into compound, attempt (%1 of %2).</English>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_CANCELLED">
+			<English>Break in cancelled.</English>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_COMPLETE_FAIL">
+			<English>Break in attempt completed with limited success.</English>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_COMPLETE">
+			<English>Break in attempt successful.</English>
+		</Key>
+		<Key ID="STR_BLD_DISMANTLE_MISSING">
+			<English>You are missing the tool %1 to dismantle</English>
+		</Key>
+		<Key ID="STR_BLD_DISMANTLE_DAMAGED">
+			<English>Your tool has been damaged.</English>
+		</Key>
+		<Key ID="STR_BLD_DISMANTLE_ATTEMPT">
+			<English>Dismantle attempt (%1 of %2).</English>
+		</Key>
+		<Key ID="STR_BLD_DISMANTLED">
+			<English>You have dismantled (%1).</English>
 		</Key>
 	</Package>	
 	<Package name="weapons">
