@@ -1,5 +1,6 @@
 class Throw : GrenadeLauncher
 {
+/*
 	scope = public;
 	autoAimEnabled = false;
 	cursor = "Vehicle_Grenade_W";
@@ -11,6 +12,7 @@ class Throw : GrenadeLauncher
 	canDrop = false;
 	//autoReload = true;
 	//backgroundReload = true;
+*/
 	
 	muzzles[] =
 	{
@@ -23,6 +25,7 @@ class Throw : GrenadeLauncher
 	
 	class ThrowMuzzle : GrenadeLauncher
 	{
+	/*
 		cursoraim = "Vehicle_Grenade_W";
 		cursorSize = 1;
 		sound[] = {"", 0.000316228, 1};
@@ -41,6 +44,7 @@ class Throw : GrenadeLauncher
 		midRangeProbab = 0.2;
 		maxRange = 60;
 		maxRangeProbab = 0.03;
+	*/
 		cursor = "\ca\Weapons\Data\clear_empty";
 		//backgroundReload = true;
 	};
