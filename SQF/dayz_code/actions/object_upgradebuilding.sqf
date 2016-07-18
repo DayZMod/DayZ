@@ -52,8 +52,7 @@ if (!isClass _upgradeClass) exitWith {
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _isWater = (surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 if(_isWater or _onLadder) exitWith {
-    //systemchat[localize "str_CannotUpgrade"];
-	_msg = localize "str_CannotUpgrade";
+	_msg = localize "str_water_ladder_cant_do";
 	_msg call dayz_rollingMessages;
 };
 

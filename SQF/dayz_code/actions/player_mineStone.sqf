@@ -5,7 +5,7 @@ _item = _this;
 call gear_ui_init;
 closeDialog 1;
 
-if(dayz_workingInprogress) exitWith { cutText ["Mining already in progress!", "PLAIN DOWN"];};
+if(dayz_workingInprogress) exitWith { cutText [localize "STR_MINING_IN_PROGRESS", "PLAIN DOWN"];};
 dayz_workingInprogress = true;
 
 // allowed rocks list move this later

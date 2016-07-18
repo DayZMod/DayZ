@@ -25,7 +25,7 @@ s_player_disassembly = -1;
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _isWater = (surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 if(_isWater or _onLadder) exitWith {
-	_msg = localize "str_disassembleInProgress";
+	_msg = localize "str_water_ladder_cant_do";
 	_msg call dayz_rollingMessages;
 };
 
