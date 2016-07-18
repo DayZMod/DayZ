@@ -1,5 +1,14 @@
 class Throw : GrenadeLauncher
 {
+	scope = public;
+	autoAimEnabled = false;
+	cursor = "Vehicle_Grenade_W";
+	cursoraim = "\ca\Weapons\Data\clear_empty";
+	cursorSize = 1;
+	value = 0;
+	type = VSoft;
+	displayName = $STR_MAG_ACTION2_4;
+	canDrop = false;
 	autoReload = true;
 	backgroundReload = true;
 	
@@ -14,6 +23,24 @@ class Throw : GrenadeLauncher
 	
 	class ThrowMuzzle : GrenadeLauncher
 	{
+		cursoraim = "Vehicle_Grenade_W";
+		cursorSize = 1;
+		sound[] = {"", 0.000316228, 1};
+		reloadSound[] = {"", 0.000316228, 1};
+		aiDispersionCoefX = 6;
+		aiDispersionCoefY = 6;
+		reloadTime = 0;
+		magazineReloadTime = 0;
+		enableAttack = false;
+		showEmpty = 0;
+		autoReload = true;
+		modelOptics = "";
+		minRange = 30;
+		minRangeProbab = 0.5;
+		midRange = 45;
+		midRangeProbab = 0.2;
+		maxRange = 60;
+		maxRangeProbab = 0.03;
 		cursor = "\ca\Weapons\Data\clear_empty";
 		backgroundReload = true;
 	};
