@@ -9,8 +9,8 @@ class Throw : GrenadeLauncher
 	type = VSoft;
 	displayName = $STR_MAG_ACTION2_4;
 	canDrop = false;
-	autoReload = true;
-	backgroundReload = true;
+	//autoReload = true;
+	//backgroundReload = true;
 	
 	muzzles[] =
 	{
@@ -42,7 +42,7 @@ class Throw : GrenadeLauncher
 		maxRange = 60;
 		maxRangeProbab = 0.03;
 		cursor = "\ca\Weapons\Data\clear_empty";
-		backgroundReload = true;
+		//backgroundReload = true;
 	};
 	
 	class RoadFlareMuzzle : ThrowMuzzle
