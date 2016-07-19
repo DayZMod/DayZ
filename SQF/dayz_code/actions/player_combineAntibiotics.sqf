@@ -1,4 +1,4 @@
-private ["_total", "_full", "_remain", "_antibiotics", "_amount"];
+private ["_total", "_full", "_remain", "_amount"];
 _total = 0;
 {
 	if(configName inheritsFrom (configfile >> "CfgMagazines" >> _x) == "ItemAntibiotic") then {
