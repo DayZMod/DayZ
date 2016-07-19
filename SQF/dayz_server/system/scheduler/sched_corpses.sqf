@@ -23,7 +23,7 @@ sched_co_deleteVehicle = {
 	_this = nil;
 	
 	//temp logging
-	diag_log format["TEMP ***WARNING*** deleteVehicle Running",_this];
+	diag_log format["TEMP ***WARNING*** deleteVehicle Running %1",_this];
 };
 
 
