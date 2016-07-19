@@ -26,6 +26,14 @@
 			<Czech>Posbírat %1</Czech>
 			<German>%1 aufsammeln</German>
 		</Key>
+		<Key ID="STR_ACTIONS_LIGHTFIRE">
+			<English>Light fire</English>
+			<Russian>Зажечь огонь</Russian>
+		</Key>
+		<Key ID="STR_ACTIONS_PUTOUTFIRE">
+			<English>Put out fire</English>
+			<Russian>Погасить огонь</Russian>
+		</Key>
 		<Key ID="STR_ACTIONS_DROP">
 			<English>Drop</English>
 			<Russian>Выбросить</Russian>
@@ -41,6 +49,7 @@
 			<Czech>Odstranit z nástrojů</Czech>
 			<French>Retirer de la ceinture</French>
 			<German>Vom Werkzeuggürtel abnehmen</German>
+			<Dutch>Verwijder van gereedschapsgordel</Dutch>
 		</Key>
 		<Key ID="STR_ACTION_CAST">
 			<English>Cast Fishing Pole</English>
@@ -174,8 +183,8 @@
 		</Key>
 		<Key ID="str_actions_self_10">
 			<English>Fill FuelCan</English>
-			<German>füllen Kraftstoffkanister</German>
-			<Russian>Заполните FuelCan</Russian>
+			<German>Kraftstoffkanister füllen</German>
+			<Russian>Наполнить канистры</Russian>
 			<Spanish>Rellene FuelCan</Spanish>
 			<French>remplissez FuelCan</French>
 			<Czech>Vyplňte FuelCan</Czech>
@@ -185,7 +194,7 @@
 			<Spanish>¡No se pudo contar los cargadores!</Spanish>
 			<Russian>Не удалось посчитать магазины!</Russian>
 			<Czech>Nemohu spočítat zásobníky!</Czech>
-			<French>Comptage des chargeurs impossible !</French>
+			<French>Comptage des chargeurs impossible!</French>
 			<German>Du kannst die Magazine nicht aufteilen.</German>
 		</Key>
 		<Key ID="str_actions_medical_01">
@@ -247,7 +256,7 @@
 		<Key ID="str_actions_medical_06_splint">
 			<English>Apply Splint</English>
 			<German>Schiene anlegen</German>
-			<Russian>Применить шину</Russian>
+			<Russian>Зафиксировать</Russian>
 			<Spanish>Aplicar Férula</Spanish>
 			<French>Appliquer Splint</French>
 			<Czech>Použít dlahu</Czech>
@@ -276,6 +285,22 @@
 			<French>Donner des antibiotiques</French>
 			<Czech>Dát antibiotika</Czech>
 		</Key>
+		<Key ID="str_actions_medical_misplaced_antibiotics">
+			<English>You seem to have misplaced your antibiotics.</English>
+			<Russian>Похоже, вы потеряли антибиотики.</Russian>
+		</Key>
+		<Key ID="str_actions_medical_taken_antibiotics">
+			<English>You have taken antibiotics.</English>
+			<Russian>Вы приняли антибиотики.</Russian>
+		</Key>
+		<Key ID="str_actions_medical_gave_antibiotics">
+			<English>You gave antibiotics.</English>
+			<Russian>Вы поделились антибиотиками.</Russian>
+		</Key>
+		<Key ID="str_actions_medical_knocked_out">
+			<English>You have been knocked out.</English>
+			<Russian>Вы оглушены.</Russian>
+		</Key>
 
 		<Key ID="str_actions_medical_drag">
 			<English>Carry body</English>
@@ -299,11 +324,11 @@
 			<German>Blutkonserve: A-</German>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagANEG">
-			<English>A blood bag ready for transfusion kits, type A- that is compatible A-, A+, AB-, AB+ recipients</English>
+			<English>A blood bag of type A- that is ready for transfusion, compatible with A-, A+, AB- and AB+ recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови A(II)Rh- подходит пациентам с группами A(II)Rh-, A(II)Rh+, AB(IV)Rh- и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type A- pour transfuser des receveurs de type A-, A+, AB- ou AB+</French>
 			<Czech>Krev připravená pro použití spolu s transfúzní soupravou; skupina A- vhodná pro příjemce se skupinou A-, A+, AB- a AB+</Czech>
-			<German>Eine Blutkonserve des Typs A-, die noch mit einem Transfusionsbesteck kombiniert werden muss. Kompatibel mit Empfängern der Typen A-, A+, AB- und AB+.</German>
+			<German>Eine Blutkonserve des Typs A-, bereit zum Verabreichen. Kompatibel mit Empfängern der Typen A-, A+, AB- und AB+.</German>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagAPOS">
 			<English>Blood Bag: A+</English>
@@ -313,11 +338,11 @@
 			<German>Blutkonserve: A+</German>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagAPOS">
-			<English>A blood bag ready for transfusion kits, type A+ that is compatible A+ and AB+ recipients</English>
+			<English>A blood bag of type A+ that is ready for transfusion, compatible with A+ and AB+ recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови A(II)Rh+ подходит пациентам с группами A(II)Rh+ и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type A+ pour transfuser des receveurs de type A+ ou AB+</French>
 			<Czech>Krev připravená pro použití spolu s transfúzní soupravou; skupina A+ vhodná pro příjemce se skupinou A+ a AB+</Czech>
-			<German>Eine Blutkonserve des Typs A+, die noch mit einem Transfusionsbesteck kombiniert werden muss. Kompatibel mit Empfängern der Typen A+ und AB+.</German>
+			<German>Eine Blutkonserve des Typs A+, bereit zum Verabreichen. Kompatibel mit Empfängern der Typen A+ und AB+.</German>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagBNEG">
 			<English>Blood Bag: B-</English>
@@ -327,11 +352,11 @@
 			<German>Blutkonserve: B-</German>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagBNEG">
-			<English>A blood bag ready for transfusion kits, type B- that is compatible B-, B+, AB+, AB- recipients</English>
+			<English>A blood bag of type B- that is ready for transfusion, compatible with B-, B+, AB+ and AB- recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови B(III)Rh- подходит пациентам с группами B(III)Rh-, B(III)Rh+, AB(IV)Rh- и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type B- pour transfuser des receveurs de type B-, B+, AB+ ou AB-</French>
 			<Czech>Krev připravená pro použití spolu s transfúzní soupravou; skupina B- vhodná pro příjemce se skupinou B-, B+, AB- a AB+</Czech>
-			<German>Eine Blutkonserve des Typs B-, die noch mit einem Transfusionsbesteck kombiniert werden muss. Kompatibel mit Empfängern der Typen B-, B+, AB+ und AB-.</German>
+			<German>Eine Blutkonserve des Typs B-, bereit zum Verabreichen. Kompatibel mit Empfängern der Typen B-, B+, AB+ und AB-.</German>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagBPOS">
 			<English>Blood Bag: B+</English>
@@ -341,11 +366,11 @@
 			<German>Blutkonserve: B+</German>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagBPOS">
-			<English>A blood bag ready for transfusion kits, type B+ that is compatible B+ and AB+ recipients</English>
+			<English>A blood bag of type B+ that is ready for transfusion, compatible with B+ and AB+ recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови B(III)Rh+ подходит пациентам с группами B(III)Rh+ и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type B+ pour transfuser des receveurs de type B+ ou AB+</French>
 			<Czech>Krev připravená pro použití spolu s transfúzní soupravou; skupina B+ vhodná pro příjemce se skupinou B+ a AB+</Czech>
-			<German>Eine Blutkonserve des Typs B+, die noch mit einem Transfusionsbesteck kombiniert werden muss. Kompatibel mit Empfängern der Typen B+ und AB+.</German>
+			<German>Eine Blutkonserve des Typs B+, bereit zum Verabreichen. Kompatibel mit Empfängern der Typen B+ und AB+.</German>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagABNEG">
 			<English>Blood Bag: AB-</English>
@@ -355,11 +380,11 @@
 			<German>Blutkonserve: AB-</German>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagABNEG">
-			<English>A blood bag ready for transfusion kits, type AB- that is compatible AB+ and AB- recipients</English>
+			<English>A blood bag of type AB- that is ready for transfusion, compatible with AB+ and AB- recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови AB(IV)Rh- подходит пациентам с группами AB(IV)Rh- и AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type AB- pour transfuser des receveurs de type AB- ou AB+</French>
 			<Czech>Krev připravená pro použití spolu s transfúzní soupravou; skupina AB- vhodná pro příjemce se skupinou AB- a AB+</Czech>
-			<German>Eine Blutkonserve des Typs AB-, die noch mit einem Transfusionsbesteck kombiniert werden muss. Kompatibel mit Empfängern der Typen AB- und AB+.</German>
+			<German>Eine Blutkonserve des Typs AB-, bereit zum Verabreichen. Kompatibel mit Empfängern der Typen AB- und AB+.</German>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagABPOS">
 			<English>Blood Bag: AB+</English>
@@ -369,11 +394,11 @@
 			<German>Blutkonserve: AB+</German>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagABPOS">
-			<English>A blood bag ready for transfusion kits, type AB+ that is compatible AB+ recipients</English>
+			<English>A blood bag of type AB+ that is ready for transfusion, compatible with AB+ recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови AB(IV)Rh+ подходит пациентам с группой AB(IV)Rh+.</Russian>
 			<French>Une poche de sang de type AB+ pour transfuser des receveurs de type AB+ exclusivement</French>
 			<Czech>Krev připravená pro použití spolu s transfúzní soupravou; skupina AB+ vhodná pouze pro příjemce se skupinou AB+</Czech>
-			<German>Eine Blutkonserve des Typs AB+, die noch mit einem Transfusionsbesteck kombiniert werden muss. Kompatibel mit Empfängern des Typs AB+.</German>
+			<German>Eine Blutkonserve des Typs AB+, bereit zum Verabreichen. Kompatibel mit Empfängern des Typs AB+.</German>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagONEG">
 			<English>Blood Bag: O-</English>
@@ -383,11 +408,11 @@
 			<German>Blutkonserve: O-</German>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagONEG">
-			<English>A blood bag ready for transfusion kits, type O- that is compatible with all recipients</English>
+			<English>A blood bag of type O- that is ready for transfusion, compatible with all recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови 0(I)Rh- подходит всем пациентам.</Russian>
 			<French>Une poche de sang de type O- compatible pour tous</French>
 			<Czech>Krev připravená pro použití spolu s transfúzní soupravou; skupina O- vhodná pro všechny příjemce</Czech>
-			<German>Eine Blutkonserve des Typs O-, die noch mit einem Transfusionsbesteck kombiniert werden muss. Kompatibel mit allen Empfängern.</German>
+			<German>Eine Blutkonserve des Typs O-, bereit zum Verabreichen. Kompatibel mit allen Empfängern.</German>
 		</Key>
 		<Key ID="STR_BLD_name_bloodBagOPOS">
 			<English>Blood Bag: O+</English>
@@ -397,11 +422,11 @@
 			<German>Blutkonserve: O+</German>
 		</Key>
 		<Key ID="STR_BLD_desc_bloodBagOPOS">
-			<English>A blood bag ready for transfusion kits, type O+ that is compatible O+, AB+, A+, B+ recipients</English>
+			<English>A blood bag of type O+ that is ready for transfusion, compatible with O+, AB+, A+ and B+ recipients</English>
 			<Russian>Пакет крови, готовый к переливанию. Группа крови 0(I)Rh+ подходит пациентам с группами 0(I)Rh+, A(II)Rh+, B(III)Rh+ и AB(IV)Rh+.</Russian>
-			<French>Une poche de sang de type O+ pour transfuser des receveurs de type  O+, AB+, A+ ou B+</French>
+			<French>Une poche de sang de type O+ pour transfuser des receveurs de type O+, AB+, A+ ou B+</French>
 			<Czech>Krev připravená pro použití spolu s transfúzní soupravou; skupina O+ vhodná pro příjemce se skupinou O+, A+, B+ a AB+</Czech>
-			<German>Eine Blutkonserve des Typs O+, die noch mit einem Transfusionsbesteck kombiniert werden muss. Kompatibel mit Empfängern des Typs O+, AB+, A+ und B+.</German>
+			<German>Eine Blutkonserve des Typs O+, bereit zum Verabreichen. Kompatibel mit Empfängern des Typs O+, AB+, A+ und B+.</German>
 		</Key>
 		<Key ID="STR_BLD_name_wholeBloodBagANEG">
 			<English>Whole Blood: A-</English>
@@ -411,8 +436,8 @@
 			<German>Vollblutkonserve: A-</German>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagANEG">
-			<English>Personal blood bag, type A- that is compatible A- recipients</English>
-			<Russian>Пакет цельной крови для самопереливания. Подходит только  A(II)Rh-.</Russian>
+			<English>Personal blood bag, type A- that is compatible with A- recipients</English>
+			<Russian>Пакет цельной крови для самопереливания. Подходит только A(II)Rh-.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type A-</French>
 			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina A-</Czech>
 			<German>Eine Vollblutkonserve des Typs A-, bereit zum Verabreichen. Kompatibel mit Empfängern des Typs A-.</German>
@@ -423,6 +448,10 @@
 			<French>Utiliser la poche de sang</French>
 			<Czech>Použít krevní vak</Czech>
 		</Key>
+		<Key ID="STR_BLD_take">
+			<English>Take blood</English>
+			<Russian>Взять кровь</Russian>
+		</Key>
 		<Key ID="STR_BLD_name_wholeBloodBagAPOS">
 			<English>Whole Blood: A+</English>
 			<Russian>Цельная кровь: A(II)Rh+</Russian>
@@ -431,8 +460,8 @@
 			<German>Vollblutkonserve: A+</German>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagAPOS">
-			<English>Personal blood Bag, type A+ that is compatible A+ recipients</English>
-			<Russian>Пакет цельной крови для самопереливания. Подходит только  A(II)Rh+.</Russian>
+			<English>Personal blood Bag, type A+ that is compatible with A+ recipients</English>
+			<Russian>Пакет цельной крови для самопереливания. Подходит только A(II)Rh+.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type A+</French>
 			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina A+</Czech>
 			<German>Eine Vollblutkonserve des Typs A-, bereit zum Verabreichen. Kompatibel mit Empfängern des Typs A+.</German>
@@ -445,8 +474,8 @@
 			<German>Vollblutkonserve: B-</German>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagBNEG">
-			<English>Personal blood Bag, type B- that is compatible B- recipients</English>
-			<Russian>Пакет цельной крови для самопереливания. Подходит только  B(III)Rh-.</Russian>
+			<English>Personal blood Bag, type B- that is compatible with B- recipients</English>
+			<Russian>Пакет цельной крови для самопереливания. Подходит только B(III)Rh-.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type B-</French>
 			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina B-</Czech>
 			<German>Eine Vollblutkonserve des Typs B-, bereit zum Verabreichen. Kompatibel mit Empfängern des Typs B-.</German>
@@ -459,8 +488,8 @@
 			<German>Vollblutkonserve: B+</German>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagBPOS">
-			<English>Personal blood Bag, type B+ that is compatible B+ recipients</English>
-			<Russian>Пакет цельной крови для самопереливания. Подходит только  B(III)Rh+.</Russian>
+			<English>Personal blood Bag, type B+ that is compatible with B+ recipients</English>
+			<Russian>Пакет цельной крови для самопереливания. Подходит только B(III)Rh+.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type B+</French>
 			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina B+</Czech>
 			<German>Eine Vollblutkonserve des Typs B+, bereit zum Verabreichen. Kompatibel mit Empfängern des Typs B+.</German>
@@ -473,8 +502,8 @@
 			<German>Vollblutkonserve: AB-</German>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagABNEG">
-			<English>Personal blood Bag, type AB- that is compatible AB- recipients</English>
-			<Russian>Пакет цельной крови для самопереливания. Подходит только  AB(IV)Rh-.</Russian>
+			<English>Personal blood Bag, type AB- that is compatible with AB- recipients</English>
+			<Russian>Пакет цельной крови для самопереливания. Подходит только AB(IV)Rh-.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type AB-</French>
 			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina AB-</Czech>
 			<German>Eine Vollblutkonserve des Typs AB-, bereit zum Verabreichen. Kompatibel mit Empfängern des Typs AB-.</German>
@@ -487,8 +516,8 @@
 			<German>Vollblutkonserve: AB+</German>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagABPOS">
-			<English>Personal blood Bag, type AB+ that is compatible AB+ recipients</English>
-			<Russian>Пакет цельной крови для самопереливания. Подходит только  AB(IV)Rh+.</Russian>
+			<English>Personal blood Bag, type AB+ that is compatible with AB+ recipients</English>
+			<Russian>Пакет цельной крови для самопереливания. Подходит только AB(IV)Rh+.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type AB+</French>
 			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina AB+</Czech>
 			<German>Eine Vollblutkonserve des Typs AB+, bereit zum Verabreichen. Kompatibel mit Empfängern des Typs AB+.</German>
@@ -502,7 +531,7 @@
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagONEG">
 			<English>Personal blood Bag, type O- that is compatible with O- recipients</English>
-			<Russian>Пакет цельной крови для самопереливания. Подходит только  0(I)Rh-.</Russian>
+			<Russian>Пакет цельной крови для самопереливания. Подходит только 0(I)Rh-.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type O-</French>
 			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina O-</Czech>
 			<German>Eine Vollblutkonserve des Typs O-, bereit zum Verabreichen. Kompatibel mit Empfängern des Typs O-.</German>
@@ -515,8 +544,8 @@
 			<German>Vollblutkonserve: O+</German>
 		</Key>
 		<Key ID="STR_BLD_desc_wholeBloodBagOPOS">
-			<English>Personal blood Bag, type O+ that is compatible O+ recipients</English>
-			<Russian>Пакет цельной крови для самопереливания. Подходит только  0(I)Rh+.</Russian>
+			<English>Personal blood Bag, type O+ that is compatible with O+ recipients</English>
+			<Russian>Пакет цельной крови для самопереливания. Подходит только 0(I)Rh+.</Russian>
 			<French>Poche de sang personnelle pour transfusion exclusivement autologue, de type O+</French>
 			<Czech>Krevní vak s vlastní krví k autotransfuzi; skupina O+</Czech>
 			<German>Eine Vollblutkonserve des Typs O+, bereit zum Verabreichen. Kompatibel mit Empfängern des Typs O+.</German>
@@ -540,18 +569,18 @@
 			<Russian>Определить</Russian>
 			<French>Effectuer le test</French>
 			<Czech>Určit krevní skupinu</Czech>
-			<German>Blut testen</German>
+			<German>Blutgruppe bestimmen</German>
 		</Key>
 		<Key ID="STR_BLD_name_transfusionKit">
 			<English>Transfusion Kit</English>
 			<Russian>Набор для переливания</Russian>
 			<French>Kit de transfusion</French>
 			<Czech>Transfúzní souprava</Czech>
-			<German>Transfusions-Set</German>
+			<German>Transfusionsbesteck</German>
 		</Key>
 		<Key ID="STR_BLD_desc_transfusionKit">
 			<English>A blood transfusion kit that is required to perform blood transfusions and fill blood bags</English>
-			<Russian>Медицинский набор, необходимый для переливания крови .</Russian>
+			<Russian>Медицинский набор, необходимый для переливания крови.</Russian>
 			<French>Un kit de transfusion sanguine nécessaire pour transfuser un survivant ou remplir une poche de sang</French>
 			<Czech>Jednorázová transfúzní souprava, jež je nutná při provádění krevních transfúzí a plnění krevních vaků.</Czech>
 			<German>Ein Transfusionsbesteck, um Bluttransfusionen durchzuführen und Blutkonserven zu füllen.</German>
@@ -666,6 +695,10 @@
 			<Czech>Na sedadlo střelce</Czech>
 			<German>Zum Schützenplatz wechseln</German>
 		</Key>
+		<Key ID="str_actions_exitBlocked">
+			<English>Unable to exit vehicle, too close to buildables objects</English>
+			<Russian>Невозможно выйти из транспорта, слишком близко от постройки</Russian>
+		</Key>
 		<Key ID="str_actions_addammo">
 			<English>Add ammo to %1</English>
 			<Spanish>Agregar munición al %1</Spanish>
@@ -734,7 +767,7 @@
 		<Key ID="str_actions_medical_transfusion_failed_transfusionkit">
 			<English>Transfusion failed. Missing Transfusion Kit!</English>
 			<German>Transfusion fehlgeschlagen! Transfusionsbesteck fehlt!</German>
-			<Russian>Переливание отменено, отсутствует набор для переливания!</Russian>
+			<Russian>Переливание отменено. Отсутствует набор для переливания!</Russian>
 			<Spanish>Transfusion failed. Missing Transfusion Kit!</Spanish>
 			<French>Transfusion failed. Missing Transfusion Kit!</French>
 			<Czech>Transfúze selhala, chybí transfúzní souprava!</Czech>
@@ -760,7 +793,7 @@
 			<German>Die Bluttransfusion wurde unterbrochen! Die Blutkonserve ist verloren.</German>
 			<Russian>Переливание было прервано! Пакет крови потерян.</Russian>
 			<Spanish>¡La transfusión fue interrumpida! La bolsa de sangre se perdió.</Spanish>
-			<French>La transfusion s&apos;est interrompue ! La poche de sang est perdue.</French>
+			<French>La transfusion s&apos;est interrompue! La poche de sang est perdue.</French>
 			<Czech>Transfúze byla přerušena a krevní vak byl ztracen!</Czech>
 		</Key>
 		<Key ID="str_actions_medical_dragbody_veh">
@@ -768,7 +801,7 @@
 			<German>Du kannst nicht einsteigen, während du einen Körper ziehst!</German>
 			<Russian>Нельзя сесть в транспорт, таская тело!</Russian>
 			<Spanish>¡No puedes entrar a un vehículo mientras arrastras un cuerpo!</Spanish>
-			<French>Vous ne pouvez pas entrer dans un véhicule lorsque vous traînez un corps !</French>
+			<French>Vous ne pouvez pas entrer dans un véhicule lorsque vous traînez un corps!</French>
 			<Czech>Do vozidla nelze nastoupit, pokud táhnete tělo!</Czech>
 		</Key>
 		<Key ID="str_actions_medical_dropbody">
@@ -943,7 +976,7 @@
 		<Key ID="STR_TAKE_MORPHINE">
 			<English>Take Morphine</English>
 			<German>Morphin spritzen</German>
-			<Russian>Принять</Russian>
+			<Russian>Вколоть</Russian>
 			<Spanish>Inyectarse Morfina</Spanish>
 			<French>Prendre Morphine</French>
 			<Czech>Vzít si morfium</Czech>
@@ -983,7 +1016,7 @@
 			<Czech>Spravit láhev</Czech>
 			<German>Flasche reparieren</German>
 		</Key>
-		<Key ID="STR_ACTIONS_LIGHTFIRE">
+		<Key ID="STR_ACTIONS_MAKEFIRE">
 			<English>Make Fireplace</English>
 			<German>Feuerstelle errichten</German>
 			<Russian>Развести костер</Russian>
@@ -1008,10 +1041,12 @@
 		<Key ID="STR_ACTIONS_FIX_HATCHET">
 			<English>Fix Hatchet</English>
 			<Russian>Починить топор</Russian>
+			<German>Beil reparieren</German>
 		</Key>
 		<Key ID="STR_ACTIONS_FIX_KNIFE">
 			<English>Sharpen Knife</English>
 			<Russian>Заточить нож</Russian>
+			<German>Messer schleifen</German>
 		</Key>
 		<Key ID="STR_ACTIONS_FIX_PICKAXE">
 			<English>Fix Pickaxe</English>
@@ -1106,7 +1141,7 @@
 			<Russian>Вы уничтожили %1 в процессе демонтажа с %2</Russian>
 			<Czech>%1 se vám při pokusu o demontáž z %2 podařilo úplně zničit.</Czech>
 			<French>Vous avez détruit %1 lors tentative de retrait de %2</French>
-			<German>%1 wurde zerstoert, als du versucht hast, %2 auszuschlachten.</German>
+			<German>%1 wurde zerstört, als du versucht hast, %2 auszuschlachten.</German>
 			<Dutch>Je hebt %1 gesloopt tijdens het demonteren van de %2</Dutch>
 		</Key>
 		<Key ID="str_salvage_removed">
@@ -1244,7 +1279,7 @@
 			<Spanish>Preparando el sifón, quedate quieto para llenar el %1.</Spanish>
 			<Czech>Začíná přečerpávání. Stůjte klidně, abyste naplnili %1.</Czech>
 			<French>Prêt pour le siphonnage, ne bougez plus pour remplir le %1</French>
-			<German>Der Treibstoff kann abgezapft werden. Stillhalten, um %1 zu fuellen.</German>
+			<German>Der Treibstoff kann abgezapft werden. Stillhalten, um %1 zu füllen.</German>
 			<Dutch>Bezig met brandstofverplaatsing, sta stil om %1 te vullen.</Dutch>
 		</Key>
 		<Key ID="str_siphon_drained">
@@ -1264,7 +1299,7 @@
 			<Spanish>El %1 no tiene suficiente combustible para usar el sifón.</Spanish>
 			<Czech>%1 nemá dostatek paliva k přečerpání.</Czech>
 			<French>Le %1 n&apos;a pas assez de carburant à siphonner.</French>
-			<German>Es ist nicht mehr genuegend Treibstoff im %1, um etwas abzuzapfen.</German>
+			<German>Es ist nicht mehr genügend Treibstoff im %1, um etwas abzuzapfen.</German>
 			<Dutch>Deze %1 heeft niet voldoende brandstof.</Dutch>
 		</Key>
 		<Key ID="str_siphon_canceled">
@@ -1402,6 +1437,10 @@
 			<Czech>Nelze připevnit %1</Czech>
 			<German>%1 kann nicht angebaut werden.</German>
 		</Key>
+		<Key ID="str_Attachmentcantremove">
+			<English>Cannot remove attachment.</English>
+			<Russian>Не удалось снять модификацию.</Russian>
+		</Key>
 		<Key ID="str_AttachmentmissingWeapon">
 			<English>You seem to be missing a primary weapon!</English>
 			<Russian>Отсутствует основное оружие!</Russian>
@@ -1459,7 +1498,7 @@
 			<Spanish>Mientras que cortar los saltos de la manija.</Spanish>
 			<Czech>Během sekání se zlomilo topůrko.</Czech>
 			<French>La poignée s&apos;est cassée pendant que vous coupiez du bois</French>
-			<German>Du schlägst zu und der Schaft der Axt bricht.</German>
+			<German>Du schlägst zu und der Schaft des Beils bricht.</German>
 		</Key>
 		<Key ID="str_PickAxeHandleBreaks">
 			<English>Whilst mining the handle breaks.</English>
@@ -1467,7 +1506,7 @@
 			<Czech>Během kopání se zlomila násada.</Czech>
 			<German>Du schlägst zu und der Schaft der Spitzhacke bricht.</German>
 		</Key>
-		<Key ID="str_cannotCraft">
+		<Key ID="str_missing_to_do_this">
 			<English>Missing %1 to do this.</English>
 			<Russian>Не хватает %1.</Russian>
 			<Spanish>Missing %1 to do this.</Spanish>
@@ -1482,6 +1521,14 @@
 			<French>Il faut un couteau pour dépecer l&apos;animal</French>
 			<Czech>K vykuchání zvířete budete potřebovat nůž.</Czech>
 			<German>Dir fehlt ein Messer, um das Tier auszunehmen.</German>
+		</Key>
+		<Key ID="str_sharpen_missing_water">
+			<English>You need a water bottle to sharpen objects.</English>
+			<Russian>Нужна вода, чтобы заточить объект.</Russian>
+		</Key>
+		<Key ID="str_sharpen_success">
+			<English>%1 has been sharpened.</English>
+			<Russian>Заточено (%1)</Russian>
 		</Key>
 		<Key ID="str_disassembleDone">
 			<English>Disassemble done.</English>
@@ -1503,6 +1550,10 @@
 			<French>Le démontage est déjà en cours</French>
 			<Czech>Objekt je právě demontován.</Czech>
 			<German>Die Demontage läuft schon.</German>
+		</Key>
+		<Key ID="str_water_ladder_cant_do">
+			<English>You cannot do this while on a ladder or on water.</English>
+			<Russian>Невозможно делать это, находясь на лестнице или в воде.</Russian>
 		</Key>
 
 		<Key ID="str_already_building">
@@ -1558,9 +1609,9 @@
 		<Key ID="str_bombAttached">
 			<English>\n\nAttached Carbomb! Next Survivor who starts the engine will blow up!</English>
 			<Russian>Бомба установлена! \nВыжившего, который решится завести двигатель разорвет на кусочки!</Russian>
-			<French>\nLa bombe est posée ! La prochaine personne qui démarre\nle véhicule sera éparpillée façon puzzle.</French>
+			<French>\nLa bombe est posée! La prochaine personne qui démarre\nle véhicule sera éparpillée façon puzzle.</French>
 			<Czech>\n\nBomba umístěna! Ten, kdo příště nastartuje motor, se upeče!</Czech>
-			<German>Sprengsatz angebracht! Die nächste Person, der den Motor startet, wird in die Luft fliegen!</German>
+			<German>Sprengsatz angebracht! Die nächste Person, die den Motor startet, wird in die Luft fliegen!</German>
 		</Key>
 		<Key ID="str_bombAlready">
 			<English>\n\nThis vehicle already has a bomb attached!</English>
@@ -1594,7 +1645,7 @@
 			<English>You have only one %1\nThere&apos;s nothing to combine.</English>
 			<Russian>У вас только один (%1)\nНечего переснаряжать.</Russian>
 			<French>Vous avez seulement 1 %1\nIl n&apos;y a rien à arranger.</French>
-			<Czech>Ve vašem inventáři je  %1 pouze jednou. Není co zkombinovat.</Czech>
+			<Czech>Ve vašem inventáři je %1 pouze jednou. Není co zkombinovat.</Czech>
 			<German>Du hast nicht genügend %1. \nEs gibt nichts zu kombinieren.</German>
 		</Key>
 		<Key ID="str_combineDoneFull">
@@ -1774,8 +1825,8 @@
 			<German>Du wurdest betäubt.</German>
 		</Key>
 		<Key ID="str_disassembleMissingTool">
-			<English>Missing %1 to dissassemble building.</English>
-			<Russian>Для разборки нужно иметь %1</Russian>
+			<English>Missing tool: %1 to dissassemble building.</English>
+			<Russian>Для разборки нужно иметь: %1</Russian>
 			<French>Outil manquant pour le démontage: %1</French>
 			<Czech>Pro demontáž budovy schází %1.</Czech>
 			<German>%1 fehlt, um das Objekt abzubauen.</German>
@@ -1788,8 +1839,8 @@
 			<German>%1 fehlt, um das Objekt abzubauen.</German>
 		</Key>
 		<Key ID="str_maintenanceMissingTool">
-			<English>Missing %1 tool for maintenance.</English>
-			<Russian>Для обслуживания нужно иметь %1</Russian>
+			<English>Missing tool: %1 for maintenance.</English>
+			<Russian>Для обслуживания нужно иметь: %1</Russian>
 			<French>Outil manquant pour l&apos;entretien: %1</French>
 			<Czech>Pro údržbu budovy schází %1.</Czech>
 			<German>%1 fehlt, um das Objekt zu warten.</German>
@@ -1983,7 +2034,7 @@
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_con_t">
 			<English>Plastic Connector used in crafting to join 2 tent poles end to end atop a 3rd pole</English>
-			<German>Du nutzt die Steckverbindung, um drei Zeltstangen t-förmig zu verbinden.</German>
+			<German>Du nutzt die Steckverbindung, um drei Zeltstangen T-förmig zu verbinden.</German>
 			<Russian>"T"-образный пластиковый коннектор, используемый в мастерской для соединения палаточных распорок буквой Т.</Russian>
 			<Spanish>Plastic Connector used in crafting to join 2 tent poles end to end atop a 3rd pole</Spanish>
 			<French>Connecteur en plastique pouvant être fabriqué afin de joindre deux mâts de tente bout-à-bout sur un troisième mât</French>
@@ -2371,7 +2422,7 @@
 			<Spanish>Un pedazo de manguera en buen estado que podría ser usada para crear objetos.</Spanish>
 			<French>Un bout de tuyau d&apos;arrosage en bon état (Artisanat)</French>
 			<Czech>Kus hadice v dobrém stavu. Předmět lze použít při výrobě.</Czech>
-			<German>Ein Stück gut erhaltener Schlauch, kann beim Handwerken verwendet werden.</German>
+			<German>Ein Stück gut erhaltener Schlauch. Kann beim Handwerken verwendet werden.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_floppywire">
 			<English>Floppy Wire</English>
@@ -2416,6 +2467,7 @@
 		<Key ID="STR_ITEM_DESC_equip_brick">
 			<English>Maybe this could be used to sharpen a knife.</English>
 			<Russian>Может пригодиться для заточки ножа.</Russian>
+			<German>Ein Ziegelstein, der vielleicht zum Schleifen eines stumpfen Messers gebraucht werden kann.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_equip_gauze">
 			<English>Gauze</English>
@@ -2564,8 +2616,8 @@
 		<Key ID="STR_ITEM_DESC_HerbalDrink">
 			<English>A drink mixed with herbs that may help heal infection.</English>
 			<Russian>Напиток из смеси трав, который может помочь при инфекции.</Russian>
-			<Czech>Nápoj smíchá s bylinkami , které mohou pomoci léčit infekci .</Czech>
-			<French>Une boisson mélangée avec des herbes qui peuvent aider à guérir l'infection .</French>
+			<Czech>Nápoj smíchá s bylinkami, které mohou pomoci léčit infekci.</Czech>
+			<French>Une boisson mélangée avec des herbes qui peuvent aider à guérir l'infection.</French>
 			<German>Ein Getränk aus Kräutern. Hilft bei Infektionen.</German>
 		</Key>
 		<Key ID="STR_ITEM_NAME_HerbalDrink">
@@ -2582,7 +2634,7 @@
 			<Spanish>Hojas de consuelda</Spanish>
 			<Czech>Kostival lékařský</Czech>
 			<French>Feuilles de consoude</French>
-			<German>Beinwellblaetter</German>
+			<German>Beinwellblätter</German>
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_comfreyleafs">
 			<English>Comfrey leaves used in crafting.</English>
@@ -2590,7 +2642,7 @@
 			<Spanish>Hojas de consuelda que pueden ser usadas para crear objetos.</Spanish>
 			<Czech>Kostival lékařský je léčivá bylina, jejíž listy jsou používány při výrobě.</Czech>
 			<French>Feuilles de consoude officinale (Artisanat)</French>
-			<German>Einige Blaetter vom Rauen Beinwell. Wirken schmerzlindernd und entzuendungshemmend.</German>
+			<German>Einige Blätter vom Rauen Beinwell. Wirken schmerzlindernd und entzündungshemmend.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_Bandage">
 			<English>Bandage</English>
@@ -2638,7 +2690,7 @@
 			<Russian>Инструкция по созданию антисептических бинтов. Нужно: три тряпки, пара марль, шнур и пара листков живокоста</Russian>
 			<Czech>Návod pro vyrobení antiseptického obvazu. Potřeba: 3x hadr, 2x gáza, 1x provázek, 2x listy kostivalu.</Czech>
 			<French>Plan de fabrication d&apos;un pansement antiseptique. Requis: 3 tissus, 2 gazes, 1 ficelle, 2 consoudes.</French>
-			<German>Blaupause für eine antiseptische Bandage. Gebraucht werden: 3x Lumpen, 2x Verbandmull, 1x Schnur, 2x Beinwellblaetter.</German>
+			<German>Blaupause für eine antiseptische Bandage. Gebraucht werden: 3x Lumpen, 2x Verbandmull, 1x Schnur, 2x Beinwellblätter.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_Compass">
 			<English>Compass</English>
@@ -2670,7 +2722,7 @@
 			<Spanish>Plano para crear M4A1 AIM. Requerido: 1 M4A1, 1 AIM y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;une M4A1 à viseur laser. Requis : 1 M4A1, 1 Fixation viseur laser + Boîte à outils</French>
 			<Czech>Návod pro vyrobení M4A1 s CCO mířidlem. Potřeba: 1x M4A1, 1x CCO mířidlo a sada nástrojů.</Czech>
-			<German>Blaupause für ein M4A1 AIM. Gebraucht werden: 1x M4A1, 1x CCO Rotpunktvisier, Werkzeugkasten.</German>
+			<German>Blaupause für eine M4A1 AIM. Gebraucht werden: 1x M4A1, 1x CCO Rotpunktvisier, Werkzeugkasten.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_M4A1_HWS_GL_CAMO">
 			<English>M4A1 HWS GL Camo</English>
@@ -2686,7 +2738,7 @@
 			<Spanish>Plano para crear M4A1 HWS GL Camo. Requerido: 1 M4A1 HWS GL, 1 Attachment Camo y Caja de Herramientas</Spanish>
 			<Czech>Návod pro vyrobení M4A1 HWS GL Kamufláž. Potřeba: 1x M4A1 HWS GL, 1x maskovací potisk a sada nástrojů</Czech>
 			<French>Plan de fabrication d&apos;une M4A1 holographique, lanceur de grenades, camouflage. Requis : 1 M4A1 HWS GL, 1 fixation camouflage + Boîte à outils</French>
-			<German>Blaupause für ein M4A1 HWS GL Tarn. Gebraucht werden: 1x M4A1 HWS GL, 1x Tarnmaterial, Werkzeugkasten.</German>
+			<German>Blaupause für eine M4A1 HWS GL Tarn. Gebraucht werden: 1x M4A1 HWS GL, 1x Tarnmaterial, Werkzeugkasten.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_M9SD">
 			<English>M9SD</English>
@@ -2714,7 +2766,7 @@
 		</Key>
 		<Key ID="STR_CRAFT_DESC_MAKAROVSD">
 			<English>Blueprint to create a MAKAROVSD. Required - 1 MAKAROV, 1 Attachment_Silencer. - ToolBox</English>
-			<Russian>Инструкция по сборке ПМ с глушителем. Нужно: ПМ , глушитель и ящик с инструментами.</Russian>
+			<Russian>Инструкция по сборке ПМ с глушителем. Нужно: ПМ, глушитель и ящик с инструментами.</Russian>
 			<Spanish>Planos para crear una Makarov Silenciada. Requerido: 1 Makarov, 1 Silenciador y Caja de Herramientas.</Spanish>
 			<French>Plan de fabrication d&apos;un Makarov silencieux. Requis : 1 Makarov, 1 Fixation Silencieux + Boîte à outils</French>
 			<Czech>Návod pro vyrobení Makarov s tlumičem. Potřeba: 1x Makarov, 1x tlumič a sada nástrojů.</Czech>
@@ -2750,7 +2802,7 @@
 			<Spanish>Plano para crear un SVD Camuflado. Requerido: 1 SVD, 1 Camuflaje, 1 Skin_Camo1_DZ y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un SVD Camouflage. Requis : 1 SVD, 1 Fixation Camouflage, 1 tenue de camouflage + Boîte à outils</French>
 			<Czech>Návod pro vyrobení SVD s maskovacím potiskem. Potřeba: 1x SVD, 1x maskovací potisk, 1x hejkal a sada nástrojů</Czech>
-			<German>Blaupause für ein SVD Tarn. Gebraucht werden: 1x SVD, 1x Tarnmaterial, 1x Tarnmaterial, Werkzeugkasten.</German>
+			<German>Blaupause für eine SVD Tarn. Gebraucht werden: 1x SVD, 1x Tarnmaterial, 1x Tarnmaterial, Werkzeugkasten.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_M4A1_Aim_CAMO">
 			<English>M4A1_Aim_CAMO</English>
@@ -2766,7 +2818,7 @@
 			<Spanish>Plano para crear M4A1 AIM Camuflado. Requerido: 1 M4A1 AIM, 1 Camuflaje y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un M4A1 à viseur laser et Camouflage. Requis : 1 M4A1 à viseur laser, 1 Fixation Camouflage + Boîte à outils</French>
 			<Czech>Návod pro vyrobení M4A1 s mířidlem a maskovacím potiskem. Potřeba: 1x M4A1 s CCO, 1x maskovací potisk a sada nástrojů</Czech>
-			<German>Blaupause für ein M4A1 AIM Tarn. Gebraucht werden: 1x M4A1 AIM, 1x Tarnmaterial, Werkzeugkasten.</German>
+			<German>Blaupause für eine M4A1 AIM Tarn. Gebraucht werden: 1x M4A1 AIM, 1x Tarnmaterial, Werkzeugkasten.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_G36C_CAMO">
 			<English>G36C CAMO</English>
@@ -2782,7 +2834,7 @@
 			<Spanish>Plano para crear G36C Camuflada. Requerido: 1 G36C, 1 Camuflaje y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un G36C Camouflage. Requis : 1 G36C, 1 Fixation Camouflage + Boîte à outils</French>
 			<Czech>Návod pro vyrobení G36C s maskovacím potiskem. Potřeba: 1x G36C, 1x maskovací potisk a sada nástrojů</Czech>
-			<German>Blaupause für ein G36C CAMO. Gebraucht werden: 1x G36C, 1x Attachment_CAMO, Werkzeugkasten.</German>
+			<German>Blaupause für eine G36C CAMO. Gebraucht werden: 1x G36C, 1x Attachment_CAMO, Werkzeugkasten.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_G36A_CAMO">
 			<English>G36A CAMO</English>
@@ -2798,7 +2850,7 @@
 			<Spanish>Plano para crear G36A Camuflada. Requerido: 1 G36A, 1 Camuflaje y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un G36A Camouflage. Requis : 1 G36A, 1 Fixation Camouflage + Boîte à outils</French>
 			<Czech>Návod pro vyrobení G36A s maskovacím potiskem. Potřeba: 1x G36A, 1x maskovací potisk a sada nástrojů</Czech>
-			<German>Blaupause für ein G36A Tarn. Gebraucht werden: 1x G36A, 1x Tarnmaterial, Werkzeugkasten.</German>
+			<German>Blaupause für eine G36A Tarn. Gebraucht werden: 1x G36A, 1x Tarnmaterial, Werkzeugkasten.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_G36K_CAMO">
 			<English>G36K_CAMO</English>
@@ -2814,7 +2866,7 @@
 			<Spanish>Plano para crear G36K Camuflada. Requerido: 1 G36K, 1 Camuflaje y Caja de Herramientas</Spanish>
 			<French>Plan de fabrication d&apos;un G36K Camouflage. Requis : 1 G36K, 1 Fixation Camouflage + Boîte à outils</French>
 			<Czech>Návod pro vyrobení G36K s maskovacím potiskem. Potřeba: 1x G36K, 1x maskovací potisk a sada nástrojů</Czech>
-			<German>Blaupause für ein G36K Tarn. Gebraucht werden: 1x G36K, 1x Tarnmaterial, Werkzeugkasten.</German>
+			<German>Blaupause für eine G36K Tarn. Gebraucht werden: 1x G36K, 1x Tarnmaterial, Werkzeugkasten.</German>
 		</Key>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_HerbalDrink">
@@ -2827,10 +2879,10 @@
 		</Key>
 		<Key ID="STR_CRAFT_DESC_HerbalDrink">
 			<English>Blueprint to create a Herbal Drink. Required - 1 Water bottle boiled and one herb box.</English>
-			<Russian>Инструкция по приготовлению травяного напитка . Требуется - 1 бутылка воды кипяченой и коробка трав.</Russian>
-			<Spanish>Blueprint para crear una bebida a base de plantas . Requerido - 1 Botella de agua hervida y una caja de hierbas.</Spanish>
-			<French>Blueprint pour créer une boisson à base de plantes . Required - 1 bouteille d'eau bouillie et une boîte d'herbe .</French>
-			<Czech>Blueprint vytvořit Herbal drink. Povinné - 1 láhev vody vařené a jedna bylina box .</Czech>
+			<Russian>Рецепт приготовления травяного напитка. Требуется: бутылка чистой воды и коробка трав.</Russian>
+			<Spanish>Blueprint para crear una bebida a base de plantas. Requerido - 1 Botella de agua hervida y una caja de hierbas.</Spanish>
+			<French>Blueprint pour créer une boisson à base de plantes. Required - 1 bouteille d'eau bouillie et une boîte d'herbe.</French>
+			<Czech>Blueprint vytvořit Herbal drink. Povinné - 1 láhev vody vařené a jedna bylina box.</Czech>
 			<German>Rezept für einen Kräutertrunk. Gebraucht werden: 1x Flasche gekochtes Wasser, 1x Kräuter-Box.</German>
 		</Key>
 		<Key ID="STR_CRAFT_NAME_BaseBallBatBarbed">
@@ -3010,8 +3062,8 @@
 			<Czech>Kratší provázek</Czech>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_ACG_M16">
-			<English>ACOG Attachment for M16</English>
-			<Russian>ACOG M16(МОД)</Russian>
+			<English>[A] ACOG (M16)</English>
+			<Russian>[М] ACOG (M16)</Russian>
 			<Spanish>ACG (Accesorio)</Spanish>
 			<French>ACG (Fixation)</French>
 			<Czech>Příslušenství - ACOG pro M16</Czech>
@@ -3026,8 +3078,8 @@
 			<German>Advanced Combat Optics Gunsight, ein Zielfernrohr amerikanischer Bauart.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_ACG_SA58">
-			<English>ACOG Attachment for Sa-58</English>
-			<Russian>ACOG Sa-58(МОД)</Russian>
+			<English>[A] ACOG (Sa-58)</English>
+			<Russian>[М] ACOG (Sa-58)</Russian>
 			<Spanish>ACG (Accesorio)</Spanish>
 			<French>ACG (Fixation)</French>
 			<Czech>Příslušenství - ACOG pro Sa-58</Czech>
@@ -3042,8 +3094,8 @@
 			<German>Advanced Combat Optics Gunsight, ein Zielfernrohr amerikanischer Bauart.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Silencer">
-			<English>Suppressor Attachment</English>
-			<Russian>Глушитель (МОД)</Russian>
+			<English>[A] Suppressor</English>
+			<Russian>[М] глушитель</Russian>
 			<Spanish>Silenciador (Accesorio)</Spanish>
 			<French>Silencieux (Fixation)</French>
 			<Czech>Příslušenství - Tlumič</Czech>
@@ -3057,9 +3109,13 @@
 			<Czech>Tlumič pro střelné zbraně, používá se pro jejich vylepšení.</Czech>
 			<German>Ein Schalldämpfer für Schusswaffen.</German>
 		</Key>
+		<Key ID="STR_ATTACHMENT_RMVE_Silencer">
+			<English>Remove Suppressor</English>
+			<Russian>Снять глушитель</Russian>
+		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Pso">
-			<English>PSO Attachment</English>
-			<Russian>ПСО (МОД)</Russian>
+			<English>[A] PSO</English>
+			<Russian>[М] ПСО</Russian>
 			<Spanish>PSO (Accesorio)</Spanish>
 			<French>PSO (Fixation)</French>
 			<Czech>Příslušenství - PSO</Czech>
@@ -3074,8 +3130,8 @@
 			<German>Ein russisches Zielfernrohr vom Typ PSO-1.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_Kobra">
-			<English>KOBRA Attachment</English>
-			<Russian>Кобра (МОД)</Russian>
+			<English>[A] KOBRA</English>
+			<Russian>[М] Кобра</Russian>
 			<Spanish>KOBRA (Accesorio)</Spanish>
 			<French>KOBRA (Fixation)</French>
 			<Czech>Příslušenství - KOBRA</Czech>
@@ -3090,8 +3146,8 @@
 			<German>Russisches Rotpunktvisier vom Typ KOBRA.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_GL">
-			<English>GL Attachment</English>
-			<Russian>Подствольник (МОД)</Russian>
+			<English>[A] GL</English>
+			<Russian>[М] подствольник</Russian>
 			<Spanish>GL (Accesorio)</Spanish>
 			<French>GL (Fixation)</French>
 			<Czech>Příslušenství - granátomet</Czech>
@@ -3103,11 +3159,11 @@
 			<Spanish>Lanzador de Granadas (Accesorio)</Spanish>
 			<French>GL (Fixation)</French>
 			<Czech>Podvěsný granátomet, používá se pro vylepšení zbraní.</Czech>
-			<German>Russiches Gruenpunktvisier.</German>
+			<German>Russiches Grünpunktvisier.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_CAMO_M4">
-			<English>Camo Attachment for M4</English>
-			<Russian>Камуфляж (МОД)</Russian>
+			<English>[A] Camo (M4)</English>
+			<Russian>[М] камуфляж (M4)</Russian>
 			<Spanish>Camuflaje (Accesorio)</Spanish>
 			<French>Camouflage (Fixation)</French>
 			<Czech>Příslušenství - kamufláž pro M4</Czech>
@@ -3122,8 +3178,8 @@
 			<German>Material zur Tarnung einer M4A1 mit AIM.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_AIM_M4A1">
-			<English>AIM Attachment for M4</English>
-			<Russian>AIM M4(МОД)</Russian>
+			<English>[A] AIM (M4)</English>
+			<Russian>[М] AIM (M4)</Russian>
 			<Spanish>AIM (Accesorio)</Spanish>
 			<French>AIM (Fixation)</French>
 			<Czech>Příslušenství - CCO pro M4</Czech>
@@ -3138,8 +3194,8 @@
 			<German>Close Combat Optics (CCO), Rotpunktvisier amerikanischer Bauart für die M4.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_AIM_SA58">
-			<English>AIM Attachment for Sa-58</English>
-			<Russian>AIM Sa-58(МОД)</Russian>
+			<English>[A] AIM (Sa-58)</English>
+			<Russian>[М] AIM (Sa-58)</Russian>
 			<Spanish>AIM (Accesorio)</Spanish>
 			<French>AIM (Fixation)</French>
 			<Czech>Příslušenství - CCO pro Sa-58</Czech>
@@ -3154,20 +3210,20 @@
 			<German>Close Combat Optics, Rotpunktvisier amerikanischer Bauart für die Sa-58.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_BELT">
-			<English>Ammo Belt</English>
-			<Russian>Патронташ</Russian>
+			<English>[A] Ammo belt</English>
+			<Russian>[М] патронташ (Мосинка)</Russian>
 			<Czech>Příslušenství - nábojový pás</Czech>
 			<German>Munitionsgürtel</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_BELT">
-			<English>Ammo Belt Attachment.</English>
+			<English>Ammo belt Attachment.</English>
 			<Russian>Патронташ на приклад.</Russian>
 			<Czech>Nábojový pás, používá se pro vylepšení zbraní.</Czech>
-			<German>Munitionsgürtel für automatisches Feuer.</German>
+			<German>Munitionsgürtel für schnelleres Nachladen.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_CCO_RED">
-			<English>CCO RedDot Attachment</English>
-			<Russian>CCO(МОД)</Russian>
+			<English>[A] CCO RedDot</English>
+			<Russian>[М] CCO</Russian>
 			<Czech>Příslušenství - CCO</Czech>
 			<German>CCO Rotpunktvisier</German>
 		</Key>
@@ -3178,8 +3234,8 @@
 			<German>Close Combat Optics, Rotpunktvisier amerikanischer Bauart.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_CCO_RED_CROSSBOW">
-			<English>Crossbow CCO Attachment</English>
-			<Russian>CCO Арбалет(МОД)</Russian>
+			<English>[A] Crossbow CCO</English>
+			<Russian>[М] CCO (арбалет)</Russian>
 			<Czech>Příslušenství - CCO pro kuši</Czech>
 			<German>Armbrust CCO Rotpunktvisier</German>
 		</Key>
@@ -3190,8 +3246,8 @@
 			<German>CCO Rotpunktvisier für eine Armbrust.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_FL">
-			<English>Flashlight Attachment</English>
-			<Russian>Фонарик(МОД)</Russian>
+			<English>[A] Flashlight</English>
+			<Russian>[М] фонарик</Russian>
 			<Czech>Příslušenství - baterka</Czech>
 			<German>Taschenlampen-Erweiterung</German>
 		</Key>
@@ -3202,32 +3258,21 @@
 			<German>Taschenlampen-Erweiterung für Schusswaffen.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SCOPE">
-			<English>Scoped Sight Attachment</English>
-			<Russian>Прицел (МОД)</Russian>
+			<English>[A] Scoped Sight</English>
+			<Russian>[М] прицел</Russian>
 			<Czech>Příslušenství - puškohled</Czech>
 			<German>Zielfernrohr-Erweiterung</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_DESC_SCOPE">
 			<English>Scoped Sight Attachment.</English>
-			<Russian>Прицел для винтовки.</Russian>
+			<Russian>Прицел для Мосинки/арбалета.</Russian>
 			<Czech>Puškohled, používá se pro vylepšení zbraní.</Czech>
 			<German>Zielfernrohr-Erweiterung für Schusswaffen.</German>
 		</Key>
-		<Key ID="STR_ATTACHMENT_NAME_SILENCER_MAKAROV">
-			<English>Silencer Attachment for Makarov</English>
-			<Russian>Глушитель Макаров(МОД)</Russian>
-			<Czech>Příslušenství - tlumič pro Makarov</Czech>
-			<German>Makarov Schalldämpfer</German>
-		</Key>
-		<Key ID="STR_ATTACHMENT_DESC_SILENCER_MAKAROV">
-			<English>A silencer that can be attached to Makarov.</English>
-			<Russian>Прибор бесшумной стрельбы для пистолета Макарова.</Russian>
-			<Czech>Tlumič, používá se pro vylepšení pistole Makarov.</Czech>
-			<German>Ein Schalldämpfer, der an eine Makarov angebracht werden kann.</German>
-		</Key>
+
 		<Key ID="STR_ATTACHMENT_NAME_SILENCER_M9">
-			<English>Silencer Attachment for M9</English>
-			<Russian>Глушитель М9(МОД)</Russian>
+			<English>[A] Silencer (M9)</English>
+			<Russian>[М] 9мм глуш. (М9)</Russian>
 			<Czech>Příslušenství - tlumič pro M9</Czech>
 			<German>M9 Schalldämpfer</German>
 		</Key>
@@ -3238,8 +3283,8 @@
 			<German>Ein Schalldämpfer, der an eine M9 angebracht werden kann.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SILENCER_M4">
-			<English>Silencer Attachment for M4A1</English>
-			<Russian>Глушитель M4А1(МОД)</Russian>
+			<English>[A] Silencer (M4A1)</English>
+			<Russian>[М] ПБС (M4А1)</Russian>
 			<Czech>Příslušenství - tlumič pro M4A1</Czech>
 			<German>M4A1 Schalldämpfer</German>
 		</Key>
@@ -3249,21 +3294,10 @@
 			<Czech>Tlumič, používá se pro vylepšení M4A1, jež již má CCO a kamufláž.</Czech>
 			<German>Ein Schalldämpfer, der an eine M4A1 angebracht werden kann.</German>
 		</Key>
-		<Key ID="STR_ATTACHMENT_NAME_SILENCER_BIZON">
-			<English>Silencer Attachment for Bizon</English>
-			<Russian>Глушитель Бизон(МОД)</Russian>
-			<Czech>Příslušenství - tlumič pro Bizon</Czech>
-			<German>Bizon Schalldämpfer</German>			
-		</Key>
-		<Key ID="STR_ATTACHMENT_DESC_SILENCER_BIZON">
-			<English>A silencer that can be attached to Bizon.</English>
-			<Russian>Прибор бесшумной стрельбы для Бизона.</Russian>
-			<Czech>Tlumič, používá se pro vylepšení pušky Bizon.</Czech>
-			<German>Ein Schalldämpfer, der an eine Bizon angebracht werden kann.</German>
-		</Key>
+
 		<Key ID="STR_ATTACHMENT_NAME_SILENCER_SCAR">
-			<English>Silencer Attachment for SCAR</English>
-			<Russian>Глушитель SCAR(МОД)</Russian>
+			<English>[A] Silencer (SCAR)</English>
+			<Russian>[М] ПБС (SCAR)</Russian>
 			<Czech>Příslušenství - tlumič pro SCAR</Czech>
 			<German>SCAR Schalldämpfer</German>	
 		</Key>
@@ -3274,8 +3308,8 @@
 			<German>Ein Schalldämpfer, der an eine SCAR CQC angebracht werden kann.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SILENCER_MP5">
-			<English>Silencer Attachment for MP5</English>
-			<Russian>Глушитель MP5(МОД)</Russian>
+			<English>[A] Silencer (MP5)</English>
+			<Russian>[М] 9мм глуш. (MP5)</Russian>
 			<Czech>Příslušenství - tlumič pro MP5</Czech>
 			<German>MP5 Schalldämpfer</German>	
 		</Key>
@@ -3286,8 +3320,8 @@
 			<German>Ein Schalldämpfer, der an eine MP5A5 angebracht werden kann.</German>
 		</Key>
 		<Key ID="STR_ATTACHMENT_NAME_SCOPE_M14">
-			<English>Scope Attachment for M14</English>
-			<Russian>Прицел M14(МОД)</Russian>
+			<English>[A] Scope (M14)</English>
+			<Russian>[М] прицел (M14)</Russian>
 			<Czech>Příslušenství - dalekohled pro M14</Czech>
 			<German>M14 Zielfernrohr</German>
 		</Key>
@@ -3315,7 +3349,7 @@
 		</Key>
 		<Key ID="STR_EQUIP_DESC_1">
 			<English>Collapsible spade used together with the engineering backpack to create field defences</English>
-			<German>Ein Klappspaten, wird beim Verschanzen und für viele Bautätigkeiten benoetigt.</German>
+			<German>Ein Klappspaten. Wird beim Verschanzen und für viele Bautätigkeiten benötigt.</German>
 			<Russian>Саперная лопатка используется вместе с инженерным ранцем для создания оборонительных сооружений.</Russian>
 			<Spanish>Una pala plegable usada para crear defensas en el campo.</Spanish>
 			<French>Une pelle démontable permettant de construire des éléments de défense.</French>
@@ -3372,14 +3406,14 @@
 		<Key ID="str_info_missingtransfusionkit">
 			<English>I seem to be missing a transfusion kit.</English>
 			<German>Dazu fehlt dir das nötige Transfusionsbesteck.</German>
-			<Russian>Похоже требуется набор для переливания.</Russian>
+			<Russian>Похоже отсутствует набор для переливания.</Russian>
 			<Spanish>Me parece que falta un kit de transfusión.</Spanish>
 			<French>Il me semble qu&apos;il manque un kit de transfusion.</French>
 			<Czech>Zdá se, že chybí transfúzní souprava.</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_3">
 			<English>Box of Matches</English>
-			<German>Schachtel Streichhoelzer</German>
+			<German>Schachtel Streichhölzer</German>
 			<Russian>Коробок спичек</Russian>
 			<Spanish>Caja de Fósforos</Spanish>
 			<French>Boîte d&apos;allumettes</French>
@@ -3459,7 +3493,7 @@
 		</Key>
 		<Key ID="STR_EQUIP_DESC_4">
 			<English>A knife used during hunting for preparing the game to be used as food by cutting up the meat.</English>
-			<German>Das ist ein Messer! Kann zum Ausnehmen von erlegtem Wild verwendet werden.</German>
+			<German>Ein Jadgmesser. Kann zum Ausnehmen von erlegtem Wild verwendet werden.</German>
 			<Russian>Нож можно использовать для разделки туш животных.</Russian>
 			<Spanish>Un cuchillo usado para preparar la carne de caza para ser guardada.</Spanish>
 			<French>Un couteau servant à dépecer le gibier.</French>
@@ -3469,31 +3503,31 @@
 			<English>Your knife appears to be too blunt. (Maybe 5 uses left).</English>
 			<Russian>Похоже, нож тупится. Осталось 5 использований.</Russian>
 			<Czech>Tento nůž je tupý. Půjde ho použít ještě asi tak pětkrát.</Czech>
-			<German>Dein Messer scheint stumpf zu werden. (vielleicht noch 5 Anwendungen möglich)</German>
+			<German>Dein Messer scheint stumpf zu werden. (Vielleicht noch 5 Anwendungen möglich)</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_4_B">
 			<English>Your knife appears to be too blunt. (Maybe 4 uses Left).</English>
 			<Russian>Похоже, нож тупится. Осталось 4 использованийя.</Russian>
 			<Czech>Tento nůž je tupý. Půjde ho použít ještě asi tak čtyřikrát.</Czech>
-			<German>Dein Messer scheint stumpf zu werden. (vielleicht noch 4 Anwendungen möglich)</German>
+			<German>Dein Messer scheint stumpf zu werden. (Vielleicht noch 4 Anwendungen möglich)</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_4_C">
 			<English>Your knife appears to be too blunt. (Maybe 3 uses Left).</English>
 			<Russian>Похоже, нож тупится. Осталось 3 использования.</Russian>
 			<Czech>Tento nůž je tupý. Půjde ho použít ještě asi tak třikrát.</Czech>
-			<German>Dein Messer scheint stumpf zu werden. (vielleicht noch 3 Anwendungen möglich)</German>
+			<German>Dein Messer scheint stumpf zu werden. (Vielleicht noch 3 Anwendungen möglich)</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_4_D">
 			<English>Your knife appears to be too blunt. (Maybe 2 uses Left).</English>
 			<Russian>Похоже, нож тупится. Осталось пара использований.</Russian>
 			<Czech>Tento nůž je tupý. Půjde ho použít ještě asi tak dvakrát.</Czech>
-			<German>Dein Messer ist fast stumpf. (vielleicht noch 2 Anwendungen möglich)</German>
+			<German>Dein Messer ist fast stumpf. (Vielleicht noch 2 Anwendungen möglich)</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_4_E">
 			<English>Your Knife appears to be too blunt. (Maybe 1 uses Left).</English>
 			<Russian>Похоже, нож тупится. Можно воспользоваться еще разок.</Russian>
 			<Czech>Tento nůž je tupý. Půjde ho použít ještě asi tak jednou.</Czech>
-			<German>Dein Messer ist so gut wie stumpf. (vielleicht noch 1 Anwendungen möglich)</German>
+			<German>Dein Messer ist so gut wie stumpf. (Vielleicht noch 1 Anwendung möglich)</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_5">
 			<English>Flashlight</English>
@@ -3632,8 +3666,8 @@
 			<Czech>Hlavní rotor</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_32">
-			<English>Rotor Shaft Hydraulics for a helicopter. Can be used to replace broken rotor shafts in other helicopters.</English>
-			<German>Hydrauliksysteme für einen Helikopter, die zum Reparieren kaputter Rotorwellen in anderen Helikoptern verwendet werden können.</German>
+			<English>Rotor Shaft Hydraulics for a helicopter. Can be used to replace broken rotor shafts in helicopters.</English>
+			<German>Hydrauliksysteme für einen Helikopter, die zum Reparieren kaputter Rotorwellen in Helikoptern verwendet werden können.</German>
 			<Russian>Набор запчастей для починки лопастей винтов и вала главного ротора для вертолета.</Russian>
 			<Spanish>Eje hidráulico del rotor de un helicoptero.</Spanish>
 			<French>Colonne de rotor d&apos;hélicoptère. Permet de réparer un hélicoptère qui a un de ses rotors cassé.</French>
@@ -3665,7 +3699,7 @@
 		</Key>
 		<Key ID="STR_EQUIP_NAME_13_EMPTY">
 			<English>Empty</English>
-			<Russian>Пустая</Russian>
+			<Russian>Опустошить</Russian>
 			<German>Ausleeren</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_13">
@@ -3686,7 +3720,7 @@
 		</Key>
 		<Key ID="STR_EQUIP_DESC_14">
 			<English>Epinephrine Autoinjector. Used for intramuscular injection to revive unconscious casualties.</English>
-			<German>Epinephrin/Adrenalin-Autoinjektor zur intramuskulären Injektion bei Schockzuständen.</German>
+			<German>Epinephrin/Adrenalin-Autoinjektor zur intramuskulären Injektion bei Bewusstlosigkeit.</German>
 			<Russian>Инъекция адреналина для приведения в чувства людей без сознания.</Russian>
 			<Spanish>Epinefrina Autoinyectable. Inyección intramuscular para revivir a alguien inconciente.</Spanish>
 			<French>Adrénaline en auto-injection intra-musculaire "Epipen". Permet de se remettre d&apos;une perte de conscience.</French>
@@ -3743,30 +3777,37 @@
 		<Key ID="STR_EQUIP_DESC_48">
 			<English>Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 6 Remaining.</English>
 			<Russian>Азитромицин это многоцелевой антибиотик, использующийся для лечения бактериальных инфекций. Осталось 6 таблеток.</Russian>
+			<German>Azithromycin ist ein Breitbandantibiotikum, das zur Behandlung oder Prophylaxe verschiedener bakterieller Infektionen verwendet werden kann. 6 Stück übrig.</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_49">
 			<English>Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 5 Remaining.</English>
 			<Russian>Азитромицин это многоцелевой антибиотик, использующийся для лечения бактериальных инфекций. Осталось 5 таблеток.</Russian>
+			<German>Azithromycin ist ein Breitbandantibiotikum, das zur Behandlung oder Prophylaxe verschiedener bakterieller Infektionen verwendet werden kann. 5 Stück übrig.</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_50">
 			<English>Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 4 Remaining.</English>
 			<Russian>Азитромицин это многоцелевой антибиотик, использующийся для лечения бактериальных инфекций. Осталось 4 таблетки.</Russian>
+			<German>Azithromycin ist ein Breitbandantibiotikum, das zur Behandlung oder Prophylaxe verschiedener bakterieller Infektionen verwendet werden kann. 4 Stück übrig.</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_51">
 			<English>Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 3 Remaining.</English>
 			<Russian>Азитромицин это многоцелевой антибиотик, использующийся для лечения бактериальных инфекций. Осталось 3 таблетки.</Russian>
+			<German>Azithromycin ist ein Breitbandantibiotikum, das zur Behandlung oder Prophylaxe verschiedener bakterieller Infektionen verwendet werden kann. 3 Stück übrig.</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_52">
 			<English>Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 2 Remaining.</English>
 			<Russian>Азитромицин это многоцелевой антибиотик, использующийся для лечения бактериальных инфекций. Осталось 2 таблетки.</Russian>
+			<German>Azithromycin ist ein Breitbandantibiotikum, das zur Behandlung oder Prophylaxe verschiedener bakterieller Infektionen verwendet werden kann. 2 Stück übrig.</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_53">
 			<English>Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 1 Remaining.</English>
 			<Russian>Азитромицин это многоцелевой антибиотик, использующийся для лечения бактериальных инфекций. Осталась 1 таблетка.</Russian>
+			<German>Azithromycin ist ein Breitbandantibiotikum, das zur Behandlung oder Prophylaxe verschiedener bakterieller Infektionen verwendet werden kann. 1 Stück übrig.</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_54">
 			<English>Empty box of Azithromycin.</English>
 			<Russian>Пустая коробка азитромицина.</Russian>
+			<German>Leere Schachtel Azithromycin</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_18">
 			<English>Painkillers</English>
@@ -3938,7 +3979,7 @@
 		</Key>
 		<Key ID="STR_EQUIP_DESC_33">
 			<English>An empty tin can that no longer contains any food, or anything usable.</English>
-			<German>Eine leere Blechdose. Leider ist nichts Essbares mehr darin aber vielleicht anderweitig nützlich.</German>
+			<German>Eine leere Blechdose. Leider ist nichts Essbares mehr drin, ist aber vielleicht anderweitig nützlich.</German>
 			<Russian>Пустая консервная банка. Совершенно пуста и бесполезна.</Russian>
 			<Spanish>Una lata vacía que ya no contiene ninguna comida o algo usable.</Spanish>
 			<French>Boîte de conserve vide, dont la seule utilité est de faire éventuellement diversion.</French>
@@ -3955,7 +3996,7 @@
 		<Key ID="STR_EQUIP_DESC_34">
 			<English>A cracked empty whiskey bottle that no longer contains anything.</English>
 			<German>Eine leere Whiskeyflasche. Sie ist leider undicht.</German>
-			<Russian>Треснутая бутылка виски не содержит в себе абсолютно ничего.</Russian>
+			<Russian>Разбитая бутылка виски, в которой ничего не осталось.</Russian>
 			<Spanish>Una botella de whisky vacía.</Spanish>
 			<French>Une bouteille fêlée, sans son précieux brevage.</French>
 			<Czech>Popraskaná láhev od whisky, která už neobsahuje ani kapku.</Czech>
@@ -4027,7 +4068,7 @@
 		<Key ID="STR_EQUIP_NAME_40">
 			<English>Wood Pile</English>
 			<German>Holzstapel</German>
-			<Russian>Дрова</Russian>
+			<Russian>Поленья</Russian>
 			<Spanish>Pila de Leña</Spanish>
 			<French>Tas de bois</French>
 			<Czech>Hromádka dřeva</Czech>
@@ -4049,9 +4090,9 @@
 			<Czech>Zahřívací sáček</Czech>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_42">
-			<English>A heating pad that heats when you start the crystallisation process. Used to provide quick warmth to your body.</English>
+			<English>A heating pad that heats when you start the crystallisation process. Used to provide warmth to your body.</English>
 			<German>Ein Wärmekissen. Wird das Metallplättchen im Gel geknickt, kristallisiert der Inhalt und erzeugt Wärme. Nützlich in kalten Umgebungen.</German>
-			<Russian>Химическая грелка. Используется для быстрого согревания вашего тела.</Russian>
+			<Russian>Химическая грелка. Используется для согревания вашего тела.</Russian>
 			<Spanish>Una almohadilla térmica que proporciona un calentamiento rápido a tu cuerpo previniendo la hipotermia.</Spanish>
 			<French>Poche produisant de la chaleur via un processus de cristallisation. Permet de réchauffer rapidement votre corps.</French>
 			<Czech>Zahřívací sáček, který se na principu krystalizace ohřeje. Používá se pro rychlé ohřátí těla.</Czech>
@@ -4099,7 +4140,7 @@
 		<Key ID="STR_EQUIP_DESC_45">
 			<English>A normal mixture of civilian clothing with a light-weight vest and hat. Can be unpacked and worn.</English>
 			<Spanish>Un conjunto normal de ropa civil liviana y gorra. Puede ser desempaquetada y usada.</Spanish>
-			<German>Normale zivile Kleidung mit einer leichten Mehrzweckweste und einer Muetze. Kann ausgepackt und getragen werden.</German>
+			<German>Normale zivile Kleidung mit einer leichten Mehrzweckweste und einer Mütze. Kann ausgepackt und getragen werden.</German>
 			<Russian>Повседневная гражданская одежда. Можно распаковать и надеть.</Russian>
 			<French>Une tenue de ville, avec veste légère et casquette. Peut être porté.</French>
 			<Czech>Normální civilní oblečení s lehkou vestou a čepicí. Lze rozbalit a obléknout.</Czech>
@@ -4147,43 +4188,12 @@
 		<Key ID="STR_DAYZ_OBJ_4">
 			<English>Cardboard Box</English>
 			<Russian>Картонная коробка</Russian>
-		</Key>
-		<Key ID="STR_WPN_DESC_1">
-			<English>Shotgun 12 gauge</English>
-			<German>Remington 870</German>
-			<Russian>Дробовик 12 калибра</Russian>
-			<Spanish>Escopeta calibre 12</Spanish>
-			<French>Fusil cal. 12</French>
-			<Czech>Brokovnice cal. 12</Czech>
-		</Key>
-		<Key ID="STR_WPN_DESC_2">
-			<English>The Remington Model 870 is a pump-action shotgun with a military torch attachment.</English>
-			<German>Die Remington Model 870 ist eine Vorderschaftrepetierflinte mit Halterung für eine Taschenlampe.</German>
-			<Russian>Ремингтон Модель 870 это помповый дробовик с креплением для фонарика</Russian>
-			<Spanish>La Remington Modelo 870 es una escopeta de acción a bombeo con una linterna militar como accesorio.</Spanish>
-			<French>Le modèle Remington 870 est un fusil à pompe avec une torche militaire.</French>
-			<Czech>Remington 870 je opakovací brokovnice. Lze na ni připevnit vojenskou baterku.</Czech>
-		</Key>
-		<Key ID="STR_WPN_NAME_3">
-			<English>Remington 870 (Flashlight)</English>
-			<German>Remington 870 mit Taschenlampe</German>
-			<Russian>Ремингтон 870 (фонарь)</Russian>
-			<Spanish>Remington 870 (Linterna)</Spanish>
-			<French>Remington 870 (+Torche)</French>
-			<Czech>Remington 870 (baterka)</Czech>
-		</Key>
-		<Key ID="STR_WPN_DESC_3">
-			<English>The Remington Model 870 is a pump-action shotgun. This weapon has a torch attached.</English>
-			<German>Die Remington Model 870 ist eine Vorderschaftrepetierflinte mit einer fest installierten Taschenlampe.</German>
-			<Russian>Ремингтон Модель 870 это помповый дробовик с армейским фонариком</Russian>
-			<Spanish>La Remington Modelo 870 es una escopeta de acción a bombeo con una linterna como accesorio.</Spanish>
-			<French>Le modèle Remington 870 est un fusil à pompe avec une lampe torche.</French>
-			<Czech>Remington 870 je opakovací brokovnice. Tato má navíc připevněnou baterku.</Czech>
+			<German>Kartonschachtel</German>
 		</Key>
 		<Key ID="STR_WPN_NAME_4">
 			<English>Compound Crossbow</English>
 			<German>Kompositarmbrust</German>
-			<Russian>Спортивный арбалет</Russian>
+			<Russian>Составной арбалет</Russian>
 			<Spanish>Ballesta Compuesta</Spanish>
 			<French>Arbalète composite</French>
 			<Czech>Kuše</Czech>
@@ -4191,34 +4201,20 @@
 		<Key ID="STR_WPN_DESC_4">
 			<English>The compound crossbow is, once the aim is mastered, a powerful short-range single-shot weapon with a long reload time.</English>
 			<German>Die Kompositarmbrust ist, wenn man das Zielen beherrscht, eine starke und lautlose Waffe - allerdings mit kurzer Reichweite und langer Nachladezeit.</German>
-			<Russian>Спортивный арбалет требует сноровки для точной стрельбы, превращаясь в мощное однозарядное оружие на коротких дистанциях.</Russian>
+			<Russian>Арбалет требует сноровки для точной стрельбы, превращаясь в мощное оружие на коротких дистанциях.</Russian>
 			<Spanish>La ballesta compuesta es, una vez que se domina el apuntado, una poderasa arma de único tiro a corta distancia con largo tiempo de recarga.</Spanish>
 			<French>Une fois maîtrisée, l&apos;arbalète composite permet de tirer un coup puissant mais avec un long temps de chargement.</French>
 			<Czech>Kuše je tichá a účinná střelná zbraň na krátkou vzdálenost. Její nevýhodou je dlouhá nabíjecí doba.</Czech>
 		</Key>
-		<Key ID="STR_WPN_NAME_5">
-			<English>Double-barreled Shotgun</English>
-			<German>Doppelläufige Schrotflinte</German>
-			<Russian>Двустволка</Russian>
-			<Spanish>Escopeta de doble cañon</Spanish>
-			<French>Fusil à 2 coups</French>
-			<Czech>Dvouhlavňová brokovnice</Czech>
-		</Key>
-		<Key ID="STR_WPN_DESC_5">
-			<English>A double-barreled shotgun is a shotgun with two parallel barrels, allowing two shots to be fired in quick succession.</English>
-			<German>Eine Schrotflinte mit zwei parallel montierten Läufen, die in schneller Folge abgefeuert werden können.</German>
-			<Russian>Двуствольные ружья употребляются почти исключительно в качестве охотничьих, в армии же они не нашли употребления.</Russian>
-			<Spanish>Una escopeta de doble barril permite disparar dos tiros en un corto periodo de tiempo.</Spanish>
-			<French>Fusil doté de 2 canons parallèles, permettant de tirer 2 coups rapprochés.</French>
-			<Czech>Dvouhlavňová brokovnice je brokovnice s dvěma hlavněmi vedle sebe, což umožnuje vystřelit dvakrát hned za sebou.</Czech>
-		</Key>
 		<Key ID="STR_MAG_CONV_45ACP_Revolver">
 			<English>Combine for Revolver</English>
-			<Russian>в патроны для револьвера</Russian>
+			<Russian>в обойму рев.</Russian>
+			<German>In Revolver-Trommel umladen</German>
 		</Key>
 		<Key ID="STR_MAG_CONV_45ACP_M1911">
 			<English>Combine for M1911</English>
 			<Russian>в M1911 маг.</Russian>
+			<German>In M1911-Magazin umladen</German>
 		</Key>
 		<Key ID="STR_MAG_CONV_G17_M9">
 			<English>Combine for M9</English>
@@ -4236,6 +4232,16 @@
 			<French>Assembler pour un G17</French>
 			<German>In G17-Magazin umladen</German>
 		</Key>
+		<Key ID="STR_MAG_CONV_M24_DMR">
+			<English>Combine to DMR</English>
+			<Russian>в DMR маг.</Russian>
+			<German>In DMR-Magazin umladen</German>
+		</Key>
+		<Key ID="STR_MAG_SPLIT_4X5M24">
+			<English>Split into 4x5 (M24)</English>
+			<Russian>Разд. на 4х5 (М24)</Russian>
+		</Key>
+
 		<Key ID="STR_MAG_CONV_G36_STANAG">
 			<English>Combine to STANAG</English>
 			<Russian>в STANAG маг.</Russian>
@@ -4256,45 +4262,17 @@
 			<Russian>в AK-47 маг.</Russian>
 			<German>In AK-47-Magazin umladen</German>
 		</Key>
-		<Key ID="STR_MAG_COMBINE_1">
-			<English>Combine to 8 rounds</English>
-			<Russian>Собрать в 8п.</Russian>
+		<Key ID="STR_MAG_COMBINE_2X4IN8">
+			<English>Combine to 8 rnd.</English>
+			<Russian>Собрать в 8 п.</Russian>
 			<Spanish>Combinar a 8 rondas</Spanish>
 			<French>Assembler en 8 balles</French>
 			<Czech>Zkombinovat do 8 nábojů</Czech>
 			<German>Auf 8 Schuss aufteilen</German>
 		</Key>
-		<Key ID="STR_MAG_NAME_1">
-			<English>15Rnd. 1866 Pellets</English>
-			<German>15 Schuss 1866er Schrot</German>
-			<Russian>15п. для 1866 (дробь)</Russian>
-			<Spanish>15 rondas. Perdigones para 1866</Spanish>
-			<French>15 plombs pour 1866</French>
-			<Czech>15 náb. 1866 broky</Czech>
-		</Key>
-		<Key ID="STR_MAG_DESC_1">
-			<English>Caliber: 12 gauge</English>
-			<German>Kaliber 12</German>
-			<Russian>12-й калибр</Russian>
-			<Spanish>Calibre 12</Spanish>
-			<French>Calibre 12</French>
-			<Czech>Ráže 12</Czech>
-		</Key>
-		<Key ID="STR_MAG_NAME_2">
-			<English>15Rnd. 1866 rounds</English>
-			<German>15 Schuss 1866er Flintenlaufgeschoss</German>
-			<Russian>15п. для 1866</Russian>
-			<Spanish>15 Rondas. Balas para 1866</Spanish>
-			<French>15 balles pour 1866</French>
-			<Czech>15 náb. 1866 kulky</Czech>
-		</Key>
-		<Key ID="STR_MAG_DESC_2">
-			<English>Caliber: .44 Rimfire (11x23mm)</English>
-			<German>Kaliber .44</German>
-			<Russian>.44-й калибр</Russian>
-			<Spanish>Calibre .44</Spanish>
-			<French>Calibre .44</French>
-			<Czech>Ráže .44</Czech>
+		<Key ID="STR_MAG_SPLIT_8TO2X4">
+			<English>Split into 4x2 rnd</English>
+			<Russian>Разд. на 4x2 п.</Russian>
 		</Key>
 		<Key ID="STR_MAG_NAME_4">
 			<English>Road Flare</English>
@@ -4352,38 +4330,6 @@
 			<French>Bâton lumineux (bleu)</French>
 			<Czech>Chemické světlo (modré)</Czech>
 		</Key>
-		<Key ID="STR_MAG_NAME_8">
-			<English>2Rnd. Slug</English>
-			<Russian>2п.12к (пуля)</Russian>
-			<Spanish>2Rnd. Slug</Spanish>
-			<French>2 balles</French>
-			<Czech>2 patrony Slug</Czech>
-			<German>2 Schuss Flintenlaufgeschoss</German>
-		</Key>
-		<Key ID="STR_MAG_DESC_8">
-			<English>Caliber: 12 gauge &lt;br/&gt;Rounds: 2 &lt;br/&gt;Used in: M1014</English>
-			<Russian>Патрон: 12-й калибр &lt;br/&gt;Количество: 2 &lt;br/&gt;Используется в: M1014, Двустволках</Russian>
-			<Spanish>Calibre: 12 gauge &lt;br/&gt;Rondas: 2 &lt;br/&gt;Usada en: M1014</Spanish>
-			<French>Calibre: 12&lt;br/&gt;Munitions: 2&lt;br/&gt;Pour: M1014</French>
-			<Czech>Ráže: 12 &lt;br/&gt;Munice: 2 &lt;br/&gt;Pro: M1014</Czech>
-			<German>Kaliber 12 Flintenlaufgeschoss&lt;br/&gt;2 Schuss&lt;br/&gt;Verwendet in: M1014</German>
-		</Key>
-		<Key ID="STR_MAG_NAME_9">
-			<English>2Rnd. Pellets</English>
-			<Russian>2п.12к (дробь)</Russian>
-			<Spanish>2Rnd. Perdigones</Spanish>
-			<French>2 cartouches</French>
-			<Czech>2 patrony broků</Czech>
-			<German>2 Schuss Schrot</German>
-		</Key>
-		<Key ID="STR_MAG_DESC_9">
-			<English>Caliber: 12 gauge &lt;br/&gt;Rounds: 2 Pellets&lt;br/&gt;Used in: M1014</English>
-			<Russian>Патрон: 12-й калибр &lt;br/&gt;Количество: 2 &lt;br/&gt;Используется в: M1014, Двустволках</Russian>
-			<Spanish>Calibre: 12 gauge &lt;br/&gt;Rondas: 2 Perdigones&lt;br/&gt;Usada en: M1014</Spanish>
-			<French>Calibre: 12&lt;br/&gt;Munitions: 2 cartouches&lt;br/&gt;Pour: M1014</French>
-			<Czech>Ráže: 12&lt;br/&gt;Munice: 2 patrony&lt;br/&gt;Pro: M1014</Czech>
-			<German>Kaliber 12 Schrotmunition&lt;br/&gt;2 Schuss&lt;br/&gt;Verwendet in: M1014</German>
-		</Key>
 		<Key ID="STR_CHAR_1">
 			<English>Survivor</English>
 			<German>Überlebender</German>
@@ -4418,7 +4364,7 @@
 		</Key>
 		<Key ID="STR_EQUIP_DESC_21">
 			<English>Sacks made of hessian that can be filled with sand or soil and used for military fortification.</English>
-			<German>Jutesaecke, die mit Sand oder Erde gefüllt für Befestigungen verwendet werden können.</German>
+			<German>Jutesäcke, die mit Sand oder Erde gefüllt für Befestigungen verwendet werden können.</German>
 			<Russian>Мешки с песком для создания оборонительных сооружений.</Russian>
 			<Spanish>Bolsas hechas de arpillera que pueden llenarse con arena o tierra y ser usadas para fortificación militar.</Spanish>
 			<Czech>Jutové pytle, lze naplnit pískem nebo zeminou a použít je pro postavení opevnění.</Czech>
@@ -4545,6 +4491,9 @@
 			<Russian>Кувалда</Russian>
 			<Czech>Palice</Czech>
 			<German>Vorschlaghammer</German>
+			<Spanish>Almádena</Spanish>
+			<French>Masse</French>
+			<Dutch>Voorhamer</Dutch>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_SledgeHammer">
 			<English>A sledgehammer is a tool with a large, flat, often metal head, attached to a lever.</English>
@@ -4556,13 +4505,13 @@
 			<English>Lever (Handle)</English>
 			<Russian>Рукоять</Russian>
 			<Czech>Násada (topůrko)</Czech>
-			<German>Stiel</German>
+			<German>Schaft</German>
 		</Key>
 		<Key ID="STR_EQUIP_DESC_LEVER">
 			<English>A brand new handle that can be used to fix broken tools.</English>
 			<Russian>Новенькая рукоять для починки сломанных инструментов.</Russian>
 			<Czech>Zbrusu nová násada, která se může hodit k opravení nějakého rozbitého nářadí.</Czech>
-			<German>Ein neuer Stiel, um beschädigte Werkzeuge zu reparieren.</German>
+			<German>Ein neuer Schaft, um beschädigte Werkzeuge zu reparieren.</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_CROWBAR">
 			<English>Crowbar</English>
@@ -4766,7 +4715,7 @@
 			<Spanish>Pistola semi-automática &lt;br/&gt;Calibre: 9x19mm</Spanish>
 			<French>Pistolet semi-automatique italien &lt;br/&gt;Calibre: 9x19mm</French>
 			<Czech>Poloautomatická pistole &lt;br/&gt;Kalibr: 9x19mm</Czech>
-			<German>Halbautomatische Pistole vom Typ Beretta 92, Militaerversion&lt;br/&gt;Kaliber: 9 x 19 mm</German>
+			<German>Halbautomatische Pistole vom Typ Beretta 92, Militärversion&lt;br/&gt;Kaliber: 9 x 19 mm</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_M9SD">
 			<English>M9 SD</English>
@@ -4782,7 +4731,7 @@
 			<Spanish>Pistola silenciada semi-automática&lt;br/&gt;Calibre: 9x19mm</Spanish>
 			<French>Pistolet semi-automatique italien avec silencieux &lt;br/&gt;Calibre: 9x19mm</French>
 			<Czech>Poloautomatická pistole s tlumičem &lt;br/&gt;Kalibr: 9x19mm</Czech>
-			<German>Halbautomatische Pistole vom Typ Beretta 92, Militaerversion mit Schalldämpfer&lt;br/&gt;Kaliber: 9 x 19 mm</German>
+			<German>Halbautomatische Pistole vom Typ Beretta 92, Militärversion mit Schalldämpfer&lt;br/&gt;Kaliber: 9 x 19 mm</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_M1911">
 			<English>M1911</English>
@@ -4878,7 +4827,7 @@
 			<Spanish>Pistola semi-automática &lt;br/&gt;Calibre: 9x19mm</Spanish>
 			<French>Pistolet semi-automatique autrichien &lt;br/&gt;Calibre: 9x19mm</French>
 			<Czech>Poloautomatická pistole Glock 17 &lt;br/&gt;Kalibr: 9x19mm</Czech>
-			<German>Halbautomatische Pistole vom Typ Glock 17 mit angebauter Taschenlampe&lt;br/&gt;Kaliber: 9 x 19 mm</German>
+			<German>Halbautomatische Pistole vom Typ Glock 17&lt;br/&gt;Kaliber: 9 x 19 mm</German>
 		</Key>
 		<Key ID="STR_EQUIP_NAME_CLOTHES">
 			<English>Clothes</English>
@@ -5010,7 +4959,7 @@
 		</Key>
 		<Key ID="STR_EQUIP_CODE_DESC_4">
 			<English>Your Knife appears to be too dull.</English>
-			<German>Das Messer ist durch häufigen Gebrauch stumpf geworden.</German>
+			<German>Dein Messer ist durch häufigen Gebrauch stumpf geworden.</German>
 			<Russian>Ваш нож слишком туп, чтобы его использовать.</Russian>
 			<Spanish>Tu cuchillo parece estar muy desafilado.</Spanish>
 			<French>Votre couteau semble trop émoussé</French>
@@ -5170,7 +5119,7 @@
 		</Key>
 		<Key ID="STR_FOODCOOKED_EQUIP_CODE_DESC_2">
 			<English>Chicken Leg to be used for sustenance.</English>
-			<German>Eine Huehnchenkeule, die über Feuer gut durchgebraten wurde.</German>
+			<German>Eine Hühnchenkeule, die über Feuer gut durchgebraten wurde.</German>
 			<Russian>Жареный куриный окрочек, готовый к употреблению.</Russian>
 			<Spanish>Pata de Pollo que se utilizará para sobrevivir.</Spanish>
 			<French>La cuisse de poulet peut être consommée.</French>
@@ -5471,7 +5420,7 @@
 			<German>Eine saubere, ungeöffnete Dose "R4ZOR". Die werden schon seit Jahren nicht mehr verkauft!</German>
 			<Russian>Чистая, закрытая банка "R4Z0R". Уже давно перестали продаваться!</Russian>
 			<Spanish>Una limpia y cerrada lata de gaseosa R4Z0R. Dejaron de venderlas hace años.</Spanish>
-			<French>Une canette intacte de soda "R4Z0R". Ils ont arrêté de les vendre il y a des années !.</French>
+			<French>Une canette intacte de soda "R4Z0R". Ils ont arrêté de les vendre il y a des années!.</French>
 			<Czech>Čistá a ještě neotevřená plechovka sodovky R4Z0R. Neprodává se už mnoho let!</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_NAME_2">
@@ -5548,7 +5497,7 @@
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_DESC_6">
 			<English>A clean, unopened can of Mikhail Made Lemonade. Made by Mikhail.</English>
-			<German>Eine saubere, ungeöffnete Dose "Mikhail Made"-Limonade. Hergestellt bei Mikhail.</German>
+			<German>Eine saubere, ungeöffnete Dose "Mikhail Made"-Limonade. Hergestellt von Mikhail.</German>
 			<Russian>Чистая, закрытая банка лимонада. Производства "Mikhail".</Russian>
 			<Spanish>Una limpia y cerrada lata de limonada Mikhail.</Spanish>
 			<French>Une canette intacte de limonade à la Mikhail. Fabriqué par Mikhail.</French>
@@ -5660,8 +5609,8 @@
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_DESC_13">
 			<English>A clean, unopened can of Papa&apos;s &apos;Gagarin Rocket Fuel&apos; soda. Product of Chernarus.</English>
-			<German>Eine saubere, ungeöffnete Dose "Gagarins Raketentreibstoff" von "Papas". Hergestellt und abgefuellt in Chernarus.</German>
-			<Russian>Чистая, закрытая банка газировки "Papa" "Gagarin Rocket Fuel".  Произведено в Чернаруси.</Russian>
+			<German>Eine saubere, ungeöffnete Dose "Gagarins Raketentreibstoff" von "Papas". Hergestellt und abgefüllt in Chernarus.</German>
+			<Russian>Чистая, закрытая банка газировки "Papa" "Gagarin Rocket Fuel". Произведено в Чернаруси.</Russian>
 			<Spanish>Una limpia y cerrada lata de gaseosa Papa&apos;s &apos;Gagarin Rocket Fuel&apos;. Producto de Chernarus.</Spanish>
 			<French>Une canette de &apos;Gagarin Rocket Fuel&apos; en bon état. Produit à Chernarus.</French>
 			<Czech>Čistá a ještě neotevřená plechovka sodovky Gagarin Rocket Fuel od Papa. Vyrobeno v Černarusi.</Czech>
@@ -5676,27 +5625,31 @@
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_DESC_14">
 			<English>A clean, unopened can of Papa&apos;s &apos;Olsha Sparkling Grape&apos; soda. Product of Chernarus.</English>
-			<German>Eine saubere, ungeöffnete Dose "Olshas spritzige Pampelmusenlimonade" von "Papas". Hergestellt und abgefuellt in Chernarus.</German>
-			<Russian>Чистая, закрытая банка газировки "Papa" "Olsha Sparkling Grape".  Произведено в Чернаруси.</Russian>
+			<German>Eine saubere, ungeöffnete Dose "Olshas spritzige Pampelmusenlimonade" von "Papas". Hergestellt und abgefüllt in Chernarus.</German>
+			<Russian>Чистая, закрытая банка газировки "Papa" "Olsha Sparkling Grape". Произведено в Чернаруси.</Russian>
 			<Spanish>Una limpia y cerrada lata de gaseosa Papa&apos;s &apos;Olsha Sparkling Grape&apos;. Producto de Chernarus.</Spanish>
 			<French>Une canette de soda au raisin &apos;Olsha&apos; en bon état. Produit à Chernarus.</French>
 			<Czech>Čistá a ještě neotevřená plechovka sodovky Olsha Sparkling Grape od Papa. Vyrobeno v Černarusi.</Czech>
 		</Key>
 		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_NAME_15">
-			<English>Sherbet</English>
-			<Russian>Шербет</Russian>
+			<English>Sherbet (Cold drink)</English>
+			<Russian>Шербет (Напиток)</Russian>
+		</Key>
+		<Key ID="STR_ITEMSODA_FULL_CLEAN_CODE_DESC_15">
+			<English>Sharbet, a traditional Middle Eastern cold drink prepared with rose hips, cornelian cherries, rose or licorice and a variety of spices.</English>
+			<Russian>Традиционный напиток в странах Востока, приготавливаемый из шиповника, кизила, розы или лакрицы и различных специй.</Russian>
 		</Key>
 		<Key ID="STR_FOOD_NAME_MRE">
 			<English>MRE</English>
 			<German>EPa</German>
-			<Russian>Cухпай</Russian>
+			<Russian>Паёк MRE</Russian>
 			<Spanish>MRE</Spanish>
 			<French>Repas instantané</French>
 			<Czech>Vojenská dávka</Czech>
 		</Key>
 		<Key ID="STR_FOOD_DESC_MRE">
 			<English>Meal Ready-to-Eat</English>
-			<German>Fertiggericht aus Militärbeständen.</German>
+			<German>Einmannpackung. Fertiggericht aus Militärbeständen.</German>
 			<Russian>Упаковка сухого пайка.</Russian>
 			<Spanish>Ración de combate. Carne lista para consumirse.</Spanish>
 			<French>Repas prêt à manger. Redonne des forces.</French>
@@ -5748,7 +5701,7 @@
 			<Spanish>Una lata vacia.</Spanish>
 			<French>Une boîte de conserve vide.</French>
 			<Czech>Prázdná plechovka</Czech>
-			<German>Eine leere Blechdose. Leider ist nichts Essbares mehr darin.</German>
+			<German>Eine leere Blechdose. Leider ist nichts Essbares mehr drin.</German>
 		</Key>
 		<Key ID="STR_FOOD_NAME_CHIPS_EMPTY">
 			<English>Empty Snack Bag</English>
@@ -5792,7 +5745,7 @@
 		</Key>
 		<Key ID="STR_FOOD_DESC_CHIPS_MYSTICALES">
 			<English>A clean, unopened bag of Miss Mysticales jalapeño chips.</English>
-			<German>Eine saubere, ungeöffnete Tuete "Miss Mysticales Jalapeño-Chips".</German>
+			<German>Eine saubere, ungeöffnete Tüte "Miss Mysticales Jalapeño-Chips".</German>
 			<Russian>Чистая, закрытая упаковка "Miss Mysticales jalapeño".</Russian>
 			<Spanish>Una limpia y cerrada bolsa de papitas picantes Miss Mysticales.</Spanish>
 			<French>Un paquet intact de chips "Miss Mysticales jalapeño".</French>
@@ -5864,7 +5817,7 @@
 		</Key>
 		<Key ID="STR_FOOD_DESC_CAKE_Creme_Cake_CLEAN">
 			<English>Golden Sponge Cake with Creamy Filling</English>
-			<German>Ein "Goldschwamm"-Minikuchen mit cremiger Fuellung.</German>
+			<German>Ein "Goldschwamm"-Minikuchen mit cremiger Füllung.</German>
 			<Russian>Золотистый бисквит с кремовой начинкой</Russian>
 			<Spanish>Postre dulce con relleno de crema.</Spanish>
 			<French>Gâteau doré fait de génoise fourrée à la crème</French>
@@ -6088,7 +6041,7 @@
 		</Key>
 		<Key ID="STR_FOOD_NAME_CAN_ORLOK">
 			<English>Can (Fruit)</English>
-			<German>Dose (Fruechte)</German>
+			<German>Dose (Früchte)</German>
 			<Russian>Банка (Компот)</Russian>
 			<Spanish>Lata (Ensalada de Frutas)</Spanish>
 			<French>Conserve (Fruits)</French>
@@ -6256,7 +6209,7 @@
 		</Key>
 		<Key ID="STR_JUNK_DESC_RAZOR">
 			<English>An old-fashioned cut-throat razor with a rounded French point.</English>
-			<German>Ein altmodisches Rasiermesser mit franzoesischem Rundkopf.</German>
+			<German>Ein altmodisches Rasiermesser mit französischem Rundkopf.</German>
 			<Russian>Старомодная опасная бритва.</Russian>
 			<Spanish>Una vieja navaja con una punta francesa redondeada.</Spanish>
 			<French>Un coupe-chou démodé à pointe biseautée.</French>
@@ -6275,7 +6228,7 @@
 			<German>Eine Sammlung religiöser Texte.</German>
 			<Russian>Собрание священных текстов христиан, состоящее из Ветхого и Нового Завета.</Russian>
 			<Spanish>Una colección de textos considerados como sagrados.</Spanish>
-			<French>Un recueil  de textes condidérés comme sacrés.</French>
+			<French>Un recueil de textes condidérés comme sacrés.</French>
 			<Czech>Kniha plná posvátných textů.</Czech>
 		</Key>
 		<Key ID="STR_ITEM_NAME_CARDS">
@@ -6377,6 +6330,7 @@
 			<Spanish>Mochila de Patrullaje (Coyote)</Spanish>
 			<Czech>Batůžek (coyote)</Czech>
 			<German>Trekkingrucksack (Coyote)</German>
+			<Dutch>Patrouillerugzak (coyote)</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_PATROL">
 			<English>Patrol Pack (coyote)</English>
@@ -6393,6 +6347,7 @@
 			<Spanish>Mochila de Asalto (ACU)</Spanish>
 			<Czech>Batoh Assault Pack (ACU)</Czech>
 			<German>Kampfrucksack (ACU)</German>
+			<Dutch>Aanvalsrugzak (ACU)</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_ACU">
 			<English>Assault Pack (ACU)</English>
@@ -6409,6 +6364,7 @@
 			<Spanish>Bolsa Chaleco</Spanish>
 			<Czech>Česká vesta</Czech>
 			<German>Tschechischer Westenrucksack</German>
+			<Dutch>Tsjechische Borstzak</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_VEST">
 			<English>Czech Vest Pouch</English>
@@ -6425,6 +6381,7 @@
 			<Spanish>Mochila Alice</Spanish>
 			<Czech>Batoh Alice</Czech>
 			<German>Alice Pack</German>
+			<Dutch>ALICE Rugzak</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_ALICE">
 			<English>Alice pack</English>
@@ -6441,6 +6398,7 @@
 			<Spanish>Mochila de Supervivencia ACU</Spanish>
 			<Czech>Batoh Survival ACU</Czech>
 			<German>Kampfrucksack (Woodland)</German>
+			<Dutch>Overlevings ACU</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_SURVACU">
 			<English>Survival ACU</English>
@@ -6457,6 +6415,7 @@
 			<Spanish>Mochila de Asalto Británica</Spanish>
 			<Czech>Britský batoh</Czech>
 			<German>Britischer Kampfrucksack</German>
+			<Dutch>Britse Aanvalsrugzak</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_BRITISH">
 			<English>British Assault Pack</English>
@@ -6464,7 +6423,7 @@
 			<Russian>Рюкзак на (18 слотов)</Russian>
 			<Spanish>Mochila de asalto británica de tamaño medio.</Spanish>
 			<Czech>Moderní a stylový batoh britské armády.</Czech>
-			<German>Grosser Kampfrucksack der britischen Streitkraefte. Volumen: 18 Liter.</German>
+			<German>Grosser Kampfrucksack der britischen Streitkräfte. Volumen: 18 Liter.</German>
 		</Key>
 		<Key ID="STR_BACKPACK_NAME_CZECH">
 			<English>Czech Backpack</English>
@@ -6473,6 +6432,7 @@
 			<Spanish>Mochila Checa</Spanish>
 			<Czech>Český batoh</Czech>
 			<German>Tschechischer Rucksack</German>
+			<Dutch>Tsjechische Rugzak</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_CZECH">
 			<English>Czech Backpack</English>
@@ -6489,6 +6449,7 @@
 			<Spanish>Mochila (Coyote)</Spanish>
 			<Czech>Batoh (coyote)</Czech>
 			<German>Kampfrucksack (Coyote)</German>
+			<Dutch>Rugzak (Coyote)</Dutch>
 		</Key>
 		<Key ID="STR_BACKPACK_DESC_COYOTE">
 			<English>Backpack (coyote)</English>
@@ -6529,7 +6490,7 @@
 			<Spanish>Esta caña de fibra de carbón puede estar vieja pero funciona perfectamente.</Spanish>
 			<French>Canne en fibre de carbone, sans doute assez ancienne mais fonctionnant parfaitement.</French>
 			<Czech>Sice vypadá starobyle, ale svůj účet splní dokonale.</Czech>
-			<German>Die Carbonrute mag alt aussehen, funktioniert aber noch tadellos.</German>
+			<German>Die Carbon-Angelrute mag alt aussehen, funktioniert aber noch tadellos.</German>
 			<Dutch>Dit carbonnen hengeltje is al oud, maar werkt nog prima!</Dutch>
 		</Key>
 		<Key ID="STR_ITEM_NAME_CAMONET">
@@ -6829,7 +6790,7 @@
 		<Key ID="str_fireplace_01">
 			<English>You have created a fireplace</English>
 			<German>Du hast erfolgreich eine Feuerstelle angelegt.</German>
-			<Russian>Вы подготовили костер.</Russian>
+			<Russian>Вы разожгли костер.</Russian>
 			<Spanish>Creaste una fogata</Spanish>
 			<French>\n\nVous avez créé un feu de camp.</French>
 			<Czech>Vytvořili jste ohniště.</Czech>
@@ -6860,7 +6821,7 @@
 		</Key>
 		<Key ID="str_fireplace_02">
 			<English>You cannot make a fireplace here. The area must be flat, and free of other objects</English>
-			<German>Du solltest hier kein Feuer machen. Der Untergrund muss flach und frei von Hindernissen sein.</German>
+			<German>Du kannst hier kein Feuer machen. Der Untergrund muss flach und frei von Hindernissen sein.</German>
 			<Russian>Костер нужно разводить на ровной поверхности, без объектов поблизости.</Russian>
 			<Spanish>No puedes hacer una fogata aquí. El área debe ser plana y libre de otros objetos.</Spanish>
 			<French>\n\nVous ne pouvez pas faire de feu de camp ici. Le sol doit être plat et dégagé.</French>
@@ -6884,7 +6845,7 @@
 		</Key>
 		<Key ID="str_medical_healing">
 			<English>You are being healed</English>
-			<German>Du wirst verbunden, stillhalten.</German>
+			<German>Du wirst geheilt.</German>
 			<Russian>Вас лечат.</Russian>
 			<Spanish>Fuiste curado.</Spanish>
 			<French>Vous recevez des soins</French>
@@ -6895,12 +6856,12 @@
 			<Spanish>Infection: Tienes 15 minutos para curarte antes de que empieces a perder sangre.</Spanish>
 			<Russian>ВНИМАНИЕ: У вас 15 минут на дезинфекцию раны до начала потери крови.</Russian>
 			<Czech>INFEKCE: Máte 15 minut na vyčištění rány, pak začnete ztrácet krev.</Czech>
-			<French>Infection : vous avez 15 minutes pour vous soigner avant de commencer à saigner.</French>
-			<German>Infektion: Das sieht übel aus. Du solltest die Wunde innerhalb von 15 Minuten desinfizieren.</German>
+			<French>Infection: vous avez 15 minutes pour vous soigner avant de commencer à saigner.</French>
+			<German>Infektion: Du solltest die Wunde innerhalb von 15 Minuten desinfizieren, sonst droht Blutverlust.</German>
 		</Key>
 		<Key ID="str_player_01">
 			<English>You have filled %1 bottles with water</English>
-			<German>Du hast %1 Flasche(n) mit Wasser aufgefuellt.</German>
+			<German>Du hast %1 Flasche(n) mit Wasser aufgefüllt.</German>
 			<Russian>Наполнено водой бутылок: %1</Russian>
 			<Spanish>Llenaste %1 cantimplora(s) con agua</Spanish>
 			<French>\n\nVous avez rempli %1 Bouteille(s) avec de l&apos;eau.</French>
@@ -6909,7 +6870,7 @@
 		<Key ID="str_player_boiledwater">
 			<English>You have boiled %1 bottles with water.</English>
 			<German>Du hast %1 Flasche(n) mit Wasser abgekocht.</German>
-			<Russian>Вы наполнили %1 бутылок чистой кипяченой водой.</Russian>
+			<Russian>Наполнено чистой кипяченой водой  бутылок: %1</Russian>
 			<Spanish>Llenaste %1 cantimplora(s) con agua</Spanish>
 			<French>\n\nVous avez rempli %1 Bouteille(s) avec de l&apos;eau.</French>
 			<Czech>Naplnili jste převařenou vodou %1 láhve.</Czech>
@@ -6957,7 +6918,7 @@
 		</Key>
 		<Key ID="str_player_09">
 			<English>You have filled %1 jerrycans with fuel</English>
-			<German>Du hast %1 Kanister mit Treibstoff gefuellt.</German>
+			<German>Du hast %1 Kanister mit Treibstoff gefüllt.</German>
 			<Russian>Наполнено топливом канистр: %1</Russian>
 			<Spanish>Llenaste %2 bidones con combustible</Spanish>
 			<French>Vous avez rempli %1 jerrican(s) avec du carburant.</French>
@@ -6973,10 +6934,10 @@
 		</Key>
 		<Key ID="STR_AUTHENTICATING">
 			<English>Loading Character Data. Please wait...</English>
-			<German>Lade Charakterdaten. Bitte warten ...</German>
+			<German>Lade Charakterdaten. Bitte warten...</German>
 			<Russian>Загружаются данные персонажа. Ожидайте...</Russian>
-			<Spanish>Cargando datos del personaje. Por favor espere.</Spanish>
-			<French>Chargement du personnage. Veuillez patienter.</French>
+			<Spanish>Cargando datos del personaje. Por favor espere...</Spanish>
+			<French>Chargement du personnage. Veuillez patienter...</French>
 			<Czech>Načítám data postavy. Prosím čekejte...</Czech>
 		</Key>
 		<Key ID="str_player_loading">
@@ -6985,11 +6946,11 @@
 			<Spanish>Cargando e inicializando DayZMod</Spanish>
 			<French>Chargement et initialisation de DayZMod en cours</French>
 			<Czech>Probíhá nahrávání a inicializace DayZModu</Czech>
-			<German>Lade und initialisiere DayZ Mod ...</German>
+			<German>Lade und initialisiere DayZ Mod</German>
 		</Key>
 		<Key ID="str_player_retrying">
 			<English>Retrying Authentication</English>
-			<German>Erneuter Authentifizierungsversuch ...</German>
+			<German>Erneuter Authentifizierungsversuch</German>
 			<Russian>Повторная идентификация</Russian>
 			<Spanish>Volviendo a Autentificar</Spanish>
 			<French>Nouvelle tentative d&apos;Authentification</French>
@@ -7001,12 +6962,12 @@
 			<Spanish>Hubo un problema al autentificación.\nDesconecta y prueba de nuevo.</Spanish>
 			<Czech>Naše vystudované opice nebyly schopny vás ověřit.\nOdpojte se a zkuste to prosím znovu.</Czech>
 			<French>Problème d&apos;authentification\nVeuillez vous déconnecter et essayer à nouveau.</French>
-			<German>Es besteht ein Problem mit Ihrer Spieler-ID. Bitte trennen Sie die Verbindung und versuchen Sie es erneut.</German>
+			<German>Es besteht ein Problem mit deiner Spieler-ID. Bitte die Verbindung trennen und es erneut versuchen.</German>
 		</Key>
 		<Key ID="str_player_request">
 			<English>Requesting Authentication</English>
-			<German>Authentifizierung wird abgefragt ...</German>
-			<Russian>Запрос идентификация</Russian>
+			<German>Authentifizierung wird abgefragt</German>
+			<Russian>Запрос идентификации</Russian>
 			<Spanish>Solicitando Autentificación</Spanish>
 			<French>Demande d&apos;Authentification</French>
 			<Czech>Odesílám požadavek na ověření</Czech>
@@ -7017,7 +6978,7 @@
 			<Spanish>Esperando al servidor para iniciar la autentificación</Spanish>
 			<Czech>Čekám na začátek ověřování</Czech>
 			<French>En attente du serveur avant authentification</French>
-			<German>Bitte warten, waehrend der Server die Authentifizierung durchführt ...</German>
+			<German>Bitte warten, während der Server die Authentifizierung durchführt</German>
 		</Key>
 		<Key ID="str_player_requesting_character">
 			<English>Requesting Character data from server</English>
@@ -7025,11 +6986,11 @@
 			<Spanish>Solicitando datos del personaje al servidor</Spanish>
 			<French>Demande au serveur des informations du personnage</French>
 			<Czech>Požadování dat postavy ze serveru</Czech>
-			<German>Charakterdaten werden vom Server abgerufen ...</German>
+			<German>Charakterdaten werden vom Server abgerufen</German>
 		</Key>
 		<Key ID="str_player_creating_character">
 			<English>Server responded, creating character</English>
-			<German>Server antwortet, Charakter wird erstellt ...</German>
+			<German>Server antwortet, Charakter wird erstellt</German>
 			<Russian>Получен ответ от сервера. Идет создание персонажа</Russian>
 			<Spanish>El servidor respondió, creando personaje</Spanish>
 			<French>Réponse du serveur, création du personnage</French>
@@ -7037,7 +6998,7 @@
 		</Key>
 		<Key ID="str_player_waiting_creation">
 			<English>Waiting for character to create</English>
-			<German>Warte auf Charaktererstellung ...</German>
+			<German>Warte auf Charaktererstellung</German>
 			<Russian>Ожидание создания персонажа</Russian>
 			<Spanish>Esperando a que el personaje sea creado</Spanish>
 			<French>En attente de la création du personnage</French>
@@ -7049,7 +7010,7 @@
 			<Spanish>Creación completa, por favor espera...</Spanish>
 			<Czech>Nastavení dokončeno, prosím čekejte...</Czech>
 			<French>Installation terminée, veuillez patienter...</French>
-			<German>Installation abgeschlossen, bitte warten ...</German>
+			<German>Installation abgeschlossen, bitte warten...</German>
 		</Key>
 		<Key ID="str_player_desync">
 			<English>Date and Time not Synced Disconnect.</English>
@@ -7065,11 +7026,11 @@
 			<Spanish>Tiempo de inicio de sesión excedido.\nDesconectate y prueba de nuevo.</Spanish>
 			<Czech>Maximální čas pro přihlášení vypršel.\nOdpojte se a zkuste to znovu!</Czech>
 			<French>Délai de connexion dépassé\nVeuillez vous déconnecter et essayer à nouveau.</French>
-			<German>Das Einloggen dauert zu lange. Bitte trennen Sie die Verbindung und versuchen Sie es erneut.</German>
+			<German>Das Einloggen dauert zu lange. Bitte die Verbindung trennen und es erneut versuchen.</German>
 		</Key>
 		<Key ID="str_player_authentication_failed">
 			<English>Authentication Failed, Disconnect and try again.</English>
-			<German>Die Authentifizierung ist fehlgeschlagen. Bitte trennen Sie die Verbindung und versuchen Sie es erneut.</German>
+			<German>Die Authentifizierung ist fehlgeschlagen. Bitte die Verbindung trennen und es erneut versuchen.</German>
 			<Russian>Неудачная идентификация. Отключитесь и попробуйте снова.</Russian>
 			<Spanish>Error de Autentificación. Desconectese y pruebe de nuevo.</Spanish>
 			<Czech>Ověřování selhalo. Odpojte se a zkuste to prosím znovu.</Czech>
@@ -7077,7 +7038,7 @@
 		</Key>
 		<Key ID="str_player_outdated">
 			<English>You are running an incorrect version of DayZ! Please reinstall DayZ!</English>
-			<German>Ihre Version von DayZ ist nicht kompatibel. Bitte installieren sie die korrekte Version von DayZ.</German>
+			<German>Deine Version von DayZ ist nicht kompatibel. Bitte installiere die korrekte Version von DayZ.</German>
 			<Russian>Вы используете неверную версию DayZ!</Russian>
 			<Spanish>¡Estás ejecutando una versión incorrecta de DayZ! Por favor reinstala DayZ.</Spanish>
 			<French>Vous utilisez une version incorrecte de DayZ Mod! Veuillez réinstaller DayZ Mod</French>
@@ -7089,15 +7050,15 @@
 			<Spanish>Este servidor está ejecutando una versión incorrecta de la aplicación del lado del servidor. No puedes jugar en este servidor.</Spanish>
 			<Czech>Tento server používá zastaralou verzi souborů pro hostování. Na tomto serveru nelze hrát.</Czech>
 			<French>Le serveur fonctionne avec une version incorrecte. Vous ne pouvez pas jouer sur ce serveur.</French>
-			<German>Dieser Server nutzt eine abweichende Serversoftware. Sie können auf diesem Server nicht spielen.</German>
+			<German>Dieser Server nutzt eine abweichende Serversoftware. Du kannst auf diesem Server nicht spielen.</German>
 		</Key>
 		<Key ID="str_player_ghost">
 			<English>You are in ghost mode, trying again in %1 seconds!</English>
 			<Russian>Вы заблокированы в режиме призрака, попробуем снова через %1 секунд!</Russian>
 			<Spanish>Usted está en el modo de fantasma, de volver a intentarlo en% 1 segundos!</Spanish>
 			<Czech>Nacházíte se v módu duchů, další pokus znovu za %1 sekund!</Czech>
-			<French>Vous êtes en quarantaine, nouvelle tentative dans %1 secondes !</French>
-			<German>Sie sind im Ghost-Modus, versuche nochmals in %1 Sekunden!</German>
+			<French>Vous êtes en quarantaine, nouvelle tentative dans %1 secondes!</French>
+			<German>Du bist im Ghost-Modus, versuche es nochmals in %1 Sekunden!</German>
 		</Key>
 		<Key ID="str_login_characterData">
 			<English>Character Data received from server</English>
@@ -7109,7 +7070,7 @@
 		<Key ID="str_login_alreadyDead">
 			<English>Player Already Dead, disconnect and try again!</English>
 			<Russian>Игрок уже мертв! Отключитесь и попробуйте снова!</Russian>
-			<French>Vous êtes déjà mort, essayez encore !</French>
+			<French>Vous êtes déjà mort, essayez encore!</French>
 			<Czech>Hráč je mrtev, odhlašte se a zkuste znovu!</Czech>
 			<German>Spieler tot. Bitte Verbidung trennen und noch einmal versuchen!</German>
 		</Key>
@@ -7130,9 +7091,9 @@
 		<Key ID="str_login_authentTimeout">
 			<English>Server authentication time out! Disconnect and try again!</English>
 			<Russian>Вышло время идентификации сервером. Отключитесь и попробуйте снова!</Russian>
-			<French>L'authentification a échoué, veuillez vous reconnecter !</French>
+			<French>L'authentification a échoué, veuillez vous reconnecter!</French>
 			<Czech>Vypršel čas pro serverové ověření! Odhlašte se a zkuste to znovu!</Czech>
-			<German>Server-Authentifizierung fehlgeschlagen. Trenne die Verbindung und versuche es erneut!</German>
+			<German>Server-Authentifizierung fehlgeschlagen. Bitte die Verbindung trennen und es erneut versuchen!</German>
 		</Key>
 		<Key ID="str_login_ghostedPlayer">
 			<English>Checking for Ghosted Player</English>
@@ -7174,7 +7135,7 @@
 		</Key>
 		<Key ID="str_player_23">
 			<English>You must be in a forest and close to a tree to harvest wood.</English>
-			<German>Um Holz zu sammeln, musst du in einem Wald oder nah an einem Baum sein.</German>
+			<German>Um Holz zu sammeln, musst du in einem Wald und nah an einem Baum sein.</German>
 			<Russian>Вы должны находится в лесу и подойти к дереву, чтобы нарубить дров.</Russian>
 			<Spanish>Debes estar en el bosque y cerca de un árbol para recoger leña.</Spanish>
 			<French>Vous devez être en forêt et proche d&apos;un arbre pour couper du bois.</French>
@@ -7199,7 +7160,7 @@
 		<Key ID="str_player_24_progress">
 			<English>Chopping down tree (%1/%2). Walk away at anytime to cancel.</English>
 			<Russian>Рубим дровишки... (%1/%2). Шагните в сторону, чтобы прекратить.</Russian>
-			<German>Der Baum wird gefällt ... (%1/%2). Gehe ein Stück zur Seite, um abzubrechen.</German>
+			<German>Der Baum wird gefällt... (%1/%2). Gehe ein Stück zur Seite, um abzubrechen.</German>
 			<Spanish>Tala de árboles (%1/%2). Walk away en cualquier momento para cancelar.</Spanish>
 			<French>Abattre l&apos;arbre (%1/%2). Éloignez-vous à tout moment pour annuler.</French>
 			<Czech>Sekání dřeva (%1/%2). Odstupte pro zrušení akce.</Czech>
@@ -7256,6 +7217,10 @@
 			<English>You seem to have misplaced the foodstuff.</English>
 			<Russian>Кажется вы выронили еду.</Russian>
 		</Key>
+		<Key ID="str_misplaced_container">
+			<English>You seem to have misplaced the container.</English>
+			<Russian>Кажется вы потеряли контейнер.</Russian>
+		</Key>
 		<Key ID="str_mining_finished">
 			<English>You have finished collecting stone.</English>
 			<Russian>Вы закончили добычу камня.</Russian>
@@ -7276,8 +7241,13 @@
 		</Key>
 		<Key ID="str_mining_no_rocks">
 			<English>Cannot find any rocks around.</English>
+			<Russian>Рядом нет камней.</Russian>
 			<Czech>V blízkosti nejsou žádné skály.</Czech>
 			<German>Es befinden sich keine Felsen in der Nähe.</German>
+		</Key>
+		<Key ID="STR_MINING_IN_PROGRESS">
+			<English>Mining already in progress!</English>
+			<Russian>Добыча в процессе!</Russian>
 		</Key>
 		<Key ID="str_player_toback_fail">
 			<English>Cannot add %1 to back.</English>
@@ -7291,7 +7261,7 @@
 			<!-- %1=ITEM %2=build/consumed/cook/drink/fill/pitch/place/use/wear -->
 			<English>%1 must be in your main inventory to %2 it.</English>
 			<German>%1 muss sich in deinem Inventar befinden, um es zu %2.</German>
-			<Russian>Чтобы %2 , (%1) должен находиться в основном инвентаре.</Russian>
+			<Russian>Чтобы %2, (%1) должен находиться в основном инвентаре.</Russian>
 			<Spanish>Debes tener un %1 en tu inventario principal para %2.</Spanish>
 			<French>%1 doit être dans votre inventaire principal pour pouvoir le %2</French>
 			<Czech>%1 musí být ve vašem hlavním inventáři pro %2.</Czech>
@@ -7419,7 +7389,7 @@
 <!--		
 		<Key ID="str_player_fail_drink">
 			<English>You may not drink while in a vehicle</English>
-			<German>Du solltest nicht trinken, waehrend du dich in einem Fahrzeug befindest.</German>
+			<German>Du kannst nicht trinken, während du dich in einem Fahrzeug befindest.</German>
 			<Russian>Вы не можете пить в транспорте</Russian>
 			<Spanish>No puedes beber mientras estás en un vehículo</Spanish>
 			<French>Vous ne pouvez rien boire dans un véhicule</French>
@@ -7427,7 +7397,7 @@
 		</Key>
 		<Key ID="str_player_fail_eat">
 			<English>You may not eat while in a vehicle</English>
-			<German>Du solltest nicht essen, waehrend du dich in einem Fahrzeug befindest.</German>
+			<German>Du kannst nicht essen, während du dich in einem Fahrzeug befindest.</German>
 			<Russian>Вы не можете есть в транспорте</Russian>
 			<Spanish>No puedes comer mientras estás en un vehículo</Spanish>
 			<French>Vous ne pouvez rien manger dans un véhicule</French>
@@ -7441,6 +7411,7 @@
 			<Spanish>No puedes cambiar de ropa mientras estás en un vehículo</Spanish>
 			<French>Vous ne pouvez pas vous changer dans un véhicule</French>
 			<Czech>Nelze se převléci, když jste ve vozidle.</Czech>
+			<Dutch>Je kunt je niet omkleden in een voertuig</Dutch>
 		</Key>
 		<Key ID="str_player_fail_wear2">
 			<English>Currently Female Characters cannot change to this skin. This will change in a future update.</English>
@@ -7452,10 +7423,10 @@
 		</Key>
 		<Key ID="str_player_actionslimit">
 			<English>Wait for the previous action to complete to perform another!</English>
-			<German>Du musst erst das eine beenden, bevor du etwas neues startest!</German>
+			<German>Du musst erst das Eine beenden, bevor du etwas Neues startest!</German>
 			<Russian>Дождитесь завершения предыдущего действия, перед тем, как начинать новое!</Russian>
 			<Spanish>¡Espera a terminar la acción previa para realizar otra!</Spanish>
-			<French>Attendez la fin de l&apos;action en cours avant d&apos;en commencer une autre !</French>
+			<French>Attendez la fin de l&apos;action en cours avant d&apos;en commencer une autre!</French>
 			<Czech>Než začnete dělat něco jiného, musíte dokončit aktuální akci.</Czech>
 		</Key>
 		<Key ID="str_player_ammo_successful">
@@ -7479,23 +7450,23 @@
 		<Key ID="str_player_ammo_2primary">
 			<English>You can&apos;t carry two primary weapons at the same time!</English>
 			<Russian>Нельзя одновременно носить наготове два основных типа оружия!</Russian>
-			<French>Vous ne pouvez pas porter 2 armes principales !</French>
+			<French>Vous ne pouvez pas porter 2 armes principales!</French>
 			<Czech>Nelze mít najednou dvě hlavní zbraně!</Czech>
-			<German>Du kannst nicht zwei Primärwaffen gleichzeitig tragen.</German>
+			<German>Du kannst nicht zwei Primärwaffen gleichzeitig tragen!</German>
 		</Key>
 		<Key ID="str_player_ammo_CannotCount">
 			<English>Can&apos;t count magazines!</English>
 			<Russian>Не удалось пересчитать магазины!</Russian>
 			<French>Impossible de compter les chargeurs!</French>
 			<Czech>Nelze spočítat zásobníky!</Czech>
-			<German>Du kannst die Magazine nicht zählen.!</German>
+			<German>Du kannst die Magazine nicht zählen!</German>
 		</Key>
 		<Key ID="str_player_lowPFS">
-			<English>LOW FPS, PLEASE CHANGE YOUR GRAPHIC SETTINGS</English>
+			<English>LOW FPS! PLEASE CHANGE YOUR GRAPHIC SETTINGS</English>
 			<Russian>Низкий FPS! Измените настройки графики!</Russian>
-			<French>IMAGES SACCADEES, VEUILLEZ BAISSER VOS REGLAGES VIDEO.</French>
+			<French>IMAGES SACCADEES, VEUILLEZ BAISSER VOS REGLAGES VIDEO</French>
 			<Czech>NÍZKÉ FPS (SNÍMKOVÁ FREKVENCE), UPRAVTE NASTAVENÍ GRAFIKY</Czech>
-			<German>NIEDRIGE FPS. ÄNDERE DIE GRAFIK EINSTELLUNGEN</German>
+			<German>NIEDRIGE FPS! ÄNDERE DIE GRAFIK-EINSTELLUNGEN</German>
 		</Key>
 
 		<Key ID="str_player_build_rotate">
@@ -7511,7 +7482,7 @@
 			<German>Du bewegst dich zu schnell!</German>
 			<Russian>Вы слишком быстро движитесь!</Russian>
 			<Spanish>¡Te estás moviendo muy rápido!</Spanish>
-			<French>Vous vous déplacez trop vite !</French>
+			<French>Vous vous déplacez trop vite!</French>
 			<Czech>Pohybujete se příliš rychle!</Czech>
 		</Key>
 		<Key ID="str_player_build_complete">
@@ -7535,7 +7506,7 @@
 			<German>Du musst dich im Umkreis von drei Metern befinden, um das aufzunehmen.</German>
 			<Russian>Чтобы поднять предмет, вы должны быть ближе 3х метров!</Russian>
 			<Spanish>¡Necesitas estar a menos de 3 metros para tomarlo!</Spanish>
-			<French>Vous devez être à moins de 3 mètres pour ramasser !</French>
+			<French>Vous devez être à moins de 3 mètres pour ramasser!</French>
 			<Czech>Abyste předmět sebrali, musíte být do vzdálenosti 3 metrů.</Czech>
 		</Key>
 		<Key ID="str_pickup_limit_2">
@@ -7543,7 +7514,7 @@
 			<German>Du musst noch etwas warten, um das aufzunehmen.</German>
 			<Russian>Чтобы поднять этот предмет, нужно подождать!</Russian>
 			<Spanish>¡Necesitas esperar para tomar este objeto!</Spanish>
-			<French>Vous devez attendre pour ramasser l&apos;objet !</French>
+			<French>Vous devez attendre pour ramasser l&apos;objet!</French>
 			<Czech>Abyste sebrali předmět, musíte počkat.</Czech>
 		</Key>
 		<Key ID="str_pickup_limit_3">
@@ -7551,7 +7522,7 @@
 			<German>Du darfst immer nur einen Gegenstand davon aufheben.</German>
 			<Russian>Можно поднимать только один предмет за раз!</Russian>
 			<Spanish>¡Solo puedes tomar un objeto a la vez!</Spanish>
-			<French>Vous ne pouvez prendre qu&apos;un objet à la fois !</French>
+			<French>Vous ne pouvez prendre qu&apos;un objet à la fois!</French>
 			<Czech>Lze sebrat pouze jeden předmět zároveň.</Czech>
 		</Key>
 		<Key ID="str_pickup_limit_4">
@@ -7575,79 +7546,79 @@
 			<German>Das wird bereits aufgefüllt!</German>
 			<Russian>Уже заправляется!</Russian>
 			<Spanish>¡Ya estás reabasteciendo!</Spanish>
-			<French>Remplissage déjà en cours !</French>
+			<French>Remplissage déjà en cours!</French>
 			<Czech>Doplňování paliva už probíhá!</Czech>
 		</Key>
 		<Key ID="str_death_shothead">
-			<English>a gunshot to the head</English>
+			<English>a gunshot to the head.</English>
 			<German>durch einen Schuss in den Kopf.</German>
-			<Russian>попадания пули в голову</Russian>
-			<Spanish>por un disparo en la cabeza</Spanish>
-			<French>une balle dans la tête</French>
+			<Russian>попадания пули в голову.</Russian>
+			<Spanish>por un disparo en la cabeza.</Spanish>
+			<French>une balle dans la tête.</French>
 			<Czech>střelou do hlavy.</Czech>
 		</Key>
 		<Key ID="str_death_shotheavy">
-			<English>a large calibre gunshot</English>
+			<English>a large calibre gunshot.</English>
 			<German>an einer grosskalibrigen Schusswunde.</German>
-			<Russian>попадания пули большого калибра</Russian>
-			<Spanish>por un disparo de alto calibre</Spanish>
-			<French>un tir de gros calibre</French>
+			<Russian>попадания пули большого калибра.</Russian>
+			<Spanish>por un disparo de alto calibre.</Spanish>
+			<French>un tir de gros calibre.</French>
 			<Czech>vysokorážní střelbou.</Czech>
 		</Key>
 		<Key ID="str_death_bled">
-			<English>blood loss</English>
+			<English>blood loss.</English>
 			<German>durch hohen Blutverlust.</German>
-			<Russian>потери крови</Russian>
-			<Spanish>desangrado</Spanish>
-			<French>une hémorragie</French>
+			<Russian>потери крови.</Russian>
+			<Spanish>desangrado.</Spanish>
+			<French>une hémorragie.</French>
 			<Czech>na vykrvácení.</Czech>
 		</Key>
 		<Key ID="str_death_dehyd">
-			<English>dehydration</English>
+			<English>dehydration.</English>
 			<German>an Dehydrierung.</German>
-			<Russian>обезвоживания</Russian>
-			<Spanish>deshidratado</Spanish>
-			<French>une déshydratation</French>
+			<Russian>обезвоживания.</Russian>
+			<Spanish>deshidratado.</Spanish>
+			<French>une déshydratation.</French>
 			<Czech>na dehydrataci.</Czech>
 		</Key>
 		<Key ID="str_death_sick">
-			<English>infection</English>
-			<German>an einer Infektion</German>
-			<Russian>инфекционное заболевание</Russian>
-			<Spanish>infección</Spanish>
-			<French>maladie</French>
-			<Czech>nemoc</Czech>
+			<English>infection.</English>
+			<German>an einer Infektion.</German>
+			<Russian>инфекционное заболевание.</Russian>
+			<Spanish>infección.</Spanish>
+			<French>maladie.</French>
+			<Czech>nemoc.</Czech>
 		</Key>
 		<Key ID="str_death_starve">
-			<English>starvation</English>
+			<English>starvation.</English>
 			<German>durch Verhungern.</German>
-			<Russian>голода</Russian>
-			<Spanish>de hambre</Spanish>
-			<French>inanition</French>
+			<Russian>голода.</Russian>
+			<Spanish>de hambre.</Spanish>
+			<French>inanition.</French>
 			<Czech>z nedostatku jídla.</Czech>
 		</Key>
 		<Key ID="str_death_combatlog">
-			<English>combat logging</English>
-			<German>weil der Feigling versucht hat, aus einem Kampf zu fliehen.</German>
-			<Russian>выхода из игры в режиме боя</Russian>
-			<Spanish>por huir en combate</Spanish>
-			<French>une déco en combat</French>
+			<English>combat logging.</English>
+			<German>weil er versucht hat, aus einem Kampf zu fliehen.</German>
+			<Russian>выхода из игры в режиме боя.</Russian>
+			<Spanish>por huir en combate.</Spanish>
+			<French>une déco en combat.</French>
 			<Czech>, protože se odhlásit z boje.</Czech>
 		</Key>
 		<Key ID="str_death_explosion">
-			<English>explosion</English>
+			<English>explosion.</English>
 			<German>durch eine Explosion.</German>
-			<Russian>взрыва</Russian>
-			<Spanish>explosión</Spanish>
-			<French>explosion</French>
+			<Russian>взрыва.</Russian>
+			<Spanish>explosión.</Spanish>
+			<French>explosion.</French>
 			<Czech>při výbuchu.</Czech>
 		</Key>
 		<Key ID="str_death_unknown">
-			<English>an unknown cause</English>
+			<English>an unknown cause.</English>
 			<German>ohne erkennbare Ursache.</German>
-			<Russian>неизвестной причины</Russian>
-			<Spanish>por causas desconocidas</Spanish>
-			<French>une cause inconnue</French>
+			<Russian>неизвестной причины.</Russian>
+			<Spanish>por causas desconocidas.</Spanish>
+			<French>une cause inconnue.</French>
 			<Czech>během neznámé činnosti.</Czech>
 		</Key>
 		<Key ID="str_abort_playerclose">
@@ -7655,7 +7626,7 @@
 			<Russian>Нельзя выходить находясь рядом с другим игроком!\nВы все еще в бою!</Russian>
 			<Spanish>¡No puedes abortar cerca de otros jugadores!\nTodavía estás en combate.</Spanish>
 			<Czech>Nemůžete ukončit hru, když jste poblíž jiného hráče.\nStále jste v boji.</Czech>
-			<French>Abandon impossible près d&apos;un autre joueur !\nVous êtes toujours en combat.</French>
+			<French>Abandon impossible près d&apos;un autre joueur!\nVous êtes toujours en combat.</French>
 			<German>Du kannst dich nicht in der Nähe eines anderen Spielers ausloggen, du befindest dich noch immer in Gefahr!</German>
 		</Key>
 		<Key ID="str_abort_zedsclose">
@@ -7663,7 +7634,7 @@
 			<Russian>Нельзя выходить находясь рядом с зомби!\nВы все еще в бою!</Russian>
 			<Spanish>¡No puedes abortar cerca de zombies!\nTodavía estás en combate.</Spanish>
 			<Czech>Nemůžete ukončit hru, když jsou zombie poblíž.\nStále jste v boji.</Czech>
-			<French>Abandon impossible, des zombies sont à proximité !\nVous êtes toujours en combat.</French>
+			<French>Abandon impossible, des zombies sont à proximité!\nVous êtes toujours en combat.</French>
 			<German>Du kannst dich nicht in der Nähe von Zombies ausloggen, du befindest dich noch immer in Gefahr!</German>
 		</Key>
 		<Key ID="str_abort_playerincombat">
@@ -7671,7 +7642,7 @@
 			<German>Du kannst dich nicht im Kampf ausloggen!</German>
 			<Russian>Нельзя выходить в бою!</Russian>
 			<Spanish>¡No puedes abortar en combate!</Spanish>
-			<French>Vous ne pouvez pas vous déconnecter en combat !</French>
+			<French>Vous ne pouvez pas vous déconnecter en combat!</French>
 			<Czech>Hru nelze opustit, pokud jste v boji!</Czech>
 		</Key>
 		<Key ID="str_return_lobby">
@@ -7695,7 +7666,7 @@
 			<German>Du musst die Waffe, für die du Munition umwandeln willst, in den Händen halten.</German>
 			<Spanish>¡El arma a la que se quiere convertir la munición debe estar en tus manos!</Spanish>
 			<Russian>Оружие, для которого конвертируются магазины, должно быть в руках!</Russian>
-			<French>Pour convertir des munitions pour une arme, celle ci doit être dans vos mains !</French>
+			<French>Pour convertir des munitions pour une arme, celle ci doit être dans vos mains!</French>
 			<Czech>Zbraň, pro kterou měníte munici, musíte mít v rukách.</Czech>
 		</Key>
 		<Key ID="str_quiver_reachlimit">
@@ -7708,7 +7679,7 @@
 		</Key>
 		<Key ID="str_quiver_notenougharrows">
 			<English>You do not have enough arrows.</English>
-			<German>Du hast nicht mehr genuegend Pfeile.</German>
+			<German>Du hast nicht mehr genügend Pfeile.</German>
 			<Spanish>No tienes flechas suficientes.</Spanish>
 			<Russian>Недостаточно стрел.</Russian>
 			<French>Vous ne pouvez pas avoir plus de flèches.</French>
@@ -7796,6 +7767,7 @@
 			<Czech>Vybavení</Czech>
 			<German>Ausrüstung</German>
 			<French>Equipement</French>
+			<Dutch>Inventaris</Dutch>
 		</Key>
 		<Key ID="STR_UI_FILTER">
 			<English>Filter</English>
@@ -7879,8 +7851,8 @@
 		</Key>
 		<Key ID="STR_UI_GENDER_TITLE">
 			<English>SELECT YOUR GENDER</English>
-			<German>Wähle dein Geschlecht.</German>
-			<Russian>Выберите свой пол</Russian>
+			<German>WÄHLE DEIN GESCHLECHT</German>
+			<Russian>Выберите пол</Russian>
 			<Spanish>SELECCIONE SU GÉNERO</Spanish>
 			<French>HOMME OU FEMME ?</French>
 			<Czech>VYBERTE SI POHLAVÍ</Czech>
@@ -7944,12 +7916,12 @@
 			<Czech>Hrdinka</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_1">
-			<English>My name is %1.  I woke up %2 somewhere in %3; an area of the infected hell hole also known as %4.</English>
+			<English>My name is %1. I woke up %2 somewhere in %3; an area of the infected hell hole also known as %4.</English>
 			<German>Mein Name ist %1. Ich bin %2 irgendwo bei %3 aufgewacht; ein gottverlassener Ort in diesem verseuchten Höllenloch, genannt %4.</German>
-			<Russian>Меня зовут %1.  Я проснулся %2. Рядом %3 - местность зараженной чертовой дыры, известной как %4.</Russian>
-			<Spanish>Mi nombre es %1.  Me levanté %2 en algún lugar de %3; un área infectada hasta el carajo conocida como %4.</Spanish>
+			<Russian>Меня зовут %1. Я проснулся %2. Рядом %3 - местность зараженной чертовой дыры, известной как %4.</Russian>
+			<Spanish>Mi nombre es %1. Me levanté %2 en algún lugar de %3; un área infectada hasta el carajo conocida como %4.</Spanish>
 			<French>Je m&apos;appelle %1. Je me suis réveillé %2 quelque part vers %3, un trou paumé et infesté de la région de %4.</French>
-			<Czech>Jmenuju se %1.  Probudil jsem se %2 poblíž %3, což je kdesi v %4. Celá oblast byla a nejspíš stále i je infikována.</Czech>
+			<Czech>Jmenuju se %1. Probudil jsem se %2 poblíž %3, což je kdesi v %4. Celá oblast byla a nejspíš stále i je infikována.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_1_a">
 			<!-- str_playerstats_journal_1 %2 -->
@@ -8086,12 +8058,12 @@
 			<Czech>Aspoň, že jsem si nic nezlomil</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_3_2">
-			<English>The situation looks dire.  I&apos;ve got multiple broken bones</English>
+			<English>The situation looks dire. I&apos;ve got multiple broken bones</English>
 			<German>Die Lage ist ernst, mehrere meiner Knochen scheinen gebrochen</German>
 			<Russian>Ситуация хреновая. У меня несколько переломов</Russian>
-			<Spanish>La situación parece grave.  Tengo multiples huesos rotos</Spanish>
-			<French>La situation est terrible.  J&apos;ai plusieurs fractures</French>
-			<Czech>Situace vypadá bledě.  Mám několik zlomenin</Czech>
+			<Spanish>La situación parece grave. Tengo multiples huesos rotos</Spanish>
+			<French>La situation est terrible. J&apos;ai plusieurs fractures</French>
+			<Czech>Situace vypadá bledě. Mám několik zlomenin</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_3_3">
 			<English>Things could be better. My leg is broken</English>
@@ -8102,11 +8074,11 @@
 			<Czech>Mohlo by být lépe. Má noha je zlomená</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_3_4">
-			<English>Things aren&apos;t so good.  My arm is broken</English>
+			<English>Things aren&apos;t so good. My arm is broken</English>
 			<German>Das sieht nicht gut aus. Mein Arm ist gebrochen</German>
 			<Russian>Дела обстоят не так уж и хорошо. Моя рука сломана</Russian>
-			<Spanish>Las cosas no estan bien.  Mi brazo está roto</Spanish>
-			<French>Ça ne va pas bien.  Mon bras est cassé</French>
+			<Spanish>Las cosas no estan bien. Mi brazo está roto</Spanish>
+			<French>Ça ne va pas bien. Mon bras est cassé</French>
 			<Czech>Má ruka je zlomená a že by mi bylo do zpěvu, to se říct nedá</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_4_1">
@@ -8158,12 +8130,12 @@
 			<Czech> a mám pár drobných zranění.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_5_5">
-			<English> but somehow I don&apos;t appear have lost any blood.  Strange.</English>
+			<English> but somehow I don&apos;t appear have lost any blood. Strange.</English>
 			<German>, aber scheinbar habe ich bisher kein Blut verloren. Merkwürdig.</German>
 			<Russian>, но почему-то нет потерь крови. Странно.</Russian>
-			<Spanish> pero por alguna razón no perdí nada de sangre.  Extraño.</Spanish>
+			<Spanish> pero por alguna razón no perdí nada de sangre. Extraño.</Spanish>
 			<French> mais étrangement je n&apos;ai pas perdu de sang. Étrange.</French>
-			<Czech> ale z nějakého důvodu jsem neztratil žádnou krev.  Divné.</Czech>
+			<Czech> ale z nějakého důvodu jsem neztratil žádnou krev. Divné.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_5_6">
 			<English> but I&apos;m physically pale from loss of blood.</English>
@@ -8214,27 +8186,27 @@
 			<Czech>, a jsem plně zdráv.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_6_1">
-			<English>Good thing I&apos;ve got a blood bag on me.  Now if only there was someone who could hook me up...</English>
-			<German>Zum Glück habe ich eine Bluttransfusion bei mir. Wenn ich nur jemanden finden wuerde, der mir die Infusion legen könnte ...</German>
+			<English>Good thing I&apos;ve got a blood bag on me. Now if only there was someone who could hook me up...</English>
+			<German>Zum Glück habe ich eine Blutkoserve bei mir. Wenn ich nur jemanden finden würde, der mir die Infusion legen könnte...</German>
 			<Russian>Хорошо, что у меня есть пакет крови. Если б кто был рядом, чтобы сделать переливание...</Russian>
-			<Spanish>La buena noticia es que tengo una bolsa de sangre conmigo.  Tan solo si hubiera alguien que pudiera hacerme la transfusión...</Spanish>
-			<French>Heureusement j&apos;ai une poche de sang.  Maintenant si seulement quelqu&apos;un pouvait venir m&apos;assister...</French>
+			<Spanish>La buena noticia es que tengo una bolsa de sangre conmigo. Tan solo si hubiera alguien que pudiera hacerme la transfusión...</Spanish>
+			<French>Heureusement j&apos;ai une poche de sang. Maintenant si seulement quelqu&apos;un pouvait venir m&apos;assister...</French>
 			<Czech>Dobrá věc je, že jsem našel krevní vak. Kéž by tady teď byl někdo, kdo by mi pomohl při transfúzi.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_6_2">
-			<English>Good thing I&apos;ve got a blood bag in my backpack.  Now if only there was someone who could hook me up...</English>
-			<German>Zum Glück habe ich eine Bluttransfusion im Rucksack. Wenn ich nur jemanden finden würde, der mir die Infusion legen könnte ...</German>
+			<English>Good thing I&apos;ve got a blood bag in my backpack. Now if only there was someone who could hook me up...</English>
+			<German>Zum Glück habe ich eine Blutkoserve im Rucksack. Wenn ich nur jemanden finden würde, der mir die Infusion legen könnte...</German>
 			<Russian>Хорошо, что у меня есть пакет крови в рюкзаке. Если б кто был рядом, чтобы сделать переливание...</Russian>
-			<Spanish>La buena noticia es que tengo una bolsa de sangre en la mochila.  Tan solo si hubiera alguien que pudiera hacerme la transfusión...</Spanish>
-			<French>Heureusement j&apos;ai une poche de sang dans mon sac.  Maintenance si seulement quelqu&apos;un pouvait venir m&apos;assister...</French>
+			<Spanish>La buena noticia es que tengo una bolsa de sangre en la mochila. Tan solo si hubiera alguien que pudiera hacerme la transfusión...</Spanish>
+			<French>Heureusement j&apos;ai une poche de sang dans mon sac. Maintenance si seulement quelqu&apos;un pouvait venir m&apos;assister...</French>
 			<Czech>Dobrá věc je, že mám v batohu krevní sáček. Kéž by tady teď byl někdo, kdo by mi pomohl při transfúzi.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_6_3">
-			<English>I really need to get a transfusion from somewhere.  If only I had a blood bag.</English>
-			<German>Ich brauche wirklich eine Blutspende. Wenn ich nur eine Transfusion bei mir hätte ...</German>
+			<English>I really need to get a transfusion from somewhere. If only I had a blood bag.</English>
+			<German>Ich brauche wirklich eine Blutspende. Wenn ich nur eine Blutkonserve bei mir hätte...</German>
 			<Russian>Мне действительно необходимо переливание. Если бы у меня был пакет крови.</Russian>
-			<Spanish>Realmente necesito obtener una transfusión de algún lado.  Si solo tuviera una bolsa de sangre...</Spanish>
-			<French>J&apos;ai vraiment besoin d&apos;une transfusion.  Si seulement j&apos;avais une poche de sang.</French>
+			<Spanish>Realmente necesito obtener una transfusión de algún lado. Si solo tuviera una bolsa de sangre...</Spanish>
+			<French>J&apos;ai vraiment besoin d&apos;une transfusion. Si seulement j&apos;avais une poche de sang.</French>
 			<Czech>Opravdu bych potřeboval krevní transfúzi. Kéž bych měl krevní vak.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_7_1">
@@ -8257,11 +8229,11 @@
 		</Key>
 		<Key ID="str_playerstats_journal_7_3">
 			<!-- %1 flashlight name (Night) -->
-			<English>I&apos;ve got a %1 which is perfect for seeing in this dark.  I guess other survivors can see me flashing it about though.  Not sure if that&apos;s a good thing or not given the circumstances.</English>
-			<German>Meine %1 ist perfekt, um in dieser Dunkelheit zu sehen. Wahrscheinlich sehen mich andere überlebende, während ich so herumleuchte. Ich bin mir noch nicht sicher, ob das unter diesen Umständen gut oder schlecht ist.</German>
+			<English>I&apos;ve got a %1 which is perfect for seeing in this dark. I guess other survivors can see me flashing it about though. Not sure if that&apos;s a good thing or not given the circumstances.</English>
+			<German>Meine %1 ist perfekt, um in dieser Dunkelheit zu sehen. Wahrscheinlich sehen mich andere Überlebende, während ich so herumleuchte. Ich bin mir noch nicht sicher, ob das unter diesen Umständen gut oder schlecht ist.</German>
 			<Russian>У меня есть %1 - прекрасно помогает видеть в этой темноте. Однако другие выжившие смогут заметить без проблем. Не уверен, что это хорошо в текущих обстоятельствах.</Russian>
-			<Spanish>Tengo una %1 que es perfecta para ver en la oscuridad.  Sin embargo supongo que otros supervivientes puedan verme iluminar con ella.  No estoy seguro si es una buena idea o no dadas las circunstancias.</Spanish>
-			<French>J&apos;ai une %1 qui est super pour voir dans le noir.  Mais les autres survivants doivent me voir l&apos;utiliser.  Pas sûr que cela soit un bonne idée étant données les circonstances</French>
+			<Spanish>Tengo una %1 que es perfecta para ver en la oscuridad. Sin embargo supongo que otros supervivientes puedan verme iluminar con ella. No estoy seguro si es una buena idea o no dadas las circunstancias.</Spanish>
+			<French>J&apos;ai une %1 qui est super pour voir dans le noir. Mais les autres survivants doivent me voir l&apos;utiliser. Pas sûr que cela soit un bonne idée étant données les circonstances</French>
 			<Czech>Mám %1, což mi ulehčí život ve tmě. Hádám ale, že jakmile ji zapnu, uvidí mě i ostatní. Musím popřemýšlet, zda to za to riziko stojí.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_7_4">
@@ -8277,18 +8249,18 @@
 			<!-- %1 weapon name -->
 			<English>Good news is I&apos;m packing a %1 and I&apos;ve got some ammo for it.</English>
 			<German>Die gute Nachricht: Ich habe eine %1 und etwas Munition.</German>
-			<Russian>Хорошие новости - у меня есть  %1 и я добыл немного патронов.</Russian>
+			<Russian>Хорошие новости - у меня есть %1 и я добыл немного патронов.</Russian>
 			<Spanish>Por suerte llevo una %1 con algo de munición para ella.</Spanish>
 			<French>Bonne nouvelle, je transporte un(e) %1 avec des munitions.</French>
 			<Czech>Dobrá zpráva je, že mám %1 a dokonce i s nějakou municí.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_7_6">
 			<!-- %1 weapon name -->
-			<English>Good news is I&apos;m packing a %1 and I&apos;ve got some ammo for it.  I should probably reload it though seeing as it&apos;s empty.</English>
-			<German>Die gute Nachricht: Ich habe eine %1 und etwas Munition. Aber ich sollte wohl nachladen, das Magazin ist leer ...</German>
-			<Russian>Хорошие новости - у меня есть  %1 и я добыл немного патронов..  Стоит переснарялить магазины.</Russian>
-			<Spanish>Por suerte llevo una %1 con algo de munición para ella.  Aunque debería recargarla porque la estoy viendo sin munición.</Spanish>
-			<French>Bonne nouvelle je transporte un %1 avec des munitions.  Je devrais le recharger car il est vide</French>
+			<English>Good news is I&apos;m packing a %1 and I&apos;ve got some ammo for it. I should probably reload it though seeing as it&apos;s empty.</English>
+			<German>Die gute Nachricht: Ich habe eine %1 und etwas Munition. Aber ich sollte wohl nachladen, das Magazin ist leer.</German>
+			<Russian>Хорошие новости - у меня есть %1 и я добыл немного патронов.. Стоит переснарялить магазины.</Russian>
+			<Spanish>Por suerte llevo una %1 con algo de munición para ella. Aunque debería recargarla porque la estoy viendo sin munición.</Spanish>
+			<French>Bonne nouvelle je transporte un %1 avec des munitions. Je devrais le recharger car il est vide</French>
 			<Czech>Dobrá zpráva je, že mám %1 a i nějakou munici. Možná bych měl přebít, abych zjistit, kolik je v zásobníku nábojů.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_7_7">
@@ -8301,11 +8273,11 @@
 			<Czech>Dobrá zpráva je, že jsem našel %1, ale žádná munice k tomu.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_7_8">
-			<English>For some reason I think it&apos;s a good idea to wander about without arming myself.  Maybe I should try and find a weapon.</English>
-			<German>Aus unerfindlichen Gründen halte ich es für eine gute Idee, unbewaffnet herumzulaufen. Vielleicht sollte ich nach einer Waffe suchen.</German>
+			<English>For some reason I think it&apos;s a good idea to wander about without arming myself. Maybe I should try and find a weapon.</English>
+			<German>Irgendwie halte ich es für eine gute Idee, unbewaffnet herumzulaufen. Vielleicht sollte ich nach einer Waffe suchen.</German>
 			<Russian>Сдается, не очень разумно бродить беззащитным. Стоит поискать оружие.</Russian>
-			<Spanish>Por alguna razón, creo que es una buena idea vagar sin armarme.  Tal vez debería tratar de encontrar un arma.</Spanish>
-			<French>Je pense qu&apos;il est bon d&apos;errer sans être armé.  Peut-être que je devrais tout de même chercher une arme.</French>
+			<Spanish>Por alguna razón, creo que es una buena idea vagar sin armarme. Tal vez debería tratar de encontrar un arma.</Spanish>
+			<French>Je pense qu&apos;il est bon d&apos;errer sans être armé. Peut-être que je devrais tout de même chercher une arme.</French>
 			<Czech>Myslím si, že chodit tady beze zbraně je špatný nápad. Možná bych si měl nějakou najít, ať nejsem jenom kachna pro ostatní.</Czech>
 		</Key>
 		<Key ID="str_playerstats_journal_month_1">
@@ -8412,7 +8384,7 @@
 			<Spanish>Honda Accord Hatchback</Spanish>
 			<French>Honda Accord Hatchback</French>
 			<Czech>Stará Honda Accord v hatchback verzi</Czech>
-			<German>alter Kleinwagen</German>
+			<German>Alter Kleinwagen</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_SEDAN">
 			<English>Sedan</English>
@@ -8500,7 +8472,7 @@
 			<Russian>Обломки UH-1Y</Russian>
 			<Spanish>UH-1Y Estrellado</Spanish>
 			<Czech>Havarovaný UH-1Y</Czech>
-			<German>zerstoerter UH-1Y</German>
+			<German>Zerstörter UH-1Y</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_UH60_WRECK">
 			<English>UH-60 Wreck</English>
@@ -8556,7 +8528,7 @@
 			<Russian>Схрон ++++</Russian>
 			<Spanish>Escondite ++++</Spanish>
 			<Czech>Skrýš ++++</Czech>
-			<German>Lagergrube++++</German>
+			<German>Lagergrube ++++</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_STASH_MED">
 			<English>Stash Medium</English>
@@ -8918,7 +8890,7 @@
 		</Key>
 		<Key ID="STR_BLD_name_ItemStone">
 			<English>Rough Stone</English>
-			<Russian>Обработанный камень</Russian>
+			<Russian>Необработанный камень</Russian>
 			<French>Pierres</French>
 			<Czech>Kameny</Czech>
 			<German>grober Stein</German>
@@ -9257,49 +9229,49 @@
 			<Russian>Содержит деревянный забор ур.1</Russian>
 			<French>Pièces palissade niv.1</French>
 			<Czech>Obsahuje dřevěný plot (úroveň 1)</Czech>
-			<German>beinhaltet Holzzaun (Level 1)</German>
+			<German>beinhaltet Holzzaun (Stufe 1)</German>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox2">
 			<English>Contains WoodenFence lvl.2</English>
 			<Russian>Содержит деревянный забор ур.2</Russian>
 			<French>Pièces palissade niv.2</French>
 			<Czech>Obsahuje dřevěný plot (úroveň 2)</Czech>
-			<German>beinhaltet Holzzaun (Level 2)</German>
+			<German>beinhaltet Holzzaun (Stufe 2)</German>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox3">
 			<English>Contains WoodenFence lvl.3</English>
 			<Russian>Содержит деревянный забор ур.3</Russian>
 			<French>Pièces palissade niv.3</French>
 			<Czech>Obsahuje dřevěný plot (úroveň 3)</Czech>
-			<German>beinhaltet Holzzaun (Level 3)</German>
+			<German>beinhaltet Holzzaun (Stufe 3)</German>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox4">
 			<English>Contains WoodenFence lvl.4</English>
 			<Russian>Содержит деревянный забор ур.4</Russian>
 			<French>Pièces palissade niv.4</French>
 			<Czech>Obsahuje dřevěný plot (úroveň 4)</Czech>
-			<German>beinhaltet Holzzaun (Level 4)</German>
+			<German>beinhaltet Holzzaun (Stufe 4)</German>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox5">
 			<English>Contains WoodenFence lvl.5</English>
 			<Russian>Содержит деревянный забор ур.5</Russian>
 			<French>Pièces palissade niv.5</French>
 			<Czech>Obsahuje dřevěný plot (úroveň 5</Czech>
-			<German>beinhaltet Holzzaun (Level 5)</German>
+			<German>beinhaltet Holzzaun (Stufe 5)</German>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox6">
 			<English>Contains WoodenFence lvl.6</English>
 			<Russian>Содержит деревянный забор ур.6</Russian>
 			<French>Pièces palissade niv.6</French>
 			<Czech>Obsahuje dřevěný plot (úroveň 6)</Czech>
-			<German>beinhaltet Holzzaun (Level 6)</German>
+			<German>beinhaltet Holzzaun (Stufe 6)</German>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFenceBox7">
 			<English>Contains WoodenFence lvl.7</English>
 			<Russian>Содержит деревянный забор ур.7</Russian>
 			<French>Pièces palissade niv.7</French>
 			<Czech>Obsahuje dřevěný plot (úroveň 7)</Czech>
-			<German>beinhaltet Holzzaun (Level 7)</German>
+			<German>beinhaltet Holzzaun (Stufe 7)</German>
 		</Key>
 		<Key ID="STR_BLD_name_WoodenFence_base">
 			<English>Wooden Fence</English>
@@ -9688,10 +9660,46 @@
 			<Czech>Kovový plot</Czech>
 			<German>Metallzaun</German>
 		</Key>
+		<Key ID="STR_BLD_UNLOCKED">
+			<English>%1 has been unlocked.</English>
+			<German>%1 wurde aufgeschlossen.</German>
+			<Russian>%1 открыт.</Russian>
+			<Dutch>%1 staat niet meer op slot</Dutch>
+			<French>%1 a été déverrouillé.</French>
+			<Czech>%1 bylo odemčeno.</Czech>
+		</Key>
+		<Key ID="STR_BLD_WRONG_COMBO">
+			<English>Combination incorrect, %1 is still locked.</English>
+			<German>Kombination inkorrekt, %1 ist immer noch verschlossen.</German>
+			<Russian>Комбинация неправильна, %1 по-прежнему закрыт.</Russian>
+			<Dutch>Verkeerde code, %1 zit nog op slot.</Dutch>
+			<French>Combinaison incorrecte, %1 reste verrouillé.</French>
+			<Czech>Nesprávná kombinace, %1 je stále zamknut.</Czech>
+		</Key>
+		<Key ID="STR_BLD_COMBO_SET">
+			<English>You have set the combination to %1</English>
+			<Russian>Вы установили комбинацию: %1</Russian>
+		</Key>
+		<Key ID="STR_BLD_GATES_LOCKED">
+			<English>Gates locked.</English>
+			<Russian>Ворота заперты.</Russian>
+		</Key>
+		<Key ID="STR_BLD_GATES_UNLOCKED">
+			<English>Gates unlocked.</English>
+			<Russian>Ворота отомкнуты.</Russian>
+		</Key>
+		<Key ID="STR_BLD_GATES_OPENED">
+			<English>Gates opened.</English>
+			<Russian>Ворота открыты.</Russian>
+		</Key>
+		<Key ID="STR_BLD_GATES_CLOSED">
+			<English>Gates closed.</English>
+			<Russian>Ворота закрыты.</Russian>
+		</Key>
 		<Key ID="STR_BLD_ACTIONS_OPENGATE">
 			<English>Open Gate</English>
-			<German>Open Gate</German>
-			<Russian>Открыть</Russian>
+			<German>Tor öffnen</German>
+			<Russian>Открыть ворота</Russian>
 			<Spanish>Open Gate</Spanish>
 			<Dutch>Open Gate</Dutch>
 			<French>Open Gate</French>
@@ -9699,8 +9707,8 @@
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_CLOSEGATE">
 			<English>Close Gate</English>
-			<German>Close Gate</German>
-			<Russian>Закрыть</Russian>
+			<German>Tor schließen</German>
+			<Russian>Закрыть ворота</Russian>
 			<Spanish>Close Gate</Spanish>
 			<Dutch>Close Gate</Dutch>
 			<French>Close Gate</French>
@@ -9708,7 +9716,7 @@
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_SETLOCKCODE">
 			<English>Set Lock Code</English>
-			<German>Set Lock Code</German>
+			<German>Zugangscode setzen</German>
 			<Russian>Установить код</Russian>
 			<Spanish>Set Lock Code</Spanish>
 			<Dutch>Set Lock Code</Dutch>
@@ -9718,7 +9726,7 @@
 		<Key ID="STR_BLD_ACTIONS_LOCKBUILD">
 			<English>Lock Build</English>
 			<German>Lock Build</German>
-			<Russian>Закрыть постройку</Russian>
+			<Russian>Заблокировать строительство</Russian>
 			<Spanish>Lock Build</Spanish>
 			<Dutch>Lock Build</Dutch>
 			<French>Lock Build</French>
@@ -9727,7 +9735,7 @@
 		<Key ID="STR_BLD_ACTIONS_UNLOCKBUILD">
 			<English>Unlock Build</English>
 			<German>Unlock Build</German>
-			<Russian>Открыть постройку</Russian>
+			<Russian>Разблокировать строительство</Russian>
 			<Spanish>Unlock Build</Spanish>
 			<Dutch>Unlock Build</Dutch>
 			<French>Unlock Build</French>
@@ -9735,28 +9743,76 @@
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_UNLOCKGATE">
 			<English>Unlock Gate</English>
-			<German>Unlock Gate</German>
-			<Russian>Разблокировать</Russian>
+			<German>Tor aufschließen</German>
+			<Russian>Отомкнуть ворота</Russian>
 			<Spanish>Unlock Gate</Spanish>
 			<French>Unlock Gate</French>
 			<Czech>Unlock Gate</Czech>
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_LOCKGATE">
 			<English>Lock Gate</English>
-			<German>Lock Gate</German>
-			<Russian>Заблокировать</Russian>
+			<German>Tor abschließen</German>
+			<Russian>Замкнуть ворота</Russian>
 			<Spanish>Lock Gate</Spanish>
 			<French>Lock Gate</French>
 			<Czech>Lock Gate</Czech>
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_BREAKIN">
 			<English>Break In</English>
-			<German>Break In</German>
+			<German>Einbrechen</German>
 			<Russian>Взломать</Russian>
 			<Spanish>Break In</Spanish>
 			<Dutch>Break In</Dutch>
 			<French>Break In</French>
 			<Czech>Break In</Czech>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_NEED_SLEDGE">
+			<English>You need a Sledgehammer to break into this compound.</English>
+			<Russian>Вам нужна кувалда, чтобы проломить эту преграду.</Russian>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_NEED_CROWBAR">
+			<English>You need a Crowbar to break into this compound.</English>
+			<Russian>Вам нужен ломик, чтобы проломить эту преграду.</Russian>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_BROKEN_SLEDGE">
+			<English>Your Sledgehammer handle has snapped.</English>
+			<Russian>Ваша кувалда сломалась.</Russian>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_BENT_CROWBAR">
+			<English>Your crowbar has bent.</English>
+			<Russian>Ваш ломик согнулся.</Russian>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN">
+			<English>Breaking into compound, attempt (%1 of %2).</English>
+			<Russian>Проламываем преграду, попытка (%1 из %2).</Russian>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_CANCELLED">
+			<English>Break in cancelled.</English>
+			<Russian>Взлом прекращен.</Russian>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_COMPLETE_FAIL">
+			<English>Break in attempt completed with limited success.</English>
+			<Russian>Попытка взлома завершилась с сомнительным успехом.</Russian>
+		</Key>
+		<Key ID="STR_BLD_BREAKIN_COMPLETE">
+			<English>Break in attempt successful.</English>
+			<Russian>Удачная попытка вломиться за преграду.</Russian>
+		</Key>
+		<Key ID="STR_BLD_DISMANTLE_MISSING">
+			<English>You are missing the tool %1 to dismantle</English>
+			<Russian>Для демонтажа не хватает: %1</Russian>
+		</Key>
+		<Key ID="STR_BLD_DISMANTLE_DAMAGED">
+			<English>Your tool has been damaged.</English>
+			<Russian>Ваш инструмент поврежден.</Russian>
+		</Key>
+		<Key ID="STR_BLD_DISMANTLE_ATTEMPT">
+			<English>Dismantle attempt (%1 of %2).</English>
+			<Russian>Попытка демонтажа (%1 из %2).</Russian>
+		</Key>
+		<Key ID="STR_BLD_DISMANTLED">
+			<English>You have dismantled (%1).</English>
+			<Russian>Вы демонтировали (%1).</Russian>
 		</Key>
 	</Package>	
 	<Package name="weapons">
@@ -9764,584 +9820,768 @@
 		
 		<!-- M14 -->
 		<Key ID="STR_DZ_WPN_M14_NAME">
-			<Original>M14</Original>
+			<English>M14</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M14_GH_NAME">
-			<Original>M14 Camo</Original>
+			<English>M14 Camo</English>
+			<Russian>M14 (камуфляж)</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M14_CCO_NAME">
-			<Original>M14 CCO</Original>
+			<English>M14 CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M14_CCO_GH_NAME">
-			<Original>M14 CCO Camo</Original>
+			<English>M14 CCO Camo</English>
+			<Russian>M14 CCO (камуфляж)</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M14_HOLO_NAME">
-			<Original>M14 Holo</Original>
+			<English>M14 Holo</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M14_HOLO_GH_NAME">
-			<Original>M14 Holo Camo</Original>
+			<English>M14 Holo Camo</English>
+			<Russian>M14 Holo (камуфляж)</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M14_ACOG_NAME">
-			<Original>M14 ACOG</Original>
+			<English>M14 ACOG</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M14_ACOG_GH_NAME">
-			<Original>M14 ACOG Camo</Original>
+			<English>M14 ACOG Camo</English>
+			<Russian>M14 ACOG (камуфляж)</Russian>
 		</Key>
 		
 		
 		
 		<!-- Snipers -->
 		<Key ID="STR_DZ_WPN_M24_NAME">
-			<Original>M24</Original>
+			<English>M24</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M24_GH_NAME">
-			<Original>M24 Camo</Original>
+			<English>M24 Camo</English>
+			<Russian>M24 (камуфляж)</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M40A3_NAME">
-			<Original>M40A3</Original>
+			<English>M40A3</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M40A3_GH_NAME">
-			<Original>M40A3 Camo</Original>
+			<English>M40A3 Camo</English>
+			<Russian>M40A3 (камуфляж)</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_DMR_NAME">
-			<Original>DMR</Original>
+			<English>DMR</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_DMR_GH_NAME">
-			<Original>DMR Camo</Original>
+			<English>DMR Camo</English>
+			<Russian>DMR (камуфляж)</Russian>
 		</Key>
 		
 		
 		
 		<!-- M4A1 -->
 		<Key ID="STR_DZ_WPN_M4A1_NAME">
-			<Original>M4A1</Original>
+			<English>M4A1</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_FL_NAME">
-			<Original>M4A1 FL</Original>
+			<English>M4A1 FL</English>
+			<Russian>M4A1 Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_SD_NAME">
-			<Original>M4A1 SD</Original>
+			<English>M4A1 SD</English>
+			<Russian>M4A1 ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_SD_FL_NAME">
-			<Original>M4A1 SD FL</Original>
+			<English>M4A1 SD FL</English>
+			<Russian>M4A1 ПБС Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_NAME">
-			<Original>M4A1 M203</Original>
+			<English>M4A1 M203</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_FL_NAME">
-			<Original>M4A1 M203 FL</Original>
+			<English>M4A1 M203 FL</English>
+			<Russian>M4A1 M203 Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_SD_NAME">
-			<Original>M4A1 M203 SD</Original>
+			<English>M4A1 M203 SD</English>
+			<Russian>M4A1 M203 ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_SD_FL_NAME">
-			<Original>M4A1 M203 SD FL</Original>
+			<English>M4A1 M203 SD FL</English>
+			<Russian>M4A1 M203 ПБС Ф</Russian>
 		</Key>
 		<!-- M4A1 CCO-->
 		<Key ID="STR_DZ_WPN_M4A1_CCO_NAME">
-			<Original>M4A1 CCO</Original>
+			<English>M4A1 CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_CCO_FL_NAME">
-			<Original>M4A1 CCO FL</Original>
+			<English>M4A1 CCO FL</English>
+			<Russian>M4A1 CCO Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_CCO_SD_NAME">
-			<Original>M4A1 CCO SD</Original>
+			<English>M4A1 CCO SD</English>
+			<Russian>M4A1 CCO ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_CCO_SD_FL_NAME">
-			<Original>M4A1 CCO SD FL</Original>
+			<English>M4A1 CCO SD FL</English>
+			<Russian>M4A1 CCO ПБС Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_NAME">
-			<Original>M4A1 M203 CCO</Original>
+			<English>M4A1 M203 CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_FL_NAME">
-			<Original>M4A1 M203 CCO FL</Original>
+			<English>M4A1 M203 CCO FL</English>
+			<Russian>M4A1 M203 CCO Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_SD_NAME">
-			<Original>M4A1 M203 CCO SD</Original>
+			<English>M4A1 M203 CCO SD</English>
+			<Russian>M4A1 M203 CCO ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_CCO_SD_FL_NAME">
-			<Original>M4A1 M203 CCO SD FL</Original>
+			<English>M4A1 M203 CCO SD FL</English>
+			<Russian>M4A1 M203 CCO ПБС Ф</Russian>
 		</Key>
 		<!-- M4A1 Holo -->
 		<Key ID="STR_DZ_WPN_M4A1_HOLO_NAME">
-			<Original>M4A1 Holo</Original>
+			<English>M4A1 Holo</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_HOLO_FL_NAME">
-			<Original>M4A1 Holo FL</Original>
+			<English>M4A1 Holo FL</English>
+			<Russian>M4A1 Holo Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_HOLO_SD_NAME">
-			<Original>M4A1 Holo SD</Original>
+			<English>M4A1 Holo SD</English>
+			<Russian>M4A1 Holo ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_HOLO_SD_FL_NAME">
-			<Original>M4A1 Holo SD FL</Original>
+			<English>M4A1 Holo SD FL</English>
+			<Russian>M4A1 Holo ПБС Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_NAME">
-			<Original>M4A1 M203 Holo</Original>
+			<English>M4A1 M203 Holo</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_FL_NAME">
-			<Original>M4A1 M203 Holo FL</Original>
+			<English>M4A1 M203 Holo FL</English>
+			<Russian>M4A1 M203 Holo Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_SD_NAME">
-			<Original>M4A1 M203 Holo SD</Original>
+			<English>M4A1 M203 Holo SD</English>
+			<Russian>M4A1 M203 Holo ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_HOLO_SD_FL_NAME">
-			<Original>M4A1 M203 Holo SD FL</Original>
+			<English>M4A1 M203 Holo SD FL</English>
+			<Russian>M4A1 M203 Holo ПБС Ф</Russian>
 		</Key>
 		<!-- M4A1 ACOG -->
 		<Key ID="STR_DZ_WPN_M4A1_ACOG_NAME">
-			<Original>M4A1 ACOG</Original>
+			<English>M4A1 ACOG</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_ACOG_FL_NAME">
-			<Original>M4A1 ACOG FL</Original>
+			<English>M4A1 ACOG FL</English>
+			<Russian>M4A1 ACOG Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_ACOG_SD_NAME">
-			<Original>M4A1 ACOG SD</Original>
+			<English>M4A1 ACOG SD</English>
+			<Russian>M4A1 ACOG ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_ACOG_SD_FL_NAME">
-			<Original>M4A1 ACOG SD FL</Original>
+			<English>M4A1 ACOG SD FL</English>
+			<Russian>M4A1 ACOG ПБС Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_NAME">
-			<Original>M4A1 M203 ACOG</Original>
+			<English>M4A1 M203 ACOG</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_FL_NAME">
-			<Original>M4A1 M203 ACOG FL</Original>
+			<English>M4A1 M203 ACOG FL</English>
+			<Russian>M4A1 M203 ACOG Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_SD_NAME">
-			<Original>M4A1 M203 ACOG SD</Original>
+			<English>M4A1 M203 ACOG SD</English>
+			<Russian>M4A1 M203 ACOG ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M4A1_GL_ACOG_SD_FL_NAME">
-			<Original>M4A1 M203 ACOG SD FL</Original>
+			<English>M4A1 M203 ACOG SD FL</English>
+			<Russian>M4A1 M203 ACOG ПБС Ф</Russian>
 		</Key>
 		
 		
 		
 		<!-- M16A4 -->
 		<Key ID="STR_DZ_WPN_M16A4">
-			<Original>M16A4</Original>
+			<English>M16A4</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_FL">
-			<Original>M16A4 FL</Original>
+			<English>M16A4 FL</English>
+			<Russian>M16A4 Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_CCO">
-			<Original>M16A4 CCO</Original>
+			<English>M16A4 CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_CCO_FL">
-			<Original>M16A4 CCO FL</Original>
+			<English>M16A4 CCO FL</English>
+			<Russian>M16A4 CCO Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_HOLO">
-			<Original>M16A4 Holo</Original>
+			<English>M16A4 Holo</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_HOLO_FL">
-			<Original>M16A4 Holo FL</Original>
+			<English>M16A4 Holo FL</English>
+			<Russian>M16A4 Holo Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_ACOG_NAME">
-			<Original>M16A4 ACOG</Original>
+			<English>M16A4 ACOG</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_ACOG_FL_NAME">
-			<Original>M16A4 ACOG FL</Original>
+			<English>M16A4 ACOG FL</English>
+			<Russian>M16A4 ACOG Ф</Russian>
 		</Key>
 		<!-- M203 -->
 		<Key ID="STR_DZ_WPN_M16A4_GL">
-			<Original>M16A4 M203</Original>
+			<English>M16A4 M203</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_GL_FL">
-			<Original>M16A4 M203 FL</Original>
+			<English>M16A4 M203 FL</English>
+			<Russian>M16A4 M203 Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_GL_CCO">
-			<Original>M16A4 M203 CCO</Original>
+			<English>M16A4 M203 CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_GL_CCO_FL">
-			<Original>M16A4 M203 CCO FL</Original>
+			<English>M16A4 M203 CCO FL</English>
+			<Russian>M16A4 M203 CCO Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_GL_HOLO">
-			<Original>M16A4 M203 Holo</Original>
+			<English>M16A4 M203 Holo</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_GL_HOLO_FL">
-			<Original>M16A4 M203 Holo FL</Original>
+			<English>M16A4 M203 Holo FL</English>
+			<Russian>M16A4 M203 Holo Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_GL_ACOG_NAME">
-			<Original>M16A4 M203 ACOG</Original>
+			<English>M16A4 M203 ACOG</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M16A4_GL_ACOG_FL_NAME">
-			<Original>M16A4 M203 ACOG FL</Original>
+			<English>M16A4 M203 ACOG FL</English>
+			<Russian>M16A4 M203 ACOG Ф</Russian>
 		</Key>
 		
 		
 		
 		<!-- FN FAL -->
 		<Key ID="STR_DZ_WPN_FNFAL_NAME">
-			<Original>FN FAL</Original>
+			<English>FN FAL</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_FNFAL_CCO_NAME">
-			<Original>FN FAL CCO</Original>
+			<English>FN FAL CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_FNFAL_HOLO_NAME">
-			<Original>FN FAL Holo</Original>
+			<English>FN FAL Holo</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_FNFAL_ANPVS4_NAME">
-			<Original>FN FAL AN/PVS-4</Original>
+			<English>FN FAL AN/PVS-4</English>
 		</Key>
 		
 		
 		
 		<!-- AK74 -->
 		<Key ID="STR_DZ_WPN_AK74_NAME">
-			<Original>AK-74</Original>
+			<English>AK-74</English>
+			<Russian>АК-74</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_SD_NAME">
-			<Original>AK-74 SD</Original>
+			<English>AK-74 SD</English>
+			<Russian>АК-74 ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_NAME">
-			<Original>AK-74 GP-25</Original>
+			<English>AK-74 GP-25</English>
+			<Russian>АК-74 ГП-25</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_SD_NAME">
-			<Original>AK-74 GP-25 SD</Original>
+			<English>AK-74 GP-25 SD</English>
+			<Russian>АК-74 ГП-25 ПБС</Russian>
 		</Key>
 		
 		<Key ID="STR_DZ_WPN_AK74_KOBRA_NAME">
-			<Original>AK-74 Kobra</Original>
+			<English>AK-74 Kobra</English>
+			<Russian>АК-74 Кобра</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_KOBRA_SD_NAME">
-			<Original>AK-74 Kobra SD</Original>
+			<English>AK-74 Kobra SD</English>
+			<Russian>АК-74 Кобра ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_KOBRA_NAME">
-			<Original>AK-74 GP-25  Kobra</Original>
+			<English>AK-74 GP-25 Kobra</English>
+			<Russian>АК-74 ГП-25 Кобра</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_KOBRA_SD_NAME">
-			<Original>AK-74 GP-25  Kobra SD</Original>
+			<English>AK-74 GP-25 Kobra SD</English>
+			<Russian>АК-74 ГП-25 Кобра ПБС</Russian>
 		</Key>
 		
 		<Key ID="STR_DZ_WPN_AK74_PSO1_NAME">
-			<Original>AK-74 PSO-1</Original>
+			<English>AK-74 PSO-1</English>
+			<Russian>АК-74 ПСО-1</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_PSO1_SD_NAME">
-			<Original>AK-74 PSO-1 SD</Original>
+			<English>AK-74 PSO-1 SD</English>
+			<Russian>АК-74 ПСО-1 ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_PSO1_NAME">
-			<Original>AK-74 GP-25  PSO-1</Original>
+			<English>AK-74 GP-25 PSO-1</English>
+			<Russian>АК-74 ГП-25 ПСО-1</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AK74_GL_PSO1_SD_NAME">
-			<Original>AK-74 GP-25  PSO-1 SD</Original>
+			<English>AK-74 GP-25 PSO-1 SD</English>
+			<Russian>АК-74 ГП-25 ПСО-1 ПБС</Russian>
 		</Key>
 		
 		
 		
 		<!-- AKS74U -->
 		<Key ID="STR_DZ_WPN_AKS74U_NAME">
-			<Original>AKS-74U</Original>
+			<English>AKS-74U</English>
+			<Russian>АКС-74У</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AKS74U_SD_NAME">
-			<Original>AKS-74U SD</Original>
+			<English>AKS-74U SD</English>
+			<Russian>АКС-74У ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AKS74U_KOBRA_NAME">
-			<Original>AKS-74U Kobra</Original>
+			<English>AKS-74U Kobra</English>
+			<Russian>АКС-74У Кобра</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AKS74U_KOBRA_SD_NAME">
-			<Original>AKS-74U Kobra SD</Original>
+			<English>AKS-74U Kobra SD</English>
+			<Russian>АКС-74У Кобра ПБС</Russian>
 		</Key>
 		
 		
 		
 		<!-- RPK74 -->
 		<Key ID="STR_DZ_WPN_RPK74_NAME">
-			<Original>RPK-74</Original>
+			<English>RPK-74</English>
+			<Russian>РПК-74</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_RPK74_KOBRA_NAME">
-			<Original>RPK-74 Kobra</Original>
+			<English>RPK-74 Kobra</English>
+			<Russian>РПК-74 Кобра</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_RPK74_PSO1_NAME">
-			<Original>RPK-74 PSO-1</Original>
+			<English>RPK-74 PSO-1</English>
+			<Russian>РПК-74 ПСО-1</Russian>
 		</Key>
 		
 		
 		
 		<!-- AKM -->
 		<Key ID="STR_DZ_WPN_AKM_NAME">
-			<Original>AK-47M</Original>
+			<English>AK-47M</English>
+			<Russian>АК-47М</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AKM_KOBRA_NAME">
-			<Original>AK-47M Kobra</Original>
+			<English>AK-47M Kobra</English>
+			<Russian>АК-47М Кобра</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_AKM_PSO1_NAME">
-			<Original>AK-47M PSO-1</Original>
+			<English>AK-47M PSO-1</English>
+			<Russian>АК-47М ПСО-1</Russian>
 		</Key>
 		
 		
 		
 		<!-- RPK -->
 		<Key ID="STR_DZ_WPN_RPK_NAME">
-			<Original>RPK</Original>
+			<English>RPK</English>
+			<Russian>РПК</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_RPK_DESC">
-			<Original>Light machine gun&lt;br/&gt;Caliber: 7.62x39mm</Original>
+			<English>Light machine gun&lt;br/&gt;Caliber: 7.62x39mm</English>
+			<Russian>Легкий пулемет&lt;br/&gt;Калибр: 7.62x39мм</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_RPK_KOBRA_NAME">
-			<Original>RPK Kobra</Original>
+			<English>RPK Kobra</English>
+			<Russian>РПК Кобра</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_RPK_PSO1_NAME">
-			<Original>RPK PSO-1</Original>
+			<English>RPK PSO-1</English>
+			<Russian>РПК ПСО-1</Russian>
 		</Key>
 		
 		
 		
 		<!-- SA58 -->
 		<Key ID="STR_DZ_WPN_SA58_NAME">
-			<Original>SA-58</Original>
+			<English>SA-58</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_SA58_RIS_NAME">
-			<Original>SA-58 RIS</Original>
+			<English>SA-58 RIS</English>
+			<Russian>SA-58 РСИ </Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_SA58_RIS_FL_NAME">
-			<Original>SA-58 RIS FL</Original>
+			<English>SA-58 RIS FL</English>
+			<Russian>SA-58 РСИ Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_SA58_CCO_NAME">
-			<Original>SA-58 CCO</Original>
+			<English>SA-58 CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_SA58_CCO_FL_NAME">
-			<Original>SA-58 CCO FL</Original>
+			<English>SA-58 CCO FL</English>
+			<Russian>SA-58 CCO Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_SA58_HOLO_NAME">
-			<Original>SA-58 Holo</Original>
+			<English>SA-58 Holo</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_SA58_HOLO_FL_NAME">
-			<Original>SA-58 Holo FL</Original>
+			<English>SA-58 Holo FL</English>
+			<Russian>SA-58 Holo Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_SA58_ACOG_NAME">
-			<Original>SA-58 ACOG</Original>
+			<English>SA-58 ACOG</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_SA58_ACOG_FL_NAME">
-			<Original>SA-58 ACOG FL</Original>
+			<English>SA-58 ACOG FL</English>
+			<Russian>SA-58 ACOG Ф</Russian>
 		</Key>
 		
 		
 		
 		<!-- G36C -->
 		<Key ID="STR_DZ_WPN_G36C_NAME">
-			<Original>G36C</Original>
+			<English>G36C</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_G36C_SD_NAME">
-			<Original>G36C SD</Original>
+			<English>G36C SD</English>
+			<Russian>G36C ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_G36C_CCO_NAME">
-			<Original>G36C CCO</Original>
+			<English>G36C CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_G36C_CCO_SD_NAME">
-			<Original>G36C CCO SD</Original>
+			<English>G36C CCO SD</English>
+			<Russian>G36C CCO ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_G36C_HOLO_NAME">
-			<Original>G36C Holo</Original>
+			<English>G36C Holo</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_G36C_HOLO_SD_NAME">
-			<Original>G36C Holo SD</Original>
+			<English>G36C Holo SD</English>
+			<Russian>G36C Holo ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_G36C_ACOG_NAME">
-			<Original>G36C ACOG</Original>
+			<English>G36C ACOG</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_G36C_ACOG_SD_NAME">
-			<Original>G36C ACOG SD</Original>
+			<English>G36C ACOG SD</English>
+			<Russian>G36C ACOG ПБС</Russian>
 		</Key>
 		
 		
 		
 		<!-- G36 -->
 		<Key ID="STR_DZ_WPN_G36A_CAMO_NAME">
-			<Original>G36A Camo</Original>
+			<English>G36A Camo</English>
+			<Russian>G36A (камуфляж)</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_G36A_CAMO_SD_NAME">
-			<Original>G36A Camo SD</Original>
+			<English>G36A Camo SD</English>
+			<Russian>G36A ПБС (камуфляж)</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_G36K_CAMO_NAME">
-			<Original>G36K Camo</Original>
+			<English>G36K Camo</English>
+			<Russian>G36K (камуфляж)</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_G36K_CAMO_SD_NAME">
-			<Original>G36K Camo SD</Original>
+			<English>G36K Camo SD</English>
+			<Russian>G36K ПБС (камуфляж)</Russian>
 		</Key>
 		
 		
 		
 		<!-- MP5 -->
 		<Key ID="STR_DZ_WPN_MP5_NAME">
-			<Original>MP5A5</Original>
+			<English>MP5A5</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_MP5_SD_NAME">
-			<Original>MP5A5 SD</Original>
+			<English>MP5A5 SD</English>
+			<Russian>MP5A5 ПБС</Russian>
+		</Key>
+
+		<!-- BIZON -->
+		<Key ID="STR_DZ_WPN_BIZON_NAME">
+			<English>Bizon</English>
+			<Russian>Бизон</Russian>
+		</Key>
+		<Key ID="STR_DZ_WPN_BIZON_SD_NAME">
+			<English>Bizon SD</English>
+			<Russian>Бизон ПБС</Russian>
 		</Key>
 		
 		
 		
 		<!-- M9 -->
 		<Key ID="STR_DZ_WPN_M9_NAME">
-			<Original>M9</Original>
+			<English>M9</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M9_SD_NAME">
-			<Original>M9 SD</Original>
+			<English>M9 SD</English>
+			<Russian>M9 ПБС</Russian>
 		</Key>
 		
 		
 		
 		<!-- G17 -->
 		<Key ID="STR_DZ_WPN_G17_NAME">
-			<Original>G17</Original>
+			<English>G17</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_G17_FL_NAME">
-			<Original>G17 FL</Original>
+			<English>G17 FL</English>
+			<Russian>G17 Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_G17_SD_NAME">
-			<Original>G17 SD</Original>
+			<English>G17 SD</English>
+			<Russian>G17 ПБС</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_G17_SD_FL_NAME">
-			<Original>G17 SD FL</Original>
+			<English>G17 SD FL</English>
+			<Russian>G17 ПБС Ф</Russian>
 		</Key>
 		
-		
+		<!-- PM -->
+		<Key ID="STR_DZ_WPN_PM_NAME">
+			<English>PM</English>
+			<Russian>ПМ</Russian>
+		</Key>
+		<Key ID="STR_DZ_WPN_PM_SD_NAME">
+			<English>PM SD</English>
+			<Russian>ПМ ПБС</Russian>
+		</Key>		
 		
 		<!-- M249 -->
 		<Key ID="STR_DZ_WPN_M249_NAME">
-			<Original>M249 SAW</Original>
+			<English>M249 SAW</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M249_CCO_NAME">
-			<Original>M249 SAW CCO</Original>
+			<English>M249 SAW CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M249_HOLO_NAME">
-			<Original>M249 SAW Holo</Original>
+			<English>M249 SAW Holo</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M249_ACOG_NAME">
-			<Original>M249 SAW ACOG</Original>
+			<English>M249 SAW ACOG</English>
 		</Key>
 		
 		
 		
 		<!-- L110A1 -->
 		<Key ID="STR_DZ_WPN_L110A1_NAME">
-			<Original>L110A1</Original>
+			<English>L110A1</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_L110A1_CCO_NAME">
-			<Original>L110A1 CCO</Original>
+			<English>L110A1 CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_L110A1_HOLO_NAME">
-			<Original>L110A1 Holo</Original>
+			<English>L110A1 Holo</English>
 		</Key>
 		
 		
 		
 		<!-- M1014 -->
 		<Key ID="STR_DZ_WPN_M1014_NAME">
-			<Original>M1014</Original>
+			<English>M1014</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M1014_CCO_NAME">
-			<Original>M1014 CCO</Original>
+			<English>M1014 CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M1014_Holo_NAME">
-			<Original>M1014 Holo</Original>
+			<English>M1014 Holo</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M1014_ACOG_NAME">
-			<Original>M1014 ACOG</Original>
+			<English>M1014 ACOG</English>
 		</Key>
+
+
+		<!-- Remington870 -->
+		<Key ID="STR_DZ_WPN_R870_NAME">
+			<English>Remington 870</English>
+			<Russian>Ремингтон 870</Russian>
+		</Key>
+		<Key ID="STR_DZ_WPN_R870_DESC">
+			<English>The Remington Model 870 is a pump-action shotgun.</English>
+			<German>Die Remington Model 870 ist eine Vorderschaftrepetierflinte mit Halterung für eine Taschenlampe.</German>
+			<Russian>Ремингтон Модель 870 - помповый дробовик.</Russian>
+			<Spanish>La Remington Modelo 870 es una escopeta de acción a bombeo con una linterna militar como accesorio.</Spanish>
+			<French>Le modèle Remington 870 est un fusil à pompe avec une torche militaire.</French>
+			<Czech>Remington 870 je opakovací brokovnice. Lze na ni připevnit vojenskou baterku.</Czech>
+		</Key>		
+		<Key ID="STR_DZ_WPN_R870_FL_NAME">
+			<English>Remington 870 FL</English>
+			<Russian>Ремингтон 870 Ф</Russian>
+			<German>Remington 870 mit Taschenlampe</German>
+			<Spanish>Remington 870 (Linterna)</Spanish>
+			<French>Remington 870 (+Torche)</French>
+			<Czech>Remington 870 (baterka)</Czech>
+		</Key>
+		<Key ID="STR_DZ_WPN_R870_FL_DESC">
+			<English>The Remington Model 870 is a pump-action shotgun. This weapon has a torch attached.</English>
+			<German>Die Remington Model 870 ist eine Vorderschaftrepetierflinte mit einer fest installierten Taschenlampe.</German>
+			<Russian>Ремингтон Модель 870 - помповый дробовик. На данный экземпляр установлен фонарик.</Russian>
+			<Spanish>La Remington Modelo 870 es una escopeta de acción a bombeo con una linterna como accesorio.</Spanish>
+			<French>Le modèle Remington 870 est un fusil à pompe avec une lampe torche.</French>
+			<Czech>Remington 870 je opakovací brokovnice. Tato má navíc připevněnou baterku.</Czech>
+		</Key>		
 		
-		
-		
+
+		<!-- MR43 -->
+		<Key ID="STR_DZ_WPN_MR43_NAME">
+			<English>Double-barreled Shotgun</English>
+			<German>Doppelläufige Schrotflinte</German>
+			<Russian>Двустволка</Russian>
+			<Spanish>Escopeta de doble cañon</Spanish>
+			<French>Fusil à 2 coups</French>
+			<Czech>Dvouhlavňová brokovnice</Czech>
+		</Key>
+		<Key ID="STR_DZ_WPN_MR43_DESC">
+			<English>A double-barreled shotgun is a shotgun with two parallel barrels, allowing two shots to be fired in quick succession.</English>
+			<German>Eine Schrotflinte mit zwei parallel montierten Läufen, die in schneller Folge abgefeuert werden können.</German>
+			<Russian>Двуствольные ружья употребляются почти исключительно в качестве охотничьих.</Russian>
+			<Spanish>Una escopeta de doble barril permite disparar dos tiros en un corto periodo de tiempo.</Spanish>
+			<French>Fusil doté de 2 canons parallèles, permettant de tirer 2 coups rapprochés.</French>
+			<Czech>Dvouhlavňová brokovnice je brokovnice s dvěma hlavněmi vedle sebe, což umožnuje vystřelit dvakrát hned za sebou.</Czech>
+		</Key>
+		<Key ID="STR_DZ_WPN_MR43_DSMODE_NAME">
+			<English>Double Shot</English>
+			<Russian>Дуплет</Russian>
+		</Key>
+
+		<!-- Winchester1866 -->
+		<Key ID="STR_DZ_WPN_W1866_NAME">
+			<English>Winchester 1866</English>
+			<German>Winchester 1866</German>
+			<Russian>Винчестер 1866</Russian>
+		</Key>
+		<Key ID="STR_DZ_WPN_W1866_DESC">
+			<English>Winchester Model 1866 – was originally chambered for the rimfire .44 Henry. Nicknamed the "Yellow Boy" because of its receiver of a bronze/brass alloy.</English>
+			<Russian>Винчестер модели 1866 был приспособлен под патрон .44 Henry. Его называли "Yellow Boy" из-за цвета бронзово-медного сплава приемника.</Russian>
+		</Key>
+
 		<!-- Mk48 -->
 		<Key ID="STR_DZ_WPN_MK48_NAME">
-			<Original>Mk48</Original>
+			<English>Mk48</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_MK48_CCO_NAME">
-			<Original>Mk48 CCO</Original>
+			<English>Mk48 CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_MK48_HOLO_NAME">
-			<Original>Mk48 Holo</Original>
+			<English>Mk48 Holo</English>
 		</Key>
 		
 		
 		
 		<!-- M240 -->
 		<Key ID="STR_DZ_WPN_M240_NAME">
-			<Original>M240</Original>
+			<English>M240</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M240_CCO_NAME">
-			<Original>M240 CCO</Original>
+			<English>M240 CCO</English>
 		</Key>
 		<Key ID="STR_DZ_WPN_M240_HOLO_NAME">
-			<Original>M240 Holo</Original>
+			<English>M240 Holo</English>
 		</Key>
 		
 		
 		
 		<!-- PKM -->
 		<Key ID="STR_DZ_WPN_PKM_NAME">
-			<Original>PKM</Original>
+			<English>PKM</English>
+			<Russian>ПКМ</Russian>
 		</Key>
 		
 		
 		
 		<!-- UK59 -->
 		<Key ID="STR_DZ_WPN_UK59_NAME">
-			<Original>UK-59</Original>
+			<English>UK-59</English>
+			<Russian>UK-59</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_UK59_DESC">
-			<Original>Chernarussian medium machine gun&lt;br/&gt;Caliber: 7.62x54mmR</Original>
+			<English>Chernarussian medium machine gun&lt;br/&gt;Caliber: 7.62x54mm</English>
+			<Russian>Чернарусский средний пулемет&lt;br/&gt;Калибр: 7.62x54мм</Russian>
 		</Key>
 		
 		
 		
 		<!-- SVD -->
 		<Key ID="STR_DZ_WPN_SVD_NAME">
-			<Original>SVD</Original>
+			<English>SVD</English>
+			<Russian>СВД</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_SVD_GH_NAME">
-			<Original>SVD Camo</Original>
+			<English>SVD Camo</English>
+			<Russian>СВД (камуфляж)</Russian>
 		</Key>
 		
 		
 		
 		<!-- Mosin -->
 		<Key ID="STR_DZ_WPN_MOSIN_NAME">
-			<Original>Mosin Nagant</Original>
+			<English>Mosin Nagant</English>
+			<Russian>Мосинка</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_MOSIN_FL_NAME">
-			<Original>Mosin Nagant FL</Original>
+			<English>Mosin Nagant FL</English>
+			<Russian>Мосинка Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_MOSIN_BELT_NAME">
-			<Original>Mosin Nagant Belt</Original>
+			<English>Mosin Nagant Belt</English>
+			<Russian>Мосинка П</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_MOSIN_BELT_FL_NAME">
-			<Original>Mosin Nagant Belt FL</Original>
+			<English>Mosin Nagant Belt FL</English>
+			<Russian>Мосинка П Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_MOSIN_PU_NAME">
-			<Original>Mosin Nagant PU</Original>
+			<English>Mosin Nagant PU</English>
+			<Russian>Мосинка ПУ</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_MOSIN_PU_FL_NAME">
-			<Original>Mosin Nagant PU FL</Original>
+			<English>Mosin Nagant PU FL</English>
+			<Russian>Мосинка ПР Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_MOSIN_PU_BELT_NAME">
-			<Original>Mosin Nagant PU Belt</Original>
+			<English>Mosin Nagant PU Belt</English>
+			<Russian>Мосинка ПР П</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_MOSIN_PU_BELT_FL_NAME">
-			<Original>Mosin Nagant PU Belt FL</Original>
+			<English>Mosin Nagant PU Belt FL</English>
+			<Russian>Мосинка ПР П Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_MOSIN_DESC">
-			<Original>Bolt-action military rifle developed by the Imperial Russian Army in 1891.&lt;br/&gt;Caliber: 7.62x54mmR</Original>
+			<English>Bolt-action military rifle developed by the Imperial Russian Army in 1891.&lt;br/&gt;Caliber: 7.62x54mmR</English>
+			<Russian>Магазинная винтовка, принятая на вооружение Русской Императорской армии ВС России в 1891 году.</Russian>
 		</Key>
 		
 		
 		
 		<!-- Crossbow -->
 		<Key ID="STR_DZ_WPN_CROSSBOW_NAME">
-			<Original>Crossbow</Original>
+			<English>Crossbow</English>
+			<Russian>Арбалет</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_CROSSBOW_FL_NAME">
-			<Original>Crossbow FL</Original>
+			<English>Crossbow FL</English>
+			<Russian>Арбалет Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_CROSSBOW_CCO_NAME">
-			<Original>Crossbow CCO</Original>
+			<English>Crossbow CCO</English>
+			<Russian>Арбалет CCO</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_CROSSBOW_CCO_FL_NAME">
-			<Original>Crossbow CCO FL</Original>
+			<English>Crossbow CCO FL</English>
+			<Russian>Арбалет CCO Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_CROSSBOW_SCOPE_NAME">
-			<Original>Crossbow Scoped</Original>
+			<English>Crossbow Scoped</English>
+			<Russian>Арбалет ПР</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_CROSSBOW_SCOPE_FL_NAME">
-			<Original>Crossbow Scoped FL</Original>
+			<English>Crossbow Scoped FL</English>
+			<Russian>Арбалет ПР Ф</Russian>
 		</Key>
 		
 		
@@ -10352,242 +10592,516 @@
 		
 		<!-- **** MAGAZINES **** -->
 		
-		<Key ID="STR_DZ_MAG_17RND_9X19_GLOCK17SD">
-			<Original>G17 SD Mag.</Original>
+		<Key ID="STR_DZ_MAG_17RND_9X19_GLOCK17SD_NAME">
+			<English>17Rnd. G17 SD mag.</English>
+			<Russian>17п. G17 глуш. маг.</Russian>
 		</Key>
-		<Key ID="STR_DZ_MAG_30RND_762X39_AK47">
-			<Original>30Rnd. AK-47</Original>
+		<Key ID="STR_DZ_MAG_17RND_9X19_GLOCK17_NAME">
+			<English>17Rnd. G17 mag.</English>
+			<Russian>17п. G17 маг.</Russian>
 		</Key>
-		
+		<Key ID="STR_DZ_MAG_15RND_9X19_M9SD_NAME">
+			<English>15Rnd. M9 SD mag.</English>
+			<Russian>15п. M9 глуш. маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_15RND_9X19_M9_NAME">
+			<English>15Rnd. M9 mag.</English>
+			<Russian>15п. M9 маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_30RND_9X19_UZISD_NAME">
+			<English>30Rnd. PDW SD mag.</English>
+			<Russian>30п. PDW глуш. маг.</Russian>
+		</Key>		
+		<Key ID="STR_DZ_MAG_30RND_9X19_UZI_NAME">
+			<English>30Rnd. PDW mag.</English>
+			<Russian>30п. PDW маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_30RND_9X19_MP5SD_NAME">
+			<English>30Rnd. MP5 SD mag.</English>
+			<Russian>30п. MP5 глуш. маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_30RND_9X19_MP5_NAME">
+			<English>30Rnd. MP5 mag.</English>
+			<Russian>30п. MP5 маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_64RND_9X19_BIZONSD_NAME">
+			<English>64Rnd. Bizon SD mag.</English>
+			<Russian>64п. Бизон глуш. маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_64RND_9X19_BIZON_NAME">
+			<English>64Rnd. Bizon mag.</English>
+			<Russian>64п. Бизон маг.</Russian>
+		</Key>
+
+		<Key ID="STR_DZ_MAG_8RND_9X18_PMSD_NAME">
+			<English>8Rnd. PM SD mag.</English>
+			<Russian>8п. ПМ глуш. маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_8RND_9X18_PM_NAME">
+			<English>8Rnd. PM mag.</English>
+			<Russian>8п. ПМ маг.</Russian>
+		</Key>
+
+		<Key ID="STR_DZ_MAG_7RND_45ACP_1911_NAME">
+			<English>7Rnd. 1911 mag.</English>
+			<Russian>7п. 1911 маг.</Russian>
+		</Key>		
+		<Key ID="STR_DZ_MAG_6RND_45ACP_NAME">
+			<English>6Rnd. revolver ammo</English>
+			<Russian>6п. для револьвера</Russian>
+		</Key>
+
+		<Key ID="STR_DZ_MAG_30RND_545x39_AKSD_NAME">
+			<English>30Rnd. AK-74 SD mag.</English>
+			<Russian>30п. AK-74 глуш. маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_30RND_545x39_AK_NAME">
+			<English>30Rnd. AK-74 mag.</English>
+			<Russian>30п. АК-74 маг.</Russian>
+		</Key>
+
+		<Key ID="STR_DZ_MAG_30RND_762X39_AK47_NAME">
+			<English>30Rnd. AK-47M mag.</English>
+			<Russian>30п. АК-47М маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_30RND_762X39_SA58_NAME">
+			<English>30Rnd. SA-58 mag.</English>
+			<Russian>30п. SA-58 маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_30RND_556x45_G36SD_NAME">
+			<English>30Rnd. G36 SD mag.</English>
+			<Russian>30п. G36 глуш. маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_30RND_556x45_G36_NAME">
+			<English>30Rnd. G36 mag.</English>
+			<Russian>30п. G36 маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_30RND_556x45_STANAGSD_NAME">
+			<English>30Rnd. STANAG SD mag.</English>
+			<Russian>30п. STANAG глуш. маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_30RND_556x45_STANAG_NAME">
+			<English>30Rnd. STANAG mag.</English>
+			<Russian>30п. STANAG маг.</Russian>
+		</Key>
+
+		<Key ID="STR_DZ_MAG_20RND_762X51_FNFAL_NAME">
+			<English>20Rnd. FN FAL mag.</English>
+			<Russian>20п. FN FAL маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_20RND_762X51_DMR_NAME">
+			<English>20Rnd. DMR mag.</English>
+			<Russian>20п. DMR маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_5RND_762X51_M24_NAME">
+			<English>5Rnd. M24/M40 mag.</English>
+			<Russian>5п. M24/M40 маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_100RND_762X51_M240_NAME">
+			<English>100Rnd. M240 belt</English>
+			<Russian>100п. M240 лента</Russian>
+		</Key>		
+		<Key ID="STR_DZ_MAG_100RND_762x54_PK_NAME">
+			<English>100Rnd. PK belt</English>
+			<Russian>100п. ПК лента</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_10RND_762x54_SVD_NAME">
+			<English>10Rnd. SVD mag.</English>
+			<Russian>10п. СВД маг.</Russian>
+		</Key>
+
 		<Key ID="STR_DZ_MAG_BOLT_TRQ_NAME">
-			<Original>Tranquilizer bolt</Original>
+			<English>Tranquilizer bolt</English>
+			<Russian>Болт (транквилизатор)</Russian>
 		</Key>
 		<Key ID="STR_DZ_MAG_BOLT_TRQ_DESC">
-			<Original>Crossbow bolt fitted with a sedative injector. Used to safely capture large animals.</Original>
+			<English>Crossbow bolt fitted with a sedative injector. Used to safely capture large animals.</English>
+			<Russian>Арбалетный болт с усыпляющей инъекцией. Используется для захвата крупных животных.</Russian>
 		</Key>
 		
 		<Key ID="STR_DZ_MAG_BOLT_EXP_NAME">
-			<Original>Explosive bolt</Original>
+			<English>Explosive bolt</English>
+			<Russian>Болт (взрывчатка)</Russian>
 		</Key>
 		<Key ID="STR_DZ_MAG_BOLT_EXP_DESC">
-			<Original>Crossbow bolt fitted with an explosive head.</Original>
+			<English>Crossbow bolt fitted with an explosive head.</English>
+			<Russian>Арбалетный болт с зарядом взрывчатки. РЭМБО!</Russian>
 		</Key>
 		
 		<Key ID="STR_DZ_MAG_50RND_762X54_UK59_NAME">
-			<Original>50Rnd. UK-59</Original>
+			<English>50Rnd. UK-59 belt</English>
+			<Russian>50п. UK-59 лента</Russian>
 		</Key>
 		<Key ID="STR_DZ_MAG_50RND_762X54_UK59_DESC">
-			<Original>Caliber: 7.62x54mmR&lt;br/&gt;Rounds: 50&lt;br/&gt;Used in: UK-59</Original>
+			<English>Caliber: 7.62x54mm&lt;br/&gt;Rounds: 50&lt;br/&gt;Used in: UK-59</English>
+			<Russian>Калибр: 7.62x54мм&lt;br/&gt;Патронов: 50&lt;br/&gt;Используется в: UK-59</Russian>
 		</Key>
 		
 		<Key ID="STR_DZ_MAG_75RND_762X39_RPK_NAME">
-			<Original>75Rnd. RPK</Original>
+			<English>75Rnd. RPK drum mag.</English>
+			<Russian>75п. РПК барабан</Russian>
 		</Key>
 		<Key ID="STR_DZ_MAG_75RND_762X39_RPK_DESC">
-			<Original>Caliber: 7.62x39mm&lt;br/&gt;Rounds: 75&lt;br/&gt;Used in: RPK</Original>
+			<English>Caliber: 7.62x39mm&lt;br/&gt;Rounds: 75&lt;br/&gt;Used in: RPK</English>
+			<Russian>Калибр: 7.62x39мм&lt;br/&gt;Патронов: 75&lt;br/&gt;Используется в: РПК</Russian>
 		</Key>
 		
 		<Key ID="STR_DZ_MAG_75RND_545X39_RPK_NAME">
-			<Original>75Rnd. RPK-74</Original>
+			<English>75Rnd. RPK-74 drum mag.</English>
+			<Russian>75п. РПК-74 барабан</Russian>
 		</Key>
 		
 		<Key ID="STR_DZ_MAG_100RND_556X45_M249_NAME">
-			<Original>100Rnd. M249</Original>
+			<English>100Rnd. M249 belt</English>
+			<Russian>100п. M249 лента</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_200RND_556X45_M249_NAME">
+			<English>200Rnd. M249 belt</English>
+			<Russian>200п. M249 лента</Russian>
 		</Key>
 		
 		<Key ID="STR_DZ_MAG_5RND_762X54_MOSIN_NAME">
-			<Original>5Rnd. Mosin Nagant</Original>
+			<English>5Rnd. Mosin Nagant mag.</English>
+			<Russian>5п. Мосинка маг.</Russian>
 		</Key>
 		<Key ID="STR_DZ_MAG_5RND_762X54_MOSIN_DESC">
-			<Original>Caliber: 7.62x54mmR&lt;br/&gt;Rounds: 5&lt;br/&gt;Used in: Mosin Nagant</Original>
+			<English>Caliber: 7.62x54mmR&lt;br/&gt;Rounds: 5&lt;br/&gt;Used in: Mosin Nagant</English>
+			<Russian>Калибр: 7.62x54mmR&lt;br/&gt;Патронов: 5&lt;br/&gt;Используется в: Мосинка</Russian>
 		</Key>
-		
-		
-		
-		
-		
+		<Key ID="STR_DZ_MAG_5RND_17HMR_NAME">
+			<English>5Rnd. CZ 550 mag.</English>
+			<Russian>5п. CZ 550 маг.</Russian>
+		</Key>		
+		<Key ID="STR_DZ_MAG_5RND_17HMR_DESC">
+			<English>Caliber: 9,3x62mm&lt;br/&gt;Rounds: 5&lt;br/&gt;Used in: CZ 550</English>
+			<Russian>Калибр: 9,3x62мм&lt;br/&gt;Патронов: 5&lt;br/&gt;Используется в: CZ 550</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_10RND_303BRITISH_NAME">
+			<English>10Rnd. Lee Enfield mag.</English>
+			<Russian>10п. SMLE Мк III маг.</Russian>
+		</Key>
+		<Key ID="STR_DZ_MAG_15RND_W1866_NAME">
+			<English>15Rnd. 1866 ammo</English>
+			<German>15 Schuss 1866er Flintenlaufgeschoss</German>
+			<Russian>15п. для 1866</Russian>
+			<Spanish>15 Rondas. Balas para 1866</Spanish>
+			<French>15 balles pour 1866</French>
+			<Czech>15 náb. 1866 kulky</Czech>
+		</Key>		
+		<Key ID="STR_DZ_MAG_15RND_W1866_DESC">
+			<English>Caliber: 11x23mm&lt;br/&gt;Rounds: 15&lt;br/&gt;Used in: Winchester 1866</English>
+			<Russian>Калибр: 11x23мм&lt;br/&gt;Патронов: 15&lt;br/&gt;Используется в: Винчестер 1866</Russian>
+		</Key>		
+
+		<Key ID="STR_DZ_MAG_2RND_12GAUGE_SLUG_NAME">
+			<English>2Rnd. 12 Cal. Slug</English>
+			<Russian>2п. 12к (пуля)</Russian>
+			<Spanish>2Rnd. Slug</Spanish>
+			<French>2 balles</French>
+			<Czech>2 patrony Slug</Czech>
+			<German>2 Schuss Flintenlaufgeschoss</German>
+		</Key>
+		<Key ID="STR_DZ_MAG_2RND_12GAUGE_SLUG_DESC">
+			<English>Caliber: 12 gauge &lt;br/&gt;Rounds: 2 &lt;br/&gt;Used in: M1014, Remington 870, Double-barreled Shotgun</English>
+			<Russian>Патрон: 12-й калибр &lt;br/&gt;Количество: 2 &lt;br/&gt;Используется в: M1014, Ремингтон 870, Двустволках</Russian>
+			<Spanish>Calibre: 12 gauge &lt;br/&gt;Rondas: 2 &lt;br/&gt;Usada en: M1014, Remington 870, Escopeta de doble cañon</Spanish>
+			<French>Calibre: 12&lt;br/&gt;Munitions: 2&lt;br/&gt;Pour: M1014, Remington 870, Fusil à 2 coups</French>
+			<Czech>Ráže: 12 &lt;br/&gt;Munice: 2 &lt;br/&gt;Pro: M1014, Remington 870, Dvouhlavňová brokovnice</Czech>
+			<German>Kaliber 12 Flintenlaufgeschoss&lt;br/&gt;2 Schuss&lt;br/&gt;Verwendet in: M1014, Remington 870, Doppelläufige Schrotflinte</German>
+		</Key>
+		<Key ID="STR_DZ_MAG_2RND_12GAUGE_BUCK_NAME">
+			<English>2Rnd. 12Cal. Pellets</English>
+			<Russian>2п. 12к (дробь)</Russian>
+			<Spanish>2Rnd. Perdigones</Spanish>
+			<French>2 cartouches</French>
+			<Czech>2 patrony broků</Czech>
+			<German>2 Schuss Schrot</German>
+		</Key>
+		<Key ID="STR_DZ_MAG_2RND_12GAUGE_BUCK_DESC">
+			<English>Caliber: 12 gauge &lt;br/&gt;Rounds: 2&lt;br/&gt;Used in: M1014, Remington 870, Double-barreled Shotgun</English>
+			<Russian>Патрон: 12-й калибр &lt;br/&gt;Количество: 2 &lt;br/&gt;Используется в: M1014, Ремингтон 870, Двустволках</Russian>
+			<Spanish>Calibre: 12 gauge &lt;br/&gt;Rondas: 2&lt;br/&gt;Usada en: M1014, Remington 870, Escopeta de doble cañon</Spanish>
+			<French>Calibre: 12&lt;br/&gt;Munitions: 2&lt;br/&gt;Pour: M1014, Remington 870, Fusil à 2 coups</French>
+			<Czech>Ráže: 12&lt;br/&gt;Munice: 2&lt;br/&gt;Pro: M1014, Remington 870, Dvouhlavňová brokovnice</Czech>
+			<German>Kaliber 12 Schrotmunition&lt;br/&gt;2&lt;br/&gt;Verwendet in: M1014, Remington 870, Doppelläufige Schrotflinte</German>
+		</Key>		
+		<Key ID="STR_DZ_MAG_8RND_12GAUGE_SLUG_NAME">
+			<English>8Rnd. 12 Cal. Slug</English>
+			<Russian>8п. 12к (пуля)</Russian>
+			<Spanish>8Rnd. Slug</Spanish>
+			<French>8 balles</French>
+			<Czech>8 patrony Slug</Czech>
+			<German>8 Schuss Flintenlaufgeschoss</German>
+		</Key>
+		<Key ID="STR_DZ_MAG_8RND_12GAUGE_SLUG_DESC">
+			<English>Caliber: 12 gauge &lt;br/&gt;Rounds: 8 &lt;br/&gt;Used in: M1014, Remington 870</English>
+			<Russian>Патрон: 12-й калибр &lt;br/&gt;Количество: 8 &lt;br/&gt;Используется в: M1014, Ремингтон 870</Russian>
+			<Spanish>Calibre: 12 gauge &lt;br/&gt;Rondas: 8 &lt;br/&gt;Usada en: M1014, Remington 870</Spanish>
+			<French>Calibre: 12&lt;br/&gt;Munitions: 8&lt;br/&gt;Pour: M1014, Remington 870</French>
+			<Czech>Ráže: 12 &lt;br/&gt;Munice: 8 &lt;br/&gt;Pro: M1014, Remington 870</Czech>
+			<German>Kaliber 12 Flintenlaufgeschoss&lt;br/&gt;8 Schuss&lt;br/&gt;Verwendet in: M1014, Remington 870</German>
+		</Key>
+		<Key ID="STR_DZ_MAG_8RND_12GAUGE_BUCK_NAME">
+			<English>8Rnd. 12Cal. Pellets</English>
+			<Russian>8п. 12к (дробь)</Russian>
+			<Spanish>8Rnd. Perdigones</Spanish>
+			<French>8 cartouches</French>
+			<Czech>8 patrony broků</Czech>
+			<German>8 Schuss Schrot</German>
+		</Key>
+		<Key ID="STR_DZ_MAG_8RND_12GAUGE_BUCK_DESC">
+			<English>Caliber: 12 gauge &lt;br/&gt;Rounds: 8&lt;br/&gt;Used in: M1014, Remington 870</English>
+			<Russian>Патрон: 12-й калибр &lt;br/&gt;Количество: 8 &lt;br/&gt;Используется в: M1014, Ремингтон 870</Russian>
+			<Spanish>Calibre: 12 gauge &lt;br/&gt;Rondas: 8&lt;br/&gt;Usada en: M1014, Remington 870</Spanish>
+			<French>Calibre: 12&lt;br/&gt;Munitions: 8&lt;br/&gt;Pour: M1014, Remington 870</French>
+			<Czech>Ráže: 12&lt;br/&gt;Munice: 8&lt;br/&gt;Pro: M1014, Remington 870</Czech>
+			<German>Kaliber 12 Schrotmunition&lt;br/&gt;8&lt;br/&gt;Verwendet in: M1014, Remington 870</German>
+		</Key>				
 		
 		
 		<!-- **** ATTACHMENTS **** -->
 		
 		<Key ID="STR_DZ_ATT_ACT_TO_PRIMARY">
-			<Original>Attach to primary</Original>
+			<English>Attach to primary</English>
+			<Russian>Установить на осн.</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_ACT_TO_SECONDARY">
-			<Original>Attach to secondary</Original>
+			<English>Attach to secondary</English>
+			<Russian>Установить на доп.</Russian>
 		</Key>
 		
 		<!-- 9mm Suppressor -->
 		<Key ID="STR_DZ_ATT_SUP9_NAME">
-			<Original>9mm Suppressor</Original>
+			<English>[A] 9mm Suppressor</English>
+			<Russian>[М] 9мм глушитель</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_SUP9_DESC">
-			<Original>9mm Sound suppressor</Original>
+			<English>9mm Sound suppressor</English>
+			<Russian>ПБС для калибра 9мм</Russian>
 		</Key>
-		<Key ID="STR_DZ_ATT_SUP9_RMVE">
-			<Original>Remove Suppressor</Original>
+		<!-- 9mm Suppressor PM -->
+		<Key ID="STR_DZ_ATT_SUP9PM_NAME">
+			<English>[A] 9mm silencer (PM)</English>
+			<Russian>[М] 9мм глуш. (ПМ)</Russian>
+			<Czech>Příslušenství - tlumič pro Makarov</Czech>
+			<German>Makarov Schalldämpfer</German>
+		</Key>
+		<Key ID="STR_DZ_ATT_SUP9PM_DESC">
+			<English>A silencer that can be attached to Makarov.</English>
+			<Russian>ПБС для пистолета Макарова.</Russian>
+			<Czech>Tlumič, používá se pro vylepšení pistole Makarov.</Czech>
+			<German>Ein Schalldämpfer, der an eine Makarov angebracht werden kann.</German>
+		</Key>		
+		<!-- 9mm Suppressor Bizon -->
+		<Key ID="STR_DZ_ATT_SUP9BIZON_NAME">
+			<English>[A] 9mm silencer (Bizon)</English>
+			<Russian>[М] 9мм глуш. (Бизон)</Russian>
+			<Czech>Příslušenství - tlumič pro Bizon</Czech>
+			<German>Bizon Schalldämpfer</German>			
+		</Key>
+		<Key ID="STR_DZ_ATT_SUP9BIZON_DESC">
+			<English>A silencer that can be attached to Bizon.</English>
+			<Russian>Прибор бесшумной стрельбы для Бизона.</Russian>
+			<Czech>Tlumič, používá se pro vylepšení pušky Bizon.</Czech>
+			<German>Ein Schalldämpfer, der an eine Bizon angebracht werden kann.</German>
 		</Key>
 		
 		<!-- 5.56mm Suppressor -->
 		<Key ID="STR_DZ_ATT_SUP556_NAME">
-			<Original>5.56mm Suppressor</Original>
+			<English>[A] 5.56mm Suppressor</English>
+			<Russian>[М] 5.56мм глушитель</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_SUP556_DESC">
-			<Original>5.56mm Sound suppressor</Original>
-		</Key>
-		<Key ID="STR_DZ_ATT_SUP556_RMVE">
-			<Original>Remove Suppressor</Original>
+			<English>5.56mm Sound suppressor</English>
+			<Russian>ПБС для калибра 5.56мм</Russian>
 		</Key>
 		
 		<!-- 5.45mm Suppressor -->
 		<Key ID="STR_DZ_ATT_SUP545_NAME">
-			<Original>5.45mm Suppressor</Original>
+			<English>[A] 5.45mm Suppressor</English>
+			<Russian>[М] 5.45мм глушитель</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_SUP545_DESC">
-			<Original>5.45mm Sound suppressor</Original>
-		</Key>
-		<Key ID="STR_DZ_ATT_SUP545_RMVE">
-			<Original>Remove Suppressor</Original>
+			<English>5.45mm Sound suppressor</English>
+			<Russian>ПБС для калибра 5.45мм</Russian>
 		</Key>
 		
 		<!-- CCO -->
 		<Key ID="STR_DZ_ATT_CCO_NAME">
-			<Original>M68 CCO</Original>
+			<English>[A] M68 CCO</English>
+			<Russian>[М] M68 CCO</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_CCO_DESC">
-			<Original>CompM2 Close Combat Optic&lt;br/&gt;Manufactured by Swedish Aimpoint AB.</Original>
+			<English>CompM2 Close Combat Optic&lt;br/&gt;Manufactured by Swedish Aimpoint AB.</English>
+			<Russian>Aimpoint CompM2 — компактный прицел для стрелкового оружия&lt;br/&gt;Произведен шведской компанией Aimpoint AB.</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_CCO_RMVE">
-			<Original>Remove CCO</Original>
+			<English>Remove CCO</English>
+			<Russian>Снять CCO</Russian>
 		</Key>
 		
 		<!-- Holo -->
 		<Key ID="STR_DZ_ATT_HOLO_NAME">
-			<Original>EOTech 553 HWS</Original>
+			<English>[A] EOTech 553 HWS</English>
+			<Russian>[М] EOTech 553 HWS</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_HOLO_DESC">
-			<Original>Holographic Weapon Sight&lt;br/&gt;Manufactured by American EOTech Inc.</Original>
+			<English>Holographic Weapon Sight&lt;br/&gt;Manufactured by American EOTech Inc.</English>
+			<Russian>Голографический прицел для стрелкового оружия&lt;br/&gt;Произведен американской компанией EOTech Inc.</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_HOLO_RMVE">
-			<Original>Remove Holo</Original>
+			<English>Remove Holo</English>
+			<Russian>Снять Holo</Russian>
 		</Key>
 		
 		<!-- ACOG -->
 		<Key ID="STR_DZ_ATT_ACOG_NAME">
-			<Original>TA31A ACOG</Original>
+			<English>[A] TA31A ACOG</English>
+			<Russian>[М] TA31A ACOG</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_ACOG_DESC">
-			<Original>Advanced Combat Optical Gunsight&lt;br/&gt;Manufactured by American Trijicon Inc.</Original>
+			<English>Advanced Combat Optical Gunsight&lt;br/&gt;Manufactured by American Trijicon Inc.</English>
+			<Russian>Армейский оптический прицел для ведения огня из стрелкового оружия на среднюю дальность&lt;br/&gt;Произведен американской компанией Trijicon Inc.</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_ACOG_RMVE">
-			<Original>Remove ACOG</Original>
+			<English>Remove ACOG</English>
+			<Russian>Снять ACOG</Russian>
 		</Key>
 		
 		<!-- Kobra -->
 		<Key ID="STR_DZ_ATT_KOBRA_NAME">
-			<Original>Kobra Reflex Sight</Original>
+			<English>[A] Kobra EKP-1S-03</English>
+			<Russian>[М] Кобра ЭКП-1С-03</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_KOBRA_DESC">
-			<Original>Model EKP-1S-03</Original>
+			<English>Red dot collimator sight&lt;br/&gt;Manufactured in Izhevsk Russia.</English>
+			<Russian>Электронный коллиматорный прицел&lt;br/&gt;Произведен росийской компанией ОАО «Ижевский мотозавод „Аксион-холдинг“».</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_KOBRA_RMVE">
-			<Original>Remove Kobra</Original>
+			<English>Remove Kobra</English>
+			<Russian>Снять Кобру</Russian>
 		</Key>
 		
 		<!-- PSO-1 -->
 		<Key ID="STR_DZ_ATT_PSO1_NAME">
-			<Original>PSO-1 Scope</Original>
+			<English>[A] PSO-1 Scope</English>
+			<Russian>[М] прицел ПСО-1</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_PSO1_DESC">
-			<Original>4x24 Sniper scope</Original>
+			<English>Telescopic sight manufactured in Russia by the Novosibirsk instrument-making factory.</English>
+			<Russian>Прицел снайперский оптический — один из основных прицелов советского и российского снайперского вооружения.</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_PSO1_RMVE">
-			<Original>Remove PSO-1</Original>
+			<English>Remove PSO-1</English>
+			<Russian>Снять ПСО-1</Russian>
 		</Key>
 		
 		<!-- M203 -->
 		<Key ID="STR_DZ_ATT_M203_NAME">
-			<Original>M203 grenade launcher</Original>
+			<English>[A] M203 grenade launcher</English>
+			<Russian>[М] подствольник M203</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_M203_DESC">
-			<Original>Under-barrel grenade launcher</Original>
+			<English>Under-barrel grenade launcher</English>
+			<Russian>40-мм подствольный гранатомёт, разработанный в период 1967—1968 годов американской корпорацией AAI.</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_M203_RMVE">
-			<Original>Remove M203</Original>
+			<English>Remove M203</English>
+			<Russian>Снять M203</Russian>
 		</Key>
 		
 		<!-- GP-25 -->
 		<Key ID="STR_DZ_ATT_GP25_NAME">
-			<Original>GP-25 grenade launcher</Original>
+			<English>[A] GP-25 grenade launcher</English>
+			<Russian>[М] подствольник ГП-25</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_GP25_DESC">
-			<Original>Under-barrel grenade launcher</Original>
+			<English>Under-barrel grenade launcher</English>
+			<Russian>40-мм подствольный гранатомёт, разработанный в период 1972—1978 годов в  Тульском оружейном заводе.</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_GP25_RMVE">
-			<Original>Remove GP-25</Original>
+			<English>Remove GP-25</English>
+			<Russian>Снять ГП-25</Russian>
 		</Key>
 		
 		<!-- Rifle flashlight -->
 		<Key ID="STR_DZ_ATT_FL_RFL_NAME">
-			<Original>Rifle flashlight</Original>
+			<English>[A] Rifle flashlight</English>
+			<Russian>[М] оружейный фонарь</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_FL_RFL_DESC">
-			<Original>Rail-attachable rifle flashlight</Original>
+			<English>Rail-attachable rifle flashlight</English>
+			<Russian>Фонарь для установки на основное оружие</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_FL_RFL_RMVE">
-			<Original>Remove Flashlight</Original>
+			<English>Remove Flashlight</English>
+			<Russian>Снять фонарь</Russian>
 		</Key>
 		
 		<!-- Pistol flashlight -->
 		<Key ID="STR_DZ_ATT_FL_PST_NAME">
-			<Original>Pistol flashlight</Original>
+			<English>[A] Pistol flashlight</English>
+			<Russian>[М] пистолетный фонарь</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_FL_PST_DESC">
-			<Original>Rail-attachable pistol flashlight</Original>
+			<English>Rail-attachable pistol flashlight</English>
+			<Russian>Фонарь для установки на пистолеты</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_FL_PST_RMVE">
-			<Original>Remove Flashlight</Original>
+			<English>Remove Flashlight</English>
+			<Russian>Снять фонарь</Russian>
 		</Key>
 		
 		<!-- Ghillie -->
 		<Key ID="STR_DZ_ATT_GHIL_NAME">
-			<Original>Small camo netting</Original>
+			<English>[A] Small camo netting</English>
+			<Russian>[М] малый камуфляж</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_GHIL_DESC">
-			<Original>Assorted pieces of camo netting. Might be used to camouflage something small.</Original>
+			<English>Assorted pieces of camo netting. Might be used to camouflage something small.</English>
+			<Russian>Разнообразные части камуфляжной сетки. Можно использовать для маскировки чего-нибудь небольшого.</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_GHIL_RMVE">
-			<Original>Remove Ghillie</Original>
+			<English>Remove Ghillie</English>
+			<Russian>Снять камуфляж</Russian>
 		</Key>
 		
 		<!-- PU Scope -->
 		<Key ID="STR_DZ_ATT_PU_NAME">
-			<Original>PU-Scope</Original>
+			<English>[A] PU-Scope</English>
+			<Russian>[М] прицел ПУ</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_PU_DESC">
-			<Original>Standard issue Soviet sniper scope during World War II.&lt;br/&gt;Magnification: 3.5x</Original>
+			<English>Standard issue Soviet sniper scope during World War II.&lt;br/&gt;Magnification: 3.5x</English>
+			<Russian>Советский оптический прицел, изначально созданный в 1940 году&lt;br/&gt;Кратность: 3.5х22</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_PU_RMVE">
-			<Original>Remove Scope</Original>
+			<English>Remove Scope</English>
+			<Russian>Снять прицел</Russian>
 		</Key>
 		
 		<!-- Cartridge belt -->
 		<Key ID="STR_DZ_ATT_BELT_NAME">
-			<Original>Cartridge holder</Original>
+			<English>[A] Cartridge holder</English>
+			<Russian>[М] патронташ</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_BELT_DESC">
-			<Original>Holds cartridges for easier access. Can be attached to the stock of a rifle.</Original>
+			<English>Holds cartridges for easier access. Can be attached to the stock of a rifle.</English>
+			<Russian>Обеспечивает хранение и быстрый доступ к магазинам. Может быть прикреплен к прикладу.</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_BELT_RMVE">
-			<Original>Remove belt</Original>
+			<English>Remove belt</English>
+			<Russian>Снять патр.</Russian>
 		</Key>
 		
 		<!-- SA58 RIS -->
 		<Key ID="STR_DZ_ATT_SA58RIS_NAME">
-			<Original>SA-58 RIS upgrade kit</Original>
+			<English>[A] SA-58 RIS</English>
+			<Russian>[М] SA-58 РСИ</Russian>
 		</Key>
 		<Key ID="STR_DZ_ATT_SA58RIS_DESC">
-			<Original>A Rail Integration System kit designed for the SA-58 assault rifle.</Original>
+			<English>A Rail Integration System kit designed for the SA-58 assault rifle.</English>
+			<Russian>Комплект рельсовой системы интеграции разработанной для SA-58</Russian>
 		</Key>
 	</Package>
 </Project>

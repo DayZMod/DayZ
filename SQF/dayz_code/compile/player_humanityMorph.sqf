@@ -24,6 +24,9 @@ _humanKills = player getVariable ["humanKills",0];
 _banditKills = player getVariable ["banditKills",0];
 _achievements = player getVariable ["Achievements",[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
 
+_ConfirmedHumanKills = player getVariable ["ConfirmedHumanKills",0];
+_ConfirmedBanditKills = player getVariable ["ConfirmedBanditKills",0];
+
 //Switch
 _switch = _model spawn player_switchModel;
 waitUntil { scriptDone _switch };
@@ -78,6 +81,9 @@ player setVariable ["characterID",_charID,true];
 player setVariable ["worldspace",_worldspace];
 player setVariable ["Achievements",_achievements];
 
+player getVariable ["ConfirmedHumanKills",_ConfirmedHumanKills,true];
+player getVariable ["ConfirmedBanditKills",_ConfirmedBanditKills,true];
+
 PVDZ_serverStoreVar = [player,"Achievements",_achievements];
 publicVariableServer "PVDZ_serverStoreVar";
 
@@ -87,6 +93,8 @@ eh_player_killed = player addeventhandler ["FiredNear",{_this call player_weapon
 player allowDamage true;
 
 player addWeapon "Loot";
+player addWeapon "Throw";
+
 uiSleep 0.1;
 call dayz_meleeMagazineCheck;
 

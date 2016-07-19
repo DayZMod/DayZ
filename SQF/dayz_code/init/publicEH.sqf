@@ -358,16 +358,16 @@ if (!isDedicated) then {
 			_object setVariable ["dayz_padlockLockStatus", false,true];
 			_object setVariable ["isOpen", "1", true];
 			_object setVariable ["dayz_padlockHistory", [], true];
-			titleText [format["%1 unlocked", typeOf _object],"PLAIN DOWN"];
+			titleText [format[localize "STR_BLD_UNLOCKED", typeOf _object],"PLAIN DOWN"];
 		} else {
-			titleText ["Incorrect combination", "PLAIN DOWN"];
+			titleText [format [localize "STR_BLD_WRONG_COMBO",typeOf _object], "PLAIN DOWN"];
 			_object setVariable ["dayz_padlockHistory", _codeGuess, true];
 		};
 	};
 	
 	"PVCDZ_Client_processAccessCode" addPublicVariableEventHandler {
 		_codeGuess = (_this select 1) select 0;
-		titleText [format["You have set the combination to %1", _codeGuess],"PLAIN DOWN"];
+		titleText [format[localize "STR_BLD_COMBO_SET", _codeGuess],"PLAIN DOWN"];
 	};
 
 	// flies and swarm sound sync
