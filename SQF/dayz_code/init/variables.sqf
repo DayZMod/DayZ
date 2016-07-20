@@ -504,6 +504,7 @@ if (!isDedicated) then {
 	dayz_thirst = 0;
 	dayz_nutrition = 0;
 	dayz_preloadFinished = true;
+	dayz_soundMuted = false;
 	dayz_statusArray = [1,1];
 	dayz_disAudial = 0;
 	dayz_disVisual = 0;
