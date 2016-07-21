@@ -44,10 +44,13 @@ _ctrlTemp = _display displayCtrl 1306;
 _ctrlEar = _display displayCtrl 1304;
 _ctrlEye = _display displayCtrl 1305;
 _ctrlFracture = _display displayCtrl 1203;
+_ctrlMuteBackground = _display displayCtrl 1904;
+_ctrlMuteIcon = _display displayCtrl 1204;
 
-_control = _display displayCtrl 1204; //status_connection_ca.paa ???
-_control ctrlShow false;
-
+if (!dayz_soundMuted) then {
+	_ctrlMuteBackground ctrlShow false;
+	_ctrlMuteIcon ctrlShow false;
+};
 
 //Food/Water/Blood
 /*
