@@ -136,6 +136,20 @@ class RscShortcutButtonMain;
 
 class RscDisplayMultiplayerSetup: RscStandardDisplay
 {
+	west = "ca\ui\data\flag_none_ca.paa";
+	east = "ca\ui\data\flag_none_ca.paa";
+	guer = "ca\ui\data\flag_none_ca.paa";
+	civl = "ca\ui\data\flag_none_ca.paa";
+	none = "ca\ui\data\flag_none_ca.paa";
+	westUnlocked = "ca\ui\data\flag_none_ca.paa";
+	westLocked = "ca\ui\data\flag_none_ca.paa";
+	eastUnlocked = "ca\ui\data\flag_none_ca.paa";
+	eastLocked = "ca\ui\data\flag_none_ca.paa";
+	guerUnlocked = "ca\ui\data\flag_none_ca.paa";
+	guerLocked = "ca\ui\data\flag_none_ca.paa";
+	civlUnlocked = "ca\ui\data\flag_none_ca.paa";
+	civlLocked = "ca\ui\data\flag_none_ca.paa";
+	
 	onload = "with uiNameSpace do{RscDisplayMultiplayerSetup=_this select 0};"; //#70
 	onMouseHolding = "with uiNameSpace do { switch (1 == 1) do { case(isNil 'RscDMSLoad'): { RscDMSLoad = diag_tickTime; }; case(RscDMSLoad == -1): {}; case(RscDMSLoad == -2): {}; case(diag_tickTime - RscDMSLoad > 7): { RscDMSLoad = diag_tickTime; }; case(diag_tickTime - RscDMSLoad > 5): { ctrlActivate ((_this select 0) displayCtrl 1); RscDMSLoad = -1; }; }; };";
 	/*
@@ -262,6 +276,7 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 			idc = 1006;
 			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
 			w = "(96/100) * SafeZoneW"; //wide (was: 38/100)
+			text = "";
 		};
 		class CA_ValuePool: RscIGUIListBox
 		{
@@ -436,6 +451,8 @@ class RscDisplayDiary {
 		delete DiaryPage;
 		delete DiaryTitle;
 		delete DiaryBackground;
+		delete CA_PlayerName;
+		delete CA_CurrentTaskLabel;
 	};
 };
 
@@ -602,17 +619,17 @@ class CfgDiary
 		taskSucceeded = "ca\ui\data\ui_task_done_ca.paa";
 		taskFailed = "ca\ui\data\ui_task_failed_ca.paa";
 		taskCanceled = "ca\ui\data\ui_task_cancelled_ca.paa";
-		playerWest = "";
-		playerEast = "";
-		playerCiv = "";
-		playerGuer = "";
-		playerUnknown = "";
-		playerBriefWest = "";
-		playerBriefEast = "";
-		playerBriefGuer = "";
-		playerBriefCiv = "";
-		playerBriefUnknown = "";
-		playerConnecting = "";
+		playerWest = "ca\ui\data\igui_side_unknown_ca.paa";
+		playerEast = "ca\ui\data\igui_side_unknown_ca.paa";
+		playerCiv = "ca\ui\data\igui_side_unknown_ca.paa";
+		playerGuer = "ca\ui\data\igui_side_unknown_ca.paa";
+		playerUnknown = "ca\ui\data\igui_side_unknown_ca.paa";
+		playerBriefWest = "ca\ui\data\igui_side_unknown_ca.paa";
+		playerBriefEast = "ca\ui\data\igui_side_unknown_ca.paa";
+		playerBriefGuer = "ca\ui\data\igui_side_unknown_ca.paa";
+		playerBriefCiv = "ca\ui\data\igui_side_unknown_ca.paa";
+		playerBriefUnknown = "ca\ui\data\igui_side_unknown_ca.paa";
+		playerConnecting = "ca\ui\data\igui_side_unknown_ca.paa";
 	};
 	class TaskIcons
 	{
