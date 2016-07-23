@@ -20,7 +20,7 @@ item15[] = {"ERROR__Wrong_HIVE",2,250,325.000000,550.000000,425.000000,600.00000
 item16[] = {"Character_Setup",4,218,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
 item17[] = {"Phase_One",2,250,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
 item18[] = {"Response",4,218,-175.000000,700.000000,-75.000000,750.000000,0.000000,"Response"};
-item19[] = {"Phase_Two",2,250,-75.000000,750.000000,25.000000,800.000000,0.000000,"Phase Two"};
+item19[] = {"Phase_Two",2,4346,-75.000000,750.000000,25.000000,800.000000,0.000000,"Phase Two"};
 item20[] = {"Dead_Player",4,218,125.000000,750.000000,225.000000,800.000000,0.000000,"Dead" \n "Player"};
 item21[] = {"ERROR__Player_Already",2,250,325.000000,750.000000,425.000000,800.000000,0.000000,"ERROR:" \n "Player Already" \n "Dead"};
 item22[] = {"Alive",4,218,-175.000000,800.000000,-75.000000,850.000000,0.000000,"Alive"};
@@ -107,7 +107,7 @@ item102[] = {"Sleep",4,218,-550.000000,325.000000,-450.000000,375.000000,0.00000
 item103[] = {"",7,210,-279.000000,371.000000,-271.000000,379.000000,0.000000,""};
 item104[] = {"retry_Login",4,218,-250.000000,350.000000,-150.000000,400.000000,0.000000,"retry Login"};
 item105[] = {"",7,210,-379.000031,471.000000,-371.000000,479.000000,0.000000,""};
-item106[] = {"Finish_1",2,4346,-75.000000,1500.000000,25.000000,1550.000000,0.000000,"Finish"};
+item106[] = {"Finish_1",2,250,-75.000000,1500.000000,25.000000,1550.000000,0.000000,"Finish"};
 item107[] = {"dayz_preloadFini",4,218,50.000000,1550.000000,150.000000,1600.000000,0.000000,"dayz_preloadFinished"};
 link0[] = {0,1};
 link1[] = {0,5};
@@ -236,8 +236,8 @@ link123[] = {104,11};
 link124[] = {105,96};
 link125[] = {106,107};
 link126[] = {107,32};
-globals[] = {25.000000,1,0,0,0,640,480,1,257,6316128,1,-515.955017,323.737183,1743.976196,939.271118,624,598,1};
-window[] = {2,-1,-1,-32000,-32000,630,1464,2484,104,3,642};
+globals[] = {25.000000,1,0,0,0,640,480,1,257,6316128,1,-515.955017,323.737183,1036.158691,231.453629,624,598,1};
+window[] = {2,-1,-1,-1,-1,656,130,1150,130,3,642};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -669,15 +669,8 @@ class FSM
        "" \n
        "_worldspace = 	PVCDZ_plr_Login2 select 0;" \n
        "_state =			PVCDZ_plr_Login2 select 1;" \n
-       "_playerAchievements = PVCDZ_plr_Login2 select 2;" \n
        "" \n
-       "dayz_playerAchievements = _playerAchievements;" \n
-       "	" \n
-       "PVDZ_serverStoreVar = [player,""Achievements"",_playerAchievements];" \n
-       "publicVariableServer ""PVDZ_serverStoreVar"";" \n
-       "diag_log ['Sent to server: PVDZ_serverStoreVar', PVDZ_serverStoreVar]; " \n
-       "player setVariable [""Achievements"",_playerAchievements,false];" \n
-       "" \n
+       "player setVariable [""Achievements"",[],false];" \n
        "" \n
        "_setDir = 			_worldspace select 0;" \n
        "_setPos = 			_worldspace select 1;" \n
