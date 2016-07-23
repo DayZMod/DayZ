@@ -1,7 +1,5 @@
 private ["_characterID","_playerObj","_playerID","_dummy","_worldspace","_state","_doLoop","_key","_primary","_medical","_stats","_humanity","_randomSpot","_position","_debug","_distance","_fractures","_score","_findSpot","_mkr","_j","_isIsland","_w","_clientID"];
 
-diag_log (format["%1 DEBUG %2", __FILE__, _this]);
-
 _characterID = _this select 0;
 _playerObj = _this select 1;
 _spawnSelection = _this select 3;
@@ -110,9 +108,9 @@ if (count _medical > 0) then {
 	if (count _medical >= 12) then {
 		_playerObj setVariable ["blood_type",(_medical select 11),true];
 		_playerObj setVariable ["rh_factor",(_medical select 12),true];
-		diag_log [ "Character data: blood_type,rh_factor,testdone=",
-			_playerObj getVariable ["blood_type", "?"],_playerObj getVariable ["rh_factor", "?"], _playerObj getVariable ["blood_testdone", false]
-		];
+//		diag_log [ "Character data: blood_type,rh_factor,testdone=",
+//			_playerObj getVariable ["blood_type", "?"],_playerObj getVariable ["rh_factor", "?"], _playerObj getVariable ["blood_testdone", false]
+//		];
 	} else {
 		_playerObj call player_bloodCalc;
 		diag_log [ "Character upgrade to 1.8.3: blood_type,rh_factor=",_playerObj getVariable ["blood_type", "?"],_playerObj getVariable ["rh_factor", "?"]];
@@ -126,7 +124,7 @@ if (count _medical > 0) then {
 	_playerObj setVariable ["USEC_injured",false,true];
 	_playerObj setVariable ["USEC_inPain",false,true];
 	_playerObj call player_bloodCalc; // will set blood_type and rh_factor according to real population statitics
-	diag_log [ "New character setup: blood_type,rh_factor=",_playerObj getVariable ["blood_type", "?"],_playerObj getVariable ["rh_factor", "?"]];
+	//diag_log [ "New character setup: blood_type,rh_factor=",_playerObj getVariable ["blood_type", "?"],_playerObj getVariable ["rh_factor", "?"]];
 	_playerObj setVariable ["messing",[0,0,0],true];
 	_playerObj setVariable ["blood_testdone",false,true];
 };
@@ -234,7 +232,7 @@ _clientID publicVariableClient "PVCDZ_plr_plantSpawner";
 //record time started
 _playerObj setVariable ["lastTime",time];
 
-diag_log format["LOGIN PUBLISHING: UID#%1 CID#%2 %3 as %4 should spawn at %5",getPlayerUID _playerObj,_characterID,_playerObj call fa_plr2str,typeOf _playerObj,(_worldspace select 1) call fa_coor2str];
+//diag_log format["LOGIN PUBLISHING: UID#%1 CID#%2 %3 as %4 should spawn at %5",getPlayerUID _playerObj,_characterID,_playerObj call fa_plr2str,typeOf _playerObj,(_worldspace select 1) call fa_coor2str];
 
 PVDZ_plr_Login1 = null;
 PVDZ_plr_Login2 = null;

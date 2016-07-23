@@ -32,7 +32,7 @@ item27[] = {"ERROR__Bad_Versi",2,250,325.000000,850.000000,425.000000,900.000000
 item28[] = {"Display_Ready",4,218,-175.000000,1200.000000,-75.000000,1250.000000,0.000000,"Display" \n "Ready"};
 item29[] = {"Preload_Display",2,250,-75.000000,1250.000000,25.000000,1300.000000,0.000000,"Preload" \n "Display"};
 item30[] = {"Preload_Done",4,218,-175.000000,1300.000000,-75.000000,1350.000000,0.000000,"Preload" \n "Done"};
-item31[] = {"Initialize",2,4346,-75.000000,1350.000000,25.000000,1400.000000,0.000000,"Initialize"};
+item31[] = {"Initialize",2,250,-75.000000,1350.000000,25.000000,1400.000000,0.000000,"Initialize"};
 item32[] = {"Finish",1,250,-75.000000,1625.000000,25.000000,1675.000000,0.000000,"Finish"};
 item33[] = {"no_Time_Date",4,218,125.000000,950.000000,225.000000,1000.000000,0.000000,"no Time/Date"};
 item34[] = {"sleep",4,218,525.000000,150.000000,625.000000,200.000000,0.000000,"sleep"};
@@ -107,7 +107,7 @@ item102[] = {"Sleep",4,218,-550.000000,325.000000,-450.000000,375.000000,0.00000
 item103[] = {"",7,210,-279.000000,371.000000,-271.000000,379.000000,0.000000,""};
 item104[] = {"retry_Login",4,218,-250.000000,350.000000,-150.000000,400.000000,0.000000,"retry Login"};
 item105[] = {"",7,210,-379.000031,471.000000,-371.000000,479.000000,0.000000,""};
-item106[] = {"Finish_1",2,250,-75.000000,1500.000000,25.000000,1550.000000,0.000000,"Finish"};
+item106[] = {"Finish_1",2,4346,-75.000000,1500.000000,25.000000,1550.000000,0.000000,"Finish"};
 item107[] = {"dayz_preloadFini",4,218,50.000000,1550.000000,150.000000,1600.000000,0.000000,"dayz_preloadFinished"};
 link0[] = {0,1};
 link1[] = {0,5};
@@ -1090,7 +1090,9 @@ class FSM
     {
       name = "Finish";
       init = /*%FSM<STATEINIT""">*/"diag_log 'player_forceSave called from fsm';" \n
-       "call player_forceSave;"/*%FSM</STATEINIT""">*/;
+       "//call player_forceSave;" \n
+       "" \n
+       "publicVariableServer ""PVDZ_plr_LoginRecord"";"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -1769,15 +1771,22 @@ class FSM
     class Finish_1
     {
       name = "Finish_1";
-      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Finish'];};PVDZ_plr_LoginRecord = [_playerUID,_charID,0];" \n
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Finish'];};" \n
+       "" \n
+       "PVDZ_plr_LoginRecord = [_playerUID,_charID,0,(name vehicle player)];" \n
+       "" \n
        "progressLoadingScreen 1;" \n
-       "publicVariableServer ""PVDZ_plr_LoginRecord"";" \n
+       "" \n
        "diag_log ['Sent to server: PVDZ_plr_LoginRecord', PVDZ_plr_LoginRecord]; " \n
+       "" \n
        "_world = toUpper(worldName); //toUpper(getText (configFile >> ""CfgWorlds"" >> (worldName) >> ""description""));" \n
        "_nearestCity = nearestLocations [getPos player, [""NameCityCapital"",""NameCity"",""NameVillage"",""NameLocal""],1000];" \n
+       "" \n
        "Dayz_logonTown = ""Wilderness"";" \n
        "if (count _nearestCity > 0) then {Dayz_logonTown = text (_nearestCity select 0)};" \n
+       "" \n
        "[_world,Dayz_logonTown,format[localize ""str_player_06"",dayz_Survived]] spawn {uiSleep 5; _this spawn BIS_fnc_infoText;};" \n
+       "" \n
        "Dayz_loginCompleted = true;" \n
        "" \n
        "//Other Counters" \n
