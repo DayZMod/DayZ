@@ -1,1 +1,0 @@
-1 call dz_fn_switchWeapon;
