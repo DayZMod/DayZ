@@ -20,10 +20,7 @@ sched_co_deleteVehicle = {
 	if (count units _group == 0) then {
 		deleteGroup _group;
 	};
-	
-	//temp logging
-	diag_log format["TEMP ***WARNING*** deleteVehicle Running %1",_this];
-	
+		
 	_this = nil;
 };
 
