@@ -25,7 +25,7 @@ _Sepsis = _playerObj getVariable["USEC_Sepsis",false];
 _lastDamage = round(diag_ticktime - _lastDamage);
 
 //Readded Logout debug info.
-diag_log format["INFO - Player: %3(UID:%1/CID:%2 as (%4), logged off at %5%6", 
+diag_log format["INFO - Player: %3(UID:%1/CID:%2) as (%4), logged off at %5%6", 
 	getPlayerUID _playerObj,
 	_characterID,
 	_playerObj call fa_plr2str,
