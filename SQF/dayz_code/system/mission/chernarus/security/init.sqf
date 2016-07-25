@@ -1,6 +1,6 @@
 //diag_log [ diag_tickTime, __FILE__, "Sp4wing security concrete blocks"];
 poi_processObject = {
-`private ["_type","_pos","_dir","_elevation","_tilt","_o"];
+	private ["_type","_pos","_dir","_elevation","_tilt","_o"];
 	_type = _this select 0;
 	_pos = _this select 1;
 	_dir = _this select 2;
