@@ -26,6 +26,7 @@ if ((_vcl emptyPositions "cargo") > 0) then
 	publicVariable "PVDZ_drg_RLact";
 	player removeAction NORRN_dropAction;
 } else {
-	cutText [localize "str_dragnospace", "PLAIN DOWN"];//hint "No space left in vehicle";
+	//cutText [localize "str_dragnospace", "PLAIN DOWN"];//hint "No space left in vehicle";
+	localize "str_dragnospace" call dayz_rollingMessages;
 };
 NORRN_load_wounded_action = true;
