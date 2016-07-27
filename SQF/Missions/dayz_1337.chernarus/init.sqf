@@ -77,6 +77,8 @@ if (isServer) then {
 
 //Must be global spawned, so players don't fall through buildings (might be best to spilt these to important, not important)
 if (dayz_POIs) then { execVM "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf"; };
+// Lootable objects from CfgTownGeneratorDefault.hpp
+if (1==1) then { execVM "\z\addons\dayz_code\system\mission\chernarus\LegacyTownGenerator\init.sqf"; };
 
 if (!isDedicated) then {
 	if (dayz_antihack != 0) then {
