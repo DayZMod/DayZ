@@ -254,8 +254,11 @@ if (isServer) then {
 		diag_log format["WARNING: %1",_info];
 	};
 	
-	"PVDZ_Server_processCode" addPublicVariableEventHandler {(_this select 1) call pvs_processSetAccessCode};
+	"PVDZ_Server_processSetAccessCode" addPublicVariableEventHandler {(_this select 1) call pvs_processSetAccessCode};
 	
+	"PVDZ_Server_processCode" addPublicVariableEventHandler {(_this select 1) call pvs_processAccessCode};
+	
+	/*
 	"PVDZ_Server_processSetAccessCode" addPublicVariableEventHandler {
 		private ["_unitSending","_object","_object","_code"];
 		_unitSending = (_this select 1) select 0;
@@ -287,6 +290,7 @@ if (isServer) then {
 			diag_log format["WARNING: %1, %2 is trying to set a code for a gate he does not own.",(name _unitSending),(getPlayerUID _unitSending)];
 		};
 	};
+	*/
 	
 	"PVDZ_Server_buildLock" addPublicVariableEventHandler {
 		_object = (_this select 1) select 0;
@@ -358,16 +362,19 @@ if (!isDedicated) then {
 			_object setVariable ["dayz_padlockLockStatus", false,true];
 			_object setVariable ["isOpen", "1", true];
 			_object setVariable ["dayz_padlockHistory", [], true];
-			titleText [format[localize "STR_BLD_UNLOCKED", typeOf _object],"PLAIN DOWN"];
+			//titleText [format[localize "STR_BLD_UNLOCKED", typeOf _object],"PLAIN DOWN"];
+			format[localize "STR_BLD_UNLOCKED", typeOf _object] call dayz_rollingMessages;
 		} else {
-			titleText [format [localize "STR_BLD_WRONG_COMBO",typeOf _object], "PLAIN DOWN"];
+			//titleText [format [localize "STR_BLD_WRONG_COMBO",typeOf _object], "PLAIN DOWN"];
+			format [localize "STR_BLD_WRONG_COMBO",typeOf _object] call dayz_rollingMessages;
 			_object setVariable ["dayz_padlockHistory", _codeGuess, true];
 		};
 	};
 	
 	"PVCDZ_Client_processAccessCode" addPublicVariableEventHandler {
 		_codeGuess = (_this select 1) select 0;
-		titleText [format[localize "STR_BLD_COMBO_SET", _codeGuess],"PLAIN DOWN"];
+		//titleText [format[localize "STR_BLD_COMBO_SET", _codeGuess],"PLAIN DOWN"];
+		format[localize "STR_BLD_COMBO_SET", _codeGuess] call dayz_rollingMessages;
 	};
 
 	// flies and swarm sound sync
