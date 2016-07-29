@@ -96,12 +96,7 @@ class MetalFence_1: MetalFence_thirdpanel
 	};
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
-	};/*
-	class Maintenance {
-		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {};
-		active = "true";
-	};*/
+	};
 };  
 class MetalFence_2: MetalFence_1
 {
@@ -117,12 +112,7 @@ class MetalFence_2: MetalFence_1
 	};
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
-	};/*
-	class Maintenance {
-		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {};
-		active = "true";
-	};*/
+	};
 }; 
 class MetalFence_3: MetalFence_2
 {
@@ -138,12 +128,6 @@ class MetalFence_3: MetalFence_2
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
 	};
-	/*
-	class Maintenance {
-		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {};
-		active = "true";
-	};*/
 }; 
 class MetalFence_4: MetalFence_3
 {
@@ -158,11 +142,7 @@ class MetalFence_4: MetalFence_3
 	};
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
-	};/*
-	class Maintenance {
-		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {};
-	};*/
+	};
 }; 
 class MetalFence_5: MetalFence_4
 {
@@ -178,12 +158,6 @@ class MetalFence_5: MetalFence_4
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
 	};
-	/*
-	class Maintenance {
-		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {};
-		active = "true";
-	};*/
 }; 
 class MetalFence_6: MetalFence_5
 {
@@ -199,12 +173,6 @@ class MetalFence_6: MetalFence_5
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
 	};
-	/*
-	class Maintenance {
-		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {};
-		active = "true";
-	};*/
 }; 
 class MetalFence_7: MetalFence_6 
 {
@@ -219,10 +187,4 @@ class MetalFence_7: MetalFence_6
 	class Upgrade {
 		delete create;
 	};
-   /*
-	class Maintenance {
-		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {};
-		active = "true";
-	};*/
 }; 

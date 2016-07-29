@@ -41,7 +41,36 @@ class ItemDIY_Gate: ItemCore {
 			ghost = "WoodenGate_ghost"; //Ghost model needs to be changed to WoodenGate4 so the player sees the finished fully upgrade model as the ghost
 			create = "WoodenGate_foundation"; //Foundation model is using wooden fence foundation (needs to change)
 		};
+		class Build2 {
+			text = "Metal Gate";//"Wooden Gate"
+			script = "; ['ItemDIY_Gate','Build'] spawn player_build; r_action_count = r_action_count + 1;";
+			require[] = {"ItemEtool"};
+			consume[] = {"ItemLog"};
+			ghost = "MetalGate_ghost"; //Ghost model needs to be changed to WoodenGate4 so the player sees the finished fully upgrade model as the ghost
+			create = "WoodenGate_foundation"; //Foundation model is using wooden fence foundation (needs to change)
+		};
+	};
+#endif
+};
 
+class ItemDIY_MetalGate: ItemCore {
+	scope = 2;
+	picture = "\z\addons\dayz_buildings\equip\icon_diy_wood.paa";
+	model = "z\addons\dayz_buildings\models\diymanual_wood.p3d";
+	icon = "Ca\misc\data\icons\i_danger_CA.paa";
+	displayName = $STR_BLD_name_ItemDIY_woodGate;//"DIY Manual (Gate's)"
+	descriptionShort = $STR_BLD_desc_ItemDIY_woodGate;//"For wooden Gates"
+
+#ifdef _Devlopment_
+	class ItemActions {
+		class Build {
+			text = "Metal Gate";//"Wooden Gate"
+			script = "; ['ItemDIY_Gate','Build'] spawn player_build; r_action_count = r_action_count + 1;";
+			require[] = {"ItemEtool"};
+			consume[] = {"ItemLog"};
+			ghost = "MetalGate_ghost"; //Ghost model needs to be changed to WoodenGate4 so the player sees the finished fully upgrade model as the ghost
+			create = "WoodenGate_foundation"; //Foundation model is using wooden fence foundation (needs to change)
+		};
 	};
 #endif
 };
