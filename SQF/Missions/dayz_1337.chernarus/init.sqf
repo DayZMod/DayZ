@@ -4,6 +4,7 @@ dayZ_serverName = "1337"; //Shown to all players in the bottom left of the scree
 
 //Game settings
 dayz_antihack = 0; // DayZ Antihack / 1 = enabled // 0 = disabled
+dayz_antiWallHack = 1; //DayZ AntiWallhack / 1 = enabled // 0 = disabled, Adds items to the map to plug holes.
 dayz_REsec = 1; // DayZ RE Security / 1 = enabled // 0 = disabled
 dayz_enableRules = true; //Enables a nice little news/rules feed on player login (make sure to keep the lists quick).
 dayz_quickSwitch = false; //Turns on forced animation for weapon switch. (hotkeys 1,2,3) False = enable animations, True = disable animations
@@ -81,8 +82,10 @@ if (dayz_POIs) then { execVM "\z\addons\dayz_code\system\mission\chernarus\poi\i
 if (1==1) then { execVM "\z\addons\dayz_code\system\mission\chernarus\LegacyTownGenerator\init.sqf"; };
 
 if (!isDedicated) then {
-	if (dayz_antihack != 0) then {
+	if (dayz_antiWallHack != 0) then {
+		//Enables Map Plug items
 		execVM "\z\addons\dayz_code\system\mission\chernarus\security\init.sqf";
+		//Enables Plant lib fixes
 		call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\antihack.sqf";
 	};
 	
