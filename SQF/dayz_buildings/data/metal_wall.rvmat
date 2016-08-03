@@ -1,7 +1,7 @@
 #define _ARMA_
 
 //Class Ca : data\penetration\metalplate.rvmat{
-surfaceInfo = "z\addons\dayz_buildings\models\metal_wall.bisurf";
+surfaceInfo = "z\addons\dayz_buildings\data\metal_wall.bisurf";
 ambient[] = {0.490196,0.592157,0.556863,1.0};
 diffuse[] = {0.490196,0.592157,0.556863,1.0};
 forcedDiffuse[] = {0.0,0.0,0.0,0.0};
