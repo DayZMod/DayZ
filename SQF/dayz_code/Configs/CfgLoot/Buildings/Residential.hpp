@@ -18,7 +18,7 @@ class Residential : Default
 class Land_HouseV_1I4 : Residential
 {
 	zedPos[] = {{-0.400146,-3.87891,-2.7688},{-3.67651,-2.51758,-2.76544},{-0.472412,3.19824,-2.72028}};
-	lootPos[] = {{-0.400146,-3.87891,-2.7688},{-3.67651,-2.51758,-2.76544},{-0.472412,3.19824,-2.72028}};
+	lootPos[] = {{0.53,-4.53,-2.77},{-3.83,-2.5,-2.77},{-0.51,3.92,-2.72},{-1.93,-5.12,-2.17},{0.57,-1.53,-2.76}};
 };
 
 class Land_kulna : Residential
@@ -193,7 +193,7 @@ class Land_HouseBlock_A2_1 : Residential
 class Land_HouseBlock_A3 : Residential
 {
 	zedPos[] = {{0.554688,2.70801,-5.4317}};
-	lootPos[] = {{0.554688,2.70801,-5.4317}};
+	lootPos[] = {{0.56,2.71,-5.43},{-0.72,-3.61,-5.45},{1.04,-1.56,-5.45}};
 };
 
 class Land_HouseBlock_B5 : Residential
