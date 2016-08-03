@@ -13,12 +13,14 @@ sched_co_deleteVehicle = {
 	_this removeAllEventHandlers "GetOut";
 	_this removeAllEventHandlers "Local";
 	_this removeAllEventHandlers "Respawn";
+	
 	clearVehicleInit _this;
 	_group = group _this;
 	deleteVehicle _this;
 	if (count units _group == 0) then {
 		deleteGroup _group;
 	};
+		
 	_this = nil;
 };
 
@@ -36,14 +38,15 @@ sched_corpses = {
 			if (_x isKindOf "zZombie_Base") then { 
 				_x call sched_co_deleteVehicle;
 				_delQtyZ = _delQtyZ + 1;
-			}
-			else {
+			} else {
 				if (_x isKindOf "CAManBase") then {
 					_deathTime = _x getVariable ["sched_co_deathTime", -1];
 					if (_deathTime == -1) then {
+						
 						_deathPos = _x getVariable [ "deathPos", getMarkerPos "respawn_west" ];
 						_cpos = getPosATL _x;
-						if (_deathPos distance _cpos > 50 or _deathPos select 2 < -0.2) then { // forbid a move further than 50 meters, or burried body (antihack)
+						// forbid a move further than 50 meters, or burried body (antihack)
+						if (_deathPos distance _cpos > 50 or _deathPos select 2 < -0.2) then {
 							diag_log [ __FILE__, "Corpse has been moved! CID#",(_x getVariable["characterID", "?"]),"from:", _cpos, "to:", _deathPos ];
 							_x setPosATL _deathPos;
 						};
@@ -51,26 +54,28 @@ sched_corpses = {
 						_x setVariable ["sched_co_deathTime", _deathTime];
 						_x setVariable ["sched_co_fliesAdded", true];
 						_addFlies = _addFlies + 1;
+						
 					};
-					if (diag_tickTime - _deathTime > 40*60) then { // 40 minutes = how long a player corpse stays on the map
+					// 40 minutes = how long a player corpse stays on the map
+					if (diag_tickTime - _deathTime > 40*60) then {
 						if (_x getVariable ["sched_co_fliesDeleted", false]) then {
 							// flies have been switched off, we can delete body
 							_sound = _x getVariable ["sched_co_fliesSource", nil];
+							
 							if !(isNil "_sound") then {
 								detach _sound;
 								deleteVehicle _sound;
 							};
+							
 							_x call sched_co_deleteVehicle;
 							_delQtyP = _delQtyP + 1;
-						}
-						else {
+						} else {
 							PVCDZ_flies = [ 0, _x ];
 							publicVariable "PVCDZ_flies";
 							_x setVariable ["sched_co_fliesDeleted", true];
 							// body will be deleted at next round
 						};
-					}
-					else {
+					} else {
 						_onoff = 1;
 						// remove flies on heavy rain.
 						if (rain > 0.25) then { _onoff = 0; };
@@ -124,3 +129,31 @@ sched_corpses = {
 
 	objNull
 };
+
+/*
+sched_disconnectedPlayers = {
+	private ["_x","_disconnectTime"];
+	{
+	diag_log (_x);
+		if (local _x) then {
+			_disconnectTime = _x getVariable ["sched_co_disconnectTime", -1];
+			if (_disconnectTime == -1) then {
+				_disconnectTime = diag_tickTime;
+				_x setVariable ["sched_co_disconnectTime", _disconnectTime];
+			};
+			if (diag_tickTime - _disconnectTime > dayz_ghostTimer) then {
+				if (alive _x) then {
+					[_x,nil] call server_playerSync;
+				};
+				
+				dayz_disconnectPlayers = dayz_disconnectPlayers - [_x];
+				
+				_x call sched_co_deleteVehicle;
+			};
+			diag_log format["%1 - %2",_x,_disconnectTime];
+		};
+	} forEach dayz_disconnectPlayers;
+	
+	objNull
+};
+*/

@@ -26,16 +26,17 @@ _looptime = _this;
 //Positive effects
 	_vehicle_factor		=	2;
 	_fire_factor		=	15;	
-	_moving_factor 		=  	2.1;
 	_building_factor 	=  	1.5;
-	_sun_factor			= 	3;
+	_moving_factor 		=  	2.8;
+	_sun_factor			= 	1;
+	_heatpack_factor		=	6; 
 	
 //Negative effects
 	_water_factor		= 	8;
-	_stand_factor 		= 	2;
+	_stand_factor 		= 	2.1;
 	_rain_factor		=	0.5;
-	_night_factor		= 	1.5;
-	_wind_factor		=	2;
+	_wind_factor		=	1.5;
+	_night_factor		= 	1;
 
 _difference = 0; 
 //_hasfireffect = false;
@@ -113,6 +114,13 @@ if(daytime > _sunrise && daytime < (24 - _sunrise) && !_raining && overcast <= 0
 	//diag_log format["sun - %1",_difference];
 };
 
+//heatpack
+if(r_player_warming_heatpack select 0) then {
+	_difference = _difference + _heatpack_factor;
+	if ((diag_tickTime - (r_player_warming_heatpack select 1)) >= r_player_warming_heatpack_time) then {
+		r_player_warming_heatpack = [false,0];
+	};
+};
 //NEGATIVE EFFECTS
 
 //water
@@ -170,7 +178,5 @@ _difference = _difference * SleepTemperatur / (60 / _looptime) * ((dayz_temperat
 if (dayz_temperature_override) then { _difference = 0; if (dayz_temperatur < 37) then { dayz_temperatur = 37; } };
 
 //Change Temperatur Should be moved in a own Function to allow adding of Items which increase the Temp like "hot tea"
+r_player_temp_factor = _difference;
 dayz_temperatur = (((dayz_temperatur + _difference) max dayz_temperaturmin) min dayz_temperaturmax);
-
-
-//diag_log format["%1 - %2",dayz_temperatur,_difference];

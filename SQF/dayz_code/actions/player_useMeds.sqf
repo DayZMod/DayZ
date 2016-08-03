@@ -1,4 +1,4 @@
-private["_item","_onLadder","_hasmeditem","_config","_text","_id"];
+private ["_item","_onLadder","_hasmeditem","_config","_text","_display"];
 
 _item = _this;
 call gear_ui_init;
@@ -19,6 +19,9 @@ switch (_item) do {
 	};
 	case "ItemMorphine": {
 		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\morphine.sqf";
+	};
+	case "equip_woodensplint": {
+		_id = [0,0,0,[player,"equip_woodensplint"]] execVM "\z\addons\dayz_code\medical\brokeBones.sqf";
 	};
 	case "ItemPainkiller": {
 		_id = [0,0,0,[player]] execVM "\z\addons\dayz_code\medical\painkiller.sqf";
@@ -50,7 +53,8 @@ switch (_item) do {
 	};
 	case "ItemHeatPack": {
 		player removeMagazine "ItemHeatPack";
-		dayz_temperatur = (dayz_temperatur + 5) min dayz_temperaturmax;
+		//dayz_temperatur = (dayz_temperatur + 5) min dayz_temperaturmax;
+		r_player_warming_heatpack = [true, diag_tickTime];
 		cutText [localize "str_player_27", "PLAIN DOWN"];
 	};
 	case "bloodTester": {
@@ -88,9 +92,6 @@ switch (_item) do {
 	};
 	case "wholeBloodBagOPOS": {
 		_id = [player,"wholeBloodBagOPOS"] execVM "\z\addons\dayz_code\medical\selfbloodbag.sqf";
-	};
-	case "equip_woodensplint": {
-		_id = [player,"equip_woodensplint"] execVM "\z\addons\dayz_code\medical\brokeBones.sqf";
 	};
 };
 if (vehicle player != player) then {

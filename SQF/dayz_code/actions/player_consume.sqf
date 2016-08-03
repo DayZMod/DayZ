@@ -11,15 +11,7 @@
 #define PILE_SEARCH_RADIUS 2
 #define PILE_PLAYER_OFFSET [0,1,0]
 
-private
-[
-	"_cfg",
-	"_nutrition",
-	"_bloodRegen",
-	"_infectionChance",
-	"_sound",
-	"_output"
-];
+private ["_cfg","_nutrition","_bloodRegen","_infectionChance","_sound","_output","_hungerCount","_thirstCount","_soundDistance"];
 
 _cfg = (ConfigFile >> "CfgMagazines" >> _this);
 
@@ -44,8 +36,7 @@ if ((getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState p
 //player doesn't have the consumable item
 if (!(_this in magazines player)) exitWith
 {
-	//TODO move to stringtable
-	"You seem to have misplaced the foodstuff." call dayz_rollingMessages;
+	(localize "str_player_33") call dayz_rollingMessages;
 };
 
 //close gear

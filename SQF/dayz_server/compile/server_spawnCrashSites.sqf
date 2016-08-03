@@ -84,7 +84,7 @@ _spawnCrashSite =
 		_mag = random (_lootParams select 4);
 		_lootPos = [((_lootParams select 2) + _mag) * sin _dir, ((_lootParams select 3) + _mag) * cos _dir, 0];
 		_lootPos = Vector_Add(_lootPos, _lootParams select 0);
-		_lootPos = Vector_Rotate(_lootPos, _lootParams select 1);
+		_lootPos = Vector_Rotate2D(_lootPos, _lootParams select 1);
 		_lootPos = _vehicle modelToWorld _lootPos;
 		_lootPos set [2, 0];
 		
@@ -110,7 +110,7 @@ _spawnCrashSite =
 			};
 		};
 	}
-	foreach Loot_Select(_lootGroup, _lootNum);
+	forEach Loot_Select(_lootGroup, _lootNum);
 };
 
 //Spawn initial crash sites
@@ -128,7 +128,7 @@ while {true} do
 	//Wait until the previously decided time
 	while {time < _time} do
 	{
-		sleep (60 * (SPAWN_FREQUENCY) / (TIMER_RESOLUTION));
+		uiSleep (60 * (SPAWN_FREQUENCY) / (TIMER_RESOLUTION));
 	};
 	
 	//try to spawn

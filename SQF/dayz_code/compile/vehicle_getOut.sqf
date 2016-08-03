@@ -7,6 +7,7 @@ _position = _this select 1;
 _unit = _this select 2;
 
 if (_unit == player) then {
+	if (dayz_soundMuted) then {call player_toggleSoundMute;}; // Automatically disable sound mute on vehicle exit
 	_buildables = count ((getposATL _vehicle) nearObjects ["DZ_buildables", 3]);
 	if (_buildables > 0) then {
 
@@ -23,7 +24,7 @@ if (_unit == player) then {
 		PVDZ_Server_LogIt = format["Player %1 exited a vehicle(%2) close to buildable object as %3",_unit, (typeof _vehicle), _position];
 		publicVariableServer "PVDZ_Server_LogIt";
 
-		cutText ["Unable to exit vehicle too close to buildables objects", "PLAIN DOWN"];
+		localize "str_actions_exitBlocked" call dayz_rollingMessages;
 
 	};
 };

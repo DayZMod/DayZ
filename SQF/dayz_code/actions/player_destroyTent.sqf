@@ -1,4 +1,4 @@
-private ["_cantype","_emptycan","_intensity","_objectID", "_objectUID"];
+private ["_cantype","_emptycan","_intensity","_objectID","_objectUID","_obj","_fuelArray","_matchArray","_alreadyDestorying","_randomJerryCan","_fireIntensity","_randomBoxMatches","_qtyRemaining","_dis","_sfx"];
 
 //Tent Object
 _obj = _this select 3;
@@ -55,7 +55,7 @@ player addMagazine _emptycan;
 //Match system ** Needs redoing 
 //Select random matchbox
 _randomBoxMatches = _matchArray call BIS_fnc_selectRandom; 
-_qtyRemaining = getText (configFile >> "cfgWeapons" >> _randomBoxMatches >> "qtyRemaining");
+_qtyRemaining = getText (configFile >> "cfgWeapons" >> _randomBoxMatches >> "Ignators" >> "qtyRemaining");
 
 switch _randomBoxMatches do {
 	case "ItemMatchbox" : { 

@@ -8,7 +8,7 @@ P.s. Why does this piece of shit not have variadic macros?!
 */
 
 //Comment out to disable debugging
-#define _DEBUG_
+//#define _DEBUG_
 
 //DEBUG ENABLED
 #ifdef _DEBUG_

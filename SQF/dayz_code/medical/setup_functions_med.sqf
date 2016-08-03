@@ -19,7 +19,11 @@ fnc_usec_pitchWhine = {
 	playMusic ["PitchWhine",0];
 	if (!r_player_unconscious) then {
 		_visual call fnc_usec_bulletHit;
-		_sound fadeSound 1;
+		if (dayz_soundMuted) then {
+			_sound fadeSound 0.25;
+		} else {
+			_sound fadeSound 1;
+		};
 	};
 	r_pitchWhine = true;
 	[] spawn {
@@ -177,7 +181,7 @@ fnc_usec_calculateBloodPerSec = {
 		_bloodLossPerSec = _bloodLossPerSec + 3;
 	};
 	
-	//_golbalNutrition = 1200 / (r_player_Nutrition select 0);
+	//_golbalNutrition = 1200 / r_player_Nutrition;
 
 	if (r_player_bloodregen > 0) then {
 		_bloodGainPerSec = r_player_bloodregen * 0.1;

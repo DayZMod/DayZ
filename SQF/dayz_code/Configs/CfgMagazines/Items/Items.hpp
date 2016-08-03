@@ -4,6 +4,7 @@
 #include "Wood.hpp"
 #include "Stone.hpp"
 #include "Sandbag.hpp"
+#include "MetalFenceItems.hpp"
 
 //Simple buildables
 #include "Tent.hpp"

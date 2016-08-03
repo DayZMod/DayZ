@@ -126,17 +126,18 @@ sched_medical_effectsSlow = {
 	HIDE_FSM_VARS
 
     if ((r_player_inpain or dayz_thirst >= SleepWater) and !r_player_unconscious and (1 > random 9) and (0 == player getVariable["startcombattimer",0])) then {
-        _duration = 10 + (random 10);
-        _blurTask = [1 + (random 2), _duration] spawn {
-            _strength = _this select 0;
-            _duration = _this select 1;
+        _blurTask = [] spawn {
+            _strength = 0.5 + (random 1);
+            _duration = 8 + (random 10);
             enableCamShake true;
-            setCamShakeParams [0.02, 0.2, 1, 2, true];
-            addCamShake [3 * _strength, _duration, 0.4];
+			
+			//[posCoef, vertCoef, horzCoef, bankCoef, interpolation]
+            setCamShakeParams [0.02, 0.05, 0.1, 0.3, true];
+            addCamShake [_strength, _duration, 0.4];
             playSound "breath_1";
-            sleep _duration;
-            //TODO:change camera FOV
-            // cameraView
+			
+			//Lets make sure the spawn ends 1 sec after the _duration timer this should provide a smooth transtion rather then a snap to focus.
+            sleep _duration + 1;
         };
     };
 

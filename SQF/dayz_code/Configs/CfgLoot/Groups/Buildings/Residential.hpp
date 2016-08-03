@@ -15,7 +15,7 @@ Residential[] =
 	{Loot_WEAPON,		5,		ItemWatch},
 	{Loot_WEAPON,		6,		ItemFlashlight},
 	{Loot_WEAPON,		5,		ItemKnife},
-	{Loot_WEAPON,		3,		ItemShovel},
+//	{Loot_WEAPON,		3,		ItemShovel},
 	{Loot_WEAPON,		1,		ItemDIY_wood},
 	{Loot_WEAPON,		1,		ItemDIY_Gate},
 	

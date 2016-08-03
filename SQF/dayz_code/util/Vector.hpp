@@ -76,8 +76,12 @@ Author: Foxy
 #define Vector_FromDir(deg) ((deg) call dz_fn_vector_fromDir)
 #define Vector_FromDir_Fast(deg) [sin (deg), cos (deg), 0]
 
-//Rotates the vector horizontally by the specified angle in degrees
-#define Vector_Rotate(v, deg) ([v, deg] call dz_fn_vector_rotate)
-#define Vector_Rotate_Fast(v, deg) [Vector_X(v) * cos (deg) - Vector_Y(v) * sin (deg), Vector_X(v) * sin (deg) + Vector_Y(v) * cos (deg), Vector_Z(v)]
+//Rotates the vector around the global Z (up) axis by the specified angle in degrees
+#define Vector_Rotate2D(v, deg) ([v, deg] call dz_fn_vector_rotate2d)
+#define Vector_Rotate2D_Fast(v, deg) [Vector_X(v) * cos -(deg) - Vector_Y(v) * sin -(deg), Vector_X(v) * sin -(deg) + Vector_Y(v) * cos -(deg), Vector_Z(v)]
+
+//Rotates the vector around the specified axis by the specified angle in degrees, in three dimensions.
+#define Vector_Rotate3D(v, u, deg) ([v, u, deg] call dz_fn_vector_rotate3d)
+#define Vector_Rotate3D_Fast(v, u, deg) [Vector_X(v) * (Vector_X(u)^2 * (1 - cos(deg)) + cos(deg)) + Vector_Y(v) * (Vector_X(u) * Vector_Y(u) * (1 - cos(deg)) - Vector_Z(u) * sin(deg)) + Vector_Z(v) * (Vector_X(u) * Vector_Z(u) * (1 - cos(deg)) + Vector_Y(u) * sin(deg)), Vector_X(v) * (Vector_Y(u) * Vector_X(u) * (1 - cos(deg)) + Vector_Z(u) * sin(deg)) + Vector_Y(v) * (Vector_Y(u)^2 * (1 - cos(deg)) + cos(deg)) + Vector_Z(v) * (Vector_Y(u) * Vector_Z(u) * (1 - cos(deg)) - Vector_X(u) * sin(deg)), Vector_X(v) * (Vector_Z(u) * Vector_X(u) * (1 - cos(deg)) - Vector_Y(u) * sin(deg)) + Vector_Y(v) * (Vector_Z(u) * Vector_Y(u) * (1 - cos(deg)) + Vector_X(u) * sin(deg)) + Vector_Z(v) * (Vector_Z(u)^2 * (1 - cos(deg)) + cos(deg))]
 
 #endif

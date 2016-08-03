@@ -20,3 +20,5 @@
 #include "SupBizon.hpp"
 
 #include "Ghillie.hpp"
+
+#include "SA58RIS.hpp"

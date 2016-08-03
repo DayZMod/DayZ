@@ -1,4 +1,4 @@
-private ["_hunger","_thirst","_timeOut","_result","_randomSpot","_distance","_mylastPos","_lastTemp","_rnd","_listTalk","_messTimer","_PlayerNearby","_ZedsNearby","_saveTime"];
+private ["_hunger","_thirst","_timeOut","_result","_randomSpot","_distance","_mylastPos","_lastTemp","_rnd","_messTimer","_PlayerNearby","_ZedsNearby","_saveTime"];
 disableSerialization;
 _timeOut = 0;
 _messTimer = 0;
@@ -15,9 +15,7 @@ _timer30 = diag_Ticktime;
 _timer150 = diag_ticktime;
 
 _forceHumanity = false;
-
 _runonce = false;
-
 _timerMonitor = diag_ticktime;
 
 player setVariable ["temperature",dayz_temperatur,true];
@@ -42,7 +40,7 @@ while {1 == 1} do {
 		player setUnitRank "PRIVATE";
 	};
 
-dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)) + (((count dayz_myMagazines) * 0.1) + (count dayz_myWeapons * 0.5));
+	dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)) + (((count dayz_myMagazines) * 0.1) + (count dayz_myWeapons * 0.5));
 	
 	//reset position
 	_randomSpot = true;
@@ -112,12 +110,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		_timer150 = diag_ticktime;
 	};
 	
-	if ((diag_tickTime - _timer) > 300) then {
-
-	//Other Counters
-		dayz_currentGlobalAnimals = count entities "CAAnimalBase";
-		dayz_currentGlobalZombies = count entities "zZombie_Base";
-		
+	if ((diag_tickTime - _timer) > 300) then {	
 	//Animals
 		//[] call player_animalCheck;
 		
@@ -153,7 +146,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	if (diag_ticktime - dayz_panicCooldown < 120) then {
 		_hunger = _hunger * 2;
 	};
-	dayz_hunger = dayz_hunger + (_hunger / 60); //60 Updated to 80
+	dayz_hunger = dayz_hunger + (_hunger / 70); //60 Updated to 80
 	dayz_hunger = (dayz_hunger min SleepFood) max 0;
 
 	if (dayz_hunger >= SleepFood) then {
@@ -167,7 +160,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	if (_refObj == player) then {
 		_thirst = (_speed + 4) * 3;
 	};
-	dayz_thirst = dayz_thirst + (_thirst / 85) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
+	dayz_thirst = dayz_thirst + (_thirst / 60) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
 	dayz_thirst = (dayz_thirst min SleepWater) max 0;
 
 	if (dayz_thirst >= SleepWater) then {
@@ -184,11 +177,11 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 		_hunger = (abs((((r_player_bloodTotal - r_player_blood) / r_player_bloodTotal) * 5) + _speed + dayz_myLoad) * 3);
 		_thirst = 2; if (_refObj == player) then {_thirst = (_speed + 4) * 3;};
 		_NutritionLoss = _Nutrition - (((_thirst / 1000) + (_hunger / 1000)) * (dayz_temperatur / dayz_temperaturnormal));		
-		r_player_Nutrition = [_NutritionLoss];
+		r_player_Nutrition = _NutritionLoss;
 	} else {
-		r_player_Nutrition = [0];
+		r_player_Nutrition = 0;
 	};
-	dayz_nutrition = r_player_Nutrition select 0;
+	dayz_nutrition = r_player_Nutrition;
 	
 	//Temperatur
 	2 call player_temp_calculation; //2 = sleep time of this loop //TeeChange
@@ -206,8 +199,6 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	if (!r_player_infected) then {
 		//	Infectionriskstart
 		if (dayz_temperatur < ((80 / 100) * (dayz_temperaturnormal - dayz_temperaturmin) + dayz_temperaturmin)) then { //TeeChange
-			private "_listTalk";
-			_listTalk = _mylastPos nearEntities ["CAManBase",12]; //
 			{
 				if (_x getVariable["USEC_infected",false]) then {
 					_rnd = (random 1) * (((dayz_temperaturnormal - dayz_temperatur) * (100 /(dayz_temperaturnormal - dayz_temperaturmin)))/ 50);	//TeeChange
@@ -219,7 +210,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 						};
 					};
 				};
-			} forEach _listTalk;
+			} count (_mylastPos nearEntities ["CAManBase",12]);
 			if (dayz_temperatur < ((50 / 100) * (dayz_temperaturnormal - dayz_temperaturmin) + dayz_temperaturmin)) then { //TeeChange
 				_rnd = (random 1) * (((dayz_temperaturnormal - dayz_temperatur) * (100 /(dayz_temperaturnormal - dayz_temperaturmin)))/ 25);	//TeeChange
 				if (_rnd < 0.05) then {
@@ -342,7 +333,7 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	//setGroupIconsVisible [false,false];
 	//clearGroupIcons group player;
 
-	sleep 2;
+	uiSleep 2;
 
 	_myPos = player getVariable["lastPos",[]];
 	if (count _myPos > 0) then {
@@ -362,6 +353,9 @@ dayz_myLoad = (((count dayz_myBackpackMags) * 0.2) + (count dayz_myBackpackWpns)
 	
 	if ((diag_tickTime - _timer1) > 10) then {
 		_position = getPosATL player;
+			//Other Counters
+		dayz_currentGlobalAnimals = count entities "CAAnimalBase";
+		dayz_currentGlobalZombies = count entities "zZombie_Base";
 		_zeds = _position nearEntities ["zZombie_Base",200];
 		dayz_spawnZombies = 0;
 		dayz_CurrentNearByZombies = 0;

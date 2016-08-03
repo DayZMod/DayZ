@@ -3,7 +3,7 @@
 	Please request permission to use/alter from Alby.
 */
 
-private["_config","_input","_output","_required","_failChance","_hasInput","_availabeSpace"];
+private ["_config","_input","_output","_required","_failChance","_hasInput","_availabeSpace","_overwrite","_orignalClass","_index","_entry","_avail","_selection","_item","_amount","_itemName","_freeSlots","_slotType","_i","_j"];
 disableSerialization;
 ["close"] call fn_updateCraftUI;
 
@@ -51,6 +51,8 @@ _hasInput = true;
 } forEach (_input + _required);
 
 if (_hasInput) then {
+	//Remove melee magazines (BIS_fnc_invAdd and BIS_fnc_invSlotsEmpty fix)
+	{player removeMagazines _x} count MeleeMagazines;
 	_freeSlots = [player] call BIS_fnc_invSlotsEmpty;
 	{
 		_item = _x select 0;

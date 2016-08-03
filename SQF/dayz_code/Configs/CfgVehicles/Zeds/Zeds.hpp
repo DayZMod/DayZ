@@ -291,6 +291,8 @@ class z_policeman : zZombie_Base {
 	displayName = $STR_ZNAME_POLICEMAN;
 	zombieLoot = ZombiePolice;
 	
+	model = "ca\characters2\civil\policeman\policeman.p3d";
+	
 	class Wounds {
 		tex[] = {};
 		mat[] = {"ca\characters2\civil\policeman\data\policeman.rvmat", "ca\characters2\civil\policeman\data\w1_policeman.rvmat", "ca\characters2\civil\policeman\data\w2_policeman.rvmat", "ca\characters\heads\male\defaulthead\data\hhl.rvmat", "ca\characters\heads\male\defaulthead\data\hhl_wounds.rvmat", "ca\characters\heads\male\defaulthead\data\hhl_wounds.rvmat"};

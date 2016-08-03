@@ -16,6 +16,7 @@ Example:
 
 
 #define Loot_WEAPON		2
+#define Loot_TOOL Loot_WEAPON
 /*
 Spawns a weapon with the given classname.
 

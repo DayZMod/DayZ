@@ -21,6 +21,10 @@ if (isNil "keyboard_keys") then {
         //keyboard_keys = nil;*/
         _handled = false;
     };
+	_muteSound = {
+		call player_toggleSoundMute;
+		_handled = true;
+	};
     _rifle = {
 		2 call dz_fn_switchWeapon;
         _handled = true;
@@ -52,7 +56,7 @@ if (isNil "keyboard_keys") then {
                         };                      
                     } forEach getArray(configFile >> "cfgWeapons" >> _weapon >> _muzz >> "magazines");
                 } forEach _muzzles;
-            } forEach [ "Throw", "Throw_DZ" ];
+            } forEach ["Throw"];
 
             _magCount = count _ammo_throwable;
             if (_magCount > 0) then {
@@ -199,6 +203,7 @@ if (isNil "keyboard_keys") then {
     [actionKeys "Diary", _journal] call _addArray;
     [actionKeys "NetworkStats", _journal] call _addArray;
     //[actionKeys "Turbo", _turbo] call _addArray;
+	[[DIK_F1], _muteSound] call _addArray;
     //[[DIK_F4, DIK_TAB, DIK_DELETE], _forcesave] call _addArray;
     //[[DIK_F4, DIK_RMENU, DIK_LMENU,DIK_LSHIFT,DIK_RSHIFT,DIK_ESCAPE], _forcesave2] call _addArray;
     [actionKeys "LeanLeft", _build_left ] call _addArray;
@@ -210,7 +215,7 @@ if (isNil "keyboard_keys") then {
     [actionKeys "ForceCommandingMode", _block] call _addArray;
     [[  DIK_F9, DIK_F10, DIK_F11, 
         DIK_F8,DIK_F7,DIK_F6,DIK_F5,DIK_F4,
-        DIK_F3,DIK_F2,DIK_F1,DIK_0,DIK_9,
+        DIK_F3,DIK_F2,DIK_0,DIK_9,
         DIK_8,DIK_7,DIK_6,DIK_5,DIK_4], _block] call _addArray;
     if (serverCommandAvailable "#kick") then {
         [[DIK_F12], gcam_onoff] call _addArray; // GCAM: F12 to start (for admins only)

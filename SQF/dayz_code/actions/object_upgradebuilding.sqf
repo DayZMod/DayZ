@@ -11,6 +11,10 @@
     debugged by facoptere@gmail.com
 */
 
+private ["_cursorTarget","_type","_class","_requiredTools","_requiredParts","_upgradeType","_producedParts","_randomCreate",
+	"_upgradeClass","_msg","_onLadder","_isWater","_ok","_missing","_upgradeParts","_dis","_characterID","_objectID","_objectUID",
+	"_ownerArray","_ownerPasscode","_dir","_vector","_object","_puid","_clanArray","_wh","_variables"];
+
 //systemchat str _this;
 if (!isnil "faco_object_upgradeBuilding") exitWith { _this call faco_object_upgradeBuilding };
 
@@ -48,8 +52,7 @@ if (!isClass _upgradeClass) exitWith {
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _isWater = (surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 if(_isWater or _onLadder) exitWith {
-    //systemchat[localize "str_CannotUpgrade"];
-	_msg = localize "str_CannotUpgrade";
+	_msg = localize "str_water_ladder_cant_do";
 	_msg call dayz_rollingMessages;
 };
 

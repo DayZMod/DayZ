@@ -1,5 +1,8 @@
-private ["_vehicle","_curFuel","_newFuel","_started","_finished","_animState","_isMedic","_location1","_location2","_abort","_canNameEmpty","_canSizeEmpty","_canTypeEmpty","_canName","_canSize","_configCanEmpty","_configVeh","_capacity","_nameText","_availableCansEmpty","_hasHose"];
+private ["_vehicle","_curFuel","_newFuel","_started","_finished","_animState","_isMedic","_location1","_location2","_abort",
+"_canNameEmpty","_canSizeEmpty","_canTypeEmpty","_canName","_canSize","_configCanEmpty","_configVeh","_capacity","_nameText",
+"_availableCansEmpty","_hasHose","_PlayerNear"];
 
+_vehicle = _this select 3;
 player removeAction s_player_siphonfuel;
 _hasHose = "equip_hose" in magazines player;
 
@@ -9,18 +12,12 @@ _PlayerNear = {isPlayer _x} count ((getPosATL _vehicle) nearEntities ["CAManBase
 if (_PlayerNear) exitWith {cutText [localize "str_pickup_limit_5", "PLAIN DOWN"];};
 
 dayz_siphonFuelInProgress = true;
-_vehicle = _this select 3;
 _abort = false;
 
 // Static vehicle fuel information
-_configVeh = 	configFile >> "cfgVehicles" >> TypeOf(_vehicle);
+_configVeh = 	configFile >> "cfgVehicles" >> typeOf _vehicle;
 _capacity = 	getNumber(_configVeh >> "fuelCapacity");
 _nameText = 	getText(_configVeh >> "displayName");
-_isMan = _vehicle isKindOf "Man";
-_isAnimal = _vehicle isKindOf "Animal";
-_isZombie = _vehicle isKindOf "zZombie_base";
-
-if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_notvehicle", "PLAIN DOWN"] };
 
 // Loop to find containers that can could hold fuel and fill them
 {
@@ -33,7 +30,7 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 		_canTypeEmpty = getText(_configCanEmpty >> "displayName");
 
 		// Get Full can size
-		_canName = configName(inheritsFrom(configFile >> "cfgMagazines" >> _canNameEmpty));
+		_canName = getText(_configCanEmpty >> "fullCan");
 		_canSize =	getNumber(configFile >> "cfgMagazines" >> _canName >> "fuelQuantity");
 		
 		// is empty
@@ -77,7 +74,7 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 						if (r_interrupt) then {
 							r_doLoop = false;
 						};
-						sleep 0.1;
+						uiSleep 0.1;
 					};
 					r_doLoop = false;
 
@@ -91,7 +88,7 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 				} else {
 					// Alternate method in water make sure player stays in one spot for 6 seconds
 					_location1 = getPosATL player;
-					sleep 6;
+					uiSleep 6;
 					_location2 = getPosATL player;
 					if(_location1 distance _location2 < 3) then {
 						_finished = true;
@@ -133,7 +130,7 @@ if (_isMan or _isAnimal or _isZombie) exitWith { cutText [localize "str_siphon_n
 							call fnc_usec_medic_removeActions;
 							r_action = false;
 				
-							sleep 1;
+							uiSleep 1;
 						} else {
 							_abort = true;
 						};					

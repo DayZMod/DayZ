@@ -249,7 +249,7 @@ class DomeTentStorage_base : TentStorage_base {
 class DomeTentStorage : DomeTentStorage_base {
 	armor = 50;
 	displayname = $STR_VEH_NAME_DOME_TENT;
-	transportMaxMagazines = 150;
+	transportMaxMagazines = 75;
 	transportMaxWeapons = 15;
 	transportMaxBackpacks = 5;
 	class Upgrade {

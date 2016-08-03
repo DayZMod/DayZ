@@ -3,6 +3,7 @@
         permission is required to use, alter and/or distribute from project leader (R4Z0R49) AND the author.
 */
 private ["_array","_action","_driver","_vehicle","_emptySeat","_emptyGun"];
+
 _array = _this select 3;
 _action = _array select 0;
 _driver = _array select 1;

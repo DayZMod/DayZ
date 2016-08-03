@@ -25,11 +25,15 @@ class Mosin_Base : Rifle
 	
 	magazines[] = {5Rnd_762x54_Mosin};
 	
-	recoil = "Mosin_NagantRecoil";
-	recoilProne = "Mosin_NagantRecoilProne";
+	//recoil = "Mosin_NagantRecoil";
+	//recoilProne = "Mosin_NagantRecoilProne";
+	recoil = "recoil_single_primary_9outof10";
+	recoilProne = "recoil_single_primary_prone_8outof10";
+	
 	dispersion = 0.00091;
 	reloadTime = 1.4;
-	sound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\Mosin.ogg,1.778279,1,1000};
+	//sound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\Mosin.ogg,1.778279,1,1000};
+	sound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\Mosin.ogg,db-20,1,800};
 };
 
 

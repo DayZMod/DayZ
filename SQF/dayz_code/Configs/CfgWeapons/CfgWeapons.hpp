@@ -15,25 +15,11 @@ class CfgWeapons
 	class Pistol;
 	class GrenadeLauncher;
 	
-	class Throw : GrenadeLauncher
-	{
-		autoReload = true;
-		backgroundReload = true;
-		
-		class ThrowMuzzle : GrenadeLauncher
-		{
-			cursor = "\ca\Weapons\Data\clear_empty";
-			backgroundReload = true;
-		};
-	};
 	
 	
-	
-	/* **** DUMMY WEAPONS **** */
-	#include "Loot.hpp"
+	/* Dummy weapons */
 	#include "Throw.hpp"
-	
-	
+	#include "Loot.hpp"
 	
 	
 	

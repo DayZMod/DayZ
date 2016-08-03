@@ -1,4 +1,4 @@
-private["_object"];
+private ["_object","_position"];
 _object = _this select 3;
 
 //Kneel Down
