@@ -7,7 +7,7 @@ scriptName "Functions\misc\fn_damageHandler.sqf";
     - Function
     - [unit, selectionName, damage, source, projectile] call fnc_usec_damageHandler;
 ************************************************************/
-private ["_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_breakaleg","_model"];
+private ["_HitBy","_end","_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_breakaleg","_model"];
 _unit = _this select 0;
 _hit = _this select 1;
 _damage = _this select 2;
@@ -20,10 +20,46 @@ _isMinor = (_hit in USEC_MinorWounds);
 _isHeadHit = (_hit == "head_hit");
 _isPlayer = (isPlayer _source);
 
+_HitBy = nul;
+
 // anti-hack for local explosions (HelicopterExploSmall, HelicopterExploBig, SmallSecondary...) spawned by hackers
-//diag_log [ diag_ticktime, __FILE__, _this];
-_breakaleg = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Dayz_freefall select 1 > 3)})});
-//if ( (!_breakaleg) AND {(((isNull _source) OR {(_unit == _source)}) AND {((_ammo == "") OR {({damage _x > 0.9} count((getposATL vehicle _unit) nearEntities [["Air", "LandVehicle", "Ship"],15]) == 0) AND (count nearestObjects [getPosATL vehicle _unit, ["TrapItems"], 30] == 0)})})}) exitWith {0};
+
+_falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Dayz_freefall select 1 > 3)})});
+
+//Simple hack to help with a few issues from direct damage to physic based damage. ***until 2.0***
+	_vehicleArray = nearestObjects [(getposATL (vehicle _unit)),["Air", "LandVehicle", "Ship"],15];
+	{
+		if ((speed _x > 10) or (speed _x < 8)) exitwith { _HitBy = _x; };
+	} count _vehicleArray;
+
+	//diag_log format["HandleDamage, %1",_this];
+
+	//Lets see if the player has been struck by a moving vehicle.
+	if (!isNull _HitBy) then { _ammo = "RunOver"; };
+	if ((_hit == "Legs") AND {(_ammo == "RunOver")}) then { _HitBy = nul; };
+
+	//If a vehicle is moveing faster then 15 lets register some kind of direct damage rather then relying on indirect/physics damage.
+	if (!isNull dayz_getout) then { _ammo = "Dragged"; };
+	if ((_hit == "Legs") AND {(_ammo == "Dragged")}) then { dayz_getout = nul; };
+
+	_end = false;
+
+	if (!_falling) then {
+		//No _ammo type exit, indirect/physics damage.
+		if (_ammo == "") exitwith { _end = true; };
+		
+		//If _source contains no object exit. But lets not exit if the unit returns player. Maybe its his own fault.
+		if (isNull _source) exitwith { _end = true; };
+	};
+
+
+	if (_end) exitwith { 0 };
+//End Simple hack for damage ***until 2.0***
+
+
+/*
+if ( (!_breakaleg) AND {(( (isNull _source) OR { (_unit == _source)})AND {((_ammo == "") OR {({damage _x > 0.9} count((getposATL vehicle _unit) nearEntities [["Air", "LandVehicle", "Ship"],15]) == 0) AND (count nearestObjects [getPosATL vehicle _unit, ["TrapItems"], 30] == 0)})})}) exitWith {0};
+*/
 
 if (_unit == player) then
 {
