@@ -565,4 +565,6 @@ if (!isDedicated) then {
 	dayz_dodge = false;
 	Dayz_constructionContext = [];
 	Dayz_freefall = [ time, 0, 0.1 ];
+	dayz_getout = objNull;
+	dayz_HitBy = objNull; 
 };

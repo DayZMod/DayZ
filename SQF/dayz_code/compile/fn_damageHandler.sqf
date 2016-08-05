@@ -1,8 +1,6 @@
 scriptName "Functions\misc\fn_damageHandler.sqf";
+
 /***********************************************************
-
-    Modifyed by Alby
-
     PROCESS DAMAGE TO A UNIT
     - Function
     - [unit, selectionName, damage, source, projectile] call fnc_usec_damageHandler;
@@ -20,27 +18,26 @@ _isMinor = (_hit in USEC_MinorWounds);
 _isHeadHit = (_hit == "head_hit");
 _isPlayer = (isPlayer _source);
 
-_HitBy = nul;
-
-// anti-hack for local explosions (HelicopterExploSmall, HelicopterExploBig, SmallSecondary...) spawned by hackers
+//Ignore none part dmg.
+if (_hit == "") exitwith { 0 };
 
 _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Dayz_freefall select 1 > 3)})});
 
 //Simple hack to help with a few issues from direct damage to physic based damage. ***until 2.0***
-	_vehicleArray = nearestObjects [(getposATL (vehicle _unit)),["Air", "LandVehicle", "Ship"],15];
-	{
-		if ((speed _x > 10) or (speed _x < 8)) exitwith { _HitBy = _x; };
-	} count _vehicleArray;
-
-	//diag_log format["HandleDamage, %1",_this];
+	if (isNull dayz_getout) then {
+		_vehicleArray = nearestObjects [(getposATL (vehicle _unit)),["Car","Helicopter","Motorcycle","Ship"],6];
+		{
+			if ((speed _x > 10) or (speed _x < 8)) exitwith { dayz_HitBy = _x; };
+		} count _vehicleArray;
+	};
 
 	//Lets see if the player has been struck by a moving vehicle.
-	if (!isNull _HitBy) then { _ammo = "RunOver"; };
-	if ((_hit == "Legs") AND {(_ammo == "RunOver")}) then { _HitBy = nul; };
+	if (!isNull dayz_HitBy) then { _ammo = "RunOver"; };
+	if ((_hit == "Legs") AND {(_ammo == "RunOver")}) then { dayz_HitBy = objNull; };
 
 	//If a vehicle is moveing faster then 15 lets register some kind of direct damage rather then relying on indirect/physics damage.
 	if (!isNull dayz_getout) then { _ammo = "Dragged"; };
-	if ((_hit == "Legs") AND {(_ammo == "Dragged")}) then { dayz_getout = nul; };
+	if ((_hit == "Legs") AND {(_ammo == "Dragged")}) then { dayz_getout = objNull; };
 
 	_end = false;
 
@@ -57,12 +54,10 @@ _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Da
 //End Simple hack for damage ***until 2.0***
 
 
-/*
-if ( (!_breakaleg) AND {(( (isNull _source) OR { (_unit == _source)})AND {((_ammo == "") OR {({damage _x > 0.9} count((getposATL vehicle _unit) nearEntities [["Air", "LandVehicle", "Ship"],15]) == 0) AND (count nearestObjects [getPosATL vehicle _unit, ["TrapItems"], 30] == 0)})})}) exitWith {0};
-*/
+if (_unit == player) then {
+//Set player in combat
+    _unit setVariable["startcombattimer", 1];
 
-if (_unit == player) then
-{
     if (_hit == "") then
 	{
         if ((_source != player) and _isPlayer) then
@@ -118,10 +113,6 @@ if (_unit == player) then
 				private ["_unit"];
 				_unit = _this select 0;
 				cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; 
-				//systemChat format ["YOU HAVE BEEN TRANQUILISED"];
-				//sleep 2; 
-				// 0 fadeSound 0.05;
-				//sleep 5; 
 				[_unit,0.01] call fnc_usec_damageUnconscious;
 				_unit setVariable ["NORRN_unconscious", true, true];
 				r_player_timeout = round(random 60);
@@ -175,89 +166,17 @@ if (_unit == player) then
     };
 };
 
-//Pure blood damage
+//Pure base blood damage
 _scale = 200;
-_type = 0;
-if ((_ammo isKindof "Grenade") or (_ammo isKindof "ShellBase") or (_ammo isKindof "TimeBombCore") or (_ammo isKindof "BombCore") or (_ammo isKindof "MissileCore") or (_ammo isKindof "RocketCore") or (_ammo isKindof "FuelExplosion") or (_ammo isKindof "GrenadeBase")) then {
-    _type = 1;
-};
-if ((_ammo isKindof "B_127x107_Ball") or (_ammo isKindof "B_127x99_Ball")) then {
-    _type = 2;
-};
 
-if (_damage > 0.4) then {
-    if (_ammo != "zombie") then {
-        _scale = _scale + 50; //250
-    };
-    //Start body part scale
-    if (_ammo == "zombie") then {
-        //_scale = _scale * 3; //600 = Normal, 900 = Viral
-        _scale = getNumber (configFile >> "CfgVehicles" >> (typeOf _source) >> "damageScale");
-		if (dayz_DamageMultiplier > 1) then {
-			_scale = _scale * dayz_DamageMultiplier;
-		};
-        //diag_log format["%1, DamageScale: %2",__FILE__,_scaleNew];
-    };
-    
-    if (_isHeadHit) then {
-        _scale = _scale * 2; //700 = Normal, 900 = Viral, 500 = wild
-    };
-    
-    //End body part scale
-    if ((isPlayer _source) and !(player == _source)) then {
-        _scale = _scale + 800;
-        if (_isHeadHit) then {
-            _scale = _scale + 500;
-        };
-    };
-    switch (_type) do {
-        case 1: {_scale = _scale + 200};
-        case 2: {_scale = _scale + 200};
-    };
-    if (_unit == player) then {
-        //diag_log ("DAMAGE: player hit by " + (typeOf _source) + " in " + _hit + " with " + _ammo + " for " + str(_damage) + " scaled " + str(_damage * _scale) + " Conscious " + str (!_unconscious));
-		diag_log format["DAMAGE: player hit by %1 in %2 with %3 for %4 scaled to %5, Conscious %6",(typeOf _source),_hit,if (_ammo == "") then { "" } else { _ammo },(str(_damage)),(str(_damage * _scale)),(str (!_unconscious))];
-        r_player_blood = r_player_blood - (_damage * _scale);
-    };
-};
-
-
-//Record Damage to Minor parts (legs, arms)
-if (_hit in USEC_MinorWounds) then {
-    private ["_type"];
-    if (_ammo == "zombie") then {
-        if (_hit == "legs") then {
-            [_unit,_hit,(_damage / 6)] call object_processHit;
-        } else {
-            [_unit,_hit,(_damage / 4)] call object_processHit;
-        };
-    } else {
-        if (_breakaleg) then {
-            _nrj = ((Dayz_freefall select 1)*20) / 100;
-            _gravity = 9.81 min (2*(Dayz_freefall select 1)/((0.00001 + (Dayz_freefall select 2))^2));
-            _nrj2 = _gravity * (Dayz_freefall select 1);
-            //diag_log [ "handler freefall", _nrj, _nrj2, Dayz_freefall];
-            if (random(_nrj2 / (5 * 9.81)) > 0.5) then { // freefall from 5m => 1/2 chance to get hit legs registered
-                    diag_log[__FILE__, "Legs damage registered from freefall, damage:",_damage,"gravity:", _gravity, 
-                        "height:", (Dayz_freefall select 1), "blood loss", (_nrj2 * 25) ];
-                    [_unit,_hit,_damage] call object_processHit;
-            } else {
-                    [_unit,"arms",(_damage / 6)] call object_processHit; // prevent broken legs due to arma bugs
-            };
-            if (_nrj2 > 30) then {
-                (3 min (_nrj2/100)) call fnc_usec_bulletHit; // red flash
-                r_player_blood = 0 max (r_player_blood - (_nrj2 * 25));
-            };
-        } else {
-            [_unit,_hit,(_damage / 2)] call object_processHit;
-        };
-		[_unit,_hit,(_damage / 2)] call object_processHit;
-	};
-};
-
-if (_unit == player) then {
-//Set player in combat
-    _unit setVariable["startcombattimer", 1];
+//Ammo Type Setup
+_type = switch true do {
+    case ((_ammo isKindof "Grenade") or (_ammo isKindof "ShellBase") or (_ammo isKindof "TimeBombCore") or (_ammo isKindof "BombCore") or (_ammo isKindof "MissileCore") or (_ammo isKindof "RocketCore") or (_ammo isKindof "FuelExplosion") or (_ammo isKindof "GrenadeBase")): { 1 };
+    case ((_ammo isKindof "B_127x107_Ball") or (_ammo isKindof "B_127x99_Ball")):  { 2 };
+	case (_ammo == "zombie"): { 3 };
+	case (_ammo == "RunOver"): { 4 };
+	case (_ammo == "Dragged"): { 5 };
+    default { 0 };
 };
 
 //Shake the cam, frighten them!
@@ -271,23 +190,51 @@ if (_damage > 0.1) then {
     };
 };
 
-if (_damage > 0.4) then {
-    //Pain and Infection
+if (_damage > 0.4) then {    
+	//Scale damage based on headhits.
+    if (_isHeadHit) then {
+        _scale = _scale * 2; //700 = Normal, 900 = Viral, 500 = wild
+    };
+    
+    //End body part scale
+	//???????????
+    if ((isPlayer _source) and !(player == _source)) then {
+        _scale = _scale + 800;
+        if (_isHeadHit) then {
+            _scale = _scale + 500;
+        };
+    };
+	
+	//Modify base scale based on the types, Allows us to modify specific types of damage if needed.
+    switch (_type) do {
+	//Explosions
+        case 1: {_scale = _scale + 300};
+	//Bullet types
+        case 2: {_scale = _scale + 150};
+	//Zombies
+		case 3: {_scale = getNumber (configFile >> "CfgVehicles" >> (typeOf _source) >> "damageScale"); if (dayz_DamageMultiplier > 1) then {_scale = _scale * dayz_DamageMultiplier;};};
+	//Dragged
+		case 4: {_scale = _scale - 150};
+	//RunOver
+		case 5: {_scale = 25};
+    };
+	
+	//Display some info in the players log file.
     if (_unit == player) then {
+		diag_log format["DAMAGE: player hit by %1 in %2 with %3 for %4 scaled to %5, Conscious %6",(typeOf _source),_hit,if (_ammo == "") then { "" } else { _ammo },(str(_damage)),(str(_damage * _scale)),(str (!_unconscious))];
+        r_player_blood = r_player_blood - (_damage * _scale);
+ 	
+	//Pain and Infection
         _rndPain =      floor(random 10);
         _hitPain =      (_rndPain < _damage);
         
-        if ((_isHeadHit) or (_damage > 1.2 and _hitPain)) then {
+        if ((_isHeadHit) or (_hitPain)) then {
             _hitPain = true;
         };
         
         if (_hitPain) then {
             r_player_inpain = true;
             player setVariable["USEC_inPain",true,true];
-        };
-        
-        if ((_damage > 1.5) and _isHeadHit) then {
-            _id = [_source,"shothead"] spawn player_death;
         };
     };
 
@@ -297,20 +244,16 @@ if (_damage > 0.4) then {
     
     _isbleeding = false;
     _isScratched = false;
-    switch true do {
-        default {
-            _rndBleed = floor(random 100);
-            _rndBleedChance = getNumber (configFile >> "CfgVehicles" >> (typeOf _source) >> "BleedChance");
-            _hitBleed = (_rndBleed < _rndBleedChance);
+    
+	_rndBleed = floor(random 100);
+    _rndBleedChance = getNumber (configFile >> "CfgVehicles" >> (typeOf _source) >> "BleedChance");
+    _hitBleed = (_rndBleed < _rndBleedChance);
 
-            if (_hitBleed) then {
-                _isbleeding = true;
-            };
-        };
+    if (_hitBleed) then {
+		_isbleeding = true;
     };
 
-    if (_ammo == "zombie") then {
-    
+    if (_type == 3) then {
         if(!_isHit and _isbleeding) then {
             //Create Wound
             _unit setVariable["hit_"+_wound,true,true];
@@ -329,6 +272,7 @@ if (_damage > 0.4) then {
                     dayz_sourceBleeding = _source;
                 };
             };
+			
             //Set ability to give blood
             _lowBlood = _unit getVariable["USEC_lowBlood",false];
             if (!_lowBlood) then {
@@ -340,10 +284,9 @@ if (_damage > 0.4) then {
             
             //HitInfection from zombies
             if ((!r_player_infected) and !(r_player_Sepsis select 0)) then {
-                if (_ammo == "zombie") then {
+                if (_type == 3) then {
                     _rndSepsis = floor(random 100);
                     _sepsisChance = getNumber (configFile >> "CfgVehicles" >> (typeOf _source) >> "sepsisChance");
-                    //_hitInfection = (_rndInfection < _infectionChance);
 
                     if (_rndSepsis < _sepsisChance) then {
                         r_player_Sepsis = [true, diag_tickTime];
@@ -377,6 +320,40 @@ if (_damage > 0.4) then {
             };
         };
     };
+};
+
+
+//Record Damage to Minor parts (legs, arms)
+if (_hit in USEC_MinorWounds) then {
+    if (_type == 3) then {
+        if (_hit == "legs") then {
+            [_unit,_hit,(_damage / 6)] call object_processHit;
+        } else {
+            [_unit,_hit,(_damage / 4)] call object_processHit;
+        };
+    } else {
+        if (_breakaleg) then {
+            _nrj = ((Dayz_freefall select 1)*20) / 100;
+            _gravity = 9.81 min (2*(Dayz_freefall select 1)/((0.00001 + (Dayz_freefall select 2))^2));
+            _nrj2 = _gravity * (Dayz_freefall select 1);
+            //diag_log [ "handler freefall", _nrj, _nrj2, Dayz_freefall];
+            if (random(_nrj2 / (5 * 9.81)) > 0.5) then { // freefall from 5m => 1/2 chance to get hit legs registered
+                    diag_log[__FILE__, "Legs damage registered from freefall, damage:",_damage,"gravity:", _gravity, 
+                        "height:", (Dayz_freefall select 1), "blood loss", (_nrj2 * 25) ];
+                    [_unit,_hit,_damage] call object_processHit;
+            } else {
+                    [_unit,"arms",(_damage / 6)] call object_processHit; // prevent broken legs due to arma bugs
+            };
+            if (_nrj2 > 30) then {
+                (3 min (_nrj2/100)) call fnc_usec_bulletHit; // red flash
+                r_player_blood = 0 max (r_player_blood - (_nrj2 * 25));
+            };
+        } else {
+            [_unit,_hit,(_damage / 2)] call object_processHit;
+        };
+		
+		[_unit,_hit,(_damage / 2)] call object_processHit;
+	};
 };
 
 if (_type == 1) then {
@@ -423,7 +400,7 @@ if (_type == 2) then {
     };
 };
 
-if (_ammo == "zombie") then {
+if (_type == 3) then {
     if (!_unconscious and !_isMinor and _isHeadHit) then {
         _chance = random 1;
         if ((_damage > 0.8) and (_chance < 0.5)) then {
@@ -435,6 +412,12 @@ if (_ammo == "zombie") then {
         //set unconsious
         [_unit,_damage] call fnc_usec_damageUnconscious;
     };
+};
+
+if ((_unit == player) AND (_ammo == "zombie")) then {
+	if (r_player_blood <= 0) then {
+		_id = [_source,"Zombie"] spawn player_death;
+	};
 };
 
 // all "HandleDamage event" functions should return the effective damage that the engine will record

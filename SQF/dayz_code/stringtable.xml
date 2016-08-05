@@ -7627,6 +7627,9 @@
 			<French>une cause inconnue.</French>
 			<Czech>během neznámé činnosti.</Czech>
 		</Key>
+		<Key ID="str_death_Zombie">
+			<English>the infected.</English>
+		</Key>
 		<Key ID="str_abort_playerclose">
 			<English>Cannot Abort near another player!\nYou are still in Combat.</English>
 			<Russian>Нельзя выходить находясь рядом с другим игроком!\nВы все еще в бою!</Russian>
