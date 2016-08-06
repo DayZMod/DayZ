@@ -25,7 +25,7 @@ _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Da
 
 //Simple hack to help with a few issues from direct damage to physic based damage. ***until 2.0***
 	if (isNull dayz_getout) then {
-		_vehicleArray = nearestObjects [(getposATL (vehicle _unit)),["Car","Helicopter","Motorcycle","Ship"],6];
+		_vehicleArray = nearestObjects [(getposATL (vehicle _unit)),["Car","Helicopter","Motorcycle","Ship"],3];
 		{
 			if ((speed _x > 10) or (speed _x < 8)) exitwith { dayz_HitBy = _x; };
 		} count _vehicleArray;
@@ -332,7 +332,7 @@ if (_hit in USEC_MinorWounds) then {
             [_unit,_hit,(_damage / 4)] call object_processHit;
         };
     } else {
-        if (_breakaleg) then {
+        if (_falling) then {
             _nrj = ((Dayz_freefall select 1)*20) / 100;
             _gravity = 9.81 min (2*(Dayz_freefall select 1)/((0.00001 + (Dayz_freefall select 2))^2));
             _nrj2 = _gravity * (Dayz_freefall select 1);
