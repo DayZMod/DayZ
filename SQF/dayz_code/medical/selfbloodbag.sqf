@@ -1,4 +1,5 @@
 private ["_unit","_blood","_lowBlood","_injured","_inPain","_lastused","_animState","_started","_finished","_timer","_i","_isMedic","_isClose","_duration","_rhVal","_bloodBagArrayNeeded","_BBneeded","_bbselect","_bloodBagNeeded","_badBag","_wholeBag","_bagFound","_bagToRemove","_forceClose","_bloodType","_rh","_bloodBagArray","_bbarray_length","_bloodBagWholeNeeded","_haswholebag","_r"];
+
 // bleed.sqf
 _unit = _this select 0;
 _bagUsed = _this select 1;
@@ -82,7 +83,8 @@ while {r_doLoop and (_i < 12)} do {
 			if (_bagToRemove in magazines player) then { _bagFound = true; };
 		};
 		if (!_bagFound) then {_forceClose = true;} else { player removeMagazine _bagToRemove;};
-		cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
+		//cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
+		localize "str_actions_medical_transfusion_start"  call dayz_rollingMessages;
 		_started = true;
 	};
 
@@ -119,7 +121,8 @@ while {r_doLoop and (_i < 12)} do {
 
 	if (((_blood >= r_player_bloodTotal) and !_badBag and _bagFound) or (_i == 12)) then {
 		diag_log format ["TRANSFUSION: completed blood transfusion successfully (_i = %1)", _i];
-		cutText [localize "str_actions_medical_transfusion_successful", "PLAIN DOWN"];
+		//cutText [localize "str_actions_medical_transfusion_successful", "PLAIN DOWN"];
+		localize "str_actions_medical_transfusion_successful" call dayz_rollingMessages;
 		r_doLoop = false;
 	};
 
@@ -127,7 +130,8 @@ while {r_doLoop and (_i < 12)} do {
 
 	if (r_interrupt or !_isClose or _forceClose) then {
 		diag_log format ["TRANSFUSION: transfusion was interrupted (r_interrupt: %1 | distance: %2 (%3) | _i = %4)", r_interrupt, player distance _unit, _isClose, _i];
-		cutText [localize "str_actions_medical_transfusion_interrupted", "PLAIN DOWN"];
+		//cutText [localize "str_actions_medical_transfusion_interrupted", "PLAIN DOWN"];
+		localize "str_actions_medical_transfusion_interrupted" call dayz_rollingMessages;
 		r_doLoop = false;
 	};
 
