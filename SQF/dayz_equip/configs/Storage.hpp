@@ -116,7 +116,7 @@ class StashMedium1 : StashMedium_base {
 	displayname = $STR_VEH_NAME_STASH_MED1;
 	transportMaxMagazines = 50;
 	transportMaxWeapons = 2;
-	transportMaxBackpacks = 0;
+	transportMaxBackpacks = 1;
 	class Upgrade {
 		requiredTools[] = {"ItemEtool"};
 		requiredParts[] = {"PartWoodPile"};
@@ -128,7 +128,7 @@ class StashMedium2 : StashMedium_base {
 	displayname = $STR_VEH_NAME_STASH_MED2;
 	transportMaxMagazines = 75;
 	transportMaxWeapons = 4;
-	transportMaxBackpacks = 0;
+	transportMaxBackpacks = 1;
 	class Upgrade {
 		requiredTools[] = {"ItemEtool"};
 		requiredParts[] = {"PartWoodPile","equip_nails"};
@@ -140,7 +140,7 @@ class StashMedium3 : StashMedium_base {
 	displayname = $STR_VEH_NAME_STASH_MED3;
 	transportMaxMagazines = 100;
 	transportMaxWeapons = 8;
-	transportMaxBackpacks = 0;
+	transportMaxBackpacks = 2;
 	class Upgrade {
 		requiredTools[] = {"ItemEtool"};
 		requiredParts[] = {"equip_nails","PartWoodPile"};
@@ -152,7 +152,7 @@ class StashMedium4 : StashMedium_base {
 	displayname = $STR_VEH_NAME_STASH_MED4;
 	transportMaxMagazines = 125;
 	transportMaxWeapons = 16;
-	transportMaxBackpacks = 0;
+	transportMaxBackpacks = 3;
 };
 class TentStorage_base : DZ_storage_base {
 	vehicleClass="Military";
