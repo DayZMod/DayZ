@@ -5,7 +5,7 @@ scriptName "Functions\misc\fn_damageHandler.sqf";
     - Function
     - [unit, selectionName, damage, source, projectile] call fnc_usec_damageHandler;
 ************************************************************/
-private ["_HitBy","_end","_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_falling","_model"];
+private ["_HitBy","_end","_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_falling","_model","_isZombieHit"];
 _unit = _this select 0;
 _hit = _this select 1;
 _damage = _this select 2;
@@ -17,6 +17,7 @@ _Viralzed = typeOf _source in DayZ_ViralZeds;
 _isMinor = (_hit in USEC_MinorWounds);
 _isHeadHit = (_hit == "head_hit");
 _isPlayer = (isPlayer _source);
+_isZombieHit = _ammo == "zombie";
 
 //Ignore none part dmg.
 if (_hit == "") exitwith { 0 };
@@ -36,7 +37,7 @@ _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Da
 	if ((_hit == "Legs") AND {(_ammo == "RunOver")}) then { dayz_HitBy = objNull; };
 
 	//If a vehicle is moveing faster then 15 lets register some kind of direct damage rather then relying on indirect/physics damage.
-	if (!isNull dayz_getout) then { _ammo = "Dragged"; };
+	if (!isNull dayz_getout && diag_tickTime - dayz_getoutTime < 5) then { _ammo = "Dragged"; };
 	if ((_hit == "Legs") AND {(_ammo == "Dragged")}) then { dayz_getout = objNull; };
 
 	_end = false;
@@ -150,7 +151,7 @@ if (_unit == player) then {
             _sourceDist = round(_unit distance _source);
             _sourceWeap = switch (true) do {
                 case ((vehicle _source) != _source) : { format ["in %1",getText(configFile >> "CfgVehicles" >> (typeOf (vehicle _source)) >> "displayName")] };
-                case (_ammo == "zombie") : { _ammo };
+                case (_isZombieHit) : { _ammo };
                 case (_wpst select 0 == "Throw") : { format ["with %1 thrown", _wpst select 3] };
                 case (["Horn", currentWeapon _source] call fnc_inString) : {"with suspicious vehicle "+str((getposATL _source) nearEntities [["Air", "LandVehicle", "Ship"],5])};
                 case (["Melee", _wpst select 0] call fnc_inString) : { format ["with %2%1",_wpst select 0, if (_sourceDist>6) then {"suspicious weapon "} else {""}] }; 
@@ -164,6 +165,17 @@ if (_unit == player) then {
             };
         };
     };
+	
+	dayz_lastDamageSource = switch (true) do {
+		case (_falling): {"fall"};
+		case (_isZombieHit): {"zombie"};
+		case (_ammo == "RunOver"): {"runover"};
+		case (_ammo == "Dragged"): {"eject"};
+		case (_ammo in MeleeAmmo): {"melee"};
+		case (!isNil "_wpst" && {_wpst select 0 != ""}): {"shot"};
+		default {"none"};
+	};
+	if (dayz_lastDamageSource != "none") then {dayz_lastDamageTime = diag_tickTime;};
 };
 
 //Pure base blood damage
@@ -173,7 +185,7 @@ _scale = 200;
 _type = switch true do {
     case ((_ammo isKindof "Grenade") or (_ammo isKindof "ShellBase") or (_ammo isKindof "TimeBombCore") or (_ammo isKindof "BombCore") or (_ammo isKindof "MissileCore") or (_ammo isKindof "RocketCore") or (_ammo isKindof "FuelExplosion") or (_ammo isKindof "GrenadeBase")): { 1 };
     case ((_ammo isKindof "B_127x107_Ball") or (_ammo isKindof "B_127x99_Ball")):  { 2 };
-	case (_ammo == "zombie"): { 3 };
+	case (_isZombieHit): { 3 };
 	case (_ammo == "RunOver"): { 4 };
 	case (_ammo == "Dragged"): { 5 };
     default { 0 };
@@ -322,7 +334,6 @@ if (_damage > 0.4) then {
     };
 };
 
-
 //Record Damage to Minor parts (legs, arms)
 if (_hit in USEC_MinorWounds) then {
     if (_type == 3) then {
@@ -414,7 +425,7 @@ if (_type == 3) then {
     };
 };
 
-if ((_unit == player) AND (_ammo == "zombie")) then {
+if ((_unit == player) AND _isZombieHit) then {
 	if (r_player_blood <= 0) then {
 		_id = [_source,"Zombie"] spawn player_death;
 	};

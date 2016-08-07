@@ -7392,6 +7392,9 @@
 			<French>Il s&apos;appelait %1, il semble qu&apos;il soit mort d&apos; %2</French>
 			<Czech>Jmenoval se %1 a pravděpododobně zemřel %2</Czech>
 		</Key>
+		<Key ID="str_player_studybody_female">
+			<English>Her name was %1, it appears she died from %2</English>
+		</Key>
 <!--		
 		<Key ID="str_player_fail_drink">
 			<English>You may not drink while in a vehicle</English>
@@ -7555,6 +7558,9 @@
 			<French>Remplissage déjà en cours!</French>
 			<Czech>Doplňování paliva už probíhá!</Czech>
 		</Key>
+		<Key ID="str_death_shot">
+			<English>a gunshot.</English>
+		</Key>
 		<Key ID="str_death_shothead">
 			<English>a gunshot to the head.</English>
 			<German>durch einen Schuss in den Kopf.</German>
@@ -7627,8 +7633,20 @@
 			<French>une cause inconnue.</French>
 			<Czech>během neznámé činnosti.</Czech>
 		</Key>
-		<Key ID="str_death_Zombie">
+		<Key ID="str_death_zombie">
 			<English>the infected.</English>
+		</Key>
+		<Key ID="str_death_fall">
+			<English>falling.</English>
+		</Key>
+		<Key ID="str_death_runover">
+			<English>being run over.</English>
+		</Key>
+		<Key ID="str_death_eject">
+			<English>falling out of a moving vehicle.</English>
+		</Key>
+		<Key ID="str_death_melee">
+			<English>blunt force trauma.</English>
 		</Key>
 		<Key ID="str_abort_playerclose">
 			<English>Cannot Abort near another player!\nYou are still in Combat.</English>

@@ -18,7 +18,7 @@ sched_medical_slow = {  // 10 seconds
 sched_medical_init = { [ []spawn{} ] };
 sched_medical = { // 1 second
 	HIDE_FSM_VARS
-	private "_unconHdlr";
+	private ["_method","_unconHdlr"];
 	_unconHdlr = _this select 0;
 
 	if (r_player_blood == 12000) then {
@@ -26,9 +26,12 @@ sched_medical = { // 1 second
 	};
 
 	//r_player_unconscious = getVariable ["NORRN_unconscious", true];
+	
+	// If no other damage event occurred in the last 30 seconds then player bled out
+	_method = if (dayz_lastDamageSource != "none" && diag_tickTime - dayz_lastDamageTime < 30) then {dayz_lastDamageSource} else {"bled"};
 
 	if (r_player_blood <= 0) then {
-		[dayz_sourceBleeding, "bled"] spawn player_death;
+		[dayz_sourceBleeding, _method] spawn player_death;
 	};
 
 	if (!canStand player) then { // be consistant with player_updateGui.sqf
