@@ -1030,7 +1030,6 @@ class FSM
        "" \n
        "//Add core tools" \n
        "player addWeapon ""Loot"";" \n
-       "player addWeapon ""Throw"";" \n
        "" \n
        "if ((currentWeapon player == """")) then { player action [""SWITCHWEAPON"", player,player,1]; };" \n
        "//load in medical details" \n
