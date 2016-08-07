@@ -29,14 +29,7 @@ class CfgVehicles {
 	class LandVehicle : Land
 	{
 		class HitPoints;
-		//class Turrets
-        //{
-        //    class MainTurret: NewTurret
-        //    {
-        //        class Turrets;
-		//		class ViewOptics;
-        //    };
-        //};
+		class NewTurret;
 	};
 	class Car : LandVehicle {
 		class HitPoints
@@ -60,8 +53,8 @@ class CfgVehicles {
         {
             class MainTurret: NewTurret
             {
-                class Turrets;
-				class ViewOptics;
+                //class Turrets;
+				//class ViewOptics;
             };
         };
 	};
