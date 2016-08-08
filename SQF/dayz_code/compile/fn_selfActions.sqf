@@ -278,15 +278,15 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < 4) 
 		};	
 		//upgrade items
 		if (_typeOfCursorTarget in _upgradeItems) then {
-			if (s_player_upgradestroage < 0) then {
+			if (s_player_upgradestorage < 0) then {
 				if (isText (configFile >> "CfgVehicles" >> _typeOfCursorTarget >> "Upgrade" >> "create")) then {
 					_displayName = getText (configFile >> "CfgVehicles" >> _typeOfCursorTarget >> "displayName");
-					s_player_upgradestroage = player addAction [format[localize "str_upgrade",_displayName], "\z\addons\dayz_code\actions\object_upgradeStorage.sqf",_cursorTarget, 0, false, true];
+					s_player_upgradestorage = player addAction [format[localize "str_upgrade",_displayName], "\z\addons\dayz_code\actions\object_upgradeStorage.sqf",_cursorTarget, 0, false, true];
 				};
 			};
 		} else {
-			player removeAction s_player_upgradestroage;
-			s_player_upgradestroage = -1
+			player removeAction s_player_upgradestorage;
+			s_player_upgradestorage = -1
 		};
 		if (_istypeTent) then {
 			//Packing my tent
@@ -300,8 +300,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < 4) 
 	} else {
 		player removeAction s_player_deleteBuild;
 		s_player_deleteBuild = -1;
-		player removeAction s_player_upgradestroage;
-		s_player_upgradestroage = -1;
+		player removeAction s_player_upgradestorage;
+		s_player_upgradestorage = -1;
 		player removeAction s_player_packtent;
 		s_player_packtent = -1;
 	};
@@ -510,8 +510,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < 4) 
 	//debug
 	//player removeAction s_player_debugCheck;
 	//s_player_debugCheck = -1;
-	player removeAction s_player_upgradestroage;
-	s_player_upgradestroage = -1;
+	player removeAction s_player_upgradestorage;
+	s_player_upgradestorage = -1;
 	//Unlock,Lock
 	player removeAction s_player_setCode;
 	s_player_setCode = -1;
