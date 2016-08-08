@@ -129,17 +129,13 @@ fnc_usec_calculateBloodPerSec = {
 	_bloodLossPerSec = 0;
 	_bloodGainPerSec = 0;
 
-
 	if (dayz_thirst >= SleepWater) then {
 		_bloodLossPerSec = _bloodLossPerSec + 10;
-		dayz_lastMedicalSource = "dehyd";
 	};
 
 	if (dayz_hunger >= SleepFood) then {
 		_bloodLossPerSec = _bloodLossPerSec + 10;
-		dayz_lastMedicalSource = "starve";
 	};
-
 
 	if (r_player_injured) then {
 		_bloodLossPerSec = 10;
@@ -179,7 +175,6 @@ fnc_usec_calculateBloodPerSec = {
 		};
 	} else {
 		_bloodLossPerSec = _bloodLossPerSec + 3;
-		dayz_lastMedicalSource = "sick";
 	};
 	
 	//_golbalNutrition = 1200 / r_player_Nutrition;
@@ -228,7 +223,14 @@ _tempVal = round(100*(1 - ((dayz_temperatur - dayz_temperaturmin)/(dayz_temperat
 		r_player_foodstack
 	];
 */
+	dayz_lastMedicalSource = switch (true) do {
+		case (dayz_thirst >= SleepWater): {"dehyd"}; //10
+		case (dayz_hunger >= SleepFood): {"starve"}; //10
+		case (r_player_infected): {"sick"}; //3
+		default {"none"}; //reset
+	};
 	if (_bloodPerSec < 0 && dayz_lastMedicalSource != "none") then {dayz_lastMedicalTime = diag_tickTime;};
+	
 	r_player_bloodpersec = _bloodPerSec;
 	_bloodPerSec
 };

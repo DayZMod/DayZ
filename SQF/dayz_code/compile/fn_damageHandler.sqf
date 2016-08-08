@@ -425,12 +425,6 @@ if (_type == 3) then {
     };
 };
 
-if ((_unit == player) AND _isZombieHit) then {
-	if (r_player_blood <= 0) then {
-		_id = [_source,"Zombie"] spawn player_death;
-	};
-};
-
 // all "HandleDamage event" functions should return the effective damage that the engine will record
 0
 
