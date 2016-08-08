@@ -27,9 +27,12 @@ sched_medical = { // 1 second
 
 	//r_player_unconscious = getVariable ["NORRN_unconscious", true];
 	
-	// If no other damage event occurred in the last 30 seconds then player bled out
-	_method = if (dayz_lastDamageSource != "none" && diag_tickTime - dayz_lastDamageTime < 30) then {dayz_lastDamageSource} else {"bled"};
-
+	_method = switch (true) do {
+		case (dayz_lastDamageSource != "none" && diag_tickTime - dayz_lastDamageTime < 30): {dayz_lastDamageSource}; //Major event takes priority for cause of death
+		case (dayz_lastMedicalSource != "none" && diag_tickTime - dayz_lastMedicalTime < 10): {dayz_lastMedicalSource}; //Starve, Dehyd, Sick
+		default {"bled"}; //No other damage sources in last 30 seconds
+	};
+	
 	if (r_player_blood <= 0) then {
 		[dayz_sourceBleeding, _method] spawn player_death;
 	};

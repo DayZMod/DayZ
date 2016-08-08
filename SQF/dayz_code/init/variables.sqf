@@ -504,6 +504,8 @@ if (!isDedicated) then {
 	//player special variables
 	dayz_lastDamageSource = "none";
 	dayz_lastDamageTime = 0;
+	dayz_lastMedicalSource = "none";
+	dayz_lastMedicalTime = 0;
 	dayz_lastClothesChange = 0;
 	dayZ_lastPlayerUpdate = 0;
 	dayz_hunger = 0;
