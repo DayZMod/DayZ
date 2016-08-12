@@ -1,16 +1,14 @@
 #define _ARMA_
 
 //Class Ca : data\penetration\metalplate.bisurf{
-Density = 7800;
-Thickness = 2;
+Density = 600;
 rough = 0.1;
 dust = 0;
 bulletPenetrability = 150;
-bulletPenetrabilityWithThickness = 10;
 soundEnviron = "Empty";
 isWater = "false";
 friction = 0.7;
-restitution = 0.3;
+restitution = 0.4;
 impact = "Hit_Metal";
 soundHit = "metal";
 //};

@@ -31,6 +31,7 @@ DayZ_Female = ["SurvivorW2_DZ","BanditW1_DZ"];
 //Classnames for specific items
 MeleeWeapons = ["MeleeHatchet","MeleeCrowbar","MeleeMachete","MeleeBaseball","MeleeBaseBallBat","MeleeBaseBallBatBarbed","MeleeBaseBallBatNails","MeleeFishingPole"];
 MeleeMagazines = ["Hatchet_Swing","Crowbar_Swing","Machete_Swing","Bat_Swing","BatBarbed_Swing","BatNails_Swing","Fishing_Swing"];
+MeleeAmmo = ["Hatchet_Swing_Ammo","Crowbar_Swing_Ammo","Machete_Swing_Ammo","Bat_Swing_Ammo","BatBarbed_Swing_Ammo","BatNailed_Swing_Ammo","Fishing_Swing_Ammo"];
 Dayz_fishingItems = ["MeleeFishingPole"];
 Dayz_plants = ["Dayz_Plant1","Dayz_Plant2","Dayz_Plant3"];
 Dayz_attachment_array = ["Attachment_ACG","Attachment_AIM"];
@@ -185,7 +186,7 @@ dayz_resetSelfActions = {
 	s_player_debugCheck = -1;
 	s_player_destorytent = -1;
 	s_player_attach_bomb = -1;
-	s_player_upgradestroage = -1;
+	s_player_upgradestorage = -1;
 	s_player_Drinkfromhands = -1;
 	s_player_lockhouse = -1;
 	s_player_unlockhouse = -1;
@@ -501,6 +502,10 @@ if (!isDedicated) then {
 	dayz_temperaturmin = 27; //TeeChange
 
 	//player special variables
+	dayz_lastDamageSource = "none";
+	dayz_lastDamageTime = 0;
+	dayz_lastMedicalSource = "none";
+	dayz_lastMedicalTime = 0;
 	dayz_lastClothesChange = 0;
 	dayZ_lastPlayerUpdate = 0;
 	dayz_hunger = 0;
@@ -569,5 +574,6 @@ if (!isDedicated) then {
 	Dayz_constructionContext = [];
 	Dayz_freefall = [ time, 0, 0.1 ];
 	dayz_getout = objNull;
+	dayz_getoutTime = 0;
 	dayz_HitBy = objNull; 
 };

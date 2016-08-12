@@ -1,10 +1,9 @@
-private ["_qty","_dis","_sfx","_started","_finished","_animState","_isRefuel","_fuelcans","_qty20","_qty5"];
+private ["_qty","_dis","_sfx","_started","_finished","_animState","_isRefuel","_fuelcans","_qty20","_qty5","_magazines","_cursorTarget","_fuelAmount"];
 
 player removeAction s_player_fillfuel;
 //s_player_fillfuel = -1;
-
-//Get Target player is looking at
-_cursorTarget = cursorTarget;
+_cursorTarget = _this select 3;
+_magazines = magazines player;
 
 //Limit Fuel in tankers
 _fuelAmount = _cursorTarget getVariable "FuelAmount";
@@ -14,19 +13,19 @@ if (isNil "_fuelAmount") then {
     _cursorTarget setVariable ["FuelAmount",_fuelAmount,true];
 };
 
-if (_fuelAmount < 5) exitwith { format ["%1 has not enough fuel to fill jeryycan(s).(Estimated %2 Liters Left)",(Typeof _cursorTarget),_fuelAmount] call dayz_rollingMessages; };
+if (_fuelAmount < 5) exitWith { format[localize "str_fill_notenough",typeOf _cursorTarget,_fuelAmount] call dayz_rollingMessages; };
 
 diag_log format["Fill Jerry, %1 - %2",_cursorTarget,_fuelAmount];
 
 _fuelcans = ["ItemFuelcanEmpty","ItemJerrycanEmpty"];
 
 _qty = 0;
-_qty = {_x in _fuelcans} count magazines player;
+_qty = {_x in _fuelcans} count _magazines;
 
-_qty20 = {_x == "ItemJerrycanEmpty"} count magazines player;
-_qty5 = {_x == "ItemFuelcanEmpty"} count magazines player;
+_qty20 = {_x == "ItemJerrycanEmpty"} count _magazines;
+_qty5 = {_x == "ItemFuelcanEmpty"} count _magazines;
 
-if (("ItemJerrycanEmpty" in magazines player) or ("ItemFuelcanEmpty" in magazines player)) then {
+if (("ItemJerrycanEmpty" in _magazines) or ("ItemFuelcanEmpty" in _magazines)) then {
 	player playActionNow "Medic";
 
 	_dis=5;
@@ -78,14 +77,14 @@ if (("ItemJerrycanEmpty" in magazines player) or ("ItemFuelcanEmpty" in magazine
 				player addMagazine "ItemFuelcan";
 			} else {
 				_qty = _qty - 1;
-			};;
+			};
 		};
 	};
 
 	//cutText [format [localize "str_player_09",_qty], "PLAIN DOWN"];
-	//format [localize "str_player_09",_qty] call dayz_rollingMessages;
-	format["You have filled %1 jerrycan(s) with fuel, %2 has an estimated %3 Liters of fuel left.",_qty,(typeof _cursorTarget),_fuelAmount] call dayz_rollingMessages;
-	//diag_log format["You have filled %1 jerrycan(s) with fuel, %2 has an estimated %3 Liters of fuel left.",_qty,(typeof _cursorTarget),_fuelAmount];
+	//format[localize "str_player_09",_qty] call dayz_rollingMessages;
+	format[localize "str_fill_success",_qty,typeOf _cursorTarget,_fuelAmount] call dayz_rollingMessages;
+	//diag_log format[localize "str_fill_success",_qty,typeOf _cursorTarget,_fuelAmount];
 } else {
 	//cutText [localize "str_player_10", "PLAIN DOWN"];
 	localize "str_player_10" call dayz_rollingMessages;
