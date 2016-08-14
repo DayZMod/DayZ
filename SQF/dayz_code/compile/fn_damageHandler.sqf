@@ -19,9 +19,6 @@ _isHeadHit = (_hit == "head_hit");
 _isPlayer = (isPlayer _source);
 _isZombieHit = _ammo == "zombie";
 
-//Ignore none part dmg.
-if (_hit == "") exitwith { 0 };
-
 _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Dayz_freefall select 1 > 3)})});
 
 //Simple hack to help with a few issues from direct damage to physic based damage. ***until 2.0***
@@ -47,7 +44,7 @@ _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Da
 		if (_ammo == "") exitwith { _end = true; };
 		
 		//If _source contains no object exit. But lets not exit if the unit returns player. Maybe its his own fault.
-		if (isNull _source) exitwith { _end = true; };
+		if (isNull _source) then { _end = true; };
 	};
 
 
@@ -59,7 +56,7 @@ if (_unit == player) then {
 //Set player in combat
     _unit setVariable["startcombattimer", 1];
 
-    if (_hit == "") then
+    if (_hit == "") exitWith //Ignore none part dmg. Exit after processing humanity hit
 	{
         if ((_source != player) and _isPlayer) then
 		{
@@ -159,7 +156,7 @@ if (_unit == player) then {
                 case (_wpst select 0 != "") : { format ["with %1/%2 <ammo left:%3>", _wpst select 0, _ammo, _wpst select 4] };
                 default { "with suspicious weapon" };
             };
-            if (_ammo != "zombie") then { // don't log any zombie wounds, even from remote zombies
+            if (!_isZombieHit) then { // don't log any zombie wounds, even from remote zombies
                 PVDZ_sec_atp = [_unit, _source, toArray _sourceWeap, _sourceDist]; //Send arbitrary string as array to allow stricter publicVariableVal.txt filter
                 publicVariableServer "PVDZ_sec_atp";
             };
@@ -177,6 +174,9 @@ if (_unit == player) then {
 	};
 	if (dayz_lastDamageSource != "none") then {dayz_lastDamageTime = diag_tickTime;};
 };
+
+//Ignore none part dmg. Exit after processing humanity hit
+if (_hit == "") exitWith { 0 };
 
 //Pure base blood damage
 _scale = 200;
@@ -266,7 +266,7 @@ if (_damage > 0.4) then {
     };
 
     if (_type == 3) then {
-        if(!_isHit and _isbleeding) then {
+        if (!_isHit && _isbleeding) then {
             //Create Wound
             _unit setVariable["hit_"+_wound,true,true];
             
@@ -280,7 +280,7 @@ if (_damage > 0.4) then {
             
             if (!_isInjured) then {
                 _unit setVariable["USEC_injured",true,true];
-                if ((_unit == player) and (_ammo != "zombie")) then {
+                if ((_unit == player) and (!_isZombieHit)) then {
                     dayz_sourceBleeding = _source;
                 };
             };
@@ -308,7 +308,7 @@ if (_damage > 0.4) then {
             };
         };
     } else {
-        if(!_isHit) then {
+        if (!_isHit) then {
             //Create Wound
             _unit setVariable["hit_"+_wound,true,true];
             PVDZ_hlt_Bleed = [_unit,_wound,_damage];
@@ -318,7 +318,7 @@ if (_damage > 0.4) then {
             _isInjured = _unit getVariable["USEC_injured",false];
             if (!_isInjured) then {
                 _unit setVariable["USEC_injured",true,true];
-                if ((_unit == player) and (_ammo != "zombie")) then {
+                if ((_unit == player) and (!_isZombieHit)) then {
                     dayz_sourceBleeding = _source;
                 };
             };
