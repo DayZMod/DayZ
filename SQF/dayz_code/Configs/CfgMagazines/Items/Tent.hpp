@@ -8,7 +8,6 @@ class ItemTent : CA_Magazine
 	picture = "\dayz_equip\textures\equip_tentbag_ca.paa";
 	displayName = $STR_EQUIP_NAME_20;
 	descriptionShort = $STR_EQUIP_DESC_20;
-
 	class ItemActions
 	{
 		class Build
@@ -18,6 +17,8 @@ class ItemTent : CA_Magazine
 			require[] = {};
 			consume[] = {"ItemTent"};
 			create = "TentStorage";
+			//Bypass collision test
+			bypassCollision = "true";
 		};
 	};
 };
@@ -32,6 +33,8 @@ class ItemDomeTent : CA_Magazine
 	picture = "\dayz_equip\textures\equip_tentbag_ca.paa";
 	displayName = $STR_VEH_NAME_DOME_TENT;
 	descriptionShort = $STR_EQUIP_DESC_20;
+	
+	bypassCollision = "true";
 
 	class ItemActions
 	{
@@ -42,6 +45,8 @@ class ItemDomeTent : CA_Magazine
 			require[] = {};
 			consume[] = {"ItemDomeTent"};
 			create = "DomeTentStorage";
+			//Bypass collision test
+			bypassCollision = "true";
 		};
 	};
 };
