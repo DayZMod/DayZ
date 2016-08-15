@@ -33,8 +33,6 @@ class ItemDomeTent : CA_Magazine
 	picture = "\dayz_equip\textures\equip_tentbag_ca.paa";
 	displayName = $STR_VEH_NAME_DOME_TENT;
 	descriptionShort = $STR_EQUIP_DESC_20;
-	
-	bypassCollision = "true";
 
 	class ItemActions
 	{
