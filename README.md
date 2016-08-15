@@ -3,7 +3,7 @@
 
 Current Version
 ==================================
- - DayZMod Dev-1.8.8-3db0fe8
+ - DayZMod Dev-1.8.8-a219362
  
  Current License
 =================================
