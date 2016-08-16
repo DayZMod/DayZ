@@ -5730,7 +5730,6 @@
 			<German>Snack (Zwiebelringe)</German>
 			<Russian>Чипсы</Russian>
 			<Spanish>Golosina (Papitas)</Spanish>
-			<French>Snack (Chips)</French>
 			<Czech>Jídlo (Chipsy)</Czech>
 		</Key>
 		<Key ID="STR_FOOD_DESC_CHIPS_SULAHOOPS">
@@ -5743,10 +5742,8 @@
 		</Key>
 		<Key ID="STR_FOOD_NAME_CHIPS_MYSTICALES">
 			<English>Snack (Chips)</English>
-			<German>Snack (Chips)</German>
 			<Russian>Чипсы</Russian>
 			<Spanish>Golosina (Papitas)</Spanish>
-			<French>Snack (Chips)</French>
 			<Czech>Jídlo (Chipsy)</Czech>
 		</Key>
 		<Key ID="STR_FOOD_DESC_CHIPS_MYSTICALES">
@@ -5762,7 +5759,6 @@
 			<German>Snack (Schokochips)</German>
 			<Russian>Шоколадные шарики</Russian>
 			<Spanish>Golosina (Papitas)</Spanish>
-			<French>Snack (Chips)</French>
 			<Czech>Jídlo (Chips)</Czech>
 		</Key>
 		<Key ID="STR_FOOD_DESC_CHIPS_CHOCOLATE">
@@ -6699,7 +6695,6 @@
 			<English>You have collected %2 %1. %3 Dropped.</English>
 			<German>Du hast %2x %1 aufgesammelt. Die restlichen %3 liegen noch auf dem Boden.</German>
 			<Russian>Вы собрали %1 (%2). %3 осталось.</Russian>
-			<Spanish>You have collected %2 %1. %3 Dropped.</Spanish>
 			<French>Vous avez récolté %2 %1. %3 Dropped.</French>
 			<Czech>Nasbírali jste %2x %1. Zbývá ještě %3.</Czech>
 		</Key>
@@ -8412,10 +8407,8 @@
 	</Package>
 	<Package name="vehicles">
 		<Key ID="STR_VEH_NAME_OLD_HATCHBACK">
-			<English>Old hatchback</English>
+			<English>Honda Accord hatchback</English>
 			<Russian>Старый хэтчбэк</Russian>
-			<Spanish>Honda Accord Hatchback</Spanish>
-			<French>Honda Accord Hatchback</French>
 			<Czech>Stará Honda Accord v hatchback verzi</Czech>
 			<German>Alter Kleinwagen</German>
 		</Key>
@@ -8423,17 +8416,11 @@
 			<English>Sedan</English>
 			<Russian>Седан</Russian>
 			<Spanish>Sedán</Spanish>
-			<French>Sedan</French>
-			<Czech>Sedan</Czech>
-			<German>Sedan</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_HMMWV">
 			<English>HMMWV</English>
 			<Russian>Хамви</Russian>
 			<Spanish>Humvee Militar</Spanish>
-			<French>Humvee</French>
-			<Czech>Humvee</Czech>
-			<German>HMMWV</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_ATV">
 			<English>ATV</English>
@@ -8445,11 +8432,6 @@
 		</Key>
 		<Key ID="STR_VEH_NAME_TT650_INS">
 			<English>Yamaha TT650</English>
-			<Russian>Yamaha TT650</Russian>
-			<Spanish>Yamaha TT650</Spanish>
-			<French>Yamaha TT650</French>
-			<Czech>Yamaha TT650</Czech>
-			<German>Yamaha TT650</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_PBX">
 			<English>PBX</English>
@@ -8469,27 +8451,17 @@
 		</Key>
 		<Key ID="STR_VEH_NAME_AH6X">
 			<English>AH6X Little Bird</English>
-			<French>AH6X Little Bird</French>
 			<Russian>AH6X «Литтл Бёрд»</Russian>
-			<Spanish>AH6X Little Bird</Spanish>
-			<Czech>AH6X Little Bird</Czech>
 			<German>AH6X "Little Bird"</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_MH6J">
 			<English>MH-6J Little Bird</English>
-			<French>MH-6J Little Bird</French>
 			<Russian>MH-6J «Литтл Бёрд»</Russian>
-			<Spanish>MH-6J Little Bird</Spanish>
-			<Czech>MH-6J Little Bird</Czech>
 			<German>MH-6J "Little Bird"</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_MI17">
 			<English>Mi-17</English>
-			<French>Mi-17</French>
 			<Russian>Ми-17</Russian>
-			<Spanish>Mi-17</Spanish>
-			<Czech>Mi-17</Czech>
-			<German>Mi-17</German>
 		</Key>
 		<Key ID="STR_VEH_NAME_MI8_WRECK">
 			<English>Mi-8 Wreck</English>
@@ -8702,16 +8674,12 @@
 		<Key ID="STR_BUILT_WIRE1">
 			<English>Wire (CAT1)</English>
 			<Russian>Колючка</Russian>
-			<French>Wire (CAT1)</French>
-			<Spanish>Wire (CAT1)</Spanish>
 			<Czech>Drát (CAT1)</Czech>
 			<German>Kabel (CAT1)</German>
 		</Key>
 		<Key ID="STR_BUILT_WIRE2">
 			<English>Wire (CAT2)</English>
 			<Russian>Усиленная колючка</Russian>
-			<French>Wire (CAT2)</French>
-			<Spanish>Wire (CAT2)</Spanish>
 			<Czech>Drát (CAT2)</Czech>
 			<German>Kabel (CAT2)</German>
 		</Key>
@@ -8728,8 +8696,6 @@
 		<Key ID="STR_BUILT_HEDGEHOG">
 			<English>Hedgehog (Steel)</English>
 			<Russian>Противотанковый ёж</Russian>
-			<French>Hedgehog (Steel)</French>
-			<Spanish>Hedgehog (Steel)</Spanish>
 			<Czech>Ježek (ocel)</Czech>
 			<German>Panzersperre (Stahl)</German>
 		</Key>
@@ -9733,71 +9699,39 @@
 			<English>Open Gate</English>
 			<German>Tor öffnen</German>
 			<Russian>Открыть ворота</Russian>
-			<Spanish>Open Gate</Spanish>
-			<Dutch>Open Gate</Dutch>
-			<French>Open Gate</French>
-			<Czech>Open Gate</Czech>
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_CLOSEGATE">
 			<English>Close Gate</English>
 			<German>Tor schließen</German>
 			<Russian>Закрыть ворота</Russian>
-			<Spanish>Close Gate</Spanish>
-			<Dutch>Close Gate</Dutch>
-			<French>Close Gate</French>
-			<Czech>Close Gate</Czech>
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_SETLOCKCODE">
 			<English>Set Lock Code</English>
 			<German>Zugangscode setzen</German>
 			<Russian>Установить код</Russian>
-			<Spanish>Set Lock Code</Spanish>
-			<Dutch>Set Lock Code</Dutch>
-			<French>Set Lock Code</French>
-			<Czech>Set Lock Code</Czech>
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_LOCKBUILD">
 			<English>Lock Build</English>
-			<German>Lock Build</German>
 			<Russian>Заблокировать строительство</Russian>
-			<Spanish>Lock Build</Spanish>
-			<Dutch>Lock Build</Dutch>
-			<French>Lock Build</French>
-			<Czech>Lock Build</Czech>
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_UNLOCKBUILD">
 			<English>Unlock Build</English>
-			<German>Unlock Build</German>
 			<Russian>Разблокировать строительство</Russian>
-			<Spanish>Unlock Build</Spanish>
-			<Dutch>Unlock Build</Dutch>
-			<French>Unlock Build</French>
-			<Czech>Unlock Build</Czech>
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_UNLOCKGATE">
 			<English>Unlock Gate</English>
 			<German>Tor aufschließen</German>
 			<Russian>Отомкнуть ворота</Russian>
-			<Spanish>Unlock Gate</Spanish>
-			<French>Unlock Gate</French>
-			<Czech>Unlock Gate</Czech>
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_LOCKGATE">
 			<English>Lock Gate</English>
 			<German>Tor abschließen</German>
 			<Russian>Замкнуть ворота</Russian>
-			<Spanish>Lock Gate</Spanish>
-			<French>Lock Gate</French>
-			<Czech>Lock Gate</Czech>
 		</Key>
 		<Key ID="STR_BLD_ACTIONS_BREAKIN">
 			<English>Break In</English>
 			<German>Einbrechen</German>
 			<Russian>Взломать</Russian>
-			<Spanish>Break In</Spanish>
-			<Dutch>Break In</Dutch>
-			<French>Break In</French>
-			<Czech>Break In</Czech>
 		</Key>
 		<Key ID="STR_BLD_BREAKIN_NEED_SLEDGE">
 			<English>You need a Sledgehammer to break into this compound.</English>
@@ -9881,8 +9815,6 @@
 			<Russian>M14 ACOG (камуфляж)</Russian>
 		</Key>
 		
-		
-		
 		<!-- Snipers -->
 		<Key ID="STR_DZ_WPN_M24_NAME">
 			<English>M24</English>
@@ -9905,8 +9837,6 @@
 			<English>DMR Camo</English>
 			<Russian>DMR (камуфляж)</Russian>
 		</Key>
-		
-		
 		
 		<!-- M4A1 -->
 		<Key ID="STR_DZ_WPN_M4A1_NAME">
@@ -10033,8 +9963,6 @@
 			<Russian>M4A1 M203 ACOG ПБС Ф</Russian>
 		</Key>
 		
-		
-		
 		<!-- M16A4 -->
 		<Key ID="STR_DZ_WPN_M16A4">
 			<English>M16A4</English>
@@ -10064,6 +9992,7 @@
 			<English>M16A4 ACOG FL</English>
 			<Russian>M16A4 ACOG Ф</Russian>
 		</Key>
+
 		<!-- M203 -->
 		<Key ID="STR_DZ_WPN_M16A4_GL">
 			<English>M16A4 M203</English>
@@ -10093,9 +10022,7 @@
 			<English>M16A4 M203 ACOG FL</English>
 			<Russian>M16A4 M203 ACOG Ф</Russian>
 		</Key>
-		
-		
-		
+
 		<!-- FN FAL -->
 		<Key ID="STR_DZ_WPN_FNFAL_NAME">
 			<English>FN FAL</English>
@@ -10109,9 +10036,7 @@
 		<Key ID="STR_DZ_WPN_FNFAL_ANPVS4_NAME">
 			<English>FN FAL AN/PVS-4</English>
 		</Key>
-		
-		
-		
+
 		<!-- AK74 -->
 		<Key ID="STR_DZ_WPN_AK74_NAME">
 			<English>AK-74</English>
@@ -10129,7 +10054,6 @@
 			<English>AK-74 GP-25 SD</English>
 			<Russian>АК-74 ГП-25 ПБС</Russian>
 		</Key>
-		
 		<Key ID="STR_DZ_WPN_AK74_KOBRA_NAME">
 			<English>AK-74 Kobra</English>
 			<Russian>АК-74 Кобра</Russian>
@@ -10146,7 +10070,6 @@
 			<English>AK-74 GP-25 Kobra SD</English>
 			<Russian>АК-74 ГП-25 Кобра ПБС</Russian>
 		</Key>
-		
 		<Key ID="STR_DZ_WPN_AK74_PSO1_NAME">
 			<English>AK-74 PSO-1</English>
 			<Russian>АК-74 ПСО-1</Russian>
@@ -10163,8 +10086,6 @@
 			<English>AK-74 GP-25 PSO-1 SD</English>
 			<Russian>АК-74 ГП-25 ПСО-1 ПБС</Russian>
 		</Key>
-		
-		
 		
 		<!-- AKS74U -->
 		<Key ID="STR_DZ_WPN_AKS74U_NAME">
@@ -10184,8 +10105,6 @@
 			<Russian>АКС-74У Кобра ПБС</Russian>
 		</Key>
 		
-		
-		
 		<!-- RPK74 -->
 		<Key ID="STR_DZ_WPN_RPK74_NAME">
 			<English>RPK-74</English>
@@ -10200,8 +10119,6 @@
 			<Russian>РПК-74 ПСО-1</Russian>
 		</Key>
 		
-		
-		
 		<!-- AKM -->
 		<Key ID="STR_DZ_WPN_AKM_NAME">
 			<English>AK-47M</English>
@@ -10215,8 +10132,6 @@
 			<English>AK-47M PSO-1</English>
 			<Russian>АК-47М ПСО-1</Russian>
 		</Key>
-		
-		
 		
 		<!-- RPK -->
 		<Key ID="STR_DZ_WPN_RPK_NAME">
@@ -10235,8 +10150,6 @@
 			<English>RPK PSO-1</English>
 			<Russian>РПК ПСО-1</Russian>
 		</Key>
-		
-		
 		
 		<!-- SA58 -->
 		<Key ID="STR_DZ_WPN_SA58_NAME">
@@ -10272,8 +10185,6 @@
 			<Russian>SA-58 ACOG Ф</Russian>
 		</Key>
 		
-		
-		
 		<!-- G36C -->
 		<Key ID="STR_DZ_WPN_G36C_NAME">
 			<English>G36C</English>
@@ -10304,8 +10215,6 @@
 			<Russian>G36C ACOG ПБС</Russian>
 		</Key>
 		
-		
-		
 		<!-- G36 -->
 		<Key ID="STR_DZ_WPN_G36A_CAMO_NAME">
 			<English>G36A Camo</English>
@@ -10323,8 +10232,6 @@
 			<English>G36K Camo SD</English>
 			<Russian>G36K ПБС (камуфляж)</Russian>
 		</Key>
-		
-		
 		
 		<!-- MP5 -->
 		<Key ID="STR_DZ_WPN_MP5_NAME">
@@ -10345,8 +10252,6 @@
 			<Russian>Бизон ПБС</Russian>
 		</Key>
 		
-		
-		
 		<!-- M9 -->
 		<Key ID="STR_DZ_WPN_M9_NAME">
 			<English>M9</English>
@@ -10355,8 +10260,6 @@
 			<English>M9 SD</English>
 			<Russian>M9 ПБС</Russian>
 		</Key>
-		
-		
 		
 		<!-- G17 -->
 		<Key ID="STR_DZ_WPN_G17_NAME">
@@ -10399,8 +10302,6 @@
 			<English>M249 SAW ACOG</English>
 		</Key>
 		
-		
-		
 		<!-- L110A1 -->
 		<Key ID="STR_DZ_WPN_L110A1_NAME">
 			<English>L110A1</English>
@@ -10411,8 +10312,6 @@
 		<Key ID="STR_DZ_WPN_L110A1_HOLO_NAME">
 			<English>L110A1 Holo</English>
 		</Key>
-		
-		
 		
 		<!-- M1014 -->
 		<Key ID="STR_DZ_WPN_M1014_NAME">
@@ -10427,7 +10326,6 @@
 		<Key ID="STR_DZ_WPN_M1014_ACOG_NAME">
 			<English>M1014 ACOG</English>
 		</Key>
-
 
 		<!-- Remington870 -->
 		<Key ID="STR_DZ_WPN_R870_NAME">
@@ -10458,7 +10356,6 @@
 			<French>Le modèle Remington 870 est un fusil à pompe avec une lampe torche.</French>
 			<Czech>Remington 870 je opakovací brokovnice. Tato má navíc připevněnou baterku.</Czech>
 		</Key>		
-		
 
 		<!-- MR43 -->
 		<Key ID="STR_DZ_WPN_MR43_NAME">
@@ -10485,7 +10382,6 @@
 		<!-- Winchester1866 -->
 		<Key ID="STR_DZ_WPN_W1866_NAME">
 			<English>Winchester 1866</English>
-			<German>Winchester 1866</German>
 			<Russian>Винчестер 1866</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_W1866_DESC">
@@ -10504,8 +10400,6 @@
 			<English>Mk48 Holo</English>
 		</Key>
 		
-		
-		
 		<!-- M240 -->
 		<Key ID="STR_DZ_WPN_M240_NAME">
 			<English>M240</English>
@@ -10517,27 +10411,20 @@
 			<English>M240 Holo</English>
 		</Key>
 		
-		
-		
 		<!-- PKM -->
 		<Key ID="STR_DZ_WPN_PKM_NAME">
 			<English>PKM</English>
 			<Russian>ПКМ</Russian>
 		</Key>
 		
-		
-		
 		<!-- UK59 -->
 		<Key ID="STR_DZ_WPN_UK59_NAME">
 			<English>UK-59</English>
-			<Russian>UK-59</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_UK59_DESC">
 			<English>Chernarussian medium machine gun&lt;br/&gt;Caliber: 7.62x54mm</English>
 			<Russian>Чернарусский средний пулемет&lt;br/&gt;Калибр: 7.62x54мм</Russian>
 		</Key>
-		
-		
 		
 		<!-- SVD -->
 		<Key ID="STR_DZ_WPN_SVD_NAME">
@@ -10548,8 +10435,6 @@
 			<English>SVD Camo</English>
 			<Russian>СВД (камуфляж)</Russian>
 		</Key>
-		
-		
 		
 		<!-- Mosin -->
 		<Key ID="STR_DZ_WPN_MOSIN_NAME">
@@ -10589,8 +10474,6 @@
 			<Russian>Магазинная винтовка, принятая на вооружение Русской Императорской армии ВС России в 1891 году.</Russian>
 		</Key>
 		
-		
-		
 		<!-- Crossbow -->
 		<Key ID="STR_DZ_WPN_CROSSBOW_NAME">
 			<English>Crossbow</English>
@@ -10616,12 +10499,6 @@
 			<English>Crossbow Scoped FL</English>
 			<Russian>Арбалет ПР Ф</Russian>
 		</Key>
-		
-		
-		
-		
-		
-		
 		
 		<!-- **** MAGAZINES **** -->
 		
@@ -10890,8 +10767,7 @@
 			<Czech>Ráže: 12&lt;br/&gt;Munice: 8&lt;br/&gt;Pro: M1014, Remington 870</Czech>
 			<German>Kaliber 12 Schrotmunition&lt;br/&gt;8&lt;br/&gt;Verwendet in: M1014, Remington 870</German>
 		</Key>				
-		
-		
+	
 		<!-- **** ATTACHMENTS **** -->
 		
 		<Key ID="STR_DZ_ATT_ACT_TO_PRIMARY">
