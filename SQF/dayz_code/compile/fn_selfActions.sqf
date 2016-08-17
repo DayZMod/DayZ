@@ -4,6 +4,8 @@ scriptName "Functions\misc\fn_selfActions.sqf";
 	- Function
 	- [] call fnc_usec_selfActions;
 ************************************************************/
+private ["_allowedDistance"];
+
 _vehicle = vehicle player;
 _inVehicle = (_vehicle != player);
 _cursorTarget = cursorTarget;
@@ -106,7 +108,10 @@ if (!_canDoThis && s_player_Drinkfromhands >= 0) then {
 	s_player_Drinkfromhands = -1;
 };
 
-if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < 4) && _canDo) then { 
+// Increase distance only if Fishing_Boat
+_allowedDistance = if (_cursorTarget isKindOf "Fishing_Boat") then {8} else {4};
+
+if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _allowedDistance) && _canDo) then { 
 //Has some kind of target
 	_typeOfCursorTarget = typeOf _cursorTarget;
 	_isVehicle = _cursorTarget isKindOf "AllVehicles";
