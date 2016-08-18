@@ -4,7 +4,13 @@ scriptName "Functions\misc\fn_selfActions.sqf";
 	- Function
 	- [] call fnc_usec_selfActions;
 ************************************************************/
-private ["_allowedDistance"];
+private ["_allowedDistance","_vehicle","_inVehicle","_cursorTarget","_primaryWeapon","_currentWeapon","_magazinesPlayer",
+"_onLadder","_canDo","_canDrink","_nearLight","_canPickLight","_text","_canDoThis","_waterHoles","_w2m","_bb","_dir",
+"_typeOfCursorTarget","_isVehicle","_isBicycle","_isMan","_isAnimal","_isZombie","_isDestructable","_isHarvested",
+"_isGenerator","_ownerID","_isVehicletype","_isFuel","_hasFuel20","_hasFuel5","_hasEmptyFuelCan","_itemsPlayer",
+"_hasToolbox","_hasbottleitem","_isAlive","_isPlant","_istypeTent","_upgradeItems","_isCampSite","_hasknife",
+"_hasRawMeat","_hastinitem","_displayName","_hasIgnators","_hasCarBomb","_menu","_menu1","_isHouse","_isGate",
+"_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock","_ownerPID"];
 
 _vehicle = vehicle player;
 _inVehicle = (_vehicle != player);
