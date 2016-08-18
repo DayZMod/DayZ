@@ -182,30 +182,6 @@ if (isServer) then {
 		};
 		*/
 	};
-
-	"PVDZ_receiveVar" addPublicVariableEventHandler {
-		_owner = (_this select 1) select 0;
-		_object = (_this select 1) select 1;
-		_name = (_this select 1) select 2;
-		_value = (_this select 1) select 3;
-
-		switch (_name) do {
-			case "looted": {
-				diag_log format ["%4 - %1, %2, %3", _object, _name, _value, "receive looted"]; 
-			};
-			case "zombieSpawn": {
-				//diag_log format ["%4 - %1, %2, %3", _object, _name, _value, "receive zombieSpawn"]; 
-			};
-		};
-
-		_ownerID = owner _owner;
-		_return = _object getVariable [_name,_value];
-
-		//diag_log format ["%1", _return];	
-
-		PVCDZ_SetVar = [_object,_name,_return];
-		_ownerID publicVariableClient "PVCDZ_SetVar";
-	};
 	
 	"PVDZ_Server_LogIt" addPublicVariableEventHandler {
 		_unitSending = _this select 0;
@@ -292,14 +268,6 @@ if (!isDedicated) then {
 		if (isPlayer _entity) then {
 			_entity setVariable ["hit_legs", 2, true];
 		};
-	};
-	
-	"PVCDZ_SetVar" addPublicVariableEventHandler {
-		_object = (_this select 1) select 0;
-		_name = (_this select 1) select 1;
-		_value = (_this select 1) select 2;
-		
-		_object setVariable [_name,_value];
 	};
 
 	"PVDZ_receiveUnconscious" addPublicVariableEventHandler {	
