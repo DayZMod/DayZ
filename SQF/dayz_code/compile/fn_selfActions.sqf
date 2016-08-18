@@ -115,7 +115,7 @@ if (!_canDoThis && s_player_Drinkfromhands >= 0) then {
 };
 
 // Increase distance only if Fishing_Boat
-_allowedDistance = if (_cursorTarget isKindOf "Fishing_Boat") then {8} else {4};
+_allowedDistance = if (typeOf _cursorTarget == "Fishing_Boat") then {8} else {4};
 
 if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _allowedDistance) && _canDo) then { 
 //Has some kind of target
