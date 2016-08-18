@@ -102,29 +102,6 @@ if (isServer) then {
 		(owner _owner) publicVariableClient "PVDZ_receiveUnconscious";
 	};
 
-	"PVDZ_gridsActive" addPublicVariableEventHandler {
-		_gridref = (_this select 1) select 0;
-		_gridloc = (_this select 1) select 1;
-
-		if !(_gridref in dayz_gridsActive) then {
-			dayz_gridsActive set [count dayz_gridsActive,_gridref];
-			dayz_seedloot set [count dayz_seedloot,[_gridloc,_gridref]];
-		};
-		diag_log format ["%1, %2, %3", _gridref, dayz_gridsActive, dayz_seedloot];
-	};
-	
-	"PVDZ_gridsRemove" addPublicVariableEventHandler {
-		_gridref = (_this select 1) select 0;
-		_gridloc = (_this select 1) select 1;
-
-		if (_gridref in dayz_gridsActive) then {
-			dayz_gridsActive = dayz_gridsActive - [_gridref];
-			dayz_deseedloot set [count dayz_deseedloot,[_gridloc,_gridref]];
-		};
-		diag_log format ["%1, %2", _gridref, dayz_gridsActive];
-	};
-
-
 	"PVDZ_Server_Simulation" addPublicVariableEventHandler {
 		_agent = (_this select 1) select 0;
 		_control = (_this select 1) select 1;
@@ -229,23 +206,6 @@ if (isServer) then {
 		PVCDZ_SetVar = [_object,_name,_return];
 		_ownerID publicVariableClient "PVCDZ_SetVar";
 	};
-
-	"PVDZ_Server_changeOwner" addPublicVariableEventHandler {		
-		_agent = (_this select 1) select 0;
-		_reciever = (_this select 1) select 1;
-		_ownerID = owner _agent;
-		_newownerID = 1; //1 = server
-
-		if (typeName _reciever == "OBJECT") then {
-			_newownerID = owner _reciever;
-		};
-		if (isNil ("Owner")) then {
-			_agent setVariable ["Owner",_ownerID];
-		};
-
-		_agent setOwner _newownerID;
-		diag_log ("TRANSFER OWNERSHIP: " + (typeOf _agent) + " OF _unit: " + str(_agent) + " TO _client: " + str(_reciever) );
-	};
 	
 	"PVDZ_Server_LogIt" addPublicVariableEventHandler {
 		_unitSending = _this select 0;
@@ -314,7 +274,6 @@ if (!isDedicated) then {
 	"PVDZ_obj_RoadFlare"		addPublicVariableEventHandler {(_this select 1) spawn object_roadFlare};
 	"PVDZ_drg_RaDrag"   		addPublicVariableEventHandler {(_this select 1) execVM "\z\addons\dayz_code\medical\publicEH\animDrag.sqf"};
 	"PVDZ_obj_Fire"				addPublicVariableEventHandler {(_this select 1) spawn BIS_Effects_Burn};
-	"PVDZ_dayzFlies"			addPublicVariableEventHandler {(_this select 1) call spawn_flies};
 	"PVCDZ_plr_Humanity"		addPublicVariableEventHandler {(_this select 1) spawn player_humanityChange};
 	
 	//Medical
