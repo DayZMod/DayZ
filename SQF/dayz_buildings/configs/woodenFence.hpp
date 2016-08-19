@@ -4,7 +4,7 @@ class WoodenFence_base: DZ_buildables
 	scope = 1;
 	canbevertical = 1;
 	destrType="DestructBuilding";
-	armor = 100;
+	armor = 0;
 	class Upgrade {
 		requiredParts[] = {"ItemLog", "ItemStone", "ItemStone"}; // copy of ItemDIY_wood upgrade section
 		require[] = {"ItemEtool"};
@@ -12,6 +12,9 @@ class WoodenFence_base: DZ_buildables
 	class Maintenance {
 		requiredTools[] = {"ItemToolbox"};
 		requiredParts[] = {"ItemPlank","equip_nails"};
+	};
+	class eventHandlers {
+		HandleDamage = "if ((_this select 4) == 'PipeBomb') then { [_this select 0,1] call fnc_Obj_handleDam; } else { false };";
 	};
 }; 	
 class WoodenFence_ghost: WoodenFence_base
@@ -135,6 +138,9 @@ class WoodenFence_3: WoodenFence_2
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
 	};
+	class eventHandlers {
+		HandleDamage = "if ((_this select 4) == 'PipeBomb') then { [_this select 0,0.5] call fnc_Obj_handleDam; } else { false };";
+	};
 }; 
 class WoodenFence_4: WoodenFence_3
 {
@@ -180,6 +186,9 @@ class WoodenFence_6: WoodenFence_5
 	};
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
+	};
+	class eventHandlers {
+		HandleDamage = "if ((_this select 4) == 'PipeBomb') then { [_this select 0,0.35] call fnc_Obj_handleDam; } else { false };";
 	};
 };
 
