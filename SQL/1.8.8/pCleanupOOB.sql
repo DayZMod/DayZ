@@ -41,8 +41,8 @@ BEGIN
 
 		SELECT REPLACE(@rsWorldspace, '[', '') INTO @rsWorldspace;
 		SELECT REPLACE(@rsWorldspace, ']', '') INTO @rsWorldspace;
-		SELECT REPLACE(SUBSTRING(SUBSTRING_INDEX(@rsWorldspace, ',', 2), LENGTH(SUBSTRING_INDEX(@rsWorldspace, ',', 2 -1)) + 1), ',', '') INTO @West;
-		SELECT REPLACE(SUBSTRING(SUBSTRING_INDEX(@rsWorldspace, ',', 3), LENGTH(SUBSTRING_INDEX(@rsWorldspace, ',', 3 -1)) + 1), ',', '') INTO @North;
+		SELECT REPLACE(SUBSTRING(SUBSTRING_INDEX(@rsWorldspace, ',', 2), LENGTH(SUBSTRING_INDEX(@rsWorldspace, ',', 2 -1)) + 2), ',', '') INTO @West;
+		SELECT REPLACE(SUBSTRING(SUBSTRING_INDEX(@rsWorldspace, ',', 3), LENGTH(SUBSTRING_INDEX(@rsWorldspace, ',', 3 -1)) + 2), ',', '') INTO @North;
 
 		SELECT INSTR(@West, '-') INTO intWest;
 		SELECT INSTR(@North, '-') INTO intNorth;
