@@ -1,12 +1,11 @@
-private ["_object","_position"];
+private "_object";
 _object = _this select 3;
 
 //Kneel Down
 player playMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
 waitUntil { animationState player != "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"};
 
-//_object setpos _position;
-_object setvectorup [0,0,1];
+_object setVectorUp [0,0,1];
 
 // Alert Zombies
 [player,20,true,(getPosATL player)] call player_alertZombies;

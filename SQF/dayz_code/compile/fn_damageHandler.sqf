@@ -25,7 +25,7 @@ _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Da
 	if (isNull dayz_getout) then {
 		_vehicleArray = nearestObjects [(getposATL (vehicle _unit)),["Car","Helicopter","Motorcycle","Ship"],3];
 		{
-			if ((speed _x > 10) or (speed _x < 8)) exitwith { dayz_HitBy = _x; };
+			if ((speed _x > 10) or (speed _x < -8)) exitwith { dayz_HitBy = _x; };
 		} count _vehicleArray;
 	};
 
@@ -44,13 +44,23 @@ _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Da
 		if (_ammo == "") exitwith { _end = true; };
 		
 		//If _source contains no object exit. But lets not exit if the unit returns player. Maybe its his own fault.
-		if (isNull _source) then { _end = true; };
+		if (isNull _source) then {
+			_end = true;
+			if !(_ammo in ["Dragged","RunOver"]) then {
+				// Explosion with no vehicle nearby. Possible cheat. Record to block any incoming fall damage.
+				dayz_lastDamageSourceNull = true;
+				diag_log "dayz_lastDamageSourceNull triggered";
+			};
+		};
+	} else {
+		if (dayz_lastDamageSourceNull) then { _end = true; }; // Block incoming fall damage. 
 	};
 
 
 	if (_end) exitwith { 0 };
 //End Simple hack for damage ***until 2.0***
 
+dayz_lastDamageSourceNull = false;
 
 if (_unit == player) then {
 //Set player in combat
@@ -110,7 +120,7 @@ if (_unit == player) then {
 			[_unit] spawn {
 				private ["_unit"];
 				_unit = _this select 0;
-				cutText [localize "str_player_tranquilized", "PLAIN DOWN"]; 
+				localize "str_player_tranquilized" call dayz_rollingMessages; 
 				[_unit,0.01] call fnc_usec_damageUnconscious;
 				_unit setVariable ["NORRN_unconscious", true, true];
 				r_player_timeout = round(random 60);
@@ -125,7 +135,7 @@ if (_unit == player) then {
 			if ((_isHeadHit) and (_ammo in ["Crowbar_Swing_Ammo","Bat_Swing_Ammo"])) then {
 				[_unit] spawn {
 					 _unit = _this select 0;
-					cutText [localize "str_actions_medical_knocked_out", "PLAIN DOWN"]; 
+					localize "str_actions_medical_knocked_out" call dayz_rollingMessages; 
 					[_unit,0.01] call fnc_usec_damageUnconscious;
 					_unit setVariable ["NORRN_unconscious", true, true];
 					r_player_timeout = 20 + round(random 60);
@@ -140,10 +150,10 @@ if (_unit == player) then {
 
     //Log to server :-( OverProcessing really not needed.
     if (((!(isNil {_source})) AND {(!(isNull _source))}) AND {((_source isKindOf "CAManBase") AND {(!local _source )})}) then {
+		_wpst = weaponState _source;
         if (diag_ticktime-(_source getVariable ["lastloghit",0])>2) then {
             private ["_sourceWeap"];
             _source setVariable ["lastloghit",diag_ticktime];
-            _wpst = weaponState _source;
 
             _sourceDist = round(_unit distance _source);
             _sourceWeap = switch (true) do {

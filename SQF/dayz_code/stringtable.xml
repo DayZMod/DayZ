@@ -671,6 +671,9 @@
 			<German>Fahrzeug ausschlachten</German>
 			<Dutch>Demonteer voertuig</Dutch>
 		</Key>
+		<Key ID="str_actions_pilot_seat">
+			<English>You must get into the pilot&apos;s seat first.</English>
+		</Key>
 		<Key ID="str_actions_helipilotseat">
 			<English>To pilot&apos;s seat</English>
 			<Spanish>Al asiento de piloto</Spanish>
@@ -859,6 +862,9 @@
 			<Spanish>Voltear %1</Spanish>
 			<French>Retourner %1</French>
 			<Czech>Otočit %1</Czech>
+		</Key>
+		<Key ID="str_actions_push">
+			<English>Push %1</English>
 		</Key>
 		<Key ID="str_actions_stats">
 			<English>Enable Stats</English>
@@ -7547,7 +7553,7 @@
 			<Czech>Doplňování paliva už probíhá!</Czech>
 		</Key>
 		<Key ID="str_death_shot">
-			<English>a gunshot.</English>
+			<English>a gunshot wound.</English>
 		</Key>
 		<Key ID="str_death_shothead">
 			<English>a gunshot to the head.</English>

@@ -169,6 +169,7 @@ dayz_resetSelfActions = {
 	s_build_Wire_cat1 = -1;
 	s_player_deleteBuild = -1;
 	s_player_flipveh = -1;
+	s_player_pushPlane = -1;
 	s_player_stats = -1;
 	s_player_sleep = -1;
 	s_player_fillfuel20 = -1;
@@ -454,6 +455,7 @@ if (!isDedicated) then {
 	dayz_temperaturmin = 27; //TeeChange
 
 	//player special variables
+	dayz_lastDamageSourceNull = false;
 	dayz_lastDamageSource = "none";
 	dayz_lastDamageTime = 0;
 	dayz_lastMedicalSource = "none";

@@ -10,7 +10,8 @@ private ["_allowedDistance","_vehicle","_inVehicle","_cursorTarget","_primaryWea
 "_isGenerator","_ownerID","_isVehicletype","_isFuel","_hasFuel20","_hasFuel5","_hasEmptyFuelCan","_itemsPlayer",
 "_hasToolbox","_hasbottleitem","_isAlive","_isPlant","_istypeTent","_upgradeItems","_isCampSite","_hasknife",
 "_hasRawMeat","_hastinitem","_displayName","_hasIgnators","_hasCarBomb","_menu","_menu1","_isHouse","_isGate",
-"_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock","_ownerPID"];
+"_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock","_ownerPID",
+"_isPlane"];
 
 _vehicle = vehicle player;
 _inVehicle = (_vehicle != player);
@@ -122,6 +123,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	_typeOfCursorTarget = typeOf _cursorTarget;
 	_isVehicle = _cursorTarget isKindOf "AllVehicles";
 	_isBicycle = _cursorTarget isKindOf "Bicycle";
+	_isPlane = _cursorTarget isKindOf "Plane";
 	_isMan = _cursorTarget isKindOf "Man";
 	_isAnimal = _cursorTarget isKindOf "Animal";
 	_isZombie = _cursorTarget isKindOf "zZombie_base";
@@ -163,6 +165,15 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	} else {
 		player removeAction s_player_flipveh;
 		s_player_flipveh = -1;
+	};
+	
+	if (_isPlane && {_isAlive} && {count (crew _cursorTarget) == 0}) then {
+		if (s_player_pushPlane < 0) then {
+			s_player_pushPlane = player addAction [format[localize "str_actions_push",_text], "\z\addons\dayz_code\actions\player_pushPlane.sqf",_cursorTarget,1,true,true];
+		};
+	} else {
+		player removeAction s_player_pushPlane;
+		s_player_pushPlane = -1;
 	};
 	
 	//Allow player to fill Fuel can
@@ -483,6 +494,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	//s_player_forceSave = -1;
 	player removeAction s_player_flipveh;
 	s_player_flipveh = -1;
+	player removeAction s_player_pushPlane;
+	s_player_pushPlane = -1;
 	player removeAction s_player_sleep;
 	s_player_sleep = -1;
 	player removeAction s_player_deleteBuild;
