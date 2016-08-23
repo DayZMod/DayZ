@@ -446,7 +446,6 @@ if (isServer) then {
 
 if (!isDedicated) then {
 	dayz_buildingBubbleMonitor = [];
-	dayz_baseTypes = getArray (configFile >> "CfgBuildingLoot" >> "Default" >> "zombieClass");
 
 	//temperature variables
 	dayz_temperatur = 36; //TeeChange
