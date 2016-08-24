@@ -1,3 +1,5 @@
+#include "\z\addons\dayz_code\version.hpp"
+
 class RscPicture;
 class RscButton;
 class CA_IGUI_Title;
@@ -391,7 +393,7 @@ class RscDisplayMain : RscStandardDisplay
 		class DAYZ_Version : CA_Version
 		{
 			idc = -1;
-			text = "DayZMod Dev 1.8.8-2fc83af";
+			text = DayZVersion;
 			y = "(SafeZoneH + SafeZoneY) - (1 - 0.95)";
 		};
 		delete CA_TitleMainMenu;
