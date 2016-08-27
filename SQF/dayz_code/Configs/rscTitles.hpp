@@ -1,5 +1,3 @@
-#include "\z\addons\dayz_code\version.hpp"
-
 class RscPicture;
 class RscButton;
 class CA_IGUI_Title;
