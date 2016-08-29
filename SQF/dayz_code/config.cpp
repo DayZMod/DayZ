@@ -1,5 +1,5 @@
 #include "Configs\basicDefines.hpp"
-#include "\z\addons\dayz_code\version.hpp"
+#include "version.hpp"
 
 class CfgPatches
 {
