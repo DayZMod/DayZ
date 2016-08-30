@@ -195,6 +195,8 @@ if (isNil "keyboard_keys") then {
     [actionKeys "MoveRight", _interrupt] call _addArray;
     [actionKeys "MoveForward", _interrupt] call _addArray;
     [actionKeys "MoveBack", _interrupt] call _addArray;
+    [actionKeys "TurnLeft", _interrupt] call _addArray;
+    [actionKeys "TurnRight", _interrupt] call _addArray;
     [actionKeys "PushToTalk", _noise] call _addArray;
     [actionKeys "VoiceOverNet", _noise] call _addArray;
     [actionKeys "PushToTalkDirect", _noise] call _addArray;
@@ -213,16 +215,10 @@ if (isNil "keyboard_keys") then {
 //  [[DIK_NUMPAD7], _rotate_left] call _addArray;
 //  [[DIK_NUMPAD9], _rotate_right] call _addArray;
     [actionKeys "ForceCommandingMode", _block] call _addArray;
-    [[  DIK_F9, DIK_F10, DIK_F11, 
+    [[  DIK_F9,DIK_F10,DIK_F11,DIK_F12
         DIK_F8,DIK_F7,DIK_F6,DIK_F5,DIK_F4,
         DIK_F3,DIK_F2,DIK_0,DIK_9,
         DIK_8,DIK_7,DIK_6,DIK_5,DIK_4], _block] call _addArray;
-    if (serverCommandAvailable "#kick") then {
-        [[DIK_F12], gcam_onoff] call _addArray; // GCAM: F12 to start (for admins only)
-    }
-    else {
-        [[DIK_F12], _block] call _addArray;
-    };
 
     (findDisplay 46) displayRemoveAllEventHandlers "KeyUp";
     (findDisplay 46) displayRemoveAllEventHandlers "KeyDown";
@@ -234,10 +230,6 @@ if (r_player_unconsciousInputDisabled) exitWith {true};
 _code = keyboard_keys select _dikCode;
 if (!isNil "_code") then {
     call _code;
-};
-
-if (serverCommandAvailable "#kick") then {
-    GCam_KD = _this; // GCAM: GCam_KD is the current pressed key
 };
 
 _handled
