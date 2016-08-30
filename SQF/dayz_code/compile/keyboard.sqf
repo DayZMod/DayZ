@@ -215,7 +215,7 @@ if (isNil "keyboard_keys") then {
 //  [[DIK_NUMPAD7], _rotate_left] call _addArray;
 //  [[DIK_NUMPAD9], _rotate_right] call _addArray;
     [actionKeys "ForceCommandingMode", _block] call _addArray;
-    [[  DIK_F9,DIK_F10,DIK_F11,DIK_F12
+    [[  DIK_F9,DIK_F10,DIK_F11,DIK_F12,
         DIK_F8,DIK_F7,DIK_F6,DIK_F5,DIK_F4,
         DIK_F3,DIK_F2,DIK_0,DIK_9,
         DIK_8,DIK_7,DIK_6,DIK_5,DIK_4], _block] call _addArray;
