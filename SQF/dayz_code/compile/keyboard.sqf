@@ -9,18 +9,6 @@ _altState = _this select 4;
 _handled = false;
 
 if (isNil "keyboard_keys") then {
-    _deadcheck = { // ESCAPE
-//        call player_forceSave;
-//        _idd = uiNamespace getVariable "RscDisplayMPInterrupt";
-//        if (isNil '_idd') then  {
-//            createDialog 'RscDisplayMPInterrupt';
-//        }
-//        else { 
-//            closeDialog 0;
-//       };
-        //keyboard_keys = nil;*/
-        _handled = false;
-    };
 	_muteSound = {
 		call player_toggleSoundMute;
 		_handled = true;
@@ -167,7 +155,7 @@ if (isNil "keyboard_keys") then {
     _build_str8OnOff = {
         if (0 != count Dayz_constructionContext) then {
             Dayz_constructionContext set [ 5, !(Dayz_constructionContext select 5) ];
-            _handled = true; // used by keyboard.sqf
+            _handled = true;
             r_interrupt = true;
         };
     };
@@ -183,7 +171,6 @@ if (isNil "keyboard_keys") then {
 
     keyboard_keys = [];
     keyboard_keys resize 256;
-    [[DIK_ESCAPE], _deadcheck] call _addArray;
     [[DIK_1], _rifle] call _addArray;
     [[DIK_2], _pistol] call _addArray;
     [[DIK_3], _melee] call _addArray;
@@ -219,11 +206,6 @@ if (isNil "keyboard_keys") then {
         DIK_F8,DIK_F7,DIK_F6,DIK_F5,DIK_F4,
         DIK_F3,DIK_F2,DIK_0,DIK_9,
         DIK_8,DIK_7,DIK_6,DIK_5,DIK_4], _block] call _addArray;
-
-    (findDisplay 46) displayRemoveAllEventHandlers "KeyUp";
-    (findDisplay 46) displayRemoveAllEventHandlers "KeyDown";
-    (findDisplay 46) displayAddEventHandler ["KeyDown", preprocessFileLineNumbers (MISSION_ROOT+'keyboard.sqf')];
-    //diag_log [diag_ticktime, __FILE__, "eh reset" ];
 };
 
 if (r_player_unconsciousInputDisabled) exitWith {true};

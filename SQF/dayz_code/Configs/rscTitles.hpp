@@ -19,6 +19,7 @@ class RscObject;
 class IGUIBack;
 class RscIGUIListBox;
 class RscHTML;
+class RscDisplayEmpty;
 
 #include "CfgPlayerStats\defines.hpp"
 #include "CfgPlayerStats\p__cover.hpp"
@@ -29,6 +30,13 @@ class RscHTML;
 #include "CfgPlayerStats\p_headshots.hpp"
 #include "CfgPlayerStats\p_murders.hpp"
 #include "CfgPlayerStats\sound.hpp"
+
+class RscDisplayMission: RscDisplayEmpty
+{
+	access = 0;
+	idd = 46;
+	onKeyDown = "if (!isNil 'DZ_KeyDown_EH') then {_this call DZ_KeyDown_EH;};"; //assigned much quicker than spawning init_keyboard
+};
 
 class RscPictureGUI
 {

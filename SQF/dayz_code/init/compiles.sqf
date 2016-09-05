@@ -483,6 +483,7 @@ fn_getModelName = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile
 fn_niceSpot = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_niceSpot.sqf";
 fnc_Obj_handleDam = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\obj_handleDam.sqf";
 object_roadFlare = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\object_roadFlare.sqf";
+DZ_KeyDown_EH = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\keyboard.sqf";
 
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\traps\init.sqf";
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\psrnd.sqf"; // pseudo random for plantSpanwer
@@ -519,12 +520,6 @@ player_sumMedical = {
 		_character getVariable["blood_testdone",false]
 	];
 	_medical
-};
-
-init_keyboard = {
-	waituntil {!(isNull (findDisplay 46))};
-	keyboard_keys = nil;
-	[controlNull, 1, false,false,false] call compile preprocessFileLineNumbers (MISSION_ROOT+'keyboard.sqf');
 };
 
 dayz_reduceItems = {
