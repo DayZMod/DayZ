@@ -515,6 +515,7 @@ class FSM
       name = "Chase";
       init = /*%FSM<STATEINIT""">*/"_timeN = diag_tickTime;" \n
        "" \n
+	   "if (isNull _agent) exitWith {}; //Prevent errors if zombie is suddenly deleted" \n
        "_agent forceSpeed (_agent getVariable [""speedLimit"", 3]);" \n
        "" \n
        "_target = _agent call zombie_findTargetAgent;" \n
@@ -758,6 +759,7 @@ class FSM
        "_remotetargets = _agent getVariable [""remotetargets"",[]];" \n
        "" \n
        "//Clear remote on reset" \n
+	   "if (isNull _agent) then {_remotetargets = [];};" \n
        "if (count _remotetargets > 0) then {" \n
        "	_agent setVariable [""remotetargets"",[],true];" \n
        "};" \n
