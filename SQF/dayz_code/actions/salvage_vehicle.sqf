@@ -1,13 +1,11 @@
 private ["_part","_color","_vehicle","_PlayerNear","_hitpoints","_isATV","_is6WheelType","_HasNoGlassKind",
-"_6WheelTypeArray","_NoGlassArray","_NoExtraWheelsArray","_RemovedPartsArray","_damage","_cmpt","_configVeh","_damagePercent","_string","_handle","_cancel","_type","_isBicycle"];
+"_6WheelTypeArray","_NoGlassArray","_NoExtraWheelsArray","_RemovedPartsArray","_damage","_cmpt","_configVeh","_damagePercent","_string","_handle","_cancel","_type"];
 
 _vehicle = _this select 3;
-_isBicycle = _vehicle isKindOf "Bicycle";
-if (_isBicycle) exitWith {}; // No salvage for now. Bicycle wheels should not give full size tires. Also model does not update to show removed wheels.
 {dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
 
 _PlayerNear = {isPlayer _x} count ((getPosATL _vehicle) nearEntities ["CAManBase", 10]) > 1;
-if (_PlayerNear) exitWith {dayz_myCursorTarget = objNull; cutText [localize "str_pickup_limit_5", "PLAIN DOWN"];};
+if (_PlayerNear) exitWith {dayz_myCursorTarget = objNull; localize "str_pickup_limit_5" call dayz_rollingMessages;};
 
 dayz_myCursorTarget = _vehicle;
 _hitpoints = _vehicle call vehicle_getHitpoints;
@@ -15,7 +13,7 @@ _hitpoints = _vehicle call vehicle_getHitpoints;
 _type = typeOf _vehicle;
 _isATV = _type in ["ATV_US_EP1","ATV_CZ_EP1"];
 _is6WheelType = _type in ["V3S_Civ","Ural_TK_CIV_EP1"];
-_HasNoGlassKind = (_vehicle isKindOf "Motorcycle") or _isBicycle;
+_HasNoGlassKind = (_vehicle isKindOf "Motorcycle");
 
 _6WheelTypeArray = ["HitLMWheel","HitRMWheel"];
 _NoGlassArray = ["HitGlass1","HitGlass2","HitGlass3","HitGlass4","HitGlass5","HitGlass6","HitLGlass","HitRGlass"];
@@ -30,7 +28,7 @@ if (_vehicle isKindOf "tractor") then {
 	_hitpoints = _hitpoints - ["motor","HitLFWheel","HitRFWheel","HitLBWheel","HitRBWheel","HitLF2Wheel","HitRF2Wheel","HitLMWheel","HitRMWheel"];
 };
 
-if (_isBicycle or (_vehicle isKindOf "Motocycle")) then {
+if (_vehicle isKindOf "Motocycle") then {
 	_hitpoints = _hitpoints - ["HitEngine","HitFuel"];
 };
 
@@ -70,7 +68,7 @@ if (_is6WheelType) then {
 } forEach _hitpoints;
 
 if (count _hitpoints > 0 ) then {
-	//ArmA OA String
+	// Localized in A2OA\Expansion\dta\languagecore
 	_cancel = dayz_myCursorTarget addAction [localize "str_action_cancel_action", "\z\addons\dayz_code\actions\repair_cancel.sqf","repair", 0, true, false];
 	s_player_repairActions set [count s_player_repairActions,_cancel];
 	s_player_repair_crtl = 1;
