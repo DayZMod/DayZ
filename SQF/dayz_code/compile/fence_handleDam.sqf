@@ -13,8 +13,8 @@ _obj = _this select 0;
 _total = (damage _obj);
 
 _damage = switch (1==1) do {
-    case (_obj in ["WoodenFence_3","WoodenFence_4","WoodenFence_5"]): { 0.5 };
-    case (_obj in ["WoodenFence_6","WoodenFence_7"]): { 0.35 };
+    case ((typeof _obj) in ["WoodenFence_3","WoodenFence_4","WoodenFence_5"]): { 0.5 };
+    case ((typeof _obj) in ["WoodenFence_6","WoodenFence_7"]): { 0.35 };
     default { 1 };
 };
 
