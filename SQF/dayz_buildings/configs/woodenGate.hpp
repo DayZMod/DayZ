@@ -39,7 +39,7 @@ class WoodenGate_Base: DZ_buildables
 		requiredParts[] = {"ItemPlank","equip_nails"};
 	};
 	class eventHandlers {
-		HandleDamage = "if ((_this select 4) == 'PipeBomb') then { [_this select 0,1] call fnc_Obj_handleDam; } else { false };";
+		HandleDamage = "if ((_this select 4) == 'PipeBomb') then { _this call fnc_Obj_FenceHandleDam; } else { false };";
 	};
 };
 
@@ -129,9 +129,6 @@ class WoodenGate_2: WoodenGate_Base
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
 	};
-	class eventHandlers {
-		HandleDamage = "if ((_this select 4) == 'PipeBomb') then { [_this select 0,0.5] call fnc_Obj_handleDam; } else { false };";
-	};
 };
 
 class WoodenGate_3: WoodenGate_Base
@@ -157,8 +154,5 @@ class WoodenGate_4: WoodenGate_Base
 	model = "z\addons\dayz_buildings\models\gates\gate4_dzam.p3d";
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
-	};
-	class eventHandlers {
-		HandleDamage = "if ((_this select 4) == 'PipeBomb') then { [_this select 0,0.35] call fnc_Obj_handleDam; } else { false };";
 	};
 };
