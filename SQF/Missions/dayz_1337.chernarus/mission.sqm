@@ -176,7 +176,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=8;
+		items=10;
 		class Item0
 		{
 			position[]={7839,0,8414};
@@ -223,6 +223,18 @@ class Mission
 		{
 			position[]={12048,0,8352};
 			name="spawn5"; //spawn_berezino
+			type="Empty";
+		};
+		class Item8
+		{
+			position[]={7049,0,9241};
+			name="crashsites";
+			type="Empty";
+		};
+		class Item9
+		{
+			position[]={7542,0,7134};
+			name="carepackages";
 			type="Empty";
 		};
 	};

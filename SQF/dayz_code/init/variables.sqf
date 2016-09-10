@@ -124,9 +124,9 @@ pickupInit = false;
 mouseOverCarry = false; //for carry slot since determining mouse pos doesn't work right
 dayZ_partClasses = ["PartFueltank","PartWheel","PartEngine"]; //No need to add PartGeneric, it is default for everything
 dayZ_explosiveParts = ["palivo","motor"];
-dayz_centerMarker = [getMarkerPos "center",7500];
-dayz_crashsiteMarker = [getMarkerPos "crashsites",4880];
-dayz_carepackageMarker = [getMarkerPos "carepackages",6150];
+dayz_centerMarker = ["center",7500];
+dayz_crashsiteMarker = ["crashsites",4880];
+dayz_carepackageMarker = ["carepackages",6150];
 
 //Survival Variables
 SleepFood = 2160; //minutes (48 hours)
