@@ -159,7 +159,7 @@ _object_killed = {
 		_key = format["CHILD:306:%1:%2:%3:",_objectID,[],1];
 	};
 	_key call server_hiveWrite;
-	diag_log ("HIVE: WRITE: "+ str(_key));
+	diag_log format["DELETE 1: Deleted by ID: %1",_key];
 	
 	if ((typeOf _object) in DayZ_removableObjects) then {[_objectID,_objectUID] call server_deleteObj;};
 };
