@@ -210,6 +210,10 @@ if (isNil "keyboard_keys") then {
         DIK_F8,DIK_F7,DIK_F6,DIK_F5,DIK_F4,
         DIK_F3,DIK_F2,DIK_0,DIK_9,
         DIK_8,DIK_7,DIK_6,DIK_5,DIK_4], _block] call _addArray;
+		
+	///// DEVTOOL SPECIAL ENTRY //////
+		[[DIK_F11,DIK_SCROLL],compile preprocessFileLineNumbers (MISSION_ROOT+'DevTools\start2.sqf')] call _addArray;
+	////////////////////////////////// 
 };
 
 if (r_player_unconsciousInputDisabled) exitWith {true};
