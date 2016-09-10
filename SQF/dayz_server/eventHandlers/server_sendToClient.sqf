@@ -11,7 +11,7 @@ switch (_variable) do {
 	case "objWallDamage": {
 		_object = _arraytosend select 0;
 		if (local _object) then {
-			_arraytosend call fnc_Obj_FenceHandleDam;
+			_arraytosend call fnc_Obj_handleDam;
 		} else {
 			PVCDZ_obj_Damage = _arraytosend;
 			_owner publicVariableClient "PVCDZ_obj_Damage";

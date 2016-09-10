@@ -9,7 +9,7 @@ Called by "HandleDamage" vehicle Event Handler
 private["_obj","_total","_damage"];
 
 _obj = _this select 0;
-_damage = _this select 1;
+//_damage = _this select 1;
 _total = (damage _obj);
 
 _damage = switch (1==1) do {
