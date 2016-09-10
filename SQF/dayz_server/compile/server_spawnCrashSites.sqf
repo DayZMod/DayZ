@@ -21,8 +21,8 @@ Author:
 #define SPAWN_CHANCE 0.75
 
 //Parameters for finding a suitable position to spawn the crash site
-#define SEARCH_CENTER [7049,9241]
-#define SEARCH_RADIUS 4880
+#define SEARCH_CENTER dayz_crashsiteMarker select 0
+#define SEARCH_RADIUS dayz_crashsiteMarker select 1
 #define SEARCH_DIST_MIN 20
 #define SEARCH_SLOPE_MAX 2
 #define SEARCH_BLACKLIST [[[2092,14167],[10558,12505]]]
