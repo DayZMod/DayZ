@@ -382,10 +382,12 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	if (_isVehicle && {!_isMan} && {dayz_myCursorTarget != _cursorTarget} && {_hasToolbox} && {damage _cursorTarget < 1}) then {
 		if (s_player_repair_crtl < 0) then {
 			dayz_myCursorTarget = _cursorTarget;
-			_menu = dayz_myCursorTarget addAction [localize "str_actions_rapairveh", "\z\addons\dayz_code\actions\repair_vehicle.sqf",_cursorTarget, 0, true, false];
-			_menu1 = dayz_myCursorTarget addAction [localize "str_actions_salvageveh", "\z\addons\dayz_code\actions\salvage_vehicle.sqf",_cursorTarget, 0, true, false];
+			_menu = dayz_myCursorTarget addAction [localize "str_actions_repairveh", "\z\addons\dayz_code\actions\repair_vehicle.sqf",_cursorTarget, 0, true, false];
+			if (!_isBicycle) then { //Bike wheels should not give full size tires. Also model does not update to show removed wheels.
+				_menu1 = dayz_myCursorTarget addAction [localize "str_actions_salvageveh", "\z\addons\dayz_code\actions\salvage_vehicle.sqf",_cursorTarget, 0, true, false];
+				s_player_repairActions set [count s_player_repairActions,_menu1];
+			};
 			s_player_repairActions set [count s_player_repairActions,_menu];
-			s_player_repairActions set [count s_player_repairActions,_menu1];
 			s_player_repair_crtl = 1;
 		} else {
 			{dayz_myCursorTarget removeAction _x} forEach s_player_repairActions;
