@@ -2750,7 +2750,6 @@
 		<Key ID="STR_CRAFT_NAME_M9SD">
 			<English>M9SD</English>
 			<Russian>M9 с глушителем</Russian>
-			<Spanish>M9SD</Spanish>
 			<French>M9 Silencieux</French>
 			<Czech>M9 s tlumičem</Czech>
 			<German>M9 SD</German>
@@ -2782,7 +2781,6 @@
 		<Key ID="STR_CRAFT_NAME_bizonSD">
 			<English>BizonSD</English>
 			<Russian>Бизон с глушителем</Russian>
-			<Spanish>BizonSD</Spanish>
 			<French>Bizon Silencieux</French>
 			<Czech>Bizon s tlumičem</Czech>
 			<German>Bizon SD</German>
