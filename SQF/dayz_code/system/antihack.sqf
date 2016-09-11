@@ -9,7 +9,7 @@ inGameUISetEventHandler ["Action","false"];
 // thanks to Tansien the great
 // run only once per character life
 {
-	_plant = _x createVehicleLocal getMarkerPos (dayz_centerMarker select 0);
+	_plant = _x createVehicleLocal (getMarkerPos "center");
 	uiSleep 0.1;
 	if (sizeOf _x == 0) exitWith { 
 		PVDZ_sec_atp = toArray ("Plants texture hack for type " + _x);

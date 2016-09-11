@@ -124,9 +124,6 @@ pickupInit = false;
 mouseOverCarry = false; //for carry slot since determining mouse pos doesn't work right
 dayZ_partClasses = ["PartFueltank","PartWheel","PartEngine"]; //No need to add PartGeneric, it is default for everything
 dayZ_explosiveParts = ["palivo","motor"];
-dayz_centerMarker = ["center",7500];
-dayz_crashsiteMarker = ["crashsites",4880];
-dayz_carepackageMarker = ["carepackages",6150];
 
 //Survival Variables
 SleepFood = 2160; //minutes (48 hours)
@@ -361,6 +358,12 @@ if(isNil "dayz_ForcefullmoonNights") then {
 if(isNil "dayz_randomMaxFuelAmount") then {
 	dayz_randomMaxFuelAmount = 250; //Puts a random amount of fuel in all fuel stations.
 };
+if(isNil "dayz_townGenerator") then {
+	dayz_townGenerator = true; // Spawn map junk. Currently only compatible with Chernarus. Need to add coordinates for other maps.
+};
+if(isNil "dayz_townGeneratorBlackList") then {
+	dayz_townGeneratorBlackList = []; // Town generator will not spawn junk within 150m of these positions.
+};
 
 //Replace server individual settings with ranked settings
 if(isNil "dayz_presets") then { dayz_presets = "Vanilla"; };
@@ -422,6 +425,14 @@ switch (dayz_presets) do {
 		//Not implmented yet
 		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
 	};
+};
+
+switch (toLower worldName) do {
+	case "napf";
+	case "sauerland" : {dayz_minpos = -1000; dayz_maxpos = 26000;};
+	case "tavi" : {dayz_minpos = -26000; dayz_maxpos = 26000;};
+	case "chernarus" : {dayz_minpos = -1; dayz_maxpos = 16000;};
+	case default {dayz_minpos = -20000; dayz_maxpos = 20000;};
 };
 
 //start achievements_init

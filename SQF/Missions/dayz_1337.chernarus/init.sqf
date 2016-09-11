@@ -73,13 +73,13 @@ execVM "\z\addons\dayz_code\system\DynamicWeatherEffects.sqf";
 
 if (isServer) then {
 	execVM "\z\addons\dayz_server\system\server_monitor.sqf";
-	if (dayz_infectiousWaterholes) then {execVM "\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\init.sqf";};
+	if (dayz_infectiousWaterholes && (toLower worldName == "chernarus")) then {execVM "\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\init.sqf";};
 };
 
 //Must be global spawned, so players don't fall through buildings (might be best to spilt these to important, not important)
-if (dayz_POIs) then { execVM "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf"; };
+if (dayz_POIs && (toLower worldName == "chernarus")) then { execVM "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf"; };
 // Lootable objects from CfgTownGeneratorDefault.hpp
-if (1==1) then { execVM "\z\addons\dayz_code\system\mission\chernarus\LegacyTownGenerator\init.sqf"; };
+if (dayz_townGenerator) then { execVM "\z\addons\dayz_code\system\mission\chernarus\LegacyTownGenerator\MainLootableObjects.sqf"; };
 
 if (!isDedicated) then {
 	if (dayz_antiWallHack != 0) then {

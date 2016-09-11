@@ -182,6 +182,7 @@ class Mission
 			position[]={7839,0,8414};
 			name="center";
 			type="Empty";
+			a=7500;b=7000;
 		};
 		class Item1
 		{
@@ -230,12 +231,14 @@ class Mission
 			position[]={7049,0,9241};
 			name="crashsites";
 			type="Empty";
+			a=4880;b=7000;
 		};
 		class Item9
 		{
 			position[]={7542,0,7134};
 			name="carepackages";
 			type="Empty";
+			a=6150;b=0;
 		};
 	};
 };

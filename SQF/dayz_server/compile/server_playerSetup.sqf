@@ -174,7 +174,7 @@ if (count _stats > 0) then {
 if (_randomSpot) then {
 	private ["_counter","_position","_isNear","_isZero","_mkr"];
 	if (!isDedicated) then {endLoadingScreen;};
-	_IslandMap = if (worldName in ["dzhg","panthera2","Sara","Utes","Dingor","namalsk","isladuala","Tavi","dayznogova","tasmania2010"]) then {true} else {false};
+	_IslandMap = if (toLower worldName in ["caribou","cmr_ovaron","dayznogova","dingor","dzhg","fallujah","fapovo","fdf_isle1_a","isladuala","lingor","mbg_celle2","namalsk","napf","oring","panthera2","sara","sauerland","smd_sahrani_a2","tasmania2010","tavi","trinity","utes"]) then {true} else {false};
 
 	//spawn into random
 	_findSpot = true;
