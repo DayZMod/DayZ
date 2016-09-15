@@ -183,7 +183,7 @@ _checkCollision =
 {
 	scopeName "root";
 	
-	local _count = getNumber (configFile >> "CfgVehicles" >> typeof _this >> "buildCollisionPoints");
+	local _count = getNumber (configFile >> "CfgVehicles" >> _item >> "buildCollisionPoints");
 	
 	if (_count == 0) exitWith { objNull };
 	
@@ -191,13 +191,13 @@ _checkCollision =
 	local _points = [];
 	_points resize _count;
 	
-	for "_i" from 0 to _count - 1 do
+	for ["_i" from 0 to _count - 1] do
 	{
-		_points set [_i, (_this modelToWorld (_this selectionPosition format ["buildCollision%1", _i]));
+		_points set [_i, (_object modelToWorld (_object selectionPosition format ["buildCollision%1", _i]))];
 	};
 	
 	{
-		for "_i" from 1 to count _x - 1 do
+		for ["_i" from 1 to count _x - 1] do
 		{
 			{
 				local _type = typeof _x;
@@ -208,10 +208,10 @@ _checkCollision =
 					breakTo "root";
 				};
 			}
-			foreach lineIntersectsWith [_points select (_i - 1), _points select _i, _this];
+			foreach lineIntersectsWith [_points select (_i - 1), _points select _i, _object];
 		};
 	}
-	foreach getArray (configFile >> "CfgVehicles" >> typeof this >> "buildCollisionPaths");
+	foreach getArray (configFile >> "CfgVehicles" >> _item >> "buildCollisionPaths");
 	
 	_result
 };
@@ -226,7 +226,7 @@ _checkBuildingCollision =
 	
 	_objColliding = objNull;
 	
-	local _count = getNumber (configFile >> "CfgVehicles" >> typeof _this >> "buildCollisionPoints");
+	local _count = getNumber (configFile >> "CfgVehicles" >> _item >> "buildCollisionPoints");
 	if (_count == 0) exitWith {};
 	
 	local _wall = _object isKindOf "DZ_buildables";
@@ -235,11 +235,11 @@ _checkBuildingCollision =
 	local _points = [];
 	_points resize _count;
 	for "_i" from 0 to _count - 1 do
-		{ _points set [_i, (_this modelToWorld (_this selectionPosition format ["buildCollision%1", _i])); };
+		{ _points set [_i, (_object modelToWorld (_object selectionPosition format ["buildCollision%1", _i]))]; };
 	
 	//Trace paths
 	{
-		for "_i" from 1 to count _x - 1 do
+		for ["_i" from 1 to count _x - 1] do
 		{
 			{
 				if (!_wall || { !(_x isKindOf "DZ_buildables" && { _x getVariable ["ownerArray", [""]] select 0 == getPlayerUID player }) }) then
@@ -253,7 +253,7 @@ _checkBuildingCollision =
 					};
 				};
 			}
-			foreach lineIntersectsWith [_points select (_i - 1), _points select _i, _this, player];
+			foreach lineIntersectsWith [_points select (_i - 1), _points select _i, _object, player];
 		};
 	}
 	foreach getArray (configFile >> "CfgVehicles" >> typeof this >> "buildCollisionPaths");
@@ -363,7 +363,7 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 	//Need to add config based bypass checks array.
 	if (!_isCollisionBypass) then {
 		// check now that ghost is not colliding
-		call _checkBuildingCollision;
+		_object call _checkBuildingCollision;
 		
 		//diag_log ("Collision Test");
 	};
