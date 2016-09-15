@@ -48,6 +48,8 @@ class WoodenGate_ghost: WoodenGate_Base
 	scope = 2;
 	displayName = $STR_BLD_name_WoodenGate_1_ghost;//"Wooden Gate (Ghost)"
 	model = "z\addons\dayz_buildings\models\gates\gate0_dzam_ghost.p3d"; //Model needs updating to be the ghost of the final model.
+    buildCollisionPoints = 4;
+    buildCollisionPaths[] = {{0,1,3,2,0,3},{1,2}};
 };
 //Stage Foundation
 class WoodenGate_foundation: WoodenGate_Base

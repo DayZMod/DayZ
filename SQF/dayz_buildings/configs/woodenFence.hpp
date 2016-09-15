@@ -22,6 +22,8 @@ class WoodenFence_ghost: WoodenFence_base
 	scope = 2;
 	model = "z\addons\dayz_buildings\models\fence_ghost.p3d";
 	displayName = $STR_BLD_name_WoodenFence_ghost;//"Wooden Fence (Ghost)"
+    buildCollisionPoints = 4;
+    buildCollisionPaths[] = {{0,1,3,2,0,3},{1,2}};
 }; 
 class WoodenFence_1_foundation: WoodenFence_base  // <-- ItemDIY_wood
 {

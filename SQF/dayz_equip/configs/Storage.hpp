@@ -25,6 +25,8 @@ class StashSmall_base : DZ_storage_base {
 		requiredParts[] = {"PartWoodPile"};
 		create = "StashSmall1";
 	};
+	buildCollisionPoints = 5;
+	buildCollisionPaths[] = {{0,1,2,3,4,1},{0,4,2}};
 };
 class StashSmall : StashSmall_base {
 	armor = 5;
@@ -163,6 +165,8 @@ class TentStorage_base : DZ_storage_base {
 	transportMaxMagazines = 130;
 	transportMaxWeapons = 10;
 	transportMaxBackpacks = 5;
+	buildCollisionPoints = 6;
+	buildCollisionPaths[] = {{0,1,2,3,4,5,0,2,4,0,3,1,5,3}};
 };
 class TentStorage : TentStorage_base {
 	displayName = $STR_VEH_NAME_TENT;
@@ -244,6 +248,8 @@ class DomeTentStorage_base : TentStorage_base {
 	transportMaxMagazines = 150;
 	transportMaxWeapons = 15;
 	transportMaxBackpacks = 5;
+	buildCollisionPoints = 7;
+	buildCollisionPaths[] = {{1,0,4,3,1,6,4},{0,6,3},{5,6,2}};
 };
 
 class DomeTentStorage : DomeTentStorage_base {
