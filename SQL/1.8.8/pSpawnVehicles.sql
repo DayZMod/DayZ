@@ -21,19 +21,36 @@ BEGIN
 	
 	DECLARE ServerInstance INT DEFAULT i;
 	DECLARE MaxNumSpawn INT DEFAULT MaxVehicles - countVehicles(ServerInstance);
+
 	
+	set @countNULLs = 0;	
+	set @tobjLoop = 3;
+	WHILE (@tobjLoop > 0) DO
 	DROP TEMPORARY TABLE IF EXISTS temp_objects;
 	CREATE TEMPORARY TABLE temp_objects AS
-	(
-		SELECT	CONVERT(SUBSTRING(SUBSTRING_INDEX(@ws, ",", 2), LENGTH(SUBSTRING_INDEX(@ws, ",", 1)) + 2), DECIMAL(10, 5)) AS X,
-				CONVERT(SUBSTRING(SUBSTRING_INDEX(@ws, ",", 3), LENGTH(SUBSTRING_INDEX(@ws, ",", 2)) + 2), DECIMAL(10, 5)) AS Y
-		FROM object_data
-		WHERE CharacterID = 0
-			AND Instance = ServerInstance
-			AND (@ws := Worldspace) IS NOT NULL
-			AND (@ws := REPLACE(@ws, "[", "")) IS NOT NULL
-			AND (@ws := REPLACE(@ws, "]", "")) IS NOT NULL
-	);
+		(
+			SELECT	CONVERT(SUBSTRING(SUBSTRING_INDEX(@ws, ",", 2), LENGTH(SUBSTRING_INDEX(@ws, ",", 1)) + 2), DECIMAL(10, 5)) AS X,
+					CONVERT(SUBSTRING(SUBSTRING_INDEX(@ws, ",", 3), LENGTH(SUBSTRING_INDEX(@ws, ",", 2)) + 2), DECIMAL(10, 5)) AS Y
+			FROM object_data
+			WHERE CharacterID = 0
+				AND Instance = ServerInstance
+				AND (@ws := Worldspace) IS NOT NULL
+				AND (@ws := REPLACE(@ws, "[", "")) IS NOT NULL
+				AND (@ws := REPLACE(@ws, "]", "")) IS NOT NULL
+		);
+		
+		set @countNULLs = (SELECT count(*) FROM temp_objects where (X IS NULL OR Y IS NULL));
+		IF (@countNULLs > 0 ) THEN 
+			SET @tobjLoop = @tobjLoop - 1;
+		ELSE 
+			SET @tobjLoop = 0;
+		END IF;
+	END WHILE;
+	
+	IF (@countNULLs > 0 ) THEN 
+		SELECT "No vehicles spawned. NULLs found in temp_objects.";
+	END IF;
+	
 	
 	DROP TEMPORARY TABLE IF EXISTS temp_locations;
 	CREATE TEMPORARY TABLE temp_locations AS
@@ -81,7 +98,7 @@ BEGIN
 			ON temp_locations.ID = temp.Location
 		ORDER BY RAND()
 	);
-	
+
 	SET @numSpawned = 0;
 	WHILE (@numSpawned < MaxNumSpawn AND (SELECT COUNT(*) FROM temp_spawns) > 0) DO
 		SET @spawnid = (SELECT ID FROM temp_spawns LIMIT 1);
@@ -89,16 +106,24 @@ BEGIN
 		SET @numSpawnable = getNumSpawnable(ServerInstance, @spawnid);
 		IF (@numSpawnable > 0 AND RAND() < @chance) THEN
 			SET @worldspace = (SELECT Worldspace FROM temp_spawns LIMIT 1);
-			INSERT INTO object_data (ObjectUID, Classname, Instance, CharacterID, Worldspace, Inventory, Hitpoints, Fuel, Damage, Datestamp)
-			SELECT generateUID(ServerInstance), Classname, ServerInstance, 0, Worldspace,
-				randomizeVehicleInventory(Classname),
-				randomizeVehicleHitpoints(Classname),
-				MinFuel + RAND() * (MaxFuel - MinFuel),
-				MinDamage + RAND() * (MaxDamage - MinDamage),
-				SYSDATE()
-			FROM temp_spawns
-			LIMIT 1;
 			
+			#SKI GOGGLES - prevent random double-WS inserts
+			set @countWS = (SELECT count(*) FROM object_data where characterid=0 AND worldspace=@worldspace);
+			IF (@CountWS < 1) THEN
+			#SKI GOGGLES - prevent random double-WS inserts
+			
+				INSERT INTO object_data (ObjectUID, Classname, Instance, CharacterID, Worldspace, Inventory, Hitpoints, Fuel, Damage, Datestamp)
+				SELECT generateUID(ServerInstance), Classname, ServerInstance, 0, Worldspace,
+					randomizeVehicleInventory(Classname),
+					randomizeVehicleHitpoints(Classname),
+					MinFuel + RAND() * (MaxFuel - MinFuel),
+					MinDamage + RAND() * (MaxDamage - MinDamage),
+					SYSDATE()
+				FROM temp_spawns
+				LIMIT 1;
+			#SKI GOGGLES - prevent random double-WS inserts
+			END IF;	
+			#SKI GOGGLES - prevent random double-WS inserts
 			DELETE FROM temp_spawns WHERE Worldspace = @worldspace;
 			
 			SET @numSpawned = @numSpawned + 1;
