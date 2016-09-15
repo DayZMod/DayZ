@@ -171,53 +171,6 @@ _maxElevation = {
 
 #define COLLIDABLE_OBJECT_MIN_SIZE 8
 
-/* Checks if object collides with something.
-
-Parameters:
-	object		object
-
-Return:
-	bool		result
-*/
-_checkCollision =
-{
-	scopeName "root";
-	
-	local _count = getNumber (configFile >> "CfgVehicles" >> _item >> "buildCollisionPoints");
-	
-	if (_count == 0) exitWith { objNull };
-	
-	local _result = objNull;
-	local _points = [];
-	_points resize _count;
-	
-	for ["_i" from 0 to _count - 1] do
-	{
-		_points set [_i, (_object modelToWorld (_object selectionPosition format ["buildCollision%1", _i]))];
-	};
-	
-	{
-		for ["_i" from 1 to count _x - 1] do
-		{
-			{
-				local _type = typeof _x;
-				
-				if (_type != "" && { sizeof _type >= COLLIDABLE_OBJECT_MIN_SIZE }) then
-				{
-					_result = _x;
-					breakTo "root";
-				};
-			}
-			foreach lineIntersectsWith [_points select (_i - 1), _points select _i, _object];
-		};
-	}
-	foreach getArray (configFile >> "CfgVehicles" >> _item >> "buildCollisionPaths");
-	
-	_result
-};
-
-#define COLLIDABLE_OBJECT_MIN_SIZE 8
-
 //check if building being placed and objects around placement is free to be built on.
 //Fence owners must build all the foundations by one player anyone can still upgrade (pending lock build level)
 _checkBuildingCollision =
@@ -226,7 +179,7 @@ _checkBuildingCollision =
 	
 	_objColliding = objNull;
 	
-	local _count = getNumber (configFile >> "CfgVehicles" >> _item >> "buildCollisionPoints");
+	local _count = getNumber (configFile >> "CfgVehicles" >> _ghost >> "buildCollisionPoints");
 	if (_count == 0) exitWith {};
 	
 	local _wall = _object isKindOf "DZ_buildables";
@@ -236,27 +189,35 @@ _checkBuildingCollision =
 	_points resize _count;
 	for "_i" from 0 to _count - 1 do
 		{ _points set [_i, (_object modelToWorld (_object selectionPosition format ["buildCollision%1", _i]))]; };
+		
+	diag_log format ["_points: %1", _points];
 	
 	//Trace paths
-	{
-		for ["_i" from 1 to count _x - 1] do
-		{
-			{
-				if (!_wall || { !(_x isKindOf "DZ_buildables" && { _x getVariable ["ownerArray", [""]] select 0 == getPlayerUID player }) }) then
-				{
-					local _type = typeof _x;
-					
-					if (_type != "" && { sizeof _type >= COLLIDABLE_OBJECT_MIN_SIZE }) then
-					{
-						_result = _x;
-						breakTo "root";
-					};
-				};
-			}
-			foreach lineIntersectsWith [_points select (_i - 1), _points select _i, _object, player];
-		};
-	}
-	foreach getArray (configFile >> "CfgVehicles" >> typeof this >> "buildCollisionPaths");
+    {
+        local _p2 = _x select 0;
+        
+        for "_i" from 1 to count _x - 1 do
+        {
+            local _p1 = _p2;
+            _p2 = _x select _i;
+            
+            {
+				diag_log format ["found intersection: %1", _x];
+				 
+                if (!_wall || { !(_x isKindOf "DZ_buildables" && { _x getVariable ["ownerArray", [""]] select 0 == getPlayerUID player }) }) then
+                {
+                    local _type = typeof _x;
+                    
+                    if (_type != "" && { sizeof _type >= COLLIDABLE_OBJECT_MIN_SIZE }) then
+                    {
+                        _objColliding = _x;
+                        breakTo "root";
+                    };
+                };
+            }
+            foreach lineIntersectsWith [_points select _p1, _points select _p2, _object, player];
+        };
+    } foreach getArray (configFile >> "CfgVehicles" >> _ghost >> "buildCollisionPaths");
 };
 
 //Is placement on a road?
@@ -363,7 +324,7 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 	//Need to add config based bypass checks array.
 	if (!_isCollisionBypass) then {
 		// check now that ghost is not colliding
-		_object call _checkBuildingCollision;
+		call _checkBuildingCollision;
 		
 		//diag_log ("Collision Test");
 	};
