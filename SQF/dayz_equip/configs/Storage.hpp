@@ -14,7 +14,7 @@ class StashSmall_base : DZ_storage_base {
 	displayname = $STR_VEH_NAME_STASH;
 	icon = "\Ca\misc3\data\Icons\icon_Atent_ca.paa";
 	mapsize = 3;
-	model = "\z\addons\dayz_communityassets\models\dirt_stash.p3d";
+	model = "\z\addons\dayz_communityassets\models\stash_small.p3d";
 	scope = 2;
 	vehicleClass = "Survival";
 	transportMaxMagazines = 12;
@@ -158,7 +158,7 @@ class StashMedium4 : StashMedium_base {
 };
 class TentStorage_base : DZ_storage_base {
 	vehicleClass="Military";
-	model = "\z\addons\dayz_communityassets\models\A_tent.p3d";
+	model = "\z\addons\dayz_communityassets\models\tent_a.p3d";
 	destrType=DestructTent;
 	displayName = $STR_VEH_NAME_TENT;
 	pack = "WeaponHolder_ItemTent";
@@ -240,7 +240,7 @@ class TentStorage4 : TentStorage_base {
 
 class DomeTentStorage_base : TentStorage_base {
 	armor = 50;
-	model = "\z\addons\dayz_communityassets\models\D_tent.p3d";
+	model = "\z\addons\dayz_communityassets\models\tent_dome.p3d";
 	displayname = $STR_VEH_NAME_DOME_TENT;
 	icon = "\Ca\buildings\Icons\i_Astan_CA.paa";
 	pack = "WeaponHolder_ItemDomeTent";
