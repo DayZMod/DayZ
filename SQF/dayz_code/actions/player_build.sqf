@@ -305,6 +305,7 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 		r_interrupt = false;
 		_object setDir _angleRef;
 		_tmp = player modelToWorld [0, _safeDistance,0];
+		
 		if (Dayz_constructionContext select 5 or _keepOnSlope) then {
 			_tmp set [2, 0];
 			_object setVectorUp surfaceNormal _tmp;
@@ -317,11 +318,8 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 		_object setPosATL _position;		
 	};
 	
-	//Need to add config based bypass checks array.
-	if (!_isCollisionBypass) then {
-		// check now that ghost is not colliding
-		call _checkBuildingCollision;
-	};
+	//Check collisions
+	call _checkBuildingCollision;
 	
 	// try to dock a beam from current ghost to another beams nearby
 	call _checkBeam2Magnet;
