@@ -188,22 +188,18 @@ _checkBuildingCollision =
 	local _points = [];
 	_points resize _count;
 	for "_i" from 0 to _count - 1 do
-		{ _points set [_i, (_object modelToWorld (_object selectionPosition format ["buildCollision%1", _i]))]; };
+        { _points set [_i, ATLtoASL (_object modelToWorld (_object selectionPosition format ["buildCollision%1", _i]))]; };
 		
-	diag_log format ["_points: %1", _points];
-	
 	//Trace paths
     {
-        local _p2 = _x select 0;
+        local _p2 = _x select 0; //[0,1,3,2,0,3]
         
         for "_i" from 1 to count _x - 1 do
         {
             local _p1 = _p2;
             _p2 = _x select _i;
             
-            {
-				diag_log format ["found intersection: %1", _x];
-				 
+            {			 
                 if (!_wall || { !(_x isKindOf "DZ_buildables" && { _x getVariable ["ownerArray", [""]] select 0 == getPlayerUID player }) }) then
                 {
                     local _type = typeof _x;
@@ -325,8 +321,6 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 	if (!_isCollisionBypass) then {
 		// check now that ghost is not colliding
 		call _checkBuildingCollision;
-		
-		//diag_log ("Collision Test");
 	};
 	
 	// try to dock a beam from current ghost to another beams nearby
