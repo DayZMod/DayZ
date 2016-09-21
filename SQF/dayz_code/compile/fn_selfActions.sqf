@@ -177,7 +177,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	};
 	
 	//Allow player to fill Fuel can
-	if (_hasEmptyFuelCan && {_isFuel} && {!a_player_jerryfilling} && (alive _cursorTarget)) then {
+	if (_hasEmptyFuelCan && {_isFuel} && {!a_player_jerryfilling} && {_isAlive}) then {
 		if (s_player_fillfuel < 0) then {
 			s_player_fillfuel = player addAction [localize "str_actions_self_10", "\z\addons\dayz_code\actions\jerry_fill.sqf",_cursorTarget, 1, false, true];
 		};
