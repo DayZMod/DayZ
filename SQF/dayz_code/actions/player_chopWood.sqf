@@ -108,13 +108,14 @@ if (count _findNearestTree > 0) then {
         cutText [format [localize "str_player_24_progress", _counter,_countOut], "PLAIN DOWN"];
     };
 
-    if (_proceed) then {            
+   if (_proceed ||(_counter > 0) ) then {            
 		//remove vehicle, Need to ask server to remove.
 		PVDZ_objgather_Knockdown = [_tree,player];
 		publicVariableServer "PVDZ_objgather_Knockdown";         
         //cutText [format["\n\nChopping down tree.], "PLAIN DOWN"];
         //cutText [localize "str_player_25", "PLAIN DOWN"];
-    } else {
+	};
+    if !(_proceed) then {            
         cutText [localize "str_player_24_Stoped", "PLAIN DOWN"];
 
         r_interrupt = false;
