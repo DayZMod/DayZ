@@ -185,11 +185,11 @@ _checkBuildingCollision =
 	
 	local _wall = _object isKindOf "DZ_buildables";
 	
-	//Make sure no one can build within 15 meters of someone elses walls.	
+	//Make sure no one can build within 6 meters of someone elses walls. Also block placement from anyone from the model origin.	
 	if (_wall && {
     local _result = false;
     {
-        if ( _x != _object && { _x getVariable ["ownerArray", [""]] select 0 != getPlayerUID player } ) exitWith
+        if (_x != _object && { _x distance _object < 1.5 || { _x getVariable ["ownerArray", [""]] select 0 != getPlayerUID player } } ) exitWith
             { _objColliding = _x; _result = true; };
     } foreach (nearestObjects [_object, ["DZ_buildables"], 6]);
     _result
