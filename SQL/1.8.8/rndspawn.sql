@@ -12,7 +12,7 @@
 
 -- Dumping structure for function dayzhivemind.rndspawn
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` FUNCTION `rndspawn`(`chance` double) RETURNS tinyint(1)
+CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `rndspawn`(`chance` double) RETURNS tinyint(1)
     DETERMINISTIC
 BEGIN
 

@@ -8,7 +8,7 @@
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`dayz`@`localhost` PROCEDURE `pCleanup`()
+CREATE DEFINER=`dayzhivemind`@`%` PROCEDURE `pCleanup`()
 BEGIN 
 #Last ran
 	update event_scheduler set LastRun = NOW() where System = "pCleanup";
