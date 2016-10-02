@@ -24,7 +24,7 @@ Castle[] =
 	{Loot_MAGAZINE,		1,		equip_Crossbow_Kit},
 	{Loot_MAGAZINE,		3,		equip_rope},
 	{Loot_MAGAZINE,		4,		PartWoodPile},
-	{Loot_MAGAZINE,		1,		ItemPadlock},
+	{Loot_MAGAZINE,		2,		ItemPadlock},
 	{Loot_MAGAZINE,		1,		ItemTent},
 	{Loot_MAGAZINE,		1,		ItemCamoNet},
 	
