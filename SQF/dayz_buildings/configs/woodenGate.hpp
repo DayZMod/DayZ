@@ -39,7 +39,7 @@ class WoodenGate_Base: DZ_buildables
 		requiredParts[] = {"ItemPlank","equip_nails"};
 	};
 	class eventHandlers {
-		HandleDamage = "if ((_this select 4) == 'PipeBomb') then { _this call fnc_Obj_FenceHandleDam; } else { false };";
+		HandleDamage = "if (((_this select 4) == 'PipeBomb') or ((_this select 4) == '1Rnd_Bolt_Explosive')) then { _this call fnc_Obj_FenceHandleDam; } else { false };";
 	};
 };
 

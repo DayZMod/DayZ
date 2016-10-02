@@ -14,7 +14,7 @@ class WoodenFence_base: DZ_buildables
 		requiredParts[] = {"ItemPlank","equip_nails"};
 	};
 	class eventHandlers {
-		HandleDamage = "diag_log (_this); if ((_this select 4) == 'PipeBomb') then { _this call fnc_Obj_FenceHandleDam; } else { false };";
+		HandleDamage = "if (((_this select 4) == 'PipeBomb') or ((_this select 4) == '1Rnd_Bolt_Explosive')) then { _this call fnc_Obj_FenceHandleDam; } else { false };";
 	};
 }; 	
 class WoodenFence_ghost: WoodenFence_base
