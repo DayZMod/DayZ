@@ -68,7 +68,7 @@ if (_unit == player) then {
 
     if (_hit == "") exitWith //Ignore none part dmg. Exit after processing humanity hit
 	{
-        if ((_source != player) and _isPlayer) then
+        if (_source != player && _isPlayer && alive player) then
 		{
             //_isBandit = (player getVariable["humanity",0]) <= -2000;
 			_isBandit = (_model in ["Bandit1_DZ","BanditW1_DZ"]);
@@ -87,10 +87,7 @@ if (_unit == player) then {
 			// - Accidental Murder - \\  When wearing the garb of a non-civilian you are taking your life in your own hands
 			// Attackers humanity should not be punished for killing a survivor who has shrouded his identity in military garb.
 
-            _punishment =
-				_isBandit ||
-				{player getVariable ["OpenTarget",false]} ||
-				{_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
+            _punishment = _isBandit or {player getVariable ["OpenTarget",false]} or {_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
             _humanityHit = 0;
 
             if (!_punishment) then {
@@ -108,7 +105,7 @@ if (_unit == player) then {
                     private ["_source","_humanityHit"];
                     _source = _this select 0;
                     _humanityHit = _this select 1;
-                    PVDZ_send = [_source,"Humanity",[_source,_humanityHit,30]];
+                    PVDZ_send = [_source,"Humanity",[_humanityHit,30]];
                     publicVariableServer "PVDZ_send";
                 };
             };
