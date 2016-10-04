@@ -328,8 +328,11 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 		_object setPosATL _position;		
 	};
 	
-	//Check collisions
-	call _checkBuildingCollision;
+	//Need to add config based bypass checks array.
+	if (!_isCollisionBypass) then {
+		// check now that ghost is not colliding
+		call _checkBuildingCollision;
+	};
 	
 	// try to dock a beam from current ghost to another beams nearby
 	call _checkBeam2Magnet;
