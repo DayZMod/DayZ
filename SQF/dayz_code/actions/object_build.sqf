@@ -17,12 +17,16 @@ _keepOnSlope = 0 == (getNumber (configFile >> "CfgVehicles" >> _classname >> "ca
 
 Dayz_constructionContext set [ 4, false ]; // Stop the construction mode, cf. player_build.sqf
 
+//if (count Dayz_constructionContext < 5) then { Dayz_constructionContext set [ 5, false ]; // };
+
 if (_build) then {
     _location = getPosATL _ghost;
     _direction = getDir _ghost;
     _object = createVehicle [_classname, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
 	
     _object setDir _direction;
+	
+	diag_log (Dayz_constructionContext);
 	
     if ((Dayz_constructionContext select 5) or (_keepOnSlope)) then {
         _object setVectorUp surfaceNormal _location;
@@ -37,8 +41,12 @@ if (_build) then {
     [player,_sfx,0,false,_dis] call dayz_zombieSpeak;
     [player,_dis,true,(getPosATL player)] call player_alertZombies;
     ["Working",0,[20,40,15,0]] call dayz_NutritionSystem; // Added Nutrition-Factor for work
+	
     player playActionNow "Medic";
-    sleep 5;
+    
+	//wait animation end
+	waitUntil {getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "disableWeapons") == 1};
+	waitUntil {getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "disableWeapons") == 0};
 
     _object setPosATL _location;
     player reveal _object;
@@ -52,6 +60,9 @@ if (_build) then {
 		
         _variables set [ count _variables, ["ownerArray", [getPlayerUID player]]];
 		_variables set [ count _variables, ["padlockCombination", _passcode]];
+		
+		_object removeAllEventHandlers "HandleDamage";
+		_object addeventhandler ["HandleDamage",{ diag_log (_this); if ((_this select 4) == 'PipeBomb') then { _this call fnc_Obj_FenceHandleDam; } else { false }; } ];
     };
     _object setVariable ["characterID",dayz_characterID, true];
 

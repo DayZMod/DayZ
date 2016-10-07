@@ -14,13 +14,13 @@ class WoodenFence_base: DZ_buildables
 		requiredParts[] = {"ItemPlank","equip_nails"};
 	};
 	class eventHandlers {
-		HandleDamage = "diag_log (_this); if ((_this select 4) == 'PipeBomb') then { _this call fnc_Obj_FenceHandleDam; } else { false };";
+		HandleDamage = "if (((_this select 4) == 'PipeBomb') or ((_this select 4) == '1Rnd_Bolt_Explosive')) then { _this call fnc_Obj_FenceHandleDam; } else { false };";
 	};
 }; 	
 class WoodenFence_ghost: WoodenFence_base
 {
 	scope = 2;
-	model = "z\addons\dayz_buildings\models\fence_ghost.p3d";
+	model = "z\addons\dayz_buildings\models\fence_wood_ghost.p3d";
 	displayName = $STR_BLD_name_WoodenFence_ghost;//"Wooden Fence (Ghost)"
     buildCollisionPoints = 4;
     buildCollisionPaths[] = {{0,1,3,2,0,3},{1,2}};

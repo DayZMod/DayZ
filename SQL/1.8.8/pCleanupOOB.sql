@@ -12,7 +12,7 @@
 
 -- Dumping structure for procedure dayzhivemind.pCleanupOOB
 DELIMITER //
-CREATE DEFINER=`dayz`@`localhost` PROCEDURE `pCleanupOOB`()
+CREATE DEFINER=`dayzhivemind`@`%` PROCEDURE `pCleanupOOB`()
 BEGIN
 
 	DECLARE intLineCount	INT DEFAULT 0;

@@ -39,7 +39,7 @@ class WoodenGate_Base: DZ_buildables
 		requiredParts[] = {"ItemPlank","equip_nails"};
 	};
 	class eventHandlers {
-		HandleDamage = "if ((_this select 4) == 'PipeBomb') then { _this call fnc_Obj_FenceHandleDam; } else { false };";
+		HandleDamage = "if (((_this select 4) == 'PipeBomb') or ((_this select 4) == '1Rnd_Bolt_Explosive')) then { _this call fnc_Obj_FenceHandleDam; } else { false };";
 	};
 };
 
@@ -47,7 +47,7 @@ class WoodenGate_ghost: WoodenGate_Base
 {	
 	scope = 2;
 	displayName = $STR_BLD_name_WoodenGate_1_ghost;//"Wooden Gate (Ghost)"
-	model = "z\addons\dayz_buildings\models\gates\gate0_dzam_ghost.p3d"; //Model needs updating to be the ghost of the final model.
+	model = "z\addons\dayz_buildings\models\gates\gate_wood_ghost.p3d"; //Model needs updating to be the ghost of the final model.
     buildCollisionPoints = 4;
     buildCollisionPaths[] = {{0,1,3,2,0,3},{1,2}};
 };

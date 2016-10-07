@@ -102,11 +102,13 @@ if (_status == "ObjectStreamStart") then {
 				if (_x == "Maintenance") then {_maintenanceMode = true;};
 			} forEach _hitPoints;
 			
-			//Enable model swap for a damaged model.
-			if (_maintenanceMode) then {
-				_maintenanceModeVars = [_type,_pos];
-				_type = _type + "_Damaged";
-			};	
+			/*
+				//Enable model swap for a damaged model.
+				if (_maintenanceMode) then {
+					_maintenanceModeVars = [_type,_pos];
+					_type = _type + "_Damaged";
+				};
+			*/			
 			//TODO add remove object and readd old fence (hideobject would be nice to use here :-( )
 			//Pending change to new fence models\Layout
 		};

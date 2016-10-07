@@ -6,6 +6,7 @@ private ["_classType","_item","_action","_missingTools","_missingItem","_emergin
 "_roadCollide","_checkBeam2Magnet","_a","_beams","_best","_b","_d","_checkNotBuried","_elevation","_position","_delta","_overElevation",
 "_maxplanting","_safeDistance","_dir","_angleRef","_tmp","_actionCancel","_sfx","_actionBuild","_byPassChecks","_keepOnSlope","_msg",
 "_isCollisionBypass","_ok","_missing","_upgradeParts","_ownerID","_posReference"];
+
 /*
 Needs a full rewrite to keep up with the demand of everything we plan to add.
 */
@@ -171,53 +172,6 @@ _maxElevation = {
 
 #define COLLIDABLE_OBJECT_MIN_SIZE 8
 
-/* Checks if object collides with something.
-
-Parameters:
-	object		object
-
-Return:
-	bool		result
-*/
-_checkCollision =
-{
-	scopeName "root";
-	
-	local _count = getNumber (configFile >> "CfgVehicles" >> typeof _this >> "buildCollisionPoints");
-	
-	if (_count == 0) exitWith { objNull };
-	
-	local _result = objNull;
-	local _points = [];
-	_points resize _count;
-	
-	for "_i" from 0 to _count - 1 do
-	{
-		_points set [_i, (_this modelToWorld (_this selectionPosition format ["buildCollision%1", _i]));
-	};
-	
-	{
-		for "_i" from 1 to count _x - 1 do
-		{
-			{
-				local _type = typeof _x;
-				
-				if (_type != "" && { sizeof _type >= COLLIDABLE_OBJECT_MIN_SIZE }) then
-				{
-					_result = _x;
-					breakTo "root";
-				};
-			}
-			foreach lineIntersectsWith [_points select (_i - 1), _points select _i, _this];
-		};
-	}
-	foreach getArray (configFile >> "CfgVehicles" >> typeof this >> "buildCollisionPaths");
-	
-	_result
-};
-
-#define COLLIDABLE_OBJECT_MIN_SIZE 8
-
 //check if building being placed and objects around placement is free to be built on.
 //Fence owners must build all the foundations by one player anyone can still upgrade (pending lock build level)
 _checkBuildingCollision =
@@ -226,37 +180,50 @@ _checkBuildingCollision =
 	
 	_objColliding = objNull;
 	
-	local _count = getNumber (configFile >> "CfgVehicles" >> typeof _this >> "buildCollisionPoints");
+	local _count = getNumber (configFile >> "CfgVehicles" >> _ghost >> "buildCollisionPoints");
 	if (_count == 0) exitWith {};
 	
 	local _wall = _object isKindOf "DZ_buildables";
 	
+	//Make sure no one can build within 6 meters of someone elses walls. Also block placement from anyone from the model origin.	
+	if (_wall && {
+    local _result = false;
+    {
+        if (_x != _object && { _x distance _object < 1.5 || { _x getVariable ["ownerArray", [""]] select 0 != getPlayerUID player } } ) exitWith
+            { _objColliding = _x; _result = true; };
+    } foreach (nearestObjects [_object, ["DZ_buildables"], 6]);
+    _result
+	}) exitWith {};
+		
 	//Load object collision points
 	local _points = [];
 	_points resize _count;
 	for "_i" from 0 to _count - 1 do
-		{ _points set [_i, (_this modelToWorld (_this selectionPosition format ["buildCollision%1", _i])); };
-	
+        { _points set [_i, ATLtoASL (_object modelToWorld (_object selectionPosition format ["buildCollision%1", _i]))]; };
+		
 	//Trace paths
-	{
-		for "_i" from 1 to count _x - 1 do
-		{
-			{
-				if (!_wall || { !(_x isKindOf "DZ_buildables" && { _x getVariable ["ownerArray", [""]] select 0 == getPlayerUID player }) }) then
-				{
-					local _type = typeof _x;
-					
-					if (_type != "" && { sizeof _type >= COLLIDABLE_OBJECT_MIN_SIZE }) then
-					{
-						_result = _x;
-						breakTo "root";
-					};
-				};
-			}
-			foreach lineIntersectsWith [_points select (_i - 1), _points select _i, _this, player];
-		};
-	}
-	foreach getArray (configFile >> "CfgVehicles" >> typeof this >> "buildCollisionPaths");
+    {
+        local _p2 = _x select 0; //[0,1,3,2,0,3]
+        
+        for "_i" from 1 to count _x - 1 do
+        {
+            local _p1 = _p2;
+            _p2 = _x select _i;
+            
+            {			 
+                if (!_wall || { !(_x isKindOf "DZ_buildables" && { _x getVariable ["ownerArray", [""]] select 0 == getPlayerUID player }) }) then
+                {
+                    local _type = typeof _x;
+                    
+                    if (_type != "" && { sizeof _type >= COLLIDABLE_OBJECT_MIN_SIZE }) then
+                    {
+                        _objColliding = _x;
+                        breakTo "root";
+                    };
+                };
+            } foreach lineIntersectsWith [_points select _p1, _points select _p2, _object, player];
+        };
+    } foreach getArray (configFile >> "CfgVehicles" >> _ghost >> "buildCollisionPaths");
 };
 
 //Is placement on a road?
@@ -348,7 +315,8 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 		r_interrupt = false;
 		_object setDir _angleRef;
 		_tmp = player modelToWorld [0, _safeDistance,0];
-		if (Dayz_constructionContext select 5 or _keepOnSlope) then {
+		
+		if ((Dayz_constructionContext select 5) or (_keepOnSlope)) then {
 			_tmp set [2, 0];
 			_object setVectorUp surfaceNormal _tmp;
 		}
@@ -364,8 +332,6 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 	if (!_isCollisionBypass) then {
 		// check now that ghost is not colliding
 		call _checkBuildingCollision;
-		
-		//diag_log ("Collision Test");
 	};
 	
 	// try to dock a beam from current ghost to another beams nearby

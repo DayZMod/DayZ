@@ -5,18 +5,19 @@ scriptName "Functions\misc\fn_damageHandler.sqf";
     - Function
     - [unit, selectionName, damage, source, projectile] call fnc_usec_damageHandler;
 ************************************************************/
-private ["_HitBy","_end","_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_falling","_model","_isZombieHit"];
+private ["_HitBy","_end","_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_falling","_model","_isZombieHit","_sourceType","_sourceVehicleType","_isMan"];
 _unit = _this select 0;
 _hit = _this select 1;
 _damage = _this select 2;
-_unconscious = _unit getVariable ["NORRN_unconscious", false];
 _source = _this select 3;
 _ammo = _this select 4;
+_unconscious = _unit getVariable ["NORRN_unconscious", false];
 _model = typeOf player;
-_Viralzed = typeOf _source in DayZ_ViralZeds;
+_sourceType = typeOf _source;
+_sourceVehicleType = typeOf (vehicle _source);
+_Viralzed = _sourceType in DayZ_ViralZeds;
 _isMinor = (_hit in USEC_MinorWounds);
 _isHeadHit = (_hit == "head_hit");
-_isPlayer = (isPlayer _source);
 _isZombieHit = _ammo == "zombie";
 
 _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Dayz_freefall select 1 > 3)})});
@@ -61,6 +62,7 @@ _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Da
 //End Simple hack for damage ***until 2.0***
 
 dayz_lastDamageSourceNull = false;
+_isPlayer = (isPlayer _source);
 
 if (_unit == player) then {
 //Set player in combat
@@ -68,7 +70,7 @@ if (_unit == player) then {
 
     if (_hit == "") exitWith //Ignore none part dmg. Exit after processing humanity hit
 	{
-        if ((_source != player) and _isPlayer) then
+        if (_source != player && _isPlayer && alive player) then
 		{
             //_isBandit = (player getVariable["humanity",0]) <= -2000;
 			_isBandit = (_model in ["Bandit1_DZ","BanditW1_DZ"]);
@@ -87,10 +89,7 @@ if (_unit == player) then {
 			// - Accidental Murder - \\  When wearing the garb of a non-civilian you are taking your life in your own hands
 			// Attackers humanity should not be punished for killing a survivor who has shrouded his identity in military garb.
 
-            _punishment =
-				_isBandit ||
-				{player getVariable ["OpenTarget",false]} ||
-				{_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
+            _punishment = _isBandit or {player getVariable ["OpenTarget",false]} or {_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
             _humanityHit = 0;
 
             if (!_punishment) then {
@@ -108,7 +107,7 @@ if (_unit == player) then {
                     private ["_source","_humanityHit"];
                     _source = _this select 0;
                     _humanityHit = _this select 1;
-                    PVDZ_send = [_source,"Humanity",[_source,_humanityHit,30]];
+                    PVDZ_send = [_source,"Humanity",[_humanityHit,30]];
                     publicVariableServer "PVDZ_send";
                 };
             };
@@ -146,18 +145,17 @@ if (_unit == player) then {
 			};
 		};
 	};
-  
 
+	_isMan = _sourceType isKindOf "CAManBase";
     //Log to server :-( OverProcessing really not needed.
-    if (((!(isNil {_source})) AND {(!(isNull _source))}) AND {((_source isKindOf "CAManBase") AND {(!local _source )})}) then {
+    if (((!(isNil {_source})) AND {(!(isNull _source))}) AND {(_isMan AND {(!local _source)})}) then {
 		_wpst = weaponState _source;
         if (diag_ticktime-(_source getVariable ["lastloghit",0])>2) then {
             private ["_sourceWeap"];
             _source setVariable ["lastloghit",diag_ticktime];
-
             _sourceDist = round(_unit distance _source);
             _sourceWeap = switch (true) do {
-                case ((vehicle _source) != _source) : { format ["in %1",getText(configFile >> "CfgVehicles" >> (typeOf (vehicle _source)) >> "displayName")] };
+                case ((vehicle _source) != _source) : { format ["in %1",getText(configFile >> "CfgVehicles" >> _sourceVehicleType >> "displayName")] };
                 case (_isZombieHit) : { _ammo };
                 case (_wpst select 0 == "Throw") : { format ["with %1 thrown", _wpst select 3] };
                 case (["Horn", currentWeapon _source] call fnc_inString) : {"with suspicious vehicle "+str((getposATL _source) nearEntities [["Air", "LandVehicle", "Ship"],5])};
@@ -179,7 +177,8 @@ if (_unit == player) then {
 		case (_ammo == "RunOver"): {"runover"};
 		case (_ammo == "Dragged"): {"eject"};
 		case (_ammo in MeleeAmmo): {"melee"};
-		case (!isNil "_wpst" && {!(_wpst select 0 in ["","Throw"])}): {"shot"};
+		//(vehicle _source != _source) does not work to detect if source unit is in a vehicle in HandleDamage EH
+		case (!local _source && {(_isMan && !(currentWeapon _source in ["","Throw"])) or {_sourceVehicleType isKindOf "LandVehicle" or _sourceVehicleType isKindOf "Air" or _sourceVehicleType isKindOf "Ship"}}): {"shot"};
 		default {"none"};
 	};
 	if (dayz_lastDamageSource != "none") then {dayz_lastDamageTime = diag_tickTime;};
@@ -220,7 +219,7 @@ if (_damage > 0.4) then {
     
     //End body part scale
 	//???????????
-    if ((isPlayer _source) and !(player == _source)) then {
+    if (_isPlayer && !(player == _source)) then {
         _scale = _scale + 800;
         if (_isHeadHit) then {
             _scale = _scale + 500;
@@ -234,7 +233,7 @@ if (_damage > 0.4) then {
 	//Bullet types
         case 2: {_scale = _scale + 150};
 	//Zombies
-		case 3: {_scale = getNumber (configFile >> "CfgVehicles" >> (typeOf _source) >> "damageScale"); if (dayz_DamageMultiplier > 1) then {_scale = _scale * dayz_DamageMultiplier;};};
+		case 3: {_scale = getNumber (configFile >> "CfgVehicles" >> _sourceType >> "damageScale"); if (dayz_DamageMultiplier > 1) then {_scale = _scale * dayz_DamageMultiplier;};};
 	//Dragged
 		case 4: {_scale = _scale - 150};
 	//RunOver
@@ -243,7 +242,7 @@ if (_damage > 0.4) then {
 	
 	//Display some info in the players log file.
     if (_unit == player) then {
-		diag_log format["DAMAGE: player hit by %1 in %2 with %3 for %4 scaled to %5, Conscious %6",(typeOf _source),_hit,if (_ammo == "") then { "" } else { _ammo },(str(_damage)),(str(_damage * _scale)),(str (!_unconscious))];
+		diag_log format["DAMAGE: player hit by %1 in %2 with %3 for %4 scaled to %5, Conscious %6",_sourceVehicleType,_hit,if (_ammo == "") then { "" } else { _ammo },(str(_damage)),(str(_damage * _scale)),(str (!_unconscious))];
         r_player_blood = r_player_blood - (_damage * _scale);
  	
 	//Pain and Infection
@@ -268,7 +267,7 @@ if (_damage > 0.4) then {
     _isScratched = false;
     
 	_rndBleed = floor(random 100);
-    _rndBleedChance = getNumber (configFile >> "CfgVehicles" >> (typeOf _source) >> "BleedChance");
+    _rndBleedChance = getNumber (configFile >> "CfgVehicles" >> _sourceType >> "BleedChance");
     _hitBleed = (_rndBleed < _rndBleedChance);
 
     if (_hitBleed) then {
@@ -308,7 +307,7 @@ if (_damage > 0.4) then {
             if ((!r_player_infected) and !(r_player_Sepsis select 0)) then {
                 if (_type == 3) then {
                     _rndSepsis = floor(random 100);
-                    _sepsisChance = getNumber (configFile >> "CfgVehicles" >> (typeOf _source) >> "sepsisChance");
+                    _sepsisChance = getNumber (configFile >> "CfgVehicles" >> _sourceType >> "sepsisChance");
 
                     if (_rndSepsis < _sepsisChance) then {
                         r_player_Sepsis = [true, diag_tickTime];

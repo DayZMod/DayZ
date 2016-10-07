@@ -128,8 +128,7 @@ while {r_doLoop} do {
 			};
 		};
 		if (!_bagFound) then {_forceClose = true;} else { player removeMagazine _bagToRemove;};
-		//cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
-			localize "str_actions_medical_transfusion_start" call dayz_rollingMessages;
+		localize "str_actions_medical_transfusion_start" call dayz_rollingMessages;
 		//see Note 1
 		//[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_bagToRemove],"PLAIN DOWN"] call RE; 
 		_started = true;
@@ -176,8 +175,6 @@ while {r_doLoop} do {
 				};
 			};
 			
-			//cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
-			localize "str_actions_medical_transfusion_start" call dayz_rollingMessages;
 			//see Note 1
 			//[player,_unit,"loc",rTITLETEXT,format["Transfusion of %1 in progress, remain still...",_bagToRemove],"PLAIN DOWN"] call RE;
 			
@@ -195,7 +192,7 @@ while {r_doLoop} do {
 		localize "str_actions_medical_transfusion_successful" call dayz_rollingMessages;
 		//see Note 1
 		//[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_successful","PLAIN DOWN"] call RE;
-		if (!_badBag and _bagFound) then { [player,_humanityAwarded] call player_humanityChange; };
+		if (!_badBag and _bagFound) then { [_humanityAwarded,0] call player_humanityChange; };
 		r_doLoop = false;
 	};
 
@@ -210,7 +207,7 @@ while {r_doLoop} do {
 		r_doLoop = false;
 	};
 
-	sleep 1;
+	uiSleep 1;
 };
 
 r_doLoop = false;
