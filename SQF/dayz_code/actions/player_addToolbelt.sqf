@@ -1,4 +1,5 @@
 private ["_item","_config","_onLadder","_hastoolweapon","_onBack","_text","_create","_config2","_melee2tb","_isOk"];
+
 disableSerialization;
 _item = _this;
 _config = configFile >> "cfgWeapons" >> _item;
@@ -23,17 +24,17 @@ if ((_item in ["ItemHatchet","ItemCrowbar","ItemMachete","ItemFishingPole"]) || 
 	if (!carryClick) then {
 		//free primary slot for new melee (remember item to add after)
 		switch (primaryWeapon player) do {
-			case "MeleeHatchet": { if (!("ItemHatchet" in weapons player)) then { player removeWeapon "MeleeHatchet"; _melee2tb = "ItemHatchet"; }; };
-			case "MeleeCrowbar": { if (!("ItemCrowbar" in weapons player)) then { player removeWeapon "MeleeCrowbar"; _melee2tb = "ItemCrowbar"; }; };
-			case "MeleeMachete": { if (!("ItemMachete" in weapons player)) then { player removeWeapon "MeleeMachete"; _melee2tb = "ItemMachete"; }; };
+			case "MeleeHatchet": {if !("ItemHatchet" in weapons player) then {player removeWeapon "MeleeHatchet"; _melee2tb = "ItemHatchet";};};
+			case "MeleeCrowbar": {if !("ItemCrowbar" in weapons player) then {player removeWeapon "MeleeCrowbar"; _melee2tb = "ItemCrowbar";};};
+			case "MeleeMachete": {if !("ItemMachete" in weapons player) then {player removeWeapon "MeleeMachete"; _melee2tb = "ItemMachete";};};
 			case "MeleeFishingPole": {player removeWeapon "MeleeFishingPole"; _melee2tb = "ItemFishingPole";};
 		};
 	 } else {
 		if (DayZ_onBack != "" || _item == DayZ_onBack) then {
 			switch DayZ_onBack do {
-				case "MeleeHatchet": { if (!("ItemHatchet" in weapons player)) then { dayz_onBack = ""; _melee2tb = "ItemHatchet"; }; };
-				case "MeleeCrowbar": { if (!("ItemCrowbar" in weapons player)) then { dayz_onBack = ""; _melee2tb = "ItemCrowbar"; }; };
-				case "MeleeMachete": { if (!("ItemMachete" in weapons player)) then { dayz_onBack = ""; _melee2tb = "ItemMachete"; }; };
+				case "MeleeHatchet": {if !("ItemHatchet" in weapons player) then {dayz_onBack = ""; _melee2tb = "ItemHatchet";};};
+				case "MeleeCrowbar": {if !("ItemCrowbar" in weapons player) then {dayz_onBack = ""; _melee2tb = "ItemCrowbar";};};
+				case "MeleeMachete": {if !("ItemMachete" in weapons player) then {dayz_onBack = ""; _melee2tb = "ItemMachete";};};
 				case "MeleeFishingPole": {dayz_onBack = ""; _melee2tb = "ItemFishingPole";};
 			};
 			carryClick = false;
@@ -43,7 +44,7 @@ if ((_item in ["ItemHatchet","ItemCrowbar","ItemMachete","ItemFishingPole"]) || 
 };
 
 //Remove melee magazines (BIS_fnc_invAdd fix) (add new melee ammo to array if needed)
-{player removeMagazines _x} forEach ["Hatchet_Swing","Crowbar_Swing","Machete_Swing","Fishing_Swing"];
+{player removeMagazines _x} count ["Hatchet_Swing","Crowbar_Swing","Machete_Swing","Fishing_Swing"];
 
 _isOk = [player,_config2] call BIS_fnc_invAdd;
 if (_isOk) then {
@@ -53,7 +54,7 @@ if (_isOk) then {
 		//we know there is place to add item but to prevent BE spam using _config2
 		_config2 = _melee2tb;
 		_isOk = [player,_config2] call BIS_fnc_invAdd;
-		};
+	};
 } else {
 	closeDialog 0;
 	cutText [localize "str_player_24", "PLAIN DOWN"];

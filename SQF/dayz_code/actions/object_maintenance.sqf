@@ -5,7 +5,7 @@
 #define MAINTENANCE_NUTRITION_VALUES [20,40,15,0]
 
 
-private ["_isMedic","_cursorTarget"];
+private ["_isMedic","_cursorTarget","_item","_classname","_displayname","_requiredTools","_requiredParts","_onLadder","_isWater","_upgradeParts","_startMaintenance","_dis","_sfx","_started","_finished","_animState","_isRefuel"];
 
 _cursorTarget = _this select 3;
 
@@ -16,7 +16,7 @@ if ((isNil "_cursorTarget") or {(isNull _cursorTarget)}) then {
 };
 
 if(isNull _cursorTarget) exitWith {
-    cutText ["No maintenance options", "PLAIN DOWN"];
+    cutText [localize "str_maintenanceNoOption", "PLAIN DOWN"];
 };
 
 //Remove action Menu
@@ -46,7 +46,7 @@ _upgradeParts = [];
 _startMaintenance = true;
 
 if(_isWater or _onLadder) exitWith {
-	cutText ["Unable to proceed", "PLAIN DOWN"];
+	cutText [localize "str_water_ladder_cant_do", "PLAIN DOWN"];
 };
 
 // lets check player has requiredTools for upgrade

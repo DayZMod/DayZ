@@ -10,8 +10,8 @@ Author:
 #include "\z\addons\dayz_code\loot\Loot.hpp"
 
 //Spawn frequency ± variance in minutes
-#define SPAWN_FREQUENCY 40
-#define SPAWN_VARIANCE 15
+#define SPAWN_FREQUENCY 25
+#define SPAWN_VARIANCE 20
 
 //The higher the number, the more accurate the timer is.
 //Must be positive and non-zero.
@@ -21,14 +21,14 @@ Author:
 #define SPAWN_CHANCE 0.75
 
 //Parameters for finding a suitable position to spawn the crash site
-#define SEARCH_CENTER [7049,9241]
-#define SEARCH_RADIUS 4880
+#define SEARCH_CENTER getMarkerPos "crashsites"
+#define SEARCH_RADIUS (getMarkerSize "crashsites") select 0
 #define SEARCH_DIST_MIN 20
 #define SEARCH_SLOPE_MAX 2
 #define SEARCH_BLACKLIST [[[2092,14167],[10558,12505]]]
 
 //Number of crash sites to spawn at the beginning of the mission
-#define INITIAL_NUM 3
+#define INITIAL_NUM 1
 
 //Number of loot items to spawn per site
 #define LOOT_MIN 5
@@ -110,7 +110,7 @@ _spawnCrashSite =
 			};
 		};
 	}
-	foreach Loot_Select(_lootGroup, _lootNum);
+	forEach Loot_Select(_lootGroup, _lootNum);
 };
 
 //Spawn initial crash sites
@@ -128,7 +128,7 @@ while {true} do
 	//Wait until the previously decided time
 	while {time < _time} do
 	{
-		sleep (60 * (SPAWN_FREQUENCY) / (TIMER_RESOLUTION));
+		uiSleep (60 * (SPAWN_FREQUENCY) / (TIMER_RESOLUTION));
 	};
 	
 	//try to spawn

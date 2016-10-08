@@ -15,13 +15,35 @@ if (isNil "_playerObj") exitWith {
 	diag_log format["%1: nil player object, _this:%2", __FILE__, _this];
 };
 
-diag_log format["get: %1 (%2), sent: %3 (%4)",typeName (getPlayerUID _playerObj), getPlayerUID _playerObj, typeName _playerUID, _playerUID];
+//diag_log format["get: %1 (%2), sent: %3 (%4)",typeName (getPlayerUID _playerObj), getPlayerUID _playerObj, typeName _playerUID, _playerUID];
 
 //If the the playerObj exists lets run all sync systems
 
 _characterID = _playerObj getVariable["characterID", "?"];
 _lastDamage = _playerObj getVariable["noatlf4",0];
 _Sepsis = _playerObj getVariable["USEC_Sepsis",false];
+_lastDamage = round(diag_ticktime - _lastDamage);
+
+//Readded Logout debug info.
+diag_log format["INFO - Player: %3(UID:%1/CID:%2) as (%4), logged off at %5%6", 
+	getPlayerUID _playerObj,
+	_characterID,
+	_playerObj call fa_plr2str,
+	typeOf _playerObj, 
+	(getPosATL _playerObj) call fa_coor2str,
+	if ((_lastDamage > 5 AND (_lastDamage < 30)) AND ((alive _playerObj) AND (_playerObj distance (getMarkerpos "respawn_west") >= 2000))) then {" while in combat ("+str(_lastDamage)+" seconds left)"} else {""}
+]; 
+
+//Login processing do not sync
+if (_playerUID in dayz_ghostPlayers) exitwith { 
+	diag_log format["ERROR: Cannot Sync Character [%1,%2] Still processing login",_playerName,_playerUID]; 
+
+	//Lets remove the object.
+	if (!isNull _playerObj) then { 
+		_myGroup = group _playerObj;
+		deleteGroup _myGroup;
+	};
+};
 
 //Make sure we know the ID of the object before we try and sync any info to the DB
 if (_characterID != "?") exitwith {
@@ -32,7 +54,7 @@ if (_characterID != "?") exitwith {
 	};
 	
 	//Record Player Login/LogOut
-	[_playerUID,_characterID,2] call dayz_recordLogin;
+	[_playerUID,_characterID,2,_playerName] call dayz_recordLogin;
 
 	//if the player object is inside a vehicle lets eject the player
 	if (vehicle _playerObj != _playerObj) then {
@@ -64,7 +86,6 @@ if (isNull _playerObj) then { diag_log("Player Object does not esist"); };
 //Lets remove the object.
 if (!isNull _playerObj) then { 
 	_myGroup = group _playerObj;
-	deleteVehicle _playerObj;
 	deleteGroup _myGroup;
 };
 

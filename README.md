@@ -3,7 +3,11 @@
 
 Current Version
 ==================================
- - DayZMod Dev-b725dcd
+ - DayZMod Dev-1.8.8-2fc83af
+ 
+ Current License
+=================================
+https://steamcommunity.com/linkfilter/?url=https://www.bistudio.com/community/licenses/dayz-mod-license-share-alike
  
 Files updated
 ------------

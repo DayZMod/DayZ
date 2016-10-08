@@ -1,6 +1,6 @@
 #include "\z\addons\dayz_code\util\player.hpp"
 
-private ["_water", "_filled"];
+private ["_water","_filled","_canFill","_infected","_well"];
 
 call gear_ui_init;
 closeDialog 0;

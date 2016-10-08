@@ -18,7 +18,7 @@ item13[] = {"Parse_Login",2,250,-75.000000,550.000000,25.000000,600.000000,0.000
 item14[] = {"Hive_Bad",4,218,125.000000,550.000000,225.000000,600.000000,10.000000,"Hive" \n "Bad"};
 item15[] = {"ERROR__Wrong_HIVE",2,250,325.000000,550.000000,425.000000,600.000000,0.000000,"ERROR:" \n "Wrong HIVE" \n "Version"};
 item16[] = {"Character_Setup",4,218,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
-item17[] = {"Phase_One",2,250,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
+item17[] = {"Phase_One",2,4346,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
 item18[] = {"Response",4,218,-175.000000,700.000000,-75.000000,750.000000,0.000000,"Response"};
 item19[] = {"Phase_Two",2,250,-75.000000,750.000000,25.000000,800.000000,0.000000,"Phase Two"};
 item20[] = {"Dead_Player",4,218,125.000000,750.000000,225.000000,800.000000,0.000000,"Dead" \n "Player"};
@@ -107,7 +107,7 @@ item102[] = {"Sleep",4,218,-550.000000,325.000000,-450.000000,375.000000,0.00000
 item103[] = {"",7,210,-279.000000,371.000000,-271.000000,379.000000,0.000000,""};
 item104[] = {"retry_Login",4,218,-250.000000,350.000000,-150.000000,400.000000,0.000000,"retry Login"};
 item105[] = {"",7,210,-379.000031,471.000000,-371.000000,479.000000,0.000000,""};
-item106[] = {"Finish_1",2,4346,-75.000000,1500.000000,25.000000,1550.000000,0.000000,"Finish"};
+item106[] = {"Finish_1",2,250,-75.000000,1500.000000,25.000000,1550.000000,0.000000,"Finish"};
 item107[] = {"dayz_preloadFini",4,218,50.000000,1550.000000,150.000000,1600.000000,0.000000,"dayz_preloadFinished"};
 link0[] = {0,1};
 link1[] = {0,5};
@@ -236,8 +236,8 @@ link123[] = {104,11};
 link124[] = {105,96};
 link125[] = {106,107};
 link126[] = {107,32};
-globals[] = {25.000000,1,0,0,0,640,480,1,257,6316128,1,-515.955017,323.737183,1743.976196,939.271118,624,598,1};
-window[] = {2,-1,-1,-32000,-32000,682,156,1176,156,3,642};
+globals[] = {25.000000,1,0,0,0,640,480,1,257,6316128,1,-515.955017,323.737183,917.740479,113.035477,624,598,1};
+window[] = {2,-1,-1,-1,-1,552,26,1046,26,3,642};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -571,7 +571,6 @@ class FSM
        "_usedFood = 0;" \n
        "_usedWater = 0;" \n
        "" \n
-       "dayzGearSave = false;" \n
        "_inventory call player_gearSet;" \n
        "" \n
        "//Assess in backpack" \n
@@ -617,7 +616,7 @@ class FSM
        "			//Magazines" \n
        "			_countr = 0;" \n
        "			{" \n
-       "				if (_x == ""BoltSteel"") then { _x = ""WoodenArrow"" }; // Convert BoltSteel to WoodenArrow" \n
+       "				if (_x == ""BoltSteel"") then { _x = ""1Rnd_Arrow_Wood"" }; // Convert BoltSteel to WoodenArrow" \n
        "				if (_x == ""ItemBloodbag"") then { _x = ""bloodBagONEG"" }; // Convert ItemBloodbag into universal blood type/rh bag" \n
        "				dayz_myBackpack addMagazineCargoGlobal [_x,(_backpackMagQty select _countr)];" \n
        "				_countr = _countr + 1;" \n
@@ -670,15 +669,8 @@ class FSM
        "" \n
        "_worldspace = 	PVCDZ_plr_Login2 select 0;" \n
        "_state =			PVCDZ_plr_Login2 select 1;" \n
-       "_playerAchievements = PVCDZ_plr_Login2 select 2;" \n
        "" \n
-       "dayz_playerAchievements = _playerAchievements;" \n
-       "	" \n
-       "PVDZ_serverStoreVar = [player,""Achievements"",_playerAchievements];" \n
-       "publicVariableServer ""PVDZ_serverStoreVar"";" \n
-       "diag_log ['Sent to server: PVDZ_serverStoreVar', PVDZ_serverStoreVar]; " \n
-       "player setVariable [""Achievements"",_playerAchievements,false];" \n
-       "" \n
+       "player setVariable [""Achievements"",[],false];" \n
        "" \n
        "_setDir = 			_worldspace select 0;" \n
        "_setPos = 			_worldspace select 1;" \n
@@ -728,7 +720,7 @@ class FSM
        "			player addMagazine _x;" \n
        "			_countmags = _countmags  +1;" \n
        "		};" \n
-       "	} forEach _gmags;" \n
+       "	} count _gmags;" \n
        "" \n
        "	while {_countmags < _totalrndmags} do {" \n
        "		_rndmag = _rndmags call BIS_fnc_selectRandom;" \n
@@ -744,7 +736,7 @@ class FSM
        "		if (_isOK) then {" \n
        "			player addWeapon _x;" \n
        "		};" \n
-       "	} forEach _wpns;" \n
+       "	} count _wpns;" \n
        "	" \n
        "	if (_bcpk != """") then {" \n
        "	player addBackpack _bcpk; " \n
@@ -882,19 +874,19 @@ class FSM
        "progressLoadingScreen 0.95;" \n
        "dayz_loadScreenMsg = localize 'str_player_setup_completed';" \n
        "_torev4l=nearestObjects [_setPos, Dayz_plants + DayZ_GearedObjects + [""AllVehicles"",""WeaponHolder""], 50];" \n
-       "{ [_x,0] spawn object_roadFlare } forEach (allMissionObjects ""RoadFlare"");" \n
-       "{ [_x,1] spawn object_roadFlare } forEach (allMissionObjects ""ChemLight"");" \n
+       "{ _null = [_x,0] spawn object_roadFlare; } count (allMissionObjects ""RoadFlare"");" \n
+       "{ _null = [_x,1] spawn object_roadFlare; } count (allMissionObjects ""ChemLight"");" \n
        "{" \n
        "  _fadeFire = _x getVariable['fadeFire', true];" \n
        "  if (!_fadeFire) then {" \n
        "    nul = [_x,2,0,false,false] spawn BIS_Effects_Burn;" \n
        "  };" \n
-       "} forEach allMissionObjects ""SpawnableWreck"";" \n
-       "{deleteVehicle _x} forEach (_setPos nearEntities [""zZombie_Base"",30]);" \n
+       "} count allMissionObjects ""SpawnableWreck"";" \n
+       "{deleteVehicle _x} count (_setPos nearEntities [""zZombie_Base"",30]);" \n
        "player setDir _setDir;" \n
        "player setPosATL _setPos;" \n
        "player setVelocity [0,0,0.5];" \n
-       "{player reveal _x} forEach _torev4l;" \n
+       "{player reveal _x} count _torev4l;" \n
        "dayz_myPosition = _setPos;" \n
        "player setVariable ['BIS_noCoreConversations', true];" \n
        "dayz_clientPreload = true;"/*%FSM</STATEINIT""">*/;
@@ -998,7 +990,7 @@ class FSM
        "	while {true} do { " \n
        "		//sleep (if (call player_zombieCheck) then {dayz_monitorPeriod/3} else {dayz_monitorPeriod});" \n
        "		call player_zombieCheck;" \n
-       "		sleep 1;" \n
+       "		uiSleep 1;" \n
        "	};" \n
        "};"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
@@ -1036,10 +1028,9 @@ class FSM
        "	player playActionNow ""Die"";" \n
        "};" \n
        "" \n
-       "" \n
-       "" \n
        "//Add core tools" \n
        "player addWeapon ""Loot"";" \n
+       "" \n
        "if ((currentWeapon player == """")) then { player action [""SWITCHWEAPON"", player,player,1]; };" \n
        "//load in medical details" \n
        "r_player_dead = 		player getVariable[""USEC_isDead"",false];" \n
@@ -1054,7 +1045,6 @@ class FSM
        "r_player_rh = player getVariable [""rh_factor"", false];" \n
        "" \n
        "dayz_musicH = [] spawn player_music;" \n
-       "dayzGearSave = true;" \n
        "dayz_slowCheck = 	[] spawn player_spawn_2;" \n
        "Dayz_logonTime = daytime;" \n
        "Dayz_logonDate = dayz_Survived;" \n
@@ -1067,9 +1057,6 @@ class FSM
        "{ _x call fnc_veh_ResetEH; } forEach vehicles;" \n
        "player allowDamage true;" \n
        "player enableSimulation true;" \n
-       "diag_log [ 'resetting keyboard events',(MISSION_ROOT+'keyboard.sqf')];" \n
-       "keyboard_keys = nil;" \n
-       "[controlNull, 1, false,false,false] call compile preprocessFileLineNumbers (MISSION_ROOT+'keyboard.sqf');" \n
        ""/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
@@ -1092,7 +1079,9 @@ class FSM
     {
       name = "Finish";
       init = /*%FSM<STATEINIT""">*/"diag_log 'player_forceSave called from fsm';" \n
-       "call player_forceSave;"/*%FSM</STATEINIT""">*/;
+       "//call player_forceSave;" \n
+       "" \n
+       "publicVariableServer ""PVDZ_plr_LoginRecord"";"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -1189,7 +1178,7 @@ class FSM
           priority = 0.000000;
           to="Load_In";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"((!isNil 'dayz_plantSpawner_done') and {(dayz_plantSpawner_done == 2)})"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(!isNil 'dayz_plantSpawner_done' && {dayz_plantSpawner_done == 2} && {!isNil 'BIS_fnc_init'})"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -1771,15 +1760,22 @@ class FSM
     class Finish_1
     {
       name = "Finish_1";
-      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Finish'];};PVDZ_plr_LoginRecord = [_playerUID,_charID,0];" \n
+      init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Finish'];};" \n
+       "" \n
+       "PVDZ_plr_LoginRecord = [_playerUID,_charID,0,toArray (name vehicle player)];" \n
+       "" \n
        "progressLoadingScreen 1;" \n
-       "publicVariableServer ""PVDZ_plr_LoginRecord"";" \n
-       "diag_log ['Sent to server: PVDZ_plr_LoginRecord', PVDZ_plr_LoginRecord]; " \n
+       "" \n
+       "diag_log format ['Sent to server PVDZ_plr_LoginRecord: [%1, %2, %3, %4]',_playerUID,_charID,0,(name vehicle player)]; " \n
+       "" \n
        "_world = toUpper(worldName); //toUpper(getText (configFile >> ""CfgWorlds"" >> (worldName) >> ""description""));" \n
        "_nearestCity = nearestLocations [getPos player, [""NameCityCapital"",""NameCity"",""NameVillage"",""NameLocal""],1000];" \n
+       "" \n
        "Dayz_logonTown = ""Wilderness"";" \n
        "if (count _nearestCity > 0) then {Dayz_logonTown = text (_nearestCity select 0)};" \n
-       "[_world,Dayz_logonTown,format[localize ""str_player_06"",dayz_Survived]] spawn { sleep 5; _this spawn BIS_fnc_infoText;};" \n
+       "" \n
+       "[_world,Dayz_logonTown,format[localize ""str_player_06"",dayz_Survived]] spawn {uiSleep 5; _this spawn BIS_fnc_infoText;};" \n
+       "" \n
        "Dayz_loginCompleted = true;" \n
        "" \n
        "//Other Counters" \n

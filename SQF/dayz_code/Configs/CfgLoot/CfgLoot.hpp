@@ -14,14 +14,14 @@ class CfgLoot
 		#define DZ_BP_Czech DZ_CivilBackpack_EP1
 		#define DZ_BP_Coyote DZ_Backpack_EP1
 
-		#define ItemBloodbagAPos bloodBagAPos
-		#define ItemBloodbagANeg bloodBagANeg
-		#define ItemBloodbagBPos bloodBagBPos
-		#define ItemBloodbagBNeg bloodBagBNeg
-		#define ItemBloodbagABPos bloodBagABPos
-		#define ItemBloodbagABNeg bloodBagABNeg
-		#define ItemBloodbagOPos bloodBagOPos
-		#define ItemBloodbagONeg bloodBagONeg
+		#define ItemBloodbagAPos bloodBagAPOS
+		#define ItemBloodbagANeg bloodBagANEG
+		#define ItemBloodbagBPos bloodBagBPOS
+		#define ItemBloodbagBNeg bloodBagBNEG
+		#define ItemBloodbagABPos bloodBagABPOS
+		#define ItemBloodbagABNeg bloodBagABNEG
+		#define ItemBloodbagOPos bloodBagOPOS
+		#define ItemBloodbagONeg bloodBagONEG
 		
 		#define ItemBloodTester bloodTester
 		#define ItemTransfusionKit transfusionKit
@@ -54,7 +54,7 @@ class CfgLoot
 		#include "Groups\Buildings\Industrial.hpp"
 		#include "Groups\Buildings\Military.hpp"
 		#include "Groups\Buildings\Office.hpp"
-		#include "Groups\Buildings\Powerlines.hpp"
+		//#include "Groups\Buildings\Powerlines.hpp"
 		#include "Groups\Buildings\Residential.hpp"
 		#include "Groups\Buildings\ResidentialRuins.hpp"
 		#include "Groups\Buildings\Supermarket.hpp"
@@ -131,7 +131,7 @@ class CfgLoot
 		#include "Buildings\InfectedCamp.hpp"
 		#include "Buildings\Military.hpp"
 		#include "Buildings\Office.hpp"
-		#include "Buildings\Powerlines.hpp"
+		//#include "Buildings\Powerlines.hpp"
 		#include "Buildings\ResidentialRuins.hpp"
 		#include "Buildings\Supermarket.hpp"
 		#include "Buildings\Toilet.hpp"

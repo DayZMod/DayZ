@@ -7,6 +7,7 @@ _position = _this select 1;
 _unit = _this select 2;
 
 if (_unit == player) then {
+	//if (dayz_soundMuted) then {call player_toggleSoundMute;}; // Auto disable mute on vehicle exit (not a good idea without a sleep since rotor can be very loud when spinning down)
 	_buildables = count ((getposATL _vehicle) nearObjects ["DZ_buildables", 3]);
 	if (_buildables > 0) then {
 
@@ -23,9 +24,16 @@ if (_unit == player) then {
 		PVDZ_Server_LogIt = format["Player %1 exited a vehicle(%2) close to buildable object as %3",_unit, (typeof _vehicle), _position];
 		publicVariableServer "PVDZ_Server_LogIt";
 
-		cutText ["Unable to exit vehicle too close to buildables objects", "PLAIN DOWN"];
+		localize "str_actions_exitBlocked" call dayz_rollingMessages;
 
+	};
+	
+	
+	//Lets make sure we can process some dmg from ejecting from the vehicle even traveling at lower speeds.
+	if (((speed _vehicle) > 15) or ((speed _vehicle) < -10)) then {
+		dayz_getout = _vehicle;
+		dayz_getoutTime = diag_tickTime;
 	};
 };
 
-diag_log format["%1 - %2 - %3",_vehicle,_position,_unit];
+diag_log format["%1(%4) - %2 - %3",_vehicle,_position,_unit,(speed _vehicle)];

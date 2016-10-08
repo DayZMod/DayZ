@@ -13,7 +13,7 @@ Military[] =
 	
 	//Assault rifles
 	{Loot_WEAPON,		2,		M16A2_DZ},
-	{Loot_WEAPON,		1,		M16A2_GL_DZ},
+	//{Loot_WEAPON,		1,		M16A2_GL_DZ}, //added to attachments system
 	{Loot_WEAPON,		1.5,	M16A4_DZ},
 	{Loot_WEAPON,		0.5,	M4A1_DZ},
 //	{Loot_WEAPON,		3,		G36C_DZ},
@@ -75,7 +75,7 @@ MilitarySpecial[] =
 	
 	//Assault rifles
 	{Loot_WEAPON,		3,		M16A2_DZ},
-	{Loot_WEAPON,		2,		M16A2_GL_DZ},
+	//{Loot_WEAPON,		2,		M16A2_GL_DZ},  //added to attachments system
 	{Loot_WEAPON,		2,		M16A4_DZ},
 	{Loot_WEAPON,		1,		M4A1_DZ},
 //	{Loot_WEAPON,		3,		G36C_DZ},

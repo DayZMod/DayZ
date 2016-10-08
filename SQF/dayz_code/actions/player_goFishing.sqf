@@ -4,10 +4,8 @@
 	Made for DayZ Mod please ask permission to use/edit/distrubute email vbawol@veteranbastards.com.
 	fixed by facoptere@gmail.com for dayzmod
 */
-private ["_linecastmax","_linecastmin","_num","_position","_ispond","_objectsPond","_isPondNearBy","_isOk","_counter",
-"_vehicle","_inVehicle","_rnd","_itemOut","_text","_item","_itemtodrop","_result", "_elevation"];
-
-//if (!isNil "faco_goFishing") exitWith { _this call faco_goFishing };
+private ["_linecastmax","_linecastmin","_num","_position","_ispond","_objectsPond","_isPondNearBy","_isOk","_counter","_vehicle","_inVehicle",
+"_rnd","_itemOut","_text","_item","_itemtodrop","_result","_elevation","_inBoat","_i","_ret","_bb","_w2m","_dir"];
 
 _vehicle = _this select 3;
 _vehicle removeAction (_this select 2);
@@ -21,11 +19,19 @@ dayz_fishingInprogress = true;
 _linecastmax = 67;
 
 _isOk = false;
-_inBoat = (player != vehicle player) and {((vehicle player) isKindOf "Ship")};
+_inBoat = (player != vehicle player) && {(vehicle player) isKindOf "Ship"};
+_ispond = false;
+{
+	if (["pond", str _x] call fnc_inString && {((getPosASL player) select 2 < ((getPosASL _x) select 2)) or _inBoat}) exitWith {
+		_ispond = true;
+		_num = ceil (random (player distance _x));
+	};
+} count nearestObjects [player, [], 50];
+
 for "_i" from 1 to 10 do {
-    _num = floor(random (2 * _linecastmax / 3) + _linecastmax / 3);
+    if (!_ispond) then {_num = floor(random (2 * _linecastmax / 3) + _linecastmax / 3);};
     _position = if (_inBoat) then { (vehicle player) modeltoworld [-_num, 0 ,0] } else { player modeltoworld [0,_num,0] };
-    _elevation = _position select 2;
+    //_elevation = _position select 2;
     /*  
         _position set [ 2, 1 ];
         _position = ASLToATL _position;
@@ -36,27 +42,10 @@ for "_i" from 1 to 10 do {
         else {
             tutu setPosATL _position;
         };
-    */
-    _ispond = if (_elevation < 0.5 or surfaceIsWater _position) then { false } else { // riverbed must be at 0.5 m depth at least
-        private [ "_ret","_bb","_w2m" ];
-        _position set [ 2, _elevation - 0.5 ];
-        _ret = false;
-        {
-            {
-                _w2m = _x worldToModel _position;
-                _bb = (boundingbox _x) select 1;
-                _linecastmax = _linecastmax min ((_bb select 0) min (_bb select 1));
-                //_dir = [player, _x] call BIS_fnc_relativeDirTo; if (_dir > 180) then {_dir = _dir - 360};
-                if ((("" == typeOf _x) and ((_w2m select 2) < 0.5)) and {((abs(_w2m select 0) < (_bb select 0)) and (abs(_w2m select 1) < (_bb select 1)))}) exitWith { // ponds
-                    _ret = true;
-                };
-            } count (nearestObjects [_x, [], 2]); // find ponds
-            if (_ret) exitWith {};
-        } foreach nearestObjects [_position, ["waterHoleProxy"], 45]; // find waterholeproxy close to pond centers
-        _ret
-    };
+    */	
+	
 //    diag_log [ _position, _elevation, surfaceIsWater _position, _linecastmax, _ispond, "=>",  ((surfaceIsWater _position or _ispond) and ((player == vehicle player) or {((vehicle player) isKindOf "Ship")})) ];
-    if ((surfaceIsWater _position or _ispond) and ((player == vehicle player) or {((vehicle player) isKindOf "Ship")})) exitWith {
+    if ((surfaceIsWater _position or _ispond) && ((player == vehicle player) or {(vehicle player) isKindOf "Ship"})) exitWith {
         _isOk = true;
     };
 };
@@ -73,7 +62,6 @@ player playActionNow "GestureSwing";
 
 // Alert zeds
 [player,3,true,(getPosATL player)] call player_alertZombies;
-
 r_interrupt = false;
 
 while {_isOk} do {
@@ -87,9 +75,7 @@ while {_isOk} do {
         cutText [localize "str_fishing_canceled", "PLAIN DOWN"];
     } else {
         //make sure the player isnt swimming
-
-        // wait for animation
-        sleep 2;
+        uiSleep 2; // wait for animation
 
         // check if player is in boat
         _vehicle = vehicle player;
@@ -104,7 +90,7 @@ while {_isOk} do {
         if (rain > 0) then {_rnd = _rnd / 2;};
 
         // 1% chance to catch anything
-        if((random _rnd) <= 5) then {
+        if ((random _rnd) <= 5) then {
             // Just the one fish for now
             _itemOut = [];
             _itemOut = switch (true) do {
@@ -115,7 +101,7 @@ while {_isOk} do {
             };
             _itemOut = _itemOut call BIS_fnc_selectRandom;
             _text = getText (configFile >> "CfgMagazines" >> _itemOut >> "displayName");
-            if(_inVehicle) then { 
+            if (_inVehicle) then { 
                 _item = _vehicle;
                 _itemtodrop = _itemOut;
                 _item addMagazineCargoGlobal [_itemtodrop,1];
@@ -140,7 +126,6 @@ while {_isOk} do {
             ["Working",0,[3,2,8,0]] call dayz_NutritionSystem;
             _isOk = false;
         } else {
-
             switch (true) do {
                 case (_counter == 0) : { cutText [format [localize "str_fishing_cast",_num], "PLAIN DOWN"]; }; 
                 case (_counter == 4) : { cutText [localize "str_fishing_pull", "PLAIN DOWN"]; player playActionNow "GesturePoint"; }; 
@@ -149,9 +134,9 @@ while {_isOk} do {
             }; 
             _counter = _counter + 1;
 
-            if(_counter == 12) then {
+            if (_counter == 12) then {
                 _isOk = false;
-                sleep 1;
+                uiSleep 1;
                 cutText [localize "str_fishing_failed", "PLAIN DOWN"];
             };
         };

@@ -1,3 +1,5 @@
+private ["_object_type","_fuellevels","_dmglevels"];
+
 _object_type = typeOf cursorTarget;
 _fuellevels = fuel cursorTarget;
 _dmglevels = damage cursorTarget;

@@ -1,4 +1,4 @@
-private["_playerPos","_canFill","_isPond","_isWell","_pondPos","_objectsWell","_onLadder","_hasbottleitem","_config","_item","_text","_objectsPond","_qty","_dis","_sfx","_isInfected","_bodiesNear","_chance"];
+private ["_playerPos","_canFill","_isPond","_isWell","_pondPos","_objectsWell","_onLadder","_hasbottleitem","_config","_item","_text","_objectsPond","_qty","_dis","_sfx","_isInfected","_bodiesNear","_chance","_itemorignal","_well"];
 
 call gear_ui_init;
 closeDialog 0;

@@ -12,15 +12,7 @@
 
 #include "\z\addons\dayz_code\util\Player.hpp"
 
-private
-[
-	"_attachment",
-	"_weapon",
-	"_newWeapon",
-	"_weaponInUse",
-	"_newWeaponConfig",
-	"_muzzle"
-];
+private ["_attachment","_weapon","_newWeapon","_weaponInUse","_newWeaponConfig","_muzzle"];
 
 //check if player is on a ladder and if so, exit
 if (Player_IsOnLadder()) exitWith
@@ -34,6 +26,8 @@ _weapon = _this select 1;
 _newWeapon = _this select 2;
 
 //check that player has enough room in inventory
+//Remove melee magazines (BIS_fnc_invAdd and BIS_fnc_invSlotsEmpty fix)
+{player removeMagazines _x} count MeleeMagazines;
 if ((([player] call BIS_fnc_invSlotsEmpty) select 4) < 1) exitWith
 {
 	closeDialog 0;
@@ -52,7 +46,7 @@ _newWeaponConfig = configFile >> "CfgWeapons" >> _newWeapon >> "Attachments";
 if (!isClass(_newWeaponConfig) || {getText(_newWeaponConfig >> _attachment) != _weapon}) exitWith
 {
 	closeDialog 0;
-	"Cannot remove attachment." call dayz_rollingMessages;
+	localize "str_Attachmentcantremove" call dayz_rollingMessages;
 };
 
 _weaponInUse = (currentWeapon player == _weapon);

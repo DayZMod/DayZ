@@ -1,6 +1,6 @@
 private ["_cursorTarget","_onLadder","_isWater","_alreadyRemoving","_characterID","_objectID","_objectUID","_ownerArray","_dir",
-    "_realObjectStillThere","_upgrade","_entry","_parent","_requiredParts","_requiredTools","_model","_toolsOK","_displayname",
-    "_whpos","_i","_wh","_object"];
+	"_realObjectStillThere","_upgrade","_entry","_parent","_requiredParts","_requiredTools","_model","_toolsOK","_displayname",
+	"_whpos","_i","_wh","_object","_msg","_vector","_dis","__FILE__","_puid","_variables"];
 
 
 _cursorTarget = _this select 3;
@@ -25,7 +25,7 @@ s_player_disassembly = -1;
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _isWater = (surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 if(_isWater or _onLadder) exitWith {
-	_msg = localize "str_disassembleInProgress";
+	_msg = localize "str_water_ladder_cant_do";
 	_msg call dayz_rollingMessages;
 };
 
@@ -143,7 +143,7 @@ if (!_realObjectStillThere) then {
         deleteVehicle _cursorTarget;
 		if (getNumber(_parent >> "scope")==2) then {
 			_object = createVehicle [_upgrade, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
-			if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
+			//if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
 			_object setVectorDirAndUp _vector;
 			_object setPosATL _pos;
 			_puid = getPlayerUID player;

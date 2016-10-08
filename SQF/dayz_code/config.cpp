@@ -1,4 +1,5 @@
 #include "Configs\basicDefines.hpp"
+#include "version.hpp"
 
 class CfgPatches
 {
@@ -43,7 +44,7 @@ class CfgMods
 		hidePicture = 0;
 		hideName = 0;
 		action = "http://www.dayzmod.com";
-		version = "DayZMod 1.8.7";
+		version = DayZVersion;
 		hiveVersion = 0.96;
 		requiredAddons[] = {"Chernarus"};
 	};

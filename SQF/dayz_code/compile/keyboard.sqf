@@ -9,18 +9,10 @@ _altState = _this select 4;
 _handled = false;
 
 if (isNil "keyboard_keys") then {
-    _deadcheck = { // ESCAPE
-//        call player_forceSave;
-//        _idd = uiNamespace getVariable "RscDisplayMPInterrupt";
-//        if (isNil '_idd') then  {
-//            createDialog 'RscDisplayMPInterrupt';
-//        }
-//        else { 
-//            closeDialog 0;
-//       };
-        //keyboard_keys = nil;*/
-        _handled = false;
-    };
+	_muteSound = {
+		call player_toggleSoundMute;
+		_handled = true;
+	};
     _rifle = {
 		2 call dz_fn_switchWeapon;
         _handled = true;
@@ -52,7 +44,7 @@ if (isNil "keyboard_keys") then {
                         };                      
                     } forEach getArray(configFile >> "cfgWeapons" >> _weapon >> _muzz >> "magazines");
                 } forEach _muzzles;
-            } forEach [ "Throw"];
+            } forEach ["Throw"];
 
             _magCount = count _ammo_throwable;
             if (_magCount > 0) then {
@@ -163,9 +155,13 @@ if (isNil "keyboard_keys") then {
     _build_str8OnOff = {
         if (0 != count Dayz_constructionContext) then {
             Dayz_constructionContext set [ 5, !(Dayz_constructionContext select 5) ];
-            _handled = true; // used by keyboard.sqf
+            _handled = true;
             r_interrupt = true;
         };
+		if (animationState player in ["bunnyhopunarmed","bunnyhoprifle"]) then {
+			//Fixes invisible weapon switch glitch if double tapping vault with no weapon in hands
+			_handled = true;
+		};
     };
 
     _block = {
@@ -179,7 +175,6 @@ if (isNil "keyboard_keys") then {
 
     keyboard_keys = [];
     keyboard_keys resize 256;
-    [[DIK_ESCAPE], _deadcheck] call _addArray;
     [[DIK_1], _rifle] call _addArray;
     [[DIK_2], _pistol] call _addArray;
     [[DIK_3], _melee] call _addArray;
@@ -191,6 +186,8 @@ if (isNil "keyboard_keys") then {
     [actionKeys "MoveRight", _interrupt] call _addArray;
     [actionKeys "MoveForward", _interrupt] call _addArray;
     [actionKeys "MoveBack", _interrupt] call _addArray;
+    [actionKeys "TurnLeft", _interrupt] call _addArray;
+    [actionKeys "TurnRight", _interrupt] call _addArray;
     [actionKeys "PushToTalk", _noise] call _addArray;
     [actionKeys "VoiceOverNet", _noise] call _addArray;
     [actionKeys "PushToTalkDirect", _noise] call _addArray;
@@ -199,6 +196,7 @@ if (isNil "keyboard_keys") then {
     [actionKeys "Diary", _journal] call _addArray;
     [actionKeys "NetworkStats", _journal] call _addArray;
     //[actionKeys "Turbo", _turbo] call _addArray;
+	[[DIK_F1], _muteSound] call _addArray;
     //[[DIK_F4, DIK_TAB, DIK_DELETE], _forcesave] call _addArray;
     //[[DIK_F4, DIK_RMENU, DIK_LMENU,DIK_LSHIFT,DIK_RSHIFT,DIK_ESCAPE], _forcesave2] call _addArray;
     [actionKeys "LeanLeft", _build_left ] call _addArray;
@@ -208,31 +206,16 @@ if (isNil "keyboard_keys") then {
 //  [[DIK_NUMPAD7], _rotate_left] call _addArray;
 //  [[DIK_NUMPAD9], _rotate_right] call _addArray;
     [actionKeys "ForceCommandingMode", _block] call _addArray;
-    [[  DIK_F9, DIK_F10, DIK_F11, 
+    [[  DIK_F9,DIK_F10,DIK_F11,DIK_F12,
         DIK_F8,DIK_F7,DIK_F6,DIK_F5,DIK_F4,
-        DIK_F3,DIK_F2,DIK_F1,DIK_0,DIK_9,
+        DIK_F3,DIK_F2,DIK_0,DIK_9,
         DIK_8,DIK_7,DIK_6,DIK_5,DIK_4], _block] call _addArray;
-    if (serverCommandAvailable "#kick") then {
-        [[DIK_F12], gcam_onoff] call _addArray; // GCAM: F12 to start (for admins only)
-    }
-    else {
-        [[DIK_F12], _block] call _addArray;
-    };
-
-    (findDisplay 46) displayRemoveAllEventHandlers "KeyUp";
-    (findDisplay 46) displayRemoveAllEventHandlers "KeyDown";
-    (findDisplay 46) displayAddEventHandler ["KeyDown", preprocessFileLineNumbers (MISSION_ROOT+'keyboard.sqf')];
-    //diag_log [diag_ticktime, __FILE__, "eh reset" ];
 };
 
 if (r_player_unconsciousInputDisabled) exitWith {true};
 _code = keyboard_keys select _dikCode;
 if (!isNil "_code") then {
     call _code;
-};
-
-if (serverCommandAvailable "#kick") then {
-    GCam_KD = _this; // GCAM: GCam_KD is the current pressed key
 };
 
 _handled

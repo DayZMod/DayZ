@@ -1,4 +1,4 @@
-private ["_object","_proceed","_pos","_rndattemps","_limit","_dismantleToo","_pos","_ownerID","_objectID","_objectUID","_playerID","_claimedBy","_tools"];
+private ["_object","_proceed","_rndattemps","_limit","_dismantleToo","_ownerID","_objectID","_objectUID","_playerID","_claimedBy","_tools","_exit","_end","_onLadder","_isWater","_isOk","_counter","_text","_dis","_sfx","_animState","_started","_finished","_isMedic","_holder"];
 
 _object = _this;
 _proceed = false;
@@ -33,7 +33,7 @@ _tools = getArray (configFile >> "CfgVehicles" >> (typeOf _object) >> "dismantle
 
 {
 	private ["_end"];
-	if ((_x select 0) in items player) then {_end = false;} else { cutText [format ["Missing tool %1 to dismantle",(_x select 0)] , "PLAIN DOWN"]; _end = true; _proceed = false; };
+	if ((_x select 0) in items player) then {_end = false;} else { cutText [format [localize "STR_BLD_DISMANTLE_MISSING",(_x select 0)] , "PLAIN DOWN"]; _end = true; _proceed = false; };
 	
 	if (_end) exitwith { _exit = true; };
 } foreach _tools;
@@ -47,8 +47,7 @@ _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animati
 _isWater = 		(surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 
 if(_isWater or _onLadder) exitWith {
-	//cutText ["unable to upgrade at this time", "PLAIN DOWN"];
-	titleText [localize "str_CannotUpgrade"];
+	titleText [localize "str_water_ladder_cant_do"];
 };
 
 //Start loop
@@ -60,7 +59,7 @@ while {_isOk} do {
 //Check if we have the tools to start
 	{
 		private ["_end"];
-		if ((_x select 0) in items player) then {_end = false;} else { cutText [format ["Missing tool %1 to dismantle",_x] , "PLAIN DOWN"]; _end = true; _proceed = false; };
+		if ((_x select 0) in items player) then {_end = false;} else { cutText [format [localize "STR_BLD_DISMANTLE_MISSING",_x] , "PLAIN DOWN"]; _end = true; _proceed = false; };
 		
 		if (_end) exitwith { _exit = true; };
 	}foreach _tools;
@@ -100,7 +99,7 @@ while {_isOk} do {
 			r_doLoop = false;
 			_finished = true;
 		};
-		if (r_interrupt or (player getVariable["combattimeout", 0] >= time)) then {
+		if (r_interrupt or (player getVariable["combattimeout",0] >= diag_tickTime)) then {
 			r_doLoop = false;
 			_finished = false;
 		};
@@ -132,7 +131,7 @@ while {_isOk} do {
 		if ([(_x select 1)] call fn_chance) then {
 			player removeWeapon (_x select 0);
 			player addWeapon (_x select 2);
-			titleText ["Your tool has been damaged." , "PLAIN DOWN"];
+			titleText [localize "STR_BLD_DISMANTLE_DAMAGED", "PLAIN DOWN"];
 		};
 	}foreach _tools;
 		
@@ -143,7 +142,7 @@ while {_isOk} do {
 		_proceed = true;
 	};
 	
-	titleText [format["Dismantle attempt (%1 of %2).", _counter,_limit], "PLAIN DOWN"];
+	titleText [format[localize "STR_BLD_DISMANTLE_ATTEMPT", _counter,_limit], "PLAIN DOWN"];
 	sleep 0.10;
 };
 
@@ -153,7 +152,7 @@ if (_proceed) then {
 
 	if (_claimedBy != _playerID) exitWith { cutText [format [localize "str_player_beinglooted",_text] , "PLAIN DOWN"]; };
 
-	titleText [format["Dismantled, (%1).", (typeOf _object)], "PLAIN DOWN"];
+	titleText [format[localize "STR_BLD_DISMANTLED", (typeOf _object)], "PLAIN DOWN"];
 	
 	PVDZ_obj_Destroy = [_objectID,_objectUID];
 	publicVariableServer "PVDZ_obj_Destroy";

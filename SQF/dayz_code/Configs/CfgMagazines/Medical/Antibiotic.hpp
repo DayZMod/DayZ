@@ -16,7 +16,7 @@ class ItemAntibiotic : ItemAntibiotic_base
 	
 	class medical
 	{
-		chance = 0.50;
+		chance = 1.10; //100%
 		amount = -1;
 		qtyRemaining = "ItemAntibiotic6";
 	};
@@ -28,14 +28,16 @@ class ItemAntibiotic : ItemAntibiotic_base
 			text = $STR_TAKE_ANTIBIOTIC;
 			script = "spawn player_useMeds;";
 		};
+		class Combine {
+			text = $STR_ANTIBIOTICS_COMBINE;
+			script = "spawn player_combineAntibiotics;";
+		};
 	};
 };
 
-//TODO: move descriptions to stringtable
-
 class ItemAntibiotic6 : ItemAntibiotic
 {
-	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 6 Remaining";
+	descriptionShort = $STR_EQUIP_DESC_48;
 	
 	class medical
 	{
@@ -46,7 +48,7 @@ class ItemAntibiotic6 : ItemAntibiotic
 
 class ItemAntibiotic5 : ItemAntibiotic
 {
-	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 5 Remaining";
+	descriptionShort = $STR_EQUIP_DESC_49;
 	
 	class medical
 	{
@@ -57,7 +59,7 @@ class ItemAntibiotic5 : ItemAntibiotic
 
 class ItemAntibiotic4 : ItemAntibiotic
 {
-	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 4 Remaining";
+	descriptionShort = $STR_EQUIP_DESC_50;
 	
 	class medical
 	{
@@ -68,7 +70,7 @@ class ItemAntibiotic4 : ItemAntibiotic
 
 class ItemAntibiotic3 : ItemAntibiotic
 {
-	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 3 Remaining";
+	descriptionShort = $STR_EQUIP_DESC_51;
 	
 	class medical
 	{
@@ -79,7 +81,7 @@ class ItemAntibiotic3 : ItemAntibiotic
 
 class ItemAntibiotic2 : ItemAntibiotic
 {
-	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 2 Remaining";
+	descriptionShort = $STR_EQUIP_DESC_52;
 	
 	class medical
 	{
@@ -90,7 +92,7 @@ class ItemAntibiotic2 : ItemAntibiotic
 
 class ItemAntibiotic1 : ItemAntibiotic
 {
-	descriptionShort = "Azithromycin is a broad spectrum antibiotic used to treat or prevent certain bacterial infections. 1 Remaining";
+	descriptionShort = $STR_EQUIP_DESC_53;
 	
 	class medical
 	{
@@ -102,5 +104,5 @@ class ItemAntibiotic1 : ItemAntibiotic
 class ItemAntibioticEmpty : ItemAntibiotic_base
 {
 	scope = public;
-	descriptionShort = "EmptyBox of Azithromycin.";
+	descriptionShort = $STR_EQUIP_DESC_54;
 };

@@ -17,7 +17,7 @@ item12[] = {"",7,210,-29.000006,-29.000004,-20.999996,-20.999996,0.000000,""};
 item13[] = {"",7,210,-354.000092,-29.000004,-345.999908,-20.999996,0.000000,""};
 item14[] = {"",7,210,-329.000031,208.500000,-321.000000,216.500000,0.000000,""};
 item15[] = {"Has_Target",4,218,-150.000000,275.000000,-50.000000,325.000000,5.000000,"Has" \n "Target"};
-item16[] = {"Chase",2,250,-150.000000,375.000000,-50.000000,425.000000,0.000000,"Chase"};
+item16[] = {"Chase",2,4346,-150.000000,375.000000,-50.000000,425.000000,0.000000,"Chase"};
 item17[] = {"Time_Check",4,218,50.000000,75.000000,150.000000,125.000000,1.000000,"Time" \n "Check"};
 item18[] = {"",7,210,-29.000006,208.500000,-20.999996,216.500000,0.000000,""};
 item19[] = {"",7,210,-29.000006,296.000000,-20.999996,304.000031,0.000000,""};
@@ -65,7 +65,7 @@ item60[] = {"Start_Attack",4,218,-725.000000,175.000000,-625.000000,225.000000,0
 item61[] = {"End_Attack",4,218,-725.000000,100.000000,-625.000000,150.000000,0.000000,"End Attack"};
 item62[] = {"TargetMoved",4,218,50.000000,300.000000,150.000000,350.000000,3.000000,"TargetMoved"};
 item63[] = {"Not_moving",4,218,-300.000000,150.000000,-200.000000,200.000000,1.000000,"Not moving"};
-item64[] = {"TimeOut",8,4314,-300.000000,375.000000,-200.000000,425.000000,2.000000,"TimeOut"};
+item64[] = {"TimeOut",8,218,-300.000000,375.000000,-200.000000,425.000000,2.000000,"TimeOut"};
 item65[] = {"____FAKE____",9,2600,0.000000,0.000000,0.000000,0.000000,0.000000,"____FAKE____"};
 link0[] = {0,10};
 link1[] = {0,55};
@@ -156,7 +156,7 @@ link85[] = {62,65};
 link86[] = {65,62};
 link87[] = {63,65};
 link88[] = {65,63};
-globals[] = {25.000000,1,0,0,0,640,480,1,157,6316128,1,-710.729492,237.694336,750.737427,47.068176,806,598,1};
+globals[] = {25.000000,1,0,0,0,640,480,1,157,6316128,1,-640.890259,559.593506,704.095276,-186.586182,806,598,1};
 window[] = {2,-1,-1,-1,-1,727,26,1234,26,3,824};
 *//*%FSM</HEAD>*/
 class FSM
@@ -515,6 +515,7 @@ class FSM
       name = "Chase";
       init = /*%FSM<STATEINIT""">*/"_timeN = diag_tickTime;" \n
        "" \n
+	   "if (isNull _agent) exitWith {}; //Prevent errors if zombie is suddenly deleted" \n
        "_agent forceSpeed (_agent getVariable [""speedLimit"", 3]);" \n
        "" \n
        "_target = _agent call zombie_findTargetAgent;" \n
@@ -523,23 +524,21 @@ class FSM
        "_isTargetAlive = alive _target;" \n
        "" \n
        "//Move to location" \n
-       "if (_movingTo distance _targetPos > 2) then {" \n
+       "if (_movingTo distance _targetPos > .5) then {" \n
        "	//diag_log format[""Chase - %1 - [%2,%3] - Range %4"",(typeof _agent),_myDest,_movingTo,(_myDest distance _movingTo)];" \n
        "" \n
        "	_agent moveTo _targetPos;" \n
        "	_movingTo = _targetPos;" \n
        "};" \n
        "" \n
-       "if ((moveToCompleted _agent) or (Speed _agent == 0) or ((_agent distance _target) <= 2)) then {" \n
-       "	_agroCheck= _agroCheck + 1;" \n
        "" \n
-       "	//Check if LOS" \n
-       "	if ((_agroCheck % 6) == 0) then {" \n
-       "		_agroCheck = 0;" \n
-       "			_cantSee = [_target,_agent] call dayz_losCheck;" \n
-       "			_target = _agent call zombie_findTargetAgent;" \n
-       "	};" \n
+       "" \n
+       "//Check if LOS" \n
+       "if ((_agroCheck % 8) == 0) then {" \n
+       "	_agroCheck = 0;" \n
+       "	_cantSee = [_target,_agent] call dayz_losCheck;" \n
        "};" \n
+       "" \n
        "" \n
        "" \n
        "//diag_log format[""%1"",(typeof _agent)];"/*%FSM</STATEINIT""">*/;
@@ -602,9 +601,9 @@ class FSM
           priority = 2.000000;
           to="Chase";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _timeN) > 3" \n
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _timeN) > 1" \n
            ""/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+          action=/*%FSM<ACTION""">*/"_agroCheck= _agroCheck + 1;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
@@ -760,6 +759,7 @@ class FSM
        "_remotetargets = _agent getVariable [""remotetargets"",[]];" \n
        "" \n
        "//Clear remote on reset" \n
+	   "if (isNull _agent) then {_remotetargets = [];};" \n
        "if (count _remotetargets > 0) then {" \n
        "	_agent setVariable [""remotetargets"",[],true];" \n
        "};" \n

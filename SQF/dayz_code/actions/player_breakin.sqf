@@ -1,20 +1,24 @@
-private ["_target", "_pos", "_gps", "_vars", "_hasToolbox", "_hasCrowbar", "_limit", "_proceed", "_counter", "_dis", "_sfx", "_roll", "_animState", "_started", "_finished", "_animState", "_isMedic","_isGate"];
+private ["_brokein","_isOk","_hasSledgeHammer","_gps","_vars","_hasToolbox","_hasCrowbar","_limit","_proceed","_counter",
+"_dis","_sfx","_roll","_animState","_started","_finished","_isMedic","_isGate"];
 
 _target = _this select 3;
 _pos = getPos _target;
-_isGate = (typeOf cursorTarget) in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"];
+_isWoodenGate = (typeOf cursorTarget) in ["WoodenGate_2","WoodenGate_3","WoodenGate_4"];
+_isMetalGate = (typeOf cursorTarget) in ["MetalGate_2","MetalGate_3","MetalGate_4"];
 _limit = 2 + round(random 3);
 
 _hasSledgeHammer = "ItemSledgeHammer" in items player;
 _hasCrowbar = "ItemCrowbar" in items player;
 
 if (!_hasSledgeHammer) exitWith {
-	titleText ["You need a SledgeHammer to break into this compound" , "PLAIN DOWN"];
+	//titleText [localize "STR_BLD_BREAKIN_NEED_SLEDGE", "PLAIN DOWN"];
+	localize "STR_BLD_BREAKIN_NEED_SLEDGE" call dayz_rollingMessages;
 	sleep 1;
 };
 
 if (!_hasCrowbar) exitWith {
-	titleText ["You need a crowbar to break into this compound." , "PLAIN DOWN"];
+	//titleText [localize "STR_BLD_BREAKIN_NEED_CROWBAR", "PLAIN DOWN"];
+	localize "STR_BLD_BREAKIN_NEED_CROWBAR" call dayz_rollingMessages;
 	sleep 1;
 };
 
@@ -30,13 +34,15 @@ while {_isOk} do {
 
 	if (!_hasSledgeHammer) exitWith {
 		_proceed = nil;
-		titleText ["You need a sledge hammer to break into a gate." , "PLAIN DOWN"];
+		//titleText [localize "STR_BLD_BREAKIN_NEED_SLEDGE", "PLAIN DOWN"];
+		localize "STR_BLD_BREAKIN_NEED_SLEDGE" call dayz_rollingMessages;
 		sleep 1;
 	};
 
 	if (!_hasCrowbar) exitWith {
 		_proceed = nil;
-		titleText ["You need a crowbar to break into a gate." , "PLAIN DOWN"];
+		//titleText [localize "STR_BLD_BREAKIN_NEED_CROWBAR", "PLAIN DOWN"];
+		localize "STR_BLD_BREAKIN_NEED_CROWBAR" call dayz_rollingMessages;
 		sleep 1;
 	};
 	
@@ -85,15 +91,21 @@ while {_isOk} do {
 	if(_finished) then {
 	//Add to Counter
 		_counter = _counter + 1;
-
 		
-		//start chance to gain access.
-		if ([0.01] call fn_chance) then {
-			//stop loop
-			_isOk = false;
-			//Set Done var
-			_proceed = true;
-			if (_isGate) then {
+		if (_isMetalGate) then {
+			//start chance to gain access.
+			if ([0.02] call fn_chance) then {
+				_isOk = false;
+				_proceed = true;
+				_brokein = true;
+				_target setVariable ["isOpen", "1", true];
+			};
+		};
+		
+		if (_isWoodenGate) then {
+			if ([0.04] call fn_chance) then {
+				_isOk = false;
+				_proceed = true;
 				_brokein = true;
 				_target setVariable ["isOpen", "1", true];
 			};
@@ -104,13 +116,17 @@ while {_isOk} do {
 	if ([0.02] call fn_chance) then {
 		player removeWeapon "ItemSledgeHammer";
 		player addWeapon "ItemSledgeHammerBroken";
-		titleText ["Your SledgeHammer handle has snapped." , "PLAIN DOWN"];
+		//titleText [localize "STR_BLD_BREAKIN_BROKEN_SLEDGE", "PLAIN DOWN"];
+
+		localize "STR_BLD_BREAKIN_BROKEN_SLEDGE" call dayz_rollingMessages;
 	};
 
 	if ([0.04] call fn_chance) then {
 		player removeWeapon "ItemCrowbar";
 		player addWeapon "ItemCrowbarBent";
-		titleText ["Your crowbar has bent." , "PLAIN DOWN"];
+		//titleText [localize "STR_BLD_BREAKIN_BENT_CROWBAR", "PLAIN DOWN"];
+		
+		localize "STR_BLD_BREAKIN_BENT_CROWBAR" call dayz_rollingMessages;
 	};
 	
 	if(_counter == _limit) exitWith {
@@ -120,7 +136,9 @@ while {_isOk} do {
 		_proceed = true;
 	};
 	
-	titleText [format["Breaking into compound, attempt (%1 of %2).", _counter,_limit], "PLAIN DOWN"];
+	//titleText [format[localize "STR_BLD_BREAKIN", _counter,_limit], "PLAIN DOWN"];
+	
+	format[localize "STR_BLD_BREAKIN", _counter,_limit] call dayz_rollingMessages;
 	sleep 0.03;
 };
 //Tool issues
@@ -133,7 +151,9 @@ if (!_proceed) then {
 		[objNull, player, rSwitchMove,""] call RE;
 		player playActionNow "stop";
 	};
-	titleText ["Break in cancelled." , "PLAIN DOWN"];
+	//titleText [localize "STR_BLD_BREAKIN_CANCELLED", "PLAIN DOWN"];
+
+	localize "STR_BLD_BREAKIN_CANCELLED" call dayz_rollingMessages;
 };
 
 // Working-Factor for chopping wood.
@@ -141,13 +161,18 @@ if (!_proceed) then {
 
 //Completed but no success.
 if (_proceed and !_brokein) then {
-	titleText [format["Break in attempt completed with little success", _counter,_limit], "PLAIN DOWN"];
+	//titleText [localize "STR_BLD_BREAKIN_COMPLETE_FAIL", "PLAIN DOWN"];
+
+	localize "STR_BLD_BREAKIN_COMPLETE_FAIL" call dayz_rollingMessages;
 };
+
 //Completed and successful
 if (_proceed and _brokein) then {
-	titleText ["Break in attempt successful.", "PLAIN DOWN", 0.3];
+	//titleText [localize "STR_BLD_BREAKIN_COMPLETE", "PLAIN DOWN", 0.3];
+
+	localize "STR_BLD_BREAKIN_COMPLETE" call dayz_rollingMessages;
 	
 	//Open Gate.
-	_target animate ["DoorR", 0];
-	_target animate ["DoorL", 0];
+	_target animate ["DoorR", 1];
+	_target animate ["DoorL", 1];
 };

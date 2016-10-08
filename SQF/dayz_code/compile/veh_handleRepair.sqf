@@ -23,7 +23,7 @@ _hitpointnames = [];
 	_hitpointnames set [count _hitpointnames, getText (configFile >> "CfgVehicles" >> (typeOf _unit) >> "HitPoints" >> _x >> "name")];
 } forEach (_unit call vehicle_getHitpoints);
 
-if ((isNil "_selection") OR {(!(_selection IN _hitpointnames))}) exitWith {_this select 2};
+if ((isNil "_selection") OR {(!(_selection in _hitpointnames))}) exitWith {_this select 2};
 
 _SVname = "hit_" + _selection;
 
@@ -40,14 +40,13 @@ if (local _unit) then {
 		PVDZ_veh_Save = [_unit, "repair"];
 		publicVariableServer "PVDZ_veh_Save";
 		_log = _log + ". Requesting server hive write";
-	}
-	else {
+	} else {
 		[_unit, "repair"] call server_updateObject;
 		_log = _log + ". Writing to hive";
 	};
 }
 else {
-	if ( (count _this > 3) AND {(_this select 3)}) then {
+	if ((count _this > 3) && {(_this select 3)}) then {
 		// vehicle is not local to this client, ask the client which vehicle is local to set damage
 		_this resize 3; // delete "broadcast" boolean
 		_log = _log + ". Broadcasting to all";

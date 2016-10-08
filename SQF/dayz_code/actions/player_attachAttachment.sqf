@@ -11,15 +11,7 @@
 
 #include "\z\addons\dayz_code\util\Player.hpp"
 
-private
-[
-	"_attachment",
-	"_weapon",
-	"_config",
-	"_newWeapon",
-	"_weaponInUse",
-	"_muzzle"
-];
+private ["_attachment","_weapon","_config","_newWeapon","_weaponInUse","_muzzle"];
 
 //check if player is on a ladder and if so, exit
 if (Player_IsOnLadder()) exitWith
@@ -34,7 +26,7 @@ _attachment = _this select 0;
 if (!(_attachment in magazines player)) exitWith
 {
 	closeDialog 0;
-	"You seem to have misplaced the attachment." call dayz_rollingMessages;
+	localize "str_missingAttachment" call dayz_rollingMessages;
 };
 
 //Get player's primary weapon or sidearm

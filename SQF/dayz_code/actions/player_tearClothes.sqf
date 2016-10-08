@@ -1,4 +1,4 @@
-private ["_skin","_rnd","_rounded","_itemtocreate","_i"];
+private ["_skin","_rnd","_rounded","_itemtocreate","_i","_config","_infoText","_result","_nearByPile","_pile","__FILE__"];
 
 _skin = _this;
 _config = configFile >> "CfgMagazines" >> _skin;
@@ -14,6 +14,7 @@ _infoText = "";
 player playActionNow "Medic";
 [player,"bandage",0,false] call dayz_zombieSpeak;
 sleep 6;
+if !(_skin in magazines player) exitWith {localize "str_tear_clothes_0" call dayz_rollingMessages;};
 player removeMagazine _skin;
 
 switch (_rounded) do {
@@ -31,6 +32,8 @@ switch (_rounded) do {
 	};
 };
 
+//Remove melee magazines (BIS_fnc_invAdd fix)
+{player removeMagazines _x} count MeleeMagazines;
 _i = 0;
 while {_i < _rounded} do {
 	_i = _i + 1; 

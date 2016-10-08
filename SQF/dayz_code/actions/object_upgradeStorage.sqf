@@ -9,39 +9,10 @@
 	};
 	
 */
-private
-[
-	"_objclass",
-	"_cursorTarget",
-	"_item",
-	"_classname",
-	"_requiredTools",
-	"_requiredParts",
-	"_upgrade",
-	"_upgradeConfig",
-	"_upgradeDisplayname",
-	"_onLadder",
-	"_isWater",
-	"_upgradeParts",
-	"_startUpgrade",
-	"_missingPartsConfig",
-	"_textMissingParts",
-	"_dis",
-	"_sfx",
-	"_ownerID",
-	"_objectID",
-	"_objectUID",
-	"_alreadyupgrading",
-	"_pos",
-	"_dir",
-	"_weapons",
-	"_magazines",
-	"_backpacks",
-	"_object",
-	"_objWpnTypes",
-	"_objWpnQty",
-	"_countr"
-];
+private ["_objclass","_cursorTarget","_item","_classname","_requiredTools","_requiredParts","_upgrade","_upgradeConfig",
+"_upgradeDisplayname","_onLadder","_isWater","_upgradeParts","_startUpgrade","_missingPartsConfig","_textMissingParts","_dis",
+"_sfx","_ownerID","_objectID","_objectUID","_alreadyupgrading","_dir","_weapons","_magazines","_backpacks","_object",
+"_objWpnTypes","_objWpnQty","_countr","_itemName","_msg","_vector"];
 
 _objclass = _this;
 _cursorTarget = _this select 3;
@@ -50,8 +21,8 @@ _item = typeof _cursorTarget;
 //diag_log (str(_item));
 
 //remove action menu
-player removeAction s_player_upgradestroage;
-s_player_upgradestroage = -1;
+player removeAction s_player_upgradestorage;
+s_player_upgradestorage = -1;
 
 //Not needed
 //_itemName = getText (configFile >> "CfgVehicles" >> _item >> "displayName");
@@ -94,7 +65,7 @@ if(_isWater or _onLadder) exitWith {
 		_missingPartsConfig = configFile >> "CfgWeapons" >> _x;
 		_textMissingParts = getText (_missingPartsConfig >> "displayName");
 
-		_msg = format ["Missing %1 to upgrade storage.", _textMissingParts];
+		_msg = format [localize "str_missing_to_do_this", _textMissingParts];
 		_msg call dayz_rollingMessages;
 		
 		_startUpgrade = false;
@@ -107,7 +78,7 @@ if(_isWater or _onLadder) exitWith {
 		_missingPartsConfig = configFile >> "CfgMagazines" >> _x;
 		_textMissingParts = getText (_missingPartsConfig >> "displayName");
 				
-		_msg = format ["Missing %1 to upgrade storage.", _textMissingParts];
+		_msg = format [localize "str_missing_to_do_this", _textMissingParts];
 		_msg call dayz_rollingMessages;
 		_startUpgrade = false;
 	};
@@ -236,6 +207,6 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	_msg call dayz_rollingMessages;
 /*
 } else {
-	cutText ["Object has no upgrade option.", "PLAIN DOWN"];
+	cutText [localize "str_upgradeNoOption", "PLAIN DOWN"];
 */
 };

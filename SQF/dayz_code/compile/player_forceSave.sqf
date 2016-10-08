@@ -11,6 +11,6 @@ if ((count _magazineArray) > 0) then {
 	publicVariableServer "PVDZ_plr_Save";
 };
 
-diag_log (_magazineArray);
+//diag_log (_magazineArray);
 					
 dayz_lastSave = diag_tickTime;

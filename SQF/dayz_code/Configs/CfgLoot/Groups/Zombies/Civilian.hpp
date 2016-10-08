@@ -1,6 +1,6 @@
 ZombieCivilian[] =
 {
-	{Loot_GROUP,		10,		Consumable},
+	{Loot_GROUP,		6,		Consumable},
 	{Loot_GROUP,		1,		AmmoCivilian},
 	{Loot_MAGAZINE,		3,		ItemBandage},
 	{Loot_MAGAZINE,		2,		ItemPainkiller},

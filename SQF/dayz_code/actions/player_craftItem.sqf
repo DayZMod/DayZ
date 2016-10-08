@@ -10,7 +10,7 @@
 	failChance = 1;
 */
 //diag_log("crafting system");
-private["_config","_input","_output","_required","_failChance","_hasInput","_availabeSpace"];
+private ["_config","_input","_output","_required","_failChance","_hasInput","_availabeSpace","_classname","_isClass","_onLadder","_hasTools","_avail","_selection","_item","_amount","_itemName","_freeSlots","_slotType","_i","_j","_dis","_sfx"];
 
 //diag_log(str(isnil "r_player_crafting"));
 
@@ -51,7 +51,7 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 			if (!("MeleeHatchet" in weapons player)) then {
 				if (!(DayZ_onBack == "MeleeHatchet")) then {
 					if (!(_x IN items player)) then {
-						systemChat format[localize "str_cannotCraft", _x];
+						systemChat format[localize "str_missing_to_do_this", _x];
 						_hasTools = false;
 					};
 				};
@@ -87,6 +87,8 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 	} forEach (_input);
 	
 	if (_hasInput) then {
+		//Remove melee magazines (BIS_fnc_invAdd and BIS_fnc_invSlotsEmpty fix)
+		{player removeMagazines _x} count MeleeMagazines;
 		_freeSlots = [player] call BIS_fnc_invSlotsEmpty;
 		{
 			_item = _x select 0;

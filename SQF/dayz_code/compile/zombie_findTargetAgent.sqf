@@ -1,5 +1,6 @@
-private ["_target","_targets","_man","_manDis","_localtargets","_remotetargets"];
+private ["_agent","_range","_target","_targets","_man","_manDis","_localtargets","_remotetargets"];
 _agent = _this;
+if (isNull _agent) exitWith {objNull}; // Prevent errors if zombie is suddenly deleted
 _target = objNull;
 _targets = [];
 //_targetDis = [];
@@ -24,6 +25,7 @@ _targets = _localtargets + _remotetargets;
 //Search for objects
 if (count _targets == 0) then {
 //"ThrownObjects","GrenadeHandTimedWest","SmokeShell"]
+	private["_objects"];
 	_objects = _agent nearObjects ["GrenadeHand", 300];
 	{
 		if (!(_x in _targets)) then {

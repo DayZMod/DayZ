@@ -15,8 +15,8 @@ Author:
 //Number of care packages to spawn
 #define SPAWN_NUM 6
 
-#define SEARCH_CENTER [7542,7134]
-#define SEARCH_RADIUS 6150
+#define SEARCH_CENTER getMarkerPos "carepackages"
+#define SEARCH_RADIUS (getMarkerSize "carepackages") select 0
 #define SEARCH_DIST_MIN 30
 #define SEARCH_SLOPE_MAX 1000
 #define SEARCH_BLACKLIST [[[12923,3643],[14275,2601]]]
@@ -81,5 +81,5 @@ for "_i" from 1 to (SPAWN_NUM) do
 				createVehicle ["Sign_sphere100cm_EP1", _lootPos, [], 0, "CAN_COLLIDE"];
 			};
 		};
-	} foreach  Loot_Select(_lootGroup, _lootNum);
+	} forEach  Loot_Select(_lootGroup, _lootNum);
 };

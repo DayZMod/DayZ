@@ -15,8 +15,7 @@ while {_counter < _amount} do {
 	//diag_log ("Spawned: " + _type);
 	//_radius = 0;
 	_method = "CAN_COLLIDE";
-		
-	//_createSafePos = getMarkerPos "center";
+	
 	_position = [getMarkerPos "center",1,6500,1] call fn_selectRandomLocation;
 	
 	//Create Zed

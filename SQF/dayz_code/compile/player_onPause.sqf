@@ -18,14 +18,14 @@ if (time - dayz_lastCheckSave > 10) then {
 	call player_forceSave;
 };
 
-while {(!isNull _display) and !r_player_dead} do {
+while {(!isNull _display) && !r_player_dead} do {
 	_timeout = 30;
 	_timeout = player getVariable["combattimeout", 0];
-	_inCombat = if (_timeout >= diag_tickTime) then { true } else { false };
-	_playerCheck = if ({isPlayer _x} count (player nearEntities ["AllVehicles", 5]) > 1) then { true } else { false };
-	_zedCheck = if (count (player nearEntities ["zZombie_Base", 10]) > 0) then { true } else { false };
+	_inCombat = if (_timeout >= diag_tickTime) then {true} else {false};
+	_playerCheck = if ({isPlayer _x} count (player nearEntities ["AllVehicles",5]) > 1) then {true} else {false};
+	_zedCheck = if (count (player nearEntities ["zZombie_Base",10]) > 0) then {true} else {false};
 
-	Switch true do {
+	switch true do {
 		case (_playerCheck) : {
 			_btnAbort ctrlEnable false;
 			_btnAbort ctrlSetText format["%1 (in 30)", _btnAbortText];
@@ -36,17 +36,16 @@ while {(!isNull _display) and !r_player_dead} do {
 			_btnAbort ctrlSetText format["%1 (in 10)", _btnAbortText];
 			cutText [localize "str_abort_zedsclose", "PLAIN DOWN"];
 		};
-		case (_inCombat and !_zedCheck and !_playerCheck) : {
+		case (_inCombat && !_zedCheck && !_playerCheck) : {
 			_btnAbort ctrlEnable false;
 			_btnAbort ctrlSetText format["%1 (in %2)", _btnAbortText, ceil (_timeout - diag_tickTime)];
 		};
 		default {
-		_btnAbort ctrlEnable true;
-		_btnAbort ctrlSetText _btnAbortText;
+			_btnAbort ctrlEnable true;
+			_btnAbort ctrlSetText _btnAbortText;
 		};
 	};
-	sleep 1;
+	uiSleep 1;
 };
 
 if (r_player_dead) exitWith {_btnAbort ctrlEnable true;};
-
