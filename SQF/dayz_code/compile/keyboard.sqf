@@ -74,6 +74,12 @@ if (isNil "keyboard_keys") then {
             _handled = true;
         };  
     };
+	_holdBreath = {
+		local _array = actionKeys "HoldBreath";
+		if (count _array > 1) then {
+			_handled = true;
+		};
+	};
     _forcesave = {
         dayz_lastCheckBit = diag_ticktime;
         call player_forceSave;
@@ -197,6 +203,7 @@ if (isNil "keyboard_keys") then {
     [actionKeys "Diary", _journal] call _addArray;
     [actionKeys "NetworkStats", _journal] call _addArray;
 	[actionKeys "Turbo", _turbo] call _addArray;
+	[actionKeys "HoldBreath", _holdBreath] call _addArray;
 	[[DIK_F1], _muteSound] call _addArray;
     //[[DIK_F4, DIK_TAB, DIK_DELETE], _forcesave] call _addArray;
     //[[DIK_F4, DIK_RMENU, DIK_LMENU,DIK_LSHIFT,DIK_RSHIFT,DIK_ESCAPE], _forcesave2] call _addArray;
