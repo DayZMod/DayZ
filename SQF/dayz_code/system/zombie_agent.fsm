@@ -10,7 +10,7 @@ item5[] = {"Nobody_Near",4,218,25.000000,525.000000,125.000000,575.000000,6.0000
 item6[] = {"loiter",4,218,-400.000000,0.000000,-300.000000,50.000000,0.000000,"loiter"};
 item7[] = {"Loiter",2,250,-400.000000,75.000000,-300.000000,125.000000,0.000000,"Loiter"};
 item8[] = {"",7,210,-29.000042,396.000000,-20.999958,404.000000,0.000000,""};
-item9[] = {"",7,210,-29.000042,470.999939,-20.999958,479.000061,0.000000,""};
+item9[] = {"",7,210,-29.000040,470.999939,-20.999960,479.000061,0.000000,""};
 item10[] = {"true",8,218,-75.000000,-400.000000,25.000000,-350.000000,0.000000,"true"};
 item11[] = {"Begin",2,250,-75.000000,-150.000000,25.000000,-100.000000,0.000000,"Begin"};
 item12[] = {"",7,210,-29.000006,-29.000004,-20.999996,-20.999996,0.000000,""};
@@ -19,7 +19,7 @@ item14[] = {"",7,210,-329.000031,208.500000,-321.000000,216.500000,0.000000,""};
 item15[] = {"Has_Target",4,218,-150.000000,275.000000,-50.000000,325.000000,5.000000,"Has" \n "Target"};
 item16[] = {"Chase",2,250,-150.000000,375.000000,-50.000000,425.000000,0.000000,"Chase"};
 item17[] = {"Time_Check",4,218,50.000000,75.000000,150.000000,125.000000,1.000000,"Time" \n "Check"};
-item18[] = {"",7,210,-29.000006,208.500000,-20.999996,216.500000,0.000000,""};
+item18[] = {"",7,210,-29.000006,208.500000,-20.999994,216.500000,0.000000,""};
 item19[] = {"",7,210,-29.000006,296.000000,-20.999996,304.000031,0.000000,""};
 item20[] = {"Time_Check",4,218,-275.000000,75.000000,-175.000000,125.000000,0.000000,"Time" \n "Check"};
 item21[] = {"Check",8,218,-300.000000,300.000000,-200.000000,350.000000,1.000000,"Check"};
@@ -65,11 +65,12 @@ item60[] = {"Start_Attack",4,218,-725.000000,175.000000,-625.000000,225.000000,0
 item61[] = {"End_Attack",4,218,-725.000000,100.000000,-625.000000,150.000000,0.000000,"End Attack"};
 item62[] = {"TargetMoved",4,218,-600.000000,0.000000,-500.000000,50.000000,3.000000,"TargetMoved"};
 item63[] = {"Not_moving",4,218,-700.000000,0.000000,-600.000000,50.000000,1.000000,"Not moving"};
-item64[] = {"TimeOut",8,4314,-300.000000,375.000000,-200.000000,425.000000,2.000000,"TimeOut"};
+item64[] = {"TimeOut",8,218,-300.000000,375.000000,-200.000000,425.000000,2.000000,"TimeOut"};
 item65[] = {"No_Agent",4,218,25.000000,450.000000,125.000000,500.000000,5.000000,"No Agent"};
 item66[] = {"",7,210,221.000015,546.000061,229.000000,553.999939,0.000000,""};
 item67[] = {"",7,210,-29.000042,545.999939,-20.999958,554.000061,0.000000,""};
-item68[] = {"____FAKE____",9,2720,0.000000,0.000000,0.000000,0.000000,0.000000,"____FAKE____"};
+item68[] = {"No_Agent",4,218,25.000000,225.000000,125.000000,275.000000,5.000000,"No Agent"};
+item69[] = {"____FAKE____",9,2760,0.000000,0.000000,0.000000,0.000000,0.000000,"____FAKE____"};
 link0[] = {0,10};
 link1[] = {0,55};
 link2[] = {2,3};
@@ -98,73 +99,75 @@ link24[] = {16,29};
 link25[] = {16,64};
 link26[] = {17,3};
 link27[] = {18,19};
-link28[] = {19,8};
-link29[] = {19,15};
-link30[] = {20,7};
-link31[] = {22,23};
-link32[] = {23,47};
-link33[] = {24,35};
-link34[] = {25,27};
-link35[] = {26,25};
-link36[] = {27,36};
-link37[] = {27,40};
-link38[] = {28,43};
-link39[] = {29,22};
-link40[] = {29,52};
-link41[] = {29,58};
-link42[] = {30,31};
-link43[] = {31,32};
-link44[] = {31,34};
-link45[] = {31,45};
-link46[] = {32,33};
-link47[] = {33,59};
-link48[] = {34,67};
-link49[] = {35,7};
-link50[] = {36,37};
-link51[] = {37,39};
-link52[] = {37,41};
-link53[] = {38,42};
-link54[] = {39,38};
-link55[] = {39,40};
-link56[] = {39,51};
-link57[] = {40,28};
-link58[] = {41,37};
-link59[] = {42,43};
-link60[] = {43,1};
-link61[] = {44,46};
-link62[] = {45,44};
-link63[] = {46,33};
-link64[] = {47,48};
-link65[] = {48,24};
-link66[] = {49,50};
-link67[] = {50,42};
-link68[] = {51,49};
-link69[] = {52,30};
-link70[] = {53,7};
-link71[] = {54,3};
-link72[] = {55,1};
-link73[] = {58,59};
-link74[] = {59,23};
-link75[] = {64,16};
-link76[] = {65,26};
-link77[] = {66,26};
-link78[] = {67,5};
-link79[] = {21,68};
-link80[] = {68,21};
-link81[] = {56,68};
-link82[] = {68,56};
-link83[] = {57,68};
-link84[] = {68,57};
-link85[] = {60,68};
-link86[] = {68,60};
-link87[] = {61,68};
-link88[] = {68,61};
-link89[] = {62,68};
-link90[] = {68,62};
-link91[] = {63,68};
-link92[] = {68,63};
-globals[] = {25.000000,1,0,0,0,640,480,1,163,6316128,1,-537.970398,542.464294,904.828979,103.216583,806,598,1};
-window[] = {2,-1,-1,-1,-1,779,78,1286,78,3,824};
+link28[] = {18,68};
+link29[] = {19,8};
+link30[] = {19,15};
+link31[] = {20,7};
+link32[] = {22,23};
+link33[] = {23,47};
+link34[] = {24,35};
+link35[] = {25,27};
+link36[] = {26,25};
+link37[] = {27,36};
+link38[] = {27,40};
+link39[] = {28,43};
+link40[] = {29,22};
+link41[] = {29,52};
+link42[] = {29,58};
+link43[] = {30,31};
+link44[] = {31,32};
+link45[] = {31,34};
+link46[] = {31,45};
+link47[] = {32,33};
+link48[] = {33,59};
+link49[] = {34,67};
+link50[] = {35,7};
+link51[] = {36,37};
+link52[] = {37,39};
+link53[] = {37,41};
+link54[] = {38,42};
+link55[] = {39,38};
+link56[] = {39,40};
+link57[] = {39,51};
+link58[] = {40,28};
+link59[] = {41,37};
+link60[] = {42,43};
+link61[] = {43,1};
+link62[] = {44,46};
+link63[] = {45,44};
+link64[] = {46,33};
+link65[] = {47,48};
+link66[] = {48,24};
+link67[] = {49,50};
+link68[] = {50,42};
+link69[] = {51,49};
+link70[] = {52,30};
+link71[] = {53,7};
+link72[] = {54,3};
+link73[] = {55,1};
+link74[] = {58,59};
+link75[] = {59,23};
+link76[] = {64,16};
+link77[] = {65,26};
+link78[] = {66,26};
+link79[] = {67,5};
+link80[] = {68,27};
+link81[] = {21,69};
+link82[] = {69,21};
+link83[] = {56,69};
+link84[] = {69,56};
+link85[] = {57,69};
+link86[] = {69,57};
+link87[] = {60,69};
+link88[] = {69,60};
+link89[] = {61,69};
+link90[] = {69,61};
+link91[] = {62,69};
+link92[] = {69,62};
+link93[] = {63,69};
+link94[] = {69,63};
+globals[] = {25.000000,1,0,0,0,640,480,1,164,6316128,1,-544.672852,535.761841,853.890503,52.277908,806,598,1};
+window[] = {2,-1,-1,-1,-1,727,26,1234,26,3,824};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -258,13 +261,23 @@ class FSM
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
+        /*%FSM<LINK "No_Agent">*/
+        class No_Agent
+        {
+          priority = 5.000000;
+          to="Cleanup_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(isNull _agent)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
         /*%FSM<LINK "Has_Target">*/
         class Has_Target
         {
           priority = 5.000000;
           to="Chase";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"!(isNull _target) OR !(isNull _agent)"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(isNull _target)"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"//Leader cries out" \n
            "if (_isSomeone) then {" \n
            "	[_agent,""spotted"",0,false] call dayz_zombieSpeak;" \n
@@ -297,13 +310,13 @@ class FSM
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
-        /*%FSM<LINK "No_Agent">*/
-        class No_Agent
+        /*%FSM<LINK "No_Agent_1">*/
+        class No_Agent_1
         {
           priority = 5.000000;
           to="Cleanup_";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"isNull _agent"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(isNull _agent)"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -387,13 +400,23 @@ class FSM
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
+        /*%FSM<LINK "No_Agent">*/
+        class No_Agent
+        {
+          priority = 5.000000;
+          to="Cleanup_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(isNull _agent)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
         /*%FSM<LINK "Has_Target">*/
         class Has_Target
         {
           priority = 5.000000;
           to="Chase";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"!(isNull _target) OR !(isNull _agent)"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!(isNull _target)"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"//Leader cries out" \n
            "if (_isSomeone) then {" \n
            "	[_agent,""spotted"",0,false] call dayz_zombieSpeak;" \n
@@ -426,13 +449,13 @@ class FSM
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
-        /*%FSM<LINK "No_Agent">*/
-        class No_Agent
+        /*%FSM<LINK "No_Agent_1">*/
+        class No_Agent_1
         {
           priority = 5.000000;
           to="Cleanup_";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"isNull _agent"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(isNull _agent)"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -586,7 +609,7 @@ class FSM
           priority = 5.000000;
           to="Cleanup_";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"isNull _agent"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(isNull _agent)"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
