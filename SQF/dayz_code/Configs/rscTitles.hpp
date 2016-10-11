@@ -402,7 +402,7 @@ class RscDisplayMain : RscStandardDisplay
 			text = "z\addons\dayz_code\gui\mod.paa";
 		};
 	};
-
+	
 	class controls
 	{
 		class CA_Version;
@@ -493,7 +493,7 @@ class RscDisplayMPInterrupt : RscStandardDisplay {
 	enableSimulation = 1;
 	//onLoad = "_dummy = ['Init', _this] execVM '\ca\ui\scripts\pauseLoadinit.sqf'; [(_this select 0)] execVM '\z\addons\dayz_code\compile\player_onPause.sqf';"; _respawn = (_this select 0) displayCtrl 1010); _respawn ctrlEnable false; _abort = (_this select 0) displayCtrl 104); _abort ctrlEnable false;
 	onLoad = "uiNamespace setVariable ['RscDisplayMPInterrupt', _this select 0];[] execVM '\z\addons\dayz_code\compile\player_onPause.sqf'; _dummy = ['Init', _this] execVM '\ca\ui\scripts\pauseLoadinit.sqf';"; /*diag_log[diag_tickTime,'RscDisplayMPInterrupt'];*/
-	onUnload = "uiNamespace setVariable ['RscDisplayMPInterrupt', nil];['Unload', _this] execVM '\ca\ui\scripts\pauseOnUnload.sqf';";
+	onUnload = "uiNamespace setVariable ['RscDisplayMPInterrupt', nil];['Unload', _this] execVM '\ca\ui\scripts\pauseOnUnload.sqf';[] execVM '\z\addons\dayz_code\init\keyHandler.sqf';";
 
 	class controlsBackground {
 		class Mainback : RscPicture {

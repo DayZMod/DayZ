@@ -8,6 +8,15 @@ _ctrlState = _this select 3;
 _altState = _this select 4;
 _handled = false;
 
+local _array = actionKeys "HoldBreath";
+if (count _array > 1) then {
+	cutText ["Please change your controls, HoldBreath holds two many keys and has been blocked.","PLAIN",2];
+	dayz_blockBreath = true;
+};
+if (count _array < 1) then {
+	dayz_blockBreath = false;
+};
+
 if (isNil "keyboard_keys") then {
 	_muteSound = {
 		call player_toggleSoundMute;
@@ -75,10 +84,7 @@ if (isNil "keyboard_keys") then {
         };  
     };
 	_holdBreath = {
-		local _array = actionKeys "HoldBreath";
-		if (count _array > 1) then {
-			_handled = true;
-		};
+		_handled = dayz_blockBreath;
 	};
     _forcesave = {
         dayz_lastCheckBit = diag_ticktime;
@@ -174,6 +180,7 @@ if (isNil "keyboard_keys") then {
     _block = {
         _handled = true;
     };
+	
     _addArray = {
         {
             keyboard_keys set [_x, _this select 1];
