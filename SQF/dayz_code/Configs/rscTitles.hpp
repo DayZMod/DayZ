@@ -37,6 +37,11 @@ class RscDisplayMission: RscDisplayEmpty
 	idd = 46;
 	onKeyDown = "if (!isNil 'DZ_KeyDown_EH') then {_this call DZ_KeyDown_EH;};"; //assigned much quicker than spawning init_keyboard
 };
+class RscDisplayConfigure {
+	onUnload = "if (!isNil 'keyboard_keys') then {keyboard_keys = nil; [controlNull,1,false,false,false] call DZ_KeyDown_EH;};"; //refresh keyboard_keys after changing binds
+	class controlsBackground;
+	class controls;
+};
 
 class RscPictureGUI
 {
@@ -493,7 +498,7 @@ class RscDisplayMPInterrupt : RscStandardDisplay {
 	enableSimulation = 1;
 	//onLoad = "_dummy = ['Init', _this] execVM '\ca\ui\scripts\pauseLoadinit.sqf'; [(_this select 0)] execVM '\z\addons\dayz_code\compile\player_onPause.sqf';"; _respawn = (_this select 0) displayCtrl 1010); _respawn ctrlEnable false; _abort = (_this select 0) displayCtrl 104); _abort ctrlEnable false;
 	onLoad = "uiNamespace setVariable ['RscDisplayMPInterrupt', _this select 0];[] execVM '\z\addons\dayz_code\compile\player_onPause.sqf'; _dummy = ['Init', _this] execVM '\ca\ui\scripts\pauseLoadinit.sqf';"; /*diag_log[diag_tickTime,'RscDisplayMPInterrupt'];*/
-	onUnload = "uiNamespace setVariable ['RscDisplayMPInterrupt', nil];['Unload', _this] execVM '\ca\ui\scripts\pauseOnUnload.sqf';[] execVM '\z\addons\dayz_code\init\keyHandler.sqf';";
+	onUnload = "uiNamespace setVariable ['RscDisplayMPInterrupt', nil];['Unload', _this] execVM '\ca\ui\scripts\pauseOnUnload.sqf';";
 
 	class controlsBackground {
 		class Mainback : RscPicture {
