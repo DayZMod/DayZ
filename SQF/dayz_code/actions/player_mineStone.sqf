@@ -73,7 +73,7 @@ if (!isNull _findNearestRock) then {
 
         if(_finished) then {                
             _breaking = false;
-            if ([0.04] call fn_chance) then {
+            if ([0.18] call fn_chance) then {
                 _breaking = true;
                 if ("MeleePickaxe" in weapons player) then {
                     player removeWeapon "MeleePickaxe";
