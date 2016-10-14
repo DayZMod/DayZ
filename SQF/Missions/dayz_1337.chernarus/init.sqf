@@ -26,7 +26,7 @@ if (dayz_presets == "Custom") then {
 	dayz_spawnInfectedSite_clutterCutter = 2; // infected base spawn 0 = loot hidden in grass, 1 = loot lifted, 2 = no grass 
 	dayz_bleedingeffect = 3; //1 = blood on the ground, 2 = partical effect, 3 = both
 	dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked
-	dayz_nutritionValuesSystem = false; //Enables nutrition system
+	dayz_nutritionValuesSystem = false; //true, Enables nutrition system, false, disables nutrition system.
 	dayz_classicBloodBagSystem = false; // removes all blood type bloodbags (not implmented yet)
 };
 
