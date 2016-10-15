@@ -96,7 +96,7 @@ if (!isDedicated) then {
 	};
 	
 	if (dayz_enableRules) then { execVM "rules.sqf"; };
-	if (!isNil "dayZ_serverName") then { execVM "\z\addons\dayz_code\system\watermark.sqf"; };
+	if (!isNil "dayZ_serverName") then { execVM "\z\addons\dayz_code\system\watermark.sqf"; streamermodeEnabled = true; };
 	execVM "\z\addons\dayz_code\compile\client_plantSpawner.sqf";
 	execFSM "\z\addons\dayz_code\system\player_monitor.fsm";
 	waitUntil {scriptDone progress_monitor};
