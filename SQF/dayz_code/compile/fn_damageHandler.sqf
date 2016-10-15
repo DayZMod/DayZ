@@ -103,7 +103,7 @@ if (_unit == player) then {
             _humanityHit = 0;
 
             if (!_punishment) then {
-                _myKills =  200 - (((player getVariable ["humanKills",0]) / 3) * 150);
+                _myKills =  200 - ((player getVariable ["humanKills",0]) * 33.3);
                 // how many non bandit players have I (the shot/damaged player) killed?
                 // punish my killer 200 for shooting a surivor
                 // but subtract 50 for each survivor I've murdered
