@@ -71,7 +71,7 @@ if (count _findNearestTree > 0) then {
 
         if(_finished) then {                
             _breaking = false;
-            if ([0.18] call fn_chance) then {
+            if ([0.09] call fn_chance) then {
                 _breaking = true;
                 if ("MeleeHatchet" in weapons player) then {
                     player removeWeapon "MeleeHatchet";
