@@ -8,15 +8,6 @@ _ctrlState = _this select 3;
 _altState = _this select 4;
 _handled = false;
 
-local _array = actionKeys "HoldBreath";
-if (count _array > 1) then {
-	cutText ["Please change your controls, HoldBreath holds two many keys and has been blocked.","PLAIN",2];
-	dayz_blockBreath = true;
-};
-if (count _array < 1) then {
-	dayz_blockBreath = false;
-};
-
 if (isNil "keyboard_keys") then {
 	_muteSound = {
 		call player_toggleSoundMute;
@@ -79,12 +70,15 @@ if (isNil "keyboard_keys") then {
     };
     _turbo = {
         if (vehicle player == player) then {
-            [objNull, player, rSwitchMove,""] call RE;
+            //Prevent easily outrunning zeds and bypassing Arma sprint fatigue (slow to normal running speed after a time) by holding turbo and spamming W
             _handled = true;
         };  
     };
 	_holdBreath = {
-		_handled = dayz_blockBreath;
+		if (count (actionKeys "HoldBreath") > 1) then {
+			systemChat localize "STR_UI_HOLD_BREATH";
+			_handled = true;
+		};
 	};
     _forcesave = {
         dayz_lastCheckBit = diag_ticktime;
