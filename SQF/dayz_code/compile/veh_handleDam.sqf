@@ -14,7 +14,7 @@ or by zombie_attack
 - return : updated damage for that part
 broadcast: boolean. if true, then the request will be sent to all players if the vehicle is not local.
 ************************************************************/
-private["_unit","_selection","_strH","_total","_damage","_needUpdate"];
+private["_unit","_selection","_strH","_total","_damage","_needUpdate","_motor","_propeller","_smallpropeller"];
 
 _unit = _this select 0;
 _selection = _this select 1;
@@ -43,6 +43,17 @@ if (local _unit) then {
 			[_unit, "damage"] call server_updateObject;
 		};
 	};
+	
+	/*
+	//Not Tested Not used
+	//Make sure Helicopters blow up from motor damage, propeller, rear propeller
+	if (_unit isKindOf "Helicopter") then {
+		if ((_unit getVariable "hit_motor"  >= 1) AND (_unit getVariable "hit_velka vrtule"  >= 1) AND (_unit getVariable "hit_mala vrtule" >= 1)) then {
+			_unit setDamage 1;
+		};
+	};
+	*/
+	
 } else {
 	//if ( (count _this > 5) AND {(_this select 5)}) then {
 		// vehicle is not local to this client, ask the client which vehicle is local to set damage
