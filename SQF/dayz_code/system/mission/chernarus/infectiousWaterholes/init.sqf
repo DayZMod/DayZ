@@ -46,15 +46,11 @@ if (isServer) then {
 
 //Setup on each client witch water holes have been chosen by the server to be infected
 if (!isDedicated) then {
-	diag_log format["INFO: Setting up infectious waterholes.",true];
-	
+
 	waitUntil { sleep 0.1; !isNil "infectedWaterHoles" };
 	
-	diag_log format["INFO: Chosen waterholes to be infectious spawning - %1",infectedWaterHoles];
 	{
-		if ((random 1) < 0.5) then {
 			call compile preprocessFileLineNumbers ("\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\"+_x+".sqf"); 
-		};
 	} count infectedWaterHoles;
 };
 
