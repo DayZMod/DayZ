@@ -55,7 +55,7 @@ _array = _this;
 if (count _array > 0) then {
 	_source = _array select 0;
 	_method = _array select 1;
-	if ((!isNull _source) && (_source != player)) then {
+	if (!local _source && isPlayer _source) then {
 		//_isBandit = (player getVariable["humanity",0]) <= -2000;
 		_isBandit = (_model in ["Bandit1_DZ","BanditW1_DZ"]);
 		
