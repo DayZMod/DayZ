@@ -5,21 +5,19 @@ _obj = _this;
 _ownerID = _obj getVariable["CharacterID","0"];
 _objectID = _obj getVariable["ObjectID","0"];
 _objectUID = _obj getVariable["ObjectUID","0"];
-_pickup = false;
 _packobj = getText (configFile >> "CfgVehicles" >> typeOf _obj >> "pack");
 
-player playActionNow "Medic";
 player removeAction s_player_packtent;
 s_player_packtent = -1;
 player removeAction s_player_packtentinfected;
 s_player_packtentinfected = -1;
 
 _campItems = ["IC_DomeTent","IC_Tent"];
-if (_ownerID == dayz_characterID or (typeOf _obj in _campItems)) then { _pickup = true; };
 
-if (_pickup) then {
+if (_ownerID == dayz_characterID or typeOf _obj in _campItems) then {
+	player playActionNow "Medic";
 	_alreadyPacking = _obj getVariable["packing",0];
-	if (_alreadyPacking == 1) exitWith {cutText [format [localize "str_player_beingpacked"],"PLAIN DOWN"]};
+	if (_alreadyPacking == 1) exitWith {localize "str_player_beingpacked" call dayz_rollingMessages;};
 
 	_obj setVariable["packing",1];
 	_dir = direction _obj;
@@ -73,7 +71,7 @@ if (_pickup) then {
 		_countr = _countr + 1;
 	} count _objWpnTypes;
 
-	cutText [localize "str_success_tent_pack", "PLAIN DOWN"];
+	localize "str_success_tent_pack" call dayz_rollingMessages;
 } else {
-	cutText [localize "str_fail_tent_pack", "PLAIN DOWN"];
+	localize "str_fail_tent_pack" call dayz_rollingMessages;
 };

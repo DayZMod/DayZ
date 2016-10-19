@@ -33,10 +33,8 @@ if (_classname isKindOf "TrapBear") exitWith { deleteVehicle _holder; };
 player playActionNow "PutDown";
 
 //Adding random chance of arrow is re-usable on pickup
-_broken = if ((_classname == "WoodenArrow") && {[0.15] call fn_chance}) then {true} else {false};
+_broken = if ((_classname == "1Rnd_Arrow_Wood") && {[0.15] call fn_chance}) then {true} else {false};
 if (_broken) exitWith { deleteVehicle _holder; cutText [localize "str_broken_arrow", "PLAIN DOWN"]; };
-
-uiSleep 0.25; //Why are we waiting? Animation
 
 _claimedBy = _holder getVariable["claimed","0"];
 
@@ -70,9 +68,9 @@ if (_classname isKindOf "Bag_Base_EP1") exitWith {
 _config = (configFile >> _type >> _classname);
 
 //Remove melee magazines (BIS_fnc_invAdd fix)
-{player removeMagazines _x} count MeleeMagazines;
-
+false call dz_fn_meleeMagazines;
 _isOk = [player,_config] call BIS_fnc_invAdd;
+true call dz_fn_meleeMagazines;
 
 if (_isOk) then {
 	deleteVehicle _holder;

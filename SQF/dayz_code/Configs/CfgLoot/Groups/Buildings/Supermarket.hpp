@@ -32,7 +32,7 @@ Supermarket[] =
 	{Loot_MAGAZINE,		1,		ItemTent},
 	{Loot_MAGAZINE,		0.5,	ItemDomeTent},
 	{Loot_MAGAZINE,		1,		ItemCamoNet},
-	{Loot_MAGAZINE,		0.5,	ItemPadlock},
+	{Loot_MAGAZINE,		0.1,	ItemPadlock},
 	{Loot_MAGAZINE,		3,		ItemBandage},
 	{Loot_MAGAZINE,		2,		ItemPainkiller},
 	{Loot_MAGAZINE,		2,		ItemAntibacterialWipe},

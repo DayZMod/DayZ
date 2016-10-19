@@ -174,7 +174,7 @@ if (count _stats > 0) then {
 if (_randomSpot) then {
 	private ["_counter","_position","_isNear","_isZero","_mkr"];
 	if (!isDedicated) then {endLoadingScreen;};
-	_IslandMap = if (worldName in ["dzhg","panthera2","Sara","Utes","Dingor","namalsk","isladuala","Tavi","dayznogova","tasmania2010"]) then {true} else {false};
+	_IslandMap = if (toLower worldName in ["caribou","cmr_ovaron","dayznogova","dingor","dzhg","fallujah","fapovo","fdf_isle1_a","isladuala","lingor","mbg_celle2","namalsk","napf","oring","panthera2","sara","sauerland","smd_sahrani_a2","tasmania2010","tavi","trinity","utes"]) then {true} else {false};
 
 	//spawn into random
 	_findSpot = true;
@@ -218,11 +218,6 @@ _playerObj setVariable ["characterID",_characterID,true];
 _playerObj setVariable ["humanity",_humanity,true];
 _playerObj setVariable ["humanity_CHK",_humanity];
 _playerObj setVariable ["lastPos",getPosATL _playerObj];
-
-if (!isNil "faco_hook_playerSetup") then {
-	[_worldspace,_state,_playerObj,_characterID] call faco_hook_playerSetup;
-	_playerObj call faco_sendSecret;
-};
 
 PVCDZ_plr_Login2 = [_worldspace,_state];
 _clientID = owner _playerObj;

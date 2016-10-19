@@ -36,7 +36,7 @@ diag_log format["INFO - Player: %3(UID:%1/CID:%2) as (%4), logged off at %5%6",
 
 //Login processing do not sync
 if (_playerUID in dayz_ghostPlayers) exitwith { 
-	diag_log format["ERROR: Cannot Sync Character [%1,%2] Still processing login",_name,_playerUID]; 
+	diag_log format["ERROR: Cannot Sync Character [%1,%2] Still processing login",_playerName,_playerUID]; 
 
 	//Lets remove the object.
 	if (!isNull _playerObj) then { 

@@ -95,6 +95,7 @@ _object_damage = {
 	_damage = damage _object;
 	_array = [];
 	_allFixed = true;
+	
 	{
 		_hit = [_object,_x] call object_getHit;
 		_selection = getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "HitPoints" >> _x >> "name");
@@ -108,6 +109,7 @@ _object_damage = {
 	} forEach _hitpoints;
 	
 	if (_allFixed) then {_object setDamage 0;};
+	
 	if (_forced) then {        
 		if (_object in needUpdate_objects) then {needUpdate_objects = needUpdate_objects - [_object];};
 		_recorddmg = true;	       
@@ -128,6 +130,7 @@ _object_damage = {
 		} else {
 			_key = format["CHILD:306:%1:",_objectID] + str _array + ":" + str _damage + ":";
 		};
+		
 		diag_log ("HIVE: WRITE: "+ str(_key));
 		_key call server_hiveWrite;   
 	};
@@ -159,7 +162,8 @@ _object_killed = {
 		_key = format["CHILD:306:%1:%2:%3:",_objectID,[],1];
 	};
 	_key call server_hiveWrite;
-	diag_log ("HIVE: WRITE: "+ str(_key));
+	
+	diag_log format["DELETE: Deleted by KEY: %1",_key];
 	
 	if ((typeOf _object) in DayZ_removableObjects) then {[_objectID,_objectUID] call server_deleteObj;};
 };

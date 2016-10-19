@@ -13,7 +13,7 @@ class ItemSodaEmpty : HandGrenade
 	{
 		class Drink
 		{
-			text = $str_player_31_drink;
+			text = $STR_ACTIONS_DRINK2;
 			script = "spawn player_drinkWater;";
 		};
 	};
@@ -34,7 +34,7 @@ class TrashTinCan : HandGrenade
 	{
 		class Drink
 		{
-			text = $str_player_31_drink;
+			text = $STR_ACTIONS_DRINK2;
 			script = "spawn player_drinkWater;";
 		};
 	};

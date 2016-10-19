@@ -1,7 +1,7 @@
 class MetalGate_Base: Land_Gate_IndVar2_5
 {	
 	scope = 1;
-	displayName = $STR_BLD_name_MetalGate_Base;//"Metal Gate Level 1"
+	displayName = $STR_BLD_name_MetalGate_1;//"Metal Gate Level 1"
 	model = "z\addons\dayz_buildings\models\gates\gate1_metal_dzam.p3d";
 	icon = "Ca\misc\data\icons\i_danger_CA.paa";
 	mapSize = 0.2;
@@ -62,7 +62,7 @@ class MetalGate_Base: Land_Gate_IndVar2_5
 };
 class MetalGate_ghost: MetalGate_Base
 {	
-	displayName = $STR_BLD_name_MetalGate_Base_ghost;//"Metal Gate (Ghost)"
+	displayName = $STR_BLD_name_MetalGate_1_ghost;//"Metal Gate (Ghost)"
 	model = "z\addons\dayz_buildings\models\gates\gate1_metal_dzam_ghost.p3d";
 };
 class MetalGate_foundation: MetalGate_Base

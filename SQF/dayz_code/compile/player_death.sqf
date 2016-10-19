@@ -1,8 +1,12 @@
 private ["_pos","_display","_body","_playerID","_array","_source","_method","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup","_model"];
 disableSerialization;
+if (count _this == 0) then {
+	//Spawned from Killed EH (engine death), this should be rare
+	//Wait to see if sched_medical 1s loop spawns with _source and _method (blood<=0 death)
+	uiSleep 1;
+};
 if (deathHandled) exitWith {};
 deathHandled = true;
-_bodyName = if (alive player) then {name player} else {"unknown"};
 
 //Prevent client freezes
 _display = findDisplay 49;
@@ -28,7 +32,7 @@ if (dayz_onBack != "") then {
 	*/
 };
 //Send Death Notice
-PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID,toArray _bodyName]; //Send name as array to avoid publicVariable value restrictions
+PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID,toArray dayz_playerName]; //Send name as array to avoid publicVariable value restrictions
 publicVariableServer "PVDZ_plr_Death";
 
 _id = [player,20,true,getPosATL player] call player_alertZombies;
@@ -51,40 +55,35 @@ _array = _this;
 if (count _array > 0) then {
 	_source = _array select 0;
 	_method = _array select 1;
-	if ((!isNull _source) && (_source != player)) then {
+	if (!local _source && isPlayer _source) then {
 		//_isBandit = (player getVariable["humanity",0]) <= -2000;
 		_isBandit = (_model in ["Bandit1_DZ","BanditW1_DZ"]);
 		
 		//if you are a bandit or start first - player will not recieve humanity drop
-		_punishment =
-			_isBandit ||
-			{player getVariable ["OpenTarget",false]} ||
-			{_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
+		_punishment = _isBandit or {player getVariable ["OpenTarget",false]} or {_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
 		_humanityHit = 0;
 
 		if (!_punishment) then {
 			//I'm "not guilty" - kill me and be punished
-			_myKills = ((player getVariable ["humanKills",0]) / 3) * 1500;
+			_myKills = (player getVariable ["humanKills",0]) * 33.3;
 			// how many non bandit players have I (the dead player) killed?
 			// punish my killer 2000 for shooting a surivor
 			// but subtract 500 for each survivor I've murdered
 			_humanityHit = -(2000 - _myKills);
 			_kills = _source getVariable ["humanKills",0];
 			_source setVariable ["humanKills",(_kills + 1),true];
-			PVDZ_send = [_source,"Humanity",[_source,_humanityHit,300]];
+			PVDZ_send = [_source,"Humanity",[_humanityHit,300]];
 			publicVariableServer "PVDZ_send";
 		} else {
 			//i'm "guilty" - kill me as bandit
 			_killsV = _source getVariable ["banditKills",0];
 			_source setVariable ["banditKills",(_killsV + 1),true];
 		};
+		
+		//Setup for study bodys.
+		_body setVariable ["KillingBlow",[_source,_punishment],true];
 	};
 	_body setVariable ["deathType",_method,true];
-	
-	//Setup for study bodys.
-	if ((!isNull _source) && (_source != player)) then {
-		_body setVariable ["KillingBlow",_source,true];
-	};
 };
 
 terminate dayz_musicH;
@@ -114,7 +113,6 @@ deleteGroup _myGroup;
 
 _body setVariable["combattimeout", 0, true];
 //due to a cleanup issue with effects this has been disabled remember to look at the cleanup before adding it back.
-//[_body] call spawn_flies;
 //dayzFlies = player;
 //publicVariable "dayzFlies";
 uiSleep 2;

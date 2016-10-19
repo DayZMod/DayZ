@@ -25,10 +25,7 @@ Residential[] =
 	{Loot_BACKPACK,		2,		DZ_BP_Assault},
 	{Loot_BACKPACK,		1.5,	DZ_BP_Survival},
 	{Loot_BACKPACK,		1,		DZ_BP_Alice},
-	
-	//Other
-	{Loot_MAGAZINE,		0.5,	ItemPadlock},
-	
+		
 	{Loot_PILE,			6,		AmmoCivilian, 1, 2},
 	{Loot_PILE,			10,		Trash, 1, 3},
 	{Loot_PILE,			10,		Consumable, 1, 2},

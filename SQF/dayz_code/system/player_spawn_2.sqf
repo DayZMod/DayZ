@@ -20,7 +20,7 @@ _timerMonitor = diag_ticktime;
 
 player setVariable ["temperature",dayz_temperatur,true];
 
-[player,0] call player_humanityChange;
+[0,0] call player_humanityChange;
 
 //player addMagazine "Hatchet_swing";
 //player addWeapon "MeleeHatchet";
@@ -76,7 +76,7 @@ while {1 == 1} do {
 		_humanity = player getVariable ["humanity",0];
 		if (_humanity < 1 or _forceHumanity) then {
 			if (vehicle player != player) then {
-				[player, round(_timeOut / 10)] call player_humanityChange;
+				[round(_timeOut / 10),0] call player_humanityChange;
 				_forceHumanity = false;
 			} else {
 				_humanity = _humanity + round(_timeOut / 10);
@@ -90,7 +90,7 @@ while {1 == 1} do {
 /*	
 	if ((Dayz_loginCompleted) && (diag_tickTime < 25)) then {
 
-		[player,0] call player_humanityChange;
+		[0,0] call player_humanityChange;
 		
 		diag_log ("Running");
 		_timer10 = diag_Ticktime;
@@ -110,10 +110,7 @@ while {1 == 1} do {
 		_timer150 = diag_ticktime;
 	};
 	
-	if ((diag_tickTime - _timer) > 300) then {	
-	//Animals
-		//[] call player_animalCheck;
-		
+	if ((diag_tickTime - _timer) > 300) then {		
 		_timer = diag_tickTime;
 	};
 	
@@ -148,12 +145,6 @@ while {1 == 1} do {
 	};
 	dayz_hunger = dayz_hunger + (_hunger / 70); //60 Updated to 80
 	dayz_hunger = (dayz_hunger min SleepFood) max 0;
-
-	if (dayz_hunger >= SleepFood) then {
-		if (r_player_blood < 10) then {
-			_id = [player,"starve"] spawn player_death;
-		};
-	};
 	
 //Thirst
 	_thirst = 2;
@@ -162,12 +153,6 @@ while {1 == 1} do {
 	};
 	dayz_thirst = dayz_thirst + (_thirst / 60) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
 	dayz_thirst = (dayz_thirst min SleepWater) max 0;
-
-	if (dayz_thirst >= SleepWater) then {
-		if (r_player_blood < 10) then {
-			_id = [player,"dehyd"] spawn player_death;
-		};
-	};
 	
 	//diag_log format ["playerSpawn2 %1/%2",dayz_hunger,dayz_thirst];
 	
@@ -229,12 +214,7 @@ while {1 == 1} do {
 		if !(player getVariable["USEC_infected",false]) then {
 			player setVariable["USEC_infected",true,true];
 		};
-
-		if (r_player_blood < 3) then {
-			_id = [player,"sick"] spawn player_death;
-		};
 	};
-
 
 	// Regen some blood if player is well fed and resting
 	// Attention: regen _result must not trigger the "up" arrow of the blood icon

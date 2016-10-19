@@ -19,6 +19,7 @@ class RscObject;
 class IGUIBack;
 class RscIGUIListBox;
 class RscHTML;
+class RscDisplayEmpty;
 
 #include "CfgPlayerStats\defines.hpp"
 #include "CfgPlayerStats\p__cover.hpp"
@@ -29,6 +30,18 @@ class RscHTML;
 #include "CfgPlayerStats\p_headshots.hpp"
 #include "CfgPlayerStats\p_murders.hpp"
 #include "CfgPlayerStats\sound.hpp"
+
+class RscDisplayMission: RscDisplayEmpty
+{
+	access = 0;
+	idd = 46;
+	onKeyDown = "if (!isNil 'DZ_KeyDown_EH') then {_this call DZ_KeyDown_EH;};"; //assigned much quicker than spawning init_keyboard
+};
+class RscDisplayConfigure {
+	onUnload = "if (!isNil 'keyboard_keys') then {keyboard_keys = nil; [controlNull,1,false,false,false] call DZ_KeyDown_EH;};"; //refresh keyboard_keys after changing binds
+	class controlsBackground;
+	class controls;
+};
 
 class RscPictureGUI
 {
@@ -149,6 +162,9 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 	guerLocked = "ca\ui\data\flag_none_ca.paa";
 	civlUnlocked = "ca\ui\data\flag_none_ca.paa";
 	civlLocked = "ca\ui\data\flag_none_ca.paa";
+	colorNotAssigned[] = {.8,.8,.8,1};
+	colorAssigned[] = {.8,.8,.8,1};
+	colorConfirmed[] = {.8,.8,.8,1};
 	
 	onload = "with uiNameSpace do{RscDisplayMultiplayerSetup=_this select 0};"; //#70
 	onMouseHolding = "with uiNameSpace do { switch (1 == 1) do { case(isNil 'RscDMSLoad'): { RscDMSLoad = diag_tickTime; }; case(RscDMSLoad == -1): {}; case(RscDMSLoad == -2): {}; case(diag_tickTime - RscDMSLoad > 7): { RscDMSLoad = diag_tickTime; }; case(diag_tickTime - RscDMSLoad > 5): { ctrlActivate ((_this select 0) displayCtrl 1); RscDMSLoad = -1; }; }; };";
@@ -224,7 +240,17 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 		};
 	};
 	class controls
-	{ 
+	{
+		class CA_MP_roles_Title : CA_Title {
+			idc = 1001;
+			style = 2;
+			x = "(02/100)	* SafeZoneW + SafeZoneX";
+			y = "(02/100)	* SafeZoneH + SafeZoneY";
+			w = "(96/100)	* SafeZoneW";
+			h = "(06/100)	* SafeZoneH";
+			colorBackground[] = {49/255, 36/255, 25/255, 173/255};
+			text = $STR_UI_LOBBY;
+		};
 		class TextIsland: RscText
 		{
 			idc = 1003;
@@ -384,14 +410,14 @@ class RscDisplayMain : RscStandardDisplay
 			text = "z\addons\dayz_code\gui\mod.paa";
 		};
 	};
-
+	
 	class controls
 	{
 		class CA_Version;
 		class DAYZ_Version : CA_Version
 		{
 			idc = -1;
-			text = "DayZMod Dev 1.8.8-0f76737";
+			text = DayZVersion;
 			y = "(SafeZoneH + SafeZoneY) - (1 - 0.95)";
 		};
 		delete CA_TitleMainMenu;

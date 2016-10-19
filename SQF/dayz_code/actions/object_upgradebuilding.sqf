@@ -16,7 +16,6 @@ private ["_cursorTarget","_type","_class","_requiredTools","_requiredParts","_up
 	"_ownerArray","_ownerPasscode","_dir","_vector","_object","_puid","_clanArray","_wh","_variables"];
 
 //systemchat str _this;
-if (!isnil "faco_object_upgradeBuilding") exitWith { _this call faco_object_upgradeBuilding };
 
 _cursorTarget = _this select 3;
 // ArmaA2 bug workaround: sometimes the object is null
@@ -130,7 +129,7 @@ if (abs(((_vector select 1) select 2) - 1) > 0.001) then { _pos set [2,0]; };
 //diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
 
 _object = createVehicle [_upgradeType, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
-if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
+//if (_object isKindOf "DZ_buildables") then { _object allowDamage false; };
 _object setVectorDirAndUp _vector;
 _object setPosATL _pos;
 _puid = getPlayerUID player;

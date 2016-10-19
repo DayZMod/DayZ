@@ -1,15 +1,23 @@
-class Pickup_PK_base : Car {
+class Pickup_PK_base: Car {
+	class HitPoints;
 	class Turrets
 	{
-		class MainTurret: NewTurret
-		{
-			class Turrets;
-			class ViewOptics;
-		};
+		class MainTurret: NewTurret{};
 	};
+	class AnimationSources;
 };
 
-class Pickup_PK_INS: Pickup_PK_base {
+class Pickup_PK_DZ_base : Pickup_PK_base
+{
+	class HitPoints;
+	class Turrets
+	{
+		class MainTurret: NewTurret{};
+	};
+	class AnimationSources;
+};
+
+class Pickup_PK_INS: Pickup_PK_DZ_base {
 	crew = "";
 	faction = "INS";
 	hiddenselectionstextures[] = {"\ca\wheeled\datsun_armed\data\datsun_trup3_CO.paa"};
@@ -22,7 +30,27 @@ class Pickup_PK_INS: Pickup_PK_base {
 	};
 	class Turrets: Turrets {
 		class MainTurret: MainTurret {
-			magazines[] = {"100Rnd_762x54_PK", "100Rnd_762x54_PK"};
+			body = "mainTurret";
+			gun = "mainGun";
+			outGunnerMayFire = 1;
+			forceHideGunner = 1;
+			castGunnerShadow = 1;
+			viewGunnerInExternal = 1;
+			gunnerOpticsModel = "";
+			gunnerForceOptics = 0;
+			weapons[] = {"PKT"};
+			soundServo[] = {};
+			stabilizedInAxes = 0;
+			magazines[] = {"100Rnd_762x54_PK","100Rnd_762x54_PK"};
+			gunnerAction = "datsun_Gunner01";
+			gunnerInAction = "datsun_Gunner01";
+			ejectDeadGunner = 1;
+			minElev = -18;
+			maxElev = 40;
+			minTurn = -45;
+			maxTurn = 45;
+			initTurn = 0;
+			gunnerCompartments = "Compartment2";
 		};
 	};
 };

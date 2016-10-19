@@ -103,7 +103,7 @@ while {_isOk} do {
 		};
 		
 		if (_isWoodenGate) then {
-			if ([0.06] call fn_chance) then {
+			if ([0.04] call fn_chance) then {
 				_isOk = false;
 				_proceed = true;
 				_brokein = true;
@@ -113,7 +113,7 @@ while {_isOk} do {
 	};
 	
 	//Chances to damage tools
-	if ([0.02] call fn_chance) then {
+	if ([0.30] call fn_chance) then {
 		player removeWeapon "ItemSledgeHammer";
 		player addWeapon "ItemSledgeHammerBroken";
 		//titleText [localize "STR_BLD_BREAKIN_BROKEN_SLEDGE", "PLAIN DOWN"];
@@ -121,7 +121,7 @@ while {_isOk} do {
 		localize "STR_BLD_BREAKIN_BROKEN_SLEDGE" call dayz_rollingMessages;
 	};
 
-	if ([0.04] call fn_chance) then {
+	if ([0.20] call fn_chance) then {
 		player removeWeapon "ItemCrowbar";
 		player addWeapon "ItemCrowbarBent";
 		//titleText [localize "STR_BLD_BREAKIN_BENT_CROWBAR", "PLAIN DOWN"];

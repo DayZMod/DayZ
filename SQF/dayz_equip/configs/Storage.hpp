@@ -14,7 +14,7 @@ class StashSmall_base : DZ_storage_base {
 	displayname = $STR_VEH_NAME_STASH;
 	icon = "\Ca\misc3\data\Icons\icon_Atent_ca.paa";
 	mapsize = 3;
-	model = "\z\addons\dayz_communityassets\models\dirt_stash.p3d";
+	model = "\z\addons\dayz_communityassets\models\stash_small.p3d";
 	scope = 2;
 	vehicleClass = "Survival";
 	transportMaxMagazines = 12;
@@ -25,6 +25,8 @@ class StashSmall_base : DZ_storage_base {
 		requiredParts[] = {"PartWoodPile"};
 		create = "StashSmall1";
 	};
+	buildCollisionPoints = 5;
+	buildCollisionPaths[] = {{0,1,2,3,4,1},{0,4,2}};
 };
 class StashSmall : StashSmall_base {
 	armor = 5;
@@ -140,7 +142,7 @@ class StashMedium3 : StashMedium_base {
 	displayname = $STR_VEH_NAME_STASH_MED3;
 	transportMaxMagazines = 100;
 	transportMaxWeapons = 8;
-	transportMaxBackpacks = 0;
+	transportMaxBackpacks = 1;
 	class Upgrade {
 		requiredTools[] = {"ItemEtool"};
 		requiredParts[] = {"equip_nails","PartWoodPile"};
@@ -152,17 +154,19 @@ class StashMedium4 : StashMedium_base {
 	displayname = $STR_VEH_NAME_STASH_MED4;
 	transportMaxMagazines = 125;
 	transportMaxWeapons = 16;
-	transportMaxBackpacks = 0;
+	transportMaxBackpacks = 1;
 };
 class TentStorage_base : DZ_storage_base {
 	vehicleClass="Military";
-	model = "\z\addons\dayz_communityassets\models\A_tent.p3d";
+	model = "\z\addons\dayz_communityassets\models\tent_a.p3d";
 	destrType=DestructTent;
 	displayName = $STR_VEH_NAME_TENT;
 	pack = "WeaponHolder_ItemTent";
 	transportMaxMagazines = 130;
 	transportMaxWeapons = 10;
 	transportMaxBackpacks = 5;
+	buildCollisionPoints = 6;
+	buildCollisionPaths[] = {{0,1,2,3,4,5,0,2,4,0,3,1,5,3}};
 };
 class TentStorage : TentStorage_base {
 	displayName = $STR_VEH_NAME_TENT;
@@ -236,7 +240,7 @@ class TentStorage4 : TentStorage_base {
 
 class DomeTentStorage_base : TentStorage_base {
 	armor = 50;
-	model = "\z\addons\dayz_communityassets\models\D_tent.p3d";
+	model = "\z\addons\dayz_communityassets\models\tent_dome.p3d";
 	displayname = $STR_VEH_NAME_DOME_TENT;
 	icon = "\Ca\buildings\Icons\i_Astan_CA.paa";
 	pack = "WeaponHolder_ItemDomeTent";
@@ -244,6 +248,8 @@ class DomeTentStorage_base : TentStorage_base {
 	transportMaxMagazines = 150;
 	transportMaxWeapons = 15;
 	transportMaxBackpacks = 5;
+	buildCollisionPoints = 7;
+	buildCollisionPaths[] = {{1,0,4,3,1,6,4},{0,6,3},{5,6,2}};
 };
 
 class DomeTentStorage : DomeTentStorage_base {
