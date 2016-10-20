@@ -41,6 +41,7 @@ if (_playerUID in dayz_ghostPlayers) exitwith {
 	//Lets remove the object.
 	if (!isNull _playerObj) then { 
 		_myGroup = group _playerObj;
+		deleteVehicle _playerObj;
 		deleteGroup _myGroup;
 	};
 };
@@ -80,12 +81,13 @@ if (_characterID != "?") exitwith {
 	{ [_x,"gear"] call server_updateObject } foreach (nearestObjects [_playerPos, DayZ_GearedObjects, 10]);
 };
 
-if (isNull _playerObj) then { diag_log("Player Object does not esist"); };
-
-
+if (isNull _playerObj) then {
+	diag_log("Player Object does not esist"); 
+} else {
 //Lets remove the object.
-if (!isNull _playerObj) then { 
-	_myGroup = group _playerObj;
-	deleteGroup _myGroup;
+	if (alive _playerObj) then {
+		_myGroup = group _playerObj;
+		deleteVehicle _playerObj;
+		deleteGroup _myGroup;
+	};
 };
-
