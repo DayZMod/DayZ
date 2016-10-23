@@ -1080,8 +1080,8 @@ class FSM
       init = /*%FSM<STATEINIT""">*/"diag_log 'player_forceSave called from fsm';" \n
        "//call player_forceSave;" \n
        "" \n
-       "//Check whats keys are active." \n
-       "call dayz_keyChangeHandler;" \n
+       "//Check for bad controls at login" \n
+       "false spawn ui_updateControls;" \n
        "" \n
        "publicVariableServer ""PVDZ_plr_LoginRecord"";"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;

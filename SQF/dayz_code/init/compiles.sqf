@@ -115,6 +115,7 @@ if (!isDedicated) then {
 	player_gearSet = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_gearSet.sqf";
 	ui_changeDisplay = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\ui_changeDisplay.sqf";
     ui_gear_sound = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\ui_gear_sound.sqf";
+	ui_updateControls = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\ui_updateControls.sqf";
 
 	//playerstats
 	horde_epeen_fnc_fill_page = compile preProcessFile "\z\addons\dayz_code\actions\playerstats\fill_page_fnc.sqf";
@@ -439,18 +440,6 @@ if (!isDedicated) then {
 		Message_1 = _this;
 		Message_1_time = diag_ticktime;
 		cutText [format ["%1\n%2\n%3", Message_1, Message_2, Message_3], "PLAIN DOWN"];
-	};
-	
-	dayz_keyChangeHandler = {
-		_holdBreath = if (count (actionKeys "HoldBreath") > 1) then { [true,localize STR_UI_HOLD_BREATH] } else { [false,""] };
-		_turboKey =  if (count (actionKeys "Turbo") > 0) then { [true,localize STR_UI_HOLD_TURBO] } else { [false,""] };
-		
-		if {(_holdBreath select 0) or (_turboKey select 0)} then { 
-			cutText ["","BLACK OUT"];
-			cutText [format ["%1\n%2", (_holdBreath select 0), (_turboKey select 0)],"PLAIN",5];
-		} else { 
-			cutText ["","BLACK IN",3];
-		};
 	};
 	
 	dayz_originalPlayer = player;
