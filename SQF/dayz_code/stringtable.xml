@@ -6885,7 +6885,7 @@
 			<German>Installation abgeschlossen, bitte warten...</German>
 		</Key>
 		<Key ID="str_player_desync">
-			<English>Date and Time not Synced Disconnect.</English>
+			<English>Date and Time not Synced, Disconnect and try again.</English>
 			<German>Datum und Zeit sind nicht synchronisiert. Verbindung wird getrennt!</German>
 			<Russian>Дата и время не синхронизированы. Отключение.</Russian>
 			<Spanish>Fecha y Hora no sincronizada. Desconectando.</Spanish>
@@ -6940,7 +6940,7 @@
 			<German>Charakterdaten vom Server erhalten</German>
 		</Key>
 		<Key ID="str_login_alreadyDead">
-			<English>Player Already Dead, disconnect and try again!</English>
+			<English>Player is already dead, disconnect and try again!</English>
 			<Russian>Игрок уже мертв! Отключитесь и попробуйте снова!</Russian>
 			<French>Vous êtes déjà mort, essayez encore!</French>
 			<Czech>Hráč je mrtev, odhlašte se a zkuste znovu!</Czech>
@@ -7025,7 +7025,6 @@
 			<English>You have finished collecting wood.</English>
 			<Russian>Вы закончили рубку дров.</Russian>
 			<German>Du hast erfolgreich Holz gesammelt.</German>
-			<Spanish>You have finished collecting wood.</Spanish>
 			<French>Vous avez terminé de faire du bois.</French>
 			<Czech>Nasekali jste dřevo.</Czech>
 		</Key>
@@ -7131,7 +7130,6 @@
 			<German>%1 kann nicht auf den Rücken genommen werden.</German>
 		</Key>
 		<Key ID="str_player_31">
-			<!-- %1=ITEM %2=build/consumed/cook/drink/fill/pitch/place/use/wear -->
 			<English>%1 must be in your main inventory to %2 it.</English>
 			<German>%1 muss sich in deinem Inventar befinden, um es zu %2.</German>
 			<Russian>Чтобы %2, (%1) должен находиться в основном инвентаре.</Russian>
