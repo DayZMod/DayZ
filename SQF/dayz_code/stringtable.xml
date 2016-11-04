@@ -849,7 +849,7 @@
 		</Key>
 		<Key ID="str_actions_delete">
 			<English>Destroy %1</English>
-			<German>%1 zerstören</German>
+			<German>%1 abbauen</German>
 			<Russian>Уничтожить %1</Russian>
 			<French>Détruire %1</French>
 			<Czech>Zničit %1</Czech>
@@ -6885,7 +6885,7 @@
 			<German>Installation abgeschlossen, bitte warten...</German>
 		</Key>
 		<Key ID="str_player_desync">
-			<English>Date and Time not Synced Disconnect.</English>
+			<English>Date and Time not Synced, Disconnect and try again.</English>
 			<German>Datum und Zeit sind nicht synchronisiert. Verbindung wird getrennt!</German>
 			<Russian>Дата и время не синхронизированы. Отключение.</Russian>
 			<Spanish>Fecha y Hora no sincronizada. Desconectando.</Spanish>
@@ -6940,7 +6940,7 @@
 			<German>Charakterdaten vom Server erhalten</German>
 		</Key>
 		<Key ID="str_login_alreadyDead">
-			<English>Player Already Dead, disconnect and try again!</English>
+			<English>Player is already dead, disconnect and try again!</English>
 			<Russian>Игрок уже мертв! Отключитесь и попробуйте снова!</Russian>
 			<French>Vous êtes déjà mort, essayez encore!</French>
 			<Czech>Hráč je mrtev, odhlašte se a zkuste znovu!</Czech>
@@ -7025,7 +7025,6 @@
 			<English>You have finished collecting wood.</English>
 			<Russian>Вы закончили рубку дров.</Russian>
 			<German>Du hast erfolgreich Holz gesammelt.</German>
-			<Spanish>You have finished collecting wood.</Spanish>
 			<French>Vous avez terminé de faire du bois.</French>
 			<Czech>Nasekali jste dřevo.</Czech>
 		</Key>
@@ -7131,7 +7130,6 @@
 			<German>%1 kann nicht auf den Rücken genommen werden.</German>
 		</Key>
 		<Key ID="str_player_31">
-			<!-- %1=ITEM %2=build/consumed/cook/drink/fill/pitch/place/use/wear -->
 			<English>%1 must be in your main inventory to %2 it.</English>
 			<German>%1 muss sich in deinem Inventar befinden, um es zu %2.</German>
 			<Russian>Чтобы %2, (%1) должен находиться в основном инвентаре.</Russian>
@@ -7786,12 +7784,15 @@
 		</Key>
 		<Key ID="STR_UI_HOLD_TURBO">
 			<English>Please change your controls. Turbo holds too many keys and has been blocked.</English>
+			<German>Bitte ändere deine Steuerung. "Turbo" liegt auf mehr als einer Taste und wurde blockiert.</German>
 		</Key>
 		<Key ID="STR_UI_STREAMER_MODE">
 			<English>Streamer mode:</English>
+			<German>Streamer Modus:</German>			
 		</Key>
 		<Key ID="STR_UI_STREAMER_MODE_TOOLTIP">
 			<English>Hides server watermark and rules feed</English>
+			<German>Blendet das Server Wasserzeichen und die Chatliste aus.</German>				
 		</Key>
 		<Key ID="STR_UI_ENABLED">
 			<English>Enabled</English>
@@ -8607,7 +8608,6 @@
 			<English>Bag Fence</English>
 			<Russian>Преграда из мешков с песком</Russian>
 			<French>Sacs de sable</French>
-			<Spanish>Bag Fence</Spanish>
 			<Czech>Val z pytlů</Czech>
 			<German>Sandsackwall</German>
 		</Key>
@@ -10580,7 +10580,7 @@
 		<Key ID="STR_DZ_MAG_50RND_762X54_UK59_DESC">
 			<English>Caliber: 7.62x54mm&lt;br/&gt;Rounds: 50&lt;br/&gt;Used in: UK-59</English>
 			<Russian>Калибр: 7.62x54мм&lt;br/&gt;Патронов: 50&lt;br/&gt;Используется в: UK-59</Russian>
-			<German>Kaliber: 7.62x54mm&lt;br/&gt;Schuss: 50&lt;br/&gt;Benutzt in: UK-59</German>				
+			<German>Kaliber: 7.62x54mm&lt;br/&gt;Schuss: 50&lt;br/&gt;Verwendet in: UK-59</German>				
 		</Key>
 		
 		<Key ID="STR_DZ_MAG_75RND_762X39_RPK_NAME">
@@ -10590,7 +10590,7 @@
 		<Key ID="STR_DZ_MAG_75RND_762X39_RPK_DESC">
 			<English>Caliber: 7.62x39mm&lt;br/&gt;Rounds: 75&lt;br/&gt;Used in: RPK</English>
 			<Russian>Калибр: 7.62x39мм&lt;br/&gt;Патронов: 75&lt;br/&gt;Используется в: РПК</Russian>
-			<German>Kaliber: 7.62x39mm&lt;br/&gt;Schuss: 75&lt;br/&gt;Benutzt in: RPK</German>				
+			<German>Kaliber: 7.62x39mm&lt;br/&gt;Schuss: 75&lt;br/&gt;Verwendet in: RPK</German>				
 		</Key>
 		
 		<Key ID="STR_DZ_MAG_75RND_545X39_RPK_NAME">
@@ -10614,7 +10614,7 @@
 		<Key ID="STR_DZ_MAG_5RND_762X54_MOSIN_DESC">
 			<English>Caliber: 7.62x54mmR&lt;br/&gt;Rounds: 5&lt;br/&gt;Used in: Mosin Nagant</English>
 			<Russian>Калибр: 7.62x54mmR&lt;br/&gt;Патронов: 5&lt;br/&gt;Используется в: Мосинка</Russian>
-			<German>Kaliber: 7.62x54mmR&lt;br/&gt;Schuss: 5&lt;br/&gt;Benutzt in: Mosin Nagant</German>			
+			<German>Kaliber: 7.62x54mmR&lt;br/&gt;Schuss: 5&lt;br/&gt;Verwendet in: Mosin Nagant</German>			
 		</Key>
 		<Key ID="STR_DZ_MAG_5RND_17HMR_NAME">
 			<English>5Rnd. CZ 550 mag.</English>
@@ -10623,7 +10623,7 @@
 		<Key ID="STR_DZ_MAG_5RND_17HMR_DESC">
 			<English>Caliber: 9,3x62mm&lt;br/&gt;Rounds: 5&lt;br/&gt;Used in: CZ 550</English>
 			<Russian>Калибр: 9,3x62мм&lt;br/&gt;Патронов: 5&lt;br/&gt;Используется в: CZ 550</Russian>
-			<German>Kaliber: 9,3x62mm&lt;br/&gt;Schuss: 5&lt;br/&gt;Benutzt in: CZ 550</German>				
+			<German>Kaliber: 9,3x62mm&lt;br/&gt;Schuss: 5&lt;br/&gt;Verwendet in: CZ 550</German>				
 		</Key>
 		<Key ID="STR_DZ_MAG_10RND_303BRITISH_NAME">
 			<English>10Rnd. Lee Enfield mag.</English>
@@ -10640,7 +10640,7 @@
 		<Key ID="STR_DZ_MAG_15RND_W1866_DESC">
 			<English>Caliber: 11x23mm&lt;br/&gt;Rounds: 15&lt;br/&gt;Used in: Winchester 1866</English>
 			<Russian>Калибр: 11x23мм&lt;br/&gt;Патронов: 15&lt;br/&gt;Используется в: Винчестер 1866</Russian>
-			<German>Kaliber: 11x23mm&lt;br/&gt;Schuss: 15&lt;br/&gt;Benutzt in: Winchester 1866</German>			
+			<German>Kaliber: 11x23mm&lt;br/&gt;Schuss: 15&lt;br/&gt;Verwendet in: Winchester 1866</German>			
 		</Key>		
 
 		<Key ID="STR_DZ_MAG_2RND_12GAUGE_SLUG_NAME">
