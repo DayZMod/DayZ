@@ -125,7 +125,7 @@ if (_unit == player) then {
     };
     
 	if ((vehicle player == player) and (!_unconscious)) then {
-		if (_ammo == "tranquiliser_bolt") then {
+		if (_ammo == "1Rnd_Bolt_Tranquilizer") then {
 			[_unit] spawn {
 				private ["_unit"];
 				_unit = _this select 0;
