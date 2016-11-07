@@ -44,7 +44,7 @@ class RscDisplayConfigure {
 	class controls;
 };
 class RscDisplayGameOptions {
-	onLoad = "{(_this select 0) displayCtrl 140 lbAdd _x;} forEach [localize 'STR_UI_DISABLED',localize 'STR_UI_ENABLED']; (_this select 0) displayCtrl 140 lbSetCurSel (profileNamespace getVariable ['streamerMode',0]); uiNamespace setVariable ['streamerMode',(profileNamespace getVariable ['streamerMode',0])];";
+	onLoad = "{(_this select 0) displayCtrl 140 lbAdd _x;} forEach [localize 'STR_DISABLED',localize 'STR_ENABLED']; (_this select 0) displayCtrl 140 lbSetCurSel (profileNamespace getVariable ['streamerMode',0]); uiNamespace setVariable ['streamerMode',(profileNamespace getVariable ['streamerMode',0])];";
 	onUnload = "call ui_changeDisplay;";
 	class controls {
 		class CA_TextLanguage : RscText {
@@ -391,9 +391,19 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 		class CA_ValuePool: RscIGUIListBox
 		{
 			idc = 114;
-			text = "Players";
+			text = $STR_MP_PLAYERS;
 			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
 			w = "(96/100) * SafeZoneW"; // wide
+			colorText[] = {0.95, 0.95, 0.95, 1};
+			class ScrollBar {
+				color[] = {1, 1, 1, 0.6};
+				colorActive[] = {0.5, 0.5, 0.5, 1};
+				colorDisabled[] = {1, 1, 1, 0.3};
+				thumb = "\z\addons\dayz_code\gui\grey\igui_scrollbar_thumb_ca.paa";
+				arrowFull = "\z\addons\dayz_code\gui\grey\igui_arrow_top_active_ca.paa";
+				arrowEmpty = "\z\addons\dayz_code\gui\grey\igui_arrow_top_ca.paa";
+				border = "\z\addons\dayz_code\gui\grey\igui_border_scroll_ca.paa";
+			};
 		};
 		class CA_B_Lock : RscShortcutButton {
 			idc = 118;
@@ -424,7 +434,22 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 			animTextureFocused = "\z\addons\dayz_code\gui\grey\ui_button_focus_ca.paa";
 			animTexturePressed = "\z\addons\dayz_code\gui\grey\ui_button_down_ca.paa";
 			animTextureDefault = "\z\addons\dayz_code\gui\grey\ui_button_default_ca.paa";
-		};		
+		};
+		class CA_B_Kick : RscShortcutButton {
+			idc = 116;
+			default = 0;
+			shortcuts[] = {0x00050000 + 2};
+			x = "(83/100)	* SafeZoneW + SafeZoneX";
+			y = "(14/100)	* SafeZoneH + SafeZoneY";
+			text = $STR_DISP_MP_KICKOFF;
+			color[] = {0.95, 0.95, 0.95, 1.0};
+			animTextureNormal = "\z\addons\dayz_code\gui\grey\ui_button_normal_ca.paa";
+			animTextureDisabled = "\z\addons\dayz_code\gui\grey\ui_button_disabled_ca.paa";
+			animTextureOver = "\z\addons\dayz_code\gui\grey\ui_button_over_ca.paa";
+			animTextureFocused = "\z\addons\dayz_code\gui\grey\ui_button_focus_ca.paa";
+			animTexturePressed = "\z\addons\dayz_code\gui\grey\ui_button_down_ca.paa";
+			animTextureDefault = "\z\addons\dayz_code\gui\grey\ui_button_default_ca.paa";
+		};
 		class CA_ButtonContinue : RscShortcutButton {
 			idc = 1;
 			default = 1;
@@ -627,8 +652,18 @@ class RscDisplayDiary {
 			y = "SafeZoneY + 0.137";
 			w = "0.146*SafeZoneW";
 			h = 0.6;
+			colorText[] = {0.95, 0.95, 0.95, 1};
 			colorSelectBackground[] = {0, 0, 0, 1.0};
 			colorSelectBackground2[] = {0, 0, 0, 0.8};
+			class ScrollBar {
+				color[] = {1, 1, 1, 0.6};
+				colorActive[] = {0.5, 0.5, 0.5, 1};
+				colorDisabled[] = {1, 1, 1, 0.3};
+				thumb = "\z\addons\dayz_code\gui\grey\igui_scrollbar_thumb_ca.paa";
+				arrowFull = "\z\addons\dayz_code\gui\grey\igui_arrow_top_active_ca.paa";
+				arrowEmpty = "\z\addons\dayz_code\gui\grey\igui_arrow_top_ca.paa";
+				border = "\z\addons\dayz_code\gui\grey\igui_border_scroll_ca.paa";
+			};
 		};	
 		class CA_DiaryIndex : RscIGUIListBox {
 			idc = 1002;
@@ -639,8 +674,18 @@ class RscDisplayDiary {
 			w = "0.283*SafeZoneW";
 			h = 0.6;
 			sizeEx = 0.034;
+			colorText[] = {0.95, 0.95, 0.95, 1};
 			colorSelectBackground[] = {0, 0, 0, 1.0};
 			colorSelectBackground2[] = {0, 0, 0, 0.8};
+			class ScrollBar {
+				color[] = {1, 1, 1, 0.6};
+				colorActive[] = {0.5, 0.5, 0.5, 1};
+				colorDisabled[] = {1, 1, 1, 0.3};
+				thumb = "\z\addons\dayz_code\gui\grey\igui_scrollbar_thumb_ca.paa";
+				arrowFull = "\z\addons\dayz_code\gui\grey\igui_arrow_top_active_ca.paa";
+				arrowEmpty = "\z\addons\dayz_code\gui\grey\igui_arrow_top_ca.paa";
+				border = "\z\addons\dayz_code\gui\grey\igui_border_scroll_ca.paa";
+			};
 		};
 	};
 };
