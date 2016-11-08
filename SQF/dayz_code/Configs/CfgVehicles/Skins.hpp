@@ -83,20 +83,45 @@ class Survivor_DZ : Civilian {
 	class Eventhandlers
 	{
 		local = "_z = _this select 0; if (!isServer && {!isNull _z} && {!(side _z in [west,east,civilian])}) exitWith { PVDZ_sec_atp = ['wrong side', player]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; };";
+		init = "if (isServer) then { DayZ_AllPlayers set [count DayZAllPlayers,_this]; };";
+		//Killed = "if (isServer) then {if ((_this select 0) in DayZ_AllPlayers) then {DayZ_AllPlayers - (_this select 0);DayZ_DeadPlayers set [count DayZ_DeadPlayers,(_this select 0)];};};";
 	};
 };
 
+
+//Hidden proxy used during mission
 class Survivor1_DZ : Survivor_DZ {
 	scope = 2;
 	displayName = $STR_CHAR_1;
 	model = "\dayz\objects\proxy_man";
 };
-
+//General Player skin
 class Survivor2_DZ : Survivor_DZ {
 	scope = 2;
 	displayName = $STR_CHAR_1;
 	model = "\dayz\characters\man_survivor";
 };
+/*
+//Not Used
+//General Player Black skin "Survivor2Black_DZ" call player_switchModel;
+class Survivor2Black_DZ : Survivor1_DZ {
+	scope = 2;
+	displayName = $STR_CHAR_1;
+	model = "\dayz\characters\man_survivor";
+	//model = "\Ca\Characters_PMC\Frost\Frost.p3d";
+	HiddenSelections[] = {"camo"};
+	HiddenSelectionsTextures[] = {"ca\characters_pmc\frost\data\frost_co.paa"};
+	class EventHandlers: EventHandlers
+	{
+		init = "(_this select 0) setObjectTexture [0,[""\Ca\Characters_PMC\Frost\Data\Frost_1_co.paa"",""\Ca\Characters_PMC\Frost\Data\Frost_2_co.paa"",""\Ca\Characters_PMC\Frost\Data\Frost_3_co.paa""] select floor random 3];";
+	};
+	class Wounds
+	{
+		tex[] = {};
+		mat[] = {"Ca\Characters_PMC\Frost\Data\frost.rvmat","Ca\Characters_PMC\Frost\Data\w1_frost.rvmat","Ca\Characters_PMC\Frost\Data\w2_frost.rvmat"};
+	};
+};
+*/
 
 class Survivor3_DZ : Survivor2_DZ {
 	model = "\dayz\characters\man_hero";

@@ -8,7 +8,7 @@ _playerPos = [];
 //Lets search all playerable units looking for the objects that matches our playerUID
 {
 	if ((getPlayerUID _x) == _playerUID) exitWith { _playerObj = _x; _playerPos = getPosATL _playerObj;};
-} forEach 	playableUnits;
+} forEach DayZ_AllPlayers;
 
 //If for some reason the playerOBj does not exist lets exit the disconnect system.
 if (isNil "_playerObj") exitWith {
@@ -82,7 +82,7 @@ if (_characterID != "?") exitwith {
 };
 
 if (isNull _playerObj) then {
-	diag_log("Player Object does not esist"); 
+	diag_log("WARNING:: Player Object does not exist"); 
 } else {
 //Lets remove the object.
 	if (alive _playerObj) then {
@@ -91,3 +91,6 @@ if (isNull _playerObj) then {
 		deleteGroup _myGroup;
 	};
 };
+
+//Lets remove the player from active checks array.
+DayZ_AllPlayers = DayZ_AllPlayers - _playerObj;

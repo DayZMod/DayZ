@@ -456,6 +456,8 @@ if (isServer) then {
 	dayz_ghostPlayers = [];
 	dayz_activePlayers = [];
 	dayz_died = [];
+	DayZ_AllPlayers = [];
+	DayZ_DeadPlayers = [];
 };
 
 if (!isDedicated) then {
