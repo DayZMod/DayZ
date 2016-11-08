@@ -8,7 +8,7 @@ _unit = _this select 2;
 
 if (_unit == player) then {
 	//if (dayz_soundMuted) then {call player_toggleSoundMute;}; // Auto disable mute on vehicle exit (not a good idea without a sleep since rotor can be very loud when spinning down)
-	_buildables = count ((getposATL _vehicle) nearObjects ["DZ_buildables", 3]);
+	_buildables = count ((getposATL _vehicle) nearObjects ["DZ_buildables", 5]);
 	if (_buildables > 0) then {
 
 		switch _position do {
