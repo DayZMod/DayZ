@@ -227,7 +227,8 @@ _clientID publicVariableClient "PVCDZ_plr_plantSpawner";
 //record time started
 _playerObj setVariable ["lastTime",time];
 
-//diag_log format["LOGIN PUBLISHING: UID#%1 CID#%2 %3 as %4 should spawn at %5",getPlayerUID _playerObj,_characterID,_playerObj call fa_plr2str,typeOf _playerObj,(_worldspace select 1) call fa_coor2str];
+//Record Player Login/LogOut
+[(getPlayerUID _playerObj),_characterID,1,(_playerObj call fa_plr2str),((_worldspace select 1) call fa_coor2str)] call dayz_recordLogin;
 
 PVDZ_plr_Login1 = null;
 PVDZ_plr_Login2 = null;

@@ -170,8 +170,9 @@ dayz_recordLogin = {
 		
 	_status = switch (1==1) do {
 		case ((_this select 2) == 0): { "CLIENT LOADED & PLAYING" };
-		case ((_this select 2) == 1): { "LOGGED IN, Location " +(_this select 4) };
-		case ((_this select 2) == 2): { "LOGGED OUT, Location " +(_this select 4) };
+		case ((_this select 2) == 1): { "LOGIN PUBLISHING, Location " +(_this select 4) };
+		case ((_this select 2) == 2): { "LOGGING IN" };
+		case ((_this select 2) == 3): { "LOGGED OUT, Location " +(_this select 4) +(_this select 5)};
 	};
 	
 	_name = if (typeName (_this select 3) == "ARRAY") then { toString (_this select 3) } else { _this select 3 };
