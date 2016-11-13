@@ -133,7 +133,7 @@ if (_unit == player) then {
 				localize "str_player_tranquilized" call dayz_rollingMessages; 
 				[_unit,0.01] call fnc_usec_damageUnconscious;
 				_unit setVariable ["NORRN_unconscious", true, true];
-				r_player_timeout = round(random 60);
+				r_player_timeout = 20 + round(random 60);
 				r_player_unconscious = true;
 				player setVariable["medForceUpdate",true,true];
 				player setVariable ["unconsciousTime", r_player_timeout, true];
