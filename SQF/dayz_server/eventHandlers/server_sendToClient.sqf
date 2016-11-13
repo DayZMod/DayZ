@@ -5,7 +5,7 @@ _variable = _this select 1;
 _arraytosend = _this select 2;
 _owner = owner _unit;
 
-diag_log format ["%1, %2, %3, %4", _unit, _variable, _arraytosend, _owner];
+//diag_log format ["%1, %2, %3, %4", _unit, _variable, _arraytosend, _owner];
 
 switch (_variable) do {
 	case "objWallDamage": {
