@@ -61,3 +61,13 @@ class TT650_Civ: TT650_Base {
 		};
 	};
 };
+
+class TT650_TK_CIV_EP1: TT650_Base {
+	crew = "";
+	faction = "CIV";
+	rarityurban = 0.8;
+	scope = 2;
+	side = 3;
+	typicalcargo[] = {};
+	maxspeed = 180;
+};

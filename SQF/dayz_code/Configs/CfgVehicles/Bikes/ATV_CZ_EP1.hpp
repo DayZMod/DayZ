@@ -5,7 +5,7 @@ class ATV_CZ_EP1: ATV_Base_EP1 {
 	maxspeed = 80;
 	scope = 2;
 	side = 1;
-	typicalcargo[] = {""};
+	typicalcargo[] = {};
 	class HitPoints: Hitpoints {
 		class HitBody {
 			armor = 1;
