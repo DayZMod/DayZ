@@ -1,4 +1,7 @@
-private ["_characterID","_temp","_currentWpn","_magazines","_force","_isNewPos","_humanity","_isNewGear","_currentModel","_modelChk","_playerPos","_playerGear","_playerBackp","_backpack","_killsB","_killsH","_medical","_isNewMed","_character","_timeSince","_charPos","_isInVehicle","_distanceFoot","_lastPos","_kills","_headShots","_timeGross","_timeLeft","_onLadder","_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_name","_debug","_distance"];
+private ["_characterID","_temp","_currentWpn","_magazines","_force","_isNewPos","_humanity","_isNewGear","_currentModel","_modelChk",
+		"_playerPos","_playerGear","_playerBackp","_backpack","_killsB","_killsH","_medical","_isNewMed","_character",
+		"_timeSince","_charPos","_isInVehicle","_distanceFoot","_lastPos","_kills","_headShots","_timeGross","_timeLeft","_onLadder",
+		"_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_name","_debug","_distance","_Achievements"];
 //[player,array]
 
 _character = _this select 0;
@@ -13,6 +16,10 @@ _name = if (alive _character) then {name _character} else {"Dead Player"};
 _Achievements = [];
 _debug = getMarkerpos "respawn_west";
 _distance = _debug distance _charPos;
+
+if (isNil "_character") exitWith {
+	diag_log format["%1: nil player object, _this:%2", __FILE__, _this];
+};
 
 if (_character isKindOf "Animal") exitWith {
 	diag_log ("ERROR: Cannot Sync Character " + _name + " is an Animal class");
@@ -163,8 +170,9 @@ if (_characterID != "0") then {
 			if (alive _character) then {
 				//Wait for HIVE to be free and send request
 				_key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:",_characterID,_playerPos,_playerGear,_playerBackp,_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity];
-				//diag_log ("HIVE: WRITE: "+ str(_key) + " / " + _characterID);
-				//diag_log format["HIVE: SYNC: [%1,%2,%3,%4]",_characterID,_playerPos,_playerGear,_playerBackp];
+				
+				diag_log str formatText["INFO - %2(UID:%4,CID:%3) PlayerSync, %1",_key,_name,_characterID,(getPlayerUID _character)];
+				
 				_key call server_hiveWrite;
 			};
 		};

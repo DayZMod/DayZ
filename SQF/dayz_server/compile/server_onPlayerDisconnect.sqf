@@ -7,7 +7,7 @@ _playerPos = [];
 
 //Lets search all playerable units looking for the objects that matches our playerUID
 {
-	if ((getPlayerUID _x) == _playerUID) exitWith { _playerObj = _x; _playerPos = getPosATL _playerObj;};
+	if ((getPlayerUID (_x select 0)) == _playerUID) exitWith { _playerObj = (_x select 0); _playerPos = getPosATL _playerObj;};
 } forEach DayZ_AllPlayers;
 
 //If for some reason the playerOBj does not exist lets exit the disconnect system.
@@ -25,12 +25,11 @@ _Sepsis = _playerObj getVariable["USEC_Sepsis",false];
 _lastDamage = round(diag_ticktime - _lastDamage);
 
 //Readded Logout debug info.
-diag_log format["INFO - Player: %3(UID:%1/CID:%2) as (%4), logged off at %5%6", 
+diag_log format["INFO - Player: %3(UID:%1/CID:%2) as (%4), Disconnected %5", 
 	getPlayerUID _playerObj,
 	_characterID,
 	_playerObj call fa_plr2str,
 	typeOf _playerObj, 
-	(getPosATL _playerObj) call fa_coor2str,
 	if ((_lastDamage > 5 AND (_lastDamage < 30)) AND ((alive _playerObj) AND (_playerObj distance (getMarkerpos "respawn_west") >= 2000))) then {" while in combat ("+str(_lastDamage)+" seconds left)"} else {""}
 ]; 
 
@@ -46,8 +45,11 @@ if (_playerUID in dayz_ghostPlayers) exitwith {
 	};
 };
 
+//Lets remove the player from active checks array.
+DayZ_AllPlayers = DayZ_AllPlayers - [_playerObj];
+
 //Make sure we know the ID of the object before we try and sync any info to the DB
-if (_characterID != "?") exitwith {
+if (_characterID != "?") then {
 
 	//If the player has sepsis before logging off lets give them infected status.
 	if (_Sepsis) then {
@@ -55,7 +57,7 @@ if (_characterID != "?") exitwith {
 	};
 	
 	//Record Player Login/LogOut
-	[_playerUID,_characterID,2,_playerName] call dayz_recordLogin;
+	[_playerUID,_characterID,2,_playerName,((getPosATL _playerObj) call fa_coor2str)] call dayz_recordLogin;
 
 	//if the player object is inside a vehicle lets eject the player
 	if (vehicle _playerObj != _playerObj) then {
@@ -64,7 +66,7 @@ if (_characterID != "?") exitwith {
 	
 	//if player object is alive lets sync the player and remove the body and if ghosting is active add the player id to the array
 	if (alive _playerObj) then {
-		[_playerObj,nil,true] call server_playerSync;
+		 [_playerObj,nil,true] call server_playerSync;
 		
 		if (dayz_enableGhosting) then {
 			//diag_log format["GhostPlayers: %1, ActivePlayers: %2",dayz_ghostPlayers,dayz_activePlayers];
@@ -81,16 +83,11 @@ if (_characterID != "?") exitwith {
 	{ [_x,"gear"] call server_updateObject } foreach (nearestObjects [_playerPos, DayZ_GearedObjects, 10]);
 };
 
-if (isNull _playerObj) then {
-	diag_log("WARNING:: Player Object does not exist"); 
-} else {
-//Lets remove the object.
+
+if (!isNil "_playerObj") then {
 	if (alive _playerObj) then {
 		_myGroup = group _playerObj;
 		deleteVehicle _playerObj;
 		deleteGroup _myGroup;
 	};
 };
-
-//Lets remove the player from active checks array.
-DayZ_AllPlayers = DayZ_AllPlayers - _playerObj;
