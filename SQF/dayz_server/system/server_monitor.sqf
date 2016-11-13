@@ -206,7 +206,7 @@ if (_status == "ObjectStreamStart") then {
 // # END OF STREAMING #
 
 call server_plantSpawner; // Draw the pseudo random seeds
-[] execFSM "\z\addons\dayz_server\system\server_cleanup.fsm"; // launch the legacy task scheduler
+[] execFSM "\z\addons\dayz_server\system\server_vehicleSync.fsm"; 
 [] execVM "\z\addons\dayz_server\system\scheduler\sched_init.sqf"; // launch the new task scheduler
 
 createCenter civilian;
