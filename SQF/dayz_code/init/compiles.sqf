@@ -58,6 +58,9 @@ if (!isDedicated) then {
 	object_monitorGear = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\object_monitorGear.sqf";
 	object_dismantle = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\object_dismantle.sqf";
 	
+	player_studyBody = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\study_body.sqf";
+	player_butcher = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\gather_meat.sqf";
+	
 	//Collisions
 	fn_collisions = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_collisions.sqf";
 

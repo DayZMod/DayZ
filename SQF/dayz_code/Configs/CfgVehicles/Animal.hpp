@@ -6,6 +6,20 @@ class animal_DZ: CAAnimalBase
 	{
 		local = "_z = _this select 0; if ((!isServer and !isNull _z) and {(side _z != civilian)}) exitWith { PVDZ_sec_atp = [ 'wrong side', player ]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; }; if ((_this select 1) and isServer) exitWith { _z call sched_co_deleteVehicle; };";
 	};
+	class UserActions
+	{
+		class Butcher
+		{
+			displayNameDefault = "&str_actions_self_04";
+			displayName = "&str_actions_self_04";
+			position = "";
+			shortcut = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "!alive this && this getVariable['meatHarvested',false]";
+			statement = "this call player_butcher";
+		};
+	};
 };
 
 class Cow: animal_DZ

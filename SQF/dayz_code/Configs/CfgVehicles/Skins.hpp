@@ -86,6 +86,20 @@ class Survivor_DZ : Civilian {
 		init = "if (isServer) then { DayZ_AllPlayers set [count DayZAllPlayers,_this]; };";
 		//Killed = "if (isServer) then {if ((_this select 0) in DayZ_AllPlayers) then {DayZ_AllPlayers - (_this select 0);DayZ_DeadPlayers set [count DayZ_DeadPlayers,(_this select 0)];};};";
 	};
+	class UserActions
+	{
+		class StudyBody
+		{
+			displayNameDefault = "Study Body";
+			displayName = "Study Body";
+			position = "";
+			shortcut = "StudyBody";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "!alive this";
+			statement = "this call player_studyBody";
+		};
+	};
 };
 
 

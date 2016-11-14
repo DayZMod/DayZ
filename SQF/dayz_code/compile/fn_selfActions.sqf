@@ -231,6 +231,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		s_player_siphonfuel = -1;
 	};
 	
+	/*
 	//Harvested
 	if (!_isAlive && _isAnimal && !_isHarvested) then {
 		//_hasknife = {_x in ["ItemKnife","ItemKnife5","ItemKnife4","ItemKnife3","ItemKnife2","ItemKnifeBlunt"]} count _itemsPlayer > 0;
@@ -247,6 +248,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		player removeAction s_player_butcher;
 		s_player_butcher = -1;
 	};
+	*/
 	
 	//Fireplace Actions check
 	if ((_cursorTarget call isInflamed) or (inflamed _cursorTarget)) then {
@@ -356,7 +358,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		player removeAction s_player_sleep;
 		s_player_sleep = -1;
 	};
-					
+	/*			
 	//Study Body
 	if (_isMan && {!_isAlive} && {!_isZombie} && {!_isAnimal}) then {
 		if (s_player_studybody < 0) then {
@@ -366,6 +368,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		player removeAction s_player_studybody;
 		s_player_studybody = -1;
 	};
+	*/
 /*	
 	//Carbomb
 	_hasCarBomb = "ItemCarBomb" in _magazinesPlayer;
