@@ -26,7 +26,7 @@ class CfgVehicles {
 				shortcut = "";
 				radius = 3;
 				onlyForPlayer = 1;
-				condition = "(damage this < 1) && (""ItemToolbox"" in items player)";
+				condition = "(damage this < 1) && (""ItemToolbox"" in items player) && (!(this isKindOf ""Bicycle""))";
 				statement = "this execVM ""\z\addons\dayz_code\actions\salvage_vehicle.sqf"";";
 			};
 		};
