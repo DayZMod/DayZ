@@ -1,7 +1,7 @@
 private ["_part","_cancel","_color","_string","_handle","_damage","_cmpt","_vehicle","_hitpoints","_damagePercent","_configVeh"];
 
-_vehicle = _this select 3;
-{dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
+_vehicle = _this;
+//{dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
 dayz_myCursorTarget = _vehicle;
 
 _hitpoints = _vehicle call vehicle_getHitpoints;

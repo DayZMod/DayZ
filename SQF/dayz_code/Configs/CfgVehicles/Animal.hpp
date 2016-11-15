@@ -10,14 +10,15 @@ class animal_DZ: CAAnimalBase
 	{
 		class Butcher
 		{
-			displayNameDefault = "&str_actions_self_04";
-			displayName = "&str_actions_self_04";
+			displayNameDefault = $STR_ACTIONS_SELF_04;
+			displayName = $STR_ACTIONS_SELF_04;
 			position = "";
+			showWindow = 0; //players see the 'displayNameDefault' name appear near mid screen as they approach the object
 			shortcut = "";
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "!alive this && this getVariable['meatHarvested',false]";
-			statement = "this call player_butcher";
+			condition = "(!alive this) && (!(this getVariable['meatHarvested',false]))";
+			statement = "this execVM ""\z\addons\dayz_code\actions\gather_meat.sqf"";";
 		};
 	};
 };

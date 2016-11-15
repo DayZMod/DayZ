@@ -1,6 +1,6 @@
 private ["_item","_type","_hasHarvested","_config","_knifeArray","_PlayerNear","_isListed","_activeKnife","_text","_dis","_sfx","_sharpnessRemaining","_qty","_chance","_msg","_string"];
 
-_item = _this select 3;
+_item = _this;
 _type = typeOf _item;
 _hasHarvested = _item getVariable["meatHarvested",false];
 _config = configFile >> "CfgSurvival" >> "Meat" >> _type;

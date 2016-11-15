@@ -97,7 +97,7 @@ class Survivor_DZ : Civilian {
 			radius = 3;
 			onlyForPlayer = 1;
 			condition = "!alive this";
-			statement = "this call player_studyBody";
+			statement = "this execVM ""\z\addons\dayz_code\actions\study_body.sqf"";";
 		};
 	};
 };

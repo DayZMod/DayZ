@@ -381,6 +381,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 			s_player_attach_bomb = -1;
 	};
 */
+/*
 	//Repairing Vehicles
 	if (_isVehicle && {!_isMan} && {dayz_myCursorTarget != _cursorTarget} && {_hasToolbox} && {damage _cursorTarget < 1}) then {
 		if (s_player_repair_crtl < 0) then {
@@ -398,6 +399,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 			s_player_repair_crtl = -1;
 		};
 	};
+*/
 	
 	// House locking and unlocking
 	_isHouse = _typeOfCursorTarget in ["SurvivorWorkshopAStage5", "SurvivorWorkshopBStage5", "SurvivorWorkshopCStage5"];

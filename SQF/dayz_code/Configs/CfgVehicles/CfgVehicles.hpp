@@ -3,6 +3,33 @@ class CfgVehicles {
 	class AllVehicles : ALL
 	{
 		class NewTurret;
+		class UserActions
+		{
+			class Repair
+			{
+				displayNameDefault = $STR_ACTIONS_REPAIRVEH;
+				displayName = $STR_ACTIONS_REPAIRVEH;
+				position = "";
+				showWindow = 0; //players see the 'displayNameDefault' name appear near mid screen as they approach the object
+				shortcut = "";
+				radius = 3;
+				onlyForPlayer = 1;
+				condition = "(damage this < 1) && (""ItemToolbox"" in items player)";
+				statement = "this execVM ""\z\addons\dayz_code\actions\repair_vehicle.sqf"";";
+			};
+			class Salvage
+			{
+				displayNameDefault = $STR_ACTIONS_SALVAGEVEH;
+				displayName = $STR_ACTIONS_SALVAGEVEH;
+				position = "";
+				showWindow = 0; //players see the 'displayNameDefault' name appear near mid screen as they approach the object
+				shortcut = "";
+				radius = 3;
+				onlyForPlayer = 1;
+				condition = "(damage this < 1) && (""ItemToolbox"" in items player)";
+				statement = "this execVM ""\z\addons\dayz_code\actions\salvage_vehicle.sqf"";";
+			};
+		};
 	};
 	class Air : AllVehicles
 	{
