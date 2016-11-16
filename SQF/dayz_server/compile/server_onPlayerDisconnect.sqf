@@ -1,4 +1,4 @@
-private ["_playerObj","_myGroup","_playerUID","_playerPos","_playerName"];
+private ["_playerObj","_playerUID","_playerPos","_playerName","_characterID","_Sepsis","_myGroup"];
 
 _playerUID = _this select 0;
 _playerName = _this select 1;
