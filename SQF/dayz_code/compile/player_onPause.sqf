@@ -36,9 +36,10 @@ while {(!isNull _display) && !r_player_dead} do {
 			_btnAbort ctrlSetText format["%1 (in 10)", _btnAbortText];
 			cutText [localize "str_abort_zedsclose", "PLAIN DOWN"];
 		};
-		case (_inCombat && !_zedCheck && !_playerCheck) : {
+		case (_inCombat) : {
 			_btnAbort ctrlEnable false;
 			_btnAbort ctrlSetText format["%1 (in %2)", _btnAbortText, ceil (_timeout - diag_tickTime)];
+			cutText [localize "str_abort_playerincombat", "PLAIN DOWN"];
 		};
 		default {
 			_btnAbort ctrlEnable true;
@@ -48,4 +49,4 @@ while {(!isNull _display) && !r_player_dead} do {
 	uiSleep 1;
 };
 
-if (r_player_dead) exitWith {_btnAbort ctrlEnable true;};
+if (r_player_dead) then {_btnAbort ctrlEnable true;};

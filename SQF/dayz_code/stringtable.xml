@@ -7526,23 +7526,23 @@
 			<German>durch stumpfe Gewalteinwirkung.</German>
 		</Key>
 		<Key ID="str_abort_playerclose">
-			<English>Cannot Abort near another player!\nYou are still in Combat.</English>
-			<Russian>Нельзя выходить находясь рядом с другим игроком!\nВы все еще в бою!</Russian>
-			<Spanish>¡No puedes abortar cerca de otros jugadores!\nTodavía estás en combate.</Spanish>
-			<Czech>Nemůžete ukončit hru, když jste poblíž jiného hráče.\nStále jste v boji.</Czech>
-			<French>Abandon impossible près d&apos;un autre joueur!\nVous êtes toujours en combat.</French>
-			<German>Du kannst dich nicht in der Nähe eines anderen Spielers ausloggen, du befindest dich noch immer in Gefahr!</German>
+			<English>You cannot abort near another player!</English>
+			<Russian>Нельзя выходить находясь рядом с другим игроком!</Russian>
+			<Spanish>¡No puedes abortar cerca de otros jugadores!</Spanish>
+			<Czech>Nemůžete ukončit hru, když jste poblíž jiného hráče.</Czech>
+			<French>Abandon impossible près d&apos;un autre joueur!</French>
+			<German>Du kannst dich nicht in der Nähe eines anderen Spielers ausloggen!</German>
 		</Key>
 		<Key ID="str_abort_zedsclose">
-			<English>Cannot Abort Zombies are near!\nYou are still in Combat. </English>
-			<Russian>Нельзя выходить находясь рядом с зомби!\nВы все еще в бою!</Russian>
-			<Spanish>¡No puedes abortar cerca de zombies!\nTodavía estás en combate.</Spanish>
-			<Czech>Nemůžete ukončit hru, když jsou zombie poblíž.\nStále jste v boji.</Czech>
-			<French>Abandon impossible, des zombies sont à proximité!\nVous êtes toujours en combat.</French>
-			<German>Du kannst dich nicht in der Nähe von Zombies ausloggen, du befindest dich noch immer in Gefahr!</German>
+			<English>You cannot abort near zombies!</English>
+			<Russian>Нельзя выходить находясь рядом с зомби!</Russian>
+			<Spanish>¡No puedes abortar cerca de zombies!</Spanish>
+			<Czech>Nemůžete ukončit hru, když jsou zombie poblíž.</Czech>
+			<French>Abandon impossible, des zombies sont à proximité!</French>
+			<German>Du kannst dich nicht in der Nähe von Zombies ausloggen!</German>
 		</Key>
 		<Key ID="str_abort_playerincombat">
-			<English>Cannot Abort while in combat!</English>
+			<English>You cannot abort while in combat!</English>
 			<German>Du kannst dich nicht im Kampf ausloggen!</German>
 			<Russian>Нельзя выходить в бою!</Russian>
 			<Spanish>¡No puedes abortar en combate!</Spanish>
