@@ -54,12 +54,12 @@ if ((count _worldspace) == 2) then {
 	[_fire,true] call dayz_inflame;
 	_fire spawn player_fireMonitor;
 	
-	if (dayz_playerAchievements select 14 < 1) then {
+	/*if (dayz_playerAchievements select 14 < 1) then {
 	// Firestarter
 		dayz_playerAchievements set [14,1];
 		achievement = [14, player, dayz_characterID];
 		publicVariableServer "achievement";
-	};
+	};*/
 	//cutText [localize "str_fireplace_01", "PLAIN DOWN"];
 	(localize "str_fireplace_01") call dayz_rollingMessages;
 } else {

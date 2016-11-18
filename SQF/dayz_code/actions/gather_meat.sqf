@@ -53,10 +53,7 @@ if ((count _knifeArray > 0) and !_hasHarvested) then {
 		PVCDZ_obj_GutBody =[_item,_qty];
 		publicVariable "PVCDZ_obj_GutBody";
 		
-		//achievement system
-		if (!achievement_Gut) then {
-			achievement_Gut = true;
-		};
+		//if (!achievement_Gut) then {achievement_Gut = true;};
 	};
 	
 	_sharpnessRemaining = getText (configFile >> "cfgWeapons" >> _activeKnife >> "sharpnessRemaining");
