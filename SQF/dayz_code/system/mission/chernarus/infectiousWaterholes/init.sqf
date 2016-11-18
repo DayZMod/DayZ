@@ -28,13 +28,10 @@ _infectedWaterHoles = _WaterHoleArray call fn_shuffleArray;
 
 infectedWaterHoles = [];
 
-diag_log format["INFO: Choosing waterholes to be infectious",true];
-
 {
 	if ((random 1) < 0.5) then {
 		infectedWaterHoles set [count infectedWaterHoles, _x]; // set  
 	};
-	sleep 0.01;
 } count _infectedWaterHoles;
 
 //Send the random array to everyone.
