@@ -9,10 +9,12 @@ class HMMWV_DZ: HMMWV_Base {
 	mapsize = 5;
 	model = "ca\wheeled_E\HMMWV\HMMWV";
 	picture = "\Ca\wheeled\data\ico\HMMWV_CA.paa";
-	scope = 2;
+	scope = public;
 	side = 2;
 	crew = "";
 	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
 	transportMaxWeapons = 10;
 	transportMaxMagazines = 50;
 	transportmaxbackpacks = 2;

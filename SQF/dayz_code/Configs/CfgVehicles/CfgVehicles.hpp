@@ -130,7 +130,6 @@ class CfgVehicles {
 
 		};
 	};
-	//class UralCivil;
 	class Ship;
 	//class Bag_Base_EP1;
 	//class Bag_Base_BAF;
@@ -150,25 +149,18 @@ class CfgVehicles {
 	class ReammoBox;
 	
 	class Old_bike_base_EP1;
+	class Old_moto_base;
 	class Ikarus_base;
 	class Volha_TK_CIV_Base_EP1;
 	class LandRover_CZ_EP1;
 	class Ural_Base;
 	
 	class BAF_Offroad_D:LandRover_CZ_EP1 { typicalcargo[] = {}; };
-	class Old_bike_TK_CIV_EP1:Old_bike_base_EP1 { typicalcargo[] = {}; };
 	class BAF_Offroad_W:BAF_Offroad_D { typicalcargo[] = {}; };
 	class SkodaBlue:SkodaBase { typicalcargo[] = {}; };
 	class SkodaGreen:SkodaBase { typicalcargo[] = {}; };
-	class Ikarus_TK_CIV_EP1:Ikarus_base { typicalcargo[] = {}; };
-	class UAZ_Unarmed_TK_EP1:UAZ_Unarmed_Base { typicalcargo[] = {}; };
-	class UAZ_Unarmed_TK_CIV_EP1:UAZ_Unarmed_Base { typicalcargo[] = {}; };
 	class Volha_1_TK_CIV_EP1:Volha_TK_CIV_Base_EP1 { typicalcargo[] = {}; };
 	class Volha_2_TK_CIV_EP1:Volha_TK_CIV_Base_EP1 { typicalcargo[] = {}; };
-	class Ikarus:Car { 	typicalcargo[] = {}; };
-	class UAZ_RU:UAZ_Unarmed_Base { typicalcargo[] = {}; };
-	class Tractor:Car { typicalcargo[] = {}; };
-	class UralCivil:Ural_Base { typicalcargo[] = {}; };
 
 	#include "RepairParts.hpp" //names for all reapir parts. Needs moving to hitpoints
 	//ZEDS
@@ -186,8 +178,11 @@ class CfgVehicles {
 	//Includes all DayZ Vehilces
 	//Car's
 	#include "Car\HMMWV.hpp"
+	#include "Car\Ikarus.hpp"
+	#include "Car\S1203.hpp"
+	#include "Car\Tractor.hpp"
 	#include "Car\CAR_HATCHBACK.hpp"
-	#include "Car\UAZ_CDF.hpp"
+	#include "Car\UAZ.hpp"
 	#include "Car\CAR_SEDAN.hpp"
 	#include "Car\V3S_Civ.hpp"
 	#include "Car\SUV_DZ.hpp"
@@ -209,6 +204,8 @@ class CfgVehicles {
 	//Bikes
 	#include "Bikes\ATV_US_EP1.hpp"
 	#include "Bikes\ATV_CZ_EP1.hpp"
+	#include "Bikes\Old_bike.hpp"
+	#include "Bikes\Old_moto.hpp"
 	#include "Bikes\TT650_Ins.hpp"
 	#include "Bikes\TT650_Civ.hpp"
 	#include "Bikes\M1030.hpp"

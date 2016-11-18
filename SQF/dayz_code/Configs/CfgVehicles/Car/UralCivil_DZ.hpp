@@ -1,5 +1,24 @@
+class UralCivil: Ural_Base {
+	crew = "";
+	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
+};
+class Ural_CDF: Ural_Base {
+	crew = "";
+	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
+};
+class Ural_TK_CIV_EP1: Ural_Base {
+	crew = "";
+	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
+};
+
 class UralCivil_DZ: UralCivil {
-	scope=public;
+	scope = public;
 	side=TCivilian;
 	faction=CIV;
 	displayName= $STR_DN_URAL_CIV;
@@ -8,7 +27,7 @@ class UralCivil_DZ: UralCivil {
 	transportMaxWeapons = 40;
 	transportMaxMagazines = 200;
 	transportmaxbackpacks = 10;
-
+	
 	crew = "";
 	typicalCargo[]={};
 	model=\ca\wheeled\ural;
