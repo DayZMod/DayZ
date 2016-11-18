@@ -159,7 +159,7 @@ if (_unit == player) then {
 
 	_isMan = _sourceType isKindOf "CAManBase";
     //Log to server :-( OverProcessing really not needed.
-    if (!local _source && {_isMan or {_sourceVehicleType isKindOf "LandVehicle" or _sourceVehicleType isKindOf "Air" or _sourceVehicleType isKindOf "Ship"}}) then {
+    if (!local _source && _isMan) then {
 		_wpst = weaponState _source;
         if (diag_ticktime-(_source getVariable ["lastloghit",0])>2) then {
             private ["_sourceWeap"];
@@ -403,7 +403,7 @@ if (_type == 1) then {
     if (_damage > 4) then {
         //serious ballistic damage
         if (_unit == player) then {
-            _id = [_source,"explosion"] spawn player_death;
+            _id = [_source,"explosion",_ammo] spawn player_death;
         };
     } else {
         if (_damage > 2) then {

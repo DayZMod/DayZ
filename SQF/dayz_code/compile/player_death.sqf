@@ -1,4 +1,4 @@
-private ["_pos","_display","_body","_playerID","_array","_source","_method","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup","_model"];
+private ["_pos","_display","_body","_playerID","_array","_source","_method","_isBandit","_punishment","_humanityHit","_myKills","_humanity","_kills","_killsV","_myGroup","_model","_infected","_distance","_sourceVehicleType","_sourceWeapon","_sourceName","_ammo"];
 disableSerialization;
 if (count _this == 0) then {
 	//Spawned from Killed EH (engine death), this should be rare
@@ -31,8 +31,31 @@ if (dayz_onBack != "") then {
     _item addWeaponCargoGlobal [dayz_onBack,1];
 	*/
 };
+_infected = if (r_player_infected) then {1} else {0};
+_method = "unknown";
+_sourceName = "unknown";
+_sourceWeapon = "";
+_distance = 0;
+if (count _this > 0) then {
+	_source = _this select 0;
+	_method = _this select 1;
+	_ammo = if (count _this > 2) then {_this select 2} else {""};
+	
+	if (!isNull _source) then {
+		if (!isNull _body) then {_distance = round (_body distance _source);};
+		_sourceVehicleType = typeOf (vehicle _source);
+		_sourceWeapon = if (_sourceVehicleType isKindOf "LandVehicle" or _sourceVehicleType isKindOf "Air" or _sourceVehicleType isKindOf "Ship") then {_sourceVehicleType} else {currentWeapon _source};
+		if (_sourceWeapon == "Throw") then {_sourceWeapon = (weaponState _source) select 3;};
+		if (_ammo in ["PipeBomb","Mine","MineE"]) then {_sourceWeapon = _ammo;};
+		if (alive _source) then {
+			_sourceName = if (isPlayer _source) then {name _source} else {localize "STR_PLAYER_AI"};
+		};
+	};
+};
+
 //Send Death Notice
-PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID,toArray dayz_playerName]; //Send name as array to avoid publicVariable value restrictions
+diag_log format["Player_Death: Body:%1 BodyName:%2 Infected:%3 SourceName:%4 SourceWeapon:%5 Distance:%6 Method:%7",_body,dayz_playerName,_infected,_sourceName,_sourceWeapon,_distance,_method];
+PVDZ_plr_Death = [dayz_characterID,0,_body,_playerID,toArray dayz_playerName,_infected,toArray _sourceName,toArray _sourceWeapon,_distance,toArray _method]; //Send name as array to avoid publicVariable value restrictions
 publicVariableServer "PVDZ_plr_Death";
 
 _id = [player,20,true,getPosATL player] call player_alertZombies;
