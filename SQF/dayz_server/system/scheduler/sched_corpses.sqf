@@ -107,7 +107,7 @@ sched_corpses = {
 	{
 		_animal = _x;
 		if (local _animal) then {
-			_nearPlayer = {_animal distance _x < 150 && isPlayer _x} count playableUnits;
+			_nearPlayer = {isPlayer _x} count (_animal nearEntities ["CAManBase",150]);
 			if (_nearPlayer == 0) then {
 				_animal call sched_co_deleteVehicle;
 				_delQtyAnimal = _delQtyAnimal + 1;
