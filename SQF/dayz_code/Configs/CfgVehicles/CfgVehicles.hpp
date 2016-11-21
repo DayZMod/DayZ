@@ -242,6 +242,8 @@ class CfgVehicles {
 
 	//camo
 	#include "CamoNetting.hpp"
+	#include "Hedgehog.hpp"
+	#include "Sandbag.hpp"
 
 
 	//WeaponHolder
