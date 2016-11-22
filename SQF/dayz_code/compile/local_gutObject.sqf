@@ -1,3 +1,5 @@
+private ["_amount","_animalbody","_rawfoodtype","_qty"];
+
 _animalbody = _this select 0;
 _qty = _this select 1;
 _rawfoodtype = getText (configFile >> "CfgSurvival" >> "Meat" >> typeOf _animalbody >> "rawfoodtype");

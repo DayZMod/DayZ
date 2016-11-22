@@ -8,11 +8,27 @@ class CAManBase: Man
 		class HitHead;
 		class HitBody;
 	};
+	class UserActions
+	{
+		class StudyBody
+		{
+			displayName = $STR_ACTION_STUDYBODY;
+			displayNameDefault = $STR_ACTION_STUDYBODY;
+			priority = 0;
+			radius = 3;
+			position = "";
+			showWindow = 0;
+			onlyForPlayer = 1;
+			shortcut = "";
+			condition = "(['StudyBody',this] call userActionConditions)";
+			statement = "this call player_studyBody;";
+		};
+	};
 };
 class Civilian: CAManBase
 {
 	rarityUrban = -1;
-	scope = 0;
+	scope = private;
 	faction = "CIV";
 	genericNames = "CzechMen";
 	portrait = "\Ca\characters\data\portraits\comBarHead_civ_man_ca.paa";
@@ -68,7 +84,7 @@ class Civilian: CAManBase
 };
 
 class Survivor_DZ : Civilian {
-	scope = 1;
+	scope = protected;
 	side = TWest;
 	weapons[] = {"Throw", "Put"};
 	magazines[] = {};
@@ -85,20 +101,6 @@ class Survivor_DZ : Civilian {
 		local = "_z = _this select 0; if (!isServer && {!isNull _z} && {!(side _z in [west,east,civilian])}) exitWith { PVDZ_sec_atp = ['wrong side', player]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; };";
 		init = "if (isServer) then { DayZ_AllPlayers set [count DayZAllPlayers,_this]; };";
 		//Killed = "if (isServer) then {if ((_this select 0) in DayZ_AllPlayers) then {DayZ_AllPlayers - (_this select 0);DayZ_DeadPlayers set [count DayZ_DeadPlayers,(_this select 0)];};};";
-	};
-	class UserActions
-	{
-		class StudyBody
-		{
-			displayNameDefault = "Study Body";
-			displayName = "Study Body";
-			position = "";
-			shortcut = "StudyBody";
-			radius = 3;
-			onlyForPlayer = 1;
-			condition = "!alive this";
-			statement = "this execVM ""\z\addons\dayz_code\actions\study_body.sqf"";";
-		};
 	};
 };
 

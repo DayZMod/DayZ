@@ -1,6 +1,5 @@
-
-class CAAnimalBase;
-class animal_DZ: CAAnimalBase
+class Animal;
+class CAAnimalBase: Animal
 {
 	class Eventhandlers
 	{
@@ -9,23 +8,24 @@ class animal_DZ: CAAnimalBase
 	class UserActions
 	{
 		class Butcher
-		{
-			displayNameDefault = $STR_ACTIONS_SELF_04;
+		{			
 			displayName = $STR_ACTIONS_SELF_04;
-			position = "";
-			showWindow = 0; //players see the 'displayNameDefault' name appear near mid screen as they approach the object
-			shortcut = "";
+			displayNameDefault = $STR_ACTIONS_SELF_04;
+			priority = 3;
 			radius = 3;
+			position = "";
+			showWindow = 1;
 			onlyForPlayer = 1;
-			condition = "(!alive this) && (!(this getVariable['meatHarvested',false]))";
-			statement = "this execVM ""\z\addons\dayz_code\actions\gather_meat.sqf"";";
+			shortcut = "";
+			condition = "(['Butcher',this] call userActionConditions)";
+			statement = "this spawn player_butcher;";
 		};
 	};
 };
 
-class Cow: animal_DZ
+class Cow: CAAnimalBase
 {
-	scope = 0;
+	scope = private;
 	model = "\ca\animals2\cow\cow";
 	displayName = "$STR_DN_COW";
 	moves = "CfgMovesCow";
@@ -58,7 +58,7 @@ class Cow: animal_DZ
 };
 class Cow01: Cow
 {
-	scope = 2;
+	scope = public;
 	accuracy = 1000;
 	model = "\ca\animals2\cow\cow";
 	displayName = "$STR_DN_COW01";
@@ -80,9 +80,9 @@ class Cow04: Cow01
 	hiddenSelectionsTextures[] = {"ca\animals2\cow\data\cow4_co.PAA"};
 };
 
-class Goat: animal_DZ
+class Goat: CAAnimalBase
 {
-	scope = 2;
+	scope = public;
 	model = "\ca\animals2\Goat\Goat";
 	displayName = "$STR_DN_GOAT";
 	moves = "CfgMovesGoat";
@@ -105,9 +105,9 @@ class Goat: animal_DZ
 	};
 };
 
-class Rabbit: animal_DZ
+class Rabbit: CAAnimalBase
 {
-	scope = 2;
+	scope = public;
 	side = 3;
 	model = "\ca\animals2\rabbit\rabbit";
 	displayName = "$STR_DN_RABBIT";
@@ -139,9 +139,9 @@ class Rabbit: animal_DZ
 	};
 };
 
-class Sheep: animal_DZ
+class Sheep: CAAnimalBase
 {
-	scope = 2;
+	scope = public;
 	model = "\ca\animals2\Sheep\Sheep";
 	displayName = "$STR_DN_SHEEP";
 	moves = "CfgMovesSheep";
@@ -166,9 +166,9 @@ class Sheep: animal_DZ
 };
 
 
-class WildBoar: animal_DZ
+class WildBoar: CAAnimalBase
 {
-	scope = 2;
+	scope = public;
 	model = "\ca\animals2\WildBoar\WildBoar";
 	displayName = "$STR_DN_WILDBOAR";
 	moves = "CfgMovesWildBoar";
@@ -186,3 +186,4 @@ class WildBoar: animal_DZ
 	};
 };
 
+class Hen : CAAnimalBase {};

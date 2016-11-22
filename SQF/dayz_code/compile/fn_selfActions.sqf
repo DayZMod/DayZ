@@ -6,12 +6,12 @@ scriptName "Functions\misc\fn_selfActions.sqf";
 ************************************************************/
 private ["_allowedDistance","_vehicle","_inVehicle","_cursorTarget","_primaryWeapon","_currentWeapon","_magazinesPlayer",
 "_onLadder","_canDo","_canDrink","_nearLight","_canPickLight","_text","_canDoThis","_waterHoles","_w2m","_bb","_dir",
-"_typeOfCursorTarget","_isVehicle","_isBicycle","_isMan","_isAnimal","_isZombie","_isDestructable","_isHarvested",
+"_typeOfCursorTarget","_isVehicle","_isBicycle","_isMan","_isAnimal","_isZombie","_isDestructable",
 "_isGenerator","_ownerID","_isVehicletype","_isFuel","_hasFuel20","_hasFuel5","_hasEmptyFuelCan","_itemsPlayer",
 "_hasToolbox","_hasbottleitem","_isAlive","_isPlant","_istypeTent","_upgradeItems","_isCampSite","_hasknife",
 "_hasRawMeat","_hastinitem","_displayName","_hasIgnators","_hasCarBomb","_menu","_menu1","_isHouse","_isGate",
 "_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock","_ownerPID",
-"_isPlane","_uid"];
+"_uid"];
 
 _vehicle = vehicle player;
 _inVehicle = (_vehicle != player);
@@ -123,12 +123,10 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	_typeOfCursorTarget = typeOf _cursorTarget;
 	_isVehicle = _cursorTarget isKindOf "AllVehicles";
 	_isBicycle = _cursorTarget isKindOf "Bicycle";
-	_isPlane = _cursorTarget isKindOf "Plane";
 	_isMan = _cursorTarget isKindOf "Man";
 	_isAnimal = _cursorTarget isKindOf "Animal";
 	_isZombie = _cursorTarget isKindOf "zZombie_base";
 	_isDestructable = _cursorTarget isKindOf "BuiltItems";
-	_isHarvested = _cursorTarget getVariable["meatHarvested",false];
 	_isGenerator = _cursorTarget isKindOf "Generator_DZ";
 	_ownerID = _cursorTarget getVariable ["characterID","0"];
 	_isVehicletype = _typeOfCursorTarget in ["ATV_US_EP1","ATV_CZ_EP1"];
@@ -165,15 +163,6 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	} else {
 		player removeAction s_player_flipveh;
 		s_player_flipveh = -1;
-	};
-	
-	if (_isPlane && {_isAlive} && {count (crew _cursorTarget) == 0}) then {
-		if (s_player_pushPlane < 0) then {
-			s_player_pushPlane = player addAction [format[localize "str_actions_push",_text], "\z\addons\dayz_code\actions\player_pushPlane.sqf",_cursorTarget,1,true,true];
-		};
-	} else {
-		player removeAction s_player_pushPlane;
-		s_player_pushPlane = -1;
 	};
 	
 	//Allow player to fill Fuel can
@@ -230,25 +219,6 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		player removeAction s_player_siphonfuel;
 		s_player_siphonfuel = -1;
 	};
-	
-	/*
-	//Harvested
-	if (!_isAlive && _isAnimal && !_isHarvested) then {
-		//_hasknife = {_x in ["ItemKnife","ItemKnife5","ItemKnife4","ItemKnife3","ItemKnife2","ItemKnifeBlunt"]} count _itemsPlayer > 0;
-		//make sure the player has a knife
-		//if (_hasknife) then {
-		if (s_player_butcher < 0) then {
-			s_player_butcher = player addAction [localize "str_actions_self_04", "\z\addons\dayz_code\actions\gather_meat.sqf",_cursorTarget, 3, true, true];
-		};
-		//} else {
-		//	player removeAction s_player_butcher;
-		//	s_player_butcher = -1;
-		//};
-	} else {
-		player removeAction s_player_butcher;
-		s_player_butcher = -1;
-	};
-	*/
 	
 	//Fireplace Actions check
 	if ((_cursorTarget call isInflamed) or (inflamed _cursorTarget)) then {
@@ -358,17 +328,6 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		player removeAction s_player_sleep;
 		s_player_sleep = -1;
 	};
-	/*			
-	//Study Body
-	if (_isMan && {!_isAlive} && {!_isZombie} && {!_isAnimal}) then {
-		if (s_player_studybody < 0) then {
-			s_player_studybody = player addAction [localize "str_action_studybody", "\z\addons\dayz_code\actions\study_body.sqf",_cursorTarget, 0, false, true];
-		};
-	} else {
-		player removeAction s_player_studybody;
-		s_player_studybody = -1;
-	};
-	*/
 /*	
 	//Carbomb
 	_hasCarBomb = "ItemCarBomb" in _magazinesPlayer;
@@ -380,27 +339,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 			player removeAction s_player_attach_bomb;
 			s_player_attach_bomb = -1;
 	};
-*/
-/*
-	//Repairing Vehicles
-	if (_isVehicle && {!_isMan} && {dayz_myCursorTarget != _cursorTarget} && {_hasToolbox} && {damage _cursorTarget < 1}) then {
-		if (s_player_repair_crtl < 0) then {
-			dayz_myCursorTarget = _cursorTarget;
-			_menu = dayz_myCursorTarget addAction [localize "str_actions_repairveh", "\z\addons\dayz_code\actions\repair_vehicle.sqf",_cursorTarget, 0, true, false];
-			if (!_isBicycle) then { //Bike wheels should not give full size tires. Also model does not update to show removed wheels.
-				_menu1 = dayz_myCursorTarget addAction [localize "str_actions_salvageveh", "\z\addons\dayz_code\actions\salvage_vehicle.sqf",_cursorTarget, 0, true, false];
-				s_player_repairActions set [count s_player_repairActions,_menu1];
-			};
-			s_player_repairActions set [count s_player_repairActions,_menu];
-			s_player_repair_crtl = 1;
-		} else {
-			{dayz_myCursorTarget removeAction _x} forEach s_player_repairActions;
-			s_player_repairActions = [];
-			s_player_repair_crtl = -1;
-		};
-	};
-*/
-	
+*/	
 	// House locking and unlocking
 	_isHouse = _typeOfCursorTarget in ["SurvivorWorkshopAStage5", "SurvivorWorkshopBStage5", "SurvivorWorkshopCStage5"];
 	_isGate = _typeOfCursorTarget in ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4","MetalGate_1","MetalGate_2","MetalGate_3","MetalGate_4"];
@@ -493,20 +432,12 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	};
 } else {
 	//Engineering
-	{dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
-	player removeAction s_player_repair_crtl;
-	s_player_repair_crtl = -1;
-	dayz_myCursorTarget = objNull;
 	player removeAction s_player_flipveh;
 	s_player_flipveh = -1;
-	player removeAction s_player_pushPlane;
-	s_player_pushPlane = -1;
 	player removeAction s_player_sleep;
 	s_player_sleep = -1;
 	player removeAction s_player_deleteBuild;
 	s_player_deleteBuild = -1;
-	player removeAction s_player_butcher;
-	s_player_butcher = -1;
 	player removeAction s_player_cook;
 	s_player_cook = -1;
 	player removeAction s_player_boil;
@@ -519,8 +450,6 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	s_player_packtentinfected = -1;
 	player removeAction s_player_fillfuel;
 	s_player_fillfuel = -1;
-	player removeAction s_player_studybody;
-	s_player_studybody = -1;
 	//fuel
 	player removeAction s_player_fillfuel20;
 	s_player_fillfuel20 = -1;

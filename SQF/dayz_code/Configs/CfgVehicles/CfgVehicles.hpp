@@ -1,35 +1,10 @@
+#include "CommonActions.hpp"
+
 class CfgVehicles {
 	class ALL;
 	class AllVehicles : ALL
 	{
 		class NewTurret;
-		class UserActions
-		{
-			class Repair
-			{
-				displayNameDefault = $STR_ACTIONS_REPAIRVEH;
-				displayName = $STR_ACTIONS_REPAIRVEH;
-				position = "";
-				showWindow = 0; //players see the 'displayNameDefault' name appear near mid screen as they approach the object
-				shortcut = "";
-				radius = 3;
-				onlyForPlayer = 1;
-				condition = "(damage this < 1) && (""ItemToolbox"" in items player)";
-				statement = "this execVM ""\z\addons\dayz_code\actions\repair_vehicle.sqf"";";
-			};
-			class Salvage
-			{
-				displayNameDefault = $STR_ACTIONS_SALVAGEVEH;
-				displayName = $STR_ACTIONS_SALVAGEVEH;
-				position = "";
-				showWindow = 0; //players see the 'displayNameDefault' name appear near mid screen as they approach the object
-				shortcut = "";
-				radius = 3;
-				onlyForPlayer = 1;
-				condition = "(damage this < 1) && (""ItemToolbox"" in items player) && (!(this isKindOf ""Bicycle""))";
-				statement = "this execVM ""\z\addons\dayz_code\actions\salvage_vehicle.sqf"";";
-			};
-		};
 	};
 	class Air : AllVehicles
 	{
@@ -48,6 +23,28 @@ class CfgVehicles {
 				class ViewOptics;
             };
         };
+		class UserActions
+		{
+			class Repair {ACTION_REPAIR; radius = 8;};
+			class Salvage {ACTION_SALVAGE; radius = 8;};
+		};
+	};
+	class Plane: Air
+	{
+		class ViewPilot;
+		class ViewOptics;
+		class AirplaneHUD;
+		class HitPoints
+		{
+			class HitHull;
+		};
+		class AnimationSources;
+		class UserActions
+		{
+			class Repair {ACTION_REPAIR; radius = 8;};
+			class Salvage {ACTION_SALVAGE; radius = 8;};
+			class PushPlane {ACTION_PUSH;};
+		};
 	};
 	class Land: AllVehicles
 	{
@@ -57,6 +54,11 @@ class CfgVehicles {
 	{
 		class HitPoints;
 		class NewTurret;
+		class UserActions
+		{
+			class Repair {ACTION_REPAIR; radius = 4;};
+			class Salvage {ACTION_SALVAGE; radius = 4;};
+		};
 	};
 	class Car : LandVehicle {
 		class HitPoints
@@ -130,7 +132,14 @@ class CfgVehicles {
 
 		};
 	};
-	class Ship;
+	class Ship: AllVehicles
+	{
+		class UserActions
+		{
+			class Repair {ACTION_REPAIR; radius = 8;};
+			class Salvage {ACTION_SALVAGE; radius = 8;};
+		};
+	};
 	//class Bag_Base_EP1;
 	//class Bag_Base_BAF;
 	class HouseBase;
@@ -142,8 +151,6 @@ class CfgVehicles {
 	class Strategic;
 	class NonStrategic;
 //	class Land_Fire;
-	class Animal;
-	class Pastor;
 	class BuiltItems;
 	class Building;
 	class ReammoBox;
@@ -276,7 +283,7 @@ class CfgVehicles {
 
 	class WeaponHolder;
 	class Plant_Base: WeaponHolder {
-		scope = 2;
+		scope = public;
 		icon = "";
 		mapSize = 0;
 		transportMaxWeapons = 0;
