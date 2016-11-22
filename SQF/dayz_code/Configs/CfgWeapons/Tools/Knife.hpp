@@ -53,4 +53,12 @@ class ItemKnifeBlunt : ItemKnife_Base
 {
 	scope = public;
 	descriptionShort = $STR_EQUIP_CODE_DESC_4;
+	class ItemActions
+	{
+		class FixKnife
+		{
+			text = $STR_ACTIONS_FIX_KNIFE;
+			script = "; ['ItemKnifeBlunt','ItemKnife'] spawn player_sharpen;";
+		};
+	};
 };

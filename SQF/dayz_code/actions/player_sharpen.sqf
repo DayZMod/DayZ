@@ -1,4 +1,4 @@
-private ["_item","_use","_repair","_waterUsed","_displayName","_msg"];
+private ["_item","_use","_repair","_waterUsed","_displayName"];
 
 //['ItemKnifeBlunt','ItemKnife']
 _item = _this select 0; //Item to be sharpened
@@ -17,16 +17,13 @@ closeDialog 1;
 // item is missing or tools are missing
 if (isNil "_waterUsed") exitWith {
 	//_displayName = getText (configFile >> "CfgMagazines" >> _use >> "displayName");
-	_msg = localize "str_sharpen_missing_water";
-	_msg call dayz_rollingMessages;
+	localize "str_sharpen_missing_water" call dayz_rollingMessages;
 };
 
 // item is missing or tools are missing
-if (!(_item IN items player)) exitWith {
-	_displayName = getText (configFile >> "CfgWeapons" >> _item >> "displayName");
-	//cutText [format["Missing Item",_displayName], "PLAIN DOWN"];
-	_msg = format[localize "str_missing_to_do_this",_displayName];
-	_msg call dayz_rollingMessages;
+if !("equip_brick" IN magazines player) exitWith {
+	_displayName = getText (configFile >> "CfgMagazines" >> "equip_brick" >> "displayName");
+	format [localize "str_missing_to_do_this",_displayName] call dayz_rollingMessages;
 };
 
 if (player hasWeapon _item) then {
@@ -47,8 +44,5 @@ if (player hasWeapon _item) then {
 	//Remove Later
 	player removeMagazine "equip_brick";
 
-	
-	//cutText [format ["%1 has been Sharpened",_displayName], "PLAIN DOWN"];
-	_msg = format [localize "str_sharpen_success",_displayName];
-	_msg call dayz_rollingMessages;
+	format [localize "str_sharpen_success",_displayName] call dayz_rollingMessages;
 };
