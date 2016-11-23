@@ -108,7 +108,7 @@ if (_startMaintenance) then {
 		//publicVariableServer "PVDZ_object_replace";
 	};
 	
-	_cursorTarget setVariable["Maintenance",true,true];
+	_cursorTarget setVariable["Maintenance",false,true];
 	
 	cutText [localize "str_maintenanceDone", "PLAIN DOWN"];
 };

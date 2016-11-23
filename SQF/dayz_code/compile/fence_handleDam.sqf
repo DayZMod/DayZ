@@ -13,9 +13,11 @@ _obj = _this select 0;
 //Total damage of the object
 _total = (damage _obj);
 
+if (!(_this select 4) in ["PipeBomb","1Rnd_Bolt_Explosive"]) exitwith { false };
+
 //Modify damage done based on level of fence
 _damage = switch (1==1) do {
-    case ((typeof _obj) in ["WoodenFence_3","WoodenFence_4","WoodenFence_5","WoodenFence_6","WoodenFence_7","WoodenGate_2","WoodenGate_3","WoodenGate_4"]): { 0.5 };
+    //case ((typeof _obj) in ["WoodenFence_3","WoodenFence_4","WoodenFence_5","WoodenFence_6","WoodenFence_7","WoodenGate_2","WoodenGate_3","WoodenGate_4"]): { 0.5 };
     //case ((typeof _obj) in ["WoodenFence_6","WoodenFence_7","WoodenGate_4"]): { 0.35 };
     default { 1 };
 };

@@ -1,5 +1,5 @@
 private ["_brokein","_isOk","_hasSledgeHammer","_gps","_vars","_hasToolbox","_hasCrowbar","_limit","_proceed","_counter",
-"_dis","_sfx","_roll","_animState","_started","_finished","_isMedic","_isGate"];
+"_dis","_sfx","_roll","_animState","_started","_finished","_isMedic","_isGate","_values"];
 
 _target = _this select 3;
 _pos = getPos _target;
@@ -26,6 +26,15 @@ _isOk = true;
 _proceed = false;
 _counter = 0;
 _brokein = false;
+
+//[ChanceToBreakin,SledgeChance,CowbarChance]
+_values = switch (1==1) do {
+    case (_isWoodenGate): { [0.04,0.30,0.20] };
+    case (_isMetalGate): { [0.02,0.60,0.40] };
+    default { [] };
+};
+
+if ( (count _values) == 0 ) exitwith {};
 
 while {_isOk} do {
 //Check if we have the tools to start
@@ -89,31 +98,20 @@ while {_isOk} do {
 	
 //Everything happened as it should
 	if(_finished) then {
-	//Add to Counter
+		//Add to Counter
 		_counter = _counter + 1;
 		
-		if (_isMetalGate) then {
-			//start chance to gain access.
-			if ([0.02] call fn_chance) then {
-				_isOk = false;
-				_proceed = true;
-				_brokein = true;
-				_target setVariable ["isOpen", "1", true];
-			};
-		};
-		
-		if (_isWoodenGate) then {
-			if ([0.04] call fn_chance) then {
-				_isOk = false;
-				_proceed = true;
-				_brokein = true;
-				_target setVariable ["isOpen", "1", true];
-			};
+		//start chance to gain access.
+		if ([(_values select 0)] call fn_chance) then {
+			_isOk = false;
+			_proceed = true;
+			_brokein = true;
+			_target setVariable ["isOpen", "1", true];
 		};
 	};
 	
 	//Chances to damage tools
-	if ([0.30] call fn_chance) then {
+	if ([(_values select 1)] call fn_chance) then {
 		player removeWeapon "ItemSledgeHammer";
 		player addWeapon "ItemSledgeHammerBroken";
 		//titleText [localize "STR_BLD_BREAKIN_BROKEN_SLEDGE", "PLAIN DOWN"];
@@ -121,7 +119,7 @@ while {_isOk} do {
 		localize "STR_BLD_BREAKIN_BROKEN_SLEDGE" call dayz_rollingMessages;
 	};
 
-	if ([0.20] call fn_chance) then {
+	if ([(_values select 2)] call fn_chance) then {
 		player removeWeapon "ItemCrowbar";
 		player addWeapon "ItemCrowbarBent";
 		//titleText [localize "STR_BLD_BREAKIN_BENT_CROWBAR", "PLAIN DOWN"];
