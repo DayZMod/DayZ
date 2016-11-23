@@ -1,6 +1,6 @@
 
-class Man;
-class CAManBase: Man
+class Man; //includes animals and zombies
+class CAManBase: Man //includes all skins except animals
 {
 	class TalkTopics;
 	class HitPoints
