@@ -1716,11 +1716,11 @@
 			<German>Bauansicht deaktiviert.</German>
 		</Key>
 		<Key ID="str_maintenance">
-			<English>%1 Maintenance</English>
-			<Russian>%1 Обслуживание</Russian>
-			<French>Entretien de la %1</French>
-			<Czech>Údržba %1</Czech>
-			<German>%1 - Wartung</German>
+			<English>Maintenance</English>
+			<Russian>Обслуживание</Russian>
+			<French>Entretien de la</French>
+			<Czech>Údržba</Czech>
+			<German>Wartung</German>
 		</Key>
 		<Key ID="str_disassembly">
 			<English>%1 Disassembly</English>
@@ -1737,11 +1737,11 @@
 			<German>%1 bauen</German>
 		</Key>
 		<Key ID="str_upgrade">
-			<English>Upgrade %1</English>
-			<Russian>Улучшить %1</Russian>
-			<French>Améliorer la %1</French>
-			<Czech>Vylepšit %1</Czech>
-			<German>%1 erweitern</German>
+			<English>Upgrade</English>
+			<Russian>Улучшить</Russian>
+			<French>Améliorer la</French>
+			<Czech>Vylepšit</Czech>
+			<German>erweitern</German>
 		</Key>
 		<Key ID="str_bombAttach">
 			<English>Attach Carbomb</English>

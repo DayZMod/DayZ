@@ -4,7 +4,7 @@ class MetalFence_base: DZ_buildables
 	canbevertical = 1;
 	armor = 1000;
 	class Upgrade {
-		requiredParts[] = {"ItemRSJ", "ItemStone", "ItemStone"}; // copy of DIY_metal upgrade section
+		requiredParts[] = {"ItemRSJ", "ItemConcreteBlock", "ItemConcreteBlock"}; // copy of DIY_metal upgrade section
 		require[] = {"ItemEtool"};
 	};
 	class Maintenance {
@@ -13,7 +13,27 @@ class MetalFence_base: DZ_buildables
 	};
 	
 	class eventHandlers {
-		HandleDamage = "if ((_this select 4) == 'PipeBomb') then {_this call fnc_Obj_handleDam;} else { false };";
+		HandleDamage = "_this call fnc_Obj_FenceHandleDam;";
+	};
+	class UserActions {
+		class Upgrade {
+			displayNameDefault = $STR_UPGRADE;
+			displayName = $STR_UPGRADE;
+			position = ""; //Needs memory point adding
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "isText(configFile >> 'CfgVehicles' >> this >> 'Upgrade' >> 'create') and _this getVariable ['BuildLock',false]";
+			statement = "this execVM '\z\addons\dayz_code\actions\object_maintenance.sqf';";
+		};
+		class Maintenance {
+			displayNameDefault = $STR_MAINTENANCE;
+			displayName = $STR_MAINTENANCE;
+			position = ""; //Needs memory point adding
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(this getVariable['Maintenance',false] OR (damage _this > 0)) and isClass(configFile >> 'CfgVehicles' >> (typeof this) >> 'Maintenance')";
+			statement = "this execVM '\z\addons\dayz_code\actions\object_maintenance.sqf';";
+		};
 	};
 }; 	
 class MetalFence_ghost: MetalFence_base
@@ -21,6 +41,11 @@ class MetalFence_ghost: MetalFence_base
 	scope = 2;
 	model = "z\addons\dayz_buildings\models\metal_fence_ghost.p3d";
 	displayName = $STR_BLD_name_MetalFence_ghost;//"Metal Fence (Ghost)"
+	
+	class UserActions {
+		delete Upgrade;
+		delete Maintenance;
+	};
 }; 
 
 class MetalFence_1_foundation: MetalFence_base
@@ -30,11 +55,14 @@ class MetalFence_1_foundation: MetalFence_base
 	displayName = $STR_BLD_name_MetalFence_1_foundation;//"Metal Fence Foundation"
 	class Upgrade { //to next stage
 		requiredTools[] = {"ItemEtool"}; 
-		requiredParts[] = {"ItemRSJ","ItemLog","ItemStone"};
+		requiredParts[] = {"ItemRSJ","ItemMetalSheet","ItemConcreteBlock"};
 		create = "MetalFence_1_frame";
 	};
 	class Disassembly {
 		requiredTools[] = {"ItemEtool"};
+	};
+	class UserActions {
+		delete Maintenance;
 	};
 }; 
 
@@ -60,7 +88,7 @@ class MetalFence_halfpanel: MetalFence_1_frame
 		displayName = $STR_BLD_name_MetalFence_halfpanel;//"Metal Fence one third"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"}; 
-		requiredParts[] = {"equip_metal_sheet_rusted","ItemMetalSheet","ItemScrews"}; 
+		requiredParts[] = {"equip_metal_sheet_rusted","ItemScrews"}; 
 		create = "MetalFence_thirdpanel";
 	};
 	class Disassembly {
@@ -75,7 +103,7 @@ class MetalFence_thirdpanel: MetalFence_halfpanel
 		displayName = $STR_BLD_name_MetalFence_thirdpanel;//"Metal Fence two third"
 	class Upgrade { 
 		requiredTools[] = {"ItemToolbox"}; 
-		requiredParts[] = {"equip_metal_sheet_rusted","ItemMetalSheet","ItemScrews"};
+		requiredParts[] = {"ItemMetalSheet","ItemScrews"};
 		create = "MetalFence_1";
 	};
 	class Disassembly {
@@ -108,7 +136,6 @@ class MetalFence_2: MetalFence_1
 		requiredTools[] = {"ItemToolbox"};
 		requiredParts[] = {"ItemRSJ","ItemRSJ"};
 		create = "MetalFence_3";
-		produce[] = {"ItemLog", "ItemLog"}; // will be put in a weaponholder
 	};
 	class Disassembly {
 		requiredTools[] = {"ItemToolbox"};
@@ -122,7 +149,7 @@ class MetalFence_3: MetalFence_2
 		displayName = $STR_BLD_name_MetalFence_3;//"Metal Fence Level 3"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"ItemScrews","equip_metal_sheet_rusted","equip_metal_sheet_rusted","equip_metal_sheet_rusted","equip_metal_sheet_rusted"};
+		requiredParts[] = {"ItemScrews","equip_metal_sheet_rusted","equip_metal_sheet_rusted"};
 		create = "MetalFence_4";
 	};
 	class Disassembly {
@@ -152,7 +179,7 @@ class MetalFence_5: MetalFence_4
 		displayName = $STR_BLD_name_MetalFence_5;//"Metal Fence Level 5"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"ItemScrews","equip_metal_sheet","equip_metal_sheet","equip_2inch_metal_pipe","equip_2inch_metal_pipe","equip_2inch_metal_pipe"};
+		requiredParts[] = {"ItemScrews","ItemMetalSheet"};
 		create = "MetalFence_6";
 	};
 	class Disassembly {

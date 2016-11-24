@@ -39,7 +39,7 @@ class WoodenGate_Base: DZ_buildables
 		requiredParts[] = {"ItemPlank","equip_nails"};
 	};
 	class eventHandlers {
-		HandleDamage = "if (((_this select 4) == 'PipeBomb') or ((_this select 4) == '1Rnd_Bolt_Explosive')) then { _this call fnc_Obj_FenceHandleDam; } else { false };";
+		HandleDamage = "_this call fnc_Obj_FenceHandleDam;";
 	};
 };
 
@@ -93,7 +93,7 @@ class WoodenGate_1: WoodenGate_Base
 			displayName = $STR_DN_OUT_O_DOOR;
 			position = "DoorL";
 			radius = 3;
-			onlyForPlayer = 0;
+			onlyForPlayer = 1;
 			condition = "this animationPhase ""DoorR"" < 0.5";
 			statement = "this animate [""DoorR"", 1];this animate [""DoorL"", 1]";
 		};
@@ -103,6 +103,24 @@ class WoodenGate_1: WoodenGate_Base
 			displayName = $STR_DN_OUT_C_DOOR;
 			condition = "this animationPhase ""DoorR"" >= 0.5";
 			statement = "this animate [""DoorR"", 0];this animate [""DoorL"", 0]";
+		};
+		class Upgrade {
+			displayNameDefault = $STR_UPGRADE;
+			displayName = $STR_UPGRADE;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "isText(configFile >> 'CfgVehicles' >> _this >> 'Upgrade' >> 'create') and _this getVariable ['BuildLock',false]";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+		};
+		class Maintenance {
+			displayNameDefault = $STR_MAINTENANCE;
+			displayName = $STR_MAINTENANCE;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(_this getVariable['Maintenance',false] OR (damage _this > 0)) and isClass(configFile >> 'CfgVehicles' >> (typeof _cursorTarget) >> 'Maintenance')";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
 		};
 	};
 	actionBegin1 = "OpenDoors";
@@ -118,7 +136,7 @@ class WoodenGate_1: WoodenGate_Base
 	};
 };
 //stage 2, Locked, Only accessed by the owner (still need to add others?)
-class WoodenGate_2: WoodenGate_Base
+class WoodenGate_2: WoodenGate_1
 {
 	scope = 2;
 	displayName = $STR_BLD_name_WoodenGate_2;//"Wooden Gate Level 2"
@@ -133,7 +151,7 @@ class WoodenGate_2: WoodenGate_Base
 	};
 };
 
-class WoodenGate_3: WoodenGate_Base
+class WoodenGate_3: WoodenGate_2
 {	
 	scope = 2;
 	displayName = $STR_BLD_name_WoodenGate_3;//"Wooden Gate Level 3"
@@ -148,7 +166,7 @@ class WoodenGate_3: WoodenGate_Base
 	};
 };
 
-class WoodenGate_4: WoodenGate_Base
+class WoodenGate_4: WoodenGate_3
 {	
 	armor =1000;
 	scope = 2;

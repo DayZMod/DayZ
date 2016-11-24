@@ -57,7 +57,7 @@ class MetalGate_Base: Land_Gate_IndVar2_5
 		requiredParts[] = {"ItemMetalSheet","ItemScrews"};
 	};
 	class eventHandlers {
-		HandleDamage = "if ((_this select 4) == 'PipeBomb') then {_this call fnc_Obj_handleDam;} else { false };";
+		HandleDamage = "this call fnc_Obj_handleDam;";
 	};
 };
 class MetalGate_ghost: MetalGate_Base
