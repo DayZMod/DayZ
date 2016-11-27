@@ -9618,16 +9618,6 @@
 			<Russian>Ворота закрыты.</Russian>
 			<German>Tore geschlossen.</German>
 		</Key>
-		<Key ID="STR_BLD_ACTIONS_OPENGATE">
-			<English>Open Gate</English>
-			<German>Tor öffnen</German>
-			<Russian>Открыть ворота</Russian>
-		</Key>
-		<Key ID="STR_BLD_ACTIONS_CLOSEGATE">
-			<English>Close Gate</English>
-			<German>Tor schließen</German>
-			<Russian>Закрыть ворота</Russian>
-		</Key>
 		<Key ID="STR_BLD_ACTIONS_SETLOCKCODE">
 			<English>Set Lock Code</English>
 			<German>Zugangscode setzen</German>
