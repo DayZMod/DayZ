@@ -872,6 +872,7 @@
 		</Key>
 		<Key ID="str_actions_push">
 			<English>Push Plane</English>
+			<German>Flugzeug schieben</German>
 		</Key>
 		<Key ID="str_actions_stats">
 			<English>Enable Stats</English>
