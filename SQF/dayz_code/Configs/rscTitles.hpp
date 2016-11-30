@@ -36,17 +36,17 @@ class RscDisplayMission: RscDisplayEmpty
 {
 	access = 0;
 	idd = 46;
-	onKeyDown = "if (!isNil 'DZ_KeyDown_EH') then {_this call DZ_KeyDown_EH;};"; //assigned much quicker than spawning init_keyboard
+	onKeyDown = "_handled = if (isNil 'DZ_KeyDown_EH') then {false} else {_this call DZ_KeyDown_EH}; _handled"; //assigned much quicker than spawning init_keyboard
 };
 class RscDisplayConfigure {
+	idd = 4;
 	onUnload = "if (!isNil 'updateControlsHandle') then {terminate updateControlsHandle;}; if (!isNil 'ui_updateControls') then {updateControlsHandle = true spawn ui_updateControls;};";
-	class controlsBackground;
-	class controls;
 };
 class RscDisplayGameOptions {
 	onLoad = "{(_this select 0) displayCtrl 140 lbAdd _x;} forEach [localize 'STR_DISABLED',localize 'STR_ENABLED']; (_this select 0) displayCtrl 140 lbSetCurSel (profileNamespace getVariable ['streamerMode',0]); uiNamespace setVariable ['streamerMode',(profileNamespace getVariable ['streamerMode',0])];";
 	onUnload = "call ui_changeDisplay;";
 	class controls {
+		delete CA_ButtonDefault; //Opens non-functional difficulty selection dialog, player can not select difficulty in MP
 		class CA_TextLanguage : RscText {
 			x = 0.159803;
 			y = (0.420549 + -2*0.069854);
