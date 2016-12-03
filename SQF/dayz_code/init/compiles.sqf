@@ -3,6 +3,7 @@ if (isServer) then {
 	fnc_veh_setFixServer = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\veh_setFixServer.sqf";	//process the hit as a NORMAL damage (useful for persistent vehicles)
 	pvs_processSetAccessCode = compile preprocessFile "\z\addons\dayz_code\eventHandlers\processSetAccessCode.sqf";
 	pvs_processAccessCode = compile preprocessFile "\z\addons\dayz_code\eventHandlers\processAccessCode.sqf";
+	global_spawnObjects = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\global_spawnObjects.sqf";
 };
 
 if (!isDedicated) then {
