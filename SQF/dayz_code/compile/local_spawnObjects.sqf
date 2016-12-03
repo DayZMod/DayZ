@@ -10,13 +10,22 @@
 		["ObjectType1", [position], dir],
 		["ObjectType2", [position], dir],
 		["ObjectType3", [position], dir]
-	],true] call local_spawnObjects;
+	],
+	true, // Block damage
+	true //Use setPosATL over setPos
+	] call local_spawnObjects;
 */
 
-private ["_blockDamage","_fires","_object","_objects","_type"];
+private ["_blockDamage","_fires","_object","_objects","_type","_ATL"];
 
 _objects = _this select 0;
 _blockDamage = _this select 1;
+
+_ATL = false;
+
+if (count _this > 2) then {
+	_ATL = true;
+};
 
 _fires = [
 	"Base_Fire_DZ",
@@ -36,7 +45,13 @@ _fires = [
 	_type = _x select 0;
 	_object = _type createVehicleLocal [0,0,0];
 	_object setDir (_x select 2);
-	_object setPos (_x select 1);
+	
+	if (_ATL) then { 
+		_object setPosATL (_x select 1);
+	} else {
+		_object setPos (_x select 1);
+	};
+	
 	_object setVariable ["",true,false]; // stops global setVariable by sched_townGenerator, checked in player_spawnCheck for loot spawn
 	if (_blockDamage) then {
 		_object addEventHandler ["HandleDamage",{0}];
