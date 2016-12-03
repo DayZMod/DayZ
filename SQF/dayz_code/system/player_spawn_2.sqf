@@ -304,6 +304,11 @@ while {1 == 1} do {
 	//clearGroupIcons group player;
 
 	uiSleep 2;
+	
+	//Pain Effects
+	if (r_player_inpain and !r_player_unconscious) then {
+		playSound "breath_1";
+	};
 
 	_myPos = player getVariable["lastPos",[]];
 	if (count _myPos > 0) then {
