@@ -1,4 +1,4 @@
-private ["_item","_type","_hasHarvested","_knifeArray","_PlayerNear","_isListed","_activeKnife","_text","_dis","_sfx","_sharpnessRemaining","_qty","_chance","_msg","_string"];
+private ["_item","_type","_hasHarvested","_knifeArray","_PlayerNear","_isListed","_activeKnife","_text","_dis","_sfx","_sharpnessRemaining","_qty","_chance","_string"];
 
 _item = _this;
 _type = typeOf _item;
@@ -7,7 +7,7 @@ _hasHarvested = _item getVariable["meatHarvested",false];
 _knifeArray = [];
 
 _PlayerNear = {isPlayer _x} count ((getPosATL _item) nearEntities ["CAManBase", 10]) > 1;
-if (_PlayerNear) exitWith {cutText [localize "str_pickup_limit_5", "PLAIN DOWN"]};
+if (_PlayerNear) exitWith {localize "str_pickup_limit_5" call dayz_rollingMessages;};
 
 //Count how many active tools the player has
 {
@@ -16,7 +16,7 @@ if (_PlayerNear) exitWith {cutText [localize "str_pickup_limit_5", "PLAIN DOWN"]
 	};
 } count Dayz_Gutting;
 
-if ((count _knifeArray) < 1) exitwith { cutText [localize "str_cannotgut", "PLAIN DOWN"] };
+if ((count _knifeArray) < 1) exitwith { localize "str_cannotgut" call dayz_rollingMessages; };
 
 
 if ((count _knifeArray > 0) and !_hasHarvested) then {
@@ -62,8 +62,7 @@ if ((count _knifeArray > 0) and !_hasHarvested) then {
 				player addWeapon _sharpnessRemaining;
 				
 				//systemChat (localize "str_info_bluntknife");	
-				_msg = localize "str_info_bluntknife";
-				_msg call dayz_rollingMessages;
+				localize "str_info_bluntknife" call dayz_rollingMessages;
 			};	
 		};
 		case "ItemKnifeBlunt" : { 

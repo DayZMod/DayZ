@@ -13,22 +13,22 @@ _infoText = "";
 //Tear the clothes
 player playActionNow "Medic";
 [player,"bandage",0,false] call dayz_zombieSpeak;
-sleep 6;
+uiSleep 6;
 if !(_skin in magazines player) exitWith {localize "str_tear_clothes_0" call dayz_rollingMessages;};
 player removeMagazine _skin;
 
 switch (_rounded) do {
 	case 0: {
-		cutText [localize "str_tear_clothes_0", "PLAIN DOWN"];
+		localize "str_tear_clothes_0" call dayz_rollingMessages;
 	};
 	case 1: {
-		cutText [localize "str_tear_clothes_1", "PLAIN DOWN"];
+		localize "str_tear_clothes_1" call dayz_rollingMessages;
 	};
 	case 2: {
-		cutText [localize "str_tear_clothes_2", "PLAIN DOWN"];
+		localize "str_tear_clothes_2" call dayz_rollingMessages;
 	};
 	case 3: {
-		cutText [localize "str_tear_clothes_3", "PLAIN DOWN"];
+		localize "str_tear_clothes_3" call dayz_rollingMessages;
 	};
 };
 
@@ -42,7 +42,7 @@ while {_i < _rounded} do {
 	if (_rnd < 0.5) then {
 		 [player,"equip_string"] call BIS_fnc_invAdd;
 	};
-	sleep 0.03;
+	uiSleep 0.03;
 	
 	if (!_result) then {
 		systemchat (localize ("str_tear_clothes_noroom"));

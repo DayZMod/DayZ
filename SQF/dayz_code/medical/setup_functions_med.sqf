@@ -27,7 +27,7 @@ fnc_usec_pitchWhine = {
 	};
 	r_pitchWhine = true;
 	[] spawn {
-		sleep 32;
+		uiSleep 32;
 		r_pitchWhine = false;
 	};
 };
@@ -72,7 +72,7 @@ fnc_usec_damageUnconscious = {
 			if (r_player_unconscious) then {
 				_unit action ["eject", _veh];
 				waitUntil{((vehicle _this) != _this)};
-				sleep 1;
+				uiSleep 1;
 				_unit playActionNow "Die";
 			};
 		};
@@ -168,7 +168,7 @@ fnc_usec_calculateBloodPerSec = {
 			
 			if ((_time < 1) and (isNil "sepsisStarted")) then {
 			//if (isNil "sepsisStarted") then {
-				//cutText [localize "str_medical_sepsis_warning","PLAIN DOWN",5];
+				//localize "str_medical_sepsis_warning" call dayz_rollingMessages;
 				systemChat (localize "str_medical_sepsis_warning");
 				player setVariable ["sepsisStarted", _time];
 			};
@@ -261,7 +261,7 @@ fnc_usec_playerHandleBlood = {
 			};
 			
 			
-			sleep 1;
+			uiSleep 1;
 		};
 	} else { // not bleeding
 		_bloodPerSec = [] call fnc_usec_calculateBloodPerSec;
@@ -359,14 +359,14 @@ fnc_usec_damageBleed = {
 				_point attachTo [_unit,_modelPos,_wound];
 			};
 
-			sleep 5;
+			uiSleep 5;
 
 			while {((_unit getVariable["USEC_injured",true]) and (alive _unit))} do {
 				scopeName "loop";
 				if (vehicle _unit != _unit) then {
 					BreakOut "loop";
 				};
-				sleep 1;
+				uiSleep 1;
 			};
 			deleteVehicle _source;
 			deleteVehicle _point;

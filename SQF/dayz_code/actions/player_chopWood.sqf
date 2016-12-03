@@ -61,7 +61,7 @@ if (count _findNearestTree > 0) then {
                 r_doLoop = false;
             };
 
-            sleep 0.1;
+            uiSleep 0.1;
         };
 
         if(!_finished) exitWith {
@@ -97,26 +97,26 @@ if (count _findNearestTree > 0) then {
             
         if ((_counter == _countOut) || _breaking) exitWith {
             if (_breaking) then {
-                cutText [localize "str_HatchetHandleBreaks", "PLAIN DOWN"];
+                localize "str_HatchetHandleBreaks" call dayz_rollingMessages;
             } else {
-                cutText [localize "str_player_24_Stoped", "PLAIN DOWN"];
+                localize "str_player_24_Stoped" call dayz_rollingMessages;
             };
             _isOk = false;
             _proceed = true;
-            sleep 1;
+            uiSleep 1;
         };
-        cutText [format [localize "str_player_24_progress", _counter,_countOut], "PLAIN DOWN"];
+        format[localize "str_player_24_progress", _counter,_countOut] call dayz_rollingMessages;
     };
 
    if (_proceed ||(_counter > 0) ) then {            
 		//remove vehicle, Need to ask server to remove.
 		PVDZ_objgather_Knockdown = [_tree,player];
 		publicVariableServer "PVDZ_objgather_Knockdown";         
-        //cutText [format["\n\nChopping down tree.], "PLAIN DOWN"];
-        //cutText [localize "str_player_25", "PLAIN DOWN"];
-	};
+        //"Chopping down tree." call dayz_rollingMessages;
+        //localize "str_player_25" call dayz_rollingMessages;
+    };
     if !(_proceed) then {            
-        cutText [localize "str_player_24_Stoped", "PLAIN DOWN"];
+        localize "str_player_24_Stoped" call dayz_rollingMessages;
 
         r_interrupt = false;
 

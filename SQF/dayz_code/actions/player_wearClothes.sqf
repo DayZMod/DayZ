@@ -11,18 +11,18 @@ _item = _this;
 call gear_ui_init;
 r_action_count = 0; //reset for strange glitch
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-if (_onLadder) exitWith {cutText [localize "str_player_21", "PLAIN DOWN"]};
+if (_onLadder) exitWith {localize "str_player_21" call dayz_rollingMessages;};
 
 _hasclothesitem = _this in magazines player;
 _config = configFile >> "CfgMagazines";
 _text = getText (_config >> _item >> "displayName");
 
-if (!_hasclothesitem) exitWith {cutText [format [localize "str_player_31",_text,localize "str_player_31_wear"] , "PLAIN DOWN"]};
+if (!_hasclothesitem) exitWith {format[localize "str_player_31",_text,localize "str_player_31_wear"] call dayz_rollingMessages;};
 
-if (vehicle player != player) exitWith {cutText [localize "str_player_fail_wear1", "PLAIN DOWN"]};
+if (vehicle player != player) exitWith {localize "str_player_fail_wear1" call dayz_rollingMessages;};
 
 _isFemale = ((typeOf player == "SurvivorW2_DZ")||(typeOf player == "BanditW1_DZ"));
-if (_isFemale) exitWith {cutText [localize "str_player_fail_wear2", "PLAIN DOWN"]};
+if (_isFemale) exitWith {localize "str_player_fail_wear2" call dayz_rollingMessages;};
 
 _myModel = (typeOf player);
 _humanity = player getVariable ["humanity",0];

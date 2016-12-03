@@ -11,15 +11,13 @@ _hasSledgeHammer = "ItemSledgeHammer" in items player;
 _hasCrowbar = "ItemCrowbar" in items player;
 
 if (!_hasSledgeHammer) exitWith {
-	//titleText [localize "STR_BLD_BREAKIN_NEED_SLEDGE", "PLAIN DOWN"];
 	localize "STR_BLD_BREAKIN_NEED_SLEDGE" call dayz_rollingMessages;
-	sleep 1;
+	uiSleep 1;
 };
 
-if (!_hasCrowbar) exitWith {
-	//titleText [localize "STR_BLD_BREAKIN_NEED_CROWBAR", "PLAIN DOWN"];
+if (!_hasCrowbar) exitWith { 
 	localize "STR_BLD_BREAKIN_NEED_CROWBAR" call dayz_rollingMessages;
-	sleep 1;
+	uiSleep 1;
 };
 
 _isOk = true;
@@ -43,16 +41,14 @@ while {_isOk} do {
 
 	if (!_hasSledgeHammer) exitWith {
 		_proceed = nil;
-		//titleText [localize "STR_BLD_BREAKIN_NEED_SLEDGE", "PLAIN DOWN"];
 		localize "STR_BLD_BREAKIN_NEED_SLEDGE" call dayz_rollingMessages;
-		sleep 1;
+		uiSleep 1;
 	};
 
 	if (!_hasCrowbar) exitWith {
 		_proceed = nil;
-		//titleText [localize "STR_BLD_BREAKIN_NEED_CROWBAR", "PLAIN DOWN"];
 		localize "STR_BLD_BREAKIN_NEED_CROWBAR" call dayz_rollingMessages;
-		sleep 1;
+		uiSleep 1;
 	};
 	
 //Run animation
@@ -86,7 +82,7 @@ while {_isOk} do {
 			r_doLoop = false;
 			_finished = false;
 		};
-		sleep 0.1;
+		uiSleep 0.1;
 	};
 	r_doLoop = false;
 	
@@ -114,7 +110,6 @@ while {_isOk} do {
 	if ([(_values select 1)] call fn_chance) then {
 		player removeWeapon "ItemSledgeHammer";
 		player addWeapon "ItemSledgeHammerBroken";
-		//titleText [localize "STR_BLD_BREAKIN_BROKEN_SLEDGE", "PLAIN DOWN"];
 
 		localize "STR_BLD_BREAKIN_BROKEN_SLEDGE" call dayz_rollingMessages;
 	};
@@ -122,7 +117,6 @@ while {_isOk} do {
 	if ([(_values select 2)] call fn_chance) then {
 		player removeWeapon "ItemCrowbar";
 		player addWeapon "ItemCrowbarBent";
-		//titleText [localize "STR_BLD_BREAKIN_BENT_CROWBAR", "PLAIN DOWN"];
 		
 		localize "STR_BLD_BREAKIN_BENT_CROWBAR" call dayz_rollingMessages;
 	};
@@ -134,10 +128,9 @@ while {_isOk} do {
 		_proceed = true;
 	};
 	
-	//titleText [format[localize "STR_BLD_BREAKIN", _counter,_limit], "PLAIN DOWN"];
 	
 	format[localize "STR_BLD_BREAKIN", _counter,_limit] call dayz_rollingMessages;
-	sleep 0.03;
+	uiSleep 0.03;
 };
 //Tool issues
 if (isnil "_proceed") exitwith {};
@@ -149,8 +142,6 @@ if (!_proceed) then {
 		[objNull, player, rSwitchMove,""] call RE;
 		player playActionNow "stop";
 	};
-	//titleText [localize "STR_BLD_BREAKIN_CANCELLED", "PLAIN DOWN"];
-
 	localize "STR_BLD_BREAKIN_CANCELLED" call dayz_rollingMessages;
 };
 
@@ -159,15 +150,11 @@ if (!_proceed) then {
 
 //Completed but no success.
 if (_proceed and !_brokein) then {
-	//titleText [localize "STR_BLD_BREAKIN_COMPLETE_FAIL", "PLAIN DOWN"];
-
 	localize "STR_BLD_BREAKIN_COMPLETE_FAIL" call dayz_rollingMessages;
 };
 
 //Completed and successful
 if (_proceed and _brokein) then {
-	//titleText [localize "STR_BLD_BREAKIN_COMPLETE", "PLAIN DOWN", 0.3];
-
 	localize "STR_BLD_BREAKIN_COMPLETE" call dayz_rollingMessages;
 	
 	//Open Gate.

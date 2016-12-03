@@ -62,13 +62,13 @@ if (!_fueling) then {
 			publicVariableServer "PVDZ_send";
 		};
 
-		cutText [format [localize "str_player_05",_nameType,_canSize], "PLAIN DOWN"];
+		format[localize "str_player_05",_nameType,_canSize] call dayz_rollingMessages;
 		uiSleep 1;
 		call fnc_usec_medic_removeActions;
 	};
 	[player] allowGetIn true;
 } else {
-	cutText [localize "str_refuel_fail","PLAIN DOWN"];
+	localize "str_refuel_fail" call dayz_rollingMessages;
 };
 a_player_jerryfilling = false;
 r_action = false;

@@ -5,7 +5,7 @@ _item = _this;
 call gear_ui_init;
 closeDialog 1;
 
-if(dayz_workingInprogress) exitWith { cutText [localize "STR_MINING_IN_PROGRESS", "PLAIN DOWN"];};
+if(dayz_workingInprogress) exitWith { localize "STR_MINING_IN_PROGRESS" call dayz_rollingMessages; };
 dayz_workingInprogress = true;
 
 // allowed rocks list move this later
@@ -63,7 +63,7 @@ if (!isNull _findNearestRock) then {
                 r_doLoop = false;
             };
 
-            sleep 0.1;
+            uiSleep 0.1;
         };
 
         if(!_finished) exitWith {
@@ -73,7 +73,7 @@ if (!isNull _findNearestRock) then {
 
         if(_finished) then {                
             _breaking = false;
-            if ([0.09] call fn_chance) then {
+			if ([0.09] call fn_chance) then {
                 _breaking = true;
                 if ("MeleePickaxe" in weapons player) then {
                     player removeWeapon "MeleePickaxe";
@@ -100,19 +100,19 @@ if (!isNull _findNearestRock) then {
             
         if ((_counter >= _countOut) || _breaking) exitWith {
             if (_breaking) then {
-                cutText [localize "str_PickAxeHandleBreaks", "PLAIN DOWN"];
+                localize "str_PickAxeHandleBreaks" call dayz_rollingMessages;
             } else {
-				cutText [localize "str_mining_finished", "PLAIN DOWN"];
+				localize "str_mining_finished" call dayz_rollingMessages;
             };
             _isOk = false;
             _proceed = true;
-            sleep 1;
+            uiSleep 1;
         };
-		cutText [format[localize "str_mining_progress", _counter,(_countOut - _counter)], "PLAIN DOWN"];
+		format[localize "str_mining_progress", _counter,(_countOut - _counter)] call dayz_rollingMessages;
     };
 
     if (!_proceed) then {            
-        cutText [localize "str_mining_canceled", "PLAIN DOWN"];
+        localize "str_mining_canceled" call dayz_rollingMessages;
 
         r_interrupt = false;
 
@@ -130,7 +130,7 @@ if (!isNull _findNearestRock) then {
         case "MeleeFishingPole": {player addMagazine 'Fishing_Swing';};
     };
 } else {
-	cutText [localize "str_mining_no_rocks", "PLAIN DOWN"];
+	localize "str_mining_no_rocks" call dayz_rollingMessages;
 };
 
 dayz_workingInprogress = false;

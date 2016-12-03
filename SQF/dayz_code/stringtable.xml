@@ -1677,17 +1677,17 @@
 			<German>Du hast %1 teilweise gefüllte %2 zu %3 %4 kombiniert.</German>
 		</Key>
 		<Key ID="str_combineDonePartial">
-			<English>You&apos;ve combined %1 non-full %2(s) into %3 full %7.\nLast %6 still has %4 %5 inside.</English>
-			<Russian>Переснаряжено %3 полных (%7) из %1 неполных (%2).\nОставшийся (%6) содержит %4 %5.</Russian>
-			<French>Vous avez arrangé %1 %2s partiellement remplis en %3 %7 remplis.\nLe dernier %6 contient encore %4 %5.</French>
-			<Czech>Zkombinovali jste %1x neúplný %2 a nyní máte %3x plný %7.\n Zbývající %6 obsahuje %4x %5.</Czech>
+			<English>You&apos;ve combined %1 non-full %2(s) into %3 full %7.&lt;br/&gt;Last %6 still has %4 %5 inside.</English>
+			<Russian>Переснаряжено %3 полных (%7) из %1 неполных (%2).&lt;br/&gt;Оставшийся (%6) содержит %4 %5.</Russian>
+			<French>Vous avez arrangé %1 %2s partiellement remplis en %3 %7 remplis.&lt;br/&gt;Le dernier %6 contient encore %4 %5.</French>
+			<Czech>Zkombinovali jste %1x neúplný %2 a nyní máte %3x plný %7.&lt;br/&gt; Zbývající %6 obsahuje %4x %5.</Czech>
 			<German>Du hast %1 teilweise gefüllte %2 zu %3 %4 kombiniert. Das letzte %6 hat noch %4 %5.</German>
 		</Key>
 		<Key ID="str_combineDonePartialOne">
-			<English>You&apos;ve combined %1 non-full %2(s) into one.\nYou have %3 %4 left</English>
+			<English>You&apos;ve combined %1 non-full %2(s) into one.&lt;br/&gt;You have %3 %4 left</English>
 			<Russian>Переснаряжено %1 неполных (%2) в один. Осталось %3 %4</Russian>
-			<French>Vous avez arrangé 1 %2 à partir de %1 %2s partiellement remplis.\nIl vous reste %3 %4.</French>
-			<Czech>Zkombinovali jste %1x neúplný %2 dohromady.\nZbývá vám ještě %3x %4.</Czech>
+			<French>Vous avez arrangé 1 %2 à partir de %1 %2s partiellement remplis.&lt;br/&gt;Il vous reste %3 %4.</French>
+			<Czech>Zkombinovali jste %1x neúplný %2 dohromady.&lt;br/&gt;Zbývá vám ještě %3x %4.</Czech>
 			<German>Du hast %1 teilweise gefüllte %2 zu einem kombiniert und hast %3 %4 übrig.</German>
 		</Key>
 		<Key ID="str_sleepStats">

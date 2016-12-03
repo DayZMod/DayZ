@@ -4,7 +4,7 @@ private ["_playerPos","_item","_location","_config","_text","_dir","_dis","_sfx"
 call gear_ui_init;
 closeDialog 1;
 
-if (r_action_count != 1) exitWith { cutText [localize "str_player_actionslimit", "PLAIN DOWN"]; };
+if (r_action_count != 1) exitWith { localize "str_player_actionslimit" call dayz_rollingMessages; };
 
 //Player Pos
 _playerPos = getPosATL player;
@@ -27,7 +27,7 @@ _stashname = getText (configFile >> "CfgVehicles" >> _stashtype >> "displayName"
 // Items are missing
 if ((!(_consume IN magazines player))) exitWith {
 	r_action_count = 0;
-	cutText [format [localize "str_player_31_stash",_consumetext] , "PLAIN DOWN"];
+	format[localize "str_player_31_stash",_consumetext] call dayz_rollingMessages;
 };
 
 _location = player modeltoworld [0,2.5,0];
@@ -46,14 +46,14 @@ if ((count _worldspace) == 2) then {
 
 	//wait a bit
 	player playActionNow "Medic";
-	sleep 1;
+	uiSleep 1;
 
 	_dis=20;
 	_sfx = "tentunpack";
 	[player,_sfx,0,false,_dis] call dayz_zombieSpeak;
 	[player,_dis,true,(getPosATL player)] call player_alertZombies;
 
-	sleep 5;
+	uiSleep 5;
 	//place tent (local)
 	_stash = createVehicle [_stashtype, _location, [], 0, "CAN_COLLIDE"];
 	_stash setdir _dir;
@@ -67,8 +67,8 @@ if ((count _worldspace) == 2) then {
     diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
 
 	r_action_count = 0;
-	cutText [format [localize "str_success_stash_pitch",_stashname], "PLAIN DOWN"];
+	format[localize "str_success_stash_pitch",_stashname] call dayz_rollingMessages;
 } else {
 	r_action_count = 0;
-	cutText [format [localize "str_fail_stash_pitch",_stashname], "PLAIN DOWN"];
+	format[localize "str_fail_stash_pitch",_stashname] call dayz_rollingMessages;
 };

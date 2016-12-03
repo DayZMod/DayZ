@@ -6,11 +6,11 @@ _config = configFile >> "cfgWeapons" >> _item;
 _onBack = dayz_onBack in MeleeWeapons;
 
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-if (_onLadder) exitWith {cutText [localize "str_player_21", "PLAIN DOWN"]};
+if (_onLadder) exitWith {localize "str_player_21" call dayz_rollingMessages;};
 
 _hastoolweapon = _item in weapons player;
 _text = getText (_config >> "displayName");
-if (!_hastoolweapon and !_onBack) exitWith {cutText [format [localize "str_player_30",_text] , "PLAIN DOWN"]};
+if (!_hastoolweapon and !_onBack) exitWith {format[localize "str_player_30",_text] call dayz_rollingMessages;};
 
 call gear_ui_init;
 
@@ -57,5 +57,5 @@ if (_isOk) then {
 	};
 } else {
 	closeDialog 0;
-	cutText [localize "str_player_24", "PLAIN DOWN"];
+	localize "str_player_24" call dayz_rollingMessages;
 };

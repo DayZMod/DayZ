@@ -33,7 +33,7 @@ _tools = getArray (configFile >> "CfgVehicles" >> (typeOf _object) >> "dismantle
 
 {
 	private ["_end"];
-	if ((_x select 0) in items player) then {_end = false;} else { cutText [format [localize "STR_BLD_DISMANTLE_MISSING",(_x select 0)] , "PLAIN DOWN"]; _end = true; _proceed = false; };
+	if ((_x select 0) in items player) then {_end = false;} else { format [localize "STR_BLD_DISMANTLE_MISSING",(_x select 0)] call dayz_rollingMessages; _end = true; _proceed = false; };
 	
 	if (_end) exitwith { _exit = true; };
 } foreach _tools;
@@ -46,9 +46,7 @@ if (_exit) exitwith {};
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _isWater = 		(surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 
-if(_isWater or _onLadder) exitWith {
-	titleText [localize "str_water_ladder_cant_do"];
-};
+if(_isWater or _onLadder) exitWith { localize "str_water_ladder_cant_do" call dayz_rollingMessages; };
 
 //Start loop
 _isOk = true;
@@ -59,7 +57,7 @@ while {_isOk} do {
 //Check if we have the tools to start
 	{
 		private ["_end"];
-		if ((_x select 0) in items player) then {_end = false;} else { cutText [format [localize "STR_BLD_DISMANTLE_MISSING",_x] , "PLAIN DOWN"]; _end = true; _proceed = false; };
+		if ((_x select 0) in items player) then {_end = false;} else { format [localize "STR_BLD_DISMANTLE_MISSING",_x] call dayz_rollingMessages; _end = true; _proceed = false; };
 		
 		if (_end) exitwith { _exit = true; };
 	}foreach _tools;
@@ -67,7 +65,7 @@ while {_isOk} do {
 	
 	_claimedBy = _object getVariable["claimed","0"];
 
-	if (_claimedBy != _playerID) exitWith { cutText [format [localize "str_player_beinglooted",_text] , "PLAIN DOWN"]; };
+	if (_claimedBy != _playerID) exitWith { format[localize "str_player_beinglooted",_text] call dayz_rollingMessages; };
 	
 //Run animation
 	player playActionNow "Medic";
@@ -103,7 +101,7 @@ while {_isOk} do {
 			r_doLoop = false;
 			_finished = false;
 		};
-		sleep 0.1;
+		uiSleep 0.1;
 	};
 	r_doLoop = false;
 	
@@ -131,7 +129,7 @@ while {_isOk} do {
 		if ([(_x select 1)] call fn_chance) then {
 			player removeWeapon (_x select 0);
 			player addWeapon (_x select 2);
-			titleText [localize "STR_BLD_DISMANTLE_DAMAGED", "PLAIN DOWN"];
+			localize "STR_BLD_DISMANTLE_DAMAGED" call dayz_rollingMessages;
 		};
 	}foreach _tools;
 		
@@ -142,17 +140,17 @@ while {_isOk} do {
 		_proceed = true;
 	};
 	
-	titleText [format[localize "STR_BLD_DISMANTLE_ATTEMPT", _counter,_limit], "PLAIN DOWN"];
-	sleep 0.10;
+	format [localize "STR_BLD_DISMANTLE_ATTEMPT",_counter,_limit] call dayz_rollingMessages;
+	uiSleep 0.10;
 };
 
 //Completed and successful
 if (_proceed) then {
 	_claimedBy = _object getVariable["claimed","0"];
 
-	if (_claimedBy != _playerID) exitWith { cutText [format [localize "str_player_beinglooted",_text] , "PLAIN DOWN"]; };
+	if (_claimedBy != _playerID) exitWith { format[localize "str_player_beinglooted",_text] call dayz_rollingMessages; };
 
-	titleText [format[localize "STR_BLD_DISMANTLED", (typeOf _object)], "PLAIN DOWN"];
+	format [localize "STR_BLD_DISMANTLED",typeOf _object] call dayz_rollingMessages;
 	
 	PVDZ_obj_Destroy = [_objectID,_objectUID];
 	publicVariableServer "PVDZ_obj_Destroy";

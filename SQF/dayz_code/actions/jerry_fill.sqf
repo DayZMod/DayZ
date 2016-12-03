@@ -81,11 +81,9 @@ if (("ItemJerrycanEmpty" in _magazines) or ("ItemFuelcanEmpty" in _magazines)) t
 		};
 	};
 
-	//cutText [format [localize "str_player_09",_qty], "PLAIN DOWN"];
 	//format[localize "str_player_09",_qty] call dayz_rollingMessages;
 	format[localize "str_fill_success",_qty,typeOf _cursorTarget,_fuelAmount] call dayz_rollingMessages;
 	//diag_log format[localize "str_fill_success",_qty,typeOf _cursorTarget,_fuelAmount];
 } else {
-	//cutText [localize "str_player_10", "PLAIN DOWN"];
 	localize "str_player_10" call dayz_rollingMessages;
 };

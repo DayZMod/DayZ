@@ -12,7 +12,7 @@
 private ["_objclass","_cursorTarget","_item","_classname","_requiredTools","_requiredParts","_upgrade","_upgradeConfig",
 "_upgradeDisplayname","_onLadder","_isWater","_upgradeParts","_startUpgrade","_missingPartsConfig","_textMissingParts","_dis",
 "_sfx","_ownerID","_objectID","_objectUID","_alreadyupgrading","_dir","_weapons","_magazines","_backpacks",
-"_object","_objWpnTypes","_objWpnQty","_countr","_itemName","_msg","_vector"];
+"_object","_objWpnTypes","_objWpnQty","_countr","_itemName","_vector"];
 
 _cursorTarget = _this select 0;
 
@@ -59,12 +59,7 @@ _isWater = 		(surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 _upgradeParts = [];
 _startUpgrade = true;
 
-if(_isWater or _onLadder) exitWith {
-	//cutText [localize "str_CannotUpgrade", "PLAIN DOWN"];
-	_msg = localize "str_CannotUpgrade";
-	_msg call dayz_rollingMessages;
-	//systemchat[localize "str_CannotUpgrade"];
-};
+if(_isWater or _onLadder) exitWith { localize "str_CannotUpgrade" call dayz_rollingMessages; };
 
 // lets check player has requiredTools for upgrade
 {
@@ -72,8 +67,7 @@ if(_isWater or _onLadder) exitWith {
 		_missingPartsConfig = configFile >> "CfgVehicles" >> _x;
 		_textMissingParts = getText (_missingPartsConfig >> "displayName");
 		//systemChat format["Missing %1 to upgrade storage.", _textMissingParts];
-		_msg = format [localize "str_missing_to_do_this", _textMissingParts];
-		_msg call dayz_rollingMessages;
+		format [localize "str_missing_to_do_this", _textMissingParts] call dayz_rollingMessages;
 		_startUpgrade = false;
 	};
 } count _requiredTools;
@@ -84,8 +78,7 @@ if(_isWater or _onLadder) exitWith {
 		_missingPartsConfig = configFile >> "CfgMagazines" >> _x;
 		_textMissingParts = getText (_missingPartsConfig >> "displayName");
 		//systemChat format["Missing %1 to upgrade storage.", _textMissingParts];
-		_msg = format [localize "str_missing_to_do_this", _textMissingParts];
-		_msg call dayz_rollingMessages;
+		format [localize "str_missing_to_do_this", _textMissingParts] call dayz_rollingMessages;
 		_startUpgrade = false;
 	};
 	if (_x IN magazines player) then {
@@ -114,15 +107,11 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	//Upgrade
 	_alreadyupgrading = _cursorTarget getVariable["alreadyupgrading",0];
 
-	if (_alreadyupgrading == 1) exitWith {
-		//cutText [localize "str_upgradeInProgress", "PLAIN DOWN"]
-		_msg = localize "str_upgradeInProgress";
-		_msg call dayz_rollingMessages;
-	};
+	if (_alreadyupgrading == 1) exitWith { localize "str_upgradeInProgress" call dayz_rollingMessages; };
 	
 	_cursorTarget setVariable["alreadyupgrading",1];
 
-	sleep 0.03;
+	uiSleep 0.03;
 
 	//Get location and direction of old item
 	_dir = round getDir _cursorTarget;
@@ -172,7 +161,7 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 		_countr = _countr + 1;
 	} count _objWpnTypes;
 	
-	sleep 3;
+	uiSleep 3;
 	
 	//Light fire 
 	[_object,true] call dayz_inflame;
@@ -184,11 +173,9 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	publicVariableServer "PVDZ_obj_Publish";
     diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
 
-	//cutText [localize "str_upgradeDone", "PLAIN DOWN"];
-	_msg = localize "str_upgradeDone";
-	_msg call dayz_rollingMessages;
+	localize "str_upgradeDone" call dayz_rollingMessages;
 /*
 } else {
-	cutText [localize "str_upgradeNoOption", "PLAIN DOWN"];
+	localize "str_upgradeNoOption" call dayz_rollingMessages;
 */
 };
