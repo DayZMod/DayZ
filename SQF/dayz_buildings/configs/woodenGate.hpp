@@ -110,8 +110,8 @@ class WoodenGate_1: WoodenGate_Base
 			position = "";
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "isText(configFile >> 'CfgVehicles' >> _this >> 'Upgrade' >> 'create') and _this getVariable ['BuildLock',false]";
-			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+			condition = "!(this getVariable['BuildLock',false])";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
 		};
 		class Maintenance {
 			displayNameDefault = $STR_MAINTENANCE;
@@ -119,7 +119,7 @@ class WoodenGate_1: WoodenGate_Base
 			position = "";
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "(_this getVariable['Maintenance',false] OR (damage _this > 0)) and isClass(configFile >> 'CfgVehicles' >> (typeof _cursorTarget) >> 'Maintenance')";
+			condition = "(!(this getVariable['Maintenance',false]) OR (damage this > 0))";
 			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
 		};
 	};

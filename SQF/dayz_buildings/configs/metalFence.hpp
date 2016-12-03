@@ -22,8 +22,8 @@ class MetalFence_base: DZ_buildables
 			position = ""; //Needs memory point adding
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "isText(configFile >> 'CfgVehicles' >> this >> 'Upgrade' >> 'create') and _this getVariable ['BuildLock',false]";
-			statement = "this execVM '\z\addons\dayz_code\actions\object_maintenance.sqf';";
+			condition = "!(this getVariable['BuildLock',false])";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
 		};
 		class Maintenance {
 			displayNameDefault = $STR_MAINTENANCE;
@@ -31,8 +31,8 @@ class MetalFence_base: DZ_buildables
 			position = ""; //Needs memory point adding
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "(this getVariable['Maintenance',false] OR (damage _this > 0)) and isClass(configFile >> 'CfgVehicles' >> (typeof this) >> 'Maintenance')";
-			statement = "this execVM '\z\addons\dayz_code\actions\object_maintenance.sqf';";
+			condition = "(!(this getVariable['Maintenance',false]) OR (damage this > 0))";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
 		};
 	};
 }; 	

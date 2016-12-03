@@ -42,6 +42,26 @@ class MetalGate_Base: Land_Gate_IndVar2_5
 			statement = "this animate [""DoorR"", 0];this animate [""DoorL"", 0]";
 		};
 	};
+	class UserActions {
+		class Upgrade {
+			displayNameDefault = $STR_UPGRADE;
+			displayName = $STR_UPGRADE;
+			position = ""; //Needs memory point adding
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "!(this getVariable['BuildLock',false])";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
+		};
+		class Maintenance {
+			displayNameDefault = $STR_MAINTENANCE;
+			displayName = $STR_MAINTENANCE;
+			position = ""; //Needs memory point adding
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(!(this getVariable['Maintenance',false]) OR (damage this > 0))";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+		};
+	};
 	
 	actionBegin1 = "OpenDoors";
 	actionEnd1 = "OpenDoors";
