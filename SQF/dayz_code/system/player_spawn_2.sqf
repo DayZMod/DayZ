@@ -3,7 +3,7 @@ disableSerialization;
 _timeOut = 0;
 _messTimer = 0;
 _lastTemp = dayz_temperatur;
-_debug = getMarkerpos "respawn_west";
+_debug = respawn_west_original;
 
 _timer = diag_tickTime;
 _timer1 = diag_tickTime;

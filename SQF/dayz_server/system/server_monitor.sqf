@@ -71,7 +71,7 @@ if (_status == "ObjectStreamStart") then {
 	_maintenanceModeVars = [];
 	
 	_dir = floor(random(360));
-	_pos = getMarkerpos "respawn_west";
+	_pos = respawn_west_original;
 	_wsDone = false;
 	
 	if (count _worldspace >= 1 && {(typeName (_worldspace select 0)) == "SCALAR"}) then { 

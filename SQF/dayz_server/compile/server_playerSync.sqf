@@ -1,7 +1,7 @@
 private ["_characterID","_temp","_currentWpn","_magazines","_force","_isNewPos","_humanity","_isNewGear","_currentModel","_modelChk",
 		"_playerPos","_playerGear","_playerBackp","_backpack","_killsB","_killsH","_medical","_isNewMed","_character",
 		"_timeSince","_charPos","_isInVehicle","_distanceFoot","_lastPos","_kills","_headShots","_timeGross","_timeLeft","_onLadder",
-		"_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_name","_debug","_distance","_Achievements"];
+		"_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_name","_distance","_Achievements"];
 //[player,array]
 
 _character = _this select 0;
@@ -14,8 +14,7 @@ _timeSince = 0;
 _humanity = 0;
 _name = if (alive _character) then {name _character} else {"Dead Player"};
 _Achievements = [];
-_debug = getMarkerpos "respawn_west";
-_distance = _debug distance _charPos;
+_distance = respawn_west_original distance _charPos;
 
 if (isNil "_character") exitWith {
 	diag_log format["%1: nil player object, _this:%2", __FILE__, _this];

@@ -43,7 +43,7 @@ sched_corpses = {
 				if (_x getVariable["bodyName",""] != "") then {
 					_deathTime = _x getVariable ["sched_co_deathTime", -1];
 					if (_deathTime == -1) then {
-						_deathPos = _x getVariable [ "deathPos", getMarkerPos "respawn_west" ];
+						_deathPos = _x getVariable ["deathPos",respawn_west_original];
 						_cpos = getPosATL _x;
 						// forbid a move further than 50 meters, or burried body (antihack)
 						if (_deathPos distance _cpos > 50 or _deathPos select 2 < -0.2) then {
