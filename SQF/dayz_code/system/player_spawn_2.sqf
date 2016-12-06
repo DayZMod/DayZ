@@ -3,7 +3,6 @@ disableSerialization;
 _timeOut = 0;
 _messTimer = 0;
 _lastTemp = dayz_temperatur;
-_debug = respawn_west_original;
 
 _timer = diag_tickTime;
 _timer1 = diag_tickTime;
@@ -45,7 +44,7 @@ while {1 == 1} do {
 	//reset position
 	_randomSpot = true;
 	_tempPos = getPosATL player;
-	_distance = _debug distance _tempPos;
+	_distance = respawn_west_original distance _tempPos;
 	if (_distance < 2000) then {
 		_randomSpot = false;
 	};
