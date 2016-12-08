@@ -81,13 +81,13 @@ if (isServer) then {
 	if (dayz_infectiousWaterholes && (toLower worldName == "chernarus")) then {execVM "\z\addons\dayz_code\system\mission\chernarus\infectiousWaterholes\init.sqf";};
 	
 	// Lootable objects from CfgTownGeneratorDefault.hpp
-	if (dayz_townGenerator) then { execVM "\z\addons\dayz_code\system\mission\chernarus\LegacyTownGenerator\MainLootableObjects.sqf"; };
+	if (dayz_townGenerator) then { execVM "\z\addons\dayz_code\system\mission\chernarus\MainLootableObjects.sqf"; };
 };
 
 if (!isDedicated) then {
 	if (dayz_antiWallHack != 0) then {
 		//Enables Map Plug items
-		if (toLower worldName == "chernarus") then {execVM "\z\addons\dayz_code\system\mission\chernarus\security\antiwallhack.sqf"; };
+		if (toLower worldName == "chernarus") then { execVM "\z\addons\dayz_code\system\mission\chernarus\antiwallhack.sqf"; };
 		//Enables Plant lib fixes
 		call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\antihack.sqf";
 	};
