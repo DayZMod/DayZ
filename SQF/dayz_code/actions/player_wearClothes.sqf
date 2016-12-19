@@ -54,13 +54,6 @@ if (_item == "Skin_Survivor2_DZ") then {
 	};
 };
 
-//play animation when changing clothes.
-player playActionNow "Medic";
-    
-//wait animation end
-waitUntil {getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "disableWeapons") == 1};
-waitUntil {getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "disableWeapons") == 0};
-
 if (_model != _myModel) then {
 	player removeMagazine _item;
 	player addMagazine _itemNew;
