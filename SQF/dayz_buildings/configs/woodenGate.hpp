@@ -39,7 +39,8 @@ class WoodenGate_Base: DZ_buildables
 		requiredParts[] = {"ItemPlank","equip_nails"};
 	};
 	class eventHandlers {
-		HandleDamage = "_this call fnc_Obj_FenceHandleDam;";
+		//[Object,[High Explosive Damage, Medium Explosive Damage, Melee Damage]]
+		HandleDamage = "[_this,[0.5,0.25,0.00001]] call fnc_Obj_FenceHandleDam;";
 	};
 };
 
