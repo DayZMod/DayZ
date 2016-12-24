@@ -119,8 +119,8 @@ BEGIN
 #Check WoodenGate_1
 	update
 		object_data
-			set Classname = 'WoodenGate_1'
-				where Classname = 'WoodenGate_foundation'
+			set Classname = 'WoodenGate_foundation'
+				where Classname = 'WoodenGate_1'
 				AND Hitpoints = '["Maintenance"]'
 				AND DATE(last_updated) < CURDATE() - INTERVAL 3 DAY;
 				
