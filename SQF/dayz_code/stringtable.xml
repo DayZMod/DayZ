@@ -10395,9 +10395,17 @@
 			<French>Remington 870 (+Torche)</French>
 			<Czech>Remington 870 (baterka)</Czech>
 		</Key>
+		<Key ID="STR_DZ_WPN_R870_MFL_NAME">
+			<English>Remington 870 MFL</English>
+			<Russian>Ремингтон 870 вФ</Russian>
+			<German>Remington 870 mit militärischer Taschenlampe</German>
+			<Spanish>Remington 870 (Linterna)</Spanish>
+			<French>Remington 870 (+Torche)</French>
+			<Czech>Remington 870 (baterka)</Czech>
+		</Key>
 		<Key ID="STR_DZ_WPN_R870_FL_DESC">
 			<English>The Remington Model 870 is a pump-action shotgun. This weapon has a torch attached.</English>
-			<German>Die Remington Model 870 ist eine Vorderschaftrepetierflinte mit einer fest installierten Taschenlampe.</German>
+			<German>Die Remington Model 870 ist eine Vorderschaftrepetierflinte mit einem Taschenlampenaufsatz.</German>
 			<Russian>Ремингтон Модель 870 - помповый дробовик. На данный экземпляр установлен фонарик.</Russian>
 			<Spanish>La Remington Modelo 870 es una escopeta de acción a bombeo con una linterna como accesorio.</Spanish>
 			<French>Le modèle Remington 870 est un fusil à pompe avec une lampe torche.</French>
