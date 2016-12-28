@@ -13,7 +13,7 @@ CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `randomizeVehicleInventory`(`c` varch
 BEGIN
 	DECLARE WeaponClasses		VARCHAR(255);
 	DECLARE WeaponAmounts		VARCHAR(255);
-	DECLARE MagazineClasses		VARCHAR(255);
+	DECLARE MagazineClasses		VARCHAR(512); #changed to 512 since vehicle inventory can be large
 	DECLARE MagazineAmounts		VARCHAR(255);
 	DECLARE BackpackClasses		VARCHAR(255);
 	DECLARE BackpackAmounts		VARCHAR(255);
