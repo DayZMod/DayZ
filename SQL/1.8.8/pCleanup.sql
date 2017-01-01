@@ -19,7 +19,7 @@ BEGIN
 #remove damaged objects
         DELETE
                 FROM object_data
-                WHERE CharacterID != 0 AND Damage = 1;
+                WHERE CharacterID != 0 AND Damage >= 1;
 
 #remove damaged vehicles older than vehicle_spawns.CleanupTime
 	DELETE FROM object_data
