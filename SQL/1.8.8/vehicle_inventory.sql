@@ -137,7 +137,6 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (8, 'Magazine', 'equip_gauzepackaged', 2, 2, 0.5000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (8, 'Magazine', 'equip_gauze', 2, 2, 0.5000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (8, 'Magazine', 'bloodTester', 1, 1, 0.5000000000);
-INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (8, 'Magazine', 'transfusionKit', 1, 1, 0.5000000000);
 
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (8, 'Backpack', 'DZ_Patrol_Pack_EP1', 1, 1, 1.0000000000);
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
