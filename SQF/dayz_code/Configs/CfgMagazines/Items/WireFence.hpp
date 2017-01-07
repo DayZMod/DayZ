@@ -9,6 +9,8 @@ class ItemWire : CA_Magazine
 	displayName = $STR_EQUIP_NAME_23;
 	descriptionShort = $STR_EQUIP_DESC_23;
 
+	/*
+	//Due to issues with some players and graphic glitches this item has been removed.
 	class ItemActions
 	{
 		class Build
@@ -21,4 +23,5 @@ class ItemWire : CA_Magazine
 			byPass = "byPassRoadCheck";
 		};
 	};
+	*/
 };
