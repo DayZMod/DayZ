@@ -11118,7 +11118,7 @@
 			<Russian>[М] военный пистолетный фонарь</Russian>
 			<German>[E] Militärische Pistolen Taschenlampe</German>			
 		</Key>
-		<Key ID="STR_DZ_ATT_FL_PST_DESC">
+		<Key ID="STR_DZ_ATT_MFL_PST_DESC">
 			<English>Rail-attachable military pistol flashlight</English>
 			<Russian>военный Фонарь для установки на пистолеты</Russian>
 			<German>Militärischer Taschenlampenaufsatz für Pistolen.</German>			
