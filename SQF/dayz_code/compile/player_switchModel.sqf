@@ -1,5 +1,4 @@
-//private ["_class","_position","_dir","_group","_oldUnit","_newUnit","_currentWpn","_muzzles","_currentAnim","_playerUID","_weapons","_magazines","_primweapon","_secweapon","_newBackpackType","_backpackWpn","_backpackMag","_backpackWpnTypes","_backpackWpnQtys","_countr","_backpackmagTypes","_backpackmagQtys","_display","_wpnType","_ismelee","_rndx","_rndy"];
-private ["_class","_position","_dir","_currentAnim","_currentCamera","_playerUID","_weapons","_magazines","_primweapon","_secweapon","_newBackpackType","_backpackWpn","_backpackMag","_currentWpn","_muzzles","_display","_oldUnit","_newUnit","_oldBackpack","_backpackWpnTypes","_backpackWpnQtys","_countr","_backpackmagTypes","_backpackmagQtys","_backpackmag","_rndx","_rndy","_playerObjName","_wpnType","_ismelee"];
+private ["_class","_position","_dir","_currentAnim","_currentCamera","_playerUID","_weapons","_magazines","_primweapon","_secweapon","_newBackpackType","_backpackWpn","_backpackMag","_currentWpn","_muzzles","_display","_oldUnit","_newUnit","_oldBackpack","_backpackWpnTypes","_backpackWpnQtys","_countr","_backpackmagTypes","_backpackmagQtys","_backpackmag","_rndx","_rndy","_playerObjName","_wpnType","_ismelee","_oldGroup"];
 _class = _this;
 
 disableSerialization;
@@ -9,7 +8,7 @@ disableSerialization;
 _position = player modeltoWorld [0,0,0];
 _dir = getDir player;
 _currentAnim = animationState player;
-//_currentCamera = cameraView;
+_currentCamera = cameraView;
 _playerUID = getPlayerUID player;
 
 //BackUp Weapons and Mags
@@ -56,6 +55,7 @@ _display closeDisplay 0;
 
 //BackUp Player Object
 _oldUnit = player;
+_oldGroup = group player;
 
 /***********************************/
 //DONT USE player AFTER THIS POINT
@@ -128,10 +128,10 @@ if (!isNil "_newBackpackType") then {
 
 //Debug Message
 diag_log "Swichtable Unit Created. Equipment:";
-diag_log str(weapons _newUnit);
-diag_log str(magazines _newUnit);
-diag_log str(getWeaponCargo unitBackpack _newUnit);
-diag_log str(getMagazineCargo unitBackpack _newUnit);
+diag_log format["Weapons: %1",weapons _newUnit];
+diag_log format["Magazines: %1",magazines _newUnit];
+diag_log format["Backpack weapons: %1",getWeaponCargo unitBackpack _newUnit];
+diag_log format["Backpack magazines: %1",getMagazineCargo unitBackpack _newUnit];
 
 //Make New Unit Playable (1 of these 3 commands causes crashes with gear dialog open)
 //_oldUnit setPosATL [_position select 0 + cos(_dir) * 2, _position select 1 + sin(_dir) * 2, _position select 2];
@@ -143,18 +143,20 @@ selectPlayer _newUnit;
 _rndx = floor(random 100);
 _rndy = floor(random 100);
 _oldUnit setPosATL [(respawn_west_original select 0) + _rndx, (respawn_west_original select 1) + _rndy, 0];
-_newUnit setPosATL _position;
+_newUnit setPosATL [_position select 0,_position select 1,(_position select 2)+.1]; //Prevents swimming in ground glitch on alt maps
 
 //Clear and delete old Unit
 removeAllWeapons _oldUnit;
 {_oldUnit removeMagazine _x;} count magazines _oldUnit;
 if !(isNull _oldUnit) then {deleteVehicle _oldUnit;};
+if (count (units _oldGroup) == 0) then {deleteGroup _oldGroup;};
 
-//	player switchCamera = _currentCamera;
+player switchCamera _currentCamera;
 if (_currentWpn != "") then {_newUnit selectWeapon _currentWpn;};
 [objNull, player, rSwitchMove, _currentAnim] call RE;
 //dayz_originalPlayer attachTo [_newUnit];
 player disableConversation true;
+player setVariable ["BIS_noCoreConversations",true];
 
 //	_playerUID=getPlayerUID player;
 //	_playerObjName = format["player%1",_playerUID];
