@@ -41,8 +41,6 @@ class MetalGate_Base: Land_Gate_IndVar2_5
 			condition = "this animationPhase ""DoorR"" >= 0.5";
 			statement = "this animate [""DoorR"", 0];this animate [""DoorL"", 0]";
 		};
-	};
-	class UserActions {
 		class Upgrade {
 			displayNameDefault = $STR_UPGRADE;
 			displayName = $STR_UPGRADE;
