@@ -40,6 +40,9 @@ _upgrade = typeOf _cursorTarget;
 _entry = configFile >> "CfgVehicles" >> _upgrade;
 r_interrupt = false;
 
+_disassemblyParts = [] + (getArray (_entry >> "Disassembly" >> "removedParts"));
+_disassemblyReturnChance = [] + (getNumber (_entry >> "Disassembly" >> "removedChance"));
+
 for "_i" from 1 to 20 do {
     _parent = inheritsFrom _entry;
     _requiredParts = [] + (getArray (_parent >> "Upgrade" >> "requiredParts"));
@@ -90,9 +93,15 @@ for "_i" from 1 to 20 do {
     _wh setDir (30*_i);
     _wh setPosATL _whpos;
     {
-        if (isClass (configFile >> "CfgMagazines" >> _x))
-        then { _wh addMagazineCargoGlobal [_x, 1]; }
-        else { _wh addWeaponCargoGlobal [_x, 1]; };
+		//Never return _disassemblyParts_.
+		if (!(_x in _disassemblyParts)) then {
+			//Random other returned items.
+			if ([_disassemblyReturnChance] call fn_chance) then {
+				if (isClass (configFile >> "CfgMagazines" >> _x))
+				then { _wh addMagazineCargoGlobal [_x, 1]; }
+				else { _wh addWeaponCargoGlobal [_x, 1]; };
+			};
+		};
     } forEach _requiredParts;
     diag_log [diag_ticktime, __FILE__, "Pile created with:", _requiredParts];
 

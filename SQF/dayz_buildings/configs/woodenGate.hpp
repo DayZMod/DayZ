@@ -32,8 +32,11 @@ class WoodenGate_Base: DZ_buildables
 		requiredParts[] = {"ItemLog"};
 	};
 	class Disassembly {
-		requiredTools[] = {"ItemEtool"};
-	};	
+		//Items to never return if they exist
+		removedParts[] = {"ItemPadlock", "ItemStone","equip_nails"};
+		//Chance other items will be returned.
+		removedChance = 0.3;
+	};
 	class Maintenance {
 		requiredTools[] = {"ItemToolbox"};
 		requiredParts[] = {"ItemPlank","equip_nails"};
@@ -63,9 +66,6 @@ class WoodenGate_foundation: WoodenGate_Base
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
 		requiredParts[] = {"ItemLog","ItemStone"};
 		create = "WoodenGate_1";
-	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
 	};	
 };
 //Stage 1 Not Locked, Access by anyone
@@ -132,9 +132,6 @@ class WoodenGate_1: WoodenGate_Base
 		requiredParts[] = {"ItemLog","ItemPadlock"};
 		create = "WoodenGate_2";
 	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
-	};
 };
 //stage 2, Locked, Only accessed by the owner (still need to add others?)
 class WoodenGate_2: WoodenGate_1
@@ -146,9 +143,6 @@ class WoodenGate_2: WoodenGate_1
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
 		requiredParts[] = {"ItemLog","ItemPlank","equip_nails"};
 		create = "WoodenGate_3";
-	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
 	};
 };
 
@@ -162,9 +156,6 @@ class WoodenGate_3: WoodenGate_2
 		requiredParts[] = {"ItemLog","ItemLog","ItemPlank"};
 		create = "WoodenGate_4";
 	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
-	};
 };
 
 class WoodenGate_4: WoodenGate_3
@@ -173,7 +164,4 @@ class WoodenGate_4: WoodenGate_3
 	scope = 2;
 	displayName = $STR_BLD_name_WoodenGate_4;//"Wooden Gate Level 4"
 	model = "z\addons\dayz_buildings\models\gates\gate4_dzam.p3d";
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
-	};
 };
