@@ -592,7 +592,7 @@ dayz_inflame = {
 				};
                 _hasTool = true;
             };
-        } count Dayz_Ignators;
+        } count DayZ_Ignitors;
 		
         if (_hasTool) then { _object inflame true; };
     } else { // put out the fire
@@ -613,7 +613,7 @@ dayz_inflame_showMenu = {
     if (!_islit) then {
         {
             if (_x in items player) exitWith { _hasTool = true; };
-        } count Dayz_Ignators;
+        } count DayZ_Ignitors;
     };
     _ret = (_whatIwant && !_islit && _hasTool) or (!_whatIwant && _isLit);
 
@@ -654,7 +654,7 @@ dayz_inflame_other = {
 				};
                 _hasTool = true;
             };
-        } count Dayz_Ignators;
+        } count DayZ_Ignitors;
         if (_hasTool) then { _flame inflame true; };
 
     } else { // put out the fire
@@ -677,7 +677,7 @@ dayz_inflame_showMenu_other = {
     if (!_islit) then {
         {
             if (_x in items player) exitWith { _hasTool = true; };
-        } count Dayz_Ignators;
+        } count DayZ_Ignitors;
     };
     _ret = (_whatIwant && !_islit && _hasTool) or (!_whatIwant && _isLit);
 	//systemChat str [_flame, _hasTool, _islit, _ret];

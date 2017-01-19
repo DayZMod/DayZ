@@ -9,7 +9,7 @@ private ["_allowedDistance","_vehicle","_inVehicle","_cursorTarget","_primaryWea
 "_typeOfCursorTarget","_isVehicle","_isBicycle","_isMan","_isDestructable",
 "_isGenerator","_ownerID","_isVehicletype","_isFuel","_hasFuel20","_hasFuel5","_hasEmptyFuelCan","_itemsPlayer",
 "_hasToolbox","_hasbottleitem","_isAlive","_isPlant","_istypeTent","_upgradeItems","_hasknife",
-"_hasRawMeat","_hastinitem","_displayName","_hasIgnators","_hasCarBomb","_menu","_menu1","_isHouse","_isGate",
+"_hasRawMeat","_hastinitem","_displayName","_hasIgnitors","_hasCarBomb","_menu","_menu1","_isHouse","_isGate",
 "_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock","_ownerPID",
 "_uid"];
 
@@ -287,16 +287,14 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	};
 	//other tents
 	if (_istypeTent) then {
-		//destroy tents
-		//Located in variables Dayz_Ignators = ["ItemMatchbox","Item5Matchbox","Item4Matchbox","Item3Matchbox","Item2Matchbox","Item1Matchbox"];
-		_hasIgnators = {_x in Dayz_Ignators} count _itemsPlayer > 0;
-		if ((_hasFuel20 or _hasFuel5) && _hasIgnators) then {
-			if (s_player_destorytent < 0) then {
-				s_player_destorytent = player addAction [localize "str_actions_self_destorytent", "\z\addons\dayz_code\actions\player_destroyTent.sqf",_cursorTarget, 0, false, true];
+		_hasIgnitors = {_x in DayZ_Ignitors} count _itemsPlayer > 0;
+		if ((_hasFuel20 or _hasFuel5) && _hasIgnitors) then {
+			if (s_player_destroytent < 0) then {
+				s_player_destroytent = player addAction [localize "str_actions_self_destroytent", "\z\addons\dayz_code\actions\player_destroyTent.sqf",_cursorTarget, 0, false, true];
 			};
 		} else {
-			player removeAction s_player_destorytent;
-			s_player_destorytent = -1;
+			player removeAction s_player_destroytent;
+			s_player_destroytent = -1;
 		};		
 		if (_typeOfCursorTarget in ["IC_DomeTent","IC_Tent"]) then {
 			if (s_player_packtentinfected < 0) then {
@@ -447,8 +445,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	//Allow player to gather
 	player removeAction s_player_gather;
 	s_player_gather = -1;
-	player removeAction s_player_destorytent;
-	s_player_destorytent = -1;
+	player removeAction s_player_destroytent;
+	s_player_destroytent = -1;
 	// player removeAction s_player_attach_bomb;
 	//  s_player_attach_bomb = -1;
 	//debug
