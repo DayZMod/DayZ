@@ -131,8 +131,10 @@ _object_damage = {
 		} else {
 			_key = format["CHILD:306:%1:",_objectID] + str _array + ":" + str _damage + ":";
 		};
-		
+		#ifdef OBJECT_DEBUG
 		diag_log ("HIVE: WRITE: "+ str(_key));
+		#endif
+		
 		_key call server_hiveWrite;   
 	};
 };
@@ -147,8 +149,9 @@ _objWallDamage = {
 	} else {
 		_key = format["CHILD:306:%1:%2:%3:",_objectID,[],_damage];
 	};
-	
+	#ifdef OBJECT_DEBUG
 	diag_log ("HIVE: WRITE: "+ str(_key));
+	#endif
 	
 	_key call server_hiveWrite;
 };
@@ -166,7 +169,9 @@ _object_killed = {
 	};
 	_key call server_hiveWrite;
 	
+	#ifdef OBJECT_DEBUG
 	diag_log format["DELETE: Deleted by KEY: %1",_key];
+	#endif
 	
 	if ((typeOf _object) in DayZ_removableObjects) then {[_objectID,_objectUID] call server_deleteObj;};
 };
@@ -180,12 +185,13 @@ _object_maintenance = {
 	_variables set [count _variables, ["padlockCombination", _accessArray]];
 
 	if (_objectID == "0") then {
-		_key = format["CHILD:309:%1:%2:",_objectUID,_ownerArray];
+		//_key = format["CHILD:309:%1:%2:",_objectUID,_ownerArray];
 		_key = format["CHILD:306:%1:%2:%3:",_objectUID,[],0]; //Wont work just now.
 	} else {
-		_key = format["CHILD:303:%1:%2:",_objectID,_ownerArray];
+		//_key = format["CHILD:303:%1:%2:",_objectID,_ownerArray];
 		_key = format["CHILD:306:%1:%2:%3:",_objectID,[],0];
 	};
+
 //	#ifdef OBJECT_DEBUG
 		diag_log ("HIVE: WRITE: Maintenance, "+ str(_key));
 //	#endif
