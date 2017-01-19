@@ -5,7 +5,7 @@ scriptName "Functions\misc\fn_selfActions.sqf";
 	- [] call fnc_usec_selfActions;
 ************************************************************/
 private ["_allowedDistance","_vehicle","_inVehicle","_cursorTarget","_primaryWeapon","_currentWeapon","_magazinesPlayer",
-"_onLadder","_canDo","_canDrink","_nearLight","_canPickLight","_text","_canDoThis","_waterHoles","_w2m","_bb","_dir",
+"_onLadder","_canDo","_canDrink","_nearLight","_canPickLight","_text",
 "_typeOfCursorTarget","_isVehicle","_isBicycle","_isMan","_isDestructable",
 "_isGenerator","_ownerID","_isVehicletype","_isFuel","_hasFuel20","_hasFuel5","_hasEmptyFuelCan","_itemsPlayer",
 "_hasToolbox","_hasbottleitem","_isAlive","_isPlant","_istypeTent","_upgradeItems","_hasknife",
@@ -90,30 +90,19 @@ if ((_primaryWeapon in Dayz_fishingItems) && {!dayz_fishingInprogress} && {_inVe
 	s_player_fishing_veh = -1;
 };
 
-_canDoThis=false;
-if (_canDo && !_inVehicle && !dayz_isSwimming) then {
-	{
-        _waterHoles = if (typeOf _x == "waterHoleProxy") then {nearestObjects [_x, [], 1];} else {[_x];};
-		{
-            _w2m = _x worldToModel (getPosATL player);
-            _bb = (boundingbox _x) select 1;
-            _dir = [player, _x] call BIS_fnc_relativeDirTo; if (_dir > 180) then {_dir = _dir - 360};
-            if (((abs _dir < 45) && {(_x distance player < 2.22)})  // wells, kasna, pumpa
-            	or {((("" == typeOf _x) && ((_w2m select 2) < 0.05)) && {((abs(_w2m select 0) < (_bb select 0)) && (abs(_w2m select 1) < (_bb select 1)))})}) exitWith { // ponds
-				_canDoThis = true;
-			};
-		} count _waterHoles;
-		if (_canDoThis) exitWith {
-			if (s_player_Drinkfromhands < 0) then {
-				s_player_Drinkfromhands = player addAction [localize "STR_ACTIONS_DRINK2", "\z\addons\dayz_code\actions\player_drinkWater.sqf",player, 0.5, false, true];
-			};
-		};
-	} foreach nearestObjects [player, ["waterHoleProxy", "Land_pumpa"], 50];
+/*
+//FPS killer. Moved to CfgVehicles for wells
+if (_canDo && !_inVehicle && !dayz_isSwimming && ((call fn_nearWaterHole) select 0)) then {
+	if (s_player_Drinkfromhands < 0) then {
+		s_player_Drinkfromhands = player addAction [localize "STR_ACTIONS_DRINK2", "\z\addons\dayz_code\actions\water_fill.sqf","hands", 0.5, false, true];
+	};
+} else {
+	if (s_player_Drinkfromhands >= 0) then {
+		player removeAction s_player_Drinkfromhands;
+		s_player_Drinkfromhands = -1;
+	};
 };
-if (!_canDoThis && s_player_Drinkfromhands >= 0) then {
-	player removeAction s_player_Drinkfromhands;
-	s_player_Drinkfromhands = -1;
-};
+*/
 
 // Increase distance only if Fishing_Boat
 _allowedDistance = if (typeOf _cursorTarget == "Fishing_Boat") then {8} else {4};

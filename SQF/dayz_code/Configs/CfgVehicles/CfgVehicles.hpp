@@ -147,9 +147,11 @@ class CfgVehicles {
 	{
 		class DestructionEffects;
 	};
+	class House_EP1;
 	class SpawnableWreck : House {};
 	class Strategic;
 	class NonStrategic;
+	class Thing;
 //	class Land_Fire;
 	class BuiltItems;
 	class Building;
@@ -246,6 +248,7 @@ class CfgVehicles {
 	#include "Buildings\Land_telek1.hpp"
 	#include "Buildings\Land_VASICore.hpp"
 	#include "Buildings\Land_Vysilac_FM.hpp"
+	#include "Buildings\WaterSources.hpp"
 
 	//camo
 	#include "CamoNetting.hpp"
