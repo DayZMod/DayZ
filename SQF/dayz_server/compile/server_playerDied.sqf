@@ -1,6 +1,6 @@
 #include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
 
-private ["_characterID","_minutes","_newObject","_playerID","_playerName","_key","_pos","_infected","_sourceName","_sourceWeapon","_distance","_message","_method","_suicide"];
+private ["_characterID","_minutes","_newObject","_playerID","_playerName","_key","_pos","_infected","_sourceName","_sourceWeapon","_distance","_message","_method","_suicide","_bodyName","_type"];
 //[unit, weapon, muzzle, mode, ammo, magazine, projectile]
 
 _characterID = _this select 0;
@@ -12,7 +12,7 @@ _infected = _this select 5;
 _sourceName = toString (_this select 6);
 _sourceWeapon = toString (_this select 7);
 _distance = _this select 8;
-_method = toString (_this select 9);
+_method = _this select 9;
 
 //Mark player as dead so we bypass the ghost system
 dayz_died set [count dayz_died, _playerID];
@@ -57,11 +57,18 @@ if (_method in ["explosion","melee","shot","shothead","shotheavy"] && !(_method 
 	_message = ["died",_playerName,_method];
 };
 
-if (_playerName != "unknown" or _sourceName != "unknown") then {	
-	_message = switch (_message select 0) do {
-		case "died": {format [localize "str_player_death_died", _message select 1, localize format["str_death_%1",_message select 2]]};
-		case "killed": {format [localize "str_player_death_killed", _message select 1, _message select 2, _message select 3, _message select 4]};
-		case "suicide": {format [localize "str_player_death_suicide", _message select 1]};
+if (_playerName != "unknown" or _sourceName != "unknown") then {
+	_type = _message select 0;
+	_bodyName = _message select 1;
+	
+	if (_type == "killed" && _sourceName == "AI") then {
+		_message set [2, (localize "STR_PLAYER_AI")];
+	};
+	
+	_message = switch _type do {
+		case "died": {format [localize "str_player_death_died", _bodyName, localize format["str_death_%1",_message select 2]]};
+		case "killed": {format [localize "str_player_death_killed", _bodyName, _message select 2, _message select 3, _message select 4]};
+		case "suicide": {format [localize "str_player_death_suicide", _bodyName]};
 	};
 	diag_log format["DeathMessage: %1",_message];
 };

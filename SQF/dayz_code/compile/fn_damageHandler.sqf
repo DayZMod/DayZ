@@ -162,7 +162,6 @@ if (_unit == player) then {
     if (!local _source && _isMan) then {
 		_wpst = weaponState _source;
         if (diag_ticktime-(_source getVariable ["lastloghit",0])>2) then {
-            private ["_sourceWeap"];
             _source setVariable ["lastloghit",diag_ticktime];
             _sourceDist = round(_unit distance _source);
             _sourceWeap = switch (true) do {
@@ -403,7 +402,7 @@ if (_type == 1) then {
     if (_damage > 4) then {
         //serious ballistic damage
         if (_unit == player) then {
-            _id = [_source,"explosion",_ammo] spawn player_death;
+            [_source,"explosion",_ammo] call player_death;
         };
     } else {
         if (_damage > 2) then {
@@ -423,7 +422,7 @@ if (_type == 2) then {
     if (_damage > 4) then {
         //serious ballistic damage
         if (_unit == player) then {
-            _id = [_source,"shotheavy"] spawn player_death;
+            [_source,"shotheavy"] call player_death;
         };
     } else {
         if (_damage > 2) then {

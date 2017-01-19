@@ -779,7 +779,8 @@ class RscDisplayMPInterrupt : RscStandardDisplay {
 		class CA_B_Respawn : CA_B_SAVE {
 			idc = 1010;
 			//onButtonClick = "hint str (_this select 0);";
-			onButtonClick = "if ((alive player) && (r_fracture_legs)) then { player SetDamage 1;};";
+			//Show as a suicide in server RPT log
+			onButtonClick = "if ((alive player) && (r_fracture_legs)) then { [player,'shot'] call player_death; };";
 			y = 0.2537 + 0.101903 * 2;
 			text = $STR_DISP_INT_RESPAWN;
 			default = 0;
