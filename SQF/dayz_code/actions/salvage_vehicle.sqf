@@ -1,4 +1,4 @@
-private ["_part","_color","_vehicle","_PlayerNear","_hitpoints","_isATV","_is6WheelType","_HasNoGlassKind",
+private ["_part","_color","_vehicle","_PlayerNear","_hitpoints","_isATV","_is6WheelType","_HasNoGlassKind","_hitpoint",
 "_6WheelTypeArray","_NoGlassArray","_NoExtraWheelsArray","_RemovedPartsArray","_damage","_cmpt","_configVeh","_damagePercent","_string","_handle","_cancel","_type"];
 
 _vehicle = _this;
@@ -39,6 +39,7 @@ if (_is6WheelType) then {
 };
 
 {
+	_hitpoint = _x;
 	_damage = [_vehicle,_x] call object_getHit;
 	
 	if !(_x in _RemovedPartsArray) then {
@@ -50,16 +51,25 @@ if (_is6WheelType) then {
 
 		_configVeh = configFile >> "cfgVehicles" >> "RepairParts" >> _x;
 		_part = getText(_configVeh >> "part");
-		if (isNil "_part") then { _part = "PartGeneric"; };
+		if (_part == "") then {
+			_part = "PartGeneric";
+			// Handle parts not listed in RepairParts config.
+			// Additional vehicle addons may be loaded with non-standard hitpoint names.
+			{
+				if ([(_x select 0),_hitpoint] call fnc_inString) then {
+					_part = format["Part%1",(_x select 1)];
+				};
+			} forEach [["Engine","Engine"],["HRotor","VRotor"],["Fuel","Fueltank"],["Wheel","Wheel"],["Glass","Glass"]];
+		};
 
 		//get every damaged part no matter how tiny damage is!
 		_damagePercent = str(round(_damage * 100))+"% Damage";
 		if (_damage < 0.10) then {
 			_color = switch true do {
-				case (_damage >= 0 && _damage <= 0.25): {"color='#00ff00'"}; //green
-				case (_damage > 0.25 && _damage <= 0.50): {"color='#ffff00'"}; //yellow
-				case (_damage > 0.50 && _damage <= 0.75): {"color='#ff8800'"}; //orange
-				case (_damage > 0.75 && _damage <= 1): {"color='#ff0000'"}; //red
+				case (_damage <= 0.25): {"color='#00ff00'"}; //green
+				case (_damage <= 0.50): {"color='#ffff00'"}; //yellow
+				case (_damage <= 0.75): {"color='#ff8800'"}; //orange 
+				default {"color='#ff0000'"}; //red
 			};
 			_string = format[localize "str_actions_repair_01",_cmpt,_damagePercent];
 			_string = format["<t %1>%2</t>",_color,_string]; //Remove - Part
