@@ -6,15 +6,8 @@ _lastTemp = dayz_temperatur;
 
 _timer = diag_tickTime;
 _timer1 = diag_tickTime;
-_spawnCheck = diag_tickTime;
-_timer2 = diag_Ticktime;
-_timer5 = diag_Ticktime;
-_timer10 = diag_Ticktime;
 _timer30 = diag_Ticktime;
 _timer150 = diag_ticktime;
-
-_forceHumanity = false;
-_runonce = false;
 _timerMonitor = diag_ticktime;
 
 player setVariable ["temperature",dayz_temperatur,true];
@@ -256,10 +249,6 @@ while {1 == 1} do {
 			//PVDZ_serverStoreVar = [player,"Achievements",dayz_playerAchievements];
 			//publicVariableServer "PVDZ_serverStoreVar";
 			//player setVariable ["Achievements",dayz_playerAchievements,false];
-
-			if (isServer) then {
-				PVDZ_plr_Save call server_playerSync;
-			};
 
 			dayz_unsaved = false;
 			dayz_lastSave = diag_ticktime;

@@ -40,8 +40,6 @@ if (_ownerID == dayz_characterID or typeOf _obj in _campItems) then {
 
 	PVDZ_obj_Destroy = [_objectID,_objectUID];
 	publicVariableServer "PVDZ_obj_Destroy";
-	
-	if (isServer) then {PVDZ_obj_Destroy call server_deleteObj;};
 	deleteVehicle _obj;
 
 	//Add weapons
