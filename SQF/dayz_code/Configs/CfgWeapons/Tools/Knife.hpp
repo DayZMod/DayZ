@@ -53,6 +53,7 @@ class ItemKnifeBlunt : ItemKnife_Base
 {
 	scope = public;
 	descriptionShort = $STR_EQUIP_CODE_DESC_4;
+	sharpnessRemaining = "ItemKnifeBlunt";
 	class ItemActions
 	{
 		class FixKnife

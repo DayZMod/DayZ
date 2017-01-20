@@ -128,9 +128,9 @@ if (_output != "") then
 		if (vehicle player == player) then
 		{
 			//wait a while before dropping the output item
-			sleep 3;
+			uiSleep 3;
 			//Drop Item to ground
-			_output call fn_dropItem;
+			[_output,1,1] call fn_dropItem;
 		};
 	};
 };

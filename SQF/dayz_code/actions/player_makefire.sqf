@@ -47,7 +47,7 @@ if ((count _worldspace) == 2) then {
 	
 	uiSleep 5;
 
-	_fire = createVehicle ["Land_Fire_DZ", getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
+	_fire = createVehicle ["Land_Fire_DZ", [0,0,0], [], 0, "CAN_COLLIDE"];
 	_fire setDir _dir;
 	_fire setPos _location; // follow terrain slope
 	player reveal _fire;
@@ -60,9 +60,7 @@ if ((count _worldspace) == 2) then {
 		achievement = [14, player, dayz_characterID];
 		publicVariableServer "achievement";
 	};*/
-	//localize "str_fireplace_01" call dayz_rollingMessages;
-	(localize "str_fireplace_01") call dayz_rollingMessages;
+	localize "str_fireplace_01" call dayz_rollingMessages;
 } else {
-	//localize "str_fireplace_02" call dayz_rollingMessages;
-	(localize "str_fireplace_0") call dayz_rollingMessages;
+	localize "str_fireplace_02" call dayz_rollingMessages;
 };
