@@ -294,46 +294,8 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 			y = "(02/100)	* SafeZoneH + SafeZoneY";
 			w = "(96/100)	* SafeZoneW";
 			h = "(06/100)	* SafeZoneH";
-			colorBackground[] = {0.1, 0.1, 0.1, 0.68};
+			colorBackground[] = {49/255, 36/255, 25/255, 173/255};
 			text = $STR_UI_LOBBY;
-		};
-		class TextMission : RscText {
-			idc = 1002;
-			x = "(02/100)	* SafeZoneW + SafeZoneX";
-			y = "(9.5/100)	* SafeZoneH + SafeZoneY";
-			w = "(18/100)	* SafeZoneW";
-			h = "(3/100)	* SafeZoneH";
-			SizeEx = 0.03;
-			text = $STR_DISP_SRVSETUP_NAME;
-			colorText[] = {0.95, 0.95, 0.95, 1};
-		};	
-		class ValueMission : RscText {
-			idc = 101;
-			x = "(20/100)	* SafeZoneW + SafeZoneX";
-			y = "(9.5/100)	* SafeZoneH + SafeZoneY";
-			w = "(40/100)	* SafeZoneW";
-			h = "(3/100)	* SafeZoneH";
-			SizeEx = 0.03;
-			colorText[] = {0.95, 0.95, 0.95, 1};
-		};
-		class CA_TextDescription : RscText {
-			idc = 1004;
-			x = "(02/100)	* SafeZoneW + SafeZoneX";
-			y = "(12.5/100)	* SafeZoneH + SafeZoneY";
-			w = "(18/100)	* SafeZoneW";
-			h = "(3/100)	* SafeZoneH";
-			SizeEx = 0.03;
-			text = $STR_DISP_SRVSETUP_DESC;
-			colorText[] = {0.95, 0.95, 0.95, 1};
-		};
-		class CA_ValueDescription : RscText {
-			idc = 103;
-			x = "(20/100)	* SafeZoneW + SafeZoneX";
-			y = "(12.5/100)	* SafeZoneH + SafeZoneY";
-			w = "(78/100)	* SafeZoneW";
-			h = "(3/100)	* SafeZoneH";
-			SizeEx = 0.03;
-			colorText[] = {0.95, 0.95, 0.95, 1};
 		};
 		class TextIsland: RscText
 		{
@@ -394,76 +356,6 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 			text = $STR_MP_PLAYERS;
 			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
 			w = "(96/100) * SafeZoneW"; // wide
-			colorText[] = {0.95, 0.95, 0.95, 1};
-			class ScrollBar {
-				color[] = {1, 1, 1, 0.6};
-				colorActive[] = {0.5, 0.5, 0.5, 1};
-				colorDisabled[] = {1, 1, 1, 0.3};
-				thumb = "\z\addons\dayz_code\gui\grey\igui_scrollbar_thumb_ca.paa";
-				arrowFull = "\z\addons\dayz_code\gui\grey\igui_arrow_top_active_ca.paa";
-				arrowEmpty = "\z\addons\dayz_code\gui\grey\igui_arrow_top_ca.paa";
-				border = "\z\addons\dayz_code\gui\grey\igui_border_scroll_ca.paa";
-			};
-		};
-		class CA_B_Lock : RscShortcutButton {
-			idc = 118;
-			x = "(39/100)	* SafeZoneW + SafeZoneX";
-			y = "(93/100)	* SafeZoneH + SafeZoneY";
-			w = 0.183825;
-			color[] = {0.95, 0.95, 0.95, 1.0};
-			animTextureNormal = "\z\addons\dayz_code\gui\grey\ui_button_normal_ca.paa";
-			animTextureDisabled = "\z\addons\dayz_code\gui\grey\ui_button_disabled_ca.paa";
-			animTextureOver = "\z\addons\dayz_code\gui\grey\ui_button_over_ca.paa";
-			animTextureFocused = "\z\addons\dayz_code\gui\grey\ui_button_focus_ca.paa";
-			animTexturePressed = "\z\addons\dayz_code\gui\grey\ui_button_down_ca.paa";
-			animTextureDefault = "\z\addons\dayz_code\gui\grey\ui_button_default_ca.paa";
-		};
-		class CA_B_DSinterface : RscShortcutButton {
-			idc = 1012;
-			default = 0;
-			onButtonClick = "openDSInterface;";
-			shortcuts[] = {};
-			x = "(2.75/100)	* SafeZoneW + SafeZoneX";
-			y = "(93/100)	* SafeZoneH + SafeZoneY";
-			w = 0.26;
-			text = $STR_DISP_SERVER_CONTROL;
-			color[] = {0.95, 0.95, 0.95, 1.0};
-			animTextureNormal = "\z\addons\dayz_code\gui\grey\ui_button_normal_ca.paa";
-			animTextureDisabled = "\z\addons\dayz_code\gui\grey\ui_button_disabled_ca.paa";
-			animTextureOver = "\z\addons\dayz_code\gui\grey\ui_button_over_ca.paa";
-			animTextureFocused = "\z\addons\dayz_code\gui\grey\ui_button_focus_ca.paa";
-			animTexturePressed = "\z\addons\dayz_code\gui\grey\ui_button_down_ca.paa";
-			animTextureDefault = "\z\addons\dayz_code\gui\grey\ui_button_default_ca.paa";
-		};
-		class CA_B_Kick : RscShortcutButton {
-			idc = 116;
-			default = 0;
-			shortcuts[] = {0x00050000 + 2};
-			x = "(83/100)	* SafeZoneW + SafeZoneX";
-			y = "(14/100)	* SafeZoneH + SafeZoneY";
-			text = $STR_DISP_MP_KICKOFF;
-			color[] = {0.95, 0.95, 0.95, 1.0};
-			animTextureNormal = "\z\addons\dayz_code\gui\grey\ui_button_normal_ca.paa";
-			animTextureDisabled = "\z\addons\dayz_code\gui\grey\ui_button_disabled_ca.paa";
-			animTextureOver = "\z\addons\dayz_code\gui\grey\ui_button_over_ca.paa";
-			animTextureFocused = "\z\addons\dayz_code\gui\grey\ui_button_focus_ca.paa";
-			animTexturePressed = "\z\addons\dayz_code\gui\grey\ui_button_down_ca.paa";
-			animTextureDefault = "\z\addons\dayz_code\gui\grey\ui_button_default_ca.paa";
-		};
-		class CA_ButtonContinue : RscShortcutButton {
-			idc = 1;
-			default = 1;
-			shortcuts[] = {0x00050000 + 0, 28, 57, 156};
-			x = "(83/100)	* SafeZoneW + SafeZoneX";
-			y = "(93/100)	* SafeZoneH + SafeZoneY";
-			text = $STR_DISP_OK;
-			color[] = {0.95, 0.95, 0.95, 1.0};
-			animTextureNormal = "\z\addons\dayz_code\gui\grey\ui_button_normal_ca.paa";
-			animTextureDisabled = "\z\addons\dayz_code\gui\grey\ui_button_disabled_ca.paa";
-			animTextureOver = "\z\addons\dayz_code\gui\grey\ui_button_over_ca.paa";
-			animTextureFocused = "\z\addons\dayz_code\gui\grey\ui_button_focus_ca.paa";
-			animTexturePressed = "\z\addons\dayz_code\gui\grey\ui_button_down_ca.paa";
-			animTextureDefault = "\z\addons\dayz_code\gui\grey\ui_button_default_ca.paa";
 		};
 		class CA_ButtonCancel: RscShortcutButton {
 			idc = 2;
@@ -474,13 +366,6 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 			w = 0.203825;
 			text = $STR_DISP_BACK;
 			onButtonClick = "with uiNameSpace do {RscDMSLoad=nil;};"; // autologon at logon on next server
-			color[] = {0.95, 0.95, 0.95, 1.0};
-			animTextureNormal = "\z\addons\dayz_code\gui\grey\ui_button_normal_ca.paa";
-			animTextureDisabled = "\z\addons\dayz_code\gui\grey\ui_button_disabled_ca.paa";
-			animTextureOver = "\z\addons\dayz_code\gui\grey\ui_button_over_ca.paa";
-			animTextureFocused = "\z\addons\dayz_code\gui\grey\ui_button_focus_ca.paa";
-			animTexturePressed = "\z\addons\dayz_code\gui\grey\ui_button_down_ca.paa";
-			animTextureDefault = "\z\addons\dayz_code\gui\grey\ui_button_default_ca.paa";
 		};		
 	};
 };
@@ -612,81 +497,6 @@ class RscDisplayDiary {
 		delete DiaryBackground;
 		delete CA_PlayerName;
 		delete CA_CurrentTaskLabel;
-		class CA_MainBackground : IGUIBack {
-			idc = 1020;
-			x = "SafeZoneX + 0.010 * SafeZoneW";
-			y = "SafeZoneY + 0.031";
-			w = "0.98*SafeZoneW";
-			h = 0.082;
-			colorbackground[] = {0.1, 0.1, 0.1, 0.85};
-		};
-		class CA_TopicsBackground : IGUIBack {
-			idc = 1021;
-			x = "0.010*SafeZoneW + SafeZoneX";
-			y = "SafeZoneY + 0.117";
-			w = "0.146*SafeZoneW";
-			h = 0.53;
-			colorbackground[] = {0.1, 0.1, 0.1, 0.85};
-		};
-		class CA_SubTopicsBackground : IGUIBack {
-			idc = 1022;
-			x = "0.16*SafeZoneW + SafeZoneX";
-			y = "SafeZoneY + 0.117";
-			w = "0.283*SafeZoneW";
-			h = 0.53;
-			colorbackground[] = {0.1, 0.1, 0.1, 0.85};
-		};
-		class CA_ContentBackground : IGUIBack {
-			idc = 1023;
-			x = "0.446*SafeZoneW + SafeZoneX";
-			y = "SafeZoneY + 0.117";
-			w = "SafeZoneW * 0.544";
-			h = 0.832;
-			colorbackground[] = {0.1, 0.1, 0.1, 0.85};
-		};
-		class DiaryList : RscIGUIListBox {
-			idc = 1001;
-			onLBSelChanged = "[_this select 0, _this select 1, 'List'] call compile preprocessFileLineNumbers 'ca\Warfare2\Scripts\Client\GUI\GUI_logEH.sqf';       private ['_dummy']; _dummy = [_this,'onLBSelChanged'] call compile preprocessfile '\ca\ui\scripts\server_interface.sqf';";
-			default = 1;
-			x = "0.010*SafeZoneW + SafeZoneX";
-			y = "SafeZoneY + 0.137";
-			w = "0.146*SafeZoneW";
-			h = 0.6;
-			colorText[] = {0.95, 0.95, 0.95, 1};
-			colorSelectBackground[] = {0, 0, 0, 1.0};
-			colorSelectBackground2[] = {0, 0, 0, 0.8};
-			class ScrollBar {
-				color[] = {1, 1, 1, 0.6};
-				colorActive[] = {0.5, 0.5, 0.5, 1};
-				colorDisabled[] = {1, 1, 1, 0.3};
-				thumb = "\z\addons\dayz_code\gui\grey\igui_scrollbar_thumb_ca.paa";
-				arrowFull = "\z\addons\dayz_code\gui\grey\igui_arrow_top_active_ca.paa";
-				arrowEmpty = "\z\addons\dayz_code\gui\grey\igui_arrow_top_ca.paa";
-				border = "\z\addons\dayz_code\gui\grey\igui_border_scroll_ca.paa";
-			};
-		};	
-		class CA_DiaryIndex : RscIGUIListBox {
-			idc = 1002;
-			onLBSelChanged = "[_this select 0, _this select 1, 'Index'] call compile preprocessFileLineNumbers 'ca\Warfare2\Scripts\Client\GUI\GUI_logEH.sqf';";
-			default = 0;
-			x = "0.16*SafeZoneW  + SafeZoneX";
-			y = "SafeZoneY + 0.137";
-			w = "0.283*SafeZoneW";
-			h = 0.6;
-			sizeEx = 0.034;
-			colorText[] = {0.95, 0.95, 0.95, 1};
-			colorSelectBackground[] = {0, 0, 0, 1.0};
-			colorSelectBackground2[] = {0, 0, 0, 0.8};
-			class ScrollBar {
-				color[] = {1, 1, 1, 0.6};
-				colorActive[] = {0.5, 0.5, 0.5, 1};
-				colorDisabled[] = {1, 1, 1, 0.3};
-				thumb = "\z\addons\dayz_code\gui\grey\igui_scrollbar_thumb_ca.paa";
-				arrowFull = "\z\addons\dayz_code\gui\grey\igui_arrow_top_active_ca.paa";
-				arrowEmpty = "\z\addons\dayz_code\gui\grey\igui_arrow_top_ca.paa";
-				border = "\z\addons\dayz_code\gui\grey\igui_border_scroll_ca.paa";
-			};
-		};
 	};
 };
 
