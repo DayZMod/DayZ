@@ -130,8 +130,9 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 
 	//fuel tanks
 	if (_hasEmptyFuelCan) then {
-		//_isFuel = _typeOfCursorTarget in ["Land_Ind_TankSmall","Land_fuel_tank_big","Land_fuel_tank_stairs","Land_wagon_tanker","Land_fuelstation","Land_fuelstation_army"];
-		_isFuel = (_cursorTarget isKindOf "Land_Ind_TankSmall") or (_cursorTarget isKindOf "Land_fuel_tank_big") or (_cursorTarget isKindOf "Land_fuel_tank_stairs") or (_cursorTarget isKindOf "Land_wagon_tanker");
+		{
+			if (_cursorTarget isKindOf _x) exitWith {_isFuel = true;};
+		} count dayz_fuelsources;
 	};
 
 	//remove gathered plant if empty
