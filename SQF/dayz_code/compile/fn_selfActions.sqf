@@ -90,8 +90,7 @@ if ((_primaryWeapon in Dayz_fishingItems) && {!dayz_fishingInprogress} && {_inVe
 	s_player_fishing_veh = -1;
 };
 
-/*
-//FPS killer. Moved to CfgVehicles for wells
+//Allows drinking from hands at ponds and ambient wells, but may negatively impact performance
 if (_canDo && !_inVehicle && !dayz_isSwimming && ((call fn_nearWaterHole) select 0)) then {
 	if (s_player_Drinkfromhands < 0) then {
 		s_player_Drinkfromhands = player addAction [localize "STR_ACTIONS_DRINK2", "\z\addons\dayz_code\actions\water_fill.sqf","hands", 0.5, false, true];
@@ -102,7 +101,6 @@ if (_canDo && !_inVehicle && !dayz_isSwimming && ((call fn_nearWaterHole) select
 		s_player_Drinkfromhands = -1;
 	};
 };
-*/
 
 // Increase distance only if Fishing_Boat
 _allowedDistance = if (typeOf _cursorTarget == "Fishing_Boat") then {8} else {4};

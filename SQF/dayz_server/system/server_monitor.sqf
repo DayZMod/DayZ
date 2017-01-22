@@ -204,8 +204,9 @@ if (_status == "ObjectStreamStart") then {
 } forEach _myArray;
 
 // # END OF STREAMING #
-
-call server_plantSpawner; // Draw the pseudo random seeds
+if (dayz_townGenerator) then {
+	call compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_plantSpawner.sqf"; // Draw the pseudo random seeds
+};
 [] execFSM "\z\addons\dayz_server\system\server_vehicleSync.fsm"; 
 [] execVM "\z\addons\dayz_server\system\scheduler\sched_init.sqf"; // launch the new task scheduler
 

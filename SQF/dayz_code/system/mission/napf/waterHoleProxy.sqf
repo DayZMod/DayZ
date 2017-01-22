@@ -141,5 +141,5 @@
 	["WaterHoleProxy",[12914.6,14515.2,2.84679],0],		// [293661: pond_big_02.p3d] 128/129,59
 	["WaterHoleProxy",[8844.21,14646,1.84563],0],		// [222571: pond_small_07.p3d] 88, 58
 	["WaterHoleProxy",[9611.45,16079.3,0.925323],0]	// [198164: pond_small_02.p3d] 96, 44
-],false,false,true] call fnc_spawnObjects;
+],true,true,true] call fnc_spawnObjects;
 

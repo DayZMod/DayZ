@@ -15,4 +15,4 @@
 	["WaterHoleProxy",[7319.2,7002.32,0],0], // [176715: misc_wellpump.p3d] 73,84
 	["WaterHoleProxy",[7904.44,6849.89,0],0], // [194376: pond_small_20.p3d] 79,85
 	["WaterHoleProxy",[7081.24,6160.29,0],0] // [179488: misc_wellpump.p3d] 71,92
-],false,false,true] call fnc_spawnObjects;
+],true,true,true] call fnc_spawnObjects;
