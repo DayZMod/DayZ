@@ -31,7 +31,7 @@ class WoodenFence_base: DZ_buildables
 			position = "";
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "(['UpgradeObject',this] call userActionConditions)";
+			condition = "(['ObjectUpgrade',this] call userActionConditions)";
 			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
 		};
 		class Maintenance {
@@ -49,8 +49,8 @@ class WoodenFence_base: DZ_buildables
 			position = "";
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "(!(this getVariable['Maintenance',false]) OR (damage this > 0))";
-			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+			condition = "(['ObjectDisassembly',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_disassembly.sqf""";
 		};
 	};
 }; 	
@@ -64,6 +64,7 @@ class WoodenFence_ghost: WoodenFence_base
 	class UserActions {
 		delete Upgrade;
 		delete Maintenance;
+		delete Disassembly;
 	};
 	delete Disassembly;
 }; 
@@ -76,6 +77,9 @@ class WoodenFence_1_foundation: WoodenFence_base  // <-- ItemDIY_wood
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
 		requiredParts[] = {"ItemLog","ItemStone"};
 		create = "WoodenFence_1_frame";
+	};
+	class UserActions {
+		delete Disassembly;
 	};
 	delete Disassembly;
 }; 
@@ -212,5 +216,23 @@ class WoodenFence_7: WoodenFence_6
 	};
 	class UserActions {
 		delete Upgrade;
+		class Maintenance {
+			displayNameDefault = $STR_MAINTENANCE;
+			displayName = $STR_MAINTENANCE;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectMaintenance',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+		};
+		class Disassembly {
+			displayNameDefault = $STR_DISASSEMBLY;
+			displayName = $STR_DISASSEMBLY;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectDisassembly',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_disassembly.sqf""";
+		};
 	};
 }; 

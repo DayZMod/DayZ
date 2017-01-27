@@ -23,9 +23,9 @@ _show = switch _action do {
 	case "Repair"; // same as salvage
 	case "Salvage": {IS_ALIVE && !IN_VEHICLE && CAN_DO && _object != dayz_myCursorTarget && HAS_TOOLBOX};
 	//Built Items (Fence,Gates)
-	case "ObjectUpgrade": {!(_object getVariable['BuildLock',false])};
-	case "ObjectMaintenance": {!(_object getVariable['Maintenance',false]) OR IS_DAMAGED};
-	case "ObjectDisassembly": {((getPlayerUID player) in _object getVariable ["ownerArray",[]]) && (isClass (configFile >> "CfgVehicles" >> (typeof _object) >> "Disassembly")) && HAS_TOOLBOX};
+	case "ObjectUpgrade": {CAN_DO && !IN_VEHICLE && !(_object getVariable["BuildLock",false])};
+	case "ObjectMaintenance": {CAN_DO && !IN_VEHICLE && (_object getVariable["Maintenance",false] or IS_DAMAGED)};
+	case "ObjectDisassembly": {CAN_DO && !IN_VEHICLE && HAS_TOOLBOX && !(_object getVariable["BuildLock",false]) && ((getPlayerUID player in _object getVariable["ownerArray",[]]) or (count (_object getVariable["ownerArray",[]]) == 0) or (typeOf _object in ["WoodenFence_1_foundation","WoodenGate_foundation"]))};
 	default {false};
 };
 

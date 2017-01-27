@@ -45,6 +45,35 @@ class WoodenGate_Base: DZ_buildables
 		//[Object,[High Explosive Damage, Medium Explosive Damage, Melee Damage]]
 		HandleDamage = "[_this,[0.5,0.25,0.00001]] call fnc_Obj_FenceHandleDam;";
 	};
+	class UserActions {
+		class Upgrade {
+			displayNameDefault = $STR_UPGRADE;
+			displayName = $STR_UPGRADE;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectUpgrade',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
+		};
+		class Maintenance {
+			displayNameDefault = $STR_MAINTENANCE;
+			displayName = $STR_MAINTENANCE;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectMaintenance',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+		};
+		class Disassembly {
+			displayNameDefault = $STR_DISASSEMBLY;
+			displayName = $STR_DISASSEMBLY;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectDisassembly',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_disassembly.sqf""";
+		};
+	};
 };
 
 class WoodenGate_ghost: WoodenGate_Base
@@ -54,6 +83,12 @@ class WoodenGate_ghost: WoodenGate_Base
 	model = "z\addons\dayz_buildings\models\gates\gate_wood_ghost.p3d"; //Model needs updating to be the ghost of the final model.
     buildCollisionPoints = 4;
     buildCollisionPaths[] = {{0,1,3,2,0,3},{1,2}};
+	
+	class UserActions {
+		delete Upgrade;
+		delete Maintenance;
+		delete Disassembly;
+	};
 };
 //Stage Foundation
 class WoodenGate_foundation: WoodenGate_Base
@@ -97,8 +132,7 @@ class WoodenGate_1: WoodenGate_Base
 			onlyForPlayer = 1;
 			condition = "this animationPhase ""DoorR"" < 0.5";
 			statement = "this animate [""DoorR"", 1];this animate [""DoorL"", 1]";
-		};
-		
+		};	
 		class CloseDoors : OpenDoors {
 			displayNameDefault = $STR_DN_OUT_C_DOOR_DEFAULT;
 			displayName = $STR_DN_OUT_C_DOOR;
@@ -111,7 +145,7 @@ class WoodenGate_1: WoodenGate_Base
 			position = "";
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "!(this getVariable['BuildLock',false])";
+			condition = "(['ObjectUpgrade',this] call userActionConditions)";
 			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
 		};
 		class Maintenance {
@@ -120,8 +154,17 @@ class WoodenGate_1: WoodenGate_Base
 			position = "";
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "(!(this getVariable['Maintenance',false]) OR (damage this > 0))";
+			condition = "(['ObjectMaintenance',this] call userActionConditions)";
 			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+		};
+		class Disassembly {
+			displayNameDefault = $STR_DISASSEMBLY;
+			displayName = $STR_DISASSEMBLY;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectDisassembly',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_disassembly.sqf""";
 		};
 	};
 	actionBegin1 = "OpenDoors";
@@ -164,4 +207,8 @@ class WoodenGate_4: WoodenGate_3
 	scope = 2;
 	displayName = $STR_BLD_name_WoodenGate_4;//"Wooden Gate Level 4"
 	model = "z\addons\dayz_buildings\models\gates\gate4_dzam.p3d";
+	
+	class UserActions {
+		delete Upgrade;
+	};
 };

@@ -22,7 +22,7 @@ class MetalFence_base: DZ_buildables
 			position = ""; //Needs memory point adding
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "!(this getVariable['BuildLock',false])";
+			condition = "(['ObjectUpgrade',this] call userActionConditions)";
 			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
 		};
 		class Maintenance {
@@ -31,8 +31,17 @@ class MetalFence_base: DZ_buildables
 			position = ""; //Needs memory point adding
 			radius = 3;
 			onlyForPlayer = 1;
-			condition = "(!(this getVariable['Maintenance',false]) OR (damage this > 0))";
+			condition = "(['ObjectMaintenance',this] call userActionConditions)";
 			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+		};
+		class Disassembly {
+			displayNameDefault = $STR_DISASSEMBLY;
+			displayName = $STR_DISASSEMBLY;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectDisassembly',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_disassembly.sqf""";
 		};
 	};
 }; 	
@@ -45,6 +54,7 @@ class MetalFence_ghost: MetalFence_base
 	class UserActions {
 		delete Upgrade;
 		delete Maintenance;
+		delete Disassembly;
 	};
 }; 
 
@@ -213,5 +223,8 @@ class MetalFence_7: MetalFence_6
 	};
 	class Upgrade {
 		delete create;
+	};
+	class UserActions {
+		delete Upgrade;
 	};
 }; 
