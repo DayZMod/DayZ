@@ -152,5 +152,7 @@
 	["SKODAWreck",[11340.8,6655.04,0.334831],225.033],
 	["LADAWreck",[11325,6637.85,0.234833],160.033],
 	["Misc_TyreHeap",[11308.6,6640.9,0.0248337],170.033],
-	["Fort_Barricade_EP1",[11459.571,7390.7227,-0.040615425],225.14645]
-],false,true,true] call fnc_spawnObjects;
+	["Fort_Barricade_EP1",[11459.571,7390.7227,-0.040615425],225.14645],
+	["Land_CncBlock_D",[6382.5,2794,6],218],
+	["Land_CncBlock_D",[6382.5,2794,4.7],218]
+],true,true,true] call fnc_spawnObjects;
