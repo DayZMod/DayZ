@@ -87,7 +87,8 @@ player setVariable ["ConfirmedBanditKills",_ConfirmedBanditKills,true];
 //PVDZ_serverStoreVar = [player,"Achievements",_achievements];
 //publicVariableServer "PVDZ_serverStoreVar";
 
-call dayz_resetSelfActions;
+call dayz_resetSelfActions; //New unit has no self actions yet. Reset variables so actions can be added back.
+dayz_actionInProgress = false; //Allow self actions to run now.
 eh_player_killed = player addeventhandler ["FiredNear",{_this call player_weaponFiredNear;}];
 [player] call fnc_usec_damageHandle;
 player allowDamage true;

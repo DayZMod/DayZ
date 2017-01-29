@@ -1,6 +1,11 @@
 /*
 [_obj] call player_packTent;
 */
+if (dayz_actionInProgress) exitWith {localize "str_player_beingpacked" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
+
+private ["_alreadyPacking","_backpacks","_bag","_campItems","_countr","_dir","_holder","_magazines","_obj","_objWpnQty","_objWpnTypes","_objectID","_objectUID","_ownerID","_packobj","_pos","_weapons"];
+
 _obj = _this;
 _ownerID = _obj getVariable["CharacterID","0"];
 _objectID = _obj getVariable["ObjectID","0"];
@@ -73,3 +78,4 @@ if (_ownerID == dayz_characterID or typeOf _obj in _campItems) then {
 } else {
 	localize "str_fail_tent_pack" call dayz_rollingMessages;
 };
+dayz_actionInProgress = false;

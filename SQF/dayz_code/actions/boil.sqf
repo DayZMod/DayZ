@@ -1,5 +1,8 @@
 private ["_bottletext","_tin1text","_tin2text","_tintext","_hasbottleitem","_hastinitem","_qty","_dis","_sfx","_bottleInfected"];
 
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
+
 _bottletext = getText (configFile >> "CfgMagazines" >> "ItemWaterBottle" >> "displayName");
 _tin1text = getText (configFile >> "CfgMagazines" >> "TrashTinCan" >> "displayName");
 _tin2text = getText (configFile >> "CfgMagazines" >> "ItemSodaEmpty" >> "displayName");
@@ -10,14 +13,14 @@ a_player_boil = true;
 player removeAction s_player_boil;
 //s_player_boil = -1;
 
-_bottleInfected = if ("ItemWaterBottleInfected" in magazines player) then {true} else {false};
+_bottleInfected = ("ItemWaterBottleInfected" in magazines player);
 
 {
     if (_x in magazines player) exitWith {_hastinitem = true;};
 } count boil_tin_cans;
 
-if (!_hasbottleitem) exitWith {format[localize "str_player_31",_bottletext,localize "str_player_31_fill"] call dayz_rollingMessages; a_player_boil = false;};
-if (!_hastinitem) exitWith {format[localize "str_player_31",_tintext,localize "str_player_31_fill"] call dayz_rollingMessages; a_player_boil = false;};
+if (!_hasbottleitem) exitWith {format[localize "str_player_31",_bottletext,localize "str_player_31_fill"] call dayz_rollingMessages; a_player_boil = false; dayz_actionInProgress = false;};
+if (!_hastinitem) exitWith {format[localize "str_player_31",_tintext,localize "str_player_31_fill"] call dayz_rollingMessages; a_player_boil = false; dayz_actionInProgress = false;};
 
 if (_hasbottleitem and _hastinitem) then {
 	_qty = 0;
@@ -58,3 +61,4 @@ if (_hasbottleitem and _hastinitem) then {
 };
 
 a_player_boil = false;
+dayz_actionInProgress = false;

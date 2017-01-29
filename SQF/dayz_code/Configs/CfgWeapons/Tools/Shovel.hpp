@@ -6,21 +6,19 @@ class ItemShovel : ItemCore
 	picture = "\z\addons\dayz_communityassets\pictures\equip_shovel_ca.paa";
 	displayName = $STR_EQUIP_NAME_1b;
 	descriptionShort = $STR_EQUIP_DESC_1b;
-
-/*
+	
 	stashsmall = "StashSmall";
 	stashmedium = "StashMedium";
 	consume = "ItemSandbag";
 	
 	class ItemActions
 	{
-		class Use
+		/*class Use
 		{
 			text = $STR_CREATE_STASH;
-			script = "spawn player_createstash; r_action_count = r_action_count + 1;";
-		};
+			script = "spawn player_createstash;";
+		};*/
 	};
-*/
 };
 
 class ItemShovelBroken : ItemCore

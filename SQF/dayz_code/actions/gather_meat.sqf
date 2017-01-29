@@ -1,5 +1,10 @@
 private ["_item","_type","_hasHarvested","_knifeArray","_PlayerNear","_isListed","_activeKnife","_text","_dis","_sfx","_qty","_string"];
 
+if (dayz_actionInProgress) exitWith {
+	localize "str_player_actionslimit" call dayz_rollingMessages;
+};
+dayz_actionInProgress = true;
+
 _item = _this;
 _type = typeOf _item;
 _hasHarvested = _item getVariable["meatHarvested",false];
@@ -7,7 +12,7 @@ _hasHarvested = _item getVariable["meatHarvested",false];
 _knifeArray = [];
 
 _PlayerNear = {isPlayer _x} count ((getPosATL _item) nearEntities ["CAManBase", 10]) > 1;
-if (_PlayerNear) exitWith {localize "str_pickup_limit_5" call dayz_rollingMessages;};
+if (_PlayerNear) exitWith {localize "str_pickup_limit_5" call dayz_rollingMessages; dayz_actionInProgress = false;};
 
 //Count how many active tools the player has
 {
@@ -16,8 +21,10 @@ if (_PlayerNear) exitWith {localize "str_pickup_limit_5" call dayz_rollingMessag
 	};
 } count Dayz_Gutting;
 
-if ((count _knifeArray) < 1) exitwith { localize "str_cannotgut" call dayz_rollingMessages; };
-
+if ((count _knifeArray) < 1) exitWith {
+	localize "str_cannotgut" call dayz_rollingMessages;
+	dayz_actionInProgress = false;
+};
 
 if ((count _knifeArray > 0) and !_hasHarvested) then {
 	//Use sharpest knife player has
@@ -58,3 +65,4 @@ if ((count _knifeArray > 0) and !_hasHarvested) then {
 	uiSleep 0.02;
 	_string call dayz_rollingMessages;
 };
+dayz_actionInProgress = false;

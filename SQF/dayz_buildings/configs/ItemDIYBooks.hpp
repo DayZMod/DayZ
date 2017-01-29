@@ -9,7 +9,7 @@ class ItemDIY_wood: ItemCore {
 	class ItemActions {
 		class Build {
 			text = $STR_BLD_build_ItemDIY_wood;//"Wooden fence"
-			script = "; ['ItemDIY_wood','Build'] spawn player_build; r_action_count = r_action_count + 1;";
+			script = "; ['ItemDIY_wood','Build'] spawn player_build;";
 			require[] = {"ItemEtool"};
 			consume[] = {"ItemLog", "ItemStone", "ItemStone"};
 			ghost = "WoodenFence_ghost";
@@ -29,7 +29,7 @@ class ItemDIY_Gate: ItemCore {
 	class ItemActions {
 		class Build {
 			text = $STR_BLD_build_ItemDIY_woodGate;//"Wooden Gate"
-			script = "; ['ItemDIY_Gate','Build'] spawn player_build; r_action_count = r_action_count + 1;";
+			script = "; ['ItemDIY_Gate','Build'] spawn player_build;";
 			require[] = {"ItemEtool"};
 			consume[] = {"ItemLog"};
 			ghost = "WoodenGate_ghost"; //Ghost model needs to be changed to WoodenGate4 so the player sees the finished fully upgrade model as the ghost
@@ -50,7 +50,7 @@ class ItemDIY_metal: ItemCore {
 	class ItemActions {
 		class Build {
 			text = $STR_BLD_build_ItemDIY_metal;//"Metal fence"
-			script = "; ['ItemDIY_metal','Build'] spawn player_build; r_action_count = r_action_count + 1;";
+			script = "; ['ItemDIY_metal','Build'] spawn player_build;";
 			require[] = {"ItemEtool"};
 			consume[] = {"ItemRSJ", "ItemConcreteBlock", "ItemConcreteBlock"};
 			ghost = "MetalFence_ghost";

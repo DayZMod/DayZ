@@ -12,10 +12,12 @@
 //diag_log("crafting system");
 private ["_config","_input","_output","_required","_failChance","_hasInput","_availabeSpace","_classname","_isClass","_onLadder","_hasTools","_avail","_selection","_item","_amount","_itemName","_freeSlots","_slotType","_i","_j","_dis","_sfx"];
 
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
 //diag_log(str(isnil "r_player_crafting"));
 
 //Process has started
-if( (animationState player) IN [ "ainvpknlmstpslaywrfldnon_medic" ]) exitwith {};
+if( (animationState player) IN [ "ainvpknlmstpslaywrfldnon_medic" ]) exitwith {dayz_actionInProgress = false;};
 
 
 //Config class of right click item
@@ -186,3 +188,5 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 		};
 	};
 };
+
+dayz_actionInProgress = false;

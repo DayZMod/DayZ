@@ -250,6 +250,7 @@ r_antiA_done = false;
 r_antiB_done = false;
 r_antiD_done = false;
 carryClick = false;
+dayz_actionInProgress = false;
 dayz_workingInprogress = false;
 
 //player warming up vars
@@ -265,9 +266,6 @@ r_player_temp_max_factor = 0.04; //(lvl3 up arrow)
 //INT Nutrition Info
 r_player_Nutrition = 0; // Calories
 r_player_nutritionMuilpty = 2;
-
-//count actions
-r_action_count = 0;
 
 //ammo routine
 r_player_actions2 = [];

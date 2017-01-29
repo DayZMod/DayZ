@@ -1,3 +1,5 @@
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
 /*
 delete object from db
 parameters: _obj
@@ -20,5 +22,6 @@ _sfx = "repair";
 PVDZ_obj_Destroy = [_objectID,_objectUID];
 publicVariableServer "PVDZ_obj_Destroy";
 deleteVehicle _obj;
+dayz_actionInProgress = false;
 
 _obj
