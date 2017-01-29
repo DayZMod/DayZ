@@ -99,21 +99,19 @@ class Survivor_DZ : Civilian {
 	class Eventhandlers
 	{
 		local = "_z = _this select 0; if (!isServer && {!isNull _z} && {!(side _z in [west,east,civilian])}) exitWith { PVDZ_sec_atp = ['wrong side', player]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; };";
-		init = "if (isServer) then { DayZ_AllPlayers set [count DayZAllPlayers,_this]; };";
-		//Killed = "if (isServer) then {if ((_this select 0) in DayZ_AllPlayers) then {DayZ_AllPlayers - (_this select 0);DayZ_DeadPlayers set [count DayZ_DeadPlayers,(_this select 0)];};};";
 	};
 };
 
 
 //Hidden proxy used during mission
 class Survivor1_DZ : Survivor_DZ {
-	scope = 2;
+	scope = public;
 	displayName = $STR_CHAR_1;
 	model = "\dayz\objects\proxy_man";
 };
 //General Player skin
 class Survivor2_DZ : Survivor_DZ {
-	scope = 2;
+	scope = public;
 	displayName = $STR_CHAR_1;
 	model = "\dayz\characters\man_survivor";
 };
