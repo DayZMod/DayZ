@@ -88,9 +88,10 @@ if (!isDedicated) then {
 	if (dayz_antiWallHack != 0) then {
 		//Enables Map Plug items
 		if (toLower worldName == "chernarus") then { execVM "\z\addons\dayz_code\system\mission\chernarus\antiwallhack.sqf"; };
-		//Enables Plant lib fixes
-		call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\antihack.sqf";
 	};
+	
+	//Enables Plant lib fixes
+	execVM "\z\addons\dayz_code\system\antihack.sqf";
 	
 	if (toLower(worldName) == "chernarus") then {
 		diag_log "WARNING: Clearing annoying benches from Chernarus";
