@@ -304,6 +304,8 @@ if (!isDedicated) then {
 		format[localize "STR_BLD_COMBO_SET",_codeGuess] call dayz_rollingMessages;
 	};
 
-	// flies and swarm sound sync
-	call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\client_flies.sqf";
+	if (dayz_enableFlies) then {
+		// flies and swarm sound sync
+		call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\client_flies.sqf";
+	};
 };

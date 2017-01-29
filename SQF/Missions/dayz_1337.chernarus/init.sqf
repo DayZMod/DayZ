@@ -28,6 +28,7 @@ if (dayz_presets == "Custom") then {
 	dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked
 	dayz_nutritionValuesSystem = false; //true, Enables nutrition system, false, disables nutrition system.
 	dayz_classicBloodBagSystem = false; // removes all blood type bloodbags (not implmented yet)
+	dayz_enableFlies = true; // Enable flies on dead bodies (negatively impacts FPS).
 };
 
 //Temp settings
