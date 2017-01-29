@@ -5,7 +5,7 @@ scriptName "Functions\misc\fn_damageHandler.sqf";
     - Function
     - [unit, selectionName, damage, source, projectile] call fnc_usec_damageHandler;
 ************************************************************/
-private ["_HitBy","_end","_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_falling","_model","_isZombieHit","_sourceType","_sourceVehicleType","_isMan"];
+private ["_HitBy","_end","_unit","_hit","_damage","_unconscious","_source","_ammo","_Viralzed","_isMinor","_isHeadHit","_isPlayer","_isBandit","_punishment","_humanityHit","_myKills","_wpst","_sourceDist","_sourceWeap","_scale","_type","_nrj","_rndPain","_hitPain","_wound","_isHit","_isbleeding","_rndBleed","_hitBleed","_isInjured","_lowBlood","_rndInfection","_hitInfection","_isCardiac","_chance","_falling","_model","_isZombieHit","_sourceType","_sourceVehicleType","_isMan","_isVehicle","_isLocal"];
 _unit = _this select 0;
 _hit = _this select 1;
 _damage = _this select 2;
@@ -20,6 +20,7 @@ _Viralzed = _sourceType in DayZ_ViralZeds;
 _isMinor = (_hit in USEC_MinorWounds);
 _isHeadHit = (_hit == "head_hit");
 _isZombieHit = _ammo == "zombie";
+_isLocal = local _source;
 
 _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Dayz_freefall select 1 > 3)})});
 
@@ -73,17 +74,18 @@ _falling = (((_hit == "legs") AND {(_source==_unit)}) AND {((_ammo=="") AND {(Da
 //End Simple hack for damage ***until 2.0***
 
 dayz_lastDamageSourceNull = false;
+_isMan = _sourceType isKindOf "CAManBase";
 _isPlayer = (isPlayer _source);
 
 if (_unit == player) then {
 //Set player in combat
-    _unit setVariable["startcombattimer", 1];
+	_unit setVariable["startcombattimer", 1];
 
     if (_hit == "" && _ammo != "Crash") exitWith //Ignore none part dmg. Exit after processing humanity hit. Don't punish driver for damaging passenger in crash
 	{
-        if (!local _source && _isPlayer && alive player) then
+        if (!_isLocal && _isPlayer && alive player) then
 		{
-            //_isBandit = (player getVariable["humanity",0]) <= -2000;
+			//_isBandit = (player getVariable["humanity",0]) <= -2000;
 			_isBandit = (_model in ["Bandit1_DZ","BanditW1_DZ"]);
 			
 			//if player is not free to shoot at inform server that _source shot at player
@@ -100,7 +102,7 @@ if (_unit == player) then {
 			// - Accidental Murder - \\  When wearing the garb of a non-civilian you are taking your life in your own hands
 			// Attackers humanity should not be punished for killing a survivor who has shrouded his identity in military garb.
 
-            _punishment = _isBandit or {player getVariable ["OpenTarget",false]} or {_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ","Skin_Soldier1_DZ"]};
+			_punishment = (_isBandit or {player getVariable ["OpenTarget",false]} or {_model in ["Sniper1_DZ","Soldier1_DZ","Camo1_DZ"]});
             _humanityHit = 0;
 
             if (!_punishment) then {
@@ -156,29 +158,29 @@ if (_unit == player) then {
 			};
 		};
 	};
+	
+	//(vehicle _source != _source) does not work to detect if source unit is in a vehicle in HandleDamage EH
+	_isVehicle = ({_sourceVehicleType isKindOf _x} count ["LandVehicle","Air","Ship"] > 0);
 
-	_isMan = _sourceType isKindOf "CAManBase";
-    //Log to server :-( OverProcessing really not needed.
-    if (!local _source && _isMan) then {
+	//Log to server. Useful for detecting damage and ammo cheats.
+	if (!_isLocal && {!_isZombieHit} && {_isMan or _isVehicle} && {diag_ticktime-(_source getVariable["lastloghit",0]) > 2}) then {
 		_wpst = weaponState _source;
-        if (diag_ticktime-(_source getVariable ["lastloghit",0])>2) then {
-            _source setVariable ["lastloghit",diag_ticktime];
-            _sourceDist = round(_unit distance _source);
-            _sourceWeap = switch (true) do {
-                case (_isZombieHit) : { _ammo };
-                case (_sourceVehicleType isKindOf "LandVehicle" or _sourceVehicleType isKindOf "Air" or _sourceVehicleType isKindOf "Ship") : { format ["in %1",getText(configFile >> "CfgVehicles" >> _sourceVehicleType >> "displayName")] };
-                case (_wpst select 0 == "Throw") : { format ["with %1 thrown", _wpst select 3] };
-                case (["Horn", currentWeapon _source] call fnc_inString) : {"with suspicious vehicle "+str((getposATL _source) nearEntities [["Air", "LandVehicle", "Ship"],5])};
-                case (["Melee", _wpst select 0] call fnc_inString) : { format ["with %2%1",_wpst select 0, if (_sourceDist>6) then {"suspicious weapon "} else {""}] }; 
-                case ((_wpst select 0 == "") AND {(_wpst select 4 == 0)}) : { format ["with %1/%2 suspicious", primaryWeapon _source, _ammo] };
-                case (_wpst select 0 != "") : { format ["with %1/%2 <ammo left:%3>", _wpst select 0, _ammo, _wpst select 4] };
-                default { "with suspicious weapon" };
-            };
-            if (!_isZombieHit) then { // don't log any zombie wounds, even from remote zombies
-                PVDZ_sec_atp = [_unit, _source, toArray _sourceWeap, _sourceDist]; //Send arbitrary string as array to allow stricter publicVariableVal.txt filter
-                publicVariableServer "PVDZ_sec_atp";
-            };
-        };
+		_source setVariable ["lastloghit",diag_ticktime];
+		_sourceDist = round(_unit distance _source);
+		_sourceWeap = switch (true) do {
+			case (_ammo in ["PipeBomb","Mine","MineE"]): { format["with %1",_ammo] };
+			case (_isVehicle) : { format ["in %1",getText(configFile >> "CfgVehicles" >> _sourceVehicleType >> "displayName")] };
+			case (_ammo in MeleeAmmo) : { format ["with %2%1",_wpst select 0, if (_sourceDist>6) then {"suspicious weapon "} else {""}] };
+			case (_wpst select 0 == "Throw") : { format ["with %1 thrown", _wpst select 3] };
+			case (["Horn", currentWeapon _source] call fnc_inString) : {"with suspicious vehicle "+str((getposATL _source) nearEntities [["Air", "LandVehicle", "Ship"],5])};
+			case ((_wpst select 0 == "") AND {_wpst select 4 == 0}) : { format ["with %1/%2 suspicious", primaryWeapon _source, _ammo] };
+			case (_wpst select 0 != "") : { format ["with %1/%2 <ammo left:%3>", _wpst select 0, _ammo, _wpst select 4] };
+			default { "with suspicious weapon" };
+		};
+		
+		//Damage values over 999,999 will kick for PV value restriction (e+). These should not be possible for legitimate players.
+		PVDZ_sec_atp = [_unit, _source, toArray _sourceWeap, _sourceDist, _hit, str _damage]; //Send arbitrary string as array to allow stricter publicVariableVal.txt filter
+		publicVariableServer "PVDZ_sec_atp";
     };
 	
 	dayz_lastDamageSource = switch (true) do {
@@ -188,8 +190,7 @@ if (_unit == player) then {
 		case (_ammo == "RunOver"): {"runover"};
 		case (_ammo == "Dragged"): {"eject"};
 		case (_ammo in MeleeAmmo): {"melee"};
-		//(vehicle _source != _source) does not work to detect if source unit is in a vehicle in HandleDamage EH
-		case (!local _source && {(_isMan && !(currentWeapon _source in ["","Throw"])) or {_sourceVehicleType isKindOf "LandVehicle" or _sourceVehicleType isKindOf "Air" or _sourceVehicleType isKindOf "Ship"}}): {"shot"};
+		case (!_isLocal && {(_isMan && !(currentWeapon _source in ["","Throw"])) or _isVehicle}): {"shot"};
 		default {"none"};
 	};
 	if (dayz_lastDamageSource != "none") then {dayz_lastDamageTime = diag_tickTime;};
@@ -198,13 +199,10 @@ if (_unit == player) then {
 //Ignore none part dmg. Exit after processing humanity hit
 if (_hit == "" && _ammo != "Crash") exitWith { 0 };
 
-//Pure base blood damage
-_scale = 200;
-
 //Ammo Type Setup
 _type = switch true do {
-    case ((_ammo isKindof "Grenade") or (_ammo isKindof "ShellBase") or (_ammo isKindof "TimeBombCore") or (_ammo isKindof "BombCore") or (_ammo isKindof "MissileCore") or (_ammo isKindof "RocketCore") or (_ammo isKindof "FuelExplosion") or (_ammo isKindof "GrenadeBase")): { 1 };
-    case ((_ammo isKindof "B_127x107_Ball") or (_ammo isKindof "B_127x99_Ball")):  { 2 };
+    case ({_ammo isKindOf _x} count ["Grenade","ShellBase","TimeBombCore","BombCore","MissileCore","RocketCore","FuelExplosion","GrenadeBase"] > 0): { 1 };
+	case ((_ammo isKindof "B_127x107_Ball") or (_ammo isKindof "B_127x99_Ball")):  { 2 };
 	case (_isZombieHit): { 3 };
 	case (_ammo == "RunOver"): { 4 };
 	case (_ammo == "Dragged"): { 5 };
@@ -223,6 +221,9 @@ if (_damage > 0.1) then {
     };
 };
 
+//Pure base blood damage
+_scale = 200;
+
 if (_damage > 0.4) then {    
 	//Scale damage based on headhits.
     if (_isHeadHit) then {
@@ -231,10 +232,14 @@ if (_damage > 0.4) then {
     
     //End body part scale
 	//???????????
-    if (_isPlayer && !(player == _source)) then {
+    if (!(player == _source) && (_isPlayer or (_isMan && !_isZombieHit))) then { //Scale shots from AI units the same as shots from players
         _scale = _scale + 800;
         if (_isHeadHit) then {
-            _scale = _scale + 500;
+			if (_ammo in MeleeAmmo) then {
+				_scale = _scale + 500;
+			} else {
+				_scale = _scale + 1180; //Based on 12k blood for DMR headshot at 500m
+			};
         };
     };
 	
@@ -247,7 +252,7 @@ if (_damage > 0.4) then {
 	//Zombies
 		case 3: {_scale = getNumber (configFile >> "CfgVehicles" >> _sourceType >> "damageScale"); if (dayz_DamageMultiplier > 1) then {_scale = _scale * dayz_DamageMultiplier;};};
 	//RunOver
-		case 4: {_scale = _scale - 150};
+		case 4: {_scale = _scale - 50}; //Based on 12k blood for run over with SUV at 70km/h
 	//Dragged
 		case 5: {_scale = 25};
 	//Crash
