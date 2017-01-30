@@ -21,9 +21,9 @@ if (time - dayz_lastCheckSave > 10) then {
 while {(!isNull _display) && !r_player_dead} do {
 	_timeout = 30;
 	_timeout = player getVariable["combattimeout", 0];
-	_inCombat = if (_timeout >= diag_tickTime) then {true} else {false};
-	_playerCheck = if ({isPlayer _x} count (player nearEntities ["AllVehicles",5]) > 1) then {true} else {false};
-	_zedCheck = if (count (player nearEntities ["zZombie_Base",10]) > 0) then {true} else {false};
+	_inCombat = (_timeout >= diag_tickTime);
+	_playerCheck = ({isPlayer _x} count (player nearEntities ["AllVehicles",5]) > 1);
+	_zedCheck = (count (player nearEntities ["zZombie_Base",10]) > 0);
 
 	switch true do {
 		case (_playerCheck) : {

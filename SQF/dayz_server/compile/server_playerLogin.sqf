@@ -113,7 +113,7 @@ if (!_isNew) then {
 
 };
 
-_isHiveOk = if (_hiveVer >= dayz_hiveVersionNo) then {true} else {false}; //EDITED
+_isHiveOk = (_hiveVer >= dayz_hiveVersionNo); //EDITED
 
 PVCDZ_plr_Login = [_charID,_inventory,_backpack,_survival,_isNew,dayz_versionNo,_model,_isHiveOk,_newPlayer];
 (owner _playerObj) publicVariableClient "PVCDZ_plr_Login";
