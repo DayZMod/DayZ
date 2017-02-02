@@ -112,7 +112,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	_isBicycle = _cursorTarget isKindOf "Bicycle";
 	_isMan = _cursorTarget isKindOf "Man"; //includes animals and zombies
 	_isDestructable = _cursorTarget isKindOf "BuiltItems";
-	_isGenerator = _cursorTarget isKindOf "Generator_DZ";
+	_isGenerator = _typeOfCursorTarget == "Generator_DZ";
 	_ownerID = _cursorTarget getVariable ["characterID","0"];
 	_isVehicletype = _typeOfCursorTarget in ["ATV_US_EP1","ATV_CZ_EP1"];
 	_isFuel = false;
