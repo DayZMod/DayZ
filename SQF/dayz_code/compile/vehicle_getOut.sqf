@@ -7,24 +7,24 @@ _position = _this select 1;
 _unit = _this select 2;
 
 //Get players current location
-_playerPos = _unit modelToWorld [0,0,0];
+_playerPos = ATLToASL (_unit modelToWorld [0,0,0]);
 
 _fencesArray = ["WoodenFence_1","WoodenFence_2","WoodenFence_3","WoodenFence_4","WoodenFence_5","WoodenFence_6","WoodenFence_7","WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4"];
 
 //Hopefully returns the xyz of the vehicle seat pos.
-_exitPosition = _vehicle modelToWorld (_vehicle selectionPosition ("pos " + _position));
+_exitPosition = ATLToASL (_vehicle modelToWorld (_vehicle selectionPosition ("pos " + _position)));
 
 if (_unit == player) then {
 	//if (dayz_soundMuted) then {call player_toggleSoundMute;}; // Auto disable mute on vehicle exit (not a good idea without a sleep since rotor can be very loud when spinning down)
 	//_buildables = count (_exitPosition nearObjects ["DZ_buildables", 3]);
 	//Check player location to exit location
-	_intersectsWith = lineIntersectsWith [[_playerPos select 0, _playerPos select 1, 0],[_exitPosition select 0, _exitPosition select 1, 0],_unit,_vehicle,true];
+	_intersectsWith = lineIntersectsWith [_playerPos, _exitPosition, _unit, _vehicle, true];
 	
 	//_buildables = count ((getposATL _vehicle) nearObjects ["DZ_buildables", 3]);
 	_nearBuildables = false;
 	//Scan all intersected items for base items return with true false
 	{
-		_nearBuildables = if ((typeof _x) in _fencesArray) exitWith {true};
+		if ((typeof _x) in _fencesArray) then {_nearBuildables=true};
 	} count _intersectsWith;
 	
 	//if intersects find builditem make player reenter vehicel
