@@ -24,7 +24,7 @@ if (_unit == player) then {
 	_nearBuildables = false;
 	//Scan all intersected items for base items return with true false
 	{
-		if ((typeof _x) in _fencesArray) then {_nearBuildables=true};
+		if ((typeof _x) in _fencesArray) exitwith { _nearBuildables = true };
 	} count _intersectsWith;
 	
 	//if intersects find builditem make player reenter vehicel
