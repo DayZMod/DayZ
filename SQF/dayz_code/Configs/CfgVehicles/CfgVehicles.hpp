@@ -170,6 +170,14 @@ class CfgVehicles {
 	class SkodaGreen:SkodaBase { typicalcargo[] = {}; };
 	class Volha_1_TK_CIV_EP1:Volha_TK_CIV_Base_EP1 { typicalcargo[] = {}; };
 	class Volha_2_TK_CIV_EP1:Volha_TK_CIV_Base_EP1 { typicalcargo[] = {}; };
+	
+	class FileSignature_DZ : Logic
+	{
+		class EventHandlers
+		{
+			init = "if (isServer) then { [] execVM '\z\addons\dayz_server\init\server_setKey.sqf' } else { [] execVM '\z\addons\dayz_code\system\filesign\verify_mission.sqf' }; ";
+		};
+	};
 
 	#include "RepairParts.hpp" //names for all reapir parts. Needs moving to hitpoints
 	//ZEDS
