@@ -349,9 +349,6 @@ if(isNil "dayz_townGenerator") then {
 if(isNil "dayz_townGeneratorBlackList") then {
 	dayz_townGeneratorBlackList = []; // Town generator will not spawn junk within 150m of these positions.
 };
-if(isNil "dayz_enableFlies") then {
-	dayz_enableFlies = true; // Enable flies on dead bodies (negatively impacts FPS).
-};
 
 //Replace server individual settings with ranked settings
 if(isNil "dayz_presets") then { dayz_presets = "Vanilla"; };
@@ -370,6 +367,7 @@ switch (dayz_presets) do {
 		if(isNil "dayz_nutritionValuesSystem") then { dayz_nutritionValuesSystem = false; };
 		//Not implmented yet
 		if(isNil "dayz_classicBloodBagSystem") then { dayz_classicBloodBagSystem = false; };
+		if(isNil "dayz_enableFlies") then { dayz_enableFlies = true; };
 	};
     case "Classic": { //Classic
 		dayz_enableGhosting = false; //Enable disable the ghosting system.
@@ -384,6 +382,7 @@ switch (dayz_presets) do {
 		dayz_nutritionValuesSystem = false; //Enables nutrition system
 		//Not implmented yet
 		dayz_classicBloodBagSystem = true; //Enables one type of bloodbag
+		dayz_enableFlies = true;  //Enables flies spawning on death
 	};
 	case "Elite": { //Elite
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
@@ -398,6 +397,7 @@ switch (dayz_presets) do {
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
 		//Not implmented yet
 		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
+		dayz_enableFlies = true; //Enables flies spawning on death
 	};
     default { //Vanilla
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
@@ -412,6 +412,7 @@ switch (dayz_presets) do {
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
 		//Not implmented yet
 		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
+		dayz_enableFlies = true; //Enables flies spawning on death
 	};
 };
 
