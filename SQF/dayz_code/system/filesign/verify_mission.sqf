@@ -55,8 +55,8 @@ for "_i" from 0 to count _keyvar - 1 do
 _keyvar = toString _keyvar;
 
 isnil {
-	dz_pvs_fskey = _keyvar;
-	dz_pvs_fskey = publicVariableServer "dz_pvs_fskey";
+    PVDZ_fskey = [player, _keyvar];
+    PVDZ_fskey = publicVariableServer "PVDZ_fskey";
 	0
 };
 
