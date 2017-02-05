@@ -76,6 +76,14 @@ class CfgAddons
 	};
 };
 
+class FileSignature_DZ : Logic
+{
+    class EventHandlers
+    {
+        init = "if (!isServer) then { [] execVM '\dayz\dayz_code\system\filesign\verify_mission.sqf' }; ";
+    };
+};
+
 #include "Configs\rscTitles.hpp"
 #include "Configs\CfgWorlds.hpp"
 #include "Configs\CfgMoves.hpp"

@@ -83,6 +83,9 @@ if (isServer) then {
 	//[player,[medical Array]];
 	"PVDZ_playerMedicalSync" addPublicVariableEventHandler { (_this select 1) call server_medicalSync; ((_this select 1) select 0) setVariable["Medical",((_this select 1) select 1),false]; }; //diag_log format["%1 - %2",((_this select 1) select 0),((_this select 1) select 1)]; };
 	
+	//VerifyMission
+	//"PVDZ_fskey" 		addPublicVariableEventHandler {(_this select 1) call server_sendKey};
+	
 	//Added as part of the maintenance system to allow the server to replace the damaged model with a normal model.
 	"PVDZ_object_replace" addPublicVariableEventHandler {
 		_cursorTarget = _this select 1;

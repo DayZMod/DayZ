@@ -173,6 +173,26 @@ class Mission
 				};
 			};
 		};
+		/*
+		class Item2
+		{
+			side="LOGIC ";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={708,35,3533};
+					id=50;
+					side="LOGIC ";
+					vehicle="FileSignature_DZ";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.6;
+				};
+			};
+		};
+		*/
 	};
 	class Markers
 	{
