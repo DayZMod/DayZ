@@ -18,11 +18,11 @@ class WoodenFence_base: DZ_buildables
 	};
 	class Maintenance {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"ItemPlank","equip_nails","equip_nails"};
+		requiredParts[] = {"ItemPlank","equip_nails"};
 	};
 	class eventHandlers {
 		//[Object,[High Explosive Damage, Medium Explosive Damage, Melee Damage]]
-		HandleDamage = "[_this,[0.5,0.25,0.00001]] call fnc_Obj_FenceHandleDam;";
+		HandleDamage = "[_this,[1,0.5,random(0.0005)]] call fnc_Obj_FenceHandleDam;";
 	};
 	class UserActions {
 		class Upgrade {
@@ -75,7 +75,7 @@ class WoodenFence_1_foundation: WoodenFence_base  // <-- ItemDIY_wood
 	displayName = $STR_BLD_name_WoodenFence_1_foundation;//"Wooden Fence Frame"
 	class Upgrade { //to next stage
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
-		requiredParts[] = {"ItemLog","ItemStone"};
+		requiredParts[] = {"ItemLog","ItemLog","ItemStone"};
 		create = "WoodenFence_1_frame";
 	};
 	class UserActions {
@@ -160,7 +160,7 @@ class WoodenFence_3: WoodenFence_2
 		displayName = $STR_BLD_name_WoodenFence_3;//"Wooden Fence Level 3"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"equip_nails","ItemLog","ItemLog","ItemLog"};
+		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
 		create = "WoodenFence_4";
 	};
 }; 
@@ -172,7 +172,7 @@ class WoodenFence_4: WoodenFence_3
 		displayName = $STR_BLD_name_WoodenFence_4;//"Wooden Fence Level 4"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
+		requiredParts[] = {"ItemScrews","ItemScrews","ItemLog","ItemLog","ItemLog","ItemLog"};
 		create = "WoodenFence_5";
 	};
 }; 
@@ -187,6 +187,14 @@ class WoodenFence_5: WoodenFence_4
 		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
 		create = "WoodenFence_6";
 	};
+	class eventHandlers {
+		//[Object,[High Explosive Damage, Medium Explosive Damage, Melee Damage]]
+		HandleDamage = "[_this,[0.5,0.25,0]] call fnc_Obj_FenceHandleDam;";
+	};
+	class Maintenance {
+		requiredTools[] = {"ItemToolbox"};
+		requiredParts[] = {"ItemLog","ItemPlank","ItemPlank","ItemScrews"};
+	};
 }; 
 
 class WoodenFence_6: WoodenFence_5
@@ -197,7 +205,7 @@ class WoodenFence_6: WoodenFence_5
 		displayName = $STR_BLD_name_WoodenFence_6;//"Wooden Fence Level 6"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"ItemScrews","ItemPlank","ItemPlank","ItemPlank"};
+		requiredParts[] = {"ItemScrews","ItemScrews","ItemPlank","ItemPlank","ItemPlank","ItemLog","ItemLog"};
 		create = "WoodenFence_7";
 	};
 };

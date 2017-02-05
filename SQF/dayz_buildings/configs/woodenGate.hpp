@@ -43,7 +43,7 @@ class WoodenGate_Base: DZ_buildables
 	};
 	class eventHandlers {
 		//[Object,[High Explosive Damage, Medium Explosive Damage, Melee Damage]]
-		HandleDamage = "[_this,[0.5,0.25,0.00001]] call fnc_Obj_FenceHandleDam;";
+		HandleDamage = "[_this,[1,0.5,random(0.0005)]] call fnc_Obj_FenceHandleDam;";
 	};
 	class UserActions {
 		class Upgrade {
@@ -184,7 +184,7 @@ class WoodenGate_2: WoodenGate_1
 	model = "z\addons\dayz_buildings\models\gates\gate2_dzam.p3d";
 	class Upgrade { //to next stage
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
-		requiredParts[] = {"ItemLog","ItemPlank","equip_nails"};
+		requiredParts[] = {"ItemLog","ItemPlank","ItemScrews"};
 		create = "WoodenGate_3";
 	};
 };
@@ -196,7 +196,7 @@ class WoodenGate_3: WoodenGate_2
 	model = "z\addons\dayz_buildings\models\gates\gate3_dzam.p3d";
 	class Upgrade { //to next stage
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
-		requiredParts[] = {"ItemLog","ItemLog","ItemPlank"};
+		requiredParts[] = {"ItemLog","ItemLog","ItemPlank","ItemScrews"};
 		create = "WoodenGate_4";
 	};
 };
@@ -210,5 +210,9 @@ class WoodenGate_4: WoodenGate_3
 	
 	class UserActions {
 		delete Upgrade;
+	};
+	class eventHandlers {
+		//[Object,[High Explosive Damage, Medium Explosive Damage, Melee Damage]]
+		HandleDamage = "[_this,[0.5,0.25,0]] call fnc_Obj_FenceHandleDam;";
 	};
 };
