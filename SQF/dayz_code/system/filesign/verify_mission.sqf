@@ -7,7 +7,9 @@
 
 #define SEPARATOR ":"
 
-#define FAIL(value) (isnil { PVDZ_fskey = (value); publicVariableServer "PVDZ_fskey"; })
+
+//Do not whitelist in filters.
+#define FAIL(value) (isnil { PVDZ_fserr = (value); publicVariableServer "PVDZ_fserr"; })
 
 local _separator = Ext_GetSeparator();
 
@@ -60,7 +62,7 @@ isnil {
 	0
 };
 
-_keyvar = "dz_pvc_fskey_" + _keyvar;
+_keyvar = "PVDZ_fskey" + _keyvar;
 
 local _time = diag_tickTime;
 waitUntil { !isnil _keyvar || { diag_tickTime - _time > TIME_OUT } };
