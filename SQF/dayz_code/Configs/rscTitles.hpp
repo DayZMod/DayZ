@@ -9,7 +9,6 @@ class RscIGUIShortcutButton;
 class RscGearShortcutButton;
 class RscIGUIListNBox;
 class RscActiveText;
-
 class RscPictureKeepAspect;
 class RscStandardDisplay;
 class RscProgress;
@@ -18,11 +17,13 @@ class RscButtonTextOnly;
 class RscObject;
 class IGUIBack;
 class RscIGUIListBox;
+class RscXListBox;
+class RscShortcutButton;
 class RscHTML;
 class RscDisplayEmpty;
 
 #include "CfgPlayerStats\defines.hpp"
-#include "CfgPlayerStats\p__cover.hpp"
+#include "CfgPlayerStats\p_cover.hpp"
 #include "CfgPlayerStats\p_journal_humanity.hpp"
 #include "CfgPlayerStats\p_humanity_art.hpp"
 #include "CfgPlayerStats\p_zombies_killed.hpp"
@@ -35,12 +36,58 @@ class RscDisplayMission: RscDisplayEmpty
 {
 	access = 0;
 	idd = 46;
-	onKeyDown = "if (!isNil 'DZ_KeyDown_EH') then {_this call DZ_KeyDown_EH;};"; //assigned much quicker than spawning init_keyboard
+	onKeyDown = "_handled = if (isNil 'DZ_KeyDown_EH') then {false} else {_this call DZ_KeyDown_EH}; _handled"; //assigned much quicker than spawning init_keyboard
 };
 class RscDisplayConfigure {
-	onUnload = "if (!isNil 'keyboard_keys') then {keyboard_keys = nil; [controlNull,1,false,false,false] call DZ_KeyDown_EH;};"; //refresh keyboard_keys after changing binds
-	class controlsBackground;
-	class controls;
+	idd = 4;
+	onUnload = "if (!isNil 'updateControlsHandle') then {terminate updateControlsHandle;}; if (!isNil 'ui_updateControls') then {updateControlsHandle = true spawn ui_updateControls;};";
+};
+class RscDisplayGameOptions {
+	onLoad = "{(_this select 0) displayCtrl 140 lbAdd _x;} forEach [localize 'STR_DISABLED',localize 'STR_ENABLED']; (_this select 0) displayCtrl 140 lbSetCurSel (profileNamespace getVariable ['streamerMode',0]); uiNamespace setVariable ['streamerMode',(profileNamespace getVariable ['streamerMode',0])];";
+	onUnload = "call ui_changeDisplay;";
+	class controls {
+		delete CA_ButtonDefault; //Opens non-functional difficulty selection dialog, player can not select difficulty in MP
+		class CA_TextLanguage : RscText {
+			x = 0.159803;
+			y = (0.420549 + -2*0.069854);
+			text = $STR_DISP_OPT_LANGUAGE;
+		};
+		class CA_ValueLanguage : RscXListBox {
+			idc = 135;
+			x = 0.400534;
+			y = (0.420549 + -2*0.069854);
+			w = 0.3;
+		};
+		class CA_TextStreamerMode : CA_TextLanguage {
+			x = 0.159803;
+			y = (0.420549 + 4*0.069854);
+			text = $STR_UI_STREAMER_MODE;
+		};
+		class CA_ValueStreamerMode : CA_ValueLanguage {
+			idc = 140;
+			y = (0.420549 + 4*0.069854);
+			tooltip = $STR_UI_STREAMER_MODE_TOOLTIP;
+			onLBSelChanged = "profileNamespace setVariable ['streamerMode',(lbCurSel (_this select 0))];";
+		};
+		class CA_ButtonCancel : RscShortcutButton {
+			idc = 2;
+			shortcuts[] = {0x00050000 + 1};
+			x = 0.151;
+			y = 0.7625;
+			text = $STR_DISP_CANCEL;
+			//reset to original value
+			onButtonClick = "profileNamespace setVariable ['streamerMode',(uiNamespace getVariable 'streamerMode')]; saveProfileNamespace; if (!isNil 'player_toggleStreamerMode') then {call player_toggleStreamerMode;};";
+		};
+		class CA_ButtonContinue : RscShortcutButton {
+			idc = 1;
+			shortcuts[] = {0x00050000 + 0, 28, 57, 156};
+			x = 0.525;
+			y = 0.7625;
+			text = $STR_DISP_OK;
+			default = 1;
+			onButtonClick = "saveProfileNamespace; if (!isNil 'player_toggleStreamerMode') then {call player_toggleStreamerMode;};";
+		};
+	};
 };
 
 class RscPictureGUI
@@ -143,7 +190,6 @@ class RscDisplayDebriefing: RscStandardDisplay
 		delete Mainback;
 	};
 };
-class RscShortcutButton;
 class RscShortcutButtonMain;
 
 
@@ -162,9 +208,9 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 	guerLocked = "ca\ui\data\flag_none_ca.paa";
 	civlUnlocked = "ca\ui\data\flag_none_ca.paa";
 	civlLocked = "ca\ui\data\flag_none_ca.paa";
-	colorNotAssigned[] = {.8,.8,.8,1};
-	colorAssigned[] = {.8,.8,.8,1};
-	colorConfirmed[] = {.8,.8,.8,1};
+	colorNotAssigned[] = {0, 1, 0, 1};
+	colorAssigned[] = {0, 1, 0, 1};
+	colorConfirmed[] = {0, 1, 0, 1};
 	
 	onload = "with uiNameSpace do{RscDisplayMultiplayerSetup=_this select 0};"; //#70
 	onMouseHolding = "with uiNameSpace do { switch (1 == 1) do { case(isNil 'RscDMSLoad'): { RscDMSLoad = diag_tickTime; }; case(RscDMSLoad == -1): {}; case(RscDMSLoad == -2): {}; case(diag_tickTime - RscDMSLoad > 7): { RscDMSLoad = diag_tickTime; }; case(diag_tickTime - RscDMSLoad > 5): { ctrlActivate ((_this select 0) displayCtrl 1); RscDMSLoad = -1; }; }; };";
@@ -307,19 +353,18 @@ class RscDisplayMultiplayerSetup: RscStandardDisplay
 		class CA_ValuePool: RscIGUIListBox
 		{
 			idc = 114;
-			text = "Players";
+			text = $STR_MP_PLAYERS;
 			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
 			w = "(96/100) * SafeZoneW"; // wide
 		};
-		class CA_ButtonCancel: RscShortcutButton
-		{
+		class CA_ButtonCancel: RscShortcutButton {
 			idc = 2;
 			default = 0;
-			shortcuts[] = {"0x00050000 + 1"};
+			shortcuts[] = {0x00050000 + 1};
 			x = "(68/100)	* SafeZoneW + SafeZoneX";
 			y = "(93/100)	* SafeZoneH + SafeZoneY";
 			w = 0.203825;
-			text = "$STR_DISP_BACK";
+			text = $STR_DISP_BACK;
 			onButtonClick = "with uiNameSpace do {RscDMSLoad=nil;};"; // autologon at logon on next server
 		};		
 	};
@@ -364,33 +409,6 @@ class RscDisplayMissionFail: RscStandardDisplay
 	{
 		delete Mainback;
 	};
-};
-
-
-class CA_TextLanguage;
-class RscXListBox;
-
-class RscDisplayGameOptions
-{
-	//onLoad = "((_this select 0) displayCtrl 140) lbAdd 'Default';((_this select 0) displayCtrl 140) lbAdd 'Debug';((_this select 0) displayCtrl 140) lbAdd 'None';((_this select 0) displayCtrl 140) lbSetCurSel (uiNamespace getVariable ['DZ_displayUI', 0]);";
-	onUnload = "call ui_changeDisplay;"; /*diag_log[diag_tickTime,'RscDisplayGameOptions'];*/
-	/*class controls
-	{
-		class CA_TextUIDisplay: CA_TextLanguage
-		{
-			x = 0.159803;
-			y = "(0.420549 + 4*0.069854)";
-			text = "DayZ UI:";
-		};
-		class CA_ValueUIDisplay: RscXListBox
-		{
-			idc = 140;
-			x = 0.400534;
-			y = "(0.420549 + 4*0.069854)";
-			w = 0.3;
-			onLBSelChanged = "(uiNamespace setVariable ['DZ_displayUI', (_this select 1)]);";
-		};
-	};*/
 };
 
 class RscDisplayMain : RscStandardDisplay
@@ -571,7 +589,7 @@ class RscDisplayMPInterrupt : RscStandardDisplay {
 		class CA_B_Respawn : CA_B_SAVE {
 			idc = 1010;
 			//onButtonClick = "hint str (_this select 0);";
-			onButtonClick = "if ((alive player) && (r_fracture_legs)) then { player SetDamage 1;};";
+			onButtonClick = "if ((alive player) && (r_fracture_legs)) then { [player,'suicide'] call player_death; };";
 			y = 0.2537 + 0.101903 * 2;
 			text = $STR_DISP_INT_RESPAWN;
 			default = 0;

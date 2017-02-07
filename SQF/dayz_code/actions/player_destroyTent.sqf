@@ -1,4 +1,4 @@
-private ["_cantype","_emptycan","_intensity","_objectID","_objectUID","_obj","_fuelArray","_matchArray","_alreadyDestorying","_randomJerryCan","_fireIntensity","_randomBoxMatches","_qtyRemaining","_dis","_sfx"];
+private ["_emptycan","_objectID","_objectUID","_obj","_fuelArray","_matchArray","_alreadyDestroying","_randomJerryCan","_fireIntensity","_dis","_sfx"];
 
 //Tent Object
 _obj = _this select 3;
@@ -14,7 +14,7 @@ _matchArray = [];
 	if (_x IN items player) then {
 		_matchArray set [count _matchArray, _x];
 	};
-} count Dayz_Ignators;
+} count DayZ_Ignitors;
 
 //Count how many fuelcans the player has incase they have more then one.
 {
@@ -31,15 +31,15 @@ if ((count _matchArray == 0)) exitwith { systemChat (localize ("str_setFireMatch
 player playActionNow "Medic";
 
 //Actionmenu tools
-player removeAction s_player_destorytent;
-s_player_destorytent = -1;
+player removeAction s_player_destroytent;
+s_player_destroytent = -1;
 
-//Make sure you can only destory once
-_alreadyDestorying = _obj getVariable["alreadyDestorying",0];
+//Make sure you can only destroy once
+_alreadyDestroying = _obj getVariable["alreadyDestroying",0];
 
-if (_alreadyDestorying == 1) exitWith {cutText [localize "str_TentAlreadyLit" , "PLAIN DOWN"]};
+if (_alreadyDestroying == 1) exitWith {localize "str_TentAlreadyLit" call dayz_rollingMessages;};
 
-_obj setVariable["alreadyDestorying",1];
+_obj setVariable["alreadyDestroying",1];
 
 //Jerry can system ** Needs redoing
 //Select random can from array
@@ -52,26 +52,7 @@ _fireIntensity = getNumber (configFile >> "CfgMagazines" >> _randomJerryCan >> "
 player removeMagazine _randomJerryCan;
 player addMagazine _emptycan;
 
-//Match system ** Needs redoing 
-//Select random matchbox
-_randomBoxMatches = _matchArray call BIS_fnc_selectRandom; 
-_qtyRemaining = getText (configFile >> "cfgWeapons" >> _randomBoxMatches >> "Ignators" >> "qtyRemaining");
-
-switch _randomBoxMatches do {
-	case "ItemMatchbox" : { 
-		if ([0.3] call fn_chance) then {
-			player removeWeapon _randomBoxMatches;
-			player addWeapon _qtyRemaining;
-			
-			//info box.
-			systemChat (localize "str_info_limitedbox");	
-		};	
-	};
-	default { 
-		player removeWeapon _randomBoxMatches;
-		player addWeapon _qtyRemaining;
-	};
-};
+["matches",0.3] call fn_dynamicTool;
 
 //Normal alerts 
 _dis=20;
@@ -82,7 +63,7 @@ _sfx = "tentpack";
 // Added Nutrition-Factor for work
 ["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
 
-sleep 3;
+uiSleep 3;
 
 PVDZ_obj_Destroy = [_objectID,_objectUID];
 publicVariableServer "PVDZ_obj_Destroy";
@@ -104,4 +85,4 @@ publicVariable "PVDZ_obj_Fire";
 _obj inflame true;
 //_obj spawn player_fireMonitor;
 
-cutText [localize "str_success_tent_destoryed", "PLAIN DOWN"];
+localize "str_success_tent_destroyed" call dayz_rollingMessages;

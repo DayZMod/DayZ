@@ -1,6 +1,6 @@
 
-class Man;
-class CAManBase: Man
+class Man; //includes animals and zombies
+class CAManBase: Man //includes all skins except animals
 {
 	class TalkTopics;
 	class HitPoints
@@ -8,11 +8,27 @@ class CAManBase: Man
 		class HitHead;
 		class HitBody;
 	};
+	class UserActions
+	{
+		class StudyBody
+		{
+			displayName = $STR_ACTION_STUDYBODY;
+			displayNameDefault = $STR_ACTION_STUDYBODY;
+			priority = 0;
+			radius = 3;
+			position = "";
+			showWindow = 0;
+			onlyForPlayer = 1;
+			shortcut = "";
+			condition = "(['StudyBody',this] call userActionConditions)";
+			statement = "this call player_studyBody;";
+		};
+	};
 };
 class Civilian: CAManBase
 {
 	rarityUrban = -1;
-	scope = 0;
+	scope = private;
 	faction = "CIV";
 	genericNames = "CzechMen";
 	portrait = "\Ca\characters\data\portraits\comBarHead_civ_man_ca.paa";
@@ -68,7 +84,7 @@ class Civilian: CAManBase
 };
 
 class Survivor_DZ : Civilian {
-	scope = 1;
+	scope = protected;
 	side = TWest;
 	weapons[] = {"Throw", "Put"};
 	magazines[] = {};
@@ -86,17 +102,40 @@ class Survivor_DZ : Civilian {
 	};
 };
 
+
+//Hidden proxy used during mission
 class Survivor1_DZ : Survivor_DZ {
-	scope = 2;
+	scope = public;
 	displayName = $STR_CHAR_1;
 	model = "\dayz\objects\proxy_man";
 };
-
+//General Player skin
 class Survivor2_DZ : Survivor_DZ {
-	scope = 2;
+	scope = public;
 	displayName = $STR_CHAR_1;
 	model = "\dayz\characters\man_survivor";
 };
+/*
+//Not Used
+//General Player Black skin "Survivor2Black_DZ" call player_switchModel;
+class Survivor2Black_DZ : Survivor1_DZ {
+	scope = 2;
+	displayName = $STR_CHAR_1;
+	model = "\dayz\characters\man_survivor";
+	//model = "\Ca\Characters_PMC\Frost\Frost.p3d";
+	HiddenSelections[] = {"camo"};
+	HiddenSelectionsTextures[] = {"ca\characters_pmc\frost\data\frost_co.paa"};
+	class EventHandlers: EventHandlers
+	{
+		init = "(_this select 0) setObjectTexture [0,[""\Ca\Characters_PMC\Frost\Data\Frost_1_co.paa"",""\Ca\Characters_PMC\Frost\Data\Frost_2_co.paa"",""\Ca\Characters_PMC\Frost\Data\Frost_3_co.paa""] select floor random 3];";
+	};
+	class Wounds
+	{
+		tex[] = {};
+		mat[] = {"Ca\Characters_PMC\Frost\Data\frost.rvmat","Ca\Characters_PMC\Frost\Data\w1_frost.rvmat","Ca\Characters_PMC\Frost\Data\w2_frost.rvmat"};
+	};
+};
+*/
 
 class Survivor3_DZ : Survivor2_DZ {
 	model = "\dayz\characters\man_hero";

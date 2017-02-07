@@ -1,5 +1,6 @@
 respawn = "BASE";
-respawndelay = 5;
+respawnDelay = 0;
+respawnDialog = 0;
 onLoadMission= "DayZ Chernarus";
 OnLoadIntro = "Welcome to Chernarus";
 OnLoadIntroTime = False;

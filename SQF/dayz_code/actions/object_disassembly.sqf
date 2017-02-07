@@ -1,9 +1,9 @@
 private ["_cursorTarget","_onLadder","_isWater","_alreadyRemoving","_characterID","_objectID","_objectUID","_ownerArray","_dir",
 	"_realObjectStillThere","_upgrade","_entry","_parent","_requiredParts","_requiredTools","_model","_toolsOK","_displayname",
-	"_whpos","_i","_wh","_object","_msg","_vector","_dis","__FILE__","_puid","_variables"];
+	"_whpos","_wh","_object","_vector","_dis","_puid","_variables"];
 
 
-_cursorTarget = _this select 3;
+_cursorTarget = _this;
 
 // ArmaA2 bug workaround: sometimes the object is null
 if ((isNil "_cursorTarget") or {(isNull _cursorTarget)}) then {
@@ -11,29 +11,17 @@ if ((isNil "_cursorTarget") or {(isNull _cursorTarget)}) then {
     _cursorTarget = if (count _cursorTarget == 0) then { objNull } else { _cursorTarget select 0 };
 };
 
-if(isNull _cursorTarget) exitWith {
-    //cutText [localize "str_disassembleNoOption", "PLAIN DOWN"];
-	_msg = localize "str_disassembleNoOption";
-	_msg call dayz_rollingMessages;
-};
+if(isNull _cursorTarget) exitWith { localize "str_disassembleNoOption" call dayz_rollingMessages; };
 
-//Remove action Menu
-player removeAction s_player_disassembly;
-s_player_disassembly = -1;
+if (player getVariable["alreadyBuilding",0] == 1) exitWith { localize "str_upgradeInProgress" call dayz_rollingMessages; };
 
 //Normal blocked stuff
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _isWater = (surfaceIsWater (getPosATL player)) or dayz_isSwimming;
-if(_isWater or _onLadder) exitWith {
-	_msg = localize "str_water_ladder_cant_do";
-	_msg call dayz_rollingMessages;
-};
+if(_isWater or _onLadder) exitWith { localize "str_water_ladder_cant_do" call dayz_rollingMessages; };
 
 _alreadyRemoving = _cursorTarget getVariable["ObjectLocked",0];
-if (_alreadyRemoving == 1) exitWith {
-	_msg = localize "str_disassembleInProgress";
-	_msg call dayz_rollingMessages;
-};
+if (_alreadyRemoving == 1) exitWith { localize "str_disassembleInProgress" call dayz_rollingMessages; };
 
 _cursorTarget setVariable["ObjectLocked",1,true];
 _characterID = _cursorTarget getVariable ["characterID","0"];
@@ -50,6 +38,9 @@ _upgrade = typeOf _cursorTarget;
 _entry = configFile >> "CfgVehicles" >> _upgrade;
 r_interrupt = false;
 
+_disassemblyParts = [] + (getArray (_entry >> "Disassembly" >> "removedParts"));
+_disassemblyReturnChance = [] + (getNumber (_entry >> "Disassembly" >> "removedChance"));
+
 for "_i" from 1 to 20 do {
     _parent = inheritsFrom _entry;
     _requiredParts = [] + (getArray (_parent >> "Upgrade" >> "requiredParts"));
@@ -64,11 +55,7 @@ for "_i" from 1 to 20 do {
         if (!(_x IN items player)) exitWith { _toolsOK = false; };
     } count _requiredTools;
 	
-    if (!_toolsOK) exitWith {
-        //cutText [format [localize "str_disassembleMissingTool",getText (configFile >> "CfgWeapons" >> _x >> "displayName"),_displayname], "PLAIN DOWN"];//["Missing %1 to disassemble %2."
-    	_msg = format [localize "str_disassembleMissingTool",getText (configFile >> "CfgWeapons" >> _x >> "displayName"),_displayname];
-		_msg call dayz_rollingMessages;
-	};
+    if (!_toolsOK) exitWith { format [localize "str_disassembleMissingTool",getText (configFile >> "CfgWeapons" >> _x >> "displayName"),_displayname] call dayz_rollingMessages; };
 
     if (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "disableWeapons") == 0) then {
         player playActionNow "Medic";
@@ -104,9 +91,15 @@ for "_i" from 1 to 20 do {
     _wh setDir (30*_i);
     _wh setPosATL _whpos;
     {
-        if (isClass (configFile >> "CfgMagazines" >> _x))
-        then { _wh addMagazineCargoGlobal [_x, 1]; }
-        else { _wh addWeaponCargoGlobal [_x, 1]; };
+		//Never return _disassemblyParts_.
+		if (!(_x in _disassemblyParts)) then {
+			//Random other returned items.
+			if ([_disassemblyReturnChance] call fn_chance) then {
+				if (isClass (configFile >> "CfgMagazines" >> _x))
+				then { _wh addMagazineCargoGlobal [_x, 1]; }
+				else { _wh addWeaponCargoGlobal [_x, 1]; };
+			};
+		};
     } forEach _requiredParts;
     diag_log [diag_ticktime, __FILE__, "Pile created with:", _requiredParts];
 
@@ -118,7 +111,7 @@ for "_i" from 1 to 20 do {
 		_cursorTarget setPosATL _pos;
 	};
 
-    sleep 1.5;
+    uiSleep 1.5;
 
     if (r_interrupt) exitwith { 
         diag_log [diag_ticktime, __FILE__, "Operation interrupted, last building deleted is:", _upgrade];           
@@ -165,9 +158,7 @@ if (!_realObjectStillThere) then {
     };
 };
 
-_msg = localize "str_disassembleDone";
-_msg call dayz_rollingMessages;
-//cutText [localize "str_disassembleDone", "PLAIN DOWN"];
+localize "str_disassembleDone" call dayz_rollingMessages;
 
 _cursorTarget setVariable["ObjectLocked",0,true];
 

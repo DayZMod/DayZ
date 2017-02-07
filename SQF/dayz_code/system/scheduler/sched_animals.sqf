@@ -3,7 +3,7 @@
 
 sched_animals = {
 	HIDE_FSM_VARS
-	private ["_min","_count","_global","_obj","_x","_animalssupported","_type","_root","_favouritezones","_angle","_radius","_randrefpoint","_PosList","_Pos","_agent","_pos", "_vehicle", "_speed", "_i"];
+	private ["_min","_count","_global","_obj","_x","_animalssupported","_type","_root","_favouritezones","_angle","_radius","_randrefpoint","_PosList","_Pos","_agent","_pos", "_vehicle", "_speed"];
 	_min = diag_fpsmin;
 	_vehicle = vehicle player;
 	_count = 0;
@@ -43,9 +43,9 @@ sched_animals = {
 	if (_speed distance [0,0,0] > 12) exitWith {objNull};
 	if ((_vehicle != player) AND {((count crew _vehicle > 1) AND {(driver _vehicle != player)})}) exitWith {objNull};
 
-	//diag_log [ dayz_maxGlobalAnimals / (1 max count playableUnits), ceil(1.2*(dayz_maxGlobalAnimals - _global) / (1 max count playableUnits)) min (dayz_maxAnimals - _count), _global,dayz_maxAnimals, _count, dayz_maxGlobalAnimals, _global ];
-	for "_x" from 0 max (2 min (ceil(1.5*(dayz_maxGlobalAnimals - _global) / (1 max count playableUnits)) min (dayz_maxAnimals - _count))) to 1 step -1 do {
-		_animalssupported = ["hen","hen","hen","Cow","Sheep","WildBoar","WildBoar","WildBoar","Goat","Rabbit","Rabbit"];
+	//diag_log [ dayz_maxGlobalAnimals / (1 max (playersNumber west)), ceil(1.2*(dayz_maxGlobalAnimals - _global) / (1 max (playersNumber west))) min (dayz_maxAnimals - _count), _global,dayz_maxAnimals, _count, dayz_maxGlobalAnimals, _global ];
+	for "_x" from 0 max (2 min (ceil(1.5*(dayz_maxGlobalAnimals - _global) / (1 max (playersNumber west))) min (dayz_maxAnimals - _count))) to 1 step -1 do {
+		_animalssupported = ["Hen","Hen","Hen","Cow","Sheep","WildBoar","WildBoar","WildBoar","Goat","Rabbit","Rabbit"];
 		_type = _animalssupported select floor random count _animalssupported;
 		if (_type == "Cow") then {
 			_animalssupported = ["Cow01","Cow02","Cow03","Cow04"];

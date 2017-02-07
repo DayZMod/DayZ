@@ -14,9 +14,9 @@ _text = getText (configFile >> _type >> _classname >> "displayName");
 
 if (!canPickup) exitwith {
 	if (pickupInit) then {
-		cutText [localize "str_pickup_limit_2","PLAIN DOWN"];
+		localize "str_pickup_limit_2" call dayz_rollingMessages;
 	} else {
-		cutText [localize "str_pickup_limit_3","PLAIN DOWN"];
+		localize "str_pickup_limit_3" call dayz_rollingMessages;
 	};
 };
 
@@ -33,18 +33,18 @@ if (_classname isKindOf "TrapBear") exitWith { deleteVehicle _holder; };
 player playActionNow "PutDown";
 
 //Adding random chance of arrow is re-usable on pickup
-_broken = if ((_classname == "1Rnd_Arrow_Wood") && {[0.15] call fn_chance}) then {true} else {false};
-if (_broken) exitWith { deleteVehicle _holder; cutText [localize "str_broken_arrow", "PLAIN DOWN"]; };
+_broken = ((_classname == "1Rnd_Arrow_Wood") && {[0.15] call fn_chance});
+if (_broken) exitWith { deleteVehicle _holder; localize "str_broken_arrow" call dayz_rollingMessages; };
 
 _claimedBy = _holder getVariable["claimed","0"];
 
-if (_claimedBy != _playerID) exitWith { cutText [format [localize "str_player_beinglooted",_text] , "PLAIN DOWN"]; };
+if (_claimedBy != _playerID) exitWith { format[localize "str_player_beinglooted",_text] call dayz_rollingMessages; };
 
 if (_classname isKindOf "Bag_Base_EP1") exitWith {
 	_PlayerNear = {isPlayer _x} count ((getPosATL _holder) nearEntities ["CAManBase", 10]) > 1;
-	if (_PlayerNear) exitWith {cutText [localize "str_pickup_limit_4", "PLAIN DOWN"]};
+	if (_PlayerNear) exitWith {localize "str_pickup_limit_4" call dayz_rollingMessages;};
 
-	diag_log("Picked up a bag: " + _classname);
+	//diag_log("Picked up a bag: " + _classname);
 	
 	_hasBag = unitBackpack player;
 
@@ -77,7 +77,7 @@ if (_isOk) then {
 } else {
 	if (!_isOk) exitWith {
 		_holder setVariable["claimed",0,true];
-		cutText [localize "str_player_24", "PLAIN DOWN"];
+		localize "str_player_24" call dayz_rollingMessages;
 	};
 };
 uiSleep 3;

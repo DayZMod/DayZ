@@ -1,6 +1,6 @@
 private ["_array","_vehicle","_part","_hitpoint","_type","_isOK","_brokenPart","_started","_finished","_hasToolbox","_nameType","_namePart","_animState","_isMedic","_damage","_BreakableParts","_selection","_wpn","_classname","_ismelee"];
 
-if (dayz_salvageInProgress) exitWith { cutText [localize "str_salvage_inprogress", "PLAIN DOWN"]; };
+if (dayz_salvageInProgress) exitWith { localize "str_salvage_inprogress" call dayz_rollingMessages; };
 dayz_salvageInProgress = true;
 
 _array = 	_this select 3;
@@ -19,7 +19,6 @@ _namePart = getText(configFile >> "cfgMagazines" >> _part >> "displayName");
 
 {_vehicle removeAction _x} count s_player_repairActions;
 s_player_repairActions = [];
-s_player_repair_crtl = 1;
 
 if (_hasToolbox) then {
 	player playActionNow "Medic";
@@ -72,12 +71,12 @@ if (_hasToolbox) then {
 				_vehicle call fnc_veh_ResetEH;
 				_vehicle setvelocity [0,0,1];
 				if(_brokenPart) then {
-					cutText [format [localize "str_salvage_destroyed",_namePart,_nameType], "PLAIN DOWN"];
+					format[localize "str_salvage_destroyed",_namePart,_nameType] call dayz_rollingMessages;
 				} else {
-					cutText [format [localize "str_salvage_removed",_namePart,_nameType], "PLAIN DOWN"];
+					format[localize "str_salvage_removed",_namePart,_nameType] call dayz_rollingMessages;
 				};
 			} else {
-				cutText [localize "str_player_24", "PLAIN DOWN"];
+				localize "str_player_24" call dayz_rollingMessages;
 			};
 		};
 		true call dz_fn_meleeMagazines;
@@ -87,14 +86,13 @@ if (_hasToolbox) then {
 			[objNull, player, rSwitchMove,""] call RE;
 			player playActionNow "stop";
 		};
-		cutText [localize "str_salvage_canceled", "PLAIN DOWN"];
+		localize "str_salvage_canceled" call dayz_rollingMessages;
 	};
 } else {
-	cutText [format [localize "str_salvage_toolbox",_namePart], "PLAIN DOWN"];
+	format[localize "str_salvage_toolbox",_namePart] call dayz_rollingMessages;
 };
 
 dayz_myCursorTarget = objNull;
-s_player_repair_crtl = -1;
 dayz_salvageInProgress = false;
 
 //adding melee mags back if needed

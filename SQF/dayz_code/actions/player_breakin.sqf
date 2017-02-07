@@ -1,5 +1,5 @@
 private ["_brokein","_isOk","_hasSledgeHammer","_gps","_vars","_hasToolbox","_hasCrowbar","_limit","_proceed","_counter",
-"_dis","_sfx","_roll","_animState","_started","_finished","_isMedic","_isGate"];
+"_dis","_sfx","_roll","_animState","_started","_finished","_isMedic","_isGate","_values"];
 
 _target = _this select 3;
 _pos = getPos _target;
@@ -11,21 +11,28 @@ _hasSledgeHammer = "ItemSledgeHammer" in items player;
 _hasCrowbar = "ItemCrowbar" in items player;
 
 if (!_hasSledgeHammer) exitWith {
-	//titleText [localize "STR_BLD_BREAKIN_NEED_SLEDGE", "PLAIN DOWN"];
 	localize "STR_BLD_BREAKIN_NEED_SLEDGE" call dayz_rollingMessages;
-	sleep 1;
+	uiSleep 1;
 };
 
-if (!_hasCrowbar) exitWith {
-	//titleText [localize "STR_BLD_BREAKIN_NEED_CROWBAR", "PLAIN DOWN"];
+if (!_hasCrowbar) exitWith { 
 	localize "STR_BLD_BREAKIN_NEED_CROWBAR" call dayz_rollingMessages;
-	sleep 1;
+	uiSleep 1;
 };
 
 _isOk = true;
 _proceed = false;
 _counter = 0;
 _brokein = false;
+
+//[ChanceToBreakin,SledgeChance,CowbarChance]
+_values = switch (1==1) do {
+    case (_isWoodenGate): { [0.04,0.30,0.20] };
+    case (_isMetalGate): { [0.02,0.60,0.40] };
+    default { [] };
+};
+
+if ( (count _values) == 0 ) exitwith {};
 
 while {_isOk} do {
 //Check if we have the tools to start
@@ -34,16 +41,14 @@ while {_isOk} do {
 
 	if (!_hasSledgeHammer) exitWith {
 		_proceed = nil;
-		//titleText [localize "STR_BLD_BREAKIN_NEED_SLEDGE", "PLAIN DOWN"];
 		localize "STR_BLD_BREAKIN_NEED_SLEDGE" call dayz_rollingMessages;
-		sleep 1;
+		uiSleep 1;
 	};
 
 	if (!_hasCrowbar) exitWith {
 		_proceed = nil;
-		//titleText [localize "STR_BLD_BREAKIN_NEED_CROWBAR", "PLAIN DOWN"];
 		localize "STR_BLD_BREAKIN_NEED_CROWBAR" call dayz_rollingMessages;
-		sleep 1;
+		uiSleep 1;
 	};
 	
 //Run animation
@@ -77,7 +82,7 @@ while {_isOk} do {
 			r_doLoop = false;
 			_finished = false;
 		};
-		sleep 0.1;
+		uiSleep 0.1;
 	};
 	r_doLoop = false;
 	
@@ -89,42 +94,29 @@ while {_isOk} do {
 	
 //Everything happened as it should
 	if(_finished) then {
-	//Add to Counter
+		//Add to Counter
 		_counter = _counter + 1;
 		
-		if (_isMetalGate) then {
-			//start chance to gain access.
-			if ([0.02] call fn_chance) then {
-				_isOk = false;
-				_proceed = true;
-				_brokein = true;
-				_target setVariable ["isOpen", "1", true];
-			};
-		};
-		
-		if (_isWoodenGate) then {
-			if ([0.04] call fn_chance) then {
-				_isOk = false;
-				_proceed = true;
-				_brokein = true;
-				_target setVariable ["isOpen", "1", true];
-			};
+		//start chance to gain access.
+		if ([(_values select 0)] call fn_chance) then {
+			_isOk = false;
+			_proceed = true;
+			_brokein = true;
+			_target setVariable ["isOpen", "1", true];
 		};
 	};
 	
 	//Chances to damage tools
-	if ([0.30] call fn_chance) then {
+	if ([(_values select 1)] call fn_chance) then {
 		player removeWeapon "ItemSledgeHammer";
 		player addWeapon "ItemSledgeHammerBroken";
-		//titleText [localize "STR_BLD_BREAKIN_BROKEN_SLEDGE", "PLAIN DOWN"];
 
 		localize "STR_BLD_BREAKIN_BROKEN_SLEDGE" call dayz_rollingMessages;
 	};
 
-	if ([0.20] call fn_chance) then {
+	if ([(_values select 2)] call fn_chance) then {
 		player removeWeapon "ItemCrowbar";
 		player addWeapon "ItemCrowbarBent";
-		//titleText [localize "STR_BLD_BREAKIN_BENT_CROWBAR", "PLAIN DOWN"];
 		
 		localize "STR_BLD_BREAKIN_BENT_CROWBAR" call dayz_rollingMessages;
 	};
@@ -136,10 +128,9 @@ while {_isOk} do {
 		_proceed = true;
 	};
 	
-	//titleText [format[localize "STR_BLD_BREAKIN", _counter,_limit], "PLAIN DOWN"];
 	
 	format[localize "STR_BLD_BREAKIN", _counter,_limit] call dayz_rollingMessages;
-	sleep 0.03;
+	uiSleep 0.03;
 };
 //Tool issues
 if (isnil "_proceed") exitwith {};
@@ -151,8 +142,6 @@ if (!_proceed) then {
 		[objNull, player, rSwitchMove,""] call RE;
 		player playActionNow "stop";
 	};
-	//titleText [localize "STR_BLD_BREAKIN_CANCELLED", "PLAIN DOWN"];
-
 	localize "STR_BLD_BREAKIN_CANCELLED" call dayz_rollingMessages;
 };
 
@@ -161,15 +150,11 @@ if (!_proceed) then {
 
 //Completed but no success.
 if (_proceed and !_brokein) then {
-	//titleText [localize "STR_BLD_BREAKIN_COMPLETE_FAIL", "PLAIN DOWN"];
-
 	localize "STR_BLD_BREAKIN_COMPLETE_FAIL" call dayz_rollingMessages;
 };
 
 //Completed and successful
 if (_proceed and _brokein) then {
-	//titleText [localize "STR_BLD_BREAKIN_COMPLETE", "PLAIN DOWN", 0.3];
-
 	localize "STR_BLD_BREAKIN_COMPLETE" call dayz_rollingMessages;
 	
 	//Open Gate.

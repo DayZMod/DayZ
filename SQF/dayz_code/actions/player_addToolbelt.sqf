@@ -1,3 +1,5 @@
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
 private ["_item","_config","_onLadder","_hastoolweapon","_onBack","_text","_create","_config2","_melee2tb","_isOk"];
 
 disableSerialization;
@@ -6,11 +8,11 @@ _config = configFile >> "cfgWeapons" >> _item;
 _onBack = dayz_onBack in MeleeWeapons;
 
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-if (_onLadder) exitWith {cutText [localize "str_player_21", "PLAIN DOWN"]};
+if (_onLadder) exitWith {localize "str_player_21" call dayz_rollingMessages; dayz_actionInProgress = false;};
 
 _hastoolweapon = _item in weapons player;
 _text = getText (_config >> "displayName");
-if (!_hastoolweapon and !_onBack) exitWith {cutText [format [localize "str_player_30",_text] , "PLAIN DOWN"]};
+if (!_hastoolweapon and !_onBack) exitWith {format[localize "str_player_30",_text] call dayz_rollingMessages; dayz_actionInProgress = false;};
 
 call gear_ui_init;
 
@@ -57,5 +59,6 @@ if (_isOk) then {
 	};
 } else {
 	closeDialog 0;
-	cutText [localize "str_player_24", "PLAIN DOWN"];
+	localize "str_player_24" call dayz_rollingMessages;
 };
+dayz_actionInProgress = false;

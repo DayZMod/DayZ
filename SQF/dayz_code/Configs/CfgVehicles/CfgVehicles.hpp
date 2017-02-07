@@ -1,3 +1,5 @@
+#include "CommonActions.hpp"
+
 class CfgVehicles {
 	class ALL;
 	class AllVehicles : ALL
@@ -21,6 +23,28 @@ class CfgVehicles {
 				class ViewOptics;
             };
         };
+		class UserActions
+		{
+			class Repair {ACTION_REPAIR; radius = 8;};
+			class Salvage {ACTION_SALVAGE; radius = 8;};
+		};
+	};
+	class Plane: Air
+	{
+		class ViewPilot;
+		class ViewOptics;
+		class AirplaneHUD;
+		class HitPoints
+		{
+			class HitHull;
+		};
+		class AnimationSources;
+		class UserActions
+		{
+			class Repair {ACTION_REPAIR; radius = 8;};
+			class Salvage {ACTION_SALVAGE; radius = 8;};
+			class PushPlane {ACTION_PUSH;};
+		};
 	};
 	class Land: AllVehicles
 	{
@@ -30,6 +54,11 @@ class CfgVehicles {
 	{
 		class HitPoints;
 		class NewTurret;
+		class UserActions
+		{
+			class Repair {ACTION_REPAIR; radius = 4;};
+			class Salvage {ACTION_SALVAGE; radius = 4;};
+		};
 	};
 	class Car : LandVehicle {
 		class HitPoints
@@ -103,8 +132,14 @@ class CfgVehicles {
 
 		};
 	};
-	class UralCivil;
-	class Ship;
+	class Ship: AllVehicles
+	{
+		class UserActions
+		{
+			class Repair {ACTION_REPAIR; radius = 8;};
+			class Salvage {ACTION_SALVAGE; radius = 8;};
+		};
+	};
 	//class Bag_Base_EP1;
 	//class Bag_Base_BAF;
 	class HouseBase;
@@ -112,15 +147,37 @@ class CfgVehicles {
 	{
 		class DestructionEffects;
 	};
+	class House_EP1;
 	class SpawnableWreck : House {};
 	class Strategic;
 	class NonStrategic;
+	class Thing;
 //	class Land_Fire;
-	class Animal;
-	class Pastor;
 	class BuiltItems;
 	class Building;
 	class ReammoBox;
+	
+	class Old_bike_base_EP1;
+	class Old_moto_base;
+	class Ikarus_base;
+	class Volha_TK_CIV_Base_EP1;
+	class LandRover_CZ_EP1;
+	class Ural_Base;
+	
+	class BAF_Offroad_D:LandRover_CZ_EP1 { typicalcargo[] = {}; };
+	class BAF_Offroad_W:BAF_Offroad_D { typicalcargo[] = {}; };
+	class SkodaBlue:SkodaBase { typicalcargo[] = {}; };
+	class SkodaGreen:SkodaBase { typicalcargo[] = {}; };
+	class Volha_1_TK_CIV_EP1:Volha_TK_CIV_Base_EP1 { typicalcargo[] = {}; };
+	class Volha_2_TK_CIV_EP1:Volha_TK_CIV_Base_EP1 { typicalcargo[] = {}; };
+	
+	class FileSignature_DZ : Logic
+	{
+		class EventHandlers
+		{
+			init = "if (isServer) then { [] execVM '\z\addons\dayz_server\init\server_setKey.sqf' } else { [] execVM '\z\addons\dayz_code\system\filesign\verify_mission.sqf' }; ";
+		};
+	};
 
 	#include "RepairParts.hpp" //names for all reapir parts. Needs moving to hitpoints
 	//ZEDS
@@ -138,8 +195,11 @@ class CfgVehicles {
 	//Includes all DayZ Vehilces
 	//Car's
 	#include "Car\HMMWV.hpp"
+	#include "Car\Ikarus.hpp"
+	#include "Car\S1203.hpp"
+	#include "Car\Tractor.hpp"
 	#include "Car\CAR_HATCHBACK.hpp"
-	#include "Car\UAZ_CDF.hpp"
+	#include "Car\UAZ.hpp"
 	#include "Car\CAR_SEDAN.hpp"
 	#include "Car\V3S_Civ.hpp"
 	#include "Car\SUV_DZ.hpp"
@@ -161,6 +221,8 @@ class CfgVehicles {
 	//Bikes
 	#include "Bikes\ATV_US_EP1.hpp"
 	#include "Bikes\ATV_CZ_EP1.hpp"
+	#include "Bikes\Old_bike.hpp"
+	#include "Bikes\Old_moto.hpp"
 	#include "Bikes\TT650_Ins.hpp"
 	#include "Bikes\TT650_Civ.hpp"
 	#include "Bikes\M1030.hpp"
@@ -194,9 +256,12 @@ class CfgVehicles {
 	#include "Buildings\Land_telek1.hpp"
 	#include "Buildings\Land_VASICore.hpp"
 	#include "Buildings\Land_Vysilac_FM.hpp"
+	#include "Buildings\WaterSources.hpp"
 
 	//camo
 	#include "CamoNetting.hpp"
+	#include "Hedgehog.hpp"
+	#include "Sandbag.hpp"
 
 
 	//WeaponHolder
@@ -229,7 +294,7 @@ class CfgVehicles {
 
 	class WeaponHolder;
 	class Plant_Base: WeaponHolder {
-		scope = 2;
+		scope = public;
 		icon = "";
 		mapSize = 0;
 		transportMaxWeapons = 0;

@@ -20,21 +20,21 @@ if ((_tape in magazines player) && (_handle in magazines player)) then {
 	//Fix the tool
 	player playActionNow "Medic";
 	[player,"bandage",0,false] call dayz_zombieSpeak;
-	sleep 6;
+	uiSleep 6;
 	player removeWeapon _tool;
 	player removeMagazine _tape;
 	player removeMagazine _handle;
 	player addWeapon _fixedItem;
-	cutText [format [localize "str_fixToolSuccess", _dName], "PLAIN DOWN"];
+	format[localize "str_fixToolSuccess", _dName] call dayz_rollingMessages;
 	
 } else {		//If the player doesn't have the mats.
 	if (!(_tape in magazines player)) then {
 		if (!(_handle in magazines player)) then {
-			cutText [localize "str_fixToolFail", "PLAIN DOWN"];
+			localize "str_fixToolFail" call dayz_rollingMessages;
 		} else {
-			cutText [localize "str_fixtoolMissingTape", "PLAIN DOWN"];
+			localize "str_fixtoolMissingTape" call dayz_rollingMessages;
 		};
 	} else {
-		cutText [localize "str_fixtoolMissingHandle", "PLAIN DOWN"];
+		localize "str_fixtoolMissingHandle" call dayz_rollingMessages;
 	};
 };

@@ -18,7 +18,7 @@ sched_medical_slow = {  // 10 seconds
 sched_medical_init = { [ []spawn{} ] };
 sched_medical = { // 1 second
 	HIDE_FSM_VARS
-	private ["_method","_unconHdlr"];
+	private "_unconHdlr";
 	_unconHdlr = _this select 0;
 
 	if (r_player_blood == 12000) then {
@@ -27,14 +27,8 @@ sched_medical = { // 1 second
 
 	//r_player_unconscious = getVariable ["NORRN_unconscious", true];
 	
-	_method = switch (true) do {
-		case (dayz_lastDamageSource != "none" && diag_tickTime - dayz_lastDamageTime < 30): {dayz_lastDamageSource}; //Major event takes priority for cause of death
-		case (dayz_lastMedicalSource != "none" && diag_tickTime - dayz_lastMedicalTime < 10): {dayz_lastMedicalSource}; //Starve, Dehyd, Sick
-		default {"bled"}; //No other damage sources in last 30 seconds
-	};
-	
 	if (r_player_blood <= 0) then {
-		[dayz_sourceBleeding, _method] spawn player_death;
+		[dayz_sourceBleeding,"find"] call player_death;
 	};
 
 	if (!canStand player) then { // be consistant with player_updateGui.sqf
@@ -128,24 +122,8 @@ sched_medical_effects = {
 };
 
 sched_medical_effectsSlow = {
-	// every 10 seconds: diziness using slow shakecam, to handle pain and lack of water
+	// every 10 seconds
 	HIDE_FSM_VARS
-
-    if ((r_player_inpain or dayz_thirst >= SleepWater) and !r_player_unconscious and (1 > random 9) and (0 == player getVariable["startcombattimer",0])) then {
-        _blurTask = [] spawn {
-            _strength = 0.5 + (random 1);
-            _duration = 8 + (random 10);
-            enableCamShake true;
-			
-			//[posCoef, vertCoef, horzCoef, bankCoef, interpolation]
-            setCamShakeParams [0.02, 0.05, 0.1, 0.3, true];
-            addCamShake [_strength, _duration, 0.4];
-            playSound "breath_1";
-			
-			//Lets make sure the spawn ends 1 sec after the _duration timer this should provide a smooth transtion rather then a snap to focus.
-            sleep _duration + 1;
-        };
-    };
 
 	if (r_player_infected and !r_player_unconscious and 1 > random 2 and ((vehicle player == player and speed player < 5) or (vehicle player != player))) then {
 		[player,"cough",1,false] call dayz_zombieSpeak;

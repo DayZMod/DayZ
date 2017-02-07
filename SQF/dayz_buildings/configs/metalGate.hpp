@@ -41,6 +41,24 @@ class MetalGate_Base: Land_Gate_IndVar2_5
 			condition = "this animationPhase ""DoorR"" >= 0.5";
 			statement = "this animate [""DoorR"", 0];this animate [""DoorL"", 0]";
 		};
+		class Upgrade {
+			displayNameDefault = $STR_UPGRADE;
+			displayName = $STR_UPGRADE;
+			position = ""; //Needs memory point adding
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "!(this getVariable['BuildLock',false])";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
+		};
+		class Maintenance {
+			displayNameDefault = $STR_MAINTENANCE;
+			displayName = $STR_MAINTENANCE;
+			position = ""; //Needs memory point adding
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(!(this getVariable['Maintenance',false]) OR (damage this > 0))";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+		};
 	};
 	
 	actionBegin1 = "OpenDoors";
@@ -57,7 +75,7 @@ class MetalGate_Base: Land_Gate_IndVar2_5
 		requiredParts[] = {"ItemMetalSheet","ItemScrews"};
 	};
 	class eventHandlers {
-		HandleDamage = "if ((_this select 4) == 'PipeBomb') then {_this call fnc_Obj_handleDam;} else { false };";
+		HandleDamage = "this call fnc_Obj_handleDam;";
 	};
 };
 class MetalGate_ghost: MetalGate_Base

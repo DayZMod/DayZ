@@ -1,4 +1,8 @@
 class M1030: Motorcycle {
+	crew = "";
+	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
 	class HitPoints {
 		class HitEngine {
 			armor = 1.2;

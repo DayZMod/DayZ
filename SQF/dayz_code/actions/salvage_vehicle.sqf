@@ -1,7 +1,7 @@
-private ["_part","_color","_vehicle","_PlayerNear","_hitpoints","_isATV","_is6WheelType","_HasNoGlassKind",
+private ["_part","_color","_vehicle","_PlayerNear","_hitpoints","_isATV","_is6WheelType","_HasNoGlassKind","_hitpoint",
 "_6WheelTypeArray","_NoGlassArray","_NoExtraWheelsArray","_RemovedPartsArray","_damage","_cmpt","_configVeh","_damagePercent","_string","_handle","_cancel","_type"];
 
-_vehicle = _this select 3;
+_vehicle = _this;
 {dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
 
 _PlayerNear = {isPlayer _x} count ((getPosATL _vehicle) nearEntities ["CAManBase", 10]) > 1;
@@ -39,6 +39,7 @@ if (_is6WheelType) then {
 };
 
 {
+	_hitpoint = _x;
 	_damage = [_vehicle,_x] call object_getHit;
 	
 	if !(_x in _RemovedPartsArray) then {
@@ -50,15 +51,26 @@ if (_is6WheelType) then {
 
 		_configVeh = configFile >> "cfgVehicles" >> "RepairParts" >> _x;
 		_part = getText(_configVeh >> "part");
-		if (isNil "_part") then { _part = "PartGeneric"; };
+		if (_part == "") then {
+			_part = "PartGeneric";
+			// Handle parts not listed in RepairParts config.
+			// Additional vehicle addons may be loaded with non-standard hitpoint names.
+			{
+				if ([(_x select 0),_hitpoint] call fnc_inString) then {
+					_part = format["Part%1",(_x select 1)];
+				};
+			} forEach [["Engine","Engine"],["HRotor","VRotor"],["Fuel","Fueltank"],["Wheel","Wheel"],["Glass","Glass"]];
+		};
 
 		//get every damaged part no matter how tiny damage is!
 		_damagePercent = str(round(_damage * 100))+"% Damage";
 		if (_damage < 0.10) then {
-			if ((_damage >= 0) and (_damage <= 0.25)) then {_color = "color='#00ff00'";}; //green
-			if ((_damage >= 0.26) and (_damage <= 0.50)) then {_color = "color='#ffff00'";}; //yellow
-			if ((_damage >= 0.51) and (_damage <= 0.75)) then {_color = "color='#ff8800'";}; //orange
-			if ((_damage >= 0.76) and (_damage <= 1)) then {_color = "color='#ff0000'";}; //red
+			_color = switch true do {
+				case (_damage <= 0.25): {"color='#00ff00'"}; //green
+				case (_damage <= 0.50): {"color='#ffff00'"}; //yellow
+				case (_damage <= 0.75): {"color='#ff8800'"}; //orange 
+				default {"color='#ff0000'"}; //red
+			};
 			_string = format[localize "str_actions_repair_01",_cmpt,_damagePercent];
 			_string = format["<t %1>%2</t>",_color,_string]; //Remove - Part
 			_handle = dayz_myCursorTarget addAction [_string, "\z\addons\dayz_code\actions\salvage.sqf",[_vehicle,_part,_x], 0, false, true];
@@ -71,5 +83,4 @@ if (count _hitpoints > 0 ) then {
 	// Localized in A2OA\Expansion\dta\languagecore
 	_cancel = dayz_myCursorTarget addAction [localize "str_action_cancel_action", "\z\addons\dayz_code\actions\repair_cancel.sqf","repair", 0, true, false];
 	s_player_repairActions set [count s_player_repairActions,_cancel];
-	s_player_repair_crtl = 1;
 };

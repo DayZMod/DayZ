@@ -12,10 +12,12 @@
 //diag_log("crafting system");
 private ["_config","_input","_output","_required","_failChance","_hasInput","_availabeSpace","_classname","_isClass","_onLadder","_hasTools","_avail","_selection","_item","_amount","_itemName","_freeSlots","_slotType","_i","_j","_dis","_sfx"];
 
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
 //diag_log(str(isnil "r_player_crafting"));
 
 //Process has started
-if( (animationState player) IN [ "ainvpknlmstpslaywrfldnon_medic" ]) exitwith {};
+if( (animationState player) IN [ "ainvpknlmstpslaywrfldnon_medic" ]) exitwith {dayz_actionInProgress = false;};
 
 
 //Config class of right click item
@@ -82,7 +84,7 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 		if (_avail < _amount) exitWith {
 			_hasInput = false;
 			_itemName = getText(configFile >> _selection >> _item >> "displayName");
-			cutText [format [localize "str_crafting_missing",(_amount - _avail),_itemName], "PLAIN DOWN"];
+			format[localize "str_crafting_missing",(_amount - _avail),_itemName] call dayz_rollingMessages;
 		};
 	} forEach (_input);
 	
@@ -114,13 +116,13 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 						_freeSlots set[_j, ((_freeSlots select _j) - (_slotType select _j))];
 						if (_freeSlots select _j < 0) exitWith {
 							_availabeSpace = false;
-							cutText [localize "str_crafting_space", "PLAIN DOWN"];
+							localize "str_crafting_space" call dayz_rollingMessages;
 						};
 					};
 				};
 			};
 		} forEach _output;
-		//sleep 1;
+		//uiSleep 1;
 		true call dz_fn_meleeMagazines;
 
 		if (_availabeSpace) then {
@@ -128,10 +130,10 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 			call gear_ui_init;
 			closeDialog 1;
 			player playActionNow "Medic";
-			sleep 2;
+			uiSleep 2;
 			//setup alert and speak
 			_dis=20;
-			_sfx = "chopwood";
+			_sfx = if (_classname == "equip_rope") then {"bandage"} else {"chopwood"};
 			[player,_sfx,0,false,_dis] call dayz_zombieSpeak;
 			[player,_dis,true,(getPosATL player)] call player_alertZombies;
 			
@@ -150,10 +152,10 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 							player removeMagazine _item;
 						};
 					};
-					//sleep 0.1;
+					//uiSleep 0.1;
 				};
 			} forEach _input;
-			sleep 3;
+			uiSleep 3;
 			{
 				_item = _x select 0;
 				_selection = _x select 1;
@@ -175,14 +177,16 @@ if(!r_drag_sqf and !r_player_unconscious and !_onLadder) then {
 								player addBackpack _item;
 							};
 						};
-						cutText [format [localize "str_crafting_success",_itemName], "PLAIN DOWN"];
-						//sleep 2;
+						format[localize "str_crafting_success",_itemName] call dayz_rollingMessages;
+						//uiSleep 2;
 					} else {
-						cutText [format [localize "str_crafting_failed",_itemName], "PLAIN DOWN"];
-						//sleep 2;
+						format[localize "str_crafting_failed",_itemName] call dayz_rollingMessages;
+						//uiSleep 2;
 					};
 				};
 			} forEach _output;
 		};
 	};
 };
+
+dayz_actionInProgress = false;

@@ -10,7 +10,6 @@
 "PVCDZ_veh_SetFuel"		addPublicVariableEventHandler {(_this select 1) spawn local_setFuel};
 "PVCDZ_veh_engineSwitch"		addPublicVariableEventHandler {(_this select 1) spawn dayz_engineSwitch};
 "PVCDZ_OpenTarget_Reset" addPublicVariableEventHandler { OpenTarget_Time = diag_tickTime; }; //reset OpenTarget timer
-//"dayzInfectedCamps"		addPublicVariableEventHandler {(_this select 1) call infectedcamps};
 
 if (toLower worldName == "chernarus") then { //need to add building coordinates for other maps
 	{
@@ -74,6 +73,7 @@ if (isServer) then {
 	"PVDZ_plr_SwitchMove"	addPublicVariableEventHandler {((_this select 1) select 0) switchMove ((_this select 1) select 1);}; //Needed to execute switchMove on server machine. rSwitchMove only executes on other clients
 	"PVDZ_obj_Publish"		addPublicVariableEventHandler {(_this select 1) call server_publishObj};
 	"PVDZ_veh_Save" 		addPublicVariableEventHandler {(_this select 1) call server_updateObject};
+	"PVDZ_fence_Update"		addPublicVariableEventHandler {(_this select 1) call server_addtoFenceUpdateArray};
 	"PVDZ_plr_Login1"		addPublicVariableEventHandler {_id = (_this select 1) call server_playerLogin};
 	"PVDZ_plr_Login2"		addPublicVariableEventHandler {(_this select 1) call server_playerSetup};
 	"PVDZ_plr_LoginRecord"	addPublicVariableEventHandler {_id = (_this select 1) spawn dayz_recordLogin};
@@ -82,6 +82,9 @@ if (isServer) then {
 	"PVDZ_dayzCarBomb" addPublicVariableEventHandler {[_this select 1] execVM "\z\addons\dayz_code\actions\detonate_bomb.sqf";};
 	//[player,[medical Array]];
 	"PVDZ_playerMedicalSync" addPublicVariableEventHandler { (_this select 1) call server_medicalSync; ((_this select 1) select 0) setVariable["Medical",((_this select 1) select 1),false]; }; //diag_log format["%1 - %2",((_this select 1) select 0),((_this select 1) select 1)]; };
+	
+	//VerifyMission
+	//"PVDZ_fskey" 		addPublicVariableEventHandler {(_this select 1) call server_sendKey};
 	
 	//Added as part of the maintenance system to allow the server to replace the damaged model with a normal model.
 	"PVDZ_object_replace" addPublicVariableEventHandler {
@@ -292,21 +295,20 @@ if (!isDedicated) then {
 			_object setVariable ["dayz_padlockLockStatus", false,true];
 			_object setVariable ["isOpen", "1", true];
 			_object setVariable ["dayz_padlockHistory", [], true];
-			//titleText [format[localize "STR_BLD_UNLOCKED", typeOf _object],"PLAIN DOWN"];
-			format[localize "STR_BLD_UNLOCKED", typeOf _object] call dayz_rollingMessages;
+			format[localize "STR_BLD_UNLOCKED",typeOf _object] call dayz_rollingMessages;
 		} else {
-			//titleText [format [localize "STR_BLD_WRONG_COMBO",typeOf _object], "PLAIN DOWN"];
-			format [localize "STR_BLD_WRONG_COMBO",typeOf _object] call dayz_rollingMessages;
+			format[localize "STR_BLD_WRONG_COMBO",typeOf _object] call dayz_rollingMessages;
 			_object setVariable ["dayz_padlockHistory", _codeGuess, true];
 		};
 	};
 	
 	"PVCDZ_Client_processAccessCode" addPublicVariableEventHandler {
 		_codeGuess = (_this select 1) select 0;
-		//titleText [format[localize "STR_BLD_COMBO_SET", _codeGuess],"PLAIN DOWN"];
-		format[localize "STR_BLD_COMBO_SET", _codeGuess] call dayz_rollingMessages;
+		format[localize "STR_BLD_COMBO_SET",_codeGuess] call dayz_rollingMessages;
 	};
 
-	// flies and swarm sound sync
-	call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\client_flies.sqf";
+	if (dayz_enableFlies) then {
+		// flies and swarm sound sync
+		call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\client_flies.sqf";
+	};
 };

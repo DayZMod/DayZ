@@ -1,4 +1,4 @@
-private ["_characterID","_playerObj","_playerID","_dummy","_worldspace","_state","_doLoop","_key","_primary","_medical","_stats","_humanity","_randomSpot","_position","_debug","_distance","_fractures","_score","_findSpot","_mkr","_j","_isIsland","_w","_clientID"];
+private ["_characterID","_playerObj","_spawnSelection","_playerID","_dummy","_worldspace","_state","_doLoop","_key","_primary","_medical","_stats","_humanity","_randomSpot","_position","_distance","_fractures","_score","_findSpot","_mkr","_j","_isIsland","_w","_clientID"];
 
 _characterID = _this select 0;
 _playerObj = _this select 1;
@@ -67,10 +67,9 @@ if (count _Achievements == 0) then {_Achievements = [0,0,0,0,0,0,0,0,0,0,0,0,0,0
 
 if (count _worldspace > 0) then {
 	_position = _worldspace select 1;
-	if (count _position < 3) then {_randomSpot = true;}; //prevent debug world!
+	if (count _position < 3) exitWith {_randomSpot = true;}; //prevent debug world!
 	
-	_debug = getMarkerpos "respawn_west";
-	_distance = _debug distance _position;
+	_distance = respawn_west_original distance _position;
 	if (_distance < 2000) then {_randomSpot = true;};
 	
 	_distance = [0,0,0] distance _position;
@@ -105,7 +104,7 @@ if (count _medical > 0) then {
 	_playerObj setVariable ["unconsciousTime",(_medical select 10),true];
 	_playerObj setVariable ["messing",if (count _medical >= 14) then {(_medical select 13)} else {[0,0,0]},true];
 	_playerObj setVariable ["blood_testdone",if (count _medical >= 15) then {(_medical select 14)} else {false},true];
-	if (count _medical >= 12) then {
+	if (count _medical > 12 && {typeName (_medical select 11) == "STRING"}) then { //Old character had no "messing" OR "messing" in place of blood_type
 		_playerObj setVariable ["blood_type",(_medical select 11),true];
 		_playerObj setVariable ["rh_factor",(_medical select 12),true];
 //		diag_log [ "Character data: blood_type,rh_factor,testdone=",
@@ -174,7 +173,7 @@ if (count _stats > 0) then {
 if (_randomSpot) then {
 	private ["_counter","_position","_isNear","_isZero","_mkr"];
 	if (!isDedicated) then {endLoadingScreen;};
-	_IslandMap = if (toLower worldName in ["caribou","cmr_ovaron","dayznogova","dingor","dzhg","fallujah","fapovo","fdf_isle1_a","isladuala","lingor","mbg_celle2","namalsk","napf","oring","panthera2","sara","sauerland","smd_sahrani_a2","tasmania2010","tavi","trinity","utes"]) then {true} else {false};
+	_IslandMap = (toLower worldName in ["caribou","cmr_ovaron","dayznogova","dingor","dzhg","fallujah","fapovo","fdf_isle1_a","isladuala","lingor","mbg_celle2","namalsk","napf","oring","panthera2","sara","sauerland","smd_sahrani_a2","tasmania2010","tavi","trinity","utes"]);
 
 	//spawn into random
 	_findSpot = true;
@@ -193,7 +192,7 @@ if (_randomSpot) then {
 			&& {(_position distance _mkr < 1400)}) then { // !ouside the disk
 			_position set [2, 0];
 			if (((ATLtoASL _position) select 2 > 2.5) //! player's feet too wet
-			&& {({alive _x} count (_position nearEntities ["Man",150]) == 0)}) then { // !too close from other players/zombies
+			&& {({alive _x} count (_position nearEntities ["CAManBase",150]) == 0)}) then { // !too close from other players/zombies
 				_pos = +(_position);
 				_isIsland = false; //Can be set to true during the Check
 				// we check over a 809-meter cross line, with an effective interlaced step of 5 meters
@@ -222,12 +221,15 @@ _playerObj setVariable ["lastPos",getPosATL _playerObj];
 PVCDZ_plr_Login2 = [_worldspace,_state];
 _clientID = owner _playerObj;
 _clientID publicVariableClient "PVCDZ_plr_Login2";
-_clientID publicVariableClient "PVCDZ_plr_plantSpawner";
+if (dayz_townGenerator) then {
+	_clientID publicVariableClient "PVCDZ_plr_plantSpawner";
+};
 
 //record time started
 _playerObj setVariable ["lastTime",time];
 
-//diag_log format["LOGIN PUBLISHING: UID#%1 CID#%2 %3 as %4 should spawn at %5",getPlayerUID _playerObj,_characterID,_playerObj call fa_plr2str,typeOf _playerObj,(_worldspace select 1) call fa_coor2str];
+//Record Player Login/LogOut
+[(getPlayerUID _playerObj),_characterID,1,(_playerObj call fa_plr2str),((_worldspace select 1) call fa_coor2str)] call dayz_recordLogin;
 
 PVDZ_plr_Login1 = null;
 PVDZ_plr_Login2 = null;

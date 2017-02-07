@@ -112,15 +112,15 @@ BEGIN
 	Update
 		object_data 
 			set Hitpoints = '["Maintenance"]'                    
-				WHERE (Classname = 'WoodenGate_1' or Classname = 'WoodenGate_1' or Classname = 'WoodenGate_1' or Classname = 'WoodenGate_1')
+				WHERE (Classname = 'WoodenGate_1' or Classname = 'WoodenGate_2' or Classname = 'WoodenGate_3' or Classname = 'WoodenGate_4')
 				AND DATE(last_updated) < CURDATE() - INTERVAL 7 DAY
  				AND Hitpoints = '[]';
 				
 #Check WoodenGate_1
 	update
 		object_data
-			set Classname = 'WoodenGate_1'
-				where Classname = 'WoodenGate_foundation'
+			set Classname = 'WoodenGate_foundation'
+				where Classname = 'WoodenGate_1'
 				AND Hitpoints = '["Maintenance"]'
 				AND DATE(last_updated) < CURDATE() - INTERVAL 3 DAY;
 				

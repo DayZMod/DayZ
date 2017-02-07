@@ -22,7 +22,7 @@ _zombieKills = player getVariable ["zombieKills",0];
 _headShots = player getVariable ["headShots",0];
 _humanKills = player getVariable ["humanKills",0];
 _banditKills = player getVariable ["banditKills",0];
-_achievements = player getVariable ["Achievements",[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+//_achievements = player getVariable ["Achievements",[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
 
 _ConfirmedHumanKills = player getVariable ["ConfirmedHumanKills",0];
 _ConfirmedBanditKills = player getVariable ["ConfirmedBanditKills",0];
@@ -79,15 +79,16 @@ player setVariable ["humanKills",_humanKills,true];
 player setVariable ["banditKills",_banditKills,true];
 player setVariable ["characterID",_charID,true];
 player setVariable ["worldspace",_worldspace];
-player setVariable ["Achievements",_achievements];
+//player setVariable ["Achievements",_achievements];
 
 player setVariable ["ConfirmedHumanKills",_ConfirmedHumanKills,true];
 player setVariable ["ConfirmedBanditKills",_ConfirmedBanditKills,true];
 
-PVDZ_serverStoreVar = [player,"Achievements",_achievements];
-publicVariableServer "PVDZ_serverStoreVar";
+//PVDZ_serverStoreVar = [player,"Achievements",_achievements];
+//publicVariableServer "PVDZ_serverStoreVar";
 
-call dayz_resetSelfActions;
+call dayz_resetSelfActions; //New unit has no self actions yet. Reset variables so actions can be added back.
+dayz_actionInProgress = false; //Allow self actions to run now.
 eh_player_killed = player addeventhandler ["FiredNear",{_this call player_weaponFiredNear;}];
 [player] call fnc_usec_damageHandle;
 player allowDamage true;

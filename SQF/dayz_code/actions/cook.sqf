@@ -1,5 +1,6 @@
 private ["_rawmeat","_cookedmeat","_meat","_meatcooked","_text","_qty","_dis","_sfx"];
-
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
 //diag_log ("Cook Enabled");
 player removeAction s_player_cook;
 s_player_cook = -1;
@@ -25,10 +26,12 @@ a_player_cooking = true;
 		for "_x" from 1 to _qty do {
 			player removeMagazine _meat;
 			player addMagazine _meatcooked;
-			if !(_meat in magazines player) exitWith {cutText [format [localize "str_player_31",_text,localize "str_player_31_cook"] , "PLAIN DOWN"]};
+			// "xMeat must be in your main inventory to cook it" - Doesn't make sense here since meat was already cooked successfully.
+			if !(_meat in magazines player) exitWith {};
 		};
-		cutText [format [localize "str_success_cooked",_qty,_text], "PLAIN DOWN"];
+		format[localize "str_success_cooked",_qty,_text] call dayz_rollingMessages;
 	};
 } forEach _rawmeat;
 
 a_player_cooking = false;
+dayz_actionInProgress = false;

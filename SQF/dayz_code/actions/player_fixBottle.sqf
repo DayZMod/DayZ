@@ -11,11 +11,11 @@ if (_tape in magazines player) then {
 	//Fix the bottle
 	player playActionNow "Medic";
 	[player,"bandage",0,false] call dayz_zombieSpeak;
-	sleep 6;
+	uiSleep 6;
 	player removeMagazine _bottle;
 	player removeMagazine _tape;
 	player addMagazine _fixedBottle;
-	cutText [localize "str_fix_water_bottle", "PLAIN DOWN"];
+	localize "str_fix_water_bottle" call dayz_rollingMessages;
 } else {		//If the player doesn't have the tape
-	cutText [localize "str_fix_water_bottle_fail", "PLAIN DOWN"];
+	localize "str_fix_water_bottle_fail" call dayz_rollingMessages;
 };

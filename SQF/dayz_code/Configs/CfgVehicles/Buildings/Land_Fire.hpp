@@ -137,7 +137,7 @@ class Land_Fire_DZ : Land_Fire {
 	};
 	/*
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"}; 
+		requiredTools[] = {"ItemShovel"}; 
 		requiredParts[] = {"ItemLog", "ItemLog", "ItemStone", "ItemStone", "ItemStone"};
 		create = "Base_Fire_DZ";
 	};

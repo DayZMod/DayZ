@@ -113,7 +113,7 @@ if (!_isNew) then {
 
 };
 
-_isHiveOk = if (_hiveVer >= dayz_hiveVersionNo) then {true} else {false}; //EDITED
+_isHiveOk = (_hiveVer >= dayz_hiveVersionNo); //EDITED
 
 PVCDZ_plr_Login = [_charID,_inventory,_backpack,_survival,_isNew,dayz_versionNo,_model,_isHiveOk,_newPlayer];
 (owner _playerObj) publicVariableClient "PVCDZ_plr_Login";
@@ -133,7 +133,7 @@ if (_endMission) exitwith {
 {_x setDamage 1} count dayz_choppedTrees;
 
 //Record Player Login/LogOut
-[_playerID,_charID,1,_playerName] call dayz_recordLogin;
+[_playerID,_charID,2,(_playerObj call fa_plr2str),((getPosATL _playerObj) call fa_coor2str)] call dayz_recordLogin;
 
 PVCDZ_plr_PlayerAccepted = [_playerName,diag_ticktime];
 (owner _playerObj) publicVariableClient "PVCDZ_plr_PlayerAccepted";

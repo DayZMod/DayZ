@@ -68,18 +68,6 @@ if (isNil "keyboard_keys") then {
             _handled = true;
         };};
     };
-    _turbo = {
-        if (vehicle player == player) then {
-            //Prevent easily outrunning zeds and bypassing Arma sprint fatigue (slow to normal running speed after a time) by holding turbo and spamming W
-            _handled = true;
-        };  
-    };
-	_holdBreath = {
-		if (count (actionKeys "HoldBreath") > 1) then {
-			systemChat localize "STR_UI_HOLD_BREATH";
-			_handled = true;
-		};
-	};
     _forcesave = {
         dayz_lastCheckBit = diag_ticktime;
         call player_forceSave;
@@ -170,17 +158,6 @@ if (isNil "keyboard_keys") then {
 			_handled = true;
 		};
     };
-	_streamermode = {
-		if (isNil "streamermodeEnabled") then {
-			if (!isNil "dayZ_serverName") then { [] execVM "\z\addons\dayz_code\system\watermark.sqf"; };
-			streamermodeEnabled = true;
-		} else {
-			5 cutRsc ["wm_disp","PLAIN"];
-			((uiNamespace getVariable "wm_disp") displayCtrl 1) ctrlSetText "";
-			streamermodeEnabled = nil; 
-		};
-		_handled = true;
-	};
 
     _block = {
         _handled = true;
@@ -197,7 +174,6 @@ if (isNil "keyboard_keys") then {
     [[DIK_1], _rifle] call _addArray;
     [[DIK_2], _pistol] call _addArray;
     [[DIK_3], _melee] call _addArray;
-	[[DIK_F12], _streamermode] call _addArray;
     //[[DIK_4], _throwable] call _addArray;
     [actionKeys "Gear", _gear] call _addArray;
     [actionKeys "Prone", _drop] call _addArray;
@@ -215,8 +191,6 @@ if (isNil "keyboard_keys") then {
     [actionKeys "User20", _journal] call _addArray;
     [actionKeys "Diary", _journal] call _addArray;
     [actionKeys "NetworkStats", _journal] call _addArray;
-	[actionKeys "Turbo", _turbo] call _addArray;
-	[actionKeys "HoldBreath", _holdBreath] call _addArray;
 	[[DIK_F1], _muteSound] call _addArray;
     //[[DIK_F4, DIK_TAB, DIK_DELETE], _forcesave] call _addArray;
     //[[DIK_F4, DIK_RMENU, DIK_LMENU,DIK_LSHIFT,DIK_RSHIFT,DIK_ESCAPE], _forcesave2] call _addArray;
@@ -227,7 +201,7 @@ if (isNil "keyboard_keys") then {
 //  [[DIK_NUMPAD7], _rotate_left] call _addArray;
 //  [[DIK_NUMPAD9], _rotate_right] call _addArray;
     [actionKeys "ForceCommandingMode", _block] call _addArray;
-    [[  DIK_F9,DIK_F10,DIK_F11,
+    [[  DIK_F9,DIK_F10,DIK_F11,DIK_F12,
         DIK_F8,DIK_F7,DIK_F6,DIK_F5,DIK_F4,
         DIK_F3,DIK_F2,DIK_0,DIK_9,
         DIK_8,DIK_7,DIK_6,DIK_5,DIK_4], _block] call _addArray;

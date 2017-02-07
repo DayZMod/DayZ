@@ -8,7 +8,7 @@ fnc_usec_damageHandle = {
 	_unit = _this select 0;
 	mydamage_eh1 = _unit addeventhandler ["HandleDamage",{_this call fnc_usec_damageHandler;} ];
 	mydamage_eh2 = _unit addEventHandler ["Fired", {_this call player_fired;}];
-	mydamage_eh3 = _unit addEventHandler ["Killed", {_id = [] spawn player_death;}];
+	mydamage_eh3 = _unit addEventHandler ["Killed", {[_this,"find"] call player_death;}];
 };
 
 fnc_usec_pitchWhine = {
@@ -27,7 +27,7 @@ fnc_usec_pitchWhine = {
 	};
 	r_pitchWhine = true;
 	[] spawn {
-		sleep 32;
+		uiSleep 32;
 		r_pitchWhine = false;
 	};
 };
@@ -72,7 +72,7 @@ fnc_usec_damageUnconscious = {
 			if (r_player_unconscious) then {
 				_unit action ["eject", _veh];
 				waitUntil{((vehicle _this) != _this)};
-				sleep 1;
+				uiSleep 1;
 				_unit playActionNow "Die";
 			};
 		};
@@ -158,7 +158,6 @@ fnc_usec_calculateBloodPerSec = {
 					_time = ((_time - 900) max 1) min 900;
 					_bloodLossPerSec = _bloodLossPerSec + (_time / 450) + 1;
 					_bloodLossPerSec = _bloodLossPerSec - (_bloodLossPerSec % 1);
-					//hintSilent (format["SetupMedFNCS: Blood Level: %2/12000 bloodLossPerSec %1",_bloodLossPerSec,r_player_blood]);
 				} else {
 					r_player_Sepsis = [false, 0];
 					r_player_infected = true;
@@ -168,8 +167,8 @@ fnc_usec_calculateBloodPerSec = {
 			
 			if ((_time < 1) and (isNil "sepsisStarted")) then {
 			//if (isNil "sepsisStarted") then {
-				//cutText [localize "str_medical_sepsis_warning","PLAIN DOWN",5];
-				systemChat (localize "str_medical_sepsis_warning");
+				localize "str_medical_sepsis_warning" call dayz_rollingMessages;
+				//systemChat (localize "str_medical_sepsis_warning");
 				player setVariable ["sepsisStarted", _time];
 			};
 		};
@@ -261,7 +260,7 @@ fnc_usec_playerHandleBlood = {
 			};
 			
 			
-			sleep 1;
+			uiSleep 1;
 		};
 	} else { // not bleeding
 		_bloodPerSec = [] call fnc_usec_calculateBloodPerSec;
@@ -296,6 +295,8 @@ fnc_usec_damageBleed = {
 	private["_wound","_modelPos","_point","_source"];
 	_unit = _this select 0;
 	_wound = _this select 1;
+	_point = objNull;
+	_source = objNull;
 	//_injury = _this select 2; // not used. damage% ???
 
 	if (isServer) exitWith{}; // no graphical effects on server!
@@ -359,14 +360,14 @@ fnc_usec_damageBleed = {
 				_point attachTo [_unit,_modelPos,_wound];
 			};
 
-			sleep 5;
+			uiSleep 5;
 
 			while {((_unit getVariable["USEC_injured",true]) and (alive _unit))} do {
 				scopeName "loop";
 				if (vehicle _unit != _unit) then {
 					BreakOut "loop";
 				};
-				sleep 1;
+				uiSleep 1;
 			};
 			deleteVehicle _source;
 			deleteVehicle _point;

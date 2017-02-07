@@ -1,3 +1,5 @@
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
 private ["_qty","_dis","_sfx","_started","_finished","_animState","_isRefuel","_fuelcans","_qty20","_qty5","_magazines","_cursorTarget","_fuelAmount"];
 
 player removeAction s_player_fillfuel;
@@ -49,7 +51,7 @@ if (("ItemJerrycanEmpty" in _magazines) or ("ItemFuelcanEmpty" in _magazines)) t
 			r_doLoop = false;
 			_finished = true;
 		};
-		sleep 0.1;
+		uiSleep 0.1;
 	};
 
 	r_doLoop = false;
@@ -81,11 +83,10 @@ if (("ItemJerrycanEmpty" in _magazines) or ("ItemFuelcanEmpty" in _magazines)) t
 		};
 	};
 
-	//cutText [format [localize "str_player_09",_qty], "PLAIN DOWN"];
 	//format[localize "str_player_09",_qty] call dayz_rollingMessages;
 	format[localize "str_fill_success",_qty,typeOf _cursorTarget,_fuelAmount] call dayz_rollingMessages;
 	//diag_log format[localize "str_fill_success",_qty,typeOf _cursorTarget,_fuelAmount];
 } else {
-	//cutText [localize "str_player_10", "PLAIN DOWN"];
 	localize "str_player_10" call dayz_rollingMessages;
 };
+dayz_actionInProgress = false;
