@@ -320,6 +320,8 @@ dayz_traps = [];
 dayz_traps_active = [];
 dayz_traps_trigger = [];
 
+Dayz_clientEXT = false; //enables/disables the use of the client EXT 
+
 //Settings Not under dayz_settings
 if(isNil "dayz_attackRange") then { 
 	dayz_attackRange = 3;
