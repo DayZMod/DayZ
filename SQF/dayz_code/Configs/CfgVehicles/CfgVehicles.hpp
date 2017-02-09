@@ -278,7 +278,7 @@ class CfgVehicles {
 	{
 		class EventHandlers
 		{
-			init = "if (Dayz_clientEXT) then { if (isServer) then { [] execVM '\z\addons\dayz_server\init\server_setKey.sqf' } else { [] execVM '\z\addons\dayz_code\system\filesign\verify_mission.sqf' }; }; ";
+			init = "diag_log ('WARNING: Spawning FileSignature_DZ'); if (isServer) then { [] execVM '\z\addons\dayz_server\init\server_setKey.sqf' } else { [] execVM '\z\addons\dayz_code\system\filesign\verify_mission.sqf' }; ";
 		};
 	};
 	

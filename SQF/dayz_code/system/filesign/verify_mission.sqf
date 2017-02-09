@@ -1,4 +1,4 @@
-#include "\dayz\dayz_code\util\ext.hpp"
+#include "\z\addons\dayz_code\util\ext.hpp"
 
 #define TIME_OUT 30
 
@@ -12,6 +12,9 @@
 #define FAIL(value) (isnil { PVDZ_fserr = (value); publicVariableServer "PVDZ_fserr"; })
 
 local _separator = Ext_GetSeparator();
+
+#undef Ext_Separator
+#define Ext_Separator (_separator)
 
 if (_separator == "") exitWith
 	{ FAIL("Extension"); };
