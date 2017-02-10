@@ -413,6 +413,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	};
 } else {
 	//Engineering
+	{dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
+	dayz_myCursorTarget = objNull;
 	player removeAction s_player_flipveh;
 	s_player_flipveh = -1;
 	player removeAction s_player_sleep;
