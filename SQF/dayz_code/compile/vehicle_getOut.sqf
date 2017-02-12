@@ -6,13 +6,13 @@ _vehicle = _this select 0;
 _position = _this select 1;
 _unit = _this select 2;
 
-//Get players current location
-_playerPos = ATLToASL (_unit modelToWorld [0,0,0]);
+//Get players current location (add 1m to z)
+_playerPos = ATLToASL (_unit modelToWorld [0,0,1]);
 
 _fencesArray = ["WoodenFence_1","WoodenFence_2","WoodenFence_3","WoodenFence_4","WoodenFence_5","WoodenFence_6","WoodenFence_7","WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4"];
 
-//Hopefully returns the xyz of the vehicle seat pos.
-_exitPosition = ATLToASL (_vehicle modelToWorld (_vehicle selectionPosition ("pos " + _position)));
+//Returns the vehicle model aimpoint.
+_exitPosition = aimPos _vehicle;
 
 if (_unit == player) then {
 	//if (dayz_soundMuted) then {call player_toggleSoundMute;}; // Auto disable mute on vehicle exit (not a good idea without a sleep since rotor can be very loud when spinning down)
