@@ -90,11 +90,13 @@ if (isServer) then {
 	"PVDZ_object_replace" addPublicVariableEventHandler {
 		_cursorTarget = _this select 1;
 		_vars = ((_this select 1) select 0) getVariable "MaintenanceVars";
+		_ownerArray = _cursorTarget getVariable ["ownerArray",[]];
 		
 		if (!isNil "_vars" && _cursorTarget isKindOf "DZ_buildables") then {
 			deleteVehicle ((_this select 1) select 0);
 			_object = createVehicle [(_vars select 0), (_vars select 1), [], 0, if (_type in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
 			_object setVariable["Maintenance",false,true];
+			_object setVariable["ownerArray", _ownerArray, true];
 		};
 	};
 	
