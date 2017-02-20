@@ -1731,7 +1731,7 @@
 			<German>abbauen</German>
 		</Key>
 		<Key ID="str_upgradevehctooClose">
-			<English>Unable to upgade, too close to a vehicle.</English>
+			<English>Unable to upgrade, too close to a vehicle.</English>
 		</Key>
 		<Key ID="str_build">
 			<English>Build %1</English>
