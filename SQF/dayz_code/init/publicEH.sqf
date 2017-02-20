@@ -87,16 +87,18 @@ if (isServer) then {
 	"PVDZ_fskey" 		addPublicVariableEventHandler {(_this select 1) call server_sendKey};
 	
 	//Added as part of the maintenance system to allow the server to replace the damaged model with a normal model.
-	"PVDZ_object_replace" addPublicVariableEventHandler {
-		_cursorTarget = _this select 1;
-		_vars = ((_this select 1) select 0) getVariable "MaintenanceVars";
+	/*"PVDZ_object_replace" addPublicVariableEventHandler {
+		_object = _this select 1;
+		_vars = _object getVariable "MaintenanceVars";
+		_ownerArray = _object getVariable ["ownerArray",[]];
 		
-		if (!isNil "_vars" && _cursorTarget isKindOf "DZ_buildables") then {
-			deleteVehicle ((_this select 1) select 0);
-			_object = createVehicle [(_vars select 0), (_vars select 1), [], 0, if (_type in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
+		if (!isNil "_vars" && _object isKindOf "DZ_buildables") then {
+			deleteVehicle _object;
+			_object = createVehicle [(_vars select 0), (_vars select 1), [], 0, if ((_vars select 0) in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
 			_object setVariable["Maintenance",false,true];
+			_object setVariable["ownerArray", _ownerArray, true];
 		};
-	};
+	};*/
 	
 	"PVDZ_sendUnconscious" addPublicVariableEventHandler {	
 		_owner = (_this select 1) select 0;
@@ -289,7 +291,6 @@ if (!isDedicated) then {
 		_object = (_this select 1) select 0;
 		_result = (_this select 1) select 1;
 		_codeGuess = (_this select 1) select 2;
-	
 		
 		if (_result) then {
 			_object setVariable ["dayz_padlockLockStatus", false,true];
