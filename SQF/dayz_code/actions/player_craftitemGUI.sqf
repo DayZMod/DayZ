@@ -71,13 +71,13 @@ if (count _nearByPile > 0) then {
 		if (_avail < _amount) exitWith {
 			_hasInput = false;
 			_itemName = getText(configFile >> _selection >> _item >> "displayName");
-			cutText [format [localize "str_crafting_missing",(_amount - _avail),_itemName], "PLAIN DOWN"];
+			format[localize "str_crafting_missing",(_amount - _avail),_itemName] call dayz_rollingMessages;
 		};
 	} forEach (_input + _required);
 
 	if (_hasInput) then {
 		//Remove melee magazines (BIS_fnc_invAdd and BIS_fnc_invSlotsEmpty fix)
-		{player removeMagazines _x} count MeleeMagazines;
+		false call dz_fn_meleeMagazines;
 		_freeSlots = [player] call BIS_fnc_invSlotsEmpty;
 		{
 			_item = _x select 0;
@@ -103,13 +103,14 @@ if (count _nearByPile > 0) then {
 						_freeSlots set[_j, ((_freeSlots select _j) - (_slotType select _j))];
 						if (_freeSlots select _j < 0) exitWith {
 							_availabeSpace = false;
-							cutText [localize "str_crafting_space", "PLAIN DOWN"];
+							localize "str_crafting_space" call dayz_rollingMessages;
 						};
 					};
 				};
 			};
 		} forEach _output;
-		//sleep 1;
+		true call dz_fn_meleeMagazines;
+		//uiSleep 1;
 
 		if (_availabeSpace) then {
 			player playActionNow "PutDown";
@@ -128,7 +129,7 @@ if (count _nearByPile > 0) then {
 							player removeMagazine _item;
 						};
 					};
-					//sleep 0.1;
+					//uiSleep 0.1;
 				};
 			} forEach _input;
 
@@ -153,11 +154,11 @@ if (count _nearByPile > 0) then {
 								player addBackpack _item;
 							};
 						};
-						cutText [format [localize "str_crafting_success",_itemName], "PLAIN DOWN"];
-						//sleep 2;
+						format[localize "str_crafting_success",_itemName] call dayz_rollingMessages;
+						//uiSleep 2;
 					} else {
-						cutText [format [localize "str_crafting_failed",_itemName], "PLAIN DOWN"];
-						//sleep 2;
+						format[localize "str_crafting_failed",_itemName] call dayz_rollingMessages;
+						//uiSleep 2;
 					};
 				};
 			} forEach _output;

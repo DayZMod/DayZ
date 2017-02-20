@@ -26,7 +26,7 @@ while {r_drag_sqf} do {
 		_dragee setVariable ["NORRN_unit_dragged", true, true];
 
 		_unit playActionNow "grabDrag";
-		sleep 2;
+		uiSleep 2;
 
 		//unconscious unit assumes dragging posture
 		//public EH
@@ -35,7 +35,7 @@ while {r_drag_sqf} do {
 		publicVariable "PVDZ_drg_RaDrag";
 		//_dragee switchmove "ainjppnemstpsnonwrfldb_still";
 		_dragee attachto [_unit,[0.1, 1.01, 0]];
-		sleep 0.02;
+		uiSleep 0.02;
 
 		//rotate wounded units so that it is facing the correct direction
 		//PVDZ_drg_R180 = _dragee; // not used
@@ -47,7 +47,7 @@ while {r_drag_sqf} do {
 
 		NORRN_dropAction = player addAction [localize "str_actions_medical_dropbody", "\z\addons\dayz_code\medical\drop_body.sqf",_dragee, 0, false, true];
 		//NORRN_carryAction = player addAction ["Carry body", "\z\addons\dayz_code\medical\carry.sqf",_dragee, 0, false, true];
-		sleep 1;
+		uiSleep 1;
 		_addAction = true;
 	};
 
@@ -57,7 +57,7 @@ while {r_drag_sqf} do {
 
 	if (vehicle player != player) then {
 		player action ["eject", vehicle player];
-		cutText [localize "str_actions_medical_dragbody_veh","PLAIN DOWN"];
+		localize "str_actions_medical_dragbody_veh" call dayz_rollingMessages;
 		[cursorTarget, _unit, _unconscious, _dragee] execVM "\z\addons\dayz_code\medical\drop_body.sqf";
 	};
 	if (!r_drag_sqf) exitWith {};

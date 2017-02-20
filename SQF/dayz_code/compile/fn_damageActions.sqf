@@ -8,7 +8,7 @@ scriptName "Functions\misc\fn_damageActions.sqf";
 	- [] call fnc_usec_damageActions;
 ************************************************************/
 
-private ["_menClose","_hasPatient","_vehicle","_inVehicle","_isClose","_assignedRole","_driver","_action","_turret","_weapons","_weaponName","_crew","_unconscious_crew","_patients","_vehType","_unit","_antibiotics","_bloodBags","_unconscious","_lowBlood","_injured","_hasSepsis","_inPain","_legsBroke","_armsBroke","_infected","_hasBandage","_hasSepsisBandage","_hasEpi","_hasMorphine","_hasSplint","_hasPainkillers","_hasEmptyBag","_hasTester","_hasAntibiotics","_hasBloodBag","_vehClose","_hasVehicle","_action1","_action2","_action3","_y","_playerMagazines"];
+private ["_menClose","_hasPatient","_vehicle","_inVehicle","_isClose","_assignedRole","_driver","_action","_turret","_weapons","_weaponName","_crew","_unconscious_crew","_patients","_vehType","_unit","_antibiotics","_bloodBags","_unconscious","_lowBlood","_injured","_hasSepsis","_inPain","_legsBroke","_armsBroke","_infected","_hasBandage","_hasSepsisBandage","_hasEpi","_hasMorphine","_hasSplint","_hasPainkillers","_hasEmptyBag","_hasTester","_hasAntibiotics","_hasBloodBag","_vehClose","_action1","_action2","_action3","_playerMagazines"];
 
 _menClose = cursorTarget;
 _hasPatient = alive _menClose;
@@ -58,7 +58,7 @@ if (_inVehicle) then {
 	};
 	//Check if patients
 	_crew = crew _vehicle;
-	if (count _crew > 0) then {
+	if (count _crew > 0 && !r_player_unconscious) then {
 		_unconscious_crew = [];
 		{
 			if (_x getVariable "NORRN_unconscious") then {
@@ -71,11 +71,11 @@ if (_inVehicle) then {
 				r_action_unload = true;
 				_vehType = typeOf _vehicle;
 				_action = _vehicle addAction [format[localize "str_actions_medical_14",_vehType], "\z\addons\dayz_code\medical\load\unLoad_act.sqf",[player,_vehicle], 0, false, true];
-				r_player_actions set [count r_player_actions,_action];
+				r_player_actions2 set [count r_player_actions2,_action];
 			};
 		} else {
 			if (r_action_unload) then {
-				call fnc_usec_medic_removeActions;
+				call r_player_removeActions2;
 				r_action_unload = false;
 			};
 		};
@@ -84,6 +84,13 @@ if (_inVehicle) then {
 	call r_player_removeActions2;
 	r_player_lastVehicle = objNull;
 	r_player_lastSeat = [];
+};
+
+if (r_player_unconscious) then {
+	call r_player_removeActions2;
+	r_player_lastVehicle = objNull;
+	r_player_lastSeat = [];
+	r_action_unload = false;
 };
 
 //Lets make sure the player is looking at the target
@@ -114,14 +121,13 @@ if (isPlayer cursorTarget) then {
 		_hasMorphine = "ItemMorphine" in _playerMagazines;
 		_hasSplint = "equip_woodensplint" in _playerMagazines;
 		_hasPainkillers = "ItemPainkiller" in _playerMagazines;
-	    //_hasEmptyBag = "emptyBloodBag" in _playerMagazines;
+		//_hasEmptyBag = "emptyBloodBag" in _playerMagazines;
 		//_hasTester = "bloodTester" in _playerMagazines;
 		
 		_hasAntibiotics = Array_Any(_playerMagazines, {_this in _antibiotics});
 		_hasBloodBag = Array_Any(_playerMagazines, {_this in _bloodBags});
-					
+		
 		_vehClose = (getPosATL player) nearEntities [["Car","Tank","Helicopter","Plane","StaticWeapon","Ship"],5];
-		_hasVehicle = ({alive _x} count _vehClose > 0);
 
 		if (_hasPatient) then {
 			//Allow player to drag
@@ -136,19 +142,12 @@ if (isPlayer cursorTarget) then {
 				r_player_actions set [count r_player_actions, _action3];
 			};
 			//Load Vehicle
-			if (_hasVehicle && _unconscious) then {
-				_y = 0;
+			if (count _vehClose > 0 && _unconscious) then {
 				r_action = true;
-				_unit = _unit;
-				_vehicle = _vehClose select _y;
-				while{((!alive _vehicle) && (_y < (count _vehClose)))} do {
-					_y = _y + 1;
-					_vehicle = (_vehClose select _y);
-					_vehType = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "displayName");
-					uiSleep 0.001;
-				};
-				_action = _unit addAction [format[localize "str_actions_medical_03",_vehType], "\z\addons\dayz_code\medical\load\load_act.sqf",[player,_vehicle,_unit], 0, true, true];
-				r_player_actions set [count r_player_actions,_action];
+				_vehicle = _vehClose select 0;
+				_vehType = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
+				NORRN_loadWoundedAction = _unit addAction [format[localize "str_actions_medical_03",_vehType], "\z\addons\dayz_code\medical\load\load_act.sqf",[player,_vehicle,_unit], 0, true, true];
+				r_player_actions set [count r_player_actions,NORRN_loadWoundedAction];
 			};
 			//Allow player to bandage
 			if(_injured && _hasBandage) then {

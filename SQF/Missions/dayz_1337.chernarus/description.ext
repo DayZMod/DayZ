@@ -1,11 +1,25 @@
 respawn = "BASE";
-respawndelay = 5;
+respawnDelay = 0;
+respawnDialog = 0;
 onLoadMission= "DayZ Chernarus";
 OnLoadIntro = "Welcome to Chernarus";
 OnLoadIntroTime = False;
 OnLoadMissionTime = False;
 disabledAI = true;
+
+/*
+	Disable global, side, command and system chat. MOTD and admin say have exception and will show in global.
+	Channel number correspondence:
+	0 = Global
+	1 = Side
+	2 = Command
+	3 = Group
+	4 = Vehicle
+	5 = Direct
+	6 = System
+*/
 disableChannels[] = {0,1,2,6};
+
 enableItemsDropping = 0;
 onPauseScript = "";
 briefing = 0;

@@ -274,8 +274,8 @@ class CfgWeapons
 		{
 			class Drink
 			{
-				text = "Drink";
-				script = "spawn player_drinkWater;";
+				text = $STR_ACTIONS_DRINK2;
+				script = ";[_id] spawn player_fillWater;";
 			};
 		};
 	};
@@ -292,8 +292,8 @@ class CfgWeapons
 		{
 			class Drink
 			{
-				text = "Drink";
-				script = "spawn player_drinkWater;";
+				text = $STR_ACTIONS_DRINK2;
+				script = ";[_id] spawn player_fillWater;";
 			};
 		};
 	};*/

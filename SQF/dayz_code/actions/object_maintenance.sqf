@@ -7,7 +7,7 @@
 
 private ["_isMedic","_cursorTarget","_item","_classname","_displayname","_requiredTools","_requiredParts","_onLadder","_isWater","_upgradeParts","_startMaintenance","_dis","_sfx","_started","_finished","_animState","_isRefuel"];
 
-_cursorTarget = _this select 3;
+_cursorTarget = _this;
 
 // ArmaA2 bug workaround: sometimes the object is null
 if ((isNil "_cursorTarget") or {(isNull _cursorTarget)}) then {
@@ -16,12 +16,12 @@ if ((isNil "_cursorTarget") or {(isNull _cursorTarget)}) then {
 };
 
 if(isNull _cursorTarget) exitWith {
-    cutText [localize "str_maintenanceNoOption", "PLAIN DOWN"];
+    localize "str_maintenanceNoOption" call dayz_rollingMessages;
 };
 
-//Remove action Menu
-player removeAction s_player_maintenance;
-s_player_maintenance = -1;
+if (player getVariable["alreadyBuilding",0] == 1) exitWith {
+    localize "str_upgradeInProgress" call dayz_rollingMessages;
+};
 
 //Item
 _item = typeof _cursorTarget;
@@ -46,13 +46,13 @@ _upgradeParts = [];
 _startMaintenance = true;
 
 if(_isWater or _onLadder) exitWith {
-	cutText [localize "str_water_ladder_cant_do", "PLAIN DOWN"];
+	localize "str_water_ladder_cant_do" call dayz_rollingMessages;
 };
 
 // lets check player has requiredTools for upgrade
 {
 	if (!(_x IN items player)) exitWith {
-		cutText[ format[ localize "str_maintenanceMissingTool",_x], "PLAIN DOWN"]; //"Missing %1 to do maintenance %2."
+		format[localize "str_maintenanceMissingTool",_x] call dayz_rollingMessages; //"Missing %1 to do maintenance %2."
 		_startMaintenance = false;
 	};
 } count _requiredTools;
@@ -60,7 +60,7 @@ if(_isWater or _onLadder) exitWith {
 // lets check player has requiredParts for upgrade
 {
 	if (!(_x IN magazines player)) exitWith {
-		cutText[ format[ localize "str_maintenanceMissingPart",_x,_displayname], "PLAIN DOWN"]; //"Missing %1 to maintenance %2."
+		format[localize "str_maintenanceMissingPart",_x,_displayname] call dayz_rollingMessages; //"Missing %1 to maintenance %2."
 		_startMaintenance = false;
 	};
 } count _requiredParts;
@@ -91,22 +91,25 @@ if (_startMaintenance) then {
 			r_doLoop = false;
 			_finished = true;
 		};
-		sleep 0.1;
+		uiSleep 0.1;
 	};
 
 	r_doLoop = false;
 	
 	if (_finished) then {
+		PVDZ_veh_Save = [_cursorTarget,"maintenance"];
 		if (isServer) then {
 			PVDZ_veh_Save call server_updateObject;
 		} else {
-			PVDZ_veh_Save = [_cursorTarget,"maintenance"];
 			publicVariableServer "PVDZ_veh_Save";
 		};
 		
-		PVDZ_object_replace = [_cursorTarget];
-		publicVariableServer "PVDZ_object_replace";
+		//PVDZ_object_replace = [_cursorTarget];
+		//publicVariableServer "PVDZ_object_replace";
 	};
-	cutText [localize "str_maintenanceDone", "PLAIN DOWN"];
+	
+	_cursorTarget setVariable["Maintenance",false,true];
+	
+	localize "str_maintenanceDone" call dayz_rollingMessages;
 };
 

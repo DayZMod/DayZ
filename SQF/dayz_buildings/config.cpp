@@ -31,11 +31,18 @@ class CfgVehicles
 {
 	class WeaponHolderBase;
     class House;
-	class DZ_buildables: House
+	class NonStrategic;
+	class DZ_buildables: NonStrategic
 	{
 		scope = 2;
 		displayName = $STR_BLD_name_DZ_buildables;//"Buildables"
 		placement = "vertical";
+		destrType = "DestructBuilding";
+		vehicleClass = "Fortifications";
+		typicalCargo[] = {};
+		transportAmmo = 0;
+		transportRepair = 0;
+		transportFuel = 0;
 	};
 		
 	class Metal_Ladder: House

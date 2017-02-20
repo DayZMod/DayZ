@@ -13,7 +13,7 @@ Military[] =
 	
 	//Assault rifles
 	{Loot_WEAPON,		2,		M16A2_DZ},
-	{Loot_WEAPON,		1,		M16A2_GL_DZ},
+	//{Loot_WEAPON,		1,		M16A2_GL_DZ}, //added to attachments system
 	{Loot_WEAPON,		1.5,	M16A4_DZ},
 	{Loot_WEAPON,		0.5,	M4A1_DZ},
 //	{Loot_WEAPON,		3,		G36C_DZ},
@@ -75,7 +75,7 @@ MilitarySpecial[] =
 	
 	//Assault rifles
 	{Loot_WEAPON,		3,		M16A2_DZ},
-	{Loot_WEAPON,		2,		M16A2_GL_DZ},
+	//{Loot_WEAPON,		2,		M16A2_GL_DZ},  //added to attachments system
 	{Loot_WEAPON,		2,		M16A4_DZ},
 	{Loot_WEAPON,		1,		M4A1_DZ},
 //	{Loot_WEAPON,		3,		G36C_DZ},
@@ -119,8 +119,8 @@ MilitarySpecial[] =
 	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxCZ1, 7, 14},	//7.62x39
 	{Loot_CONTAINER,	1,		DZ_AmmoBoxRU, AmmoBoxCZ2, 2, 5},	//7.62x54R
 //	{Loot_CONTAINER,	0.5,	DZ_AmmoBoxRU, AmmoBoxRU3, 3, 7},	//7.62x54R
-	{Loot_CONTAINER,	0.5,	DZ_ExplosivesBoxRU, AmmoBoxRU4, 5, 15},	//GP-25
-	{Loot_CONTAINER,	0.5,	DZ_ExplosivesBoxRU, AmmoBoxRU5, 3, 7},	//Grenades
+	{Loot_CONTAINER,	0.5,	DZ_ExplosiveBoxRU, AmmoBoxRU4, 5, 15},	//GP-25
+	{Loot_CONTAINER,	0.5,	DZ_ExplosiveBoxRU, AmmoBoxRU5, 3, 7},	//Grenades
 	
 	//Other
 	{Loot_MAGAZINE,		3,		FoodMRE},

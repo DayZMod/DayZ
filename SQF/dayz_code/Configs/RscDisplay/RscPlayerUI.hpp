@@ -201,12 +201,21 @@ class RscTitles
 				h = 0.10;
 				colorText[] = {1,1,1,1};
 			};
+			class RscPicture_1904: RscPictureGUI
+			{
+				idc = 1904;
+				text = "\z\addons\dayz_code\gui\status\status_bg.paa";
+				x = 0.955313 * safezoneW + safezoneX;
+				y = 0.44 * safezoneH + safezoneY;
+				w = 0.075;
+				h = 0.10;
+			};
 			class RscPicture_1204: RscPictureGUI
 			{
 				idc = 1204;
-				text = "\z\addons\dayz_code\gui\status\status_connection_ca.paa";
+				text = "\z\addons\dayz_code\gui\status\status_sound_muted.paa"; // previously status_connection_ca which is not used
 				x = 0.955313 * safezoneW + safezoneX;
-				y = 0.51 * safezoneH + safezoneY;
+				y = 0.44 * safezoneH + safezoneY;
 				w = 0.075;
 				h = 0.10;
 				colorText[] = {1,1,1,1};
@@ -303,6 +312,71 @@ class RscTitles
 				y = 0.37 * safezoneH + safezoneY;
 				w = 0.075;
 				h = 0.10;
+			};
+		};
+	};
+	class DZ_BlackScreen {
+		idd = -1;
+		movingEnable = 0;
+		enableSimulation = 1;
+		enableDisplay = 1;
+		onLoad = "uiNamespace setVariable ['DZ_BlackScreen', _this select 0];";
+		duration = 99999999999999999;
+		fadein = 0;
+		fadeout = 0;
+		
+		class controls {
+			class Background: RscText {
+				idc = -1;
+				x = safezoneX;
+				y = safezoneY;
+				w = safezoneW;
+				h = safezoneH;
+				text = "";
+				colorText[] = {0,0,0,0};
+				colorBackground[] = {0,0,0,1};
+			};
+			class Text: RscText {
+				idc = 1;
+				x = 0.3 * safezoneW + safezoneX;
+				y = 0.859137 * safezoneH + safezoneY;
+				w = 0.400445 * safezoneW;
+				h = 0.139148 * safezoneH;
+				text = "";
+				style = 0x02 + 0x10 + 0x200;
+				lineSpacing = 1;
+				sizeEx = 0.034;
+			};
+		};
+	};
+	class RSC_DZ_Messages {
+		idd = 4099999;
+		movingEnable = 0;
+		fadein       =  0;
+		fadeout      =  5;
+		duration     =  6;
+		onLoad = "uinamespace setvariable ['DZ_Messages',_this select 0]";
+		onUnLoad = "uinamespace setvariable ['DZ_Messages',nil]";
+		class Controls {
+			class Message_Text: RscStructuredText
+			{
+				idc = 4099998;
+				text = "";
+				x = 0.3 * safezoneW + safezoneX;
+				y = 0.859137 * safezoneH + safezoneY;
+				w = 0.400445 * safezoneW;
+				h = 0.139148 * safezoneH;
+				colorText[] = {0,0,0,1};
+				colorBackground[] = {0,0,0,0};
+				sizeEx = 14 * GUI_GRID_H;
+				shadow = 1;
+				class Attributes
+				{
+					color = "#FFFFFF";
+					shadow = 1;
+					valign = "top";
+					align = "center";
+				};
 			};
 		};
 	};

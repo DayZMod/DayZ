@@ -46,13 +46,13 @@ _hasInput = true;
 	if (_avail < _amount) exitWith {
 		_hasInput = false;
 		_itemName = getText(configFile >> _selection >> _item >> "displayName");
-		cutText [format [localize "str_crafting_missing",(_amount - _avail),_itemName], "PLAIN DOWN"];
+		format[localize "str_crafting_missing",(_amount - _avail),_itemName] call dayz_rollingMessages;
 	};
 } forEach (_input + _required);
 
 if (_hasInput) then {
 	//Remove melee magazines (BIS_fnc_invAdd and BIS_fnc_invSlotsEmpty fix)
-	{player removeMagazines _x} count MeleeMagazines;
+	false call dz_fn_meleeMagazines;
 	_freeSlots = [player] call BIS_fnc_invSlotsEmpty;
 	{
 		_item = _x select 0;
@@ -66,16 +66,14 @@ if (_hasInput) then {
 			};
 		};
 	} forEach _input;
-
+	true call dz_fn_meleeMagazines;
 	_availabeSpace = true;
-	//sleep 1;
+	//uiSleep 1;
 
 	if (_availabeSpace) then {
 		player playActionNow "PutDown";
 
 		//Hack to get craft menu to use build needs a good tidy up
-		[_orignalClass,"Build","ItemActions"] spawn player_build; 
-		r_action_count = r_action_count + 1; 
-		
+		[_orignalClass,"Build","ItemActions"] spawn player_build;
 	};
 };

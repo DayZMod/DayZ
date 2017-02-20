@@ -7,7 +7,7 @@ Castle[] =
 	{Loot_WEAPON,		2,		ItemFlashlight},
 	{Loot_WEAPON,		1,		ItemPickaxe},
 	{Loot_WEAPON,		2,		ItemPickaxeBroken},
-//	{Loot_WEAPON,		2,		ItemShovel},
+	{Loot_WEAPON,		2,		ItemShovel},
 //	{Loot_WEAPON,		1,		ItemHatchet},
 	{Loot_VEHICLE,		1,		WeaponHolder_ItemHatchet},
 	
@@ -21,10 +21,10 @@ Castle[] =
 	
 	//Items
 	{Loot_MAGAZINE,		4,		ItemSandbag},
-	{Loot_MAGAZINE,		1,		equip_Crossbow_Kit},
+//	{Loot_MAGAZINE,		1,		equip_Crossbow_Kit}, //not functional yet
 	{Loot_MAGAZINE,		3,		equip_rope},
 	{Loot_MAGAZINE,		4,		PartWoodPile},
-	{Loot_MAGAZINE,		1,		ItemPadlock},
+	{Loot_MAGAZINE,		2,		ItemPadlock},
 	{Loot_MAGAZINE,		1,		ItemTent},
 	{Loot_MAGAZINE,		1,		ItemCamoNet},
 	

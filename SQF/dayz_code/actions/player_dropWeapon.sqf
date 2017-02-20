@@ -6,8 +6,9 @@ _config = configFile >> "CfgWeapons" >> _item;
 _droppedType = getText (_config >> "droppeditem");
 
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
-if (_onLadder) exitWith { cutText [localize "str_player_21", "PLAIN DOWN"]; r_action_count = 0; };
-if (r_action_count != 1) exitWith { cutText [localize "str_player_actionslimit", "PLAIN DOWN"]; };
+if (_onLadder) exitWith { localize "str_player_21" call dayz_rollingMessages; };
+if (dayz_actionInProgress) exitWith { localize "str_player_actionslimit" call dayz_rollingMessages; };
+dayz_actionInProgress = true;
 
 call gear_ui_init;
 
@@ -31,4 +32,4 @@ _bag = createVehicle [format["WeaponHolder_%1",_item],getPosATL player,[], 1, "C
 _bag modelToWorld getPosATL player;
 _bag setDir (getDir player);
 player reveal _bag;
-r_action_count = 0;
+dayz_actionInProgress = false;

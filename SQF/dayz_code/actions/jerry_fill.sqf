@@ -1,17 +1,33 @@
-private ["_qty","_dis","_sfx","_started","_finished","_animState","_isRefuel","_fuelcans","_qty20","_qty5"];
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
+private ["_qty","_dis","_sfx","_started","_finished","_animState","_isRefuel","_fuelcans","_qty20","_qty5","_magazines","_cursorTarget","_fuelAmount"];
 
 player removeAction s_player_fillfuel;
 //s_player_fillfuel = -1;
+_cursorTarget = _this select 3;
+_magazines = magazines player;
+
+//Limit Fuel in tankers
+_fuelAmount = _cursorTarget getVariable "FuelAmount";
+
+if (isNil "_fuelAmount") then {
+	_fuelAmount = floor(Random dayz_randomMaxFuelAmount);
+    _cursorTarget setVariable ["FuelAmount",_fuelAmount,true];
+};
+
+if (_fuelAmount < 5) exitWith { format[localize "str_fill_notenough",typeOf _cursorTarget,_fuelAmount] call dayz_rollingMessages; };
+
+diag_log format["Fill Jerry, %1 - %2",_cursorTarget,_fuelAmount];
 
 _fuelcans = ["ItemFuelcanEmpty","ItemJerrycanEmpty"];
 
 _qty = 0;
-_qty = {_x in _fuelcans} count magazines player;
+_qty = {_x in _fuelcans} count _magazines;
 
-_qty20 = {_x == "ItemJerrycanEmpty"} count magazines player;
-_qty5 = {_x == "ItemFuelcanEmpty"} count magazines player;
+_qty20 = {_x == "ItemJerrycanEmpty"} count _magazines;
+_qty5 = {_x == "ItemFuelcanEmpty"} count _magazines;
 
-if (("ItemJerrycanEmpty" in magazines player) or ("ItemFuelcanEmpty" in magazines player)) then {
+if (("ItemJerrycanEmpty" in _magazines) or ("ItemFuelcanEmpty" in _magazines)) then {
 	player playActionNow "Medic";
 
 	_dis=5;
@@ -35,23 +51,42 @@ if (("ItemJerrycanEmpty" in magazines player) or ("ItemFuelcanEmpty" in magazine
 			r_doLoop = false;
 			_finished = true;
 		};
-		sleep 0.1;
+		uiSleep 0.1;
 	};
 
 	r_doLoop = false;
 
 	if (_finished) then {
 		for "_x" from 1 to _qty20 do {
-			player removeMagazine "ItemJerrycanEmpty";
-			player addMagazine "ItemJerrycan";
+			_fuelAmount = _cursorTarget getVariable "FuelAmount";
+			
+			if (_fuelAmount >= 20) then {
+				_fuelAmount = _fuelAmount - 20;
+				_cursorTarget setVariable ["FuelAmount",_fuelAmount,true];
+				player removeMagazine "ItemJerrycanEmpty";
+				player addMagazine "ItemJerrycan";
+			} else {
+				_qty = _qty - 1;
+			};
 		};
 		for "_x" from 1 to _qty5 do {
-			player removeMagazine "ItemFuelcanEmpty";
-			player addMagazine "ItemFuelcan";
+			_fuelAmount = _cursorTarget getVariable "FuelAmount";
+			
+			if (_fuelAmount >= 5) then {
+				_fuelAmount = _fuelAmount - 5;
+				_cursorTarget setVariable ["FuelAmount",_fuelAmount,true];
+				player removeMagazine "ItemFuelcanEmpty";
+				player addMagazine "ItemFuelcan";
+			} else {
+				_qty = _qty - 1;
+			};
 		};
 	};
 
-	cutText [format [localize "str_player_09",_qty], "PLAIN DOWN"];
+	//format[localize "str_player_09",_qty] call dayz_rollingMessages;
+	format[localize "str_fill_success",_qty,typeOf _cursorTarget,_fuelAmount] call dayz_rollingMessages;
+	//diag_log format[localize "str_fill_success",_qty,typeOf _cursorTarget,_fuelAmount];
 } else {
-	cutText [localize "str_player_10", "PLAIN DOWN"];
+	localize "str_player_10" call dayz_rollingMessages;
 };
+dayz_actionInProgress = false;

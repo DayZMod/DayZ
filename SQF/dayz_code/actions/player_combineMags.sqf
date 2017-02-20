@@ -3,11 +3,11 @@ disableSerialization;
 call gear_ui_init;
 closeDialog 0;
 
-if (r_action_count != 1) exitWith { cutText [localize "str_player_actionslimit", "PLAIN DOWN"]; };
-
+if (dayz_actionInProgress) exitWith { localize "str_player_actionslimit" call dayz_rollingMessages; };
+dayz_actionInProgress = true;
 _create = _this;
 
-if (!(_create in magazines player)) exitWith {r_action_count = 0;};
+if (!(_create in magazines player)) exitWith {dayz_actionInProgress = false;};
 
 _config = configFile >> "CfgMagazines" >> _create;
 
@@ -19,8 +19,8 @@ _name = getText(configFile >> "CfgMagazines" >> _create >> "displayName");
 _magCount = {_x == _create} count magazines player;
 
 if (_magCount == 1) exitWith {
-	cutText [format [localize "str_cannotCombine", _name], "PLAIN DOWN"];
-	r_action_count = 0;
+	[format[localize "str_cannotCombine", _name],1] call dayz_rollingMessages;
+	dayz_actionInProgress = false;
 };
 
 //primary/secondary mags?
@@ -71,15 +71,15 @@ if(_create == "Quiver") then {
 
 switch true do {
 	case (_qtynew_create_ammo_rest == 0) : {
-		cutText [format [localize "str_combineDoneFull",_magCount, _name, _qtynew_create_mags_full,_magFull], "PLAIN DOWN"];
+		format[localize "str_combineDoneFull",_magCount, _name, _qtynew_create_mags_full,_magFull] call dayz_rollingMessages;
 		};
 	case (_qtynew_create_mags_full == 0) : {
-		cutText [format [localize "str_combineDonePartialOne",_magCount, _name, _qtynew_create_ammo_rest,_magAmmunition], "PLAIN DOWN"];
+		[format[localize "str_combineDonePartialOne",_magCount, _name, _qtynew_create_ammo_rest,_magAmmunition],1] call dayz_rollingMessages;
 		};
 	default {
-		cutText [format [localize "str_combineDonePartial",_magCount, _name, _qtynew_create_mags_full, _qtynew_create_ammo_rest,_magAmmunition,_magFullSingular,_magFull], "PLAIN DOWN"];
+		[format[localize "str_combineDonePartial",_magCount, _name, _qtynew_create_mags_full, _qtynew_create_ammo_rest,_magAmmunition,_magFullSingular,_magFull],1] call dayz_rollingMessages;
 	};
 };
 
-sleep 1;
-r_action_count = 0;
+uiSleep 1;
+dayz_actionInProgress = false;

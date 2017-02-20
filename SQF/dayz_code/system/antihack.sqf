@@ -9,10 +9,10 @@ inGameUISetEventHandler ["Action","false"];
 // thanks to Tansien the great
 // run only once per character life
 {
-	_plant = _x createVehicleLocal dayz_centerMarker;
+	_plant = _x createVehicleLocal (getMarkerPos "center");
 	uiSleep 0.1;
 	if (sizeOf _x == 0) exitWith { 
-		PVDZ_sec_atp = "Plants texture hack for type " + _x;
+		PVDZ_sec_atp = toArray ("Plants texture hack for type " + _x);
 		publicVariableServer "PVDZ_sec_atp";
 		endMission "LOSER";
 	};

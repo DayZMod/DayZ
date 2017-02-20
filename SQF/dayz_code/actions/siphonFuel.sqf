@@ -6,10 +6,10 @@ _vehicle = _this select 3;
 player removeAction s_player_siphonfuel;
 _hasHose = "equip_hose" in magazines player;
 
-if (dayz_siphonFuelInProgress) exitWith { cutText [localize "str_siphon_inprogress", "PLAIN DOWN"] };
-if (!_hasHose) exitWith {cutText [localize "str_siphon_hose", "PLAIN DOWN"] };
+if (dayz_siphonFuelInProgress) exitWith { localize "str_siphon_inprogress" call dayz_rollingMessages; };
+if (!_hasHose) exitWith {localize "str_siphon_hose" call dayz_rollingMessages; };
 _PlayerNear = {isPlayer _x} count ((getPosATL _vehicle) nearEntities ["CAManBase", 10]) > 1;
-if (_PlayerNear) exitWith {cutText [localize "str_pickup_limit_5", "PLAIN DOWN"];};
+if (_PlayerNear) exitWith {localize "str_pickup_limit_5" call dayz_rollingMessages;};
 
 dayz_siphonFuelInProgress = true;
 _abort = false;
@@ -46,7 +46,7 @@ _nameText = 	getText(_configVeh >> "displayName");
 			};
 
 			if (_newFuel > 0) then {
-				cutText [format [localize "str_siphon_preparing",_canTypeEmpty], "PLAIN DOWN"];
+				format[localize "str_siphon_preparing",_canTypeEmpty] call dayz_rollingMessages;
 				_finished = false;
 				
 				// alert zombies
@@ -125,7 +125,7 @@ _nameText = 	getText(_configVeh >> "displayName");
 							// Added Nutrition-Factor for work
 							["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
 					
-							cutText [format [localize "str_siphon_drained",_nameText,_canSize], "PLAIN DOWN"];
+							format[localize "str_siphon_drained",_nameText,_canSize] call dayz_rollingMessages;
 	
 							call fnc_usec_medic_removeActions;
 							r_action = false;
@@ -135,15 +135,15 @@ _nameText = 	getText(_configVeh >> "displayName");
 							_abort = true;
 						};					
 					} else {
-						cutText [format [localize "str_siphon_notenough",_nameText], "PLAIN DOWN"];
+						format[localize "str_siphon_notenough",_nameText] call dayz_rollingMessages;
 						_abort = true;
 					};						
 				} else {
-					cutText [localize "str_siphon_canceled", "PLAIN DOWN"];
+					localize "str_siphon_canceled" call dayz_rollingMessages;
 					_abort = true;
 				};			
 			} else {
-				cutText [format [localize "str_siphon_notenough",_nameText], "PLAIN DOWN"];
+				format[localize "str_siphon_notenough",_nameText] call dayz_rollingMessages;
 				_abort = true;
 			};
 		};

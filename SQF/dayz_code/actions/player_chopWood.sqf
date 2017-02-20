@@ -1,8 +1,6 @@
 
 private ["_item","_result","_dis","_sfx","_num","_breaking","_countOut","_findNearestTree","_objName","_counter","_isOk","_proceed","_animState","_started","_finished","_isMedic","_itemOut","_tree","_distance2d"];
 
-//if (!isnil "faco_player_chopWood") exitWith { _this call faco_player_chopWood };
-
 _item = _this;
 call gear_ui_init;
 closeDialog 1;
@@ -63,7 +61,7 @@ if (count _findNearestTree > 0) then {
                 r_doLoop = false;
             };
 
-            sleep 0.1;
+            uiSleep 0.1;
         };
 
         if(!_finished) exitWith {
@@ -73,7 +71,7 @@ if (count _findNearestTree > 0) then {
 
         if(_finished) then {                
             _breaking = false;
-            if ([0.04] call fn_chance) then {
+            if ([0.09] call fn_chance) then {
                 _breaking = true;
                 if ("MeleeHatchet" in weapons player) then {
                     player removeWeapon "MeleeHatchet";
@@ -94,30 +92,31 @@ if (count _findNearestTree > 0) then {
             _counter = _counter + 1;
             _itemOut = "ItemLog";
 			//Drop Item to ground
-			_itemOut call fn_dropItem;
+			[_itemOut,1,1] call fn_dropItem;
         };
             
         if ((_counter == _countOut) || _breaking) exitWith {
             if (_breaking) then {
-                cutText [localize "str_HatchetHandleBreaks", "PLAIN DOWN"];
+                localize "str_HatchetHandleBreaks" call dayz_rollingMessages;
             } else {
-                cutText [localize "str_player_24_Stoped", "PLAIN DOWN"];
+                localize "str_player_24_Stoped" call dayz_rollingMessages;
             };
             _isOk = false;
             _proceed = true;
-            sleep 1;
+            uiSleep 1;
         };
-        cutText [format [localize "str_player_24_progress", _counter,_countOut], "PLAIN DOWN"];
+        format[localize "str_player_24_progress", _counter,_countOut] call dayz_rollingMessages;
     };
 
-    if (_proceed) then {            
+   if (_proceed ||(_counter > 0) ) then {            
 		//remove vehicle, Need to ask server to remove.
 		PVDZ_objgather_Knockdown = [_tree,player];
 		publicVariableServer "PVDZ_objgather_Knockdown";         
-        //cutText [format["\n\nChopping down tree.], "PLAIN DOWN"];
-        //cutText [localize "str_player_25", "PLAIN DOWN"];
-    } else {
-        cutText [localize "str_player_24_Stoped", "PLAIN DOWN"];
+        //"Chopping down tree." call dayz_rollingMessages;
+        //localize "str_player_25" call dayz_rollingMessages;
+    };
+    if !(_proceed) then {            
+        localize "str_player_24_Stoped" call dayz_rollingMessages;
 
         r_interrupt = false;
 

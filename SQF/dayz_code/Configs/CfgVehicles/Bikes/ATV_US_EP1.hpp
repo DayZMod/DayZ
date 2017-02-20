@@ -3,9 +3,11 @@ class ATV_US_EP1: ATV_Base_EP1 {
 	faction = "";
 	displayname = $STR_VEH_NAME_ATV;
 	maxspeed = 80;
-	scope = 2;
+	scope = public;
 	side = 1;
-	typicalcargo[] = {""};
+	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
 	class HitPoints: Hitpoints {
 		class HitBody {
 			armor = 1;

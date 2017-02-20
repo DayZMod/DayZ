@@ -1,15 +1,19 @@
-private ["_characterID","_temp","_currentWpn","_magazines","_force","_isNewPos","_humanity","_isNewGear","_currentModel","_modelChk","_playerPos","_playerGear","_playerBackp","_backpack","_killsB","_killsH","_medical","_isNewMed","_character","_timeSince","_charPos","_isInVehicle","_distanceFoot","_lastPos","_kills","_headShots","_timeGross","_timeLeft","_onLadder","_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_name"];
+private ["_characterID","_temp","_currentWpn","_magazines","_humanity","_currentModel","_modelChk",
+		"_playerPos","_playerGear","_playerBackp","_backpack","_killsB","_killsH","_medical","_character",
+		"_timeSince","_charPos","_isInVehicle","_distanceFoot","_lastPos","_kills","_headShots","_timeGross","_timeLeft","_onLadder",
+		"_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_name","_inDebug","_Achievements"];
 //[player,array]
 
 _character = _this select 0;
 _magazines = _this select 1;
 _characterID = _character getVariable ["characterID","0"];
-_force = true;
 _charPos = getPosATL _character;
 _isInVehicle = vehicle _character != _character;
 _timeSince = 0;
 _humanity = 0;
 _name = if (alive _character) then {name _character} else {"Dead Player"};
+_Achievements = [];
+_inDebug = (respawn_west_original distance _charPos) < 1500;
 
 if (_character isKindOf "Animal") exitWith {
 	diag_log ("ERROR: Cannot Sync Character " + _name + " is an Animal class");
@@ -19,27 +23,13 @@ if (isNil "_characterID") exitWith {
 	diag_log ("ERROR: Cannot Sync Character " + _name + " has nil characterID");
 };
 
-if (_characterID == "0") exitWith {
-	diag_log ("ERROR: Cannot Sync Character " + _name + " as no characterID");
-};
-
-_Achievements = [];
-
-/*
-	//No longer used
-	private["_debug","_distance"];
-	_debug = getMarkerpos "respawn_west";
-	_distance = _debug distance _charPos;
-	if (_distance < 2000) exitWith { 
-	//	diag_log format["ERROR: server_playerSync: Cannot Sync Player %1 [%2]. Position in debug! %3",name _character,_characterID,_charPos];
+if (_characterID == "0" or _inDebug) exitWith {
+	if (_inDebug) then {
+		diag_log format["INFO: server_playerSync: Cannot Sync Player %1 [%2]. Position in debug! %3. This is normal when respawning, relogging and changing clothes.",_name,_characterID,_charPos];
+	} else {
+		diag_log ("ERROR: Cannot Sync Character " + _name + " as no characterID");
 	};
-*/
-
-//Check for server initiated updates
-_isNewMed = _character getVariable ["medForceUpdate",false]; //Med update is forced when a player receives some kind of med incident
-_isNewPos = _character getVariable ["posForceUpdate",false]; //Med update is forced when a player receives some kind of med incident
-_isNewGear = if (!isNil "_magazines") then { true } else { false };
-//diag_log ("Starting Save... MED: " + str(_isNewMed) + " / POS: " + str(_isNewPos)); sleep 0.05;
+};
 
 //Check for player initiated updates
 if (_characterID != "0") then {
@@ -52,25 +42,20 @@ if (_characterID != "0") then {
 	//diag_log ("Found Character...");
 	
 	//Check if update is requested
-	if (_isNewPos or _force) then {
-		//diag_log ("position..." + str(_isNewPos) + " / " + str(_force)); sleep 0.05;
-		if (((_charPos select 0) == 0) && ((_charPos select 1) == 0)) then {
-			//Zero Position
-		} else {
-			//diag_log ("getting position..."); sleep 0.05;
-			_playerPos = [round (direction _character),_charPos];
-			_lastPos = _character getVariable ["lastPos",_charPos];
-			if (count _lastPos > 2 && count _charPos > 2) then {
-				if (!_isInVehicle) then {_distanceFoot = round (_charPos distance _lastPos);};
-				_character setVariable["lastPos",_charPos];
-			};
-			if (count _charPos < 3) then {_playerPos = [];};
-			//diag_log ("position = " + str(_playerPos)); sleep 0.05;
+	if !((_charPos select 0 == 0) && (_charPos select 1 == 0)) then {
+		//diag_log ("getting position..."); sleep 0.05;
+		_playerPos = [round (direction _character),_charPos];
+		_lastPos = _character getVariable ["lastPos",_charPos];
+		if (count _lastPos > 2 && count _charPos > 2) then {
+			if (!_isInVehicle) then {_distanceFoot = round (_charPos distance _lastPos);};
+			_character setVariable["lastPos",_charPos];
 		};
-		_character setVariable ["posForceUpdate",false,true];
+		if (count _charPos < 3) then {_playerPos = [];};
+		//diag_log ("position = " + str(_playerPos)); sleep 0.05;
 	};
+	_character setVariable ["posForceUpdate",false,true];
 	
-	if (_isNewGear) then {
+	if (!isNil "_magazines") then {
 		if (typeName _magazines == "ARRAY") then {
 			_playerGear = [weapons _character,_magazines select 0,_magazines select 1];
 		};
@@ -80,15 +65,12 @@ if (_characterID != "0") then {
 	_backpack = unitBackpack _character;
 	_playerBackp = [typeOf _backpack,getWeaponCargo _backpack,getMagazineCargo _backpack];
 	
-	if (_isNewMed or _force) then {
-		//diag_log ("medical..."); sleep 0.05;
-		if !(_character getVariable ["USEC_isDead",false]) then {
-			//diag_log ("medical check..."); sleep 0.05;
-			_medical = _character call player_sumMedical;
-			//diag_log ("medical result..." + str(_medical)); sleep 0.05;
-		};
-		_character setVariable ["medForceUpdate",false,true];
+	if !(_character getVariable ["USEC_isDead",false]) then {
+		//diag_log ("medical check..."); sleep 0.05;
+		_medical = _character call player_sumMedical;
+		//diag_log ("medical result..." + str(_medical)); sleep 0.05;
 	};
+	_character setVariable ["medForceUpdate",false,true];
 	
 	//Process update
 	if (_characterID != "0") then {		
@@ -159,7 +141,7 @@ if (_characterID != "0") then {
 		if (count _playerPos > 0) then {
 			_array = [];
 			{
-				if (_x > -20000 && _x < 20000) then {_array set [count _array,_x];};
+				if (_x > dayz_minpos && _x < dayz_maxpos) then {_array set [count _array,_x];};
 			} forEach (_playerPos select 1);
 			_playerPos set [1,_array];
 		};
@@ -168,8 +150,9 @@ if (_characterID != "0") then {
 			if (alive _character) then {
 				//Wait for HIVE to be free and send request
 				_key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:",_characterID,_playerPos,_playerGear,_playerBackp,_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity];
-				//diag_log ("HIVE: WRITE: "+ str(_key) + " / " + _characterID);
-				//diag_log format["HIVE: SYNC: [%1,%2,%3,%4]",_characterID,_playerPos,_playerGear,_playerBackp];
+				
+				diag_log str formatText["INFO - %2(UID:%4,CID:%3) PlayerSync, %1",_key,_name,_characterID,(getPlayerUID _character)];
+				
 				_key call server_hiveWrite;
 			};
 		};

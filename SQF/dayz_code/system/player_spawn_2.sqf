@@ -3,24 +3,16 @@ disableSerialization;
 _timeOut = 0;
 _messTimer = 0;
 _lastTemp = dayz_temperatur;
-_debug = getMarkerpos "respawn_west";
 
 _timer = diag_tickTime;
 _timer1 = diag_tickTime;
-_spawnCheck = diag_tickTime;
-_timer2 = diag_Ticktime;
-_timer5 = diag_Ticktime;
-_timer10 = diag_Ticktime;
 _timer30 = diag_Ticktime;
 _timer150 = diag_ticktime;
-
-_forceHumanity = false;
-_runonce = false;
 _timerMonitor = diag_ticktime;
 
 player setVariable ["temperature",dayz_temperatur,true];
 
-[player,0] call player_humanityChange;
+[0,0] call player_humanityChange;
 
 //player addMagazine "Hatchet_swing";
 //player addWeapon "MeleeHatchet";
@@ -45,7 +37,7 @@ while {1 == 1} do {
 	//reset position
 	_randomSpot = true;
 	_tempPos = getPosATL player;
-	_distance = _debug distance _tempPos;
+	_distance = respawn_west_original distance _tempPos;
 	if (_distance < 2000) then {
 		_randomSpot = false;
 	};
@@ -73,29 +65,12 @@ while {1 == 1} do {
 	};
 
 	if (_timeOut > 150) then {
-		_humanity = player getVariable ["humanity",0];
-		if (_humanity < 1 or _forceHumanity) then {
-			if (vehicle player != player) then {
-				[player, round(_timeOut / 10)] call player_humanityChange;
-				_forceHumanity = false;
-			} else {
-				_humanity = _humanity + round(_timeOut / 10);
-				player setVariable["humanity",_humanity,true];
-				_forceHumanity = true;
-			};
-		};
-		_timeOut = 0;
-	};
-
-/*	
-	if ((Dayz_loginCompleted) && (diag_tickTime < 25)) then {
-
-		[player,0] call player_humanityChange;
-		
-		diag_log ("Running");
-		_timer10 = diag_Ticktime;
-	};
-*/
+        _humanity = player getVariable ["humanity",0];
+        if (_humanity < 1) then {
+            [round(_timeOut / 10),0] call player_humanityChange;
+        };
+        _timeOut = 0;
+    };
 	
 	//reset OpenTarget variable if the timer has run out.
 	if (OpenTarget_Time > 0 && {diag_tickTime - OpenTarget_Time >= dayz_OpenTarget_TimerTicks}) then
@@ -110,10 +85,7 @@ while {1 == 1} do {
 		_timer150 = diag_ticktime;
 	};
 	
-	if ((diag_tickTime - _timer) > 300) then {	
-	//Animals
-		//[] call player_animalCheck;
-		
+	if ((diag_tickTime - _timer) > 300) then {		
 		_timer = diag_tickTime;
 	};
 	
@@ -148,12 +120,6 @@ while {1 == 1} do {
 	};
 	dayz_hunger = dayz_hunger + (_hunger / 70); //60 Updated to 80
 	dayz_hunger = (dayz_hunger min SleepFood) max 0;
-
-	if (dayz_hunger >= SleepFood) then {
-		if (r_player_blood < 10) then {
-			_id = [player,"starve"] spawn player_death;
-		};
-	};
 	
 //Thirst
 	_thirst = 2;
@@ -162,12 +128,6 @@ while {1 == 1} do {
 	};
 	dayz_thirst = dayz_thirst + (_thirst / 60) * (dayz_temperatur / dayz_temperaturnormal);	//TeeChange Temperatur effects added Max Effects: -25% and + 16.6% waterloss
 	dayz_thirst = (dayz_thirst min SleepWater) max 0;
-
-	if (dayz_thirst >= SleepWater) then {
-		if (r_player_blood < 10) then {
-			_id = [player,"dehyd"] spawn player_death;
-		};
-	};
 	
 	//diag_log format ["playerSpawn2 %1/%2",dayz_hunger,dayz_thirst];
 	
@@ -229,12 +189,7 @@ while {1 == 1} do {
 		if !(player getVariable["USEC_infected",false]) then {
 			player setVariable["USEC_infected",true,true];
 		};
-
-		if (r_player_blood < 3) then {
-			_id = [player,"sick"] spawn player_death;
-		};
 	};
-
 
 	// Regen some blood if player is well fed and resting
 	// Attention: regen _result must not trigger the "up" arrow of the blood icon
@@ -263,8 +218,15 @@ while {1 == 1} do {
 
 	//Record low bloow
 	_lowBlood = player getVariable ["USEC_lowBlood", false];
-	if ((r_player_blood < r_player_bloodTotal) and !_lowBlood) then {
-		player setVariable["USEC_lowBlood",true,true];
+	if (r_player_blood < r_player_bloodTotal) then {
+		if (!_lowBlood) then {
+			player setVariable ["USEC_lowBlood",true,true];
+		};
+	} else {
+		if (_lowBlood && !r_player_injured) then {
+			player setVariable ["USEC_lowBlood",false,true];
+			r_player_lowblood = false;
+		};
 	};
 
 	//Broadcast Hunger/Thirst
@@ -284,13 +246,9 @@ while {1 == 1} do {
 			PVDZ_plr_Save = [player,nil,false,dayz_playerAchievements];
 			publicVariableServer "PVDZ_plr_Save";
 			
-			PVDZ_serverStoreVar = [player,"Achievements",dayz_playerAchievements];
-			publicVariableServer "PVDZ_serverStoreVar";
-			player setVariable ["Achievements",dayz_playerAchievements,false];
-
-			if (isServer) then {
-				PVDZ_plr_Save call server_playerSync;
-			};
+			//PVDZ_serverStoreVar = [player,"Achievements",dayz_playerAchievements];
+			//publicVariableServer "PVDZ_serverStoreVar";
+			//player setVariable ["Achievements",dayz_playerAchievements,false];
 
 			dayz_unsaved = false;
 			dayz_lastSave = diag_ticktime;
@@ -384,10 +342,9 @@ while {1 == 1} do {
 			diag_log (str(_backpacks));
 			
 			if ((count (_weapons select 0) < 1) and (count (_magazines select 0) < 1) and (count (_backpacks select 0) < 1)) then {
-				
 				//remove vehicle, Need to ask server to remove.
+				diag_log format["Deleting empty nearby box: %1",_x];
 				PVDZ_obj_Delete = [_x,player];
-				diag_log (str(PVDZ_obj_Delete));
 				publicVariableServer "PVDZ_obj_Delete";
 			};
 		
@@ -399,7 +356,7 @@ while {1 == 1} do {
 	//Two primary guns pickup exploit fix
 	if ((primaryWeapon player != "") && (!(primaryWeapon player in MeleeWeapons)) && (dayz_onBack != "") && (!(dayz_onBack in MeleeWeapons)) && (isNull (findDisplay 106)) &&
 	(animationState player != "amovpknlmstpslowwrfldnon_amovpknlmstpsraswrfldnon" OR animationState player != "amovpercmstpslowwrfldnon_amovpercmstpsraswrfldnon" OR animationState player != "amovpercmstpslowwrfldnon_amovpercmstpsraswrfldnon")) then {
-		cutText [localize "str_player_ammo_2primary","PLAIN DOWN"];
+		localize "str_player_ammo_2primary" call dayz_rollingMessages;
 		player playActionNow "stop";
 		player action ["dropWeapon", player, primaryWeapon player];
 		//sleep 3;
@@ -412,7 +369,7 @@ while {1 == 1} do {
 	_stop = diag_tickTime;
 	/*
 	if ((diag_tickTime - _timerMonitor) > 60) then {
-		diag_log format ["Loop Monitor - Spawn2: %1, DA: %2, UA: %3, SA: %4",(_stop - _start),(diag_tickTime - (player getVariable "damageActions")),(diag_tickTime - (player getVariable "upgradeActions")),(diag_tickTime - (player getVariable "selfActions"))];
+		diag_log format ["Loop Monitor - Spawn2: %1, DA: %2, SA: %3",(_stop - _start),(diag_tickTime - (player getVariable "damageActions")),(diag_tickTime - (player getVariable "selfActions"))];
 		_timerMonitor = diag_ticktime;
 	};
 	*/

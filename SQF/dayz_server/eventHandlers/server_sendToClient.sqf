@@ -119,4 +119,5 @@ switch (_variable) do {
 		PVCDZ_OpenTarget_Reset = true;
 		_owner publicVariableClient "PVCDZ_OpenTarget_Reset";
 	};
+	default { diag_log format ["%1, %2, %3, %4", _unit, _variable, _arraytosend, _owner]; };
 };

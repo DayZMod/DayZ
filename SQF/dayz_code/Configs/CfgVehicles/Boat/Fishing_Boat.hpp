@@ -23,7 +23,7 @@ class Fishing_Boat: Ship {
 	mapsize = 8;
 	model = "\CA\water2\Fishing_boat\fishing_boat";
 	picture = "\ca\water2\data\ui\picture_fishboat_CA.paa";
-	scope = 2;
+	scope = public;
 	side = 3;
 	soundengineoffext[] = {"ca\sounds\vehicles\Water\FISHING_BOAT\ext-slowboat-engine-stop-02", 0.177828, 1, 100};
 	soundengineoffint[] = {"ca\sounds\vehicles\Water\FISHING_BOAT\ext-slowboat-engine-stop-02", 0.177828, 1, 100};
@@ -33,7 +33,9 @@ class Fishing_Boat: Ship {
 	textplural = "Ships";
 	textsingular = "Ship";
 	transportsoldier = 7;
-	typicalcargo[] = {};
+	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
 	vehicleclass = "Ship";
 	class Library {
 		libtextdesc = "Simple boat used to catch fish in the sea. According to the international Food and Agriculture Organization there are about 4 million of commercial fishing boats worldwide. This is one of them.";

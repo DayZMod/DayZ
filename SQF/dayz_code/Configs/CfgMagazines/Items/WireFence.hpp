@@ -9,16 +9,19 @@ class ItemWire : CA_Magazine
 	displayName = $STR_EQUIP_NAME_23;
 	descriptionShort = $STR_EQUIP_DESC_23;
 
+	/*
+	//Due to issues with some players and graphic glitches this item has been removed.
 	class ItemActions
 	{
 		class Build
 		{
 			text = $STR_ACTION_BUILD;
-			script = "; [_id,'Build'] spawn player_build; r_action_count = r_action_count + 1;";
+			script = "; [_id,'Build'] spawn player_build;";
 			require[] = {"ItemToolbox"};
 			consume[] = {"ItemWire"};
 			create = "Wire_cat1";
 			byPass = "byPassRoadCheck";
 		};
 	};
+	*/
 };

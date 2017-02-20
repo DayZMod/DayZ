@@ -16,7 +16,7 @@ while {_counter < _amount} do {
 	//_radius = 0;
 	_method = "CAN_COLLIDE";
 	
-	_position = [dayz_centerMarker,1,6500,1] call fn_selectRandomLocation;
+	_position = [getMarkerPos "center",1,6500,1] call fn_selectRandomLocation;
 	
 	//Create Zed
 	_agent = createAgent [_type, _position, [], 1, _method];
@@ -38,7 +38,7 @@ while {_counter < _amount} do {
 	_counter = _counter + 1;
 	
 	//Start behavior
-	//_id = [_position,_agent] execFSM "\z\AddOns\dayz_code\system\zombie_wildagent.fsm";
+	//_id = [_agent] execFSM "\z\AddOns\dayz_code\system\zombie_wildagent.fsm";
 	//_agent setVariable [ "fsmid", _id ];
 	
 	//Disable all zed systems

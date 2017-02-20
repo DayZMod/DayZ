@@ -1,1 +1,0 @@
-__FILE__ call compile preprocessFileLineNumbers "\dayz\dayz_code\init\init.sqf";

@@ -1,8 +1,0 @@
-//system
-#define RPC_REQUEST_LOGIN 1
-
-//actions
-#define RPC_REQUEST_REFUEL 201
-#define RPC_COMMAND_REFUEL 201
-#define RPC_REQUEST_REPAIR 202
-#define RPC_COMMAND_REPAIR 202

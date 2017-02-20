@@ -1,9 +1,15 @@
 #include "\z\addons\dayz_code\util\array.hpp";
 
-private ["_msg","_antibiotics","_hasAntibiotics","_id","_hasMeds","_unit"];
+private ["_msg","_antibiotics","_hasAntibiotics","_id","_hasMeds","_unit","_medsUsed"];
 
-_unit = _this select 0;
-_medsUsed = _this select 1;
+if (count _this > 2) then {
+	_unit = (_this select 3) select 0;
+	_medsUsed = nil;
+} else {
+	_unit = _this select 0;
+	_medsUsed = _this select 1;
+};
+
 _antibiotics =["ItemAntibiotic","ItemAntibiotic1","ItemAntibiotic2","ItemAntibiotic3","ItemAntibiotic4","ItemAntibiotic5","ItemAntibiotic6"];
 _hasAntibiotics = false;
 
@@ -23,9 +29,11 @@ if (_hasAntibiotics) then {
 	//Remove one table from the box.
 	[_medsUsed,"medical"] call dayz_reduceItems;
 
+	
 	//remove infection
-	r_player_infected = false;
-	_unit setVariable["USEC_infected",false,true];
+	//Called in medAntis
+	//r_player_infected = false;
+	//_unit setVariable["USEC_infected",false,true];
 
 	//remove option
 	call fnc_usec_medic_removeActions;
@@ -45,7 +53,7 @@ if (_hasAntibiotics) then {
 		publicVariableServer "PVDZ_send";
 
 		//Give humnaity for good deeds
-		[player,20] call player_humanityChange;
+		[20,0] call player_humanityChange;
 
 		_msg = "str_actions_medical_gave_antibiotics";
 	};

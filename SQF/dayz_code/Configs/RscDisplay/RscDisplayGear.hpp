@@ -4,10 +4,10 @@ class RscDisplayGear
 	enableDisplay = 1;
 	movingEnable = 0;
 	
-	//onLoad = "[] spawn object_monitorGear; {player removeMagazines _x} count MeleeMagazines; call gear_ui_init; call ui_gear_sound; if (isNil('IGUI_GEAR_activeFilter')) then { IGUI_GEAR_activeFilter = 0;}; [_this,'onLoad'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";/* diag_log 'RscDisplayGear :  : onLoad'; */
-	//onUnload = "{player removeMagazines _x} count MeleeMagazines; call player_forceSave; call dayz_meleeMagazineCheck;"; /* diag_log 'RscDisplayGear :  : onunLoad'; */
+	//onLoad = "[] spawn object_monitorGear; false call dz_fn_meleeMagazines; call gear_ui_init; call ui_gear_sound; if (isNil('IGUI_GEAR_activeFilter')) then { IGUI_GEAR_activeFilter = 0;}; [_this,'onLoad'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";/* diag_log 'RscDisplayGear :  : onLoad'; */
+	//onUnload = "false call dz_fn_meleeMagazines; call player_forceSave; call dayz_meleeMagazineCheck;"; /* diag_log 'RscDisplayGear :  : onunLoad'; */
 	onLoad = "false call dz_fn_meleeMagazines; [] spawn object_monitorGear; call gear_ui_init; call ui_gear_sound; if (isNil 'IGUI_GEAR_activeFilter') then {IGUI_GEAR_activeFilter = 0}; [_this, 'onLoad'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
-	onUnload = "true call dz_fn_meleeMagazines; call player_forceSave;";
+	onUnload = "true call dz_fn_meleeMagazines; call player_selectWeapon; call player_forceSave;";
 	onMouseMoving = "[] call gear_ui_hide;";
 	onMouseHolding = "[] call gear_ui_hide;";
 	
@@ -235,19 +235,20 @@ class RscDisplayGear
 			shadow = 0;
 		};
 		
-		class CA_ItemName : RscText
+		class CA_ItemName : RscText // This is the RSC for the DisplayName under the list box.
 		{
 			idc = 1101;
 			//x = -0.039;
 			x = -0.051;
 			//y = 0.627;
 			y = 0.668;
+			w = 0.458;
 			colorText[] = {0.32,0.24,0.09,1};
 			shadow = 0;
 			text = "Gear of the unit:";
 		};
 		
-		class CA_CustomDescription : RscStructuredText
+		class CA_CustomDescription : RscStructuredText // This is the RSC for the descriptionShort under the list box.
 		{
 			idc = 1106;
 			//x = -0.039;
@@ -315,7 +316,7 @@ class RscDisplayGear
 					x = -2;
 					style = 2048;
 					onSetFocus = "[_this,'onFocus'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
-					onButtonClick = "{player removeMagazines _x} count MeleeMagazines; [_this,'onLBListSelChanged'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
+					onButtonClick = "false call dz_fn_meleeMagazines; [_this,'onLBListSelChanged'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
 					text = "&lt;";
 				};
 				
@@ -350,7 +351,7 @@ class RscDisplayGear
 					idc = 147;
 					x = -2;
 					onSetFocus = "[_this,""onFocus""] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
-					onButtonClick = "{player removeMagazines _x} count MeleeMagazines; [_this,""onLBListSelChanged""] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
+					onButtonClick = "false call dz_fn_meleeMagazines; [_this,""onLBListSelChanged""] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
 					text = ">";
 				};
 			};

@@ -8,7 +8,7 @@ fnc_usec_damageHandle = {
 	_unit = _this select 0;
 	mydamage_eh1 = _unit addeventhandler ["HandleDamage",{_this call fnc_usec_damageHandler;} ];
 	mydamage_eh2 = _unit addEventHandler ["Fired", {_this call player_fired;}];
-	mydamage_eh3 = _unit addEventHandler ["Killed", {_id = [] spawn player_death;}];
+	mydamage_eh3 = _unit addEventHandler ["Killed", {[_this,"find"] call player_death;}];
 };
 
 fnc_usec_pitchWhine = {
@@ -19,11 +19,15 @@ fnc_usec_pitchWhine = {
 	playMusic ["PitchWhine",0];
 	if (!r_player_unconscious) then {
 		_visual call fnc_usec_bulletHit;
-		_sound fadeSound 1;
+		if (dayz_soundMuted) then {
+			_sound fadeSound 0.25;
+		} else {
+			_sound fadeSound 1;
+		};
 	};
 	r_pitchWhine = true;
 	[] spawn {
-		sleep 32;
+		uiSleep 32;
 		r_pitchWhine = false;
 	};
 };
@@ -68,12 +72,12 @@ fnc_usec_damageUnconscious = {
 			if (r_player_unconscious) then {
 				_unit action ["eject", _veh];
 				waitUntil{((vehicle _this) != _this)};
-				sleep 1;
-				_unit switchMove "AmovPpneMrunSnonWnonDfr";
+				uiSleep 1;
+				_unit playActionNow "Die";
 			};
 		};
 	} else {
-		_unit switchMove "AmovPpneMrunSnonWnonDfr";
+		_unit playActionNow "Die";
 	};
 };
 
@@ -125,7 +129,6 @@ fnc_usec_calculateBloodPerSec = {
 	_bloodLossPerSec = 0;
 	_bloodGainPerSec = 0;
 
-
 	if (dayz_thirst >= SleepWater) then {
 		_bloodLossPerSec = _bloodLossPerSec + 10;
 	};
@@ -133,7 +136,6 @@ fnc_usec_calculateBloodPerSec = {
 	if (dayz_hunger >= SleepFood) then {
 		_bloodLossPerSec = _bloodLossPerSec + 10;
 	};
-
 
 	if (r_player_injured) then {
 		_bloodLossPerSec = 10;
@@ -148,7 +150,7 @@ fnc_usec_calculateBloodPerSec = {
 	};
 	
 	//Sepsis
-	if (!r_player_infected) then { 
+	if (!r_player_infected) then {
 		if (r_player_Sepsis select 0) then {
 			 _time = diag_tickTime - (r_player_Sepsis select 1);
 			if (_time > 900) then {
@@ -156,7 +158,6 @@ fnc_usec_calculateBloodPerSec = {
 					_time = ((_time - 900) max 1) min 900;
 					_bloodLossPerSec = _bloodLossPerSec + (_time / 450) + 1;
 					_bloodLossPerSec = _bloodLossPerSec - (_bloodLossPerSec % 1);
-					//hintSilent (format["SetupMedFNCS: Blood Level: %2/12000 bloodLossPerSec %1",_bloodLossPerSec,r_player_blood]);
 				} else {
 					r_player_Sepsis = [false, 0];
 					r_player_infected = true;
@@ -166,14 +167,12 @@ fnc_usec_calculateBloodPerSec = {
 			
 			if ((_time < 1) and (isNil "sepsisStarted")) then {
 			//if (isNil "sepsisStarted") then {
-				//cutText [localize "str_medical_sepsis_warning","PLAIN DOWN",5];
-				systemChat (localize "str_medical_sepsis_warning");
+				localize "str_medical_sepsis_warning" call dayz_rollingMessages;
+				//systemChat (localize "str_medical_sepsis_warning");
 				player setVariable ["sepsisStarted", _time];
 			};
 		};
-	};
-	
-	if (r_player_infected) then { 
+	} else {
 		_bloodLossPerSec = _bloodLossPerSec + 3;
 	};
 	
@@ -223,7 +222,14 @@ _tempVal = round(100*(1 - ((dayz_temperatur - dayz_temperaturmin)/(dayz_temperat
 		r_player_foodstack
 	];
 */
-
+	dayz_lastMedicalSource = switch (true) do {
+		case (dayz_thirst >= SleepWater): {"dehyd"}; //10
+		case (dayz_hunger >= SleepFood): {"starve"}; //10
+		case (r_player_infected): {"sick"}; //3
+		default {"none"}; //reset
+	};
+	if (_bloodPerSec < 0 && dayz_lastMedicalSource != "none") then {dayz_lastMedicalTime = diag_tickTime;};
+	
 	r_player_bloodpersec = _bloodPerSec;
 	_bloodPerSec
 };
@@ -254,7 +260,7 @@ fnc_usec_playerHandleBlood = {
 			};
 			
 			
-			sleep 1;
+			uiSleep 1;
 		};
 	} else { // not bleeding
 		_bloodPerSec = [] call fnc_usec_calculateBloodPerSec;
@@ -289,6 +295,8 @@ fnc_usec_damageBleed = {
 	private["_wound","_modelPos","_point","_source"];
 	_unit = _this select 0;
 	_wound = _this select 1;
+	_point = objNull;
+	_source = objNull;
 	//_injury = _this select 2; // not used. damage% ???
 
 	if (isServer) exitWith{}; // no graphical effects on server!
@@ -352,14 +360,14 @@ fnc_usec_damageBleed = {
 				_point attachTo [_unit,_modelPos,_wound];
 			};
 
-			sleep 5;
+			uiSleep 5;
 
 			while {((_unit getVariable["USEC_injured",true]) and (alive _unit))} do {
 				scopeName "loop";
 				if (vehicle _unit != _unit) then {
 					BreakOut "loop";
 				};
-				sleep 1;
+				uiSleep 1;
 			};
 			deleteVehicle _source;
 			deleteVehicle _point;

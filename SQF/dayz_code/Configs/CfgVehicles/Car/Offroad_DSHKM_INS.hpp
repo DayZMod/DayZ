@@ -8,6 +8,7 @@ class Offroad_DSHKM_base : Car
 
 class Offroad_DSHKM_INS : Offroad_DSHKM_base
 {
+	typicalcargo[] = {};
 	class Turrets : Turrets
 	{
 		class MainTurret : MainTurret

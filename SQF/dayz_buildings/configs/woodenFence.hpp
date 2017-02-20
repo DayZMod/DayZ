@@ -9,16 +9,64 @@ class WoodenFence_base: DZ_buildables
 		requiredParts[] = {"ItemLog", "ItemStone", "ItemStone"}; // copy of ItemDIY_wood upgrade section
 		require[] = {"ItemEtool"};
 	};
+	class Disassembly {
+		//Items to never return if they exist
+		removedParts[] = {"equip_nails", "ItemStone"};
+		//Chance other items will be returned.
+		removedChance = 0.3;
+		requiredTools[] = {"ItemEtool"};
+	};
 	class Maintenance {
 		requiredTools[] = {"ItemToolbox"};
 		requiredParts[] = {"ItemPlank","equip_nails"};
+	};
+	class eventHandlers {
+		//[Object,[High Explosive Damage, Medium Explosive Damage, Melee Damage]]
+		HandleDamage = "[_this,[1,0.5,random(0.0005)]] call fnc_Obj_FenceHandleDam;";
+	};
+	class UserActions {
+		class Upgrade {
+			displayNameDefault = $STR_UPGRADE;
+			displayName = $STR_UPGRADE;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectUpgrade',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
+		};
+		class Maintenance {
+			displayNameDefault = $STR_MAINTENANCE;
+			displayName = $STR_MAINTENANCE;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectMaintenance',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+		};
+		class Disassembly {
+			displayNameDefault = $STR_DISASSEMBLY;
+			displayName = $STR_DISASSEMBLY;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectDisassembly',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_disassembly.sqf""";
+		};
 	};
 }; 	
 class WoodenFence_ghost: WoodenFence_base
 {
 	scope = 2;
-	model = "z\addons\dayz_buildings\models\fence_ghost.p3d";
+	model = "z\addons\dayz_buildings\models\fence_wood_ghost.p3d";
 	displayName = $STR_BLD_name_WoodenFence_ghost;//"Wooden Fence (Ghost)"
+    buildCollisionPoints = 4;
+    buildCollisionPaths[] = {{0,1,3,2,0,3},{1,2}};
+	class UserActions {
+		delete Upgrade;
+		delete Maintenance;
+		delete Disassembly;
+	};
+	delete Disassembly;
 }; 
 class WoodenFence_1_foundation: WoodenFence_base  // <-- ItemDIY_wood
 {
@@ -27,12 +75,13 @@ class WoodenFence_1_foundation: WoodenFence_base  // <-- ItemDIY_wood
 	displayName = $STR_BLD_name_WoodenFence_1_foundation;//"Wooden Fence Frame"
 	class Upgrade { //to next stage
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
-		requiredParts[] = {"ItemLog","ItemStone"};
+		requiredParts[] = {"ItemLog","ItemLog","ItemStone"};
 		create = "WoodenFence_1_frame";
 	};
-	class Disassembly {
-		requiredTools[] = {"ItemEtool"};
+	class UserActions {
+		delete Disassembly;
 	};
+	delete Disassembly;
 }; 
 class WoodenFence_1_frame: WoodenFence_1_foundation
 {
@@ -44,9 +93,6 @@ class WoodenFence_1_frame: WoodenFence_1_foundation
 		requiredParts[] = {"ItemPlank","equip_nails"};
 		create = "WoodenFence_quaterpanel";
 	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
-	};		
 }; 
 class WoodenFence_quaterpanel: WoodenFence_1_frame
 {
@@ -58,9 +104,6 @@ class WoodenFence_quaterpanel: WoodenFence_1_frame
 		requiredParts[] = {"ItemPlank","ItemPlank"};
 		create = "WoodenFence_halfpanel";
 	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
-	};		
 }; 
 class WoodenFence_halfpanel: WoodenFence_quaterpanel
 {
@@ -72,9 +115,6 @@ class WoodenFence_halfpanel: WoodenFence_quaterpanel
 		requiredParts[] = {"ItemPlank","ItemPlank"};
 		create = "WoodenFence_thirdpanel";
 	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
-	};		
 }; 
 class WoodenFence_thirdpanel: WoodenFence_halfpanel
 {
@@ -86,9 +126,6 @@ class WoodenFence_thirdpanel: WoodenFence_halfpanel
 		requiredParts[] = {"ItemPlank","ItemPlank"};
 		create = "WoodenFence_1";
 	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
-	};	
 }; 
 class WoodenFence_1: WoodenFence_thirdpanel
 {
@@ -100,9 +137,6 @@ class WoodenFence_1: WoodenFence_thirdpanel
 		requiredTools[] = {"ItemToolbox"};
 		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
 		create = "WoodenFence_2";
-	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
 	};
 };
  
@@ -117,9 +151,6 @@ class WoodenFence_2: WoodenFence_1
 		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
 		create = "WoodenFence_3";
 	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
-	};
 }; 
 class WoodenFence_3: WoodenFence_2
 {
@@ -129,11 +160,8 @@ class WoodenFence_3: WoodenFence_2
 		displayName = $STR_BLD_name_WoodenFence_3;//"Wooden Fence Level 3"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"equip_nails","ItemLog","ItemLog","ItemLog"};
+		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
 		create = "WoodenFence_4";
-	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
 	};
 }; 
 class WoodenFence_4: WoodenFence_3
@@ -144,11 +172,8 @@ class WoodenFence_4: WoodenFence_3
 		displayName = $STR_BLD_name_WoodenFence_4;//"Wooden Fence Level 4"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
+		requiredParts[] = {"ItemScrews","ItemScrews","ItemLog","ItemLog","ItemLog","ItemLog"};
 		create = "WoodenFence_5";
-	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
 	};
 }; 
 class WoodenFence_5: WoodenFence_4
@@ -162,8 +187,13 @@ class WoodenFence_5: WoodenFence_4
 		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
 		create = "WoodenFence_6";
 	};
-	class Disassembly {
+	class eventHandlers {
+		//[Object,[High Explosive Damage, Medium Explosive Damage, Melee Damage]]
+		HandleDamage = "[_this,[0.5,0.25,0]] call fnc_Obj_FenceHandleDam;";
+	};
+	class Maintenance {
 		requiredTools[] = {"ItemToolbox"};
+		requiredParts[] = {"ItemLog","ItemPlank","ItemPlank","ItemScrews"};
 	};
 }; 
 
@@ -175,11 +205,8 @@ class WoodenFence_6: WoodenFence_5
 		displayName = $STR_BLD_name_WoodenFence_6;//"Wooden Fence Level 6"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
+		requiredParts[] = {"ItemScrews","ItemScrews","ItemPlank","ItemPlank","ItemPlank","ItemLog","ItemLog"};
 		create = "WoodenFence_7";
-	};
-	class Disassembly {
-		requiredTools[] = {"ItemToolbox"};
 	};
 };
 
@@ -194,5 +221,26 @@ class WoodenFence_7: WoodenFence_6
 	};
 	class Upgrade {
 		delete create;
+	};
+	class UserActions {
+		delete Upgrade;
+		class Maintenance {
+			displayNameDefault = $STR_MAINTENANCE;
+			displayName = $STR_MAINTENANCE;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectMaintenance',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
+		};
+		class Disassembly {
+			displayNameDefault = $STR_DISASSEMBLY;
+			displayName = $STR_DISASSEMBLY;
+			position = "";
+			radius = 3;
+			onlyForPlayer = 1;
+			condition = "(['ObjectDisassembly',this] call userActionConditions)";
+			statement = "this execVM ""\z\addons\dayz_code\actions\object_disassembly.sqf""";
+		};
 	};
 }; 

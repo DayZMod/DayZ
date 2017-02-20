@@ -6,5 +6,7 @@
 /@Dayz
 /@Legacy
 /ARMA2Tools
+/SQF/Missions/dayz_1337.chernarus/manifest
+/SQF/Missions/dayz_1337.chernarus/mfstsign
 DayZ.bat
 *-old
