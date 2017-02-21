@@ -63,8 +63,6 @@ progressLoadingScreen 0.1;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";
 progressLoadingScreen 0.15;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";
-progressLoadingScreen 0.2;
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\BIS_Effects\init.sqf";
 progressLoadingScreen 0.25;
 if (dayz_POIs && (toLower worldName == "chernarus")) then {call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf";}; //Add POI objects locally on every machine early
 initialized = true;
