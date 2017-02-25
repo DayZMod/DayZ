@@ -175,12 +175,13 @@ MilitarySpecial[] =
 	{Loot_TOOL,			1.3,	ItemGPS},
 	{Loot_TOOL,			4,		ItemMap},
 	{Loot_TOOL,			2,		ItemEtool},
+	{Loot_TOOL,		0.5,		Binocular_Vector},
 	
 	//Backpacks
 	{Loot_BACKPACK,		3,		DZ_BP_Alice},
 	{Loot_BACKPACK,		2,		DZ_BP_British},
-	{Loot_BACKPACK,		1,		DZ_BP_Czech},
-	{Loot_BACKPACK,		0.5,	DZ_BP_Coyote},
+	{Loot_BACKPACK,		1.2,		DZ_BP_Czech},
+	{Loot_BACKPACK,		0.8,	DZ_BP_Coyote},
 	
 	//Clothing
 	{Loot_MAGAZINE,		2,		Skin_Camo1_DZ},
