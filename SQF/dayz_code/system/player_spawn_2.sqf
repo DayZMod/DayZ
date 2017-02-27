@@ -288,8 +288,6 @@ while {1 == 1} do {
 			player setVariable["startcombattimer", 0, false];
 		};
 	};
-	//setGroupIconsVisible [false,false];
-	//clearGroupIcons group player;
 
 	uiSleep 2;
 

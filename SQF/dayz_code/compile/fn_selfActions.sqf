@@ -9,7 +9,7 @@ private ["_allowedDistance","_vehicle","_inVehicle","_cursorTarget","_primaryWea
 "_typeOfCursorTarget","_isVehicle","_isBicycle","_isMan","_isDestructable",
 "_isGenerator","_ownerID","_isVehicletype","_isFuel","_hasFuel20","_hasFuel5","_hasEmptyFuelCan","_itemsPlayer",
 "_hasToolbox","_hasbottleitem","_isAlive","_isPlant","_istypeTent","_upgradeItems","_hasknife",
-"_hasRawMeat","_hastinitem","_displayName","_hasIgnitors","_hasCarBomb","_menu","_menu1","_isHouse","_isGate",
+"_hasRawMeat","_hastinitem","_displayName","_hasIgnitors","_hasCarBomb","_isHouse","_isGate",
 "_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock","_ownerPID",
 "_uid"];
 
