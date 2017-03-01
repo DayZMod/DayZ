@@ -159,14 +159,14 @@ MilitarySpecial[] =
 	{Loot_WEAPON,		1,		RPK74_DZ},
 	{Loot_WEAPON,		0.5,	UK59_DZ},
 //	{Loot_WEAPON,		0.5,	PKM_DZ},
-	{Loot_WEAPON,		0.2,	L110A1_DZ},
+	{Loot_WEAPON,		0.8,	M249_DZ},
 	
 	//Battle Rifles
-	{Loot_WEAPON,		0.2,		M14_DZ},
-//	{Loot_WEAPON,		0.2,		FNFAL_DZ}, //FAL instead of M14?
+//	{Loot_WEAPON,		0.2,		M14_DZ}, //M14 instead of FAL?
+	{Loot_WEAPON,		0.5,		FNFAL_DZ},
 	
 	//Sniper Rifles
-	{Loot_WEAPON,		0.2,	SVD_DZ},
+	{Loot_WEAPON,		0.5,	SVD_DZ},
 	
 	//Tools
 	{Loot_TOOL,			4,		Binocular},
@@ -205,7 +205,7 @@ MilitarySpecial[] =
 	{Loot_PILE,			10,		AmmoMilitaryHigh, 1, 3},
 	{Loot_GROUP,		2,		AttachmentsGeneric},
 	{Loot_GROUP,		8,		AttachmentsEast},
-	{Loot_GROUP,		7,		AttachmentsWest},
+	{Loot_GROUP,		6,		AttachmentsWest},
 	{Loot_PILE,			10,		MedicalLow, 1, 2},
 	{Loot_PILE,			10,		Trash, 1, 2},
 	{Loot_PILE,			10,		Consumable, 1, 2},
