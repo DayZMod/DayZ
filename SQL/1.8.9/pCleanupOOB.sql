@@ -51,7 +51,8 @@ BEGIN
 			SELECT CONVERT(@North, DECIMAL(16,8)) INTO intNorth;
 		END IF;
 
-		IF (intWest > 0 OR intNorth > 15360) THEN
+// Check for NSEW boundaries
+		IF (@West < 0 OR @West > 15360 OR @North > 15360 OR @North < 750) THEN
 			DELETE FROM Object_DATA
 				WHERE ObjectUID = @rsObjectUID;
 		END IF;
