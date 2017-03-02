@@ -126,11 +126,6 @@ if (!isDedicated) then {
 
 	//System
 	player_spawn_2 = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\player_spawn_2.sqf";
-	
-	//Spawn waterHoleProxies manually if townGenerator is disabled
-	if (!dayz_townGenerator && {toLower worldName in ["chernarus","namalsk","napf"]}) then {
-		execVM ("\z\addons\dayz_code\system\mission\" + (toLower worldName) + "\waterHoleProxy.sqf");
-	};
 
 	//Crafting
 	fn_updateCraftUI = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_updateCraftUI.sqf";
@@ -485,10 +480,15 @@ fnc_Obj_FenceHandleDam = compile preprocessFileLineNumbers "\z\addons\dayz_code\
 object_roadFlare = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\object_roadFlare.sqf";
 DZ_KeyDown_EH = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\keyboard.sqf";
 fn_shuffleArray = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_shuffleArray.sqf";
-
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\traps\init.sqf";
+
 if (dayz_townGenerator) then {
 	call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\psrnd.sqf"; // pseudo random for plantSpanwer
+} else {
+	//Spawn waterHoleProxies manually if townGenerator is disabled
+	if (!isDedicated && (toLower worldName in ["chernarus","namalsk","napf"])) then {
+		execVM ("\z\addons\dayz_code\system\mission\" + (toLower worldName) + "\waterHoleProxy.sqf");
+	};
 };
 	
 player_sumMedical = {
