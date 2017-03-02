@@ -25,12 +25,14 @@ while {true} do {
 		};
 	};
 	_display = uiNameSpace getVariable "BIS_loadingScreen";
-	if ((!isNil "_display") and {(dayz_loadScreenMsg != "" )}) then {
-		_control1 = _display displayctrl 8400;
-		_control1 ctrlSetText dayz_loadScreenMsg;
+	if (!isNil "_display") then {
+		if (dayz_loadScreenMsg != "" ) then {
+			_control1 = _display displayctrl 8400;
+			_control1 ctrlSetText dayz_loadScreenMsg;
+		};
+		_control2 = _display displayctrl 102;
+		_control2 ctrlSetText format["%1",floor(diag_ticktime - _timeoutStart)];
 	};
-	_control2 = _display displayctrl 102;
-	_control2 ctrlSetText format["%1",floor(diag_ticktime - _timeoutStart)];
 
 	uiSleep 0.2;
 	//diag_log [ __FILE__, __LINE__, "Looping..."];
