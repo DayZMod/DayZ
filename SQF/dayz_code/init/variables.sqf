@@ -160,6 +160,7 @@ dayz_resetSelfActions = {
 	s_player_grabflare = -1;
 	s_player_removeflare = -1;
 	s_player_painkiller = -1;
+	s_player_studybody = -1;
 	s_build_Sandbag1_DZ = -1;
 	s_build_Hedgehog_DZ = -1;
 	s_build_Wire_cat1 = -1;
@@ -320,6 +321,8 @@ dayz_traps = [];
 dayz_traps_active = [];
 dayz_traps_trigger = [];
 
+Dayz_clientEXT = false; //enables/disables the use of the client EXT 
+
 //Settings Not under dayz_settings
 if(isNil "dayz_attackRange") then { 
 	dayz_attackRange = 3;
@@ -349,9 +352,6 @@ if(isNil "dayz_townGenerator") then {
 if(isNil "dayz_townGeneratorBlackList") then {
 	dayz_townGeneratorBlackList = []; // Town generator will not spawn junk within 150m of these positions.
 };
-if(isNil "dayz_enableFlies") then {
-	dayz_enableFlies = true; // Enable flies on dead bodies (negatively impacts FPS).
-};
 
 //Replace server individual settings with ranked settings
 if(isNil "dayz_presets") then { dayz_presets = "Vanilla"; };
@@ -370,6 +370,7 @@ switch (dayz_presets) do {
 		if(isNil "dayz_nutritionValuesSystem") then { dayz_nutritionValuesSystem = false; };
 		//Not implmented yet
 		if(isNil "dayz_classicBloodBagSystem") then { dayz_classicBloodBagSystem = false; };
+		if(isNil "dayz_enableFlies") then { dayz_enableFlies = true; };
 	};
     case "Classic": { //Classic
 		dayz_enableGhosting = false; //Enable disable the ghosting system.
@@ -384,6 +385,7 @@ switch (dayz_presets) do {
 		dayz_nutritionValuesSystem = false; //Enables nutrition system
 		//Not implmented yet
 		dayz_classicBloodBagSystem = true; //Enables one type of bloodbag
+		dayz_enableFlies = true;  //Enables flies spawning on death
 	};
 	case "Elite": { //Elite
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
@@ -398,6 +400,7 @@ switch (dayz_presets) do {
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
 		//Not implmented yet
 		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
+		dayz_enableFlies = true; //Enables flies spawning on death
 	};
     default { //Vanilla
 		dayz_enableGhosting = true; //Enable disable the ghosting system.
@@ -412,6 +415,7 @@ switch (dayz_presets) do {
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
 		//Not implmented yet
 		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
+		dayz_enableFlies = true; //Enables flies spawning on death
 	};
 };
 

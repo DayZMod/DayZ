@@ -28,6 +28,8 @@ base_fireMonitor = compile preprocessFileLineNumbers "\z\addons\dayz_code\system
 spawnComposition = compile preprocessFileLineNumbers "ca\modules\dyno\data\scripts\objectMapper.sqf"; //"\z\addons\dayz_code\compile\object_mapper.sqf";
 server_sendToClient = compile preprocessFileLineNumbers "\z\addons\dayz_server\eventHandlers\server_sendToClient.sqf";
 
+server_sendKey = compile preprocessFileLineNumbers "\z\addons\dayz_server\eventHandlers\server_sendKey.sqf";
+
 server_medicalSync = {
 	_player = _this select 0;
 	_array = _this select 1;

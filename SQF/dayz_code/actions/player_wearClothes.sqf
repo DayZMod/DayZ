@@ -62,6 +62,8 @@ if (_model != _myModel) then {
 	player removeMagazine _item;
 	player addMagazine _itemNew;
 	_morphHandle = [dayz_playerUID,dayz_characterID,_model] spawn player_humanityMorph;
+} else {
+	localize "str_player_fail_wear3" call dayz_rollingMessages;
 };
 
 if (isNil "_morphHandle") then {

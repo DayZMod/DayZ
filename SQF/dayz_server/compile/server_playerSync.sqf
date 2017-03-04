@@ -1,5 +1,5 @@
 private ["_characterID","_temp","_currentWpn","_magazines","_humanity","_currentModel","_modelChk",
-		"_playerPos","_playerGear","_playerBackp","_backpack","_killsB","_killsH","_medical","_character",
+		"_playerPos","_playerGear","_playerBackp","_backpack","_killsB","_killsH","_medical","_character","_exitReason",
 		"_timeSince","_charPos","_isInVehicle","_distanceFoot","_lastPos","_kills","_headShots","_timeGross","_timeLeft","_onLadder",
 		"_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_name","_inDebug","_Achievements"];
 //[player,array]
@@ -15,20 +15,16 @@ _name = if (alive _character) then {name _character} else {"Dead Player"};
 _Achievements = [];
 _inDebug = (respawn_west_original distance _charPos) < 1500;
 
-if (_character isKindOf "Animal") exitWith {
-	diag_log ("ERROR: Cannot Sync Character " + _name + " is an Animal class");
+_exitReason = switch true do {
+	case (isNil "_characterID"): {("ERROR: Cannot Sync Character " + _name + " has nil characterID")}; //Unit is null
+	case (_inDebug): {format["INFO: Cannot Sync Character %1 near respawn_west %2. This is normal when relogging or changing clothes.",_name,_charPos]};
+	case (_characterID == "0"): {("ERROR: Cannot Sync Character " + _name + " has no characterID")};
+	case (_character isKindOf "Animal"): {("ERROR: Cannot Sync Character " + _name + " is an Animal class")};
+	default {"none"};
 };
 
-if (isNil "_characterID") exitWith {
-	diag_log ("ERROR: Cannot Sync Character " + _name + " has nil characterID");
-};
-
-if (_characterID == "0" or _inDebug) exitWith {
-	if (_inDebug) then {
-		diag_log format["INFO: server_playerSync: Cannot Sync Player %1 [%2]. Position in debug! %3. This is normal when respawning, relogging and changing clothes.",_name,_characterID,_charPos];
-	} else {
-		diag_log ("ERROR: Cannot Sync Character " + _name + " as no characterID");
-	};
+if (_exitReason != "none") exitWith {
+	diag_log _exitReason;
 };
 
 //Check for player initiated updates

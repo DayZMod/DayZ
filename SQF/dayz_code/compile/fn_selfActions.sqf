@@ -9,7 +9,7 @@ private ["_allowedDistance","_vehicle","_inVehicle","_cursorTarget","_primaryWea
 "_typeOfCursorTarget","_isVehicle","_isBicycle","_isMan","_isDestructable",
 "_isGenerator","_ownerID","_isVehicletype","_isFuel","_hasFuel20","_hasFuel5","_hasEmptyFuelCan","_itemsPlayer",
 "_hasToolbox","_hasbottleitem","_isAlive","_isPlant","_istypeTent","_upgradeItems","_hasknife",
-"_hasRawMeat","_hastinitem","_displayName","_hasIgnitors","_hasCarBomb","_menu","_menu1","_isHouse","_isGate",
+"_hasRawMeat","_hastinitem","_displayName","_hasIgnitors","_hasCarBomb","_isHouse","_isGate",
 "_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock","_ownerPID",
 "_uid"];
 
@@ -112,7 +112,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	_isBicycle = _cursorTarget isKindOf "Bicycle";
 	_isMan = _cursorTarget isKindOf "Man"; //includes animals and zombies
 	_isDestructable = _cursorTarget isKindOf "BuiltItems";
-	_isGenerator = _cursorTarget isKindOf "Generator_DZ";
+	_isGenerator = _typeOfCursorTarget == "Generator_DZ";
 	_ownerID = _cursorTarget getVariable ["characterID","0"];
 	_isVehicletype = _typeOfCursorTarget in ["ATV_US_EP1","ATV_CZ_EP1"];
 	_isFuel = false;
@@ -309,6 +309,16 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		player removeAction s_player_sleep;
 		s_player_sleep = -1;
 	};
+	
+	//Study Body
+	if (_cursorTarget getVariable["bodyName",""] != "") then {
+		if (s_player_studybody < 0) then {
+			s_player_studybody = player addAction [localize "str_action_studybody", "\z\addons\dayz_code\actions\study_body.sqf",_cursorTarget, 0, false, true];
+		};
+	} else {
+		player removeAction s_player_studybody;
+		s_player_studybody = -1;
+	};
 /*	
 	//Carbomb
 	_hasCarBomb = "ItemCarBomb" in _magazinesPlayer;
@@ -413,6 +423,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	};
 } else {
 	//Engineering
+	{dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
+	dayz_myCursorTarget = objNull;
 	player removeAction s_player_flipveh;
 	s_player_flipveh = -1;
 	player removeAction s_player_sleep;
@@ -431,6 +443,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	s_player_packtentinfected = -1;
 	player removeAction s_player_fillfuel;
 	s_player_fillfuel = -1;
+	player removeAction s_player_studybody;
+	s_player_studybody = -1;
 	//fuel
 	player removeAction s_player_fillfuel20;
 	s_player_fillfuel20 = -1;

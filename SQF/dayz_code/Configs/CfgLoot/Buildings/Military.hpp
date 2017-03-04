@@ -170,7 +170,9 @@ class Land_A_Villa_EP1: Military // takistani villa 2 story multi-wing
 	zedPos[] = {{5.5332,2.70361,-5.06721},{13.2578,-14.3623,-5.06719}};
 	lootPos[] = {{-15.002,9.06104,1.97169},{10.3047,10.7178,1.97146},{17.4824,-15.3862,1.99229},{10.1855,-0.722656,-1.4844},{-2.54688,14.5698,-1.4844},{-14.8945,12.7236,-1.4844},{-8.51953,14.1064,-1.4844}};
 };
+
 class Land_budova4_winter: Land_Mil_Barracks_i {}; // winter version of chernarus barracks
+
 class land_pozorovatelna: Military // concrete tower
 {
 	lootChance = 0.3;

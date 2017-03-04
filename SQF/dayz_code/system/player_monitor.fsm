@@ -1,12 +1,12 @@
 /*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, DayZ Player Monitor">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,250,-75.000000,-200.000000,25.000000,-150.000000,0.000000,"init"};
-item1[] = {"isServer",4,218,50.000000,-200.000000,150.000000,-150.000000,0.000000,"isServer"};
-item2[] = {"wait",2,250,50.000000,-125.000000,150.000000,-75.000000,0.000000,"wait"};
-item3[] = {"Allow_Connection",4,218,50.000000,-50.000000,150.000000,0.000000,0.000000,"Allow" \n "Connection"};
+item0[] = {"init",0,250,-75.000000,-600.000000,25.000000,-550.000000,0.000000,"init"};
+item1[] = {"isServer",4,218,-225.000000,-600.000000,-125.000000,-550.000000,0.000000,"isServer"};
+item2[] = {"wait",2,250,-350.000000,-525.000000,-250.000000,-475.000000,0.000000,"wait"};
+item3[] = {"Allow_Connection",1,250,-225.000000,-450.000000,-125.000000,-400.000000,0.000000,"Allow" \n "Connection"};
 item4[] = {"Loading",2,250,-75.000000,-50.000000,25.000000,0.000000,0.000000,"Loading"};
-item5[] = {"Client",4,218,-75.000000,-125.000000,25.000000,-75.000000,0.000000,"Client"};
+item5[] = {"Client",4,218,-75.000000,-525.000000,25.000000,-475.000000,0.000000,"Client"};
 item6[] = {"player____null_player",4,218,-175.000000,100.000000,-75.000000,150.000000,0.000000,"player != null" \n "player == player"};
 item7[] = {"Collect",2,250,-75.000000,150.000000,25.000000,200.000000,0.000000,"Collect"};
 item8[] = {"Has_PlayerID",4,218,-175.000000,200.000000,-75.000000,250.000000,1.000000,"Has PlayerID"};
@@ -40,7 +40,7 @@ item35[] = {"sleep",4,218,525.000000,550.000000,625.000000,600.000000,0.000000,"
 item36[] = {"sleep",4,218,525.000000,750.000000,625.000000,800.000000,0.000000,"sleep"};
 item37[] = {"sleep",4,218,525.000000,850.000000,625.000000,900.000000,0.000000,"sleep"};
 item38[] = {"Enable_Sim",2,250,-75.000000,50.000000,25.000000,100.000000,0.000000,"Enable Sim"};
-item39[] = {"Initialized",4,218,-175.000000,0.000000,-75.000000,50.000000,0.000000,"Initialized"};
+item39[] = {"Initialized",4,218,25.000000,0.000000,125.000000,50.000000,0.000000,"Initialized"};
 item40[] = {"ERROR__Client_Files",2,250,325.000000,50.000000,425.000000,100.000000,0.000000,"ERROR:" \n "Client Files " \n "are missing missing"};
 item41[] = {"sleep_",4,218,525.000000,50.000000,625.000000,100.000000,0.000000,"sleep" \n ""};
 item42[] = {"Stream",2,250,-75.000000,1050.000000,25.000000,1100.000000,0.000000,"Stream"};
@@ -107,137 +107,155 @@ item102[] = {"Sleep",4,218,-550.000000,325.000000,-450.000000,375.000000,0.00000
 item103[] = {"",7,210,-279.000000,371.000000,-271.000000,379.000000,0.000000,""};
 item104[] = {"retry_Login",4,218,-250.000000,350.000000,-150.000000,400.000000,0.000000,"retry Login"};
 item105[] = {"",7,210,-379.000031,471.000000,-371.000000,479.000000,0.000000,""};
-item106[] = {"Finish_1",2,4346,-75.000000,1500.000000,25.000000,1550.000000,0.000000,"Finish"};
+item106[] = {"Finish_1",2,250,-75.000000,1500.000000,25.000000,1550.000000,0.000000,"Finish"};
 item107[] = {"dayz_preloadFini",4,218,50.000000,1550.000000,150.000000,1600.000000,0.000000,"dayz_preloadFinished"};
+item108[] = {"dayz_util_dll_Ch",2,250,25.000000,-225.000000,125.000000,-175.000000,0.000000,"dayz_util.dll" \n "Check"};
+item109[] = {"Loaded",4,218,25.000000,-150.000000,125.000000,-100.000000,0.000000,"Loaded"};
+item110[] = {"Not_Loaded",4,4314,175.000000,-225.000000,275.000000,-175.000000,0.000000,"Not Loaded"};
+item111[] = {"get_ready_to_clo_2",2,250,325.000000,-225.000000,425.000000,-175.000000,0.000000,"get ready to close"};
+item112[] = {"",7,210,821.000000,-204.000000,829.000000,-196.000000,0.000000,""};
+item113[] = {"sleep_",4,218,525.000000,-225.000000,625.000000,-175.000000,0.000000,"sleep" \n ""};
+item114[] = {"Dayz_clientEXT_C",2,250,-75.000000,-425.000000,25.000000,-375.000000,0.000000,"Dayz_clientEXT" \n "Check"};
+item115[] = {"False",4,218,-75.000000,-350.000000,25.000000,-300.000000,0.000000,"False"};
+item116[] = {"True",4,218,25.000000,-425.000000,125.000000,-375.000000,0.000000,"True"};
 link0[] = {0,1};
 link1[] = {0,5};
-link2[] = {1,2};
-link3[] = {2,3};
-link4[] = {3,4};
-link5[] = {4,39};
-link6[] = {5,4};
-link7[] = {6,7};
-link8[] = {7,8};
-link9[] = {7,9};
-link10[] = {8,54};
-link11[] = {9,10};
-link12[] = {10,34};
-link13[] = {11,12};
-link14[] = {11,45};
-link15[] = {12,99};
-link16[] = {13,14};
-link17[] = {13,16};
-link18[] = {13,57};
-link19[] = {14,15};
-link20[] = {15,35};
-link21[] = {16,17};
-link22[] = {17,18};
-link23[] = {18,19};
-link24[] = {19,20};
-link25[] = {19,22};
-link26[] = {20,21};
-link27[] = {21,36};
-link28[] = {22,23};
-link29[] = {23,24};
-link30[] = {23,26};
-link31[] = {24,52};
-link32[] = {25,28};
-link33[] = {26,27};
-link34[] = {27,37};
-link35[] = {28,29};
-link36[] = {29,30};
-link37[] = {30,31};
-link38[] = {31,53};
-link39[] = {33,72};
-link40[] = {34,82};
-link41[] = {35,77};
-link42[] = {36,78};
-link43[] = {37,80};
-link44[] = {38,6};
-link45[] = {38,76};
-link46[] = {39,38};
-link47[] = {40,41};
-link48[] = {41,81};
-link49[] = {42,43};
-link50[] = {43,25};
-link51[] = {44,11};
-link52[] = {45,46};
-link53[] = {46,44};
-link54[] = {46,47};
-link55[] = {47,48};
-link56[] = {48,49};
-link57[] = {49,98};
-link58[] = {51,42};
-link59[] = {52,33};
-link60[] = {52,51};
-link61[] = {53,106};
-link62[] = {54,55};
-link63[] = {54,56};
-link64[] = {55,74};
-link65[] = {56,11};
-link66[] = {57,58};
-link67[] = {58,89};
-link68[] = {58,93};
-link69[] = {59,60};
-link70[] = {60,68};
-link71[] = {61,85};
-link72[] = {61,91};
-link73[] = {62,63};
-link74[] = {63,70};
-link75[] = {64,67};
-link76[] = {64,69};
-link77[] = {65,71};
-link78[] = {66,61};
-link79[] = {67,65};
-link80[] = {68,64};
-link81[] = {69,66};
-link82[] = {70,71};
-link83[] = {71,88};
-link84[] = {72,73};
-link85[] = {73,79};
-link86[] = {74,75};
-link87[] = {75,83};
-link88[] = {76,40};
-link89[] = {77,50};
-link90[] = {78,77};
-link91[] = {79,80};
-link92[] = {80,78};
-link93[] = {81,82};
-link94[] = {82,83};
-link95[] = {83,98};
-link96[] = {84,58};
-link97[] = {85,61};
-link98[] = {86,60};
-link99[] = {87,63};
-link100[] = {88,16};
-link101[] = {89,90};
-link102[] = {90,59};
-link103[] = {90,84};
-link104[] = {90,86};
-link105[] = {91,92};
-link106[] = {92,62};
-link107[] = {92,87};
-link108[] = {92,94};
-link109[] = {93,58};
-link110[] = {94,61};
-link111[] = {95,105};
-link112[] = {96,97};
-link113[] = {96,103};
-link114[] = {97,101};
-link115[] = {98,50};
-link116[] = {99,95};
-link117[] = {99,100};
-link118[] = {100,13};
-link119[] = {101,102};
-link120[] = {101,103};
-link121[] = {102,96};
-link122[] = {103,104};
-link123[] = {104,11};
-link124[] = {105,96};
-link125[] = {106,107};
-link126[] = {107,32};
-globals[] = {25.000000,1,0,0,0,640,480,1,257,6316128,1,-515.955017,323.737183,1838.172241,1033.467285,624,598,1};
-window[] = {2,-1,-1,-1,-1,630,104,1124,104,3,642};
+link2[] = {1,3};
+link3[] = {4,39};
+link4[] = {5,114};
+link5[] = {6,7};
+link6[] = {7,8};
+link7[] = {7,9};
+link8[] = {8,54};
+link9[] = {9,10};
+link10[] = {10,34};
+link11[] = {11,12};
+link12[] = {11,45};
+link13[] = {12,99};
+link14[] = {13,14};
+link15[] = {13,16};
+link16[] = {13,57};
+link17[] = {14,15};
+link18[] = {15,35};
+link19[] = {16,17};
+link20[] = {17,18};
+link21[] = {18,19};
+link22[] = {19,20};
+link23[] = {19,22};
+link24[] = {20,21};
+link25[] = {21,36};
+link26[] = {22,23};
+link27[] = {23,24};
+link28[] = {23,26};
+link29[] = {24,52};
+link30[] = {25,28};
+link31[] = {26,27};
+link32[] = {27,37};
+link33[] = {28,29};
+link34[] = {29,30};
+link35[] = {30,31};
+link36[] = {31,53};
+link37[] = {33,72};
+link38[] = {34,82};
+link39[] = {35,77};
+link40[] = {36,78};
+link41[] = {37,80};
+link42[] = {38,6};
+link43[] = {38,76};
+link44[] = {39,38};
+link45[] = {40,41};
+link46[] = {41,81};
+link47[] = {42,43};
+link48[] = {43,25};
+link49[] = {44,11};
+link50[] = {45,46};
+link51[] = {46,44};
+link52[] = {46,47};
+link53[] = {47,48};
+link54[] = {48,49};
+link55[] = {49,98};
+link56[] = {51,42};
+link57[] = {52,33};
+link58[] = {52,51};
+link59[] = {53,106};
+link60[] = {54,55};
+link61[] = {54,56};
+link62[] = {55,74};
+link63[] = {56,11};
+link64[] = {57,58};
+link65[] = {58,89};
+link66[] = {58,93};
+link67[] = {59,60};
+link68[] = {60,68};
+link69[] = {61,85};
+link70[] = {61,91};
+link71[] = {62,63};
+link72[] = {63,70};
+link73[] = {64,67};
+link74[] = {64,69};
+link75[] = {65,71};
+link76[] = {66,61};
+link77[] = {67,65};
+link78[] = {68,64};
+link79[] = {69,66};
+link80[] = {70,71};
+link81[] = {71,88};
+link82[] = {72,73};
+link83[] = {73,79};
+link84[] = {74,75};
+link85[] = {75,83};
+link86[] = {76,40};
+link87[] = {77,50};
+link88[] = {78,77};
+link89[] = {79,80};
+link90[] = {80,78};
+link91[] = {81,82};
+link92[] = {82,83};
+link93[] = {83,98};
+link94[] = {84,58};
+link95[] = {85,61};
+link96[] = {86,60};
+link97[] = {87,63};
+link98[] = {88,16};
+link99[] = {89,90};
+link100[] = {90,59};
+link101[] = {90,84};
+link102[] = {90,86};
+link103[] = {91,92};
+link104[] = {92,62};
+link105[] = {92,87};
+link106[] = {92,94};
+link107[] = {93,58};
+link108[] = {94,61};
+link109[] = {95,105};
+link110[] = {96,97};
+link111[] = {96,103};
+link112[] = {97,101};
+link113[] = {98,50};
+link114[] = {99,95};
+link115[] = {99,100};
+link116[] = {100,13};
+link117[] = {101,102};
+link118[] = {101,103};
+link119[] = {102,96};
+link120[] = {103,104};
+link121[] = {104,11};
+link122[] = {105,96};
+link123[] = {106,107};
+link124[] = {107,32};
+link125[] = {108,109};
+link126[] = {108,110};
+link127[] = {109,4};
+link128[] = {110,111};
+link129[] = {111,113};
+link130[] = {112,81};
+link131[] = {113,112};
+link132[] = {114,115};
+link133[] = {114,116};
+link134[] = {115,4};
+link135[] = {116,108};
+globals[] = {25.000000,1,0,0,0,640,480,1,273,6316128,1,-203.545929,548.008301,110.806091,-609.433350,624,598,1};
+window[] = {2,-1,-1,-1,-1,682,156,1176,156,3,642};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -276,7 +294,7 @@ class FSM
         class Client
         {
           priority = 0.000000;
-          to="Loading";
+          to="Dayz_clientEXT_C";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"!isServer"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -286,7 +304,7 @@ class FSM
         class isServer
         {
           priority = 0.000000;
-          to="wait";
+          to="Allow_Connection";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"isServer"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
@@ -303,16 +321,17 @@ class FSM
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
-        /*%FSM<LINK "Allow_Connection">*/
-        class Allow_Connection
-        {
-          priority = 0.000000;
-          to="Loading";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"allowConnection"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Allow_Connection">*/
+    class Allow_Connection
+    {
+      name = "Allow_Connection";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
       };
     };
     /*%FSM</STATE>*/
@@ -1759,7 +1778,7 @@ class FSM
       name = "Finish_1";
       init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Finish'];};" \n
        "" \n
-	   "dayz_playerName = if (alive player) then {name player} else {'unknown'};" \n
+       "dayz_playerName = if (alive player) then {name player} else {'unknown'};" \n
        "PVDZ_plr_LoginRecord = [_playerUID,_charID,0,toArray dayz_playerName];" \n
        "" \n
        "progressLoadingScreen 1;" \n
@@ -1801,10 +1820,100 @@ class FSM
       };
     };
     /*%FSM</STATE>*/
+    /*%FSM<STATE "dayz_util_dll_Ch">*/
+    class dayz_util_dll_Ch
+    {
+      name = "dayz_util_dll_Ch";
+      init = /*%FSM<STATEINIT""">*/"_isLoaded = (""dayz.util"" callextension ""1"") != """";" \n
+       "" \n
+       "diag_log format[""INFO -- CallExtension %1"",_isLoaded];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Not_Loaded">*/
+        class Not_Loaded
+        {
+          priority = 0.000000;
+          to="get_ready_to_clo_2";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!_isLoaded"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Loaded">*/
+        class Loaded
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_isLoaded"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"diag_log ""INFO - dayz_util.dll Extension Loaded"";"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "get_ready_to_clo_2">*/
+    class get_ready_to_clo_2
+    {
+      name = "get_ready_to_clo_2";
+      init = /*%FSM<STATEINIT""">*/"diag_log ""ERROR - dayz_util.dll Extension not Loaded"";" \n
+       "" \n
+       "dayz_loadScreenMsg =""Warning - Extension not Loaded"";" \n
+       "" \n
+       "_myTime = diag_tickTime;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "sleep_">*/
+        class sleep_
+        {
+          priority = 0.000000;
+          to="Disconnect";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(diag_tickTime - _myTime) > 5 && !isnil ""BIS_MPF_InitDone"""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Dayz_clientEXT_C">*/
+    class Dayz_clientEXT_C
+    {
+      name = "Dayz_clientEXT_C";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "True">*/
+        class True
+        {
+          priority = 0.000000;
+          to="dayz_util_dll_Ch";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"Dayz_clientEXT"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "False">*/
+        class False
+        {
+          priority = 0.000000;
+          to="Loading";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"!Dayz_clientEXT"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
   };
   initState="init";
   finalStates[] =
   {
+    "Allow_Connection",
     "Finish",
   };
 };

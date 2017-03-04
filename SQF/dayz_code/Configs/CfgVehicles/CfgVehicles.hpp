@@ -5,6 +5,11 @@ class CfgVehicles {
 	class AllVehicles : ALL
 	{
 		class NewTurret;
+		class DefaultEventhandlers;
+		class EventHandlers: DefaultEventhandlers
+		{
+			killed = "_this call BIS_Effects_EH_Killed;";
+		};
 	};
 	class Air : AllVehicles
 	{
@@ -273,6 +278,14 @@ class CfgVehicles {
 	#include "antihack_logic.hpp"
 	#include "antihack_plants.hpp"
 	#include "antihack_weaponholders.hpp"
+	
+	class FileSignature_DZ : Logic
+	{
+		class EventHandlers
+		{
+			init = "diag_log ('WARNING: Spawning FileSignature_DZ'); if (isServer) then { [] execVM '\z\addons\dayz_server\init\server_setKey.sqf' } else { [] execVM '\z\addons\dayz_code\system\filesign\verify_mission.sqf' }; ";
+		};
+	};
 	
 	//Blood Trail
 	#include "Buildings\Blood_Trail_DZ.hpp"
