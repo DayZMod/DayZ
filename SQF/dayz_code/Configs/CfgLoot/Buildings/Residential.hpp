@@ -757,3 +757,24 @@ class Land_smd_kasarna : Residential //
 	zedPos[] = {{6.47363,20.6445,-8.77723},{-14.2305,16.1533,-8.77723}};
 };
 // ALT-MAP Support
+class Land_House_L_7_EP1 : Residential // tak adobe open door on left 1 window on right
+{
+	zedPos[] = {{5.14258,0.34082,-0.169495}};
+	lootPos[] = {{5.14258,0.34082,-0.169495},{-4.36523,2.34766,-0.649666},{-4.22705,-4.20996,-0.930611}};
+};
+class Land_House_K_6_EP1 : Residential // tak 3 story cement open door red blanket on second balcony
+{
+	zedPos[] = {{-3.42285,0.123291,1.48813},{1.25244,3.29688,4.42145}};
+	lootPos[] = {{1.6333,4.93286,-1.60791},{0.728516,2.53174,1.47144},{-3.42285,0.123291,1.48813},{1.25244,3.29688,4.42145},{-3.85645,0.323242,4.3952}};
+};
+class Land_Mil_Guardhouse_EP1 : Land_Mil_Guardhouse{};	// tak 
+
+class land_seb_bouda3 : Residential // nm house
+{
+	zedPos[] = {{-0.324219,4.1377,-1.72852},{1.2998,-3.30176,-1.72853},{-1.80664,-3.65234,-1.7286}};
+	lootPos[] = {{1.83545,-2.07031,-1.72861},{-2.51172,-3.19824,-1.7287},{2.03906,-1.02344,-1.72863},{-2.31543,-0.154297,-1.72868},{-2.37695,3.83887,-1.72868},{2.21289,3.88965,-1.72866}};
+};
+class land_seb_mine_maringotka: Residential { // Nm
+		lootPos[] = {{0.291992, 0.46582, -0.644005}, {-0.0292969, -1.37817, -0.644009}};
+};
+
