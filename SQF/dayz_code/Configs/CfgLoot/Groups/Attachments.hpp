@@ -19,9 +19,9 @@ AttachmentsEast[] =
 
 AttachmentsWest[] =
 {
-	{Loot_MAGAZINE,		1.5,	Attachment_CCO},
-	{Loot_MAGAZINE,		1,		Attachment_Holo},
-	{Loot_MAGAZINE,		0.5,	Attachment_ACOG},
+	{Loot_MAGAZINE,		1.75,	Attachment_CCO},
+	{Loot_MAGAZINE,		1.5,		Attachment_Holo},
+	{Loot_MAGAZINE,		0.75,	Attachment_ACOG},
 	{Loot_MAGAZINE,		3,		Attachment_Ghillie},
 	{Loot_MAGAZINE,		2,		Attachment_M203},
 	{Loot_MAGAZINE,		1,		Attachment_Sup556},

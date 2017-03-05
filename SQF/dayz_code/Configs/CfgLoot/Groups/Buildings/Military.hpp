@@ -1,3 +1,65 @@
+MilitaryLow[] =
+{
+	//Pistols
+	{Loot_WEAPON,		3,		Makarov_DZ},
+	{Loot_WEAPON,		2,		M1911_DZ},
+	{Loot_WEAPON,		1,		M9_DZ},
+//	{Loot_WEAPON,		1,		G17_DZ}, //removed from MilitaryLow
+	
+	//Submachineguns
+	{Loot_WEAPON,		1,		PDW_DZ},
+	{Loot_WEAPON,		3,		Bizon_DZ},
+	{Loot_WEAPON,		2,		MP5_DZ},
+	
+	//Assault rifles
+	{Loot_WEAPON,		0.5,		M16A2_DZ},
+	//{Loot_WEAPON,		1,		M16A2_GL_DZ}, //added to attachments system
+//	{Loot_WEAPON,		1.5,	M16A4_DZ}, //removed from MilitaryLow
+//	{Loot_WEAPON,		0.5,	M4A1_DZ}, //removed from MilitaryLow
+//	{Loot_WEAPON,		3,		G36C_DZ},
+	{Loot_WEAPON,		0.5,		AK74_DZ},
+	{Loot_WEAPON,		1,		AKS74U_DZ},
+//	{Loot_WEAPON,		1,		AKM_DZ}, //removed from MilitaryLow
+//	{Loot_WEAPON,		1,		SA58_DZ}, //removed from MilitaryLow
+	
+	//Shotguns
+	{Loot_WEAPON,		2,		Remington870_DZ},
+	{Loot_WEAPON,		1,		M1014_DZ},
+	
+	//Tools
+	{Loot_TOOL,			3,		Binocular},
+	{Loot_TOOL,			4,		ItemFlashlightRed},
+	{Loot_TOOL,			4,		ItemKnife},
+	{Loot_TOOL,			0.5,	ItemGPS},
+	{Loot_TOOL,			3,		ItemMap},
+	{Loot_TOOL,			3,		ItemEtool},
+	
+	//Backpacks
+	{Loot_BACKPACK,		4,		DZ_BP_Survival},
+	{Loot_BACKPACK,		2,		DZ_BP_Alice},
+	{Loot_BACKPACK,		1,		DZ_BP_British},
+	
+	//Clothing
+	{Loot_MAGAZINE,		1,		Skin_Camo1_DZ},
+	{Loot_MAGAZINE,		0.75,	Skin_Soldier1_DZ},
+	
+	//Containers
+	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxRU1, 6, 12},
+	{Loot_CONTAINER,	2,		DZ_AmmoBoxUS, AmmoBoxUS1, 4, 10},
+	
+	//Other
+	{Loot_MAGAZINE,		5,		FoodMRE},
+	{Loot_MAGAZINE,		5,		ItemSandbag},
+	{Loot_PILE,			15,		AmmoMilitaryLow, 1, 3},
+	{Loot_GROUP,		4,		AmmoMilitaryHigh},
+	{Loot_GROUP,		.5,		AttachmentsGeneric},
+//	{Loot_GROUP,		8,		AttachmentsEast}, //removed from MilitaryLow
+	{Loot_PILE,			10,		MedicalLow, 1, 2},
+	{Loot_PILE,			15,		Trash, 1, 2},
+	{Loot_PILE,			10,		Consumable, 1, 2},
+	{Loot_GROUP,		10,		Generic}
+};
+
 Military[] =
 {
 	//Pistols
@@ -16,7 +78,7 @@ Military[] =
 	//{Loot_WEAPON,		1,		M16A2_GL_DZ}, //added to attachments system
 	{Loot_WEAPON,		1.5,	M16A4_DZ},
 	{Loot_WEAPON,		0.5,	M4A1_DZ},
-//	{Loot_WEAPON,		3,		G36C_DZ},
+	{Loot_WEAPON,		0.5,		G36C_DZ},
 	{Loot_WEAPON,		3,		AK74_DZ},
 	{Loot_WEAPON,		3,		AKS74U_DZ},
 	{Loot_WEAPON,		1,		AKM_DZ},
@@ -25,6 +87,9 @@ Military[] =
 	//Shotguns
 	{Loot_WEAPON,		2,		Remington870_DZ},
 	{Loot_WEAPON,		1,		M1014_DZ},
+	
+	//Machine guns
+	{Loot_WEAPON,		0.2,		RPK74_DZ},
 	
 	//Tools
 	{Loot_TOOL,			3,		Binocular},
@@ -84,6 +149,7 @@ MilitarySpecial[] =
 	{Loot_WEAPON,		2,		AKM_DZ},
 	{Loot_WEAPON,		2,		SA58_DZ},
 	{Loot_WEAPON,		1,		SA58_RIS_DZ},
+	{Loot_WEAPON,		0.5,		L85_Holo_DZ},
 	
 	//Shotguns
 	{Loot_WEAPON,		1,		Remington870_DZ},
@@ -93,6 +159,14 @@ MilitarySpecial[] =
 	{Loot_WEAPON,		1,		RPK74_DZ},
 	{Loot_WEAPON,		0.5,	UK59_DZ},
 //	{Loot_WEAPON,		0.5,	PKM_DZ},
+	{Loot_WEAPON,		0.8,	M249_DZ},
+	
+	//Battle Rifles
+//	{Loot_WEAPON,		0.2,		M14_DZ}, //M14 instead of FAL?
+	{Loot_WEAPON,		0.5,		FNFAL_DZ},
+	
+	//Sniper Rifles
+	{Loot_WEAPON,		0.5,	SVD_DZ},
 	
 	//Tools
 	{Loot_TOOL,			4,		Binocular},
@@ -105,8 +179,8 @@ MilitarySpecial[] =
 	//Backpacks
 	{Loot_BACKPACK,		3,		DZ_BP_Alice},
 	{Loot_BACKPACK,		2,		DZ_BP_British},
-	{Loot_BACKPACK,		1,		DZ_BP_Czech},
-	{Loot_BACKPACK,		0.5,	DZ_BP_Coyote},
+	{Loot_BACKPACK,		0.5,		DZ_BP_Czech},
+	{Loot_BACKPACK,		1,	DZ_BP_Coyote},
 	
 	//Clothing
 	{Loot_MAGAZINE,		2,		Skin_Camo1_DZ},
