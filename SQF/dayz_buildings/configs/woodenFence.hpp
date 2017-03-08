@@ -191,10 +191,6 @@ class WoodenFence_5: WoodenFence_4
 		//[Object,[High Explosive Damage, Medium Explosive Damage, Melee Damage]]
 		HandleDamage = "[_this,[0.5,0.25,0]] call fnc_Obj_FenceHandleDam;";
 	};
-	class Maintenance {
-		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"ItemLog","ItemPlank","ItemPlank","ItemScrews"};
-	};
 }; 
 
 class WoodenFence_6: WoodenFence_5
