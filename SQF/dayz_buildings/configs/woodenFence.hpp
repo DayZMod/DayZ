@@ -1,3 +1,5 @@
+#include "CommonActions.hpp"
+
 //////Base buildings items
 class WoodenFence_base: DZ_buildables
 {
@@ -25,33 +27,9 @@ class WoodenFence_base: DZ_buildables
 		HandleDamage = "[_this,[1,0.5,random(0.0005)]] call fnc_Obj_FenceHandleDam;";
 	};
 	class UserActions {
-		class Upgrade {
-			displayNameDefault = $STR_UPGRADE;
-			displayName = $STR_UPGRADE;
-			position = "";
-			radius = 3;
-			onlyForPlayer = 1;
-			condition = "(['ObjectUpgrade',this] call userActionConditions)";
-			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
-		};
-		class Maintenance {
-			displayNameDefault = $STR_MAINTENANCE;
-			displayName = $STR_MAINTENANCE;
-			position = "";
-			radius = 3;
-			onlyForPlayer = 1;
-			condition = "(['ObjectMaintenance',this] call userActionConditions)";
-			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
-		};
-		class Disassembly {
-			displayNameDefault = $STR_DISASSEMBLY;
-			displayName = $STR_DISASSEMBLY;
-			position = "";
-			radius = 3;
-			onlyForPlayer = 1;
-			condition = "(['ObjectDisassembly',this] call userActionConditions)";
-			statement = "this execVM ""\z\addons\dayz_code\actions\object_disassembly.sqf""";
-		};
+		class Upgrade {ACTION_UPGRADE};
+		class Maintenance {ACTION_MAINTENANCE};
+		class Disassembly {ACTION_DISASSEMBLY};
 	};
 }; 	
 class WoodenFence_ghost: WoodenFence_base
@@ -61,11 +39,7 @@ class WoodenFence_ghost: WoodenFence_base
 	displayName = $STR_BLD_name_WoodenFence_ghost;//"Wooden Fence (Ghost)"
     buildCollisionPoints = 4;
     buildCollisionPaths[] = {{0,1,3,2,0,3},{1,2}};
-	class UserActions {
-		delete Upgrade;
-		delete Maintenance;
-		delete Disassembly;
-	};
+	class UserActions {};
 	delete Disassembly;
 }; 
 class WoodenFence_1_foundation: WoodenFence_base  // <-- ItemDIY_wood
@@ -79,7 +53,8 @@ class WoodenFence_1_foundation: WoodenFence_base  // <-- ItemDIY_wood
 		create = "WoodenFence_1_frame";
 	};
 	class UserActions {
-		delete Disassembly;
+		class Upgrade {ACTION_UPGRADE};
+		class Maintenance {ACTION_MAINTENANCE};
 	};
 	delete Disassembly;
 }; 
@@ -92,6 +67,11 @@ class WoodenFence_1_frame: WoodenFence_1_foundation
 		requiredTools[] = {"ItemToolbox"};
 		requiredParts[] = {"ItemPlank","equip_nails"};
 		create = "WoodenFence_quaterpanel";
+	};
+	class UserActions {
+		class Upgrade {ACTION_UPGRADE};
+		class Maintenance {ACTION_MAINTENANCE};
+		class Disassembly {ACTION_DISASSEMBLY};
 	};
 }; 
 class WoodenFence_quaterpanel: WoodenFence_1_frame
@@ -219,24 +199,7 @@ class WoodenFence_7: WoodenFence_6
 		delete create;
 	};
 	class UserActions {
-		delete Upgrade;
-		class Maintenance {
-			displayNameDefault = $STR_MAINTENANCE;
-			displayName = $STR_MAINTENANCE;
-			position = "";
-			radius = 3;
-			onlyForPlayer = 1;
-			condition = "(['ObjectMaintenance',this] call userActionConditions)";
-			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
-		};
-		class Disassembly {
-			displayNameDefault = $STR_DISASSEMBLY;
-			displayName = $STR_DISASSEMBLY;
-			position = "";
-			radius = 3;
-			onlyForPlayer = 1;
-			condition = "(['ObjectDisassembly',this] call userActionConditions)";
-			statement = "this execVM ""\z\addons\dayz_code\actions\object_disassembly.sqf""";
-		};
+		class Maintenance {ACTION_MAINTENANCE};
+		class Disassembly {ACTION_DISASSEMBLY};
 	};
 }; 
