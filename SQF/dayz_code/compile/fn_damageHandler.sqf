@@ -388,7 +388,7 @@ if (_hit in USEC_MinorWounds) then {
                 r_player_blood = 0 max (r_player_blood - (_nrj2 * 25));
             };
         } else {
-            [_unit,_hit,(_damage / 2)] call object_processHit;
+            [_unit,_hit,_damage] call object_processHit;
         };
 		
 		//Stop process hit running twice. its set aboue in the if else statement.
