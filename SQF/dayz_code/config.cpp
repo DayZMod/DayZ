@@ -99,3 +99,18 @@ class DefaultEventhandlers {
 #include "Configs\CfgArma.hpp"
 #include "Configs\CfgRecoils.hpp"
 #include "gui\padlock\padlock_ui.hpp"
+
+class CfgTasks
+{
+	//agentTasks[] = {"ZedMainTask"};
+	class ZedMainTask
+	{
+		name = "Zed Main Task";
+		//fsm = "\ca\animals2\Data\scripts\main.fsm";
+		fsm = "\z\AddOns\dayz_code\system\main.fsm";
+		condition = "\ca\animals2\Data\scripts\createSingleTask.sqf";
+		description = "Zed master task";
+		destination = "";
+		resources[] = {};
+	};
+};
