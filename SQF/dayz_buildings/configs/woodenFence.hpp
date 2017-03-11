@@ -164,7 +164,7 @@ class WoodenFence_5: WoodenFence_4
 		displayName = $STR_BLD_name_WoodenFence_5;//"Wooden Fence Level 5"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"equip_nails","ItemPlank","ItemPlank","ItemPlank"};
+		requiredParts[] = {"ItemLog","ItemLog","ItemLog","ItemLog","ItemPlank","ItemScrews","ItemScrews"};
 		create = "WoodenFence_6";
 	};
 	class eventHandlers {
