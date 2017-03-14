@@ -62,6 +62,11 @@ _trigger = {
 		_flare = createVehicle ["GrenadeHandTimedWest_DZ", _position, [], 0, "CAN_COLLIDE"];
 
 		[_trap] call trigger_trap;
+		
+		// allow rSAY to finish actually playing the sound
+		_timeout = diag_tickTime + 2;
+		waitUntil { diag_tickTime >= _timeout };
+		deleteVehicle _trap;
 	};
 };
 

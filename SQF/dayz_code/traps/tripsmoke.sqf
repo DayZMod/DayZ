@@ -50,7 +50,7 @@ _remove = {
 };
 
 _trigger = {
-	//if (isServer) then {
+	if (isServer) then {
 		private "_entity";
 		_entity = _this select 0;
 
@@ -62,7 +62,12 @@ _trigger = {
 		_flare = createVehicle ["SmokeShell", _position, [], 0, "CAN_COLLIDE"];
 
 		[_trap] call trigger_trap;
-	//};
+		
+		// allow rSAY to finish actually playing the sound
+		_timeout = diag_tickTime + 2;
+		waitUntil { diag_tickTime >= _timeout };
+		deleteVehicle _trap;
+	};
 };
 
 private ["_event", "_trap", "_args"];
