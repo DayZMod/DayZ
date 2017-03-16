@@ -319,7 +319,7 @@ class TrapTripwireGrenade : TrapItems {
 
 	script = "tripgrenade"; // compiled script variable name (used by server side loop)
 	initState = 0; // initial armed state (>0 is not currently working)
-	singleUse = 1;
+	singleUse = 0; //Trap can now be rearmed with another grenade
 
 	class Eventhandlers {
 		init = "['init', _this select 0] spawn tripgrenade;";
@@ -368,7 +368,7 @@ class TrapTripwireSmoke : TrapItems {
 
 	script = "tripsmoke"; // compiled script variable name (used by server side loop)
 	initState = 0; // initial armed state (>0 is not currently working)
-	singleUse = 1;
+	singleUse = 0; //Trap can now be rearmed with another smoke
 
 	class Eventhandlers {
 		init = "['init', _this select 0] spawn tripsmoke;";

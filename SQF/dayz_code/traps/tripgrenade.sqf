@@ -11,6 +11,24 @@ _init = {
 };
 
 _arm = {
+	_exit = false;
+	
+	if (!isDedicated && !(_trap getVariable["fullRefund",true])) then {
+		_exit = true;
+		{
+			if (_x in magazines player) exitWith {
+				player removeMagazine _x;
+				_exit = false;
+				_trap setVariable ["fullRefund",true,true];
+			};
+		} count ["HandGrenade_West","HandGrenade_East"];
+	};
+	
+	if (_exit) exitWith {
+		//Trap was already triggered, require grenade to rearm
+		format[localize "str_player_03",localize "str_dn_grenade"] call dayz_rollingMessages;
+	};
+	
 	//if (isServer) then {
 		_pos = getPosATL _trap;
 		_pos1 = _trap modelToWorld (_trap selectionPosition "TripA");
@@ -45,7 +63,15 @@ _remove = {
 		[_trap] call remove_trap;
 	} else {
 		[_trap] call remove_trap;
-		[0,0,0,["cfgMagazines","ItemTrapTripwireGrenade",_trap]] spawn object_pickup;
+		
+		if (_trap getVariable ["fullRefund",true]) then {
+			[0,0,0,["cfgMagazines","ItemTrapTripwireGrenade",_trap]] spawn object_pickup;
+		} else {
+			//Trap was already triggered, refund all parts except grenade
+			["equip_string",1,1] call fn_dropItem;
+			["PartWoodPile",1,1] call fn_dropItem;
+			["equip_duct_tape",1,1] call fn_dropItem;
+		};
 	};
 };
 
@@ -62,11 +88,10 @@ _trigger = {
 		_flare = createVehicle ["GrenadeHandTimedWest_DZ", _position, [], 0, "CAN_COLLIDE"];
 
 		[_trap] call trigger_trap;
+		//Trap is left nearby to allow null source in damage handler.
 		
-		// allow rSAY to finish actually playing the sound
-		_timeout = diag_tickTime + 2;
-		waitUntil { diag_tickTime >= _timeout };
-		deleteVehicle _trap;
+		//TO-DO: save this variable to DB, currently allows one free rearm after server restart
+		_trap setVariable ["fullRefund",false,true];
 	};
 };
 
