@@ -175,7 +175,7 @@ class Mission
 		};
 		class Item2
 		{
-			side="LOGIC ";
+			side="LOGIC";
 			class Vehicles
 			{
 				items=1;
