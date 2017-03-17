@@ -32,7 +32,16 @@ if (!local (_this select 0)) exitWith
 		
 		case Loot_MAGAZINE:
 		{
-			(_this select 0) addMagazine (_x select 1);
+			private "_item";
+			_item = _x select 1;
+			if (dayz_classicBloodBagSystem && _item in dayz_typedBags) then {
+				if (_item in ["bloodTester","bloodBagAPOS","bloodBagABPOS"]) then { // reduce ItemBloodBag output slightly since typed bags spawn in bulk
+					_item = ["ItemBandage","ItemPainkiller","ItemMorphine","ItemHeatPack","ItemAntibacterialWipe"] call BIS_fnc_selectRandom;
+				} else {
+					_item = "ItemBloodbag";
+				};
+			};
+			(_this select 0) addMagazine _item;
 		};
 		
 		case Loot_BACKPACK:
@@ -43,6 +52,5 @@ if (!local (_this select 0)) exitWith
 			};
 		};
 	};
-}
-foreach Loot_Select(_this select 1, _this select 2);
+} count Loot_Select(_this select 1, _this select 2);
 //foreach ([_this select 1, _this select 2] call loot_select);

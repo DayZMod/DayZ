@@ -44,6 +44,7 @@ DayZ_ViralZeds = ["z_new_villager2","z_new_villager3","z_new_villager4","z_new_w
 DayZ_SafeObjects = ["Base_Fire_DZ","WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4","Land_Fire_DZ","TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3","StashMedium4","Wire_cat1","Sandbag1_DZ","Fence_DZ","Generator_DZ","Hedgehog_DZ","BearTrap_DZ","DomeTentStorage","DomeTentStorage0","DomeTentStorage1","DomeTentStorage2","DomeTentStorage3","DomeTentStorage4","CamoNet_DZ","Trap_Cans","TrapTripwireFlare","TrapBearTrapSmoke","TrapTripwireGrenade","TrapTripwireSmoke","TrapBearTrapFlare"];
 DayZ_GearedObjects = ["Car","Helicopter","Motorcycle","Ship","TentStorage_base","StashSmall_base","StashMedium_base"];
 DayZ_RestingAnims = ["amovpsitmstpsnonwpstdnon_ground","amovpsitmstpsnonwpstdnon_smoking","amovpsitmstpsraswrfldnon_weaponcheck1","amovpsitmstpsraswrfldnon"];
+dayz_typedBags = ["bloodTester","bloodBagANEG","bloodBagAPOS","bloodBagBNEG","bloodBagBPOS","bloodBagABNEG","bloodBagABPOS","bloodBagONEG","bloodBagOPOS","wholeBloodBagANEG","wholeBloodBagAPOS","wholeBloodBagBNEG","wholeBloodBagBPOS","wholeBloodBagABNEG","wholeBloodBagABPOS","wholeBloodBagONEG","wholeBloodBagOPOS"];
 dayz_playerAchievements = []; //[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 //Needed for ambient map trees
 dayz_trees = ["ind_timbers.p3d","t_picea2s_snow.p3d","b_corylus.p3d","t_quercus3s.p3d","t_larix3s.p3d","t_pyrus2s.p3d","str_briza_kriva.p3d","dd_borovice.p3d","les_singlestrom_b.p3d","les_singlestrom.p3d","smrk_velky.p3d","smrk_siroky.p3d","smrk_maly.p3d","les_buk.p3d","str krovisko vysoke.p3d","str_fikovnik_ker.p3d","str_fikovnik.p3d","str vrba.p3d","hrusen2.p3d","str dub jiny.p3d","str lipa.p3d","str briza.p3d","p_akat02s.p3d","jablon.p3d","p_buk.p3d","str_topol.p3d","str_topol2.p3d","p_osika.p3d","t_picea3f.p3d","t_picea2s.p3d","t_picea1s.p3d","t_fagus2w.p3d","t_fagus2s.p3d","t_fagus2f.p3d","t_betula1f.p3d","t_betula2f.p3d","t_betula2s.p3d","t_betula2w.p3d","t_alnus2s.p3d","t_acer2s.p3d","t_populus3s.p3d","t_quercus2f.p3d","t_sorbus2s.p3d","t_malus1s.p3d","t_salix2s.p3d","t_picea1s_w.p3d","t_picea2s_w.p3d","t_ficusb2s_ep1.p3d","t_populusb2s_ep1.p3d","t_populusf2s_ep1.p3d","t_amygdalusc2s_ep1.p3d","t_pistacial2s_ep1.p3d","t_pinuse2s_ep1.p3d","t_pinuss3s_ep1.p3d","t_prunuss2s_ep1.p3d","t_pinusn2s.p3d","t_pinusn1s.p3d","t_pinuss2f.p3d","t_poplar2f_dead_pmc.p3d","misc_torzotree_pmc.p3d","misc_burnspruce_pmc.p3d","brg_cocunutpalm8.p3d","brg_umbrella_acacia01b.p3d","brg_jungle_tree_canopy_1.p3d","brg_jungle_tree_canopy_2.p3d","brg_cocunutpalm4.p3d","brg_cocunutpalm3.p3d","palm_01.p3d","palm_02.p3d","palm_03.p3d","palm_04.p3d","palm_09.p3d","palm_10.p3d","brg_cocunutpalm2.p3d","brg_jungle_tree_antiaris.p3d","brg_cocunutpalm1.p3d","str habr.p3d","brg_bird_1.p3d","brg_bird_2.p3d","brg_bird_3.p3d","brg_umbrella_acacia02b.p3d","brg_africandoumpalm_1.p3d","brg_umbrella_acacia04b.p3d","brg_datepalm_4.p3d","brg_datepalm_1.p3d","brg_umbrella_acacia03b.p3d","brg_bottle_4.p3d","brg_aloe1.p3d","brg_umbrella_acacia03.p3d","brg_umbrella_acacia01.p3d","brg_umbrella_acacia04.p3d","brg_aloe2.p3d","brg_umbrella_acacia02.p3d","brg_aloe3.p3d","brg_bottle_1.p3d","brg_datepalm_3.p3d","brg_datepalm_2.p3d","brg_baobab_1.p3d","brg_bottle_2.p3d","brg_bottle_3.p3d","t_fraxinus2s.p3d","t_carpinus2s.p3d"];
@@ -353,7 +354,6 @@ switch (dayz_presets) do {
 		if(isNil "dayz_OpenTarget_TimerTicks") then { dayz_OpenTarget_TimerTicks = 60 * 10; };
 		if(isNil "dayz_temperature_override") then { dayz_temperature_override = true; };
 		if(isNil "dayz_nutritionValuesSystem") then { dayz_nutritionValuesSystem = false; };
-		//Not implmented yet
 		if(isNil "dayz_classicBloodBagSystem") then { dayz_classicBloodBagSystem = false; };
 		if(isNil "dayz_enableFlies") then { dayz_enableFlies = true; };
 	};
@@ -368,7 +368,6 @@ switch (dayz_presets) do {
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = true; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = false; //Enables nutrition system
-		//Not implmented yet
 		dayz_classicBloodBagSystem = true; //Enables one type of bloodbag
 		dayz_enableFlies = true;  //Enables flies spawning on death
 	};
@@ -383,7 +382,6 @@ switch (dayz_presets) do {
 		dayz_OpenTarget_TimerTicks = 60 * 25; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = false; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
-		//Not implmented yet
 		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
 		dayz_enableFlies = true; //Enables flies spawning on death
 	};
@@ -398,7 +396,6 @@ switch (dayz_presets) do {
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = false; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
-		//Not implmented yet
 		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
 		dayz_enableFlies = true; //Enables flies spawning on death
 	};
