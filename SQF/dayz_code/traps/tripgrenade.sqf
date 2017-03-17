@@ -64,14 +64,8 @@ _remove = {
 	} else {
 		[_trap] call remove_trap;
 		
-		if (_trap getVariable ["fullRefund",true]) then {
-			[0,0,0,["cfgMagazines","ItemTrapTripwireGrenade",_trap]] spawn object_pickup;
-		} else {
-			//Trap was already triggered, refund all parts except grenade
-			["equip_string",1,1] call fn_dropItem;
-			["PartWoodPile",1,1] call fn_dropItem;
-			["equip_duct_tape",1,1] call fn_dropItem;
-		};
+		//Refund is determined in object_pickup.sqf
+		[0,0,0,["cfgMagazines","ItemTrapTripwireGrenade",_trap]] spawn object_pickup;
 	};
 };
 
