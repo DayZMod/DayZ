@@ -17,7 +17,7 @@ class ItemTent : CA_Magazine
 			require[] = {};
 			consume[] = {"ItemTent"};
 			create = "TentStorage";
-			ghost = "TentStorage_Ghost"
+			ghost = "TentStorage_Ghost";
 			//Bypass collision test
 			bypassCollision = "true";
 		};
@@ -44,7 +44,7 @@ class ItemDomeTent : CA_Magazine
 			require[] = {};
 			consume[] = {"ItemDomeTent"};
 			create = "DomeTentStorage";
-			ghost = "DomeTentStorage_Ghost"
+			ghost = "DomeTentStorage_Ghost";
 			//Bypass collision test
 			bypassCollision = "true";
 		};
