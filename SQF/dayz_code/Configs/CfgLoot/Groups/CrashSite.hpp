@@ -31,7 +31,7 @@ CrashSiteRU[] =
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
 	{Loot_WEAPON,		1,		Binocular_Vector},
-	{Loot_WEAPON,		0.5,	NVGoggles},
+	{Loot_WEAPON,		0.5,	PipeBomb},
 	
 	//Backpacks
 	
@@ -92,7 +92,7 @@ CrashSiteUS[] =
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
 	{Loot_WEAPON,		1,		Binocular_Vector},
-	{Loot_WEAPON,		0.5,	NVGoggles},
+	{Loot_WEAPON,		0.5,	PipeBomb},
 	
 	//Backpacks
 	
@@ -153,7 +153,7 @@ CrashSiteEU[] =
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
 	{Loot_WEAPON,		1,		Binocular_Vector},
-	{Loot_WEAPON,		0.5,	NVGoggles},
+	{Loot_WEAPON,		0.5,	PipeBomb},
 	
 	//Backpacks
 	
