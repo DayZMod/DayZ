@@ -12,6 +12,7 @@ _created = false;
 
 if ( isNull _dialog ) then {
 	//startLoadingScreen [""];
+	skipGearSound = true; //Don't play sound for force save
 	createGearDialog [player, "RscDisplayGear"];
 	_dialog = findDisplay 106;
 	_created = true;
@@ -51,6 +52,7 @@ for "_i" from 122 to 129 do
 
 if ( _created ) then {
 	closeDialog 0;
+	skipGearSound = false;
 	//endLoadingScreen;
 };
 

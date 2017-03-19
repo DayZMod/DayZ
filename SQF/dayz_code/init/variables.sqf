@@ -527,5 +527,6 @@ if (!isDedicated) then {
 	dayz_getout = objNull;
 	dayz_getoutTime = 0;
 	dayz_HitBy = objNull;
+	skipGearSound = false;
 	TimeOutDisplayed = false;
 };
