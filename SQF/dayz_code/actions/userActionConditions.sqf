@@ -18,9 +18,9 @@ _object = _this select 1;
 _show = switch _action do {
 	case "Butcher": {!IS_ALIVE && !IN_VEHICLE && CAN_DO && !(_object getVariable["meatHarvested",false])};
 	case "Drink": {!IN_VEHICLE && CAN_DO && !dayz_isSwimming};
-	case "PushPlane": {IS_ALIVE && !IN_VEHICLE && CAN_DO && count crew _object == 0 && !isEngineOn _object};
+	case "PushPlane": {!IN_VEHICLE && {IS_ALIVE} && {CAN_DO} && {count crew _object == 0} && {!isEngineOn _object}};
 	case "Repair"; // same as salvage
-	case "Salvage": {IS_ALIVE && !IN_VEHICLE && CAN_DO && _object != dayz_myCursorTarget && HAS_TOOLBOX};
+	case "Salvage": {!IN_VEHICLE && {IS_ALIVE} && {CAN_DO} && {_object != dayz_myCursorTarget} && {HAS_TOOLBOX}};
 	//Built Items (Fence,Gates)
 	case "ObjectUpgrade": {CAN_DO && !IN_VEHICLE && !(_object getVariable["BuildLock",false])};
 	case "ObjectMaintenance": {CAN_DO && !IN_VEHICLE && (_object getVariable["Maintenance",false] or IS_DAMAGED)};

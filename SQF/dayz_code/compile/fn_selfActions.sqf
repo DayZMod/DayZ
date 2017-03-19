@@ -102,8 +102,8 @@ if (_canDo && !_inVehicle && !dayz_isSwimming && ((call fn_nearWaterHole) select
 	};
 };
 
-// Increase distance only if Fishing_Boat
-_allowedDistance = if (typeOf _cursorTarget == "Fishing_Boat") then {8} else {4};
+// Increase distance only if AIR or SHIP
+_allowedDistance = if ((_cursorTarget isKindOf "Air") or (_cursorTarget isKindOf "Ship")) then {8} else {4};
 
 if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _allowedDistance) && _canDo) then { 
 //Has some kind of target

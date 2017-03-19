@@ -12,9 +12,8 @@ _btnAbortText = ctrlText _btnAbort;
 
 if (r_fracture_legs) then {_btnRespawn ctrlEnable true;};
 
-dayz_lastSave = diag_tickTime;
 //force gear save
-if (time - dayz_lastSave > 10) then {
+if (diag_tickTime - dayz_lastSave > 10) then {
 	call player_forceSave;
 };
 
