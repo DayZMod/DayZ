@@ -526,5 +526,6 @@ if (!isDedicated) then {
 	Dayz_freefall = [ time, 0, 0.1 ];
 	dayz_getout = objNull;
 	dayz_getoutTime = 0;
-	dayz_HitBy = objNull; 
+	dayz_HitBy = objNull;
+	TimeOutDisplayed = false;
 };
