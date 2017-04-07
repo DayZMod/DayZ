@@ -20,7 +20,7 @@ item15[] = {"ERROR__Wrong_HIVE",2,250,325.000000,550.000000,425.000000,600.00000
 item16[] = {"Character_Setup",4,218,-175.000000,600.000000,-75.000000,650.000000,0.000000,"Character" \n "Setup"};
 item17[] = {"Phase_One",2,250,-75.000000,650.000000,25.000000,700.000000,0.000000,"Phase One"};
 item18[] = {"Response",4,218,-175.000000,700.000000,-75.000000,750.000000,0.000000,"Response"};
-item19[] = {"Phase_Two",2,250,-75.000000,750.000000,25.000000,800.000000,0.000000,"Phase Two"};
+item19[] = {"Phase_Two",2,4346,-75.000000,750.000000,25.000000,800.000000,0.000000,"Phase Two"};
 item20[] = {"Dead_Player",4,218,125.000000,750.000000,225.000000,800.000000,0.000000,"Dead" \n "Player"};
 item21[] = {"ERROR__Player_Already",2,250,325.000000,750.000000,425.000000,800.000000,0.000000,"ERROR:" \n "Player Already" \n "Dead"};
 item22[] = {"Alive",4,218,-175.000000,800.000000,-75.000000,850.000000,0.000000,"Alive"};
@@ -111,7 +111,7 @@ item106[] = {"Finish_1",2,250,-75.000000,1500.000000,25.000000,1550.000000,0.000
 item107[] = {"dayz_preloadFini",4,218,50.000000,1550.000000,150.000000,1600.000000,0.000000,"dayz_preloadFinished"};
 item108[] = {"dayz_util_dll_Ch",2,250,25.000000,-225.000000,125.000000,-175.000000,0.000000,"dayz_util.dll" \n "Check"};
 item109[] = {"Loaded",4,218,25.000000,-150.000000,125.000000,-100.000000,0.000000,"Loaded"};
-item110[] = {"Not_Loaded",4,4314,175.000000,-225.000000,275.000000,-175.000000,0.000000,"Not Loaded"};
+item110[] = {"Not_Loaded",4,218,175.000000,-225.000000,275.000000,-175.000000,0.000000,"Not Loaded"};
 item111[] = {"get_ready_to_clo_2",2,250,325.000000,-225.000000,425.000000,-175.000000,0.000000,"get ready to close"};
 item112[] = {"",7,210,821.000000,-204.000000,829.000000,-196.000000,0.000000,""};
 item113[] = {"sleep_",4,218,525.000000,-225.000000,625.000000,-175.000000,0.000000,"sleep" \n ""};
@@ -254,8 +254,8 @@ link132[] = {114,115};
 link133[] = {114,116};
 link134[] = {115,4};
 link135[] = {116,108};
-globals[] = {25.000000,1,0,0,0,640,480,1,273,6316128,1,-203.545929,548.008301,110.806091,-609.433350,624,598,1};
-window[] = {2,-1,-1,-1,-1,682,156,1176,156,3,642};
+globals[] = {25.000000,1,0,0,0,640,480,1,273,6316128,1,-203.545929,548.008301,973.166382,252.926910,624,598,1};
+window[] = {2,-1,-1,-1,-1,578,52,1072,52,3,642};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -786,7 +786,7 @@ class FSM
        "dayz_lastMeal =			(_lastAte * 60);" \n
        "dayz_lastDrink =		(_lastDrank * 60);" \n
        "dayz_zombiesLocal = 	0;			//Used to record how many local zombies being tracked" \n
-       "dayz_Survived = _days;  //total alive dayz" \n
+       "dayz_Survived = [_days,_hours,_mins];  //total alive dayz" \n
        "" \n
        "//load in medical details" \n
        "r_player_dead = 		player getVariable[""USEC_isDead"",false];" \n
@@ -1064,7 +1064,7 @@ class FSM
        "dayz_musicH = [] spawn player_music;" \n
        "dayz_slowCheck = 	[] spawn player_spawn_2;" \n
        "Dayz_logonTime = daytime;" \n
-       "Dayz_logonDate = dayz_Survived;" \n
+       "Dayz_logonDate = _days;" \n
        "_position = getPosATL player;" \n
        "_radius = 200;" \n
        "//Current amounts" \n

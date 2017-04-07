@@ -266,7 +266,7 @@ _disabledTemperature = switch (dayz_temperature_override) do {
 					<t size='2' font='Zeppelin33' color = '#000000' align='left'>SpawnSelection: 	     </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%4</t><br/>
 					<t size='2' font='Zeppelin33' color = '#000000' align='left'>Full Moon: 	     </t><t size='2' font='Zeppelin33' align='right' color='#FF0033'>%12</t><br/>
 					<br/>
-					<t size='2' font='Zeppelin33' color = '#000000' align='center'>Survived: %8 Day(s)</t><br/>
+					<t size='2' font='Zeppelin33' color = '#000000' align='center'>Survived: %8 Day(s), %15 Hour(s), %16 Minute(s)</t><br/>
 					<br />
 					<t size='2' font='Zeppelin33' color = '#000000' align='center'>Survivors:%9</t><br/>
 					<br/>
@@ -279,13 +279,15 @@ _disabledTemperature = switch (dayz_temperature_override) do {
 					(round(dayz_temperatur)),
 					(round(player getVariable['humanity', 0])),
 					(dayz_currentGlobalZombies),
-					(dayz_Survived),
+					(dayz_Survived select 0),
 					(_survivors),
 					(round diag_fps),
 					(round diag_fpsmin),
 					(_moon),
 					(_disabledTemperature),
-					(dayz_presets)
+					(dayz_presets),
+					(dayz_Survived select 1),
+					(dayz_Survived select 2)
 				];
 
 // right page - blank until humanity is checked
