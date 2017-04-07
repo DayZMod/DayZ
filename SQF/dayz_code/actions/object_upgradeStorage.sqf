@@ -1,13 +1,10 @@
 /*
-	This script is not part of dayz permission must be given to use. r4z0r49@gmail.com or skype me R4Z0R49.
-	
 	Simple class system to use this script.
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
 		requiredParts[] = {"equip_crate","PartWoodPile"};
 		create = "TentStorage1";
-	};
-	
+	};	
 */
 if (dayz_actionInProgress) exitWith { localize "str_player_actionslimit" call dayz_rollingMessages; };
 dayz_actionInProgress = true;
@@ -18,6 +15,16 @@ private ["_cursorTarget","_item","_classname","_requiredTools","_requiredParts",
 "_objWpnTypes","_objWpnQty","_countr","_itemName","_vector","_playerNear"];
 
 _cursorTarget = _this select 3;
+
+//get ownerID from old tent.
+_ownerID = _cursorTarget getVariable ["characterID","0"];
+_objectID = _cursorTarget getVariable ["ObjectID","0"];
+_objectUID = _cursorTarget getVariable ["ObjectUID","0"];
+
+//make sure the player is still looking at something to get the cursorTarget and UID
+if ((isNil "_cursorTarget") or {(isNull _cursorTarget)} or {(parseNumber _objectUID == 0)}) exitwith {
+     localize "str_cursorTargetNotFound" call dayz_rollingMessages;
+};
 
 _item = typeof _cursorTarget;
 //diag_log (str(_item));
@@ -100,11 +107,6 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	// Added Nutrition-Factor for work
 	["Working",0,[100,15,5,0]] call dayz_NutritionSystem;
 	
-	//get ownerID from old tent.
-	_ownerID = _cursorTarget getVariable ["characterID","0"];
-	_objectID = _cursorTarget getVariable ["ObjectID","0"];
-	_objectUID = _cursorTarget getVariable ["ObjectUID","0"];
-
 	//Upgrade
 	_alreadyupgrading = _cursorTarget getVariable["alreadyupgrading",0];
 
@@ -122,9 +124,9 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	_cursorTarget setDir 0;
 	_pos = getPosATL _cursorTarget;
 	
-	diag_log [ "dir/angle/pos", _dir, _vector, _pos];
+	//diag_log [ "dir/angle/pos", _dir, _vector, _pos];
 	if (abs(((_vector select 1) select 2) - 1) > 0.001) then { _pos set [2,0]; };
-	diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
+	//diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
 
 	//get contents
 	_weapons = getWeaponCargo _cursorTarget;
