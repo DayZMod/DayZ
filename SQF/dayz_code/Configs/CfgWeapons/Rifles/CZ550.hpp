@@ -1,6 +1,6 @@
 class CZ550_DZ : Huntingrifle
 {
-	model = "z\addons\dayz_communityweapons\CZ550\CZ550_DZ.p3d";
+	model = "z\addons\dayz_communityweapons\CZ550\CZ550.p3d";
 	magazines[] = {5Rnd_17HMR};
 	
 	//CZ550_SCOPE
