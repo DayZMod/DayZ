@@ -22,8 +22,9 @@ _objectID = _cursorTarget getVariable ["ObjectID","0"];
 _objectUID = _cursorTarget getVariable ["ObjectUID","0"];
 
 //make sure the player is still looking at something to get the cursorTarget and UID
-if ((isNil "_cursorTarget") or {(isNull _cursorTarget)} or {(parseNumber _objectUID == 0)}) exitwith {
+if (isNil "_cursorTarget" or {isNull _cursorTarget} or {_objectUID == "0" && (_objectID == "0")}) exitWith {
      localize "str_cursorTargetNotFound" call dayz_rollingMessages;
+	 dayz_actionInProgress = false;
 };
 
 _item = typeof _cursorTarget;
