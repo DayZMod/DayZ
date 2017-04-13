@@ -527,6 +527,7 @@ if (!isDedicated) then {
 	dayz_getout = objNull;
 	dayz_getoutTime = 0;
 	dayz_HitBy = objNull;
+	dayz_sessionTime = 0; //Time elapsed since login in seconds
 	skipGearSound = false;
 	TimeOutDisplayed = false;
 };
