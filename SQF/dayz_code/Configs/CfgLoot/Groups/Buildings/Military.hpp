@@ -131,7 +131,7 @@ MilitarySpecial[] =
 	//Other
 	{Loot_MAGAZINE,		3,		FoodMRE},
 	{Loot_MAGAZINE,		2,		ItemSandbag},
-	{Loot_TOOLS,		0.5,	NVGoggles},
+	{Loot_TOOL,			0.5,	NVGoggles},
 	{Loot_PILE,			15,		AmmoMilitaryLow, 1, 4},
 	{Loot_PILE,			10,		AmmoMilitaryHigh, 1, 3},
 	{Loot_GROUP,		2,		AttachmentsGeneric},
