@@ -523,10 +523,9 @@ if (!isDedicated) then {
 	dayz_dodge = false;
 	Dayz_constructionContext = [];
 	Dayz_freefall = [ time, 0, 0.1 ];
-	dayz_getout = objNull;
 	dayz_getoutTime = 0;
-	dayz_HitBy = objNull;
-	dayz_sessionTime = 0; //Time elapsed since login in seconds
+	dayz_hitByTime = 0;
+	dayz_sessionTime = 0; //Approximate time elapsed since login in seconds
 	skipGearSound = false;
 	TimeOutDisplayed = false;
 };

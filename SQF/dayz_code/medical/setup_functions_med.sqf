@@ -241,8 +241,6 @@ fnc_usec_playerHandleBlood = {
 			if (_elapsedTime > _bleedTime) then {
 				r_player_injured = false;
 				_id = [player,player] execVM "\z\addons\dayz_code\medical\publicEH\medBandaged.sqf";
-				dayz_sourceBleeding = objNull;
-				call fnc_usec_resetWoundPoints;
 			};
 
 			_bloodDiff = r_player_blood - (player getVariable["USEC_BloodQty", r_player_bloodTotal]);
