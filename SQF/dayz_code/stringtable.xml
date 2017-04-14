@@ -1311,13 +1311,13 @@
 			<Dutch>Deze %1 heeft niet voldoende brandstof.</Dutch>
 		</Key>
 		<Key ID="str_fill_notenough">
-			<English>%1 does not have enough fuel to fill jerry can(s). (Estimated %2 Liters left)</English>
-			<German>%1 hat nicht genug Treibstoff, um einen Benzinkanister komplett zu füllen.(Ungefähr %2 Liter übrig)</German>
+			<English>%1 does not have enough fuel to fill all containers. Estimated %2 litres left (You needed %3 litres)</English>
+			<German>%1 hat nicht genug Kraftstoff, um alle Kraftstoffbehälter zu füllen. Es sind noch ungefähr %2 Liter übrig. (Du brauchst %3 Liter)</German>
 			<Russian>%1 не имеет достаточного количества топлива для заполнения всех контейнеров. Осталось около %2л. (Вам нужно %3л)</Russian>
 		</Key>
 		<Key ID="str_fill_success">
-			<English>You have filled %1 jerry can(s) with fuel. %2 has an estimated %3 Liters of fuel left.</English>
-			<German>%1 Benzinkanister wurde(n) erfolgreich mit Treibstoff befüllt. %2 hat noch ungefähr %3 Liter Treibstoff übrig.</German>
+			<English>You have filled %1 fuel container(s) with fuel. %2 has an estimated %3 litres of fuel left.</English>
+			<German>%1 Kraftstoffbehälter wurde(n) erfolgreich mit Kraftstoff befüllt. %2 hat noch ungefähr %3 Liter Kraftstoff übrig.</German>
 			<Russian>Заполнено контейнеров: %1. В %2 осталось примерно %3л топлива.</Russian>
 		</Key>
 		<Key ID="str_siphon_canceled">

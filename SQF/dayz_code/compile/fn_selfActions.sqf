@@ -151,7 +151,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	};
 	
 	//Allow player to fill Fuel can
-	if (_hasEmptyFuelCan && {_isFuel} && {!a_player_jerryfilling} && {_isAlive}) then {
+	if (_hasEmptyFuelCan && _isFuel && _isAlive) then {
 		if (s_player_fillfuel < 0) then {
 			s_player_fillfuel = player addAction [localize "str_actions_self_10", "\z\addons\dayz_code\actions\jerry_fill.sqf",_cursorTarget, 1, false, true];
 		};
@@ -162,7 +162,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	
 	if (damage _cursorTarget < 1) then {
 		//Allow player to fill vehicle 20L
-		if (_hasFuel20 && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1} && {!a_player_jerryfilling}) then {
+		if (_hasFuel20 && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1}) then {
 			if (s_player_fillfuel20 < 0) then {
 				s_player_fillfuel20 = player addAction [format[localize "str_actions_medical_10",_text,"20"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemJerrycan",_cursorTarget], 0, true, true, "", "'ItemJerrycan' in magazines player"];
 			};
@@ -172,7 +172,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		};
 
 		//Allow player to fill vehicle 5L
-		if (_hasFuel5 && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1} && {!a_player_jerryfilling}) then {
+		if (_hasFuel5 && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1}) then {
 			if (s_player_fillfuel5 < 0) then {
 				s_player_fillfuel5 = player addAction [format[localize "str_actions_medical_10",_text,"5"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemFuelcan",_cursorTarget], 0, true, true, "", "'ItemFuelcan' in magazines player"];
 			};
@@ -188,7 +188,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		*/
 		//
 		//Allow player to siphon vehicles
-		if (_hasEmptyFuelCan && {!_isMan} && {_isVehicle} && {!_isBicycle} && {!a_player_jerryfilling} && {fuel _cursorTarget > 0}) then {
+		if (_hasEmptyFuelCan && {!_isMan} && {_isVehicle} && {!_isBicycle} && {fuel _cursorTarget > 0}) then {
 			if (s_player_siphonfuel < 0) then {
 				s_player_siphonfuel = player addAction [format[localize "str_siphon_start"], "\z\addons\dayz_code\actions\siphonFuel.sqf",_cursorTarget, 0, true, true];
 			};
