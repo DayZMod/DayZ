@@ -909,7 +909,8 @@ class FSM
        "} count allMissionObjects ""SpawnableWreck"";" \n
        "{deleteVehicle _x} count (_setPos nearEntities [""zZombie_Base"",30]);" \n
        "player setDir _setDir;" \n
-       "player setPosATL [_setPos select 0,_setPos select 1,(_setPos select 2)+.1]; //Prevents swimming in ground glitch on alt maps" \n
+       "player setPosATL _setPos;" \n
+	   "if (surfaceIsWater respawn_west_original) then {player call fn_exitSwim;};" \n
        "player setVelocity [0,0,0.5];" \n
        "{player reveal _x} count _torev4l;" \n
        "dayz_myPosition = _setPos;" \n

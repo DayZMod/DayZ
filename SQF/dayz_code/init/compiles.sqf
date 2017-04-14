@@ -15,6 +15,7 @@ if (!isDedicated) then {
 	
 	fn_dropItem = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_dropItem.sqf";
 	fn_dynamicTool = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_dynamicTool.sqf";
+	fn_exitSwim = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_exitSwim.sqf";
 	fn_nearWaterHole = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_nearWaterHole.sqf";
 	player_zombieCheck = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_zombieCheck.sqf";	//Run on a players computer, checks if the player is near a zombie
 	player_zombieAttack = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_zombieAttack.sqf";	//Run on a players computer, causes a nearby zombie to attack them
@@ -440,6 +441,7 @@ if (!isDedicated) then {
 BIS_fnc_selectRandom = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_selectRandom.sqf";		//Checks which actions for nearby casualty
 BIS_fnc_relativeDirTo = compile("private '_dir';_dir=_this call{" + (preprocessFileLineNumbers "ca\modules\Functions\geometry\fn_relativeDirTo.sqf")+"};if(_dir>180)then{_dir=_dir-360;};if(_dir<-180)then{_dir=_dir+360;};_dir");
 fnc_buildWeightedArray = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_buildWeightedArray.sqf";		//Checks which actions for nearby casualty
+fnc_getPos = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_getPos.sqf";
 fnc_spawnObjects = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_spawnObjects.sqf";
 object_getHit = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\object_getHit.sqf";			//gets the hit value for a HitPoint (i.e. HitLegs) against the selection (i.e. "legs"), returns the value
 object_setHit = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\object_setHit.sqf";			//process the hit as a NORMAL damage (useful for persistent vehicles)
