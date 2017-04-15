@@ -208,12 +208,8 @@ class CfgVehicles {
 	#include "Helicopter\UH1H.hpp"
 	#include "Helicopter\AH6X.hpp"
 	#include "Helicopter\MH6J_DZ.hpp"
-	//Wreck's
-	//#include "Helicopter\MI8Wreck.hpp"
-	//#include "Helicopter\UH1Wreck.hpp"
-	//#include "Helicopter\UH60Wreck.hpp"
 	#include "CrashSite.hpp"
-	//Plane's
+	//Planes
 	#include "Plane\AN2_DZ.hpp"
 	//Bikes
 	#include "Bikes\ATV_US_EP1.hpp"
