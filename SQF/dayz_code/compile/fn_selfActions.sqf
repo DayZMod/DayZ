@@ -11,7 +11,7 @@ private ["_allowedDistance","_vehicle","_inVehicle","_cursorTarget","_primaryWea
 "_hasToolbox","_hasbottleitem","_isAlive","_isPlant","_istypeTent","_upgradeItems","_hasknife",
 "_hasRawMeat","_hastinitem","_displayName","_hasIgnitors","_hasCarBomb","_isHouse","_isGate",
 "_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock","_ownerPID",
-"_uid"];
+"_uid","_myCharID"];
 
 _vehicle = vehicle player;
 _inVehicle = (_vehicle != player);
@@ -25,6 +25,7 @@ _canDo = (!r_drag_sqf && !r_player_unconscious && !_onLadder);
 _uid = getPlayerUID player;
 _nearLight = nearestObject [player,"LitObject"];
 _canPickLight = false;
+_myCharID = player getVariable ["CharacterID","0"];
 
 if (!isNull _nearLight) then {
 	if (_nearLight distance player < 4) then {
@@ -246,7 +247,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 */
 
 	//remove Own objects
-	if (_ownerID == dayz_characterID) then {
+	if (_ownerID == _myCharID) then {
 		if (_isDestructable && _hasToolbox) then {
 			if (s_player_deleteBuild < 0) then {
 				s_player_deleteBuild = player addAction [format[localize "str_actions_delete",_text], "\z\addons\dayz_code\actions\remove.sqf",_cursorTarget, 1, true, true];
