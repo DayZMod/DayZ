@@ -53,4 +53,17 @@ class Pickup_PK_INS: Pickup_PK_DZ_base {
 			gunnerCompartments = "Compartment2";
 		};
 	};
+	class UserActions
+	{
+		class RearmVehicle
+		{
+			displayName = "Add Ammo to PKT";
+			displayNameDefault = "Add Ammo to PKT";
+			ACTION_REARM;
+			/*
+				For some reason weaponTurrent isnt reporting this vehicle having a weapon.
+			*/
+			statement = "[this,'PKT',[0]] execVM ""\z\addons\dayz_code\actions\ammo.sqf"";";
+		};
+	};
 };
