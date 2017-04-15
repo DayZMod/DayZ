@@ -2,6 +2,7 @@
 
 class UH1H_base: Helicopter 
 {
+	class UserActions; //Inherit external
 	class Turrets: Turrets
 	{
 		class MainTurret: MainTurret
@@ -43,7 +44,7 @@ class UH1H_DZ: UH1H_base
 			magazines[] = {"100Rnd_762x51_M240"};
 		};
 	};
-	class UserActions
+	class UserActions: UserActions
 	{
 		class RearmVehicle
 		{

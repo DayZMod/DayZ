@@ -1,4 +1,6 @@
 class Pickup_PK_base: Car {
+	class UserActions; //Inherit external
+	
 	class HitPoints;
 	class Turrets
 	{
@@ -53,7 +55,7 @@ class Pickup_PK_INS: Pickup_PK_DZ_base {
 			gunnerCompartments = "Compartment2";
 		};
 	};
-	class UserActions
+	class UserActions : UserActions
 	{
 		class RearmVehicle
 		{
