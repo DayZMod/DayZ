@@ -134,13 +134,6 @@ class Land_HouseV_3I1 : Residential
 	lootPos[] = {};
 };
 
-class Land_HouseV_1L2 : Residential
-{
-	maxRoaming = 3;
-	zedPos[] = {{-0.448242,5.29883,-3.01697}};
-	lootPos[] = {{-0.448242,5.29883,-3.01697}};
-};
-
 class Land_HouseV_1T : Residential
 {
 	maxRoaming = 3;
@@ -226,11 +219,9 @@ class Land_HouseV2_03 : Residential
 	lootPos[] = {{0.812988,7.99805,-5.89618},{9.96143,-9.00488,-5.48578}};
 };
 
-class Land_Mil_Guardhouse : Residential
+class Land_Mil_Guardhouse: Residential
 {
-	maxRoaming = 3;
-	zedPos[] = {{-2.44727,0.250977,-1.70563},{-2.44873,3.00293,-1.70285}};
-	lootPos[] = {{-2.44727,0.250977,-1.70563},{-2.44873,3.00293,-1.70285}};
+	lootPos[] = {{3.25,0.71,-1.44},{-2.43,-3.24,-1.44},{4.52,-3.51,-1.44},{1.52,-1.81,-1.44},{3.06,3.55,-0.71},{-0.94,3.2,-1.44},{-2.41,3.28,-1.44}};
 };
 
 class LADAWreck : Residential
@@ -776,5 +767,13 @@ class land_seb_bouda3 : Residential // nm house
 };
 class land_seb_mine_maringotka: Residential { // Nm
 		lootPos[] = {{0.291992, 0.46582, -0.644005}, {-0.0292969, -1.37817, -0.644009}};
+};
+
+class Land_HouseV_1L2: Residential { // Nm
+		lootPos[] = {{-0.45,5.3,-2.97},{3.73,1.74,-0.79},{-2.38,0.29,-0.79},{3.93,-4.8,-0.79},{-1.31,-3.28,-0.3},{3.28,-2.46,-0.79}};
+};
+
+class Land_HouseV_3I3: Residential { // Nm
+		lootPos[] = {{4.81,-1.53,-1.86},{1.15,-3.01,-0.76},{-4.43,-0.18,-1.4},{-2.64,-0.08,-1.4},{-4.39,-2.98,-1.4},{-0.83,-0.6,-1.4}};
 };
 
