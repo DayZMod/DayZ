@@ -5,6 +5,11 @@ class CfgVehicles {
 	class AllVehicles : ALL
 	{
 		class NewTurret;
+		class DefaultEventhandlers;
+		class EventHandlers: DefaultEventhandlers
+		{
+			killed = "_this call BIS_Effects_EH_Killed;";
+		};
 	};
 	class Air : AllVehicles
 	{
@@ -203,12 +208,8 @@ class CfgVehicles {
 	#include "Helicopter\UH1H.hpp"
 	#include "Helicopter\AH6X.hpp"
 	#include "Helicopter\MH6J_DZ.hpp"
-	//Wreck's
-	//#include "Helicopter\MI8Wreck.hpp"
-	//#include "Helicopter\UH1Wreck.hpp"
-	//#include "Helicopter\UH60Wreck.hpp"
 	#include "CrashSite.hpp"
-	//Plane's
+	//Planes
 	#include "Plane\AN2_DZ.hpp"
 	//Bikes
 	#include "Bikes\ATV_US_EP1.hpp"
@@ -278,7 +279,7 @@ class CfgVehicles {
 	{
 		class EventHandlers
 		{
-			init = "if (Dayz_clientEXT) then { if (isServer) then { [] execVM '\z\addons\dayz_server\init\server_setKey.sqf' } else { [] execVM '\z\addons\dayz_code\system\filesign\verify_mission.sqf' }; }; ";
+			init = "diag_log ('WARNING: Spawning FileSignature_DZ'); if (isServer) then { [] execVM '\z\addons\dayz_server\init\server_setKey.sqf' } else { [] execVM '\z\addons\dayz_code\system\filesign\verify_mission.sqf' }; ";
 		};
 	};
 	

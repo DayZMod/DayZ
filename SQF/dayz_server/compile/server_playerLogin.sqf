@@ -14,7 +14,7 @@ if (isNil "sm_done") exitWith { diag_log ("Login cancelled, server is not ready.
 
 _inventory = [];
 _backpack = [];
-_survival = [0,0,0];
+_survival = [0,0,0,0];
 _model = "";
 
 if (_playerID == "") then {
@@ -74,6 +74,12 @@ if (isNull _playerObj or !isPlayer _playerObj) exitWith {
 if ((_primary select 0) == "ERROR") exitWith {
     diag_log format ["LOGIN RESULT: Exiting, failed to load _primary: %1 for player: %2 ",_primary,_playerID];
 };
+
+/*
+	{
+		diag_log format["%1 - %2",_forEachIndex,_x];
+	} foreach _primary;
+*/
 
 //Process request
 _newPlayer = _primary select 1;

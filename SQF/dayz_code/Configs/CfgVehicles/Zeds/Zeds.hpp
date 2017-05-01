@@ -26,7 +26,8 @@ class Citizen1: Citizen {
 class Zed_Base : Citizen1 {
 	scope = public;
 	class HitDamage {};
-	armor = 3; 
+	armor = 3;
+	agentTasks[] = {};
 };
 class zZombie_Base : Zed_Base {
 	scope = public;
@@ -56,11 +57,6 @@ class zZombie_Base : Zed_Base {
 		local = "_z = _this select 0; if ((!isServer and !isNull _z) and {(side _z != civilian)}) exitWith { PVDZ_sec_atp = [ 'wrong side', player ]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; }; if (!(_this select 1)) exitWith {}; if (isServer) exitWith { _z call sched_co_deleteVehicle; }; ['',_z,true] execFSM '\z\AddOns\dayz_code\system\zombie_agent.fsm';";
 		HandleDamage = "_this call local_zombieDamage;";
 		Killed = "[_this,'zombieKills'] call local_eventKill;";
-	};
-	
-	class UserActions
-	{
-		delete StudyBody;
 	};
 	
 	class HitPoints {
@@ -166,6 +162,16 @@ class z_villager2 : z_villager1 {
 
 class z_villager3 : z_villager1 {
 	hiddenSelectionsTextures[] = {"\ca\characters2\civil\villager\data\villager_v3_co.paa"};
+};
+
+class z_villagertest : z_villager1 {
+	hiddenSelectionsTextures[] = {"\ca\characters2\civil\villager\data\villager_v3_co.paa"};
+	class Eventhandlers
+	{
+		local = "_z = _this select 0; if ((!isServer and !isNull _z) and {(side _z != civilian)}) exitWith { PVDZ_sec_atp = [ 'wrong side', player ]; publicVariableServer 'PVDZ_sec_atp'; deleteVehicle _z; }; if (!(_this select 1)) exitWith {}; if (isServer) exitWith { _z call sched_co_deleteVehicle; }; ['',_z,true] execFSM '\z\AddOns\dayz_code\system\zombie_agent.fsm';";
+		HandleDamage = "_this call local_zombieDamage;";
+		Killed = "[_this,'zombieKills'] call local_eventKill;";
+	};
 };
 
 class z_priest : zZombie_Base {

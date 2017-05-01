@@ -9,9 +9,9 @@ private ["_allowedDistance","_vehicle","_inVehicle","_cursorTarget","_primaryWea
 "_typeOfCursorTarget","_isVehicle","_isBicycle","_isMan","_isDestructable",
 "_isGenerator","_ownerID","_isVehicletype","_isFuel","_hasFuel20","_hasFuel5","_hasEmptyFuelCan","_itemsPlayer",
 "_hasToolbox","_hasbottleitem","_isAlive","_isPlant","_istypeTent","_upgradeItems","_hasknife",
-"_hasRawMeat","_hastinitem","_displayName","_hasIgnitors","_hasCarBomb","_menu","_menu1","_isHouse","_isGate",
+"_hasRawMeat","_hastinitem","_displayName","_hasIgnitors","_hasCarBomb","_isHouse","_isGate",
 "_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock","_ownerPID",
-"_uid"];
+"_uid","_myCharID"];
 
 _vehicle = vehicle player;
 _inVehicle = (_vehicle != player);
@@ -25,6 +25,7 @@ _canDo = (!r_drag_sqf && !r_player_unconscious && !_onLadder);
 _uid = getPlayerUID player;
 _nearLight = nearestObject [player,"LitObject"];
 _canPickLight = false;
+_myCharID = player getVariable ["CharacterID","0"];
 
 if (!isNull _nearLight) then {
 	if (_nearLight distance player < 4) then {
@@ -102,8 +103,8 @@ if (_canDo && !_inVehicle && !dayz_isSwimming && ((call fn_nearWaterHole) select
 	};
 };
 
-// Increase distance only if Fishing_Boat
-_allowedDistance = if (typeOf _cursorTarget == "Fishing_Boat") then {8} else {4};
+// Increase distance only if AIR or SHIP
+_allowedDistance = if ((_cursorTarget isKindOf "Air") or (_cursorTarget isKindOf "Ship")) then {8} else {4};
 
 if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _allowedDistance) && _canDo) then { 
 //Has some kind of target
@@ -151,7 +152,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	};
 	
 	//Allow player to fill Fuel can
-	if (_hasEmptyFuelCan && {_isFuel} && {!a_player_jerryfilling} && {_isAlive}) then {
+	if (_hasEmptyFuelCan && _isFuel && _isAlive) then {
 		if (s_player_fillfuel < 0) then {
 			s_player_fillfuel = player addAction [localize "str_actions_self_10", "\z\addons\dayz_code\actions\jerry_fill.sqf",_cursorTarget, 1, false, true];
 		};
@@ -162,7 +163,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	
 	if (damage _cursorTarget < 1) then {
 		//Allow player to fill vehicle 20L
-		if (_hasFuel20 && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1} && {!a_player_jerryfilling}) then {
+		if (_hasFuel20 && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1}) then {
 			if (s_player_fillfuel20 < 0) then {
 				s_player_fillfuel20 = player addAction [format[localize "str_actions_medical_10",_text,"20"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemJerrycan",_cursorTarget], 0, true, true, "", "'ItemJerrycan' in magazines player"];
 			};
@@ -172,7 +173,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		};
 
 		//Allow player to fill vehicle 5L
-		if (_hasFuel5 && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1} && {!a_player_jerryfilling}) then {
+		if (_hasFuel5 && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1}) then {
 			if (s_player_fillfuel5 < 0) then {
 				s_player_fillfuel5 = player addAction [format[localize "str_actions_medical_10",_text,"5"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemFuelcan",_cursorTarget], 0, true, true, "", "'ItemFuelcan' in magazines player"];
 			};
@@ -188,7 +189,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		*/
 		//
 		//Allow player to siphon vehicles
-		if (_hasEmptyFuelCan && {!_isMan} && {_isVehicle} && {!_isBicycle} && {!a_player_jerryfilling} && {fuel _cursorTarget > 0}) then {
+		if (_hasEmptyFuelCan && {!_isMan} && {_isVehicle} && {!_isBicycle} && {fuel _cursorTarget > 0}) then {
 			if (s_player_siphonfuel < 0) then {
 				s_player_siphonfuel = player addAction [format[localize "str_siphon_start"], "\z\addons\dayz_code\actions\siphonFuel.sqf",_cursorTarget, 0, true, true];
 			};
@@ -246,7 +247,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 */
 
 	//remove Own objects
-	if (_ownerID == dayz_characterID) then {
+	if (_ownerID == _myCharID) then {
 		if (_isDestructable && _hasToolbox) then {
 			if (s_player_deleteBuild < 0) then {
 				s_player_deleteBuild = player addAction [format[localize "str_actions_delete",_text], "\z\addons\dayz_code\actions\remove.sqf",_cursorTarget, 1, true, true];
@@ -308,6 +309,16 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	} else {
 		player removeAction s_player_sleep;
 		s_player_sleep = -1;
+	};
+	
+	//Study Body
+	if (_cursorTarget getVariable["bodyName",""] != "") then {
+		if (s_player_studybody < 0) then {
+			s_player_studybody = player addAction [localize "str_action_studybody", "\z\addons\dayz_code\actions\study_body.sqf",_cursorTarget, 0, false, true];
+		};
+	} else {
+		player removeAction s_player_studybody;
+		s_player_studybody = -1;
 	};
 /*	
 	//Carbomb
@@ -413,6 +424,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	};
 } else {
 	//Engineering
+	{dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
+	dayz_myCursorTarget = objNull;
 	player removeAction s_player_flipveh;
 	s_player_flipveh = -1;
 	player removeAction s_player_sleep;
@@ -431,6 +444,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	s_player_packtentinfected = -1;
 	player removeAction s_player_fillfuel;
 	s_player_fillfuel = -1;
+	player removeAction s_player_studybody;
+	s_player_studybody = -1;
 	//fuel
 	player removeAction s_player_fillfuel20;
 	s_player_fillfuel20 = -1;
@@ -446,9 +461,6 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	s_player_destroytent = -1;
 	// player removeAction s_player_attach_bomb;
 	//  s_player_attach_bomb = -1;
-	//debug
-	//player removeAction s_player_debugCheck;
-	//s_player_debugCheck = -1;
 	player removeAction s_player_upgradestorage;
 	s_player_upgradestorage = -1;
 	//Unlock,Lock

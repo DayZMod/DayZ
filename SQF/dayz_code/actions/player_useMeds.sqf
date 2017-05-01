@@ -93,6 +93,9 @@ switch (_item) do {
 	case "wholeBloodBagOPOS": {
 		_id = [player,"wholeBloodBagOPOS"] execVM "\z\addons\dayz_code\medical\selfbloodbag.sqf";
 	};
+	case "ItemBloodbag": {
+		_id = [player,"ItemBloodbag"] execVM "\z\addons\dayz_code\medical\selfbloodbag.sqf";
+	};
 };
 if (vehicle player != player) then {
 	_display = findDisplay 106;

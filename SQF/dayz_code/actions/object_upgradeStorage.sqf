@@ -1,20 +1,31 @@
 /*
-	This script is not part of dayz permission must be given to use. r4z0r49@gmail.com or skype me R4Z0R49.
-	
 	Simple class system to use this script.
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
 		requiredParts[] = {"equip_crate","PartWoodPile"};
 		create = "TentStorage1";
-	};
-	
+	};	
 */
+if (dayz_actionInProgress) exitWith { localize "str_player_actionslimit" call dayz_rollingMessages; };
+dayz_actionInProgress = true;
+
 private ["_cursorTarget","_item","_classname","_requiredTools","_requiredParts","_upgrade","_upgradeConfig",
 "_upgradeDisplayname","_onLadder","_isWater","_upgradeParts","_startUpgrade","_missingPartsConfig","_textMissingParts","_dis",
 "_sfx","_ownerID","_objectID","_objectUID","_alreadyupgrading","_dir","_weapons","_magazines","_backpacks","_object",
-"_objWpnTypes","_objWpnQty","_countr","_itemName","_vector"];
+"_objWpnTypes","_objWpnQty","_countr","_itemName","_vector","_playerNear"];
 
 _cursorTarget = _this select 3;
+
+//get ownerID from old tent.
+_ownerID = _cursorTarget getVariable ["characterID","0"];
+_objectID = _cursorTarget getVariable ["ObjectID","0"];
+_objectUID = _cursorTarget getVariable ["ObjectUID","0"];
+
+//make sure the player is still looking at something to get the cursorTarget and UID
+if (isNil "_cursorTarget" or {isNull _cursorTarget} or {_objectUID == "0" && (_objectID == "0")}) exitWith {
+     localize "str_cursorTargetNotFound" call dayz_rollingMessages;
+	 dayz_actionInProgress = false;
+};
 
 _item = typeof _cursorTarget;
 //diag_log (str(_item));
@@ -52,7 +63,11 @@ _isWater = 		(surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 _upgradeParts = [];
 _startUpgrade = true;
 
-if(_isWater or _onLadder) exitWith { localize "str_CannotUpgrade" call dayz_rollingMessages; };
+if(_isWater or _onLadder) exitWith {dayz_actionInProgress = false; localize "str_CannotUpgrade" call dayz_rollingMessages;};
+
+// Make sure no other players are nearby
+_playerNear = {isPlayer _x} count (_cursorTarget nearEntities ["CAManBase",10]) > 1;
+if (_playerNear) exitWith {dayz_actionInProgress = false; localize "str_pickup_limit_5" call dayz_rollingMessages;};
 
 // lets check player has requiredTools for upgrade
 {
@@ -93,17 +108,12 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	// Added Nutrition-Factor for work
 	["Working",0,[100,15,5,0]] call dayz_NutritionSystem;
 	
-	//get ownerID from old tent.
-	_ownerID = _cursorTarget getVariable ["characterID","0"];
-	_objectID = _cursorTarget getVariable ["ObjectID","0"];
-	_objectUID = _cursorTarget getVariable ["ObjectUID","0"];
-
 	//Upgrade
 	_alreadyupgrading = _cursorTarget getVariable["alreadyupgrading",0];
 
 	if (_alreadyupgrading == 1) exitWith { localize "str_upgradeInProgress" call dayz_rollingMessages; };
 	
-	_cursorTarget setVariable["alreadyupgrading",1];
+	_cursorTarget setVariable["alreadyupgrading",1,true];
 
 	uiSleep 0.03;
 
@@ -115,9 +125,9 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	_cursorTarget setDir 0;
 	_pos = getPosATL _cursorTarget;
 	
-	diag_log [ "dir/angle/pos", _dir, _vector, _pos];
+	//diag_log [ "dir/angle/pos", _dir, _vector, _pos];
 	if (abs(((_vector select 1) select 2) - 1) > 0.001) then { _pos set [2,0]; };
-	diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
+	//diag_log [ "dir/angle/pos - reset elevation if angle is straight", _dir, _vector, _pos];
 
 	//get contents
 	_weapons = getWeaponCargo _cursorTarget;
@@ -193,3 +203,5 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	localize "str_upgradeNoOption" call dayz_rollingMessages;
 */
 };
+
+dayz_actionInProgress = false;

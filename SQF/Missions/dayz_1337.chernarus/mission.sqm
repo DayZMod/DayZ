@@ -34,7 +34,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			side="WEST";
@@ -173,10 +173,9 @@ class Mission
 				};
 			};
 		};
-		/*
 		class Item2
 		{
-			side="LOGIC ";
+			side="LOGIC";
 			class Vehicles
 			{
 				items=1;
@@ -184,7 +183,7 @@ class Mission
 				{
 					position[]={708,35,3533};
 					id=50;
-					side="LOGIC ";
+					side="LOGIC";
 					vehicle="FileSignature_DZ";
 					leader=1;
 					lock="UNLOCKED";
@@ -192,7 +191,6 @@ class Mission
 				};
 			};
 		};
-		*/
 	};
 	class Markers
 	{

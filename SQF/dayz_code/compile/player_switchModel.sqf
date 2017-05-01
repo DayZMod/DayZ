@@ -143,7 +143,8 @@ selectPlayer _newUnit;
 _rndx = floor(random 100);
 _rndy = floor(random 100);
 _oldUnit setPosATL [(respawn_west_original select 0) + _rndx, (respawn_west_original select 1) + _rndy, 0];
-_newUnit setPosATL [_position select 0,_position select 1,(_position select 2)+.1]; //Prevents swimming in ground glitch on alt maps
+_newUnit setPosATL _position;
+if (surfaceIsWater respawn_west_original) then {_newUnit call fn_exitSwim;};
 
 //Clear and delete old Unit
 removeAllWeapons _oldUnit;
@@ -164,4 +165,4 @@ player setVariable ["BIS_noCoreConversations",true];
 //	publicVariable _playerObjName;
 
 call dayz_meleeMagazineCheck;
-{player reveal _x} count (nearestObjects [getPosATL player,["AllVehicles","WeaponHolder","Land_A_tent","BuiltItems"],75]);
+{player reveal _x} count (nearestObjects [_position,["AllVehicles","WeaponHolder","Land_A_tent","BuiltItems"],75]);

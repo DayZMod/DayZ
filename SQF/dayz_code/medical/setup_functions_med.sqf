@@ -117,13 +117,6 @@ fnc_usec_medic_removeActions = {
 	r_action_targets = [];
 };
 
-fnc_usec_self_removeActions = {
-	{
-		player removeAction _x;
-	} forEach r_self_actions;
-	r_self_actions = [];
-};
-
 fnc_usec_calculateBloodPerSec = {
 	private["_bloodLossPerSec","_bloodGainPerSec","_bloodPerSec"];
 	_bloodLossPerSec = 0;
@@ -248,11 +241,9 @@ fnc_usec_playerHandleBlood = {
 			if (_elapsedTime > _bleedTime) then {
 				r_player_injured = false;
 				_id = [player,player] execVM "\z\addons\dayz_code\medical\publicEH\medBandaged.sqf";
-				dayz_sourceBleeding = objNull;
-				call fnc_usec_resetWoundPoints;
 			};
 
-			_bloodDiff = r_player_blood - (player getVariable["USEC_BloodQty", 12000]);
+			_bloodDiff = r_player_blood - (player getVariable["USEC_BloodQty", r_player_bloodTotal]);
 			
 			if ((_bloodDiff >= 500) or (_bloodDiff <= -500)) then {
 				player setVariable["USEC_BloodQty",r_player_blood,true];
@@ -269,7 +260,7 @@ fnc_usec_playerHandleBlood = {
 			r_player_blood = r_player_blood + _bloodPerSec;
 		};
 
-		_bloodDiff = r_player_blood - (player getVariable["USEC_BloodQty", 12000]);
+		_bloodDiff = r_player_blood - (player getVariable["USEC_BloodQty", r_player_bloodTotal]);
 
 
 		if ((_bloodDiff >= 500) or (_bloodDiff <= -500)) then {

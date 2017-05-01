@@ -18,7 +18,6 @@ _fueling = player getVariable ["fueling",false];
 if (fuel _vehicle == 1) exitWith {dayz_actionInProgress = false;};
 
 player removeAction s_player_fillfuel + _capacity;
-a_player_jerryfilling = true;
 player setVariable ["fueling", true];
 
 if (!_fueling) then {
@@ -72,7 +71,7 @@ if (!_fueling) then {
 } else {
 	localize "str_refuel_fail" call dayz_rollingMessages;
 };
-a_player_jerryfilling = false;
+
 r_action = false;
 player setVariable ["fueling", false];
 dayz_actionInProgress = false;

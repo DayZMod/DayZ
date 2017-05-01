@@ -3,7 +3,7 @@
 #include "scheduler.hpp"
 
 sched_medical_slow = {  // 10 seconds
-	if (abs (r_player_blood - (player getVariable["USEC_BloodQty", 12000])) > 120) then {
+	if (abs (r_player_blood - (player getVariable["USEC_BloodQty", r_player_bloodTotal])) > 120) then {
  	//Do not global send
 		player setVariable["USEC_BloodQty", r_player_blood, false];
 		player setVariable["medForceUpdate", true, false];
@@ -21,7 +21,7 @@ sched_medical = { // 1 second
 	private "_unconHdlr";
 	_unconHdlr = _this select 0;
 
-	if (r_player_blood == 12000) then {
+	if (r_player_blood == r_player_bloodTotal) then {
 		r_player_foodstack = 0;
 	};
 
@@ -58,6 +58,8 @@ sched_medical = { // 1 second
 	} else {
 		[] spawn fnc_usec_playerHandleBlood;
 	};
+	
+	dayz_sessionTime = dayz_sessionTime + 1;
 
 	[_unconHdlr]
 };
@@ -125,9 +127,18 @@ sched_medical_effectsSlow = {
 	// every 10 seconds
 	HIDE_FSM_VARS
 
-	if (r_player_infected and !r_player_unconscious and 1 > random 2 and ((vehicle player == player and speed player < 5) or (vehicle player != player))) then {
-		[player,"cough",1,false] call dayz_zombieSpeak;
-		addCamShake [2, 1, 25];
+	if (!r_player_unconscious && (r_player_infected or r_player_inpain)) then {
+		//Original pain shake was stronger [2, 1, 25]
+		//Low blood still uses strong shake in init_medical.sqf
+		addCamShake [1, 1, 20];
+		
+		if (!r_player_infected) then {
+			playSound "breath_1"; //In pain
+		} else {
+			if (1 > random 2 && (speed player < 5 or {vehicle player != player})) then {
+				[player,"cough",1,false] call dayz_zombieSpeak;
+			};
+		};
 	};
 
 	objNull

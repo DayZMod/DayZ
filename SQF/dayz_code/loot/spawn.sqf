@@ -80,8 +80,17 @@ switch (_lootInfo select 0) do
 	//Spawn a single magazine
 	case Loot_MAGAZINE:
 	{
+		private "_item";
+		_item = _lootInfo select 1;
+		if (dayz_classicBloodBagSystem && _item in dayz_typedBags) then {
+			if (_item in ["bloodTester","bloodBagAPOS","bloodBagABPOS"]) then { // reduce ItemBloodBag output slightly since typed bags spawn in bulk
+				_item = ["ItemBandage","ItemPainkiller","ItemMorphine","ItemHeatPack","ItemAntibacterialWipe"] call BIS_fnc_selectRandom;
+			} else {
+				_item = "ItemBloodbag";
+			};
+		};
 		_vehicle = createVehicle ["WeaponHolder", _this select 1, [], 0, "CAN_COLLIDE"];
-		_vehicle addMagazineCargoGlobal [_lootInfo select 1, 1];
+		_vehicle addMagazineCargoGlobal [_item, 1];
 		if (surfaceIsWater (_this select 1)) then {
 			_vehicle setPos (_this select 1);
 		} else {
