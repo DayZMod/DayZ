@@ -29,7 +29,7 @@ BEGIN
 	Update
 		object_data 
 			set Hitpoints = '["Maintenance"]'                    
-				WHERE (Classname = Classname = 'WoodenFence_5' or Classname = 'WoodenFence_6' or Classname = 'WoodenFence_7')
+				WHERE (Classname = 'WoodenFence_5' or Classname = 'WoodenFence_6' or Classname = 'WoodenFence_7')
 				AND DATE(last_updated) < CURDATE() - INTERVAL 14 DAY
  				AND Hitpoints = '[]';
  				
