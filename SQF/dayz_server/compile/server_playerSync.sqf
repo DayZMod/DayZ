@@ -86,11 +86,16 @@ if (_characterID != "0") then {
 		_character addScore _kills;		
 		/*
 			Assess how much time has passed, for recording total time on server
+			Note "lastTime" is -1 after clothes change
 		*/
-		_lastTime = 	_character getVariable ["lastTime",diag_ticktime];
-		_timeGross = 	(diag_ticktime - _lastTime);
-		_timeSince = 	floor (_timeGross / 60);
-		_timeLeft =		(_timeGross - (_timeSince * 60));
+		_lastTime = _character getVariable ["lastTime",-1];
+		if (_lastTime == -1) then {
+			_character setVariable ["lastTime",diag_tickTime,false];
+		} else {
+			_timeGross = (diag_tickTime - _lastTime);
+			_timeSince = floor (_timeGross / 60);
+			_timeLeft = (_timeGross - (_timeSince * 60));
+		};
 		/*
 			Get character state details
 		*/
