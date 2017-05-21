@@ -5,6 +5,11 @@ class CfgVehicles {
 	class AllVehicles : ALL
 	{
 		class NewTurret;
+		class DefaultEventhandlers;
+		class EventHandlers: DefaultEventhandlers
+		{
+			killed = "_this call BIS_Effects_EH_Killed;";
+		};
 	};
 	class Air : AllVehicles
 	{

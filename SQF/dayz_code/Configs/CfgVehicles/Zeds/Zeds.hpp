@@ -58,11 +58,6 @@ class zZombie_Base : Zed_Base {
 		Killed = "[_this,'zombieKills'] call local_eventKill;";
 	};
 	
-	class UserActions
-	{
-		delete StudyBody;
-	};
-	
 	class HitPoints {
 		class HitHead {
 			armor = 0.1;

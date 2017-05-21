@@ -87,18 +87,18 @@ if (isServer) then {
 	"PVDZ_fskey" 		addPublicVariableEventHandler {(_this select 1) call server_sendKey};
 	
 	//Added as part of the maintenance system to allow the server to replace the damaged model with a normal model.
-	"PVDZ_object_replace" addPublicVariableEventHandler {
-		_cursorTarget = _this select 1;
-		_vars = ((_this select 1) select 0) getVariable "MaintenanceVars";
-		_ownerArray = _cursorTarget getVariable ["ownerArray",[]];
+	/*"PVDZ_object_replace" addPublicVariableEventHandler {
+		_object = _this select 1;
+		_vars = _object getVariable "MaintenanceVars";
+		_ownerArray = _object getVariable ["ownerArray",[]];
 		
-		if (!isNil "_vars" && _cursorTarget isKindOf "DZ_buildables") then {
-			deleteVehicle ((_this select 1) select 0);
-			_object = createVehicle [(_vars select 0), (_vars select 1), [], 0, if (_type in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
+		if (!isNil "_vars" && _object isKindOf "DZ_buildables") then {
+			deleteVehicle _object;
+			_object = createVehicle [(_vars select 0), (_vars select 1), [], 0, if ((_vars select 0) in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
 			_object setVariable["Maintenance",false,true];
 			_object setVariable["ownerArray", _ownerArray, true];
 		};
-	};
+	};*/
 	
 	"PVDZ_sendUnconscious" addPublicVariableEventHandler {	
 		_owner = (_this select 1) select 0;
@@ -138,21 +138,6 @@ if (isServer) then {
 			if (_dis < 15) then {
 				deleteVehicle _obj;
 			};
-		};
-	};
-	
-	"PVDZ_objgather_Knockdown" addPublicVariableEventHandler {
-		_tree = (_this select 1) select 0;
-		_player = (_this select 1) select 1;
-		_dis = _player distance _tree;
-		_name = if (alive _player) then {name _player} else {"DeadPlayer"};
-		_uid = getPlayerUID _player;
-		_treeModel = _tree call fn_getModelName;
-
-		if ((_dis < 30) && (_treeModel in dayz_trees) && (_uid != "")) then {
-			_tree setDamage 1;
-			dayz_choppedTrees set [count dayz_choppedTrees,_tree];
-			diag_log format["Server setDamage on tree %1 chopped down by %2(%3)",_treeModel,_name,_uid];
 		};
 	};
 
@@ -291,7 +276,6 @@ if (!isDedicated) then {
 		_object = (_this select 1) select 0;
 		_result = (_this select 1) select 1;
 		_codeGuess = (_this select 1) select 2;
-	
 		
 		if (_result) then {
 			_object setVariable ["dayz_padlockLockStatus", false,true];
