@@ -9,7 +9,7 @@ private ["_allowedDistance","_vehicle","_inVehicle","_cursorTarget","_primaryWea
 "_typeOfCursorTarget","_isVehicle","_isBicycle","_isMan","_isDestructable",
 "_isGenerator","_ownerID","_isVehicletype","_isFuel","_hasFuel20","_hasFuel5","_hasEmptyFuelCan","_itemsPlayer",
 "_hasToolbox","_hasbottleitem","_isAlive","_isPlant","_istypeTent","_upgradeItems","_hasknife",
-"_hasRawMeat","_hastinitem","_displayName","_hasIgnitors","_hasCarBomb","_isHouse","_isGate",
+"_hasRawMeat","_hastinitem","_displayName","_hasIgnitors","_hasCarBomb","_isHouse","_isGateOperational","_isGateLockable",
 "_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock","_ownerPID",
 "_uid","_myCharID"];
 
@@ -334,7 +334,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 */	
 	// House locking and unlocking
 	_isHouse = _typeOfCursorTarget in ["SurvivorWorkshopAStage5", "SurvivorWorkshopBStage5", "SurvivorWorkshopCStage5"];
-	_isGate = _typeOfCursorTarget in ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4","MetalGate_1","MetalGate_2","MetalGate_3","MetalGate_4"];
+	_isGateOperational = _typeOfCursorTarget in ["WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4","MetalGate_1","MetalGate_2","MetalGate_3","MetalGate_4"];
+	_isGateLockable = _typeOfCursorTarget in ["WoodenGate_1","WoodenGate_2","WoodenGate_3","MetalGate_1","MetalGate_2","MetalGate_3"];
 	_isFence = _typeOfCursorTarget in ["WoodenFence_1","WoodenFence_2","WoodenFence_3","WoodenFence_4","WoodenFence_5","WoodenFence_6","MetalFence_1","MetalFence_2","MetalFence_3","MetalFence_4","MetalFence_5","MetalFence_6","MetalFence_7"];
 
 	//Only the owners can lock the gates
@@ -351,7 +352,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	_ownerPID = (_ownerArray select 0);
 	
 	// open Gate
-	if (_isGate && _isClosed && _isUnlocked) then {
+	if (_isGateOperational && _isClosed && _isUnlocked) then {
 		if (s_player_openGate < 0) then {
 			s_player_openGate = player addAction [localize "STR_DN_OUT_O_GATE", "\z\addons\dayz_code\actions\player_operate.sqf",[_cursorTarget,"Open"], 1, true, true];
 		};
@@ -360,7 +361,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		s_player_openGate = -1;
 	};
 	// Close Gate
-	if (_isGate && _isOpen && _isUnlocked) then {
+	if (_isGateOperational && _isOpen && _isUnlocked) then {
 		if (s_player_CloseGate < 0) then {
 			s_player_CloseGate = player addAction [localize "STR_DN_OUT_C_GATE", "\z\addons\dayz_code\actions\player_operate.sqf",[_cursorTarget,"Close"], 1, true, true];
 		};
@@ -378,7 +379,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		s_player_setCode = -1;
 	};
 	//Lock Build point
-	if ((_isFence or _isGate) && (_ownerPID == _uid) && !_ownerBuildLock) then {
+	if ((_isFence or _isGateLockable) && (_ownerPID == _uid) && !_ownerBuildLock) then {
 		if (s_player_BuildLock < 0) then {
 			s_player_BuildLock = player addAction [localize "STR_BLD_ACTIONS_LOCKBUILD", "\z\addons\dayz_code\actions\player_operate.sqf",[_cursorTarget,"BuildLock"], 1, true, true];
 		};
@@ -387,7 +388,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		s_player_BuildLock = -1;
 	};
 	//UnLock Build point
-	if ((_isFence or _isGate) && (_ownerPID == _uid) && _ownerBuildLock) then {
+	if ((_isFence or _isGateLockable) && (_ownerPID == _uid) && _ownerBuildLock) then {
 		if (s_player_BuildUnLock < 0) then {
 			s_player_BuildUnLock = player addAction [localize "STR_BLD_ACTIONS_UNLOCKBUILD", "\z\addons\dayz_code\actions\player_operate.sqf",[_cursorTarget,"BuildUnLock"], 1, true, true];
 		};
