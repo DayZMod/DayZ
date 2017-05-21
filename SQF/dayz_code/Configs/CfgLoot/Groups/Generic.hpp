@@ -17,6 +17,7 @@ Generic[] =
 	{Loot_MAGAZINE,		1,		equip_lever},
 	{Loot_MAGAZINE,		1,		equip_rag},
 	{Loot_MAGAZINE,		1,		equip_nails},
-	{Loot_MAGAZINE,		1,		ItemFuelCan},
-	{Loot_MAGAZINE,		1,		PartWoodPile}
+	{Loot_MAGAZINE,		1,		PartWoodPile},
+	
+	{Loot_GROUP,		1,		FuelCan}
 };

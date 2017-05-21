@@ -16,8 +16,6 @@ Farm[] =
 	
 	//Items
 	{Loot_MAGAZINE,		4,		ItemSandbag},
-	{Loot_MAGAZINE,		3,		ItemJerryCan},
-	{Loot_MAGAZINE,		4,		ItemFuelCan},
 	{Loot_MAGAZINE,		1,		TrapBear},
 	{Loot_MAGAZINE,		8,		PartWoodPile},
 	{Loot_MAGAZINE,		3,		equip_rope},
@@ -32,5 +30,7 @@ Farm[] =
 	{Loot_GROUP,		3,		AttachmentsGeneric},
 	{Loot_GROUP,		8,		Consumable},
 	{Loot_GROUP,		4,		Matchbox},
+	{Loot_GROUP,		3,		JerryCan},
+	{Loot_GROUP,		4,		FuelCan},
 	{Loot_GROUP,		8,		Generic}
 };

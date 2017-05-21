@@ -28,6 +28,7 @@ class CfgLoot
 		#define ItemBloodbagEmpty emptyBloodBag
 		
 		// General groups
+		#include "Groups\Alternatives.hpp"
 		#include "Groups\Ammo.hpp"
 		#include "Groups\AmmoBox.hpp"
 		#include "Groups\Attachments.hpp"
@@ -137,5 +138,6 @@ class CfgLoot
 		#include "Buildings\Toilet.hpp"
 		#include "Buildings\Roaming.hpp"
 		#include "Buildings\Misc.hpp"
+		//#include "Buildings\Zero.hpp"
 	};
 };
