@@ -321,7 +321,7 @@ class RscTitles
 		enableSimulation = 1;
 		enableDisplay = 1;
 		onLoad = "uiNamespace setVariable ['DZ_BlackScreen', _this select 0];";
-		duration = 99999999999999999;
+		duration = 1e+011;
 		fadein = 0;
 		fadeout = 0;
 		
@@ -350,7 +350,7 @@ class RscTitles
 		};
 	};
 	class RSC_DZ_Messages {
-		idd = 4099999;
+		idd = -1;
 		movingEnable = 0;
 		fadein       =  0;
 		fadeout      =  5;
@@ -360,7 +360,7 @@ class RscTitles
 		class Controls {
 			class Message_Text: RscStructuredText
 			{
-				idc = 4099998;
+				idc = 3;
 				text = "";
 				x = 0.3 * safezoneW + safezoneX;
 				y = 0.859137 * safezoneH + safezoneY;

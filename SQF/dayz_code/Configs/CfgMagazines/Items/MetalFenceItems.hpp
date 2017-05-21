@@ -42,6 +42,7 @@ class ItemScrews: CA_Magazine //Construection,farm,indestrial,castle,residential
 	descriptionShort = $STR_BLD_desc_ItemScrews;//"Box of screws"
 };
 
+/*
 class ItemBagScrews: CA_Magazine//Construection,indestrial,supermarket
 {
 	scope = 2;
@@ -61,7 +62,6 @@ class ItemBagScrews: CA_Magazine//Construection,indestrial,supermarket
 	
 };
 
-/*
 ItemScrews //Construection,farm,indestrial,castle,residential
 ItemBagScrews //(LowChance)Construection,(LowChance)indestrial,supermarket
 ItemRSJ //Construection,farm,indestrial,castle

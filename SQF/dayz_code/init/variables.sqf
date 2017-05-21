@@ -40,11 +40,11 @@ Dayz_attachment_array = ["Attachment_ACG","Attachment_AIM"];
 DayZ_Backpacks = ["DZ_Patrol_Pack_EP1","DZ_Assault_Pack_EP1","DZ_Czech_Vest_Pouch","DZ_ALICE_Pack_EP1","DZ_TK_Assault_Pack_EP1","DZ_British_ACU","DZ_CivilBackpack_EP1","DZ_Backpack_EP1"];
 Dayz_Gutting = ["ItemKnife","ItemKnife5","ItemKnife4","ItemKnife3","ItemKnife2","ItemKnife1","ItemKnifeBlunt"];
 DayZ_Ignitors = ["ItemMatchbox","Item5Matchbox","Item4Matchbox","Item3Matchbox","Item2Matchbox","Item1Matchbox"];
-DayZ_traps = ["Trap_Cans","TrapTripwireFlare","TrapBearTrapSmoke","TrapTripwireGrenade","TrapTripwireSmoke","TrapBearTrapFlare"];
 DayZ_ViralZeds = ["z_new_villager2","z_new_villager3","z_new_villager4","z_new_worker2","z_new_worker3","z_new_worker4"];
 DayZ_SafeObjects = ["Base_Fire_DZ","WoodenGate_1","WoodenGate_2","WoodenGate_3","WoodenGate_4","Land_Fire_DZ","TentStorage","TentStorage0","TentStorage1","TentStorage2","TentStorage3","TentStorage4","StashSmall","StashSmall1","StashSmall2","StashSmall3","StashSmall4","StashMedium","StashMedium1","StashMedium2","StashMedium3","StashMedium4","Wire_cat1","Sandbag1_DZ","Fence_DZ","Generator_DZ","Hedgehog_DZ","BearTrap_DZ","DomeTentStorage","DomeTentStorage0","DomeTentStorage1","DomeTentStorage2","DomeTentStorage3","DomeTentStorage4","CamoNet_DZ","Trap_Cans","TrapTripwireFlare","TrapBearTrapSmoke","TrapTripwireGrenade","TrapTripwireSmoke","TrapBearTrapFlare"];
 DayZ_GearedObjects = ["Car","Helicopter","Motorcycle","Ship","TentStorage_base","StashSmall_base","StashMedium_base"];
 DayZ_RestingAnims = ["amovpsitmstpsnonwpstdnon_ground","amovpsitmstpsnonwpstdnon_smoking","amovpsitmstpsraswrfldnon_weaponcheck1","amovpsitmstpsraswrfldnon"];
+dayz_typedBags = ["bloodTester","bloodBagANEG","bloodBagAPOS","bloodBagBNEG","bloodBagBPOS","bloodBagABNEG","bloodBagABPOS","bloodBagONEG","bloodBagOPOS","wholeBloodBagANEG","wholeBloodBagAPOS","wholeBloodBagBNEG","wholeBloodBagBPOS","wholeBloodBagABNEG","wholeBloodBagABPOS","wholeBloodBagONEG","wholeBloodBagOPOS"];
 dayz_playerAchievements = []; //[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 dayz_trees = ["ind_timbers.p3d","t_picea2s_snow.p3d","b_corylus.p3d","t_quercus3s.p3d","t_larix3s.p3d","t_pyrus2s.p3d","str_briza_kriva.p3d","dd_borovice.p3d","les_singlestrom_b.p3d","les_singlestrom.p3d","smrk_velky.p3d","smrk_siroky.p3d","smrk_maly.p3d","les_buk.p3d","str krovisko vysoke.p3d","str_fikovnik_ker.p3d","str_fikovnik.p3d","str vrba.p3d","hrusen2.p3d","str dub jiny.p3d","str lipa.p3d","str briza.p3d","p_akat02s.p3d","jablon.p3d","p_buk.p3d","str_topol.p3d","str_topol2.p3d","p_osika.p3d","t_picea3f.p3d","t_picea2s.p3d","t_picea1s.p3d","t_fagus2w.p3d","t_fagus2s.p3d","t_fagus2f.p3d","t_betula1f.p3d","t_betula2f.p3d","t_betula2s.p3d","t_betula2w.p3d","t_alnus2s.p3d","t_acer2s.p3d","t_populus3s.p3d","t_quercus2f.p3d","t_sorbus2s.p3d","t_malus1s.p3d","t_salix2s.p3d","t_picea1s_w.p3d","t_picea2s_w.p3d","t_ficusb2s_ep1.p3d","t_populusb2s_ep1.p3d","t_populusf2s_ep1.p3d","t_amygdalusc2s_ep1.p3d","t_pistacial2s_ep1.p3d","t_pinuse2s_ep1.p3d","t_pinuss3s_ep1.p3d","t_prunuss2s_ep1.p3d","t_pinusn2s.p3d","t_pinusn1s.p3d","t_pinuss2f.p3d","t_poplar2f_dead_pmc.p3d","misc_torzotree_pmc.p3d","misc_burnspruce_pmc.p3d","brg_cocunutpalm8.p3d","brg_umbrella_acacia01b.p3d","brg_jungle_tree_canopy_1.p3d","brg_jungle_tree_canopy_2.p3d","brg_cocunutpalm4.p3d","brg_cocunutpalm3.p3d","palm_01.p3d","palm_02.p3d","palm_03.p3d","palm_04.p3d","palm_09.p3d","palm_10.p3d","brg_cocunutpalm2.p3d","brg_jungle_tree_antiaris.p3d","brg_cocunutpalm1.p3d","str habr.p3d","brg_bird_1.p3d","brg_bird_2.p3d","brg_bird_3.p3d","brg_umbrella_acacia02b.p3d","brg_africandoumpalm_1.p3d","brg_umbrella_acacia04b.p3d","brg_datepalm_4.p3d","brg_datepalm_1.p3d","brg_umbrella_acacia03b.p3d","brg_bottle_4.p3d","brg_aloe1.p3d","brg_umbrella_acacia03.p3d","brg_umbrella_acacia01.p3d","brg_umbrella_acacia04.p3d","brg_aloe2.p3d","brg_umbrella_acacia02.p3d","brg_aloe3.p3d","brg_bottle_1.p3d","brg_datepalm_3.p3d","brg_datepalm_2.p3d","brg_baobab_1.p3d","brg_bottle_2.p3d","brg_bottle_3.p3d","t_fraxinus2s.p3d","t_carpinus2s.p3d"];
 
@@ -141,32 +141,22 @@ Dayz_GUI_B = 0.26; // -0.26
 //actions blockers
 a_player_cooking = false;
 a_player_boil = false;
-a_player_jerryfilling = false;
-a_player_repairing = false;
 
 //Player self-action handles
 dayz_resetSelfActions = {
 	s_player_equip_carry = -1;
-	s_player_dragbody = -1;
 	s_player_fire = -1;
 	s_player_cook = -1;
 	s_player_boil = -1;
 	s_player_fireout = -1;
 	s_player_packtent = -1;
 	s_player_packtentinfected = -1;
-	s_player_fillwater = -1;
-	s_player_fillwater2 = -1;
 	s_player_fillfuel = -1;
 	s_player_grabflare = -1;
 	s_player_removeflare = -1;
-	s_player_painkiller = -1;
 	s_player_studybody = -1;
-	s_build_Sandbag1_DZ = -1;
-	s_build_Hedgehog_DZ = -1;
-	s_build_Wire_cat1 = -1;
 	s_player_deleteBuild = -1;
 	s_player_flipveh = -1;
-	s_player_stats = -1;
 	s_player_sleep = -1;
 	s_player_fillfuel20 = -1;
 	s_player_fillfuel5 = -1;
@@ -174,7 +164,6 @@ dayz_resetSelfActions = {
 	s_player_fishing = -1;
 	s_player_fishing_veh = -1;
 	s_player_gather = -1;
-	s_player_debugCheck = -1;
 	s_player_destroytent = -1;
 	s_player_attach_bomb = -1;
 	s_player_upgradestorage = -1;
@@ -191,15 +180,12 @@ dayz_resetSelfActions = {
 call dayz_resetSelfActions;
 
 //Engineering variables
-s_player_lastTarget = objNull;
 s_player_repairActions = [];
 
 //Initialize Medical Variables
 force_dropBody = false;
 r_interrupt = false;
 r_doLoop = false;
-r_self = false;
-r_self_actions = [];
 r_drag_sqf = false;
 r_action = false;
 r_action_unload = false;
@@ -228,13 +214,10 @@ r_player_foodstack = 1;
 r_player_lowblood = false;
 r_player_timeout = 0;
 r_player_bloodTotal = r_player_blood;
-r_public_blood = r_player_blood;
-r_player_bloodDanger = r_player_bloodTotal * 0.2;
 r_player_actions = [];
 r_handlerCount = 0;
 r_action_targets = [];
 r_pitchWhine = false;
-r_isBandit = false;
 dayz_DisplayGenderSelect = true;
 //blood test vars
 r_A_watered = false;
@@ -317,7 +300,6 @@ dayz_maxMaxModels = 80; // max quantity of Man models (player or Z, dead or aliv
 dayz_cantseeDist = 150; // distance from which we can spawn a Z in front of any player without ray-tracing and angle checks
 dayz_cantseefov = 70; // half player field-of-view. Visible Z won't be spawned in front of any near players
 dayz_canDelete = 350; // Z, further than this distance from its "owner", will be deleted
-dayz_traps = [];
 dayz_traps_active = [];
 dayz_traps_trigger = [];
 
@@ -368,7 +350,6 @@ switch (dayz_presets) do {
 		if(isNil "dayz_OpenTarget_TimerTicks") then { dayz_OpenTarget_TimerTicks = 60 * 10; };
 		if(isNil "dayz_temperature_override") then { dayz_temperature_override = true; };
 		if(isNil "dayz_nutritionValuesSystem") then { dayz_nutritionValuesSystem = false; };
-		//Not implmented yet
 		if(isNil "dayz_classicBloodBagSystem") then { dayz_classicBloodBagSystem = false; };
 		if(isNil "dayz_enableFlies") then { dayz_enableFlies = true; };
 	};
@@ -383,7 +364,6 @@ switch (dayz_presets) do {
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = true; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = false; //Enables nutrition system
-		//Not implmented yet
 		dayz_classicBloodBagSystem = true; //Enables one type of bloodbag
 		dayz_enableFlies = true;  //Enables flies spawning on death
 	};
@@ -398,7 +378,6 @@ switch (dayz_presets) do {
 		dayz_OpenTarget_TimerTicks = 60 * 25; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = false; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
-		//Not implmented yet
 		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
 		dayz_enableFlies = true; //Enables flies spawning on death
 	};
@@ -413,7 +392,6 @@ switch (dayz_presets) do {
 		dayz_OpenTarget_TimerTicks = 60 * 10; //how long can a player be freely attacked for after attacking someone unprovoked.
 		dayz_temperature_override = false; // Set to true to disable all temperature changes.
 		dayz_nutritionValuesSystem = true; //Enables nutrition system
-		//Not implmented yet
 		dayz_classicBloodBagSystem = false; //Enables one type of bloodbag
 		dayz_enableFlies = true; //Enables flies spawning on death
 	};
@@ -433,6 +411,7 @@ switch (toLower worldName) do {
 //call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\achievements_init.sqf";
 
 if (isServer) then {
+	dayz_traps = [];
 	dead_bodyCleanup = [];
 	needUpdate_objects = [];
 	needUpdate_FenceObjects = [];
@@ -456,7 +435,9 @@ if (!isDedicated) then {
 	DayZ_fuelCans = ["ItemJerrycan","ItemFuelcan"];
 	DayZ_fuelCansEmpty = ["ItemJerrycanEmpty","ItemFuelcanEmpty"];
 	DayZ_fuelSources = ["Land_Ind_TankSmall","Land_fuel_tank_big","Land_fuel_tank_stairs","Land_fuel_tank_stairs_ep1","Land_wagon_tanker","Land_fuelstation","Land_fuelstation_army","Land_smd_fuelstation_army","land_fuelstation_w","Land_benzina_schnell"];
-
+	//Needed for trees spawned with createVehicle like POI (typeOf returns class instead of "")
+	dayz_treeTypes = ["","MAP_t_picea1s","MAP_t_picea2s","MAP_t_picea3f","MAP_t_pinusN2s","MAP_t_pinusS2f","MAP_t_populus3s","MAP_t_betula2s","MAP_t_fagus2s","MAP_t_fagus2W","MAP_t_malus1s"];
+	
 	//temperature variables
 	dayz_temperatur = 36; //TeeChange
 	dayz_temperaturnormal = 36; //TeeChange
@@ -485,7 +466,7 @@ if (!isDedicated) then {
 	dayz_disVisual = 0;
 	dayz_firedCooldown = 0;
 	dayz_damageCounter = time;
-	dayz_lastSave = time;
+	dayz_lastSave = diag_tickTime;
 	dayz_isSwimming = true;
 	dayz_currentDay = 0;
 	dayz_hasLight = false;
@@ -541,7 +522,8 @@ if (!isDedicated) then {
 	dayz_dodge = false;
 	Dayz_constructionContext = [];
 	Dayz_freefall = [ time, 0, 0.1 ];
-	dayz_getout = objNull;
 	dayz_getoutTime = 0;
-	dayz_HitBy = objNull; 
+	dayz_hitByTime = 0;
+	skipGearSound = false;
+	TimeOutDisplayed = false;
 };

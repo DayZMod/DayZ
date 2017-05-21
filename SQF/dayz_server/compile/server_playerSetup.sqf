@@ -226,7 +226,7 @@ if (dayz_townGenerator) then {
 };
 
 //record time started
-_playerObj setVariable ["lastTime",time];
+_playerObj setVariable ["lastTime",diag_ticktime];
 
 //Record Player Login/LogOut
 [(getPlayerUID _playerObj),_characterID,1,(_playerObj call fa_plr2str),((_worldspace select 1) call fa_coor2str)] call dayz_recordLogin;

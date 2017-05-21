@@ -44,6 +44,8 @@ if (_haswholebag) then {
 	_badBag = true;
 };
 
+if (dayz_classicBloodBagSystem) then {_wholeBag = true; _badBag = false;};
+
 call fnc_usec_medic_removeActions;
 r_action = false;
 
@@ -80,6 +82,7 @@ while {r_doLoop and (_i < 12)} do {
 			};
 		} else {
 			if (_wholeBag) then {_bagToRemove = _bloodBagWholeNeeded; };
+			if (dayz_classicBloodBagSystem) then { _bagToRemove = _bagUsed; };
 			if (_bagToRemove in magazines player) then { _bagFound = true; };
 		};
 		if (!_bagFound) then {_forceClose = true;} else { player removeMagazine _bagToRemove;};
@@ -133,7 +136,7 @@ while {r_doLoop and (_i < 12)} do {
 		r_doLoop = false;
 	};
 
-	sleep 0.1;
+	uiSleep 0.1;
 };
 
 r_doLoop = false;

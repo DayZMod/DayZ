@@ -1,3 +1,5 @@
+#include "CommonActions.hpp"
+
 class MetalFence_base: DZ_buildables
 {
 	scope = 1;
@@ -16,33 +18,9 @@ class MetalFence_base: DZ_buildables
 		HandleDamage = "_this call fnc_Obj_FenceHandleDam;";
 	};
 	class UserActions {
-		class Upgrade {
-			displayNameDefault = $STR_UPGRADE;
-			displayName = $STR_UPGRADE;
-			position = ""; //Needs memory point adding
-			radius = 3;
-			onlyForPlayer = 1;
-			condition = "(['ObjectUpgrade',this] call userActionConditions)";
-			statement = "this execVM ""\z\addons\dayz_code\actions\object_upgradebuilding.sqf""";
-		};
-		class Maintenance {
-			displayNameDefault = $STR_MAINTENANCE;
-			displayName = $STR_MAINTENANCE;
-			position = ""; //Needs memory point adding
-			radius = 3;
-			onlyForPlayer = 1;
-			condition = "(['ObjectMaintenance',this] call userActionConditions)";
-			statement = "this execVM ""\z\addons\dayz_code\actions\object_maintenance.sqf""";
-		};
-		class Disassembly {
-			displayNameDefault = $STR_DISASSEMBLY;
-			displayName = $STR_DISASSEMBLY;
-			position = "";
-			radius = 3;
-			onlyForPlayer = 1;
-			condition = "(['ObjectDisassembly',this] call userActionConditions)";
-			statement = "this execVM ""\z\addons\dayz_code\actions\object_disassembly.sqf""";
-		};
+		class Upgrade {ACTION_UPGRADE};
+		class Maintenance {ACTION_MAINTENANCE};
+		class Disassembly {ACTION_DISASSEMBLY};
 	};
 }; 	
 class MetalFence_ghost: MetalFence_base
@@ -50,12 +28,7 @@ class MetalFence_ghost: MetalFence_base
 	scope = 2;
 	model = "z\addons\dayz_buildings\models\metal_fence_ghost.p3d";
 	displayName = $STR_BLD_name_MetalFence_ghost;//"Metal Fence (Ghost)"
-	
-	class UserActions {
-		delete Upgrade;
-		delete Maintenance;
-		delete Disassembly;
-	};
+	class UserActions {};
 }; 
 
 class MetalFence_1_foundation: MetalFence_base
@@ -70,9 +43,6 @@ class MetalFence_1_foundation: MetalFence_base
 	};
 	class Disassembly {
 		requiredTools[] = {"ItemEtool"};
-	};
-	class UserActions {
-		delete Maintenance;
 	};
 }; 
 
@@ -225,6 +195,7 @@ class MetalFence_7: MetalFence_6
 		delete create;
 	};
 	class UserActions {
-		delete Upgrade;
+		class Maintenance {ACTION_MAINTENANCE};
+		class Disassembly {ACTION_DISASSEMBLY};
 	};
 }; 

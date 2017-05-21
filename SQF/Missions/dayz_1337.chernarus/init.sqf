@@ -64,7 +64,6 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functi
 progressLoadingScreen 0.15;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";
 progressLoadingScreen 0.25;
-if (dayz_POIs && (toLower worldName == "chernarus")) then {call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf";}; //Add POI objects locally on every machine early
 initialized = true;
 
 setTerrainGrid 25;
@@ -72,6 +71,7 @@ if (dayz_REsec == 1) then {call compile preprocessFileLineNumbers "\z\addons\day
 execVM "\z\addons\dayz_code\system\DynamicWeatherEffects.sqf";
 
 if (isServer) then {
+	if (dayz_POIs && (toLower worldName == "chernarus")) then {call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf";};
 	execVM "\z\addons\dayz_server\system\server_monitor.sqf";
 	
 	//Get the server to setup what waterholes are going to be infected and then broadcast to everyone.

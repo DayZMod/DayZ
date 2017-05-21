@@ -45,6 +45,9 @@ if (_inVehicle) then {
 				r_action2 = true;
 			};
 		};
+		
+		/*
+		//Moved to vehicle UserAtions.
 		if (count _assignedRole > 1) then {
 			_turret = _assignedRole select 1;
 			_weapons = _vehicle weaponsTurret _turret;
@@ -55,6 +58,7 @@ if (_inVehicle) then {
 				r_action2 = true;
 			} count _weapons;
 		};
+		*/
 	};
 	//Check if patients
 	_crew = crew _vehicle;

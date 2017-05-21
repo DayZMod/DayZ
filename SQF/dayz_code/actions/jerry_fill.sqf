@@ -1,6 +1,6 @@
 if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
 dayz_actionInProgress = true;
-private ["_qty","_dis","_sfx","_started","_finished","_animState","_isRefuel","_fuelcans","_qty20","_qty5","_magazines","_cursorTarget","_fuelAmount"];
+private ["_qty","_dis","_sfx","_started","_finished","_animState","_isRefuel","_qty20","_qty5","_magazines","_cursorTarget","_fuelAmount","_fuelNeeded"];
 
 player removeAction s_player_fillfuel;
 //s_player_fillfuel = -1;
@@ -15,19 +15,19 @@ if (isNil "_fuelAmount") then {
     _cursorTarget setVariable ["FuelAmount",_fuelAmount,true];
 };
 
-if (_fuelAmount < 5) exitWith { format[localize "str_fill_notenough",typeOf _cursorTarget,_fuelAmount] call dayz_rollingMessages; };
-
-diag_log format["Fill Jerry, %1 - %2",_cursorTarget,_fuelAmount];
-
-_fuelcans = ["ItemFuelcanEmpty","ItemJerrycanEmpty"];
-
-_qty = 0;
-_qty = {_x in _fuelcans} count _magazines;
-
-_qty20 = {_x == "ItemJerrycanEmpty"} count _magazines;
 _qty5 = {_x == "ItemFuelcanEmpty"} count _magazines;
+_qty20 = {_x == "ItemJerrycanEmpty"} count _magazines;
+_qty = _qty5 + _qty20;
 
-if (("ItemJerrycanEmpty" in _magazines) or ("ItemFuelcanEmpty" in _magazines)) then {
+_fuelNeeded = (_qty5 * 5) + (_qty20 * 20);
+
+//Inform if there is not enough to fill all containers in inventory, then proceed to fill available containers
+if (_fuelAmount < _fuelNeeded) then {format[localize "str_fill_notenough",typeOf _cursorTarget,_fuelAmount,_fuelNeeded] call dayz_rollingMessages;};
+
+//If there is not enough to fill any of their cans then exit
+if (_fuelAmount < 5 or (_fuelAmount < 20 && _qty5 == 0)) exitWith {dayz_actionInProgress = false;};
+
+if (_qty > 0) then {
 	player playActionNow "Medic";
 
 	_dis=5;
@@ -57,18 +57,6 @@ if (("ItemJerrycanEmpty" in _magazines) or ("ItemFuelcanEmpty" in _magazines)) t
 	r_doLoop = false;
 
 	if (_finished) then {
-		for "_x" from 1 to _qty20 do {
-			_fuelAmount = _cursorTarget getVariable "FuelAmount";
-			
-			if (_fuelAmount >= 20) then {
-				_fuelAmount = _fuelAmount - 20;
-				_cursorTarget setVariable ["FuelAmount",_fuelAmount,true];
-				player removeMagazine "ItemJerrycanEmpty";
-				player addMagazine "ItemJerrycan";
-			} else {
-				_qty = _qty - 1;
-			};
-		};
 		for "_x" from 1 to _qty5 do {
 			_fuelAmount = _cursorTarget getVariable "FuelAmount";
 			
@@ -77,6 +65,18 @@ if (("ItemJerrycanEmpty" in _magazines) or ("ItemFuelcanEmpty" in _magazines)) t
 				_cursorTarget setVariable ["FuelAmount",_fuelAmount,true];
 				player removeMagazine "ItemFuelcanEmpty";
 				player addMagazine "ItemFuelcan";
+			} else {
+				_qty = _qty - 1;
+			};
+		};
+		for "_x" from 1 to _qty20 do {
+			_fuelAmount = _cursorTarget getVariable "FuelAmount";
+			
+			if (_fuelAmount >= 20) then {
+				_fuelAmount = _fuelAmount - 20;
+				_cursorTarget setVariable ["FuelAmount",_fuelAmount,true];
+				player removeMagazine "ItemJerrycanEmpty";
+				player addMagazine "ItemJerrycan";
 			} else {
 				_qty = _qty - 1;
 			};

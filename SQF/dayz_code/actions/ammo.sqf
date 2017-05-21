@@ -1,9 +1,9 @@
 private ["_array","_vehicle","_weapon","_turret","_ammo","_text","_magazines","_ammoType"];
 
-_array = _this select 3;
-_vehicle = _array select 0;
-_weapon = _array select 1;
-_turret = _array select 2;
+//_array = _this select 3;
+_vehicle = _this select 0;
+_weapon = _this select 1;
+_turret = _this select 2;
 _ammo = "";
 _text = [];
 

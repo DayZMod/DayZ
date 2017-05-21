@@ -8,7 +8,7 @@ class BearTrap_DZ : TrapItems {
 	model = "\dayz_equip\models\bear_trap.p3d";
 
 	script = "beartrap"; // compiled script variable name (used by server side loop)
-	initState = 0; // initial armed state
+	initState = 0; // initial armed state (>0 is not currently working)
 	singleUse = 0;
 
 	class Eventhandlers {
@@ -122,7 +122,7 @@ class TrapBearTrapFlare : TrapItems {
 	vehicleClass = "Fortifications";
 
 	script = "beartrapflare"; // compiled script variable name (used by server side loop)
-	initState = 1; // initial armed state
+	initState = 0; // initial armed state (>0 is not currently working)
 	singleUse = 1; // gets replaced by BearTrap_DZ due to animation issues
 
 	class Eventhandlers {
@@ -171,7 +171,7 @@ class TrapBearTrapSmoke : TrapItems {
 	vehicleClass = "Fortifications";
 
 	script = "beartrapsmoke"; // compiled script variable name (used by server side loop)
-	initState = 1; // initial armed state
+	initState = 0; // initial armed state (>0 is not currently working)
 	singleUse = 1; // gets replaced by BearTrap_DZ due to animation issues
 
 	class Eventhandlers {
@@ -220,7 +220,7 @@ class Trap_Cans : TrapItems {
 	vehicleClass = "Fortifications";
 
 	script = "tripcans"; // compiled script variable name (used by server side loop)
-	initState = 1; // initial armed state
+	initState = 0; // initial armed state (>0 is not currently working)
 	singleUse = 0;
 
 	class Eventhandlers {
@@ -269,7 +269,7 @@ class TrapTripwireFlare : TrapItems {
 	vehicleClass = "Fortifications";
 
 	script = "tripflare"; // compiled script variable name (used by server side loop)
-	initState = 1; // initial armed state
+	initState = 0; // initial armed state (>0 is not currently working)
 	singleUse = 0;
 
 	class Eventhandlers {
@@ -318,8 +318,8 @@ class TrapTripwireGrenade : TrapItems {
 	vehicleClass = "Fortifications";
 
 	script = "tripgrenade"; // compiled script variable name (used by server side loop)
-	initState = 1; // initial armed state
-	singleUse = 1;
+	initState = 0; // initial armed state (>0 is not currently working)
+	singleUse = 0; //Trap can now be rearmed with another grenade
 
 	class Eventhandlers {
 		init = "['init', _this select 0] spawn tripgrenade;";
@@ -367,8 +367,8 @@ class TrapTripwireSmoke : TrapItems {
 	vehicleClass = "Fortifications";
 
 	script = "tripsmoke"; // compiled script variable name (used by server side loop)
-	initState = 1; // initial armed state
-	singleUse = 1;
+	initState = 0; // initial armed state (>0 is not currently working)
+	singleUse = 0; //Trap can now be rearmed with another smoke
 
 	class Eventhandlers {
 		init = "['init', _this select 0] spawn tripsmoke;";
