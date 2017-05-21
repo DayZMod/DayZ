@@ -28,6 +28,7 @@ class CfgLoot
 		#define ItemBloodbagEmpty emptyBloodBag
 		
 		// General groups
+		#include "Groups\Alternatives.hpp"
 		#include "Groups\Ammo.hpp"
 		#include "Groups\AmmoBox.hpp"
 		#include "Groups\Attachments.hpp"

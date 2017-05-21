@@ -37,6 +37,7 @@ class ItemHatchetBroken : ItemCore
 {
 	scope = public;
 	
+	model = "\dayz_equip\models\hatchet.p3d";
 	picture = "\dayz_equip\textures\equip_hatchet_CA.paa";
 	displayName = $STR_name_ItemHatchetBroken;
 	descriptionShort = $STR_desc_ItemHatchetBroken;
