@@ -113,7 +113,7 @@ class DZ_British_ACU : Bag_Base_EP1
 	picture = "\ca\weapons_baf\data\UI\backpack_BAF_CA.paa";
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
 	transportMaxWeapons = 3;
-	transportMaxMagazines = 18;
+	transportMaxMagazines = 20;
 	class eventHandlers
 	{
 		init="[(_this select 0),'CfgVehicles','DZ_British_ACU'] execVM '\z\addons\dayz_code\init\object_BackpackAction.sqf';";
