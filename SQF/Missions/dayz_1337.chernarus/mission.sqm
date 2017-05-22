@@ -41,10 +41,10 @@ class Mission
 			class Vehicles
 			{
 				items=100;
-#define PLRDEF position[]={-18700,0,25800};azimut=0;side="WEST";vehicle="Survivor1_DZ";skill=0.6;init="this enableSimulation false;this allowDamage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";player="PLAY CDG";
+#define PLRDEF position[]={(-18697 - (random 3000)),0,(25815 - (random 3000))};azimut=0;side="WEST";vehicle="Survivor1_DZ";skill=0.6;init="this enableSimulation false;this allowDamage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";player="PLAY CDG";
 				class Item0{id=0;PLRDEF};
 				class Item1{
-					position[]={-18700,0,25800};
+					position[]={(-18697 - (random 3000)),0,(25815 - (random 3000))};
 					azimut=0;
 					id=0;
 					side="WEST";
