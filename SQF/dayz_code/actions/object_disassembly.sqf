@@ -39,7 +39,7 @@ _entry = configFile >> "CfgVehicles" >> _upgrade;
 r_interrupt = false;
 
 _disassemblyParts = [] + (getArray (_entry >> "Disassembly" >> "removedParts"));
-_disassemblyReturnChance = [] + (getNumber (_entry >> "Disassembly" >> "removedChance"));
+_disassemblyReturnChance = getNumber (_entry >> "Disassembly" >> "removedChance");
 
 for "_i" from 1 to 20 do {
     _parent = inheritsFrom _entry;
