@@ -28,7 +28,6 @@ class CfgLoot
 		#define ItemBloodbagEmpty emptyBloodBag
 		
 		// General groups
-		#include "Groups\Alternatives.hpp"
 		#include "Groups\Ammo.hpp"
 		#include "Groups\AmmoBox.hpp"
 		#include "Groups\Attachments.hpp"
@@ -37,6 +36,7 @@ class CfgLoot
 		#include "Groups\Trash.hpp"
 		#include "Groups\Consumable.hpp"
 		#include "Groups\ConsumableItems.hpp"
+		#include "Groups\Fuel.hpp"
 		#include "Groups\Parts.hpp"
 		
 		// Points of interest
