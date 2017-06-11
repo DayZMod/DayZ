@@ -1,4 +1,4 @@
-private ["_item","_type","_hasHarvested","_knifeArray","_PlayerNear","_isListed","_activeKnife","_text","_dis","_sfx","_qty","_string"];
+private ["_item","_type","_hasHarvested","_knifeArray","_PlayerNear","_isListed","_activeKnife","_text","_dis","_sfx","_qty","_string","_finished"];
 
 if (dayz_actionInProgress) exitWith {
 	localize "str_player_actionslimit" call dayz_rollingMessages;
@@ -34,11 +34,13 @@ if ((count _knifeArray > 0) and !_hasHarvested) then {
 	_isListed = isClass (configFile >> "CfgSurvival" >> "Meat" >> _type);
 	_text = getText (configFile >> "CfgVehicles" >> _type >> "displayName");
 
-	player playActionNow "Medic";
 	_dis=10;
 	_sfx = "gut";
 	[player,_sfx,0,false,_dis] call dayz_zombieSpeak;
 	[player,_dis,true,(getPosATL player)] call player_alertZombies;
+	
+	_finished = ["Medic",1] call fn_loopAction;
+	if (!_finished) exitWith {};
 
 	// Added Nutrition-Factor for work
 	["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
@@ -59,7 +61,6 @@ if ((count _knifeArray > 0) and !_hasHarvested) then {
 	
 	["knives",0.2] call fn_dynamicTool;
 	
-	uiSleep 6;
 	_string = format[localize "str_success_gutted_animal",_text,_qty];
 	closeDialog 0;
 	uiSleep 0.02;

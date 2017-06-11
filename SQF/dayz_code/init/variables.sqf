@@ -148,7 +148,6 @@ dayz_resetSelfActions = {
 	s_player_fire = -1;
 	s_player_cook = -1;
 	s_player_boil = -1;
-	s_player_fireout = -1;
 	s_player_packtent = -1;
 	s_player_packtentinfected = -1;
 	s_player_fillfuel = -1;
@@ -235,7 +234,6 @@ r_antiB_done = false;
 r_antiD_done = false;
 carryClick = false;
 dayz_actionInProgress = false;
-dayz_workingInprogress = false;
 
 //player warming up vars
 //heatpack
@@ -510,8 +508,6 @@ if (!isDedicated) then {
 	dayzState = -1;
 	dayz_onBack = "";
 	dayz_fishingInprogress = false;
-	dayz_siphonFuelInProgress = false;
-	dayz_salvageInProgress = false;
 	lastSpawned = diag_tickTime;
 	lastSepsis = 0;
 	NORRN_dropAction = -1;

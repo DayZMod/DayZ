@@ -233,18 +233,6 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 			s_player_boil = -1;
 		};
 	};
-	
-//	Not needed.
-/*
-	if(_cursorTarget == dayz_hasFire) then {
-		if ((s_player_fireout < 0) && !(_cursorTarget call isInflamed) && (player distance _cursorTarget < 3)) then {
-			s_player_fireout = player addAction [localize "str_actions_self_06", "\z\addons\dayz_code\actions\fire_pack.sqf",_cursorTarget, 0, false, true];
-		};
-	} else {
-		player removeAction s_player_fireout;
-		s_player_fireout = -1;
-	};
-*/
 
 	//remove Own objects
 	if (_ownerID == _myCharID) then {
@@ -437,8 +425,6 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	s_player_cook = -1;
 	player removeAction s_player_boil;
 	s_player_boil = -1;
-	player removeAction s_player_fireout;
-	s_player_fireout = -1;
 	player removeAction s_player_packtent;
 	s_player_packtent = -1;
 	player removeAction s_player_packtentinfected;

@@ -11,8 +11,8 @@ dayz_actionInProgress = true;
 
 private ["_cursorTarget","_item","_classname","_requiredTools","_requiredParts","_upgrade","_upgradeConfig",
 "_upgradeDisplayname","_onLadder","_isWater","_upgradeParts","_startUpgrade","_missingPartsConfig","_textMissingParts","_dis",
-"_sfx","_ownerID","_objectID","_objectUID","_alreadyupgrading","_dir","_weapons","_magazines","_backpacks","_object",
-"_objWpnTypes","_objWpnQty","_countr","_itemName","_vector","_playerNear"];
+"_sfx","_ownerID","_objectID","_objectUID","_dir","_weapons","_magazines","_backpacks","_object",
+"_objWpnTypes","_objWpnQty","_countr","_itemName","_vector","_playerNear","_finished"];
 
 _cursorTarget = _this select 3;
 
@@ -66,7 +66,7 @@ _startUpgrade = true;
 if(_isWater or _onLadder) exitWith {dayz_actionInProgress = false; localize "str_CannotUpgrade" call dayz_rollingMessages;};
 
 // Make sure no other players are nearby
-_playerNear = {isPlayer _x} count (_cursorTarget nearEntities ["CAManBase",10]) > 1;
+_playerNear = {isPlayer _x} count (([_cursorTarget] call FNC_GetPos) nearEntities ["CAManBase",10]) > 1;
 if (_playerNear) exitWith {dayz_actionInProgress = false; localize "str_pickup_limit_5" call dayz_rollingMessages;};
 
 // lets check player has requiredTools for upgrade
@@ -98,24 +98,17 @@ if (_playerNear) exitWith {dayz_actionInProgress = false; localize "str_pickup_l
 
 //Does object have a upgrade option.
 if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
-	//play animation
-	player playActionNow "Medic";
 	_dis = 20;
 	_sfx = "tentpack";
 	[player,_sfx,0,false,_dis] call dayz_zombieSpeak;
 	[player,_dis,true,(getPosATL player)] call player_alertZombies;
-
+	
+	_finished = ["Medic",1] call fn_loopAction;
+	//Double check player did not drop required parts
+	if (!_finished or (isNull _cursorTarget) or ({!(_x in magazines player)} count _upgradeParts > 0)) exitWith {};
+	
 	// Added Nutrition-Factor for work
 	["Working",0,[100,15,5,0]] call dayz_NutritionSystem;
-	
-	//Upgrade
-	_alreadyupgrading = _cursorTarget getVariable["alreadyupgrading",0];
-
-	if (_alreadyupgrading == 1) exitWith { localize "str_upgradeInProgress" call dayz_rollingMessages; };
-	
-	_cursorTarget setVariable["alreadyupgrading",1,true];
-
-	uiSleep 0.03;
 
 	//Get location and direction of old item
 	_dir = round getDir _cursorTarget;
@@ -133,9 +126,6 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	_weapons = getWeaponCargo _cursorTarget;
 	_magazines = getMagazineCargo _cursorTarget;
 	_backpacks = getBackpackCargo _cursorTarget;
-	
-	//replay animation
-	player playActionNow "Medic";
 	
 	//remove old tent
 	PVDZ_obj_Destroy = [_objectID,_objectUID];
@@ -189,8 +179,6 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 		_object addbackpackcargoGlobal [_x,(_objWpnQty select _countr)];
 		_countr = _countr + 1;
 	} count _objWpnTypes;
-	
-	uiSleep 3;
 	
 	//publish new tent
 	PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],[_weapons,_magazines,_backpacks]];

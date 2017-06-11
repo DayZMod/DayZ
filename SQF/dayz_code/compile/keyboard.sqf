@@ -81,7 +81,7 @@ if (isNil "keyboard_keys") then {
         force_dropBody = true;
     };
     _interrupt = {
-        r_interrupt = true;
+		r_interrupt = true;
     };
     // TODO: left/right, when gear open: onKeyDown = "[_this,'onKeyDown',0,107,0,107] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
     _noise = {
@@ -112,13 +112,6 @@ if (isNil "keyboard_keys") then {
             };
             _handled = true;
         };
-        // tents and stash construction
-        _object = player getVariable ["constructionObject", objNull];
-        if (!isNull _object) then {
-            _dir = getDir _object - 3;
-            _object setDir _dir;
-            _handled = true;
-        };
         dayz_dodge = true;
     };
     _build_right = {
@@ -134,23 +127,17 @@ if (isNil "keyboard_keys") then {
             };
             _handled = true;
         };
-        // tents and stash construction
-        _object = player getVariable ["constructionObject", objNull];
-        if (!isNull _object) then {
-            _dir = getDir _object + 3;
-            _object setDir _dir;
-            _handled = true;
-        };
         dayz_dodge = true;
     };
 
     _build_camOnOff = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_buildCamera.sqf";
 
     _build_str8OnOff = {
+		r_interrupt = true;
+		
         if (0 != count Dayz_constructionContext) then {
             Dayz_constructionContext set [ 5, !(Dayz_constructionContext select 5) ];
             _handled = true;
-            r_interrupt = true;
         };
 		
 		if (animationState player in ["bunnyhopunarmed","bunnyhoprifle"]) then {
