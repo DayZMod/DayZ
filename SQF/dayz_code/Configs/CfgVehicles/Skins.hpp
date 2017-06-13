@@ -1,14 +1,3 @@
-
-class Man; //includes animals and zombies
-class CAManBase: Man //includes all skins except animals
-{
-	class TalkTopics;
-	class HitPoints
-	{
-		class HitHead;
-		class HitBody;
-	};
-};
 class Civilian: CAManBase
 {
 	rarityUrban = -1;
