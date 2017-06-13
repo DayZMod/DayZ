@@ -8,6 +8,17 @@ class FNFAL_DZ : FN_FAL
 	
 	modes[] = {Single};
 	
+	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\Reload",1,1,35}; // new sound
+	drySound[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\Dry",0.01,1,10};            // new sound
+	class Single : Single                                                                   // new sound
+	{                                                                                       // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\FNFAL_s1",5,1,1500};      // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\FNFAL_s2",5,1,1500};      // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\FNFAL_s3",5,1,1500};      // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\FNFAL_s4",5,1,1500};      // new sound
+		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};           // new sound
+	};                                                                                      // new sound
+	
 	distanceZoomMin = 300;
 	distanceZoomMax = 300;
 	
@@ -55,4 +66,15 @@ class FNFAL_Holo_DZ : FNFAL_CCO_DZ
 class FNFAL_ANPVS4_DZ : FN_FAL_ANPVS4
 {
 	modes[] = {Single};
+	
+	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\Reload",1,1,35}; // new sound
+	drySound[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\Dry",0.01,1,10};            // new sound
+	class Single : Single                                                                   // new sound
+	{                                                                                       // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\FNFAL_s1",5,1,1500};      // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\FNFAL_s2",5,1,1500};      // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\FNFAL_s3",5,1,1500};      // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\FNFAL\sounds\FNFAL_s4",5,1,1500};      // new sound
+		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};           // new sound
+	};                                                                                      // new sound
 };
