@@ -85,9 +85,11 @@ if (_maxlocalspawned > 0) then { _spawnZedRadius = _spawnZedRadius * 3; };
 				//Baisc loot check
 				if ((_dis < 125) and (_dis > 30) and !_inVehicle and _checkLoot) then {
 					_serverTime = serverTime;
+					//Building refresh rate
+					_lootRefreshTimer = getNumber (configFile >> "CfgLoot" >> "Buildings" >> (typeOf _x) >> "lootRefreshTimer");
 					_looted = (_x getVariable ["looted",_serverTime]);
 					_age = _serverTime - _looted;
-					if ((_age == 0) or (_age > 900)) then { 
+					if ((_age == 0) or (_age > _lootRefreshTimer)) then { 
 						_x setVariable ["looted",_serverTime,!_islocal];
 						_x call building_spawnLoot;
 						if (!(_x in dayz_buildingBubbleMonitor)) then {
