@@ -152,8 +152,9 @@ class Land_smd_hospoda_mesto : Office // pub HOSTINEC
 	lootPos[] = {{3.05957,-2.43555,-5.18104},{2.88574,5.32422,-5.19056},{3.27246,1.20703,-5.19001},{1.75098,-1.28906,-5.17993},{-7.48535,-4.07617,-1.2291},{2.63184,-1.78516,-1.2417}};
 };
 
-class LAND_Tav_panelak: Land_Panelak{}; // for white Tavi variant
-class LAND_Tav_panelak2: Land_Panelak2{}; // for white Tavi variant
-class LAND_Hotel: Land_smd_hotel{};  // for white Tavi variant
+//Members already defined.
+//class LAND_Tav_panelak: Land_Panelak{}; // for white Tavi variant
+//class LAND_Tav_panelak2: Land_Panelak2{}; // for white Tavi variant
+//class LAND_Hotel: Land_smd_hotel{};  // for white Tavi variant
 
 // ALT-MAP Support
