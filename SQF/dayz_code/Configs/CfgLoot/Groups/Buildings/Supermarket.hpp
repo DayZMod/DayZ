@@ -36,7 +36,7 @@ Supermarket[] =
 	{Loot_MAGAZINE,		3,		ItemBandage},
 	{Loot_MAGAZINE,		2,		ItemPainkiller},
 	{Loot_MAGAZINE,		2,		ItemAntibacterialWipe},
-	{Loot_MAGAZINE,		5,		equip_nails},
+	{Loot_MAGAZINE,		2,		equip_nails},
 	
 	//Groups
 	{Loot_GROUP,		70,		Consumable},
