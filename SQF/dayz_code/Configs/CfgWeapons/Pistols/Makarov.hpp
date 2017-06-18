@@ -33,8 +33,11 @@ class Makarov_SD_DZ : MakarovSD
 	
 	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\Makarov\sounds\Reload",1,1,35}; // new sound
 	drySound[] = {"\z\addons\dayz_communityweapons\Makarov\sounds\Dry",0.01,1,10};            // new sound
-	begin1[] = {"\z\addons\dayz_communityweapons\M9\sounds\M9SD_s1",1,1,50};                  // new sound
-	soundBegin[] = {"begin1",1};                                                              // new sound
+	begin1[] = {"\z\addons\dayz_communityweapons\Makarov\sounds\Maka_SD_s1",5,1,50};          // new sound
+	begin2[] = {"\z\addons\dayz_communityweapons\Makarov\sounds\Maka_SD_s2",5,1,50};          // new sound
+	begin3[] = {"\z\addons\dayz_communityweapons\Makarov\sounds\Maka_SD_s3",5,1,50};          // new sound
+	begin4[] = {"\z\addons\dayz_communityweapons\Makarov\sounds\Maka_SD_s4",5,1,50};          // new sound
+	soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};                 // new sound
 	
 	class ItemActions
 	{
