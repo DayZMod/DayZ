@@ -8,6 +8,5 @@ class jsrs_sfx_Treebird
 	sing4[]  = {"\z\addons\dayz_communityassets\sounds\Environment\SFX-Animals\TreeBird04",0.12938,1,55,0.080000,15,30,90};
 	sing5[]  = {"\z\addons\dayz_communityassets\sounds\Environment\SFX-Animals\TreeBird05",0.12938,1,55,0.080000,15,30,90};
 	sing6[]  = {"\z\addons\dayz_communityassets\sounds\Environment\SFX-Animals\TreeBird06",0.12938,1,60,0.080000,15,30,90};
-	sing7[]  = {"\z\addons\dayz_communityassets\sounds\Environment\SFX-Animals\TreeBird07",0.12938,1,60,0.080000,15,30,90};
-	random[] = {"sing1","sing2","sing3","sing4","sing5","sing6","sing7"};
+	random[] = {"sing1","sing2","sing3","sing4","sing5","sing6"};
 };
