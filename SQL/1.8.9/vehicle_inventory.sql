@@ -60,7 +60,7 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (3, 'Weapon', 'ItemMachete', 1, 1, 0.6500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (3, 'Weapon', 'MeleeBaseBallBatNails', 1, 1, 0.6500000000);
 
-INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (3, 'Magazine', 'PipeBomb', 1, 2, 0.8500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (3, 'Magazine', 'PipeBomb', 1, 1, 0.1500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (3, 'Magazine', 'FoodCanFrankBeans', 1, 2, 0.2500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (3, 'Magazine', 'ItemSodaRabbit', 1, 2, 0.5000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (3, 'Magazine', 'FoodCanFraggleos', 1, 2, 0.2500000000);
