@@ -71,6 +71,7 @@ class RscDisplayGear
 			w = 0;
 			h = 0;
 			text = "";
+			onMouseButtonClick = "call player_forceSave;";
 		};
 		
 		// Cannot be removed due to crash or something is dependend on it
@@ -89,6 +90,7 @@ class RscDisplayGear
 			w = 0;
 			h = 0;
 			text = "";
+			onMouseButtonClick = "call player_forceSave;";
 		};
 		
 		// Cannot be removed due to crash or something is dependent on it
@@ -314,8 +316,9 @@ class RscDisplayGear
 					x = -2;
 					style = 2048;
 					onSetFocus = "[_this,'onFocus'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
-					onButtonClick = "false call dz_fn_meleeMagazines; [_this,'onLBListSelChanged'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
+					onButtonClick = "false call dz_fn_meleeMagazines; [_this,'onLBListSelChanged'] execVM '\z\addons\dayz_code\system\handleGear.sqf'; call player_forceSave;";
 					text = "&lt;";
+					onMouseButtonClick = "call player_forceSave;";
 				};
 				
 				class Available_items : RscIGUIListNBox
@@ -334,6 +337,7 @@ class RscDisplayGear
 					onLBSelChanged = "[_this,'onLBSelChanged'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
 					onLBListSelChanged = "[_this,'onLBListSelChanged'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
 					onKillFocus = "[_this,'onKillFocus'] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
+					onMouseButtonClick = "call player_forceSave;";
 					x = 0;
 					y = 0;
 					//w = 0.46;
@@ -349,8 +353,9 @@ class RscDisplayGear
 					idc = 147;
 					x = -2;
 					onSetFocus = "[_this,""onFocus""] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
-					onButtonClick = "false call dz_fn_meleeMagazines; [_this,""onLBListSelChanged""] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
+					onButtonClick = "false call dz_fn_meleeMagazines; [_this,""onLBListSelChanged""] execVM '\z\addons\dayz_code\system\handleGear.sqf'; call player_forceSave;";
 					text = ">";
+					onMouseButtonClick = "call player_forceSave;";
 				};
 			};
 		};
@@ -526,6 +531,7 @@ class RscDisplayGear
 					h = 0.174;
 					onMouseEnter = "if ((DayZ_onBack != """") && (dayz_onBack in MeleeWeapons)) then {mouseOverCarry = true;} else {mouseOverCarry = false;};";
 					onMouseExit = "mouseOverCarry = false;";
+					onMouseButtonDblClick = "call player_forceSave;";
 					colorActive[] = {1,1,1,1};
 					colorBackground[] = {0.74,0.74,0.74,0.2}; // has no effect
 					colorBackgroundSelected[] = {0.74,0.74,0.74,0.8}; // has no effect
@@ -538,6 +544,7 @@ class RscDisplayGear
 					y = 0;
 					w = 0.064;
 					h = 0.085;
+					onMouseButtonDblClick = "call player_forceSave;";
 				};
 				
 				class CA_Gear_slot_item2 : CA_Gear_slot_item1
@@ -659,6 +666,7 @@ class RscDisplayGear
 					h = 0.085;
 					colorBackground[] = {0.69,0.86,0.38,0.2};
 					colorBackgroundSelected[] = {0.5,0.58,0.38,0.8};
+					onMouseButtonDblClick = "call player_forceSave;";
 				};
 				
 				class CA_Gear_slot_handgun_item2 : CA_Gear_slot_handgun_item1
@@ -733,6 +741,7 @@ class RscDisplayGear
 					h = 0.085;
 					colorBackground[] = {0.88,0.8,0.66,0.2};
 					colorBackgroundSelected[] = {0.49,0.43,0.29,0.8};
+					onMouseButtonDblClick = "call player_forceSave;";
 				};
 				
 				class CA_Gear_slot_inventory2 : CA_Gear_slot_inventory1
@@ -843,6 +852,7 @@ class RscDisplayGear
 					h = 0.16;
 					colorBackground[] = {0.46,0.46,0.4,0.2};
 					colorBackgroundSelected[] = {0.46,0.46,0.4,0.8};
+					onMouseButtonDblClick = "call player_forceSave;";
 				};
 				
 				class CA_Gear_slot_special2 : CA_Gear_slot_special1
