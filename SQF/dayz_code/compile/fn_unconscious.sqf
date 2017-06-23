@@ -1,9 +1,14 @@
 // (c) facoptere@gmail.com, licensed to DayZMod for the community
 
-private ["_count","_anim","_weapon","_sprint","_stance","_transmove","_start","_timeout","_short","_sandLevel","_veh","_disableHdlr","_speed"];
+private ["_count","_anim","_weapon","_sprint","_stance","_transmove","_start","_timeout","_short","_sandLevel","_veh","_speed"];
 
 if (r_player_unconsciousInProgress) exitWith {};
 r_player_unconsciousInProgress = true;
+r_player_unconsciousInputDisabled = true;
+//this is like this in order to release the current user input
+disableUserInput true; disableUserInput true;
+disableUserInput false; disableUserInput false;
+disableUserInput true; disableUserInput true;
 
 _start = diag_tickTime;
 _timeout = abs r_player_timeout;
@@ -20,10 +25,9 @@ player setVariable ["NORRN_unconscious", r_player_unconscious, true];
 _sandLevel = ctrlPosition ((uiNamespace getVariable 'DAYZ_GUI_waiting') displayCtrl 1400);
 //diag_log [(diag_tickTime - _start) < _timeout , !r_player_unconscious , alive player  ];
 
-// delay so that the character does not stop before falling:
-_disableHdlr = [] spawn { uiSleep 2; disableUserInput true; r_player_unconsciousInputDisabled = true; };
-
-player playAction "CanNotMove";
+if (player == vehicle player) then {
+	player playAction "CanNotMove";
+};
 "dynamicBlur" ppEffectEnable true;"dynamicBlur" ppEffectAdjust [2]; "dynamicBlur" ppEffectCommit 0;
 "colorCorrections" ppEffectEnable true;"colorCorrections" ppEffectEnable true;"colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, 0.1],  [1, 1, 1, 0.0]];"colorCorrections" ppEffectCommit 0;
 if (dayz_soundMuted) then {call player_toggleSoundMute;}; // hide icon before fadeSound
@@ -69,21 +73,26 @@ player setVariable ["USEC_isCardiac",r_player_cardiac, true];
 player setVariable["medForceUpdate",true, true];
 
 r_player_unconsciousInProgress = false;
-terminate _disableHdlr;
-waituntil {scriptDone _disableHdlr};
-disableUserInput false;
-r_player_unconsciousInputDisabled = false;
+
 4 cutRsc ["default", "PLAIN",1];
 
-[nil, player, rSWITCHMOVE, "AinjPpneMstpSnonWnonDnon"] call RE;
-player SWITCHMOVE "AinjPpneMstpSnonWnonDnon";
-PVDZ_plr_SwitchMove = [player,"AinjPpneMstpSnonWnonDnon"];
-publicVariableServer "PVDZ_plr_SwitchMove"; //Needed to execute switchMove on server machine. rSwitchMove only executes on other clients
-
-player playMoveNow "AmovPpneMstpSnonWnonDnon_healed";
+if (player == vehicle player) then {
+	// "AinjPpneMstpSnonWnonDnon" rolls from back first (jarring transition if player was knocked out prone or fell to stomach)
+	[nil, player, rSWITCHMOVE, "AinjPpneMstpSnonWnonDnon"] call RE;
+	player SWITCHMOVE "AinjPpneMstpSnonWnonDnon";
+	PVDZ_plr_SwitchMove = [player,"AinjPpneMstpSnonWnonDnon"];
+	publicVariableServer "PVDZ_plr_SwitchMove"; //Needed to execute switchMove on server machine. rSwitchMove only executes on other clients
+	player playMoveNow "AmovPpneMstpSnonWnonDnon_healed";
+};
 
 10 fadeSound 1;
 "dynamicBlur" ppEffectAdjust [0]; "dynamicBlur" ppEffectCommit 5;
 "colorCorrections" ppEffectAdjust [1, 1, 0, [1, 1, 1, 0.0], [1, 1, 1, 1],  [1, 1, 1, 1]];"colorCorrections" ppEffectCommit 5;
+
+//once more to be safe
+disableUserInput false; disableUserInput false;
+disableUserInput true; disableUserInput true;
+disableUserInput false; disableUserInput false;
+r_player_unconsciousInputDisabled = false;
 
 //diag_log [ __FILE__, diag_tickTime, "done" ];
