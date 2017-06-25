@@ -15,6 +15,8 @@ _uid = getPlayerUID player;
 
 _keepOnSlope = 0 == (getNumber (configFile >> "CfgVehicles" >> _classname >> "canbevertical"));
 
+//_damageArray = (getArray (configFile >> "CfgVehicles" >> _classname >> "damageValues"));
+
 Dayz_constructionContext set [ 4, false ]; // Stop the construction mode, cf. player_build.sqf
 
 //if (count Dayz_constructionContext < 5) then { Dayz_constructionContext set [ 5, false ]; // };
@@ -61,8 +63,8 @@ if (_build) then {
         _variables set [ count _variables, ["ownerArray", [getPlayerUID player]]];
 		_variables set [ count _variables, ["padlockCombination", _passcode]];
 		
-		_object removeAllEventHandlers "HandleDamage";
-		_object addeventhandler ["HandleDamage",{ diag_log (_this); if ((_this select 4) == 'PipeBomb') then { _this call fnc_Obj_FenceHandleDam; } else { false }; } ];
+		//_object removeAllEventHandlers "HandleDamage";
+		//_object addeventhandler ["HandleDamage",{ [_this,_damageArray] call fnc_Obj_FenceHandleDam; } ];
     };
     _object setVariable ["characterID",dayz_characterID, true];
 
@@ -76,7 +78,7 @@ if (_build) then {
     };
 	
 /*    //set fuel, Later use Generator
-    if (_object isKindOf "Generator_DZ") then {
+    if (typeOf _object == "Generator_DZ") then {
     diag_log format["Object: %1, Fuel: %2",_object,fuel _object];
         if (local _object) then {
             _object setFuel 0;
@@ -93,11 +95,8 @@ if (_build) then {
 	
     diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
 
-    cutText [format [localize "str_build_01",_text], "PLAIN DOWN"];
-    r_action_count = 0;
-} else {
-    r_action_count = 0;
-	
+    format[localize "str_build_01",_text] call dayz_rollingMessages;
+} else {	
     if ((!isNil "_ghost") and {(!isNull _ghost)}) then { deleteVehicle _ghost; };
     
 	{
@@ -105,5 +104,5 @@ if (_build) then {
             player addMagazine _x;
         };
     } foreach _items;
-    cutText [format [localize "str_build_failed_02",_text], "PLAIN DOWN"];
+    format[localize "str_build_failed_02",_text] call dayz_rollingMessages;
 };

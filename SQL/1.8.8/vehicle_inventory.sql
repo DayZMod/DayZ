@@ -137,7 +137,6 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (8, 'Magazine', 'equip_gauzepackaged', 2, 2, 0.5000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (8, 'Magazine', 'equip_gauze', 2, 2, 0.5000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (8, 'Magazine', 'bloodTester', 1, 1, 0.5000000000);
-INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (8, 'Magazine', 'transfusionKit', 1, 1, 0.5000000000);
 
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (8, 'Backpack', 'DZ_Patrol_Pack_EP1', 1, 1, 1.0000000000);
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -153,7 +152,7 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (9, 'Magazine', '1Rnd_SMOKE_GP25', 1, 1, 0.2500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (9, 'Magazine', '30Rnd_545x39_AK', 2, 4, 1.0000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (9, 'Magazine', 'ItemJerrycan', 1, 1, 0.2500000000);
-INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (9, 'Backpack', 'DZ_Czech_Vest_Puch', 1, 1, 0.8500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (9, 'Backpack', 'DZ_Czech_Vest_Pouch', 1, 1, 0.8500000000);
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/

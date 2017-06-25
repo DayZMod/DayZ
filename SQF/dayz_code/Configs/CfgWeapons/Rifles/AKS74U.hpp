@@ -33,8 +33,8 @@ class AKS74U_Kobra_SD_DZ : AKS_74_UN_kobra
 	
 	magazines[] =
 	{
-		30Rnd_545x39_AKSD,
-		30Rnd_545x39_AK
+	//	30Rnd_545x39_AK,
+		30Rnd_545x39_AKSD
 	};
 	
 	class ItemActions

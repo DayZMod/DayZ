@@ -161,8 +161,12 @@ sched_townGenerator = {
 							if ("" != (_x select 1)) then {
 								_position = _x select 2;
 								_blocked = false;
-								{if (_position distance _x < 150) exitWith {_blocked = true;};} forEach dayz_townGeneratorBlackList;
-								if (!_blocked && dayz_townGenerator) then {
+								{
+									if (_position distance _x < 150) exitWith {
+										_blocked = true;
+									};
+								} forEach dayz_townGeneratorBlackList;
+								if (!_blocked) then {
 									_object = (_x select 1) createVehicleLocal [0,0,0];
 									_object setDir (_x select 3);
 									_object setPos [_position select 0,_position select 1,0];

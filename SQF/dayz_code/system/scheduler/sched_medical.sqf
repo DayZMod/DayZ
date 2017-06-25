@@ -3,7 +3,7 @@
 #include "scheduler.hpp"
 
 sched_medical_slow = {  // 10 seconds
-	if (abs (r_player_blood - (player getVariable["USEC_BloodQty", 12000])) > 120) then {
+	if (abs (r_player_blood - (player getVariable["USEC_BloodQty", r_player_bloodTotal])) > 120) then {
  	//Do not global send
 		player setVariable["USEC_BloodQty", r_player_blood, false];
 		player setVariable["medForceUpdate", true, false];
@@ -18,23 +18,17 @@ sched_medical_slow = {  // 10 seconds
 sched_medical_init = { [ []spawn{} ] };
 sched_medical = { // 1 second
 	HIDE_FSM_VARS
-	private ["_method","_unconHdlr"];
+	private "_unconHdlr";
 	_unconHdlr = _this select 0;
 
-	if (r_player_blood == 12000) then {
+	if (r_player_blood == r_player_bloodTotal) then {
 		r_player_foodstack = 0;
 	};
 
 	//r_player_unconscious = getVariable ["NORRN_unconscious", true];
 	
-	_method = switch (true) do {
-		case (dayz_lastDamageSource != "none" && diag_tickTime - dayz_lastDamageTime < 30): {dayz_lastDamageSource}; //Major event takes priority for cause of death
-		case (dayz_lastMedicalSource != "none" && diag_tickTime - dayz_lastMedicalTime < 10): {dayz_lastMedicalSource}; //Starve, Dehyd, Sick
-		default {"bled"}; //No other damage sources in last 30 seconds
-	};
-	
 	if (r_player_blood <= 0) then {
-		[dayz_sourceBleeding, _method] spawn player_death;
+		[dayz_sourceBleeding,"find"] call player_death;
 	};
 
 	if (!canStand player) then { // be consistant with player_updateGui.sqf
@@ -128,28 +122,21 @@ sched_medical_effects = {
 };
 
 sched_medical_effectsSlow = {
-	// every 10 seconds: diziness using slow shakecam, to handle pain and lack of water
+	// every 10 seconds
 	HIDE_FSM_VARS
 
-    if ((r_player_inpain or dayz_thirst >= SleepWater) and !r_player_unconscious and (1 > random 9) and (0 == player getVariable["startcombattimer",0])) then {
-        _blurTask = [] spawn {
-            _strength = 0.5 + (random 1);
-            _duration = 8 + (random 10);
-            enableCamShake true;
-			
-			//[posCoef, vertCoef, horzCoef, bankCoef, interpolation]
-            setCamShakeParams [0.02, 0.05, 0.1, 0.3, true];
-            addCamShake [_strength, _duration, 0.4];
-            playSound "breath_1";
-			
-			//Lets make sure the spawn ends 1 sec after the _duration timer this should provide a smooth transtion rather then a snap to focus.
-            sleep _duration + 1;
-        };
-    };
-
-	if (r_player_infected and !r_player_unconscious and 1 > random 2 and ((vehicle player == player and speed player < 5) or (vehicle player != player))) then {
-		[player,"cough",1,false] call dayz_zombieSpeak;
-		addCamShake [2, 1, 25];
+	if (!r_player_unconscious && (r_player_infected or r_player_inpain)) then {
+		//Original pain shake was stronger [2, 1, 25]
+		//Low blood still uses strong shake in init_medical.sqf
+		addCamShake [1, 1, 20];
+		
+		if (!r_player_infected) then {
+			playSound "breath_1"; //In pain
+		} else {
+			if (1 > random 2 && (speed player < 5 or {vehicle player != player})) then {
+				[player,"cough",1,false] call dayz_zombieSpeak;
+			};
+		};
 	};
 
 	objNull

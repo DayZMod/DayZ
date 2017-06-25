@@ -217,17 +217,17 @@ class CfgAmmo
 	
 	class Bat_Swing_Ammo : Melee
 	{
-		hit = 1;
+		hit = 2;
 	};
 	
 	class BatBarbed_Swing_Ammo : Melee
 	{
-		hit = 2;
+		hit = 3;
 	};
 	
 	class BatNailed_Swing_Ammo : Melee
 	{
-		hit = 2;
+		hit = 3;
 	};
 	
 	
@@ -257,7 +257,7 @@ class CfgAmmo
 	
 	class tranquiliser_bolt : BulletBase
 	{
-		hit = 0.1;  					
+		hit = 1;  					
 		indirectHit = 0;				
  		indirectHitRange = 0;			 			
 		maxRange = 100;

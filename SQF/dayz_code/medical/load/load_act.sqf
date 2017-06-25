@@ -12,21 +12,20 @@ r_action = false;
 r_action_load = false;
 call fnc_usec_medic_removeActions;
 
-_dragger removeAction NORRN_loadWoundedAction;
+_wounded removeAction NORRN_loadWoundedAction;
 
 if ((_vcl emptyPositions "cargo") > 0) then
 {
 	detach _wounded;
 	_dragger switchMove "";
 	_wounded setVariable ["NORRN_LoadVcl", _vcl, true];
-	sleep 1;
+	uiSleep 1;
 	//["PVDZ_drg_RLact",_wounded] call broadcastRpcCallAll;
 	[_wounded] execVM "\z\addons\dayz_code\medical\load\load_wounded.sqf";
 	PVDZ_drg_RLact = _wounded;
 	publicVariable "PVDZ_drg_RLact";
 	player removeAction NORRN_dropAction;
 } else {
-	//cutText [localize "str_dragnospace", "PLAIN DOWN"];//hint "No space left in vehicle";
-	localize "str_dragnospace" call dayz_rollingMessages;
+	localize "str_dragnospace" call dayz_rollingMessages;//hint "No space left in vehicle";
 };
 NORRN_load_wounded_action = true;

@@ -68,12 +68,6 @@ if (isNil "keyboard_keys") then {
             _handled = true;
         };};
     };
-    _turbo = {
-        if (vehicle player == player) then {
-            [objNull, player, rSwitchMove,""] call RE;
-            _handled = true;
-        };  
-    };
     _forcesave = {
         dayz_lastCheckBit = diag_ticktime;
         call player_forceSave;
@@ -87,7 +81,7 @@ if (isNil "keyboard_keys") then {
         force_dropBody = true;
     };
     _interrupt = {
-        r_interrupt = true;
+		r_interrupt = true;
     };
     // TODO: left/right, when gear open: onKeyDown = "[_this,'onKeyDown',0,107,0,107] execVM '\z\addons\dayz_code\system\handleGear.sqf'";
     _noise = {
@@ -99,7 +93,7 @@ if (isNil "keyboard_keys") then {
     _journal = {
         if (!dayz_isSwimming and !dialog) then {
             [player,4,true,(getPosATL player)] call player_alertZombies;
-            createDialog "horde_journal_front_cover";
+            createDialog 'horde_journal_front_cover';
         };
         _handled = true;
     };
@@ -118,13 +112,6 @@ if (isNil "keyboard_keys") then {
             };
             _handled = true;
         };
-        // tents and stash construction
-        _object = player getVariable ["constructionObject", objNull];
-        if (!isNull _object) then {
-            _dir = getDir _object - 3;
-            _object setDir _dir;
-            _handled = true;
-        };
         dayz_dodge = true;
     };
     _build_right = {
@@ -140,24 +127,19 @@ if (isNil "keyboard_keys") then {
             };
             _handled = true;
         };
-        // tents and stash construction
-        _object = player getVariable ["constructionObject", objNull];
-        if (!isNull _object) then {
-            _dir = getDir _object + 3;
-            _object setDir _dir;
-            _handled = true;
-        };
         dayz_dodge = true;
     };
 
     _build_camOnOff = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_buildCamera.sqf";
 
     _build_str8OnOff = {
+		r_interrupt = true;
+		
         if (0 != count Dayz_constructionContext) then {
             Dayz_constructionContext set [ 5, !(Dayz_constructionContext select 5) ];
             _handled = true;
-            r_interrupt = true;
         };
+		
 		if (animationState player in ["bunnyhopunarmed","bunnyhoprifle"]) then {
 			//Fixes invisible weapon switch glitch if double tapping vault with no weapon in hands
 			_handled = true;
@@ -167,6 +149,7 @@ if (isNil "keyboard_keys") then {
     _block = {
         _handled = true;
     };
+	
     _addArray = {
         {
             keyboard_keys set [_x, _this select 1];
@@ -195,7 +178,6 @@ if (isNil "keyboard_keys") then {
     [actionKeys "User20", _journal] call _addArray;
     [actionKeys "Diary", _journal] call _addArray;
     [actionKeys "NetworkStats", _journal] call _addArray;
-    //[actionKeys "Turbo", _turbo] call _addArray;
 	[[DIK_F1], _muteSound] call _addArray;
     //[[DIK_F4, DIK_TAB, DIK_DELETE], _forcesave] call _addArray;
     //[[DIK_F4, DIK_RMENU, DIK_LMENU,DIK_LSHIFT,DIK_RSHIFT,DIK_ESCAPE], _forcesave2] call _addArray;
@@ -210,6 +192,7 @@ if (isNil "keyboard_keys") then {
         DIK_F8,DIK_F7,DIK_F6,DIK_F5,DIK_F4,
         DIK_F3,DIK_F2,DIK_0,DIK_9,
         DIK_8,DIK_7,DIK_6,DIK_5,DIK_4], _block] call _addArray;
+	diag_log "keyboard_keys reset";
 };
 
 if (r_player_unconsciousInputDisabled) exitWith {true};

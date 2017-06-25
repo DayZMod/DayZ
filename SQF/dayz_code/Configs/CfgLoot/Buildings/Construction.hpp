@@ -42,3 +42,20 @@ class Misc_Cargo1Bo_military : Construction
 {
 	lootPos[] = {{0.35,-1.66,-1.09},{-0.06,0.27,-1.09},{-0.34,1.84,-1.09}};
 };
+// ALT-MAP Support 
+class land_jzd_bezstrechy : Construction // multi-story concrete bars on windows
+{
+	zedPos[] = {{6.62451,1.67969,-5.22504},{5.60889,6.54102,-5.10962}};
+	lootPos[] = {{6.62451,1.67969,-5.22504},{1.70166,3.48828,-5.22504},{5.60889,6.54102,-5.10962},{-5.21094,7.38477,-5.10962}};
+};
+class land_f_b1 : Construction // one story garage and ramp
+{
+	zedPos[] = {{2.6582,-3.80225,-3.08734},{3.87988,2.10889,-3.1054}};
+	lootPos[] = {{-3.18848,-0.702148,-2.21533},{-2.42188,-4.46582,-2.21533}};
+};
+class land_x_skladiste_low_tex : Construction // concrete, arc roof, borken doors
+{
+	zedPos[] = {{12.5835,2.05273,-2.73836},{-10.9365,2.72217,-2.85032}};
+	lootPos[] = {{12.5835,2.05273,-2.73836},{-2.45117,8.69385,-1.62253},{-10.9365,2.72217,-2.85032},{-9.50781,-9.54053,-2.85108},{-12.1572,-6.07861,-2.8506}};
+};
+// ALT-MAP Support 

@@ -5,7 +5,7 @@ class CfgLoot
 	class Groups
 	{
 		//Not renamed yet
-		#define DZ_BP_VestPouch DZ_Czech_Vest_Puch
+		#define DZ_BP_VestPouch DZ_Czech_Vest_Pouch
 		#define DZ_BP_Patrol DZ_Patrol_Pack_EP1
 		#define DZ_BP_Assault DZ_Assault_Pack_EP1
 		#define DZ_BP_Survival DZ_TK_Assault_Pack_EP1
@@ -36,6 +36,7 @@ class CfgLoot
 		#include "Groups\Trash.hpp"
 		#include "Groups\Consumable.hpp"
 		#include "Groups\ConsumableItems.hpp"
+		#include "Groups\Fuel.hpp"
 		#include "Groups\Parts.hpp"
 		
 		// Points of interest
@@ -113,6 +114,7 @@ class CfgLoot
 			};
 			
 			lootChance = 0;
+			lootRefreshTimer = 900;
 			lootGroup = "";
 			lootPos[] = {};
 		};
@@ -137,5 +139,6 @@ class CfgLoot
 		#include "Buildings\Toilet.hpp"
 		#include "Buildings\Roaming.hpp"
 		#include "Buildings\Misc.hpp"
+		//#include "Buildings\Zero.hpp"
 	};
 };

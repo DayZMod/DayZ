@@ -3,7 +3,7 @@ Military[] =
 	//Pistols
 	{Loot_WEAPON,		3,		Makarov_DZ},
 	{Loot_WEAPON,		2,		M1911_DZ},
-	{Loot_WEAPON,		1,		M9_DZ},
+//Mill Special -	{Loot_WEAPON,		1,		M9_DZ},
 	{Loot_WEAPON,		1,		G17_DZ},
 	
 	//Submachineguns
@@ -14,17 +14,17 @@ Military[] =
 	//Assault rifles
 	{Loot_WEAPON,		2,		M16A2_DZ},
 	//{Loot_WEAPON,		1,		M16A2_GL_DZ}, //added to attachments system
-	{Loot_WEAPON,		1.5,	M16A4_DZ},
-	{Loot_WEAPON,		0.5,	M4A1_DZ},
+//Mill Special -	{Loot_WEAPON,		1.5,	M16A4_DZ},
+//Mill Special -	{Loot_WEAPON,		0.5,	M4A1_DZ},
 //	{Loot_WEAPON,		3,		G36C_DZ},
 	{Loot_WEAPON,		3,		AK74_DZ},
-	{Loot_WEAPON,		3,		AKS74U_DZ},
+//Mill Special -	{Loot_WEAPON,		3,		AKS74U_DZ},
 	{Loot_WEAPON,		1,		AKM_DZ},
-	{Loot_WEAPON,		1,		SA58_DZ},
+//Mill Special -	{Loot_WEAPON,		1,		SA58_DZ},
 	
 	//Shotguns
 	{Loot_WEAPON,		2,		Remington870_DZ},
-	{Loot_WEAPON,		1,		M1014_DZ},
+//Mill Special -	{Loot_WEAPON,		0.5,		M1014_DZ},
 	
 	//Tools
 	{Loot_TOOL,			3,		Binocular},
@@ -86,13 +86,17 @@ MilitarySpecial[] =
 	{Loot_WEAPON,		1,		SA58_RIS_DZ},
 	
 	//Shotguns
-	{Loot_WEAPON,		1,		Remington870_DZ},
-	{Loot_WEAPON,		2,		M1014_DZ},
+	{Loot_WEAPON,		2,		Remington870_DZ},
+	{Loot_WEAPON,		1,		M1014_DZ},
 	
 	//Machine guns
 	{Loot_WEAPON,		1,		RPK74_DZ},
 	{Loot_WEAPON,		0.5,	UK59_DZ},
 //	{Loot_WEAPON,		0.5,	PKM_DZ},
+	{Loot_WEAPON,		0.5,	M249_DZ},
+	
+//Sniper Rifles
+	{Loot_WEAPON,		0.2,	SVD_DZ},
 	
 	//Tools
 	{Loot_TOOL,			4,		Binocular},
@@ -101,6 +105,8 @@ MilitarySpecial[] =
 	{Loot_TOOL,			1.3,	ItemGPS},
 	{Loot_TOOL,			4,		ItemMap},
 	{Loot_TOOL,			2,		ItemEtool},
+	{Loot_TOOL,			0.5,	Binocular_Vector},
+	{Loot_MAGAZINE,		0.5,	PipeBomb},
 	
 	//Backpacks
 	{Loot_BACKPACK,		3,		DZ_BP_Alice},
@@ -119,13 +125,13 @@ MilitarySpecial[] =
 	{Loot_CONTAINER,	2,		DZ_AmmoBoxRU, AmmoBoxCZ1, 7, 14},	//7.62x39
 	{Loot_CONTAINER,	1,		DZ_AmmoBoxRU, AmmoBoxCZ2, 2, 5},	//7.62x54R
 //	{Loot_CONTAINER,	0.5,	DZ_AmmoBoxRU, AmmoBoxRU3, 3, 7},	//7.62x54R
-	{Loot_CONTAINER,	0.5,	DZ_ExplosivesBoxRU, AmmoBoxRU4, 5, 15},	//GP-25
-	{Loot_CONTAINER,	0.5,	DZ_ExplosivesBoxRU, AmmoBoxRU5, 3, 7},	//Grenades
+	{Loot_CONTAINER,	0.5,	DZ_ExplosiveBoxRU, AmmoBoxRU4, 5, 15},	//GP-25
+	{Loot_CONTAINER,	0.5,	DZ_ExplosiveBoxRU, AmmoBoxRU5, 3, 7},	//Grenades
 	
 	//Other
 	{Loot_MAGAZINE,		3,		FoodMRE},
 	{Loot_MAGAZINE,		2,		ItemSandbag},
-	{Loot_MAGAZINE,		0.5,	PipeBomb},
+	{Loot_TOOL,			0.5,	NVGoggles},
 	{Loot_PILE,			15,		AmmoMilitaryLow, 1, 4},
 	{Loot_PILE,			10,		AmmoMilitaryHigh, 1, 3},
 	{Loot_GROUP,		2,		AttachmentsGeneric},

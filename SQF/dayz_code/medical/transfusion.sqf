@@ -1,9 +1,10 @@
-private ["_bloodAmount","_unit","_blood","_lowBlood","_injured","_inPain","_lastused","_hasTransfusionKit","_animState","_started","_finished","_timer","_i","_isMedic","_isClose","_duration","_rhVal","_bloodBagArrayNeeded","_BBneeded","_bbselect","_bloodBagNeeded","_badBag","_wholeBag","_bagFound","_bagToRemove","_forceClose","_bloodType","_rh","_bloodBagArray","_bbarray_length","_bloodBagWholeNeeded","_haswholebag","_r","_bloodTestdone","_sentRequest"];// bleed.sqf
+private ["_bloodAmount","_unit","_blood","_lowBlood","_injured","_inPain","_hasTransfusionKit","_animState","_started","_finished","_timer","_i","_isMedic","_isClose","_duration","_rhVal","_bloodBagArrayNeeded","_BBneeded","_bbselect","_bloodBagNeeded","_badBag","_wholeBag","_bagFound","_bagToRemove","_forceClose","_bloodType","_rh","_bloodBagArray","_bbarray_length","_bloodBagWholeNeeded","_haswholebag","_r","_bloodTestdone","_sentRequest"];// bleed.sqf
 //Get receving unit
 _unit = (_this select 3) select 0;
 
 //Does the player have a transfusionKit
 //_hasTransfusionKit = "transfusionKit" in magazines player;
+if (time - dayz_lastTransfusion > 120) then {dayz_bloodBagHumanity = 300;}; //Reset humanity reward to full value after two minutes 
 
 //Get receving units blood value
 _blood = _unit getVariable ["USEC_BloodQty", 0];
@@ -81,6 +82,8 @@ if (_BBneeded) then {
 	};
 };
 
+if (dayz_classicBloodBagSystem) then {_wholeBag = false; _badBag = false;};
+
 call fnc_usec_medic_removeActions;
 r_action = false;
 
@@ -100,7 +103,7 @@ _i = 0;
 _r = 0;
 _humanityAwarded = 0;
 
-_bloodAmount = if (!_wholeBag) then { 12000/*Full bloodbag*/ } else { 4000 /*Whole blood only gives 4k*/ };
+_bloodAmount = if (!_wholeBag) then { r_player_bloodTotal/*Full bloodbag*/ } else { 4000 /*Whole blood only gives 4k*/ };
 
 while {r_doLoop} do {
 	_animState = animationState player;
@@ -123,6 +126,7 @@ while {r_doLoop} do {
 			};
 		} else {
 			_bagToRemove = if (_wholeBag) then { _bloodBagWholeNeeded } else { _bbselect };
+			if (dayz_classicBloodBagSystem) then {_bagToRemove = "ItemBloodbag";};
 			if (_bagToRemove in magazines player) then {
 				_bagFound = true;
 			};
@@ -161,8 +165,8 @@ while {r_doLoop} do {
 					// 25 points to be givin upto a maximum of 300 points if the player stays for the full duration
 					//This should be better this way to keep calculus simple and prevent people getting points for giving blood transfusions to healthy players (and less humanity for only very small amounts of blood)
 					//Pulled from pullrequest from ILoveBeans
-					if ( _humanityAwarded < 300 ) then {
-						_humanityAwarded = _humanityAwarded + 25 ; 
+					if (_humanityAwarded < dayz_bloodBagHumanity) then {
+						_humanityAwarded = _humanityAwarded + 25; 
 					};
 				};
 			} else {
@@ -188,8 +192,9 @@ while {r_doLoop} do {
 
 	if (_blood >= r_player_bloodTotal or _bloodAmount == 0) then {
 		diag_log format ["TRANSFUSION: completed blood transfusion successfully (_i = %1)", _i];
-		//cutText [localize "str_actions_medical_transfusion_successful", "PLAIN DOWN"];
 		localize "str_actions_medical_transfusion_successful" call dayz_rollingMessages;
+		dayz_bloodBagHumanity = dayz_bloodBagHumanity / 2; //Diminish humanity reward for subsequent bloodbags. Resets to full reward after two minutes. 
+		dayz_lastTransfusion = time;
 		//see Note 1
 		//[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_successful","PLAIN DOWN"] call RE;
 		if (!_badBag and _bagFound) then { [_humanityAwarded,0] call player_humanityChange; };
@@ -200,7 +205,6 @@ while {r_doLoop} do {
 
 	if (r_interrupt or !_isClose or _forceClose) then {
 		diag_log format ["TRANSFUSION: transfusion was interrupted (r_interrupt: %1 | distance: %2 (%3) | _i = %4)", r_interrupt, player distance _unit, _isClose, _i];
-		//cutText [localize "str_actions_medical_transfusion_interrupted", "PLAIN DOWN"];
 		localize "str_actions_medical_transfusion_interrupted" call dayz_rollingMessages;
 		//see Note 1
 		//[player,_unit,"loc",rTITLETEXT,localize "str_actions_medical_transfusion_interrupted","PLAIN DOWN"] call RE;

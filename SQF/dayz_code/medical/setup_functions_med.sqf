@@ -8,7 +8,7 @@ fnc_usec_damageHandle = {
 	_unit = _this select 0;
 	mydamage_eh1 = _unit addeventhandler ["HandleDamage",{_this call fnc_usec_damageHandler;} ];
 	mydamage_eh2 = _unit addEventHandler ["Fired", {_this call player_fired;}];
-	mydamage_eh3 = _unit addEventHandler ["Killed", {_id = [] spawn player_death;}];
+	mydamage_eh3 = _unit addEventHandler ["Killed", {[_this,"find"] call player_death;}];
 };
 
 fnc_usec_pitchWhine = {
@@ -27,26 +27,11 @@ fnc_usec_pitchWhine = {
 	};
 	r_pitchWhine = true;
 	[] spawn {
-		sleep 32;
+		uiSleep 32;
 		r_pitchWhine = false;
 	};
 };
 
-/*
-//Old system 1.8.6
-fnc_usec_damageUnconscious1 = {
-	private["_unit","_damage"];
-	_unit = _this select 0;
-	_damage = _this select 1;
-	
-	diag_log format["fnc_usec_damageUnconscious: %1,%2,%3",_unit,_damage, player];
-	
-	if (_unit == player) then {
-		r_player_timeout = 120 min (round((((random 2) max 0.1) * _damage) * 20));
-		r_player_unconscious = true;
-	};
-};
-*/
 fnc_usec_damageUnconscious = {
 	private["_unit","_damage"];
 	_unit = _this select 0;
@@ -56,7 +41,9 @@ fnc_usec_damageUnconscious = {
 	
 	_inVehicle = (vehicle _unit != _unit);
 	if (_unit == player) then {
-		r_player_timeout = 120 min (round((((random 2) max 0.1) * _damage) * 20));
+		if (r_player_timeout <= 0) then {
+			r_player_timeout = 120 min (round((((random 2) max 0.1) * _damage) * 20));
+		};
 		r_player_unconscious = true;
 		
 		player setVariable["medForceUpdate",true];
@@ -72,7 +59,7 @@ fnc_usec_damageUnconscious = {
 			if (r_player_unconscious) then {
 				_unit action ["eject", _veh];
 				waitUntil{((vehicle _this) != _this)};
-				sleep 1;
+				uiSleep 1;
 				_unit playActionNow "Die";
 			};
 		};
@@ -89,7 +76,8 @@ fnc_usec_bulletHit = {
 	if (!r_player_unconscious) then {
         "colorCorrections" ppEffectEnable true; "colorCorrections" ppEffectAdjust [1, 1.1, -0.02, [0.4,-0.2,-0.2, .04], [1,1,1,0],  [1,1,1, 0]]; "colorCorrections" ppEffectCommit 0;
         "dynamicBlur" ppEffectEnable true;"dynamicBlur" ppEffectAdjust [1]; "dynamicBlur" ppEffectCommit 0;
-        setCamShakeParams [0.05, 4, 1, 3, true]; addCamShake [5, 0.5, 25];
+        //setCamShakeParams [0.05, 4, 1, 3, true]; 
+		addCamShake [5, 0.5, 25];
         "colorCorrections" ppEffectAdjust [1, 1, 0, [0,0,0,0], [1, 1, 1, 1],  [1, 1, 1, 1]]; "colorCorrections" ppEffectCommit _commit;
         "dynamicBlur" ppEffectAdjust [0]; "dynamicBlur" ppEffectCommit _commit;
 	};
@@ -115,13 +103,6 @@ fnc_usec_medic_removeActions = {
 	} forEach r_action_targets;
 	r_player_actions = [];
 	r_action_targets = [];
-};
-
-fnc_usec_self_removeActions = {
-	{
-		player removeAction _x;
-	} forEach r_self_actions;
-	r_self_actions = [];
 };
 
 fnc_usec_calculateBloodPerSec = {
@@ -158,7 +139,6 @@ fnc_usec_calculateBloodPerSec = {
 					_time = ((_time - 900) max 1) min 900;
 					_bloodLossPerSec = _bloodLossPerSec + (_time / 450) + 1;
 					_bloodLossPerSec = _bloodLossPerSec - (_bloodLossPerSec % 1);
-					//hintSilent (format["SetupMedFNCS: Blood Level: %2/12000 bloodLossPerSec %1",_bloodLossPerSec,r_player_blood]);
 				} else {
 					r_player_Sepsis = [false, 0];
 					r_player_infected = true;
@@ -168,8 +148,8 @@ fnc_usec_calculateBloodPerSec = {
 			
 			if ((_time < 1) and (isNil "sepsisStarted")) then {
 			//if (isNil "sepsisStarted") then {
-				//cutText [localize "str_medical_sepsis_warning","PLAIN DOWN",5];
-				systemChat (localize "str_medical_sepsis_warning");
+				localize "str_medical_sepsis_warning" call dayz_rollingMessages;
+				//systemChat (localize "str_medical_sepsis_warning");
 				player setVariable ["sepsisStarted", _time];
 			};
 		};
@@ -249,11 +229,9 @@ fnc_usec_playerHandleBlood = {
 			if (_elapsedTime > _bleedTime) then {
 				r_player_injured = false;
 				_id = [player,player] execVM "\z\addons\dayz_code\medical\publicEH\medBandaged.sqf";
-				dayz_sourceBleeding = objNull;
-				call fnc_usec_resetWoundPoints;
 			};
 
-			_bloodDiff = r_player_blood - (player getVariable["USEC_BloodQty", 12000]);
+			_bloodDiff = r_player_blood - (player getVariable["USEC_BloodQty", r_player_bloodTotal]);
 			
 			if ((_bloodDiff >= 500) or (_bloodDiff <= -500)) then {
 				player setVariable["USEC_BloodQty",r_player_blood,true];
@@ -261,7 +239,7 @@ fnc_usec_playerHandleBlood = {
 			};
 			
 			
-			sleep 1;
+			uiSleep 1;
 		};
 	} else { // not bleeding
 		_bloodPerSec = [] call fnc_usec_calculateBloodPerSec;
@@ -270,7 +248,7 @@ fnc_usec_playerHandleBlood = {
 			r_player_blood = r_player_blood + _bloodPerSec;
 		};
 
-		_bloodDiff = r_player_blood - (player getVariable["USEC_BloodQty", 12000]);
+		_bloodDiff = r_player_blood - (player getVariable["USEC_BloodQty", r_player_bloodTotal]);
 
 
 		if ((_bloodDiff >= 500) or (_bloodDiff <= -500)) then {
@@ -296,6 +274,8 @@ fnc_usec_damageBleed = {
 	private["_wound","_modelPos","_point","_source"];
 	_unit = _this select 0;
 	_wound = _this select 1;
+	_point = objNull;
+	_source = objNull;
 	//_injury = _this select 2; // not used. damage% ???
 
 	if (isServer) exitWith{}; // no graphical effects on server!
@@ -359,14 +339,14 @@ fnc_usec_damageBleed = {
 				_point attachTo [_unit,_modelPos,_wound];
 			};
 
-			sleep 5;
+			uiSleep 5;
 
 			while {((_unit getVariable["USEC_injured",true]) and (alive _unit))} do {
 				scopeName "loop";
 				if (vehicle _unit != _unit) then {
 					BreakOut "loop";
 				};
-				sleep 1;
+				uiSleep 1;
 			};
 			deleteVehicle _source;
 			deleteVehicle _point;

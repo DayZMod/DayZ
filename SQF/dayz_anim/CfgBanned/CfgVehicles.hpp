@@ -945,6 +945,7 @@ class CfgVehicles {
 	class M113Ambul_UN_EP1: Banned {};
 	class M113_UN_EP1: Banned {};
 	class M113Ambul_TK_EP1: Banned {};
+	class M113_PMC: Banned {};
 	class M113_TK_EP1: Banned {};
 	class M2A2_EP1: Banned {};
 	class M2A3_EP1: Banned {};

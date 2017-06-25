@@ -1,18 +1,18 @@
 /*
-count player magazines with ammo count
-value = call player_countMagazines;
-return all player magazines with ammo count
+	count player magazines with ammo count
+	value = call player_countMagazines;
+	return all player magazines with ammo count
 */
+
 private ["_dialog","_created","_magazineArray"];
 disableSerialization;
-disableUserInput true;
 
 _dialog = findDisplay 106;
 _created = false;
 
 if ( isNull _dialog ) then {
-	//startLoadingScreen [""];
-	createGearDialog [player, "RscDisplayGear"];
+	//Load Minimal gearMenu
+	createGearDialog [player, "RscDisplayGearMinimal"];
 	_dialog = findDisplay 106;
 	_created = true;
 };
@@ -49,10 +49,30 @@ for "_i" from 122 to 129 do
 	};
 };
 
+/*
+//Very limited fncs
+	//backpack items
+	if ((typeOf (unitBackPack player)) != "") then {
+		_count = getNumber (configFile >> "CfgVehicles" >> (typeOf (unitBackpack Player)) >> "transportMaxMagazines");
+
+		for "_i" from 5000 to (5000 + _count) do {
+			_control = _dialog displayCtrl _i;
+			_item = gearSlotData _control;
+			_val = gearSlotAmmoCount _control;
+			_max = getNumber (configFile >> "CfgMagazines" >> _item >> "count");
+			if (_item != "") then {
+				if (_val != _max) then {
+					(_magazineArray select 1) set [count (_magazineArray select 1),[_item,_val]];
+				} else {
+					(_magazineArray select 1) set [count (_magazineArray select 1),_item];
+				};
+			};
+		};
+	};
+*/
+
 if ( _created ) then {
 	closeDialog 0;
-	//endLoadingScreen;
 };
 
-disableUserInput false;
 _magazineArray

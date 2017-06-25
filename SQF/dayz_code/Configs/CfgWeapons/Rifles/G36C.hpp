@@ -52,6 +52,7 @@ class G36C_DZ : G36C
 	{
 		Attachment_CCO = "G36C_CCO_DZ";
 		Attachment_Holo = "G36C_Holo_DZ";
+		Attachment_ACOG = "G36C_ACOG_DZ";
 		Attachment_Sup556 = "G36C_SD_DZ";
 	};
 };
@@ -64,14 +65,15 @@ class G36C_SD_DZ : G36_C_SD_eotech
 	
 	magazines[] =
 	{
-		30Rnd_556x45_G36SD,
-		30Rnd_556x45_G36
+	//	30Rnd_556x45_G36,
+		30Rnd_556x45_G36SD
 	};
 	
 	class Attachments
 	{
 		Attachment_CCO = "G36C_CCO_SD_DZ";
 		Attachment_Holo = "G36C_Holo_SD_DZ";
+		Attachment_ACOG = "G36C_ACOG_SD_DZ";
 	};
 	
 	class ItemActions

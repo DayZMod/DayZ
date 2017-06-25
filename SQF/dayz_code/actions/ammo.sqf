@@ -1,9 +1,9 @@
 private ["_array","_vehicle","_weapon","_turret","_ammo","_text","_magazines","_ammoType"];
 
-_array = _this select 3;
-_vehicle = _array select 0;
-_weapon = _array select 1;
-_turret = _array select 2;
+//_array = _this select 3;
+_vehicle = _this select 0;
+_weapon = _this select 1;
+_turret = _this select 2;
 _ammo = "";
 _text = [];
 
@@ -20,7 +20,7 @@ if (_ammo != "") then {
 	_vehicle removeMagazineTurret [_ammo,_turret];
 	_vehicle addMagazineTurret [_ammo,_turret];
 	player removeMagazine _ammo;
-	cutText [format [localize "str_player_ammo_successful",_ammoType], "PLAIN DOWN"];
+	format[localize "str_player_ammo_successful",_ammoType] call dayz_rollingMessages;
 } else {
-	cutText [format [localize "str_player_ammo_fail",_text], "PLAIN DOWN"];
+	format[localize "str_player_ammo_fail",_text] call dayz_rollingMessages;
 };

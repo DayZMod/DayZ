@@ -4,6 +4,7 @@ _wait = _this select 1;
 
 _humanity = (player getVariable["humanity",0]) + _change;
 player setVariable["humanity",_humanity,true];
+
 if (_change < 0) then { //non-bandit player can be "punished" in next "_wait" seconds w/o loosing humanity
 	if ((_humanity > -2000) and (_wait > 0)) then {
 //			player setVariable ["freeTarget",true,true];
@@ -30,6 +31,8 @@ _model = typeOf player;
 
 //if model will not be changed by humanity
 if !(_model in ["Survivor1_DZ","Survivor2_DZ","Survivor3_DZ","SurvivorW2_DZ","SurvivorW3_DZ","Bandit1_DZ","BanditW1_DZ"]) exitWith {};
+//don't switch model when in a vehicle (ejects player)
+if (vehicle player != player) exitWith {};
 
 //Not sure if this will work needs testing
 _isMen =		_model == "Survivor1_DZ" || _model == "Survivor2_DZ";

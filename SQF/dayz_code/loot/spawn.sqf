@@ -3,7 +3,7 @@ Spawns the specified loot definition at the specified location.
 
 Parameters:
 	array		Loot definition
-	vector		Loot position (AGL)
+	vector		Spawn position relative to world
 
 Return value:
 	object		Spawned vehicle.
@@ -54,7 +54,12 @@ switch (_lootInfo select 0) do
 		Debug_Assert(typeName (_lootInfo select 1) == typeName "" && { (_lootInfo select 1) != "" });
 		//Debug_Log(String_Format2("DEBUG: Loot_Spawn Weapon: %1 Position: %2", _lootInfo select 1, _this select 1));
 		
-		_vehicle setPos (_this select 1);
+		if (surfaceIsWater (_this select 1)) then {
+			_vehicle setPos (_this select 1);
+		} else {
+			_vehicle setPosATL (_this select 1);
+		};
+
 		INCREMENT_WEAPON_HOLDERS();
 		
 		_magazines = getArray (configFile >> "CfgWeapons" >> _lootInfo select 1 >> "magazines");
@@ -75,9 +80,22 @@ switch (_lootInfo select 0) do
 	//Spawn a single magazine
 	case Loot_MAGAZINE:
 	{
+		private "_item";
+		_item = _lootInfo select 1;
+		if (dayz_classicBloodBagSystem && _item in dayz_typedBags) then {
+			if (_item in ["bloodTester","bloodBagAPOS","bloodBagABPOS"]) then { // reduce ItemBloodBag output slightly since typed bags spawn in bulk
+				_item = ["ItemBandage","ItemPainkiller","ItemMorphine","ItemHeatPack","ItemAntibacterialWipe"] call BIS_fnc_selectRandom;
+			} else {
+				_item = "ItemBloodbag";
+			};
+		};
 		_vehicle = createVehicle ["WeaponHolder", _this select 1, [], 0, "CAN_COLLIDE"];
-		_vehicle addMagazineCargoGlobal [_lootInfo select 1, 1];
-		_vehicle setPos (_this select 1);
+		_vehicle addMagazineCargoGlobal [_item, 1];
+		if (surfaceIsWater (_this select 1)) then {
+			_vehicle setPos (_this select 1);
+		} else {
+			_vehicle setPosATL (_this select 1);
+		};
 		INCREMENT_WEAPON_HOLDERS();
 	};
 	
@@ -97,10 +115,18 @@ switch (_lootInfo select 0) do
 		_p = Vector_SetZ(_p, Vector_Z(_p) + Vector_Z(getPosATL _vehicle));
 		
 		_vehicle setVectorDirAndUp [Vector_DOWN, _d];
-		_vehicle setPos _p;
+		if (surfaceIsWater _p) then {
+			_vehicle setPos _p;
+		} else {
+			_vehicle setPosATL _p;
+		};
 		#else
 		_vehicle = createVehicle [_lootInfo select 1, _this select 1, [], 0, "CAN_COLLIDE"];
-		_vehicle setPos (_this select 1);
+		if (surfaceIsWater (_this select 1)) then {
+			_vehicle setPos (_this select 1);
+		} else {
+			_vehicle setPosATL (_this select 1);
+		};
 		#endif
 	};
 	
@@ -110,7 +136,11 @@ switch (_lootInfo select 0) do
 		_spawnCount = (_lootInfo select 2) + floor random ((_lootInfo select 3) - (_lootInfo select 2) + 1);
 		_vehicle = createVehicle ["WeaponHolder", _this select 1, [], 0, "CAN_COLLIDE"];
 		Loot_InsertCargo(_vehicle, _lootInfo select 1, _spawnCount);
-		_vehicle setPos (_this select 1);
+		if (surfaceIsWater (_this select 1)) then {
+			_vehicle setPos (_this select 1);
+		} else {
+			_vehicle setPosATL (_this select 1);
+		};
 		INCREMENT_WEAPON_HOLDERS();
 	};
 	
@@ -119,7 +149,11 @@ switch (_lootInfo select 0) do
 	{
 		_vehicle = createVehicle [_lootInfo select 1, _this select 1, [], 0, "CAN_COLLIDE"];
 		_vehicle setDir random 360;
-		_vehicle setPos (_this select 1);
+		if (surfaceIsWater (_this select 1)) then {
+			_vehicle setPos (_this select 1);
+		} else {
+			_vehicle setPosATL (_this select 1);
+		};
 	};
 	
 	//Spawn a container and populate it with loot from a given group
@@ -134,7 +168,11 @@ switch (_lootInfo select 0) do
 		Loot_InsertCargo(_vehicle, _lootInfo select 2, _spawnCount);
 		
 		_vehicle setDir random 360;
-		_vehicle setPos (_this select 1);
+		if (surfaceIsWater (_this select 1)) then {
+			_vehicle setPos (_this select 1);
+		} else {
+			_vehicle setPosATL (_this select 1);
+		};
 	};
 	
 	//Call a function which is assumed to return an object reference.
@@ -142,7 +180,13 @@ switch (_lootInfo select 0) do
 	{
 		_vehicle = call (_lootInfo select 1);
 		if ((typeName _vehicle) != "OBJECT") exitWith {};
-		if (!isNull _vehicle) then { _vehicle setPos (_this select 1); };
+		if (!isNull _vehicle) then {
+			if (surfaceIsWater (_this select 1)) then {
+				_vehicle setPos (_this select 1);
+			} else {
+				_vehicle setPosATL (_this select 1);
+			};
+		};
 	};
 };
 

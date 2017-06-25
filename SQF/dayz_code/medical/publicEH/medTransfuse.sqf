@@ -61,19 +61,17 @@ while {r_doLoop} do {
 		};
 	};
 	
-	//If the players blood is equals too or aboue 12000 stop or if the blood mimic amount reaches 0 end the loop.
+	//If the players blood is equals too or above r_player_bloodTotal stop or if the blood mimic amount reaches 0 end the loop.
 	_blood = _unit getVariable ["USEC_BloodQty", 0];
 	
 	//diag_log format["Player Blood %1 - %2, - %3, - %4",_blood,_unit,_medic,(_unit getVariable "USEC_BloodQty")];
 	
 	if (_blood >= r_player_bloodTotal or _amount == 0) then {
-		//cutText [localize "str_actions_medical_transfusion_successful", "PLAIN DOWN"];
 		localize "str_actions_medical_transfusion_successful" call dayz_rollingMessages;
 		r_doLoop = false;
 	};
 	
 	if (r_interrupt) then {
-		//cutText [localize "str_actions_medical_transfusion_interrupted", "PLAIN DOWN"];
 		localize "str_actions_medical_transfusion_interrupted" call dayz_rollingMessages;
 		r_doLoop = false;
 	};

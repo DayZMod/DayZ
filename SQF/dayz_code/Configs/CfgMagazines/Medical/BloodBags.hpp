@@ -71,8 +71,6 @@ class bloodBagOPOS : bloodBagBase
 	descriptionShort = $STR_BLD_desc_bloodBagOPOS;
 };
 
-
-
 //Whole blood bags -- Can only be obtained by taking blood from another player.
 class wholeBloodBagBase : bloodBagBase
 {
@@ -202,6 +200,24 @@ class emptyBloodBag : CA_Magazine
 		class Use
 		{
 			text = $STR_BLD_take;
+			script = "spawn player_useMeds;";
+		};
+	};
+};
+
+//Classic blood bag
+class ItemBloodbag: CA_Magazine
+{
+	scope = public;
+	count = 1;
+	type = 256;
+	displayName = "$STR_EQUIP_NAME_16";
+	model = "\dayz_equip\models\bloodbag.p3d";
+	picture = "\dayz_equip\textures\equip_bloodbag_ca.paa";
+	descriptionShort = "$STR_EQUIP_DESC_16";
+	class ItemActions {
+		class use {
+			text = $STR_BLD_use;
 			script = "spawn player_useMeds;";
 		};
 	};

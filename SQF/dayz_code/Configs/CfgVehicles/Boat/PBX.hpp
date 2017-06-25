@@ -10,11 +10,12 @@ class PBX: RubberBoat {
 	maxspeed = 68;
 	model = "\ca\water\PBX";
 	picture = "\ca\water\data\ico\pbx_CA.paa";
-	scope = 2;
+	scope = public;
 	side = 0;
 	transportsoldier = 3;
-	typicalcargo[] = {};
+	typicalCargo[] = {};
 	class TransportMagazines {};
+	class TransportWeapons {};
 	class Library {
 		libtextdesc = "The PBX is a Combat Rubber Craft very similar to the CRRC in design. It is intended to be used for maritime raids and infiltration, as well as riverine operations.";
 	};

@@ -1,6 +1,6 @@
 class ItemWorkBench : CA_Magazine
 {
-	scope = 2;
+	scope = public;
 	count = 1;
 	type = 256;
 	displayName = $STR_BLD_name_ItemWorkBench;//"Work Bench (Packed)"
@@ -12,7 +12,7 @@ class ItemWorkBench : CA_Magazine
 	class ItemActions {
 		class Build {
 			text = $STR_BLD_build_ItemWorkBench;//"place WorkBench"
-			script = "; ['ItemWorkBench','Build'] spawn player_build; r_action_count = r_action_count + 1;";
+			script = "; ['ItemWorkBench','Build'] spawn player_build;";
 			require[] = {};
 			consume[] = {"ItemWorkBench"};
 			create = "WorkBench";

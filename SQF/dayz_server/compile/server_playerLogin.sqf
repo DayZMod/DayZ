@@ -14,7 +14,7 @@ if (isNil "sm_done") exitWith { diag_log ("Login cancelled, server is not ready.
 
 _inventory = [];
 _backpack = [];
-_survival = [0,0,0];
+_survival = [0,0,0,0];
 _model = "";
 
 if (_playerID == "") then {
@@ -75,6 +75,12 @@ if ((_primary select 0) == "ERROR") exitWith {
     diag_log format ["LOGIN RESULT: Exiting, failed to load _primary: %1 for player: %2 ",_primary,_playerID];
 };
 
+/*
+	{
+		diag_log format["%1 - %2",_forEachIndex,_x];
+	} foreach _primary;
+*/
+
 //Process request
 _newPlayer = _primary select 1;
 _isNew = count _primary < 6; //_result select 1;
@@ -113,7 +119,7 @@ if (!_isNew) then {
 
 };
 
-_isHiveOk = if (_hiveVer >= dayz_hiveVersionNo) then {true} else {false}; //EDITED
+_isHiveOk = (_hiveVer >= dayz_hiveVersionNo); //EDITED
 
 PVCDZ_plr_Login = [_charID,_inventory,_backpack,_survival,_isNew,dayz_versionNo,_model,_isHiveOk,_newPlayer];
 (owner _playerObj) publicVariableClient "PVCDZ_plr_Login";
@@ -133,7 +139,7 @@ if (_endMission) exitwith {
 {_x setDamage 1} count dayz_choppedTrees;
 
 //Record Player Login/LogOut
-[_playerID,_charID,1,_playerName] call dayz_recordLogin;
+[_playerID,_charID,2,(_playerObj call fa_plr2str),((getPosATL _playerObj) call fa_coor2str)] call dayz_recordLogin;
 
 PVCDZ_plr_PlayerAccepted = [_playerName,diag_ticktime];
 (owner _playerObj) publicVariableClient "PVCDZ_plr_PlayerAccepted";

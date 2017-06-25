@@ -1,4 +1,4 @@
-private ["_unit","_blood","_lowBlood","_injured","_inPain","_lastused","_animState","_started","_finished","_timer","_i","_isMedic","_isClose","_duration","_rhVal","_bloodBagArrayNeeded","_BBneeded","_bbselect","_bloodBagNeeded","_badBag","_wholeBag","_bagFound","_bagToRemove","_forceClose","_bloodType","_rh","_bloodBagArray","_bbarray_length","_bloodBagWholeNeeded","_haswholebag","_r"];
+private ["_unit","_blood","_lowBlood","_injured","_inPain","_animState","_started","_finished","_timer","_i","_isMedic","_isClose","_duration","_rhVal","_bloodBagArrayNeeded","_BBneeded","_bbselect","_bloodBagNeeded","_badBag","_wholeBag","_bagFound","_bagToRemove","_forceClose","_bloodType","_rh","_bloodBagArray","_bbarray_length","_bloodBagWholeNeeded","_haswholebag","_r"];
 
 // bleed.sqf
 _unit = _this select 0;
@@ -8,7 +8,7 @@ _blood = _unit getVariable ["USEC_BloodQty", 0];
 _lowBlood = _unit getVariable ["USEC_lowBlood", false];
 _injured = _unit getVariable ["USEC_injured", false];
 _inPain = _unit getVariable ["USEC_inPain", false];
-_lastused = _unit getVariable ["LastTransfusion", time];
+if (time - dayz_lastSelfTransfusion <= 120) exitWith {localize "str_actions_medical_18" call dayz_rollingMessages;};
 
 call gear_ui_init;
 closeDialog 0;
@@ -43,6 +43,8 @@ if (_haswholebag) then {
 } else {
 	_badBag = true;
 };
+
+if (dayz_classicBloodBagSystem) then {_wholeBag = true; _badBag = false;};
 
 call fnc_usec_medic_removeActions;
 r_action = false;
@@ -80,11 +82,11 @@ while {r_doLoop and (_i < 12)} do {
 			};
 		} else {
 			if (_wholeBag) then {_bagToRemove = _bloodBagWholeNeeded; };
+			if (dayz_classicBloodBagSystem) then { _bagToRemove = _bagUsed; };
 			if (_bagToRemove in magazines player) then { _bagFound = true; };
 		};
 		if (!_bagFound) then {_forceClose = true;} else { player removeMagazine _bagToRemove;};
-		//cutText [localize "str_actions_medical_transfusion_start", "PLAIN DOWN"];
-		localize "str_actions_medical_transfusion_start"  call dayz_rollingMessages;
+		localize "str_actions_medical_transfusion_start" call dayz_rollingMessages;
 		_started = true;
 	};
 
@@ -121,7 +123,7 @@ while {r_doLoop and (_i < 12)} do {
 
 	if (((_blood >= r_player_bloodTotal) and !_badBag and _bagFound) or (_i == 12)) then {
 		diag_log format ["TRANSFUSION: completed blood transfusion successfully (_i = %1)", _i];
-		//cutText [localize "str_actions_medical_transfusion_successful", "PLAIN DOWN"];
+		dayz_lastSelfTransfusion = time;
 		localize "str_actions_medical_transfusion_successful" call dayz_rollingMessages;
 		r_doLoop = false;
 	};
@@ -130,12 +132,11 @@ while {r_doLoop and (_i < 12)} do {
 
 	if (r_interrupt or !_isClose or _forceClose) then {
 		diag_log format ["TRANSFUSION: transfusion was interrupted (r_interrupt: %1 | distance: %2 (%3) | _i = %4)", r_interrupt, player distance _unit, _isClose, _i];
-		//cutText [localize "str_actions_medical_transfusion_interrupted", "PLAIN DOWN"];
 		localize "str_actions_medical_transfusion_interrupted" call dayz_rollingMessages;
 		r_doLoop = false;
 	};
 
-	sleep 0.1;
+	uiSleep 0.1;
 };
 
 r_doLoop = false;

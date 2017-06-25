@@ -1,3 +1,5 @@
+#include "CommonActions.hpp"
+
 class MetalGate_Base: Land_Gate_IndVar2_5
 {	
 	scope = 1;
@@ -25,22 +27,11 @@ class MetalGate_Base: Land_Gate_IndVar2_5
 		};
 	};
 	class UserActions {
-		class OpenDoors {
-			displayNameDefault = $STR_DN_OUT_O_DOOR_DEFAULT;
-			displayName = $STR_DN_OUT_O_DOOR;
-			position = "DoorL";
-			radius = 3;
-			onlyForPlayer = 0;
-			condition = "this animationPhase ""DoorR"" < 0.5";
-			statement = "this animate [""DoorR"", 1];this animate [""DoorL"", 1]";
-		};
-		
-		class CloseDoors : OpenDoors {
-			displayNameDefault = $STR_DN_OUT_C_DOOR_DEFAULT;
-			displayName = $STR_DN_OUT_C_DOOR;
-			condition = "this animationPhase ""DoorR"" >= 0.5";
-			statement = "this animate [""DoorR"", 0];this animate [""DoorL"", 0]";
-		};
+		class OpenDoors {ACTION_OPEN_DOORS};
+		class CloseDoors {ACTION_CLOSE_DOORS};
+		class Upgrade {ACTION_UPGRADE};
+		class Maintenance {ACTION_MAINTENANCE};
+		class Disassembly {ACTION_DISASSEMBLY};
 	};
 	
 	actionBegin1 = "OpenDoors";
@@ -57,13 +48,15 @@ class MetalGate_Base: Land_Gate_IndVar2_5
 		requiredParts[] = {"ItemMetalSheet","ItemScrews"};
 	};
 	class eventHandlers {
-		HandleDamage = "if ((_this select 4) == 'PipeBomb') then {_this call fnc_Obj_handleDam;} else { false };";
+		HandleDamage = "this call fnc_Obj_handleDam;";
 	};
 };
 class MetalGate_ghost: MetalGate_Base
 {	
 	displayName = $STR_BLD_name_MetalGate_1_ghost;//"Metal Gate (Ghost)"
 	model = "z\addons\dayz_buildings\models\gates\gate1_metal_dzam_ghost.p3d";
+	class UserActions {};
+	delete Disassembly;
 };
 class MetalGate_foundation: MetalGate_Base
 {	
@@ -77,7 +70,12 @@ class MetalGate_foundation: MetalGate_Base
 	};
 	class Disassembly {
 		requiredTools[] = {"ItemEtool"};
-	};	
+	};
+	class UserActions {
+		class Upgrade {ACTION_UPGRADE};
+		class Maintenance {ACTION_MAINTENANCE};
+		class Disassembly {ACTION_DISASSEMBLY};
+	};
 };
 class MetalGate_1: MetalGate_Base
 {	
@@ -91,7 +89,7 @@ class MetalGate_1: MetalGate_Base
 	};
 	class Disassembly {
 		requiredTools[] = {"ItemEtool"};
-	};	
+	};
 };
 class MetalGate_2: MetalGate_Base
 {	

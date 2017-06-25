@@ -8,4 +8,27 @@ class CamoNet_DZ: BuiltItems {
 	model = "\Ca\misc3\CamoNet_EAST";
 	scope = 2;
 	vehicleclass = "Military";
+	class dismantle {
+		requiredtools[] = 
+		{
+			//{"Item","Chance","ReturnedPart"}
+			{"ItemShovel",0.08,"ItemShovelBroken"}
+		}; //Tools needed
+		dismantleToo = "ItemCamoNet"; //Returned magazine item
+		attemps = 2; //Random number
+	};
+	
+	class UserActions {
+		class Dismantle {
+			displayNameDefault = $STR_BUILT_CAMONET_Dismantle;
+			showWindow = 0;
+			hideOnUse = 1;
+			displayName = $STR_BUILT_CAMONET_Dismantle;
+			position="action";
+			radius = 3.0;
+			onlyForPlayer = 1;
+			condition = "!dayz_actionInProgress && (alive this)";
+			statement = "this spawn object_dismantle;";
+		};
+	};
 };

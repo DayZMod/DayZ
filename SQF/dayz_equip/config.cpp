@@ -666,76 +666,7 @@ class CfgVehicles {
 		displayName = $STR_BUILT_WIRE2;
 		model = "\dayz_equip\models\wire_cat2.p3d";
 	};
-	
-	class Hedgehog_DZ : BuiltItems {
-		scope = public;
-		destrType = "DestructNo";
-		cost = 100;
-		model = "\ca\misc\jezek_kov";
-		icon = "\ca\data\data\Unknown_object.paa";
-		mapSize = 2;
-		armor = 400;
-		displayName = $STR_BUILT_HEDGEHOG;
-		vehicleClass = "Fortifications";
-		class dismantle {
-			requiredtools[] = 
-			{
-				//{"Item","Chance","ReturnedPart"}
-				{"ItemSledgeHammer",0.02,"ItemSledgeHammerBroken"},
-				{"ItemCrowbar",0.04,"ItemCrowbarBent"}
-			}; //Tools needed
-			dismantleToo = "ItemTankTrap"; //Returned magazine item
-			attemps = 5; //Random number
-		};
-		class UserActions {
-			class Dismantle {
-				displayNameDefault = $STR_BUILT_HEDGEHOG_Dismantle;
-				showWindow = 0;
-		        hideOnUse = 1;
-				displayName = $STR_BUILT_HEDGEHOG_Dismantle;
-				position="action";
-				radius = 2.7;
-				onlyForPlayer = 1;
-				condition = "(this getVariable ['CharacterID','0'] != dayz_characterID) && (alive this)";
-				statement = "this spawn object_dismantle;";
-			};
-		};
-	};
-	
-	class Sandbag1_DZ : BuiltItems {
-		scope = public;
-		destrType = "DestructNo";
-		cost = 100;
-		model = "\ca\misc2\BagFenceLong.p3d";
-		icon = "\Ca\misc3\data\Icons\icon_fortBagFenceLong_ca.paa";
-		mapSize = 2;
-		armor = 400;
-		displayName = $STR_BUILT_SANDBAG;
-		vehicleClass = "Fortifications";
-		class dismantle {
-			requiredtools[] = 
-			{
-				//{"Item","Chance","ReturnedPart"}
-				{"ItemShovel",0.02,"ItemShovelBroken"}
-			}; //Tools needed
-			dismantleToo = "ItemSandbag"; //Returned magazine item
-			attemps = 5; //Random number
-		};
-		class UserActions {
-			class Dismantle {
-				displayNameDefault = $STR_BUILT_SANDBAG_Dismantle;
-				showWindow = 0;
-		        hideOnUse = 1;
-				displayName = $STR_BUILT_SANDBAG_Dismantle;
-				position="action";
-				radius = 2.7;
-				onlyForPlayer = 1;
-				condition = "(this getVariable ['CharacterID','0'] != dayz_characterID) && (alive this)";
-				statement = "this spawn object_dismantle;";
-			};
-		};
-	};
-	
+
 	class Fence_DZ: BuiltItems {
 		scope = public;
 		destrType = "DestructNo";

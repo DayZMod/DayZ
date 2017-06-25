@@ -34,14 +34,14 @@ class Mission
 	};
 	class Groups
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			side="WEST";
 			class Vehicles
 			{
 				items=100;
-#define PLRDEF position[]={-18700,0,25800};azimut=0;side="WEST";vehicle="Survivor1_DZ";skill=0.6;init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";player="PLAY CDG";
+#define PLRDEF position[]={-18700,0,25800};azimut=0;side="WEST";vehicle="Survivor1_DZ";skill=0.6;init="this enableSimulation false;this allowDamage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";player="PLAY CDG";
 				class Item0{id=0;PLRDEF};
 				class Item1{
 					position[]={-18700,0,25800};
@@ -53,7 +53,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=0.6;
-					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";				
+					init="this enableSimulation false;this allowDamage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";				
 				};
 				class Item2{id=2;PLRDEF};
 				class Item3{id=3;PLRDEF};
@@ -167,6 +167,24 @@ class Mission
 					id=50;
 					side="LOGIC";
 					vehicle="FunctionsManager";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.6;
+				};
+			};
+		};
+		class Item2
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={708,35,3533};
+					id=50;
+					side="LOGIC";
+					vehicle="FileSignature_DZ";
 					leader=1;
 					lock="UNLOCKED";
 					skill=0.6;

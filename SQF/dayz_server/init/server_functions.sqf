@@ -23,11 +23,12 @@ server_deleteObj = compile preprocessFileLineNumbers "\z\addons\dayz_server\comp
 server_playerSync = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerSync.sqf";
 zombie_findOwner = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\zombie_findOwner.sqf";
 server_Wildgenerate = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\zombie_Wildgenerate.sqf";
-server_plantSpawner = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_plantSpawner.sqf";
 base_fireMonitor = compile preprocessFileLineNumbers "\z\addons\dayz_code\system\fire_monitor.sqf";
-server_systemCleanup = compile preprocessFileLineNumbers "\z\addons\dayz_server\system\server_cleanup.sqf";
+//server_systemCleanup = compile preprocessFileLineNumbers "\z\addons\dayz_server\system\server_cleanup.sqf";
 spawnComposition = compile preprocessFileLineNumbers "ca\modules\dyno\data\scripts\objectMapper.sqf"; //"\z\addons\dayz_code\compile\object_mapper.sqf";
 server_sendToClient = compile preprocessFileLineNumbers "\z\addons\dayz_server\eventHandlers\server_sendToClient.sqf";
+
+server_sendKey = compile preprocessFileLineNumbers "\z\addons\dayz_server\eventHandlers\server_sendKey.sqf";
 
 server_medicalSync = {
 	_player = _this select 0;
@@ -49,7 +50,7 @@ server_medicalSync = {
 	_player setVariable ["messing",(_array select 13)]; //13
 	_player setVariable ["blood_testdone",(_array select 14)]; //14
 };
-
+/*
 dayz_Achievements = {
 	_achievementID = (_this select 0) select 0;
 	_player = (_this select 0) select 1;
@@ -59,6 +60,20 @@ dayz_Achievements = {
 	_achievements set [_achievementID,1];
 	_player setVariable ["Achievements",_achievements];
 };
+*/
+
+//Send fences to this array to be synced to db, should prove to be better performaince wise rather then updaing each time they take damage.
+server_addtoFenceUpdateArray = {
+	//Potential problem no current way to say what is setting the damage.
+	if ((_this select 0) isKindOf "DZ_buildables") then {
+		(_this select 0) setDamage (_this select 1);
+
+		if !((_this select 0) in needUpdate_FenceObjects) then {
+			needUpdate_FenceObjects set [count needUpdate_FenceObjects, (_this select 0)];
+		};
+	};
+};
+
 
 vehicle_handleServerKilled = {
 	private ["_unit","_killer"];
@@ -115,7 +130,7 @@ server_hiveReadWrite = {
 	//diag_log ("ATTEMPT READ/WRITE: " + _key);
 	_data = "HiveExt" callExtension _key;
 	//diag_log ("READ/WRITE: " +str(_data));
-	_resultArray = call compile format ["%1",_data];
+	_resultArray = call compile str formatText["%1", _data];
 	_resultArray
 };
 
@@ -170,8 +185,9 @@ dayz_recordLogin = {
 		
 	_status = switch (1==1) do {
 		case ((_this select 2) == 0): { "CLIENT LOADED & PLAYING" };
-		case ((_this select 2) == 1): { "LOGGED IN" };
-		case ((_this select 2) == 2): { "LOGGED OUT" };
+		case ((_this select 2) == 1): { "LOGIN PUBLISHING, Location " +(_this select 4) };
+		case ((_this select 2) == 2): { "LOGGING IN" };
+		case ((_this select 2) == 3): { "LOGGED OUT, Location " +(_this select 4) +(_this select 5)};
 	};
 	
 	_name = if (typeName (_this select 3) == "ARRAY") then { toString (_this select 3) } else { _this select 3 };
@@ -189,7 +205,7 @@ fa_coor2str = {
 	_nearestCity = nearestLocations [_pos, ["NameCityCapital","NameCity","NameVillage","NameLocal"],1000];
 	_town = "Wilderness";
 	if (count _nearestCity > 0) then {_town = text (_nearestCity select 0)};
-	_res = format["%1 [%2:%3]", _town, round((_pos select 0)/100), round((15360-(_pos select 1))/100)];
+	_res = format["%1 [%2]", _town, mapGridPosition _pos];
 
 	_res
 };

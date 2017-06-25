@@ -2,9 +2,11 @@ class TT650_Civ: TT650_Base {
 	crew = "";
 	faction = "CIV";
 	rarityurban = 0.8;
-	scope = 2;
+	scope = public;
 	side = 3;
-	typicalcargo[] = {};
+	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
 	maxspeed = 180;
 	
 	class HitPoints {
@@ -60,4 +62,16 @@ class TT650_Civ: TT650_Base {
 			visual = "Pravy zadni";
 		};
 	};
+};
+
+class TT650_TK_CIV_EP1: TT650_Base {
+	faction = "CIV";
+	rarityurban = 0.8;
+	scope = public;
+	side = 3;
+	maxspeed = 180;
+	crew = "";
+	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
 };

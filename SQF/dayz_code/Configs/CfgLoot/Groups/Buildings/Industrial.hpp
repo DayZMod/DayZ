@@ -15,14 +15,13 @@ Industrial[] =
 	
 	//Items
 	{Loot_MAGAZINE,		6,		ItemSandbag},
-	{Loot_MAGAZINE,		4,		ItemJerryCan},
 	{Loot_MAGAZINE,		1,		ItemWire},
 	{Loot_MAGAZINE,		4,		ItemTankTrap},
 	{Loot_MAGAZINE,		1,		equip_brick},
 	{Loot_MAGAZINE,		3,		equip_duct_tape},
 	{Loot_MAGAZINE,		2,		equip_hose},
-	{Loot_MAGAZINE,		6,		equip_nails},
-//	{Loot_MAGAZINE,		3,		ItemScrews},
+	{Loot_MAGAZINE,		3,		equip_nails},
+	{Loot_MAGAZINE,		1.5,		ItemScrews},
 	{Loot_MAGAZINE,		1,		equip_scrapelectronics},
 	{Loot_MAGAZINE,		2,		equip_metal_sheet},
 	{Loot_MAGAZINE,		2,		equip_1inch_metal_pipe},
@@ -33,6 +32,7 @@ Industrial[] =
 	{Loot_GROUP,		15,		Parts},
 	{Loot_PILE,			10,		Trash, 1, 3},
 	{Loot_PILE,			4,		Consumable, 1, 2},
+	{Loot_GROUP,		4,		JerryCan},
 	{Loot_GROUP,		8,		Generic}
 };
 

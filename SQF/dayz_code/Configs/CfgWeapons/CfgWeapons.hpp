@@ -71,7 +71,13 @@ class CfgWeapons
 	class M14_EP1;
 	#include "Rifles\M14.hpp"
 	
-	class M24;
+	class M24 : Rifle
+	{
+		class OpticsModes
+		{
+			class StepScope;
+		};
+	};
 	#include "Rifles\M24.hpp"
 	
 	class M40A3;
@@ -130,7 +136,7 @@ class CfgWeapons
 	class bizon_silenced;
 	#include "Rifles\Bizon.hpp"
 	
-	class huntingrifle;
+	class huntingrifle : M24 {};
 	#include "Rifles\CZ550.hpp"
 	
 	class LeeEnfield;
@@ -274,8 +280,8 @@ class CfgWeapons
 		{
 			class Drink
 			{
-				text = "Drink";
-				script = "spawn player_drinkWater;";
+				text = $STR_ACTIONS_DRINK2;
+				script = ";[_id] spawn player_fillWater;";
 			};
 		};
 	};
@@ -292,8 +298,8 @@ class CfgWeapons
 		{
 			class Drink
 			{
-				text = "Drink";
-				script = "spawn player_drinkWater;";
+				text = $STR_ACTIONS_DRINK2;
+				script = ";[_id] spawn player_fillWater;";
 			};
 		};
 	};*/

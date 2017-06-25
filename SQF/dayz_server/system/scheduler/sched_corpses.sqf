@@ -26,23 +26,25 @@ sched_co_deleteVehicle = {
 
 
 sched_corpses = {
-	private ["_delQtyZ","_delQtyP","_addFlies","_x","_deathTime","_onoff","_delQtyAnimal", "_sound", "_deathPos", "_cpos"];
+	private ["_delQtyG","_delQtyZ","_delQtyP","_addFlies","_x","_deathTime","_onoff","_delQtyAnimal","_sound","_deathPos","_cpos","_animal","_nearPlayer"];
 	// EVERY 2 MINUTE
 	// DELETE UNCONTROLLED ZOMBIES --- PUT FLIES ON FRESH PLAYER CORPSES --- REMOVE OLD FLIES & CORPSES
 	_delQtyZ = 0;
 	_delQtyP = 0;
+	_delQtyG = 0;
 	_addFlies = 0;
-//	diag_log "bodies ...";
 	{
-		if (local _x) then {
-			if (_x isKindOf "zZombie_Base") then { 
+		if (local _x && {_x isKindOf "CAManBase"}) then {
+			if (_x isKindOf "zZombie_Base") then {
 				_x call sched_co_deleteVehicle;
 				_delQtyZ = _delQtyZ + 1;
 			} else {
-				if (_x isKindOf "CAManBase") then {
-					_deathTime = _x getVariable ["sched_co_deathTime", -1];
+				//Only spawn flies on actual dead player, otherwise delete the body (clean up left over ghost from relogging, sometimes it is not deleted automatically by Arma or onPlayerDisconnect)
+				//AI mods will need to setVariable "bodyName" on their dead units to prevent them being cleaned up
+				_deathTime = _x getVariable ["sched_co_deathTime", -1];
+				if (_x getVariable["bodyName",""] != "") then {
 					if (_deathTime == -1) then {
-						_deathPos = _x getVariable [ "deathPos", getMarkerPos "respawn_west" ];
+						_deathPos = _x getVariable ["deathPos",respawn_west_original];
 						_cpos = getPosATL _x;
 						// forbid a move further than 50 meters, or burried body (antihack)
 						if (_deathPos distance _cpos > 50 or _deathPos select 2 < -0.2) then {
@@ -51,13 +53,14 @@ sched_corpses = {
 						};
 						_deathTime = diag_tickTime;
 						_x setVariable ["sched_co_deathTime", _deathTime];
-						_x setVariable ["sched_co_fliesAdded", true];
-						_addFlies = _addFlies + 1;
-						
+						if (dayz_enableFlies) then {
+							_x setVariable ["sched_co_fliesAdded", true];
+							_addFlies = _addFlies + 1;
+						};
 					};
 					// 40 minutes = how long a player corpse stays on the map
 					if (diag_tickTime - _deathTime > 40*60) then {
-						if (_x getVariable ["sched_co_fliesDeleted", false]) then {
+						if (_x getVariable["sched_co_fliesDeleted",false] or !dayz_enableFlies) then {
 							// flies have been switched off, we can delete body
 							_sound = _x getVariable ["sched_co_fliesSource", nil];
 							
@@ -75,6 +78,8 @@ sched_corpses = {
 							// body will be deleted at next round
 						};
 					} else {
+						// Do not spawn flies immediately after death. Wait 10 minutes.
+						if ((diag_tickTime - _deathTime < 10*60) or !dayz_enableFlies) exitWith {};
 						_onoff = 1;
 						// remove flies on heavy rain.
 						if (rain > 0.25) then { _onoff = 0; };
@@ -98,6 +103,17 @@ sched_corpses = {
 						PVCDZ_flies = [ _onoff, _x ];
 						publicVariable "PVCDZ_flies";
 					};
+				} else {
+					if (_deathTime == -1) then {
+						_deathTime = diag_tickTime;
+						_x setVariable ["sched_co_deathTime", _deathTime];
+					} else {
+						// Wait 30s to make sure the server had time to setVariable "bodyName". PVDZ_plr_Death can be delayed by a few seconds.
+						if (diag_tickTime - _deathTime > 30) then {
+							_x call sched_co_deleteVehicle;
+							_delQtyG = _delQtyG + 1;
+						};
+					};
 				};
 			};
 		};
@@ -105,9 +121,13 @@ sched_corpses = {
 	
 	_delQtyAnimal = 0;
 	{
-		if (local _x) then {
-			_x call sched_co_deleteVehicle;
-			_delQtyAnimal = _delQtyAnimal + 1;
+		_animal = _x;
+		if (local _animal) then {
+			_nearPlayer = {isPlayer _x} count (_animal nearEntities ["CAManBase",150]);
+			if (_nearPlayer == 0) then {
+				_animal call sched_co_deleteVehicle;
+				_delQtyAnimal = _delQtyAnimal + 1;
+			};
 		};
 	} forEach entities "CAAnimalBase";
 
@@ -120,9 +140,9 @@ sched_corpses = {
 	} forEach allGroups;
 	
 #ifdef SERVER_DEBUG
-	if (_delQtyZ+_delQtyP+_addFlies+_delQtyGrp > 0) then {
-		diag_log format ["%1: Deleted %2 uncontrolled zombies, %3 uncontrolled animals, %4 dead character bodies and %5 empty groups. Added %6 flies.", __FILE__,
-		 _delQtyZ, _delQtyAnimal, _delQtyP,_delQtyGrp, _addFlies ];
+	if (_delQtyZ+_delQtyP+_addFlies+_delQtyGrp+_delQtyG > 0) then {
+		diag_log format ["%1: Deleted %2 uncontrolled zombies, %3 uncontrolled animals, %4 dead character bodies, %7 ghosts and %5 empty groups. Added %6 flies.",__FILE__,
+		_delQtyZ,_delQtyAnimal,_delQtyP,_delQtyGrp,_addFlies,_delQtyG];
 	};
 #endif
 

@@ -1,18 +1,33 @@
-private ["_playerObj","_myGroup","_playerUID","_playerPos","_playerName"];
+/*
+	WARNING: Alive player objects are deleted by Arma shortly after onPlayerDisconnected fires
+	because DayZ uses disabledAI=1 https://community.bistudio.com/wiki/Description.ext#disabledAI
+	
+	References to the player object after that point will return objNull, so this function
+	and server_playerSync must be fast or the player will not save.
+*/
+private ["_playerObj","_playerUID","_playerPos","_playerName","_characterID","_Sepsis"];
 
 _playerUID = _this select 0;
 _playerName = _this select 1;
 _playerObj = nil;
-_playerPos = [];
 
-//Lets search all playerable units looking for the objects that matches our playerUID
+//Lets search all players looking for the object that matches our UID
+//If the player just died then the new unit they respawned into will be found (respawnDelay=0 in description.ext)
 {
 	if ((getPlayerUID _x) == _playerUID) exitWith { _playerObj = _x; _playerPos = getPosATL _playerObj;};
-} forEach 	playableUnits;
+} count playableUnits;
 
-//If for some reason the playerOBj does not exist lets exit the disconnect system.
+//If playerObj is not in playableUnits then lets exit the disconnect system.
 if (isNil "_playerObj") exitWith {
-	diag_log format["%1: nil player object, _this:%2", __FILE__, _this];
+	diag_log format["INFO: OnPlayerDisconnect exiting. Player is not in playableUnits. %1", _this];
+};
+
+//Player object is alive in debug zone. The player most likely just respawned.
+if (_playerPos distance respawn_west_original < 1500) exitWith {
+	diag_log format["INFO: OnPlayerDisconnect exiting. Player is near respawn_west. This is normal after death. %1", _this];
+	if (!isNull _playerObj) then {
+		_playerObj call sched_co_deleteVehicle;
+	};
 };
 
 //diag_log format["get: %1 (%2), sent: %3 (%4)",typeName (getPlayerUID _playerObj), getPlayerUID _playerObj, typeName _playerUID, _playerUID];
@@ -25,36 +40,36 @@ _Sepsis = _playerObj getVariable["USEC_Sepsis",false];
 _lastDamage = round(diag_ticktime - _lastDamage);
 
 //Readded Logout debug info.
-diag_log format["INFO - Player: %3(UID:%1/CID:%2) as (%4), logged off at %5%6", 
-	getPlayerUID _playerObj,
+/*
+diag_log format["INFO - Player: %3(UID:%1/CID:%2) as (%4), Disconnecting %5", 
+	_playerUID,
 	_characterID,
 	_playerObj call fa_plr2str,
 	typeOf _playerObj, 
-	(getPosATL _playerObj) call fa_coor2str,
-	if ((_lastDamage > 5 AND (_lastDamage < 30)) AND ((alive _playerObj) AND (_playerObj distance (getMarkerpos "respawn_west") >= 2000))) then {" while in combat ("+str(_lastDamage)+" seconds left)"} else {""}
-]; 
+	if ((_lastDamage > 5 AND (_lastDamage < 30)) AND (alive _playerObj)) then {" while in combat ("+str(_lastDamage)+" seconds left)"} else {""}
+];
+*/ 
 
 //Login processing do not sync
-if (_playerUID in dayz_ghostPlayers) exitwith { 
+if (_playerUID in dayz_ghostPlayers) exitWith {
+	//Note player is alive (see set in dayz_ghostPlayers below)
 	diag_log format["ERROR: Cannot Sync Character [%1,%2] Still processing login",_playerName,_playerUID]; 
 
 	//Lets remove the object.
 	if (!isNull _playerObj) then { 
-		_myGroup = group _playerObj;
-		deleteGroup _myGroup;
+		_playerObj call sched_co_deleteVehicle;
 	};
 };
 
 //Make sure we know the ID of the object before we try and sync any info to the DB
-if (_characterID != "?") exitwith {
-
+if (_characterID != "?") then {
 	//If the player has sepsis before logging off lets give them infected status.
 	if (_Sepsis) then {
 		_playerObj setVariable["USEC_infected",true,true];
 	};
 	
 	//Record Player Login/LogOut
-	[_playerUID,_characterID,2,_playerName] call dayz_recordLogin;
+	[_playerUID,_characterID,3,(_playerObj call fa_plr2str),(_playerPos call fa_coor2str),if ((_lastDamage > 5 AND (_lastDamage < 30)) AND (alive _playerObj)) then {" while in combat ("+str(_lastDamage)+" seconds left)"} else {""}] call dayz_recordLogin;
 
 	//if the player object is inside a vehicle lets eject the player
 	if (vehicle _playerObj != _playerObj) then {
@@ -63,6 +78,7 @@ if (_characterID != "?") exitwith {
 	
 	//if player object is alive lets sync the player and remove the body and if ghosting is active add the player id to the array
 	if (alive _playerObj) then {
+		// High priority. Sync must finish fast before player object isNull
 		[_playerObj,nil,true] call server_playerSync;
 		
 		if (dayz_enableGhosting) then {
@@ -77,15 +93,9 @@ if (_characterID != "?") exitwith {
 	};
 	
 	//Lets scan the area near the player logout position and save all objects.
-	{ [_x,"gear"] call server_updateObject } foreach (nearestObjects [_playerPos, DayZ_GearedObjects, 10]);
+	{[_x,"gear"] call server_updateObject} count (nearestObjects [_playerPos,DayZ_GearedObjects,10]);
 };
 
-if (isNull _playerObj) then { diag_log("Player Object does not esist"); };
-
-
-//Lets remove the object.
-if (!isNull _playerObj) then { 
-	_myGroup = group _playerObj;
-	deleteGroup _myGroup;
+if (alive _playerObj) then {
+	_playerObj call sched_co_deleteVehicle;
 };
-

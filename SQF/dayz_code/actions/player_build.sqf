@@ -11,6 +11,9 @@ private ["_classType","_item","_action","_missingTools","_missingItem","_emergin
 Needs a full rewrite to keep up with the demand of everything we plan to add.
 */
 
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
+
 call gear_ui_init;
 closeDialog 1;
 
@@ -25,7 +28,6 @@ if (count _this > 2) then {
 };
 
 _emergingLevel = 1.1;
-r_action_count = 1;
 
 _isClass = switch (1==1) do {
 	case (isClass (configFile >> "CfgMagazines" >> _item)): {"CfgMagazines"};
@@ -44,7 +46,7 @@ if (_byPassChecks == "") then { _byPassChecks = "BaseItems" };
 if (_ghost == "") then { _ghost = _classname; };
 
 //Remove tents and stashes from new collision system until we find a better way then build tent for hiding items.
-_isCollisionBypass = if (isText (configFile >> _isClass >> _item >> _classType >> _action >> "bypassCollision")) then { true } else { false };
+_isCollisionBypass = (isText (configFile >> _isClass >> _item >> _classType >> _action >> "bypassCollision"));
 
 _text = getText (configFile >> "CfgVehicles" >> _classname >> "displayName");
 _keepOnSlope = 0 == (getNumber (configFile >> "CfgVehicles" >> _classname >> "canbevertical"));
@@ -52,12 +54,9 @@ _keepOnSlope = 0 == (getNumber (configFile >> "CfgVehicles" >> _classname >> "ca
 _onLadder = {getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder") == 1};
 _isWater = {(surfaceIsWater (getPosATL _object)) or dayz_isSwimming};
 
-if (0 != count Dayz_constructionContext) then {
-	r_action_count = 0;
-	//cutText [localize "str_already_building", "PLAIN DOWN"];
-	_msg = localize "str_already_building";
-	_msg call dayz_rollingMessages;
-	diag_log [ diag_ticktime, __FILE__, 'already building, exiting', Dayz_constructionContext, typeName Dayz_constructionContext];
+if (0 != count Dayz_constructionContext) exitWith {
+	dayz_actionInProgress = false;
+	localize "str_already_building" call dayz_rollingMessages;
 };
 
 // item is missin - this really is pointless but it aint broke so dont fix it
@@ -86,7 +85,7 @@ _missing = "";
 } count _requiredTools;
 
 if (!_ok) exitWith {
-	r_action_count = 0;
+	dayz_actionInProgress = false;
 	//cutText [format [localize "str_player_31_missingtools",_text,_missing] , "PLAIN DOWN"]; 
 	_msg = format [localize "str_player_31_missingtools",_text,_missing];
 	_msg call dayz_rollingMessages;
@@ -108,7 +107,7 @@ _upgradeParts = [];
 
 if (!_ok) exitWith {
 	{ player addMagazine _x; } foreach _upgradeParts;
-	r_action_count = 0;
+	dayz_actionInProgress = false;
    // cutText [format [localize "str_player_31", _missing, localize "str_player_31_build"] , "PLAIN DOWN"];
 	_msg = format [localize "str_player_31", _missing, localize "str_player_31_build"];
 	_msg call dayz_rollingMessages;
@@ -293,7 +292,7 @@ _position = getPosATL _object;
 _actionBuildHidden = true;
 _actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts, _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
 
-while {r_action_count != 0 and Dayz_constructionContext select 4} do {
+while {Dayz_constructionContext select 4} do {
 
 	// force the angle so that the ghost is showing always the same side
 	_angleRef=Dayz_constructionContext select 1;
@@ -393,7 +392,7 @@ while {r_action_count != 0 and Dayz_constructionContext select 4} do {
 			};
 		};
 	};
-	sleep 0.03;
+	uiSleep 0.03;
 };
 
 if (!_actionBuildHidden) then { // player can't build until all is fine
@@ -407,5 +406,5 @@ if (Dayz_constructionContext select 3) then { // "build" camera was on, switch i
 };
 
 Dayz_constructionContext = [];
-r_action_count = 0;
+dayz_actionInProgress = false;
 //systemChat "Dayz_constructionContext reset";

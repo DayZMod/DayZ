@@ -168,6 +168,15 @@ class TentStorage_base : DZ_storage_base {
 	buildCollisionPoints = 6;
 	buildCollisionPaths[] = {{0,1,2,3,4,5,0,2,4,0,3,1,5,3}};
 };
+class TentStorage_Ghost : TentStorage_base {
+	model = "\z\addons\dayz_communityassets\models\tent_a_ghost.p3d";
+	displayName = $STR_VEH_NAME_TENT;
+	vehicleClass = "Survival";
+	pack = "WeaponHolder_ItemTent";
+	transportMaxMagazines = 0;
+	transportMaxWeapons = 0;
+	transportMaxBackpacks = 0;
+};
 class TentStorage : TentStorage_base {
 	displayName = $STR_VEH_NAME_TENT;
 	vehicleClass = "Survival";
@@ -251,7 +260,15 @@ class DomeTentStorage_base : TentStorage_base {
 	buildCollisionPoints = 7;
 	buildCollisionPaths[] = {{1,0,4,3,1,6,4},{0,6,3},{5,6,2}};
 };
-
+class DomeTentStorage_Ghost : TentStorage_base {
+	model = "\z\addons\dayz_communityassets\models\tent_dome_ghost.p3d";
+	displayName = $STR_VEH_NAME_DOME_TENT;
+	vehicleClass = "Survival";
+	pack = "WeaponHolder_ItemTent";
+	transportMaxMagazines = 0;
+	transportMaxWeapons = 0;
+	transportMaxBackpacks = 0;
+};
 class DomeTentStorage : DomeTentStorage_base {
 	armor = 50;
 	displayname = $STR_VEH_NAME_DOME_TENT;

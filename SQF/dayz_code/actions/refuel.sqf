@@ -1,3 +1,5 @@
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
 private ["_vehicle","_canSize","_configVeh","_capacity","_nameType","_curFuel","_newFuel","_dis","_sfx","_fueling","_array","_cantype",
 "_emptycan","_started","_finished","_animState","_isRefuel"];
 
@@ -13,10 +15,9 @@ _curFuel = ((fuel _vehicle) * _capacity);
 _newFuel = (_curFuel + _canSize);
 _fueling = player getVariable ["fueling",false];
 
-if (fuel _vehicle == 1) exitWith {};
+if (fuel _vehicle == 1) exitWith {dayz_actionInProgress = false;};
 
 player removeAction s_player_fillfuel + _capacity;
-a_player_jerryfilling = true;
 player setVariable ["fueling", true];
 
 if (!_fueling) then {
@@ -62,14 +63,15 @@ if (!_fueling) then {
 			publicVariableServer "PVDZ_send";
 		};
 
-		cutText [format [localize "str_player_05",_nameType,_canSize], "PLAIN DOWN"];
+		format[localize "str_player_05",_nameType,_canSize] call dayz_rollingMessages;
 		uiSleep 1;
 		call fnc_usec_medic_removeActions;
 	};
 	[player] allowGetIn true;
 } else {
-	cutText [localize "str_refuel_fail","PLAIN DOWN"];
+	localize "str_refuel_fail" call dayz_rollingMessages;
 };
-a_player_jerryfilling = false;
+
 r_action = false;
 player setVariable ["fueling", false];
+dayz_actionInProgress = false;

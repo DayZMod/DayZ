@@ -1,8 +1,7 @@
-private ["_isWreck","_maxControlledZombies","_looted","_zombied","_doNothing","_spawnZedRadius","_serverTime","_age","_nearbyBuildings","_position","_spawnableObjects","_speed","_radius","_maxlocalspawned","_maxWeaponHolders","_currentWeaponHolders","_maxtoCreate","_inVehicle","_isAir","_isLand","_isSea","_Controlledzeddivided","_totalcrew","_nearby","_type","_config","_canSpawn","_dis","_checkLoot","_islocal","_bPos","_zombiesNum"];
+private ["_isWreck","_maxControlledZombies","_looted","_zombied","_doNothing","_spawnZedRadius","_serverTime","_age","_nearbyBuildings","_position","_speed","_radius","_maxlocalspawned","_maxWeaponHolders","_currentWeaponHolders","_maxtoCreate","_inVehicle","_isAir","_isLand","_isSea","_Controlledzeddivided","_totalcrew","_nearby","_type","_config","_canSpawn","_dis","_checkLoot","_islocal","_bPos","_zombiesNum"];
 _age = -1;
 //_nearbyBuildings = [];
 _position = getPosATL player;
-_spawnableObjects = ["building", "CrashSite", "IC_Fireplace1", "IC_DomeTent", "IC_Tent"];
 _speed = speed (vehicle player);
 _radius = 300; //150*0.707; Pointless Processing (106.5)
 _spawnZedRadius = 20;
@@ -59,8 +58,10 @@ if (_doNothing) exitwith {};
 diag_log (format["%1 Local.Agents: %2/%3, NearBy.Agents: %8/%9, Global.Agents: %6/%7, W.holders: %10/%11, (radius:%4m %5fps).","SpawnCheck",
     _maxlocalspawned, _maxControlledZombies, _radius, round diag_fpsmin,dayz_currentGlobalZombies, 
     dayz_maxGlobalZeds, dayz_CurrentNearByZombies, dayz_maxNearByZombies, _currentWeaponHolders,_maxWeaponHolders]);
-	
-_nearby = nearestObjects [_position, _spawnableObjects,_radius];
+
+// nearObjects is faster than nearestObjects when sorting by distance isn't needed
+// "Building" includes House and all of its child classes (Crashsite, IC_Fireplace1, IC_Tent, etc.)
+_nearby = _position nearObjects ["Building",_radius];
 _maxlocalspawned = _maxlocalspawned max floor(_maxControlledZombies*.8);
 if (_maxlocalspawned > 0) then { _spawnZedRadius = _spawnZedRadius * 3; };
 
@@ -84,9 +85,11 @@ if (_maxlocalspawned > 0) then { _spawnZedRadius = _spawnZedRadius * 3; };
 				//Baisc loot check
 				if ((_dis < 125) and (_dis > 30) and !_inVehicle and _checkLoot) then {
 					_serverTime = serverTime;
+					//Building refresh rate
+					_lootRefreshTimer = getNumber (configFile >> "CfgLoot" >> "Buildings" >> (typeOf _x) >> "lootRefreshTimer");
 					_looted = (_x getVariable ["looted",_serverTime]);
 					_age = _serverTime - _looted;
-					if ((_age == 0) or (_age > 900)) then { 
+					if ((_age == 0) or (_age > _lootRefreshTimer)) then { 
 						_x setVariable ["looted",_serverTime,!_islocal];
 						_x call building_spawnLoot;
 						if (!(_x in dayz_buildingBubbleMonitor)) then {
