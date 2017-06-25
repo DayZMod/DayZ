@@ -165,8 +165,8 @@ class M4A1_SD_DZ : M4A1_AIM_SD_camo
 	
 	magazines[] =
 	{
-		30Rnd_556x45_StanagSD,
-		30Rnd_556x45_Stanag
+	//	30Rnd_556x45_Stanag,
+		30Rnd_556x45_StanagSD
 	};
 	
 	class Attachments

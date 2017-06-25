@@ -65,8 +65,8 @@ class G36C_SD_DZ : G36_C_SD_eotech
 	
 	magazines[] =
 	{
-		30Rnd_556x45_G36SD,
-		30Rnd_556x45_G36
+	//	30Rnd_556x45_G36,
+		30Rnd_556x45_G36SD
 	};
 	
 	class Attachments
