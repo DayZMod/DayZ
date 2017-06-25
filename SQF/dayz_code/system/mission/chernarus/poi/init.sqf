@@ -7,7 +7,7 @@
 {
 	call compile preprocessFileLineNumbers ("\z\addons\dayz_code\system\mission\chernarus\poi\" + _x + ".sqf");
 } forEach [
-	//"Twains", //Filled with Server sleeps, removed for now
+	"Trains",
 	"DevilsFarm",
 	"NEA",
 	"C130Crash",
@@ -16,5 +16,8 @@
 	"KomyshovoRoadblock",
 	"MilitaryAirpoort",
 	"ZelenogorskBuildings",
-	"NWATentCamp"
+	"NWATentCamp",
+	"ElektroWells",
+	"GvozdnoMilitaryBase",
+	"Shakhovka"
 ];
