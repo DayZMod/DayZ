@@ -102,7 +102,7 @@ class AK74_GL_Kobra_DZ : AK74_Kobra_DZ
 	muzzles[] = {this, GP25Muzzle};
 	handAnim[]={"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M16GL.rtm"};
 	
-	class GP25Muzzle : GrenadeLauncher                                                                   // new sound
+	class GP25Muzzle : GP25Muzzle                                                                  // new sound
 	{                                                                                                    // new sound
 		reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\ak74\sounds\GP25\GP25_Reload",1,1,35}; // new sound
 		drySound[] = {"\z\addons\dayz_communityweapons\ak74\sounds\GP25\GP25_Dry",0.01,1,10};            // new sound
@@ -143,7 +143,7 @@ class AK74_GL_Kobra_SD_DZ : AK74_Kobra_SD_DZ
 	muzzles[] = {this, GP25Muzzle};
 	handAnim[]={"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M16GL.rtm"};
 
-	class GP25Muzzle : GrenadeLauncher                                                                   // new sound
+	class GP25Muzzle : GP25Muzzle                                                                  		 // new sound
 	{                                                                                                    // new sound
 		reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\ak74\sounds\GP25\GP25_Reload",1,1,35}; // new sound
 		drySound[] = {"\z\addons\dayz_communityweapons\ak74\sounds\GP25\GP25_Dry",0.01,1,10};            // new sound
