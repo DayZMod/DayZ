@@ -27,8 +27,8 @@
 class Mosin_Base : Rifle
 {
 	magazineReloadTime = 7.5;
-	reloadMagazineSound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\reload.ogg, 0.010000, 1};
-	drySound[] = {"Ca\sounds\Weapons\rifles\dry",0.01,1,10};
+//	reloadMagazineSound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sounds\sound\reload.ogg, 0.010000, 1};
+//	drySound[] = {"Ca\sounds\Weapons\rifles\dry",0.01,1,10};
 	handAnim[] = {"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M24.rtm"};
 	dexterity = 1.6;
 	distanceZoomMin = 300;
@@ -36,15 +36,23 @@ class Mosin_Base : Rifle
 	
 	magazines[] = {5Rnd_762x54_Mosin};
 	
-	//recoil = "Mosin_NagantRecoil";
-	//recoilProne = "Mosin_NagantRecoilProne";
+//	recoil = "Mosin_NagantRecoil";
+//	recoilProne = "Mosin_NagantRecoilProne";
 	recoil = "recoil_single_primary_9outof10";
 	recoilProne = "recoil_single_primary_prone_8outof10";
 	
 	dispersion = 0.00091;
 	reloadTime = 1.4;
-	//sound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\Mosin.ogg,1.778279,1,1000};
-	sound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\Mosin.ogg,db-20,1,800};
+//	sound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\Mosin.ogg,1.778279,1,1000};
+//	sound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sounds\sound\Mosin.ogg,db-20,1,800};
+	reloadSound[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\Bolt",1,1,35};           // new sound
+	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\Reload",1,1,35}; // new sound
+	drySound[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\Dry",0.01,1,10};            // new sound
+	begin1[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s1",5,1,1500};           // new sound
+	begin2[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s2",5,1,1500};           // new sound
+	begin3[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s3",5,1,1500};           // new sound
+	begin4[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s4",5,1,1500};           // new sound
+	soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};                             // new sound
 };
 
 
