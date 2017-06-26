@@ -99,6 +99,7 @@ Special thanks.
          * Special thanks to the Aftermath team for sharing features/models from Atfermath.
          * Special thanks to BMRF, TMW, MUSTY for providing test machines before release.
          * Special thanks to Lester for providing access to use his addon. MAP Editorupgrade (EU)
+         * Special thanks to LordJarhead for providing the sounds of his mod JSRS 1.5
 
 Want to contribute?
 Please contact R4Z0R49 on http://dayzmod.com/forums/
