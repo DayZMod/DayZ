@@ -21,7 +21,7 @@ class StashSmall_base : DZ_storage_base {
 	transportMaxWeapons = 0;
 	transportMaxBackpacks = 0;
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"};
+		requiredTools[] = {"ItemShovel"};
 		requiredParts[] = {"PartWoodPile"};
 		create = "StashSmall1";
 	};
@@ -35,7 +35,7 @@ class StashSmall : StashSmall_base {
 	transportMaxWeapons = 0;
 	transportMaxBackpacks = 0;
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"};
+		requiredTools[] = {"ItemShovel"};
 		requiredParts[] = {"PartWoodPile"};
 		create = "StashSmall1";
 	};
@@ -47,7 +47,7 @@ class StashSmall1 : StashSmall_base {
 	transportMaxWeapons = 0;
 	transportMaxBackpacks = 0;
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"};
+		requiredTools[] = {"ItemShovel"};
 		requiredParts[] = {"PartWoodPile"};
 		create = "StashSmall2";
 	};
@@ -59,7 +59,7 @@ class StashSmall2 : StashSmall_base {
 	transportMaxWeapons = 0;
 	transportMaxBackpacks = 0;
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"};
+		requiredTools[] = {"ItemShovel"};
 		requiredParts[] = {"PartWoodPile"};
 		create = "StashSmall3";
 	};
@@ -71,7 +71,7 @@ class StashSmall3 : StashSmall_base {
 	transportMaxWeapons = 0;
 	transportMaxBackpacks = 0;
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"};
+		requiredTools[] = {"ItemShovel"};
 		requiredParts[] = {"PartWoodPile"};
 		create = "StashSmall4";
 	};
@@ -83,7 +83,7 @@ class StashSmall4 : StashSmall_base {
 	transportMaxWeapons = 0;
 	transportMaxBackpacks = 0;
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"};
+		requiredTools[] = {"ItemShovel"};
 		requiredParts[] = {"PartWoodPile"};
 		create = "StashMedium";
 	};
@@ -108,7 +108,7 @@ class StashMedium : StashMedium_base {
 	transportMaxWeapons = 1;
 	transportMaxBackpacks = 0;
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"};
+		requiredTools[] = {"ItemShovel"};
 		requiredParts[] = {"PartWoodPile"};
 		create = "StashMedium1";
 	};
@@ -120,7 +120,7 @@ class StashMedium1 : StashMedium_base {
 	transportMaxWeapons = 2;
 	transportMaxBackpacks = 0;
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"};
+		requiredTools[] = {"ItemShovel"};
 		requiredParts[] = {"PartWoodPile"};
 		create = "StashMedium2";
 	};
@@ -132,7 +132,7 @@ class StashMedium2 : StashMedium_base {
 	transportMaxWeapons = 4;
 	transportMaxBackpacks = 0;
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"};
+		requiredTools[] = {"ItemShovel"};
 		requiredParts[] = {"PartWoodPile","equip_nails"};
 		create = "StashMedium3";
 	};
@@ -144,7 +144,7 @@ class StashMedium3 : StashMedium_base {
 	transportMaxWeapons = 8;
 	transportMaxBackpacks = 1;
 	class Upgrade {
-		requiredTools[] = {"ItemEtool"};
+		requiredTools[] = {"ItemShovel"};
 		requiredParts[] = {"equip_nails","PartWoodPile"};
 		create = "StashMedium4";
 	};
