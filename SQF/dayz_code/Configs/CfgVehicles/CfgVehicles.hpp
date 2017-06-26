@@ -176,6 +176,8 @@ class CfgVehicles {
 	class Volha_1_TK_CIV_EP1:Volha_TK_CIV_Base_EP1 { typicalcargo[] = {}; };
 	class Volha_2_TK_CIV_EP1:Volha_TK_CIV_Base_EP1 { typicalcargo[] = {}; };
 
+	#include "Movement.hpp"
+	
 	#include "RepairParts.hpp" //names for all reapir parts. Needs moving to hitpoints
 	//ZEDS
 	#include "Zeds\Zeds.hpp" //old type zeds
