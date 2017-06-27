@@ -58,6 +58,14 @@ class G36C_DZ : G36C
 		begin4[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s4",5,1,1000};        // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};         // new sound
 	};                                                                                    // new sound
+	class Burst : Burst                                                                   // new sound
+	{                                                                                     // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s1",5,1,1000};        // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s2",5,1,1000};        // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s3",5,1,1000};        // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s4",5,1,1000};        // new sound
+		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};         // new sound
+	};                                                                                    // new sound
 	class FullAuto : FullAuto                                                             // new sound
 	{                                                                                     // new sound
 		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s1",5,1,1000};        // new sound
@@ -91,6 +99,11 @@ class G36C_SD_DZ : G36_C_SD_eotech
 	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\G36\sounds\Reload",1,1,35}; // new sound
 	drySound[] = {"\z\addons\dayz_communityweapons\G36\sounds\Dry",0.01,1,10};	          // new sound
 	class Single : Single                                                                 // new sound
+	{                                                                                     // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36SD_s1",1,1,100};       // new sound
+		soundBegin[] = {"begin1",1};                                                      // new sound
+	};                                                                                    // new sound
+	class Burst : Burst                                                                   // new sound
 	{                                                                                     // new sound
 		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36SD_s1",1,1,100};       // new sound
 		soundBegin[] = {"begin1",1};                                                      // new sound
