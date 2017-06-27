@@ -3,6 +3,7 @@
 	radius = 3;\
 	position = "";\
 	onlyForPlayer = 1;\
+	priority = 3:\
 	condition = "(['ObjectUpgrade',this] call userActionConditions)";\
 	statement = "this execVM '\z\addons\dayz_code\actions\object_upgradebuilding.sqf'";
 
@@ -11,6 +12,7 @@
 	radius = 3;\
 	position = "";\
 	onlyForPlayer = 1;\
+	priority = 2:\
 	condition = "(['ObjectMaintenance',this] call userActionConditions)";\
 	statement = "this execVM '\z\addons\dayz_code\actions\object_maintenance.sqf'";
 	
@@ -19,6 +21,7 @@
 	radius = 3;\
 	position = "";\
 	onlyForPlayer = 1;\
+	priority = 0:\
 	condition = "(['ObjectDisassembly',this] call userActionConditions)";\
 	statement = "this execVM '\z\addons\dayz_code\actions\object_disassembly.sqf'";
 	
@@ -27,6 +30,7 @@
 	radius = 3;\
 	position = "DoorL";\
 	onlyForPlayer = 1;\
+	priority = 6:\
 	condition = "this animationPhase 'DoorR' < 0.5";\
 	statement = "this animate ['DoorR', 1];this animate ['DoorL', 1]";
 	
@@ -35,5 +39,6 @@
 	radius = 3;\
 	position = "DoorL";\
 	onlyForPlayer = 1;\
+	priority = 6:\
 	condition = "this animationPhase 'DoorR' >= 0.5";\
 	statement = "this animate ['DoorR', 0];this animate ['DoorL', 0]";
