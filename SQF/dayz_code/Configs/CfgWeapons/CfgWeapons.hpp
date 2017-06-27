@@ -11,8 +11,16 @@ class CfgWeapons
 	};
 	
 	class ItemCore;
-	class Rifle;
-	class Pistol;
+	class PistolCore;
+	class Pistol: PistolCore
+	{
+		#include "Shells_Pistol.hpp"
+	};
+	class RifleCore;
+	class Rifle: RifleCore
+	{
+		#include "Shells_Small.hpp"
+	};
 	class GrenadeLauncher;
 	
 	
@@ -31,15 +39,18 @@ class CfgWeapons
 	class AK_BASE : Rifle
 	{
 		class GP25Muzzle;
+		#include "Shells_Small.hpp"
 	};
 	class AK_74 : AK_BASE
 	{
 		class Single;
+		class Burst;
 		class FullAuto;	
 	};
 	class RPK_74 : AK_74
 	{
 		class Single;
+		class manual;
 		class FullAuto;
 	};
 	#include "Rifles\RPK74.hpp"
@@ -47,11 +58,13 @@ class CfgWeapons
 	class AKS_BASE : AK_BASE
 	{
 		class Single;
+		class Burst;
 		class FullAuto;
 	};
-		class AKS_74_UN_kobra : AKS_BASE
+	class AKS_74_UN_kobra : AKS_BASE
 	{
 		class Single;
+		class Burst;
 		class FullAuto;
 	};
 	#include "Rifles\AK74.hpp"
@@ -62,6 +75,7 @@ class CfgWeapons
 	class AK_47_M : AK_BASE
 	{
 		class Single;
+		class Burst;
 		class FullAuto;
 	};
 	#include "Rifles\AKM.hpp"
@@ -78,11 +92,14 @@ class CfgWeapons
 	class G36C : Rifle
 	{
 		class Single;
+		class Burst;
 		class FullAuto;
+		#include "Shells_Small.hpp"
 	};
 	class G36_C_SD_eotech : G36C
 	{
 		class Single;
+		class Burst;
 		class FullAuto;
 	};
 	#include "Rifles\G36.hpp"
@@ -102,12 +119,14 @@ class CfgWeapons
 	class M4A1 : M16_base
 	{
 		class Single;
+		class Burst;
 		class FullAuto;
 	};
 	class M4A1_Aim;
 	class M4A1_AIM_SD_camo : M4A1_Aim
 	{
 		class Single;
+		class Burst;
 		class FullAuto;
 	};
 	#include "Rifles\M4A1.hpp"
@@ -115,7 +134,9 @@ class CfgWeapons
 	class Sa58P_EP1 : Rifle
 	{
 		class Single;
+		class Burst;
 		class FullAuto;
+		#include "Shells_Small.hpp"
 	};	
 	class Sa58V_EP1 : Sa58P_EP1 {};
 	#include "Rifles\SA58.hpp"
@@ -126,6 +147,7 @@ class CfgWeapons
 	class FN_FAL : M16A2
 	{
 		class Single;
+		#include "Shells_Big.hpp"
 	};
 	class FN_FAL_ANPVS4 : FN_FAL
 	{
@@ -136,10 +158,14 @@ class CfgWeapons
 	class M14_EP1 : Rifle
 	{
 		class Single;
+		#include "Shells_Big.hpp"
 	};
 	#include "Rifles\M14.hpp"
 	
-	class LeeEnfield;
+	class LeeEnfield : Rifle
+	{
+		#include "Shells_Big.hpp"
+	};
 	#include "Rifles\LeeEnfield.hpp"
 	
 	#include "Rifles\Mosin.hpp"
@@ -150,6 +176,7 @@ class CfgWeapons
 	class DMR : Rifle
 	{
 		class Single;
+		#include "Shells_Big.hpp"
 	};
 	#include "Rifles\DMR.hpp"
 	
@@ -159,6 +186,7 @@ class CfgWeapons
 		{
 			class StepScope;
 		};
+		#include "Shells_Big.hpp"
 	};
 	#include "Rifles\M24.hpp"
 	
@@ -175,6 +203,7 @@ class CfgWeapons
 			class Scope;
 			class Ironsights;
 		};
+		#include "Shells_Big.hpp"
 	};
 	#include "Rifles\SVD.hpp"
 	
@@ -190,12 +219,14 @@ class CfgWeapons
 	class BAF_L110A1_Aim : Rifle
 	{
 		class Manual;
+		#include "Shells_Small.hpp"
 	};
 	#include "Rifles\L110A1.hpp"
 	
 	class M240 : Rifle
 	{
 		class Manual;
+		#include "Shells_Big.hpp"
 	};
 	#include "Rifles\M240.hpp"
 	
@@ -208,9 +239,30 @@ class CfgWeapons
 	class PK : Rifle
 	{
 		class Manual;
+		#include "Shells_Big.hpp"
 	};
 	#include "Rifles\PKM.hpp"
 	#include "Rifles\UK59.hpp"
+	
+	
+	/* MOUNTED MACHINE GUNS */
+	
+	class MGun;
+	class DSHKM: MGun
+	{
+		#include "Shells_Big.hpp"
+		#include "Rifles\DSHKM.hpp"
+	};
+	class M240_veh: MGun
+	{
+		#include "Shells_Big.hpp"
+		#include "Rifles\M240_veh.hpp"
+	};
+	class PKT: MGun
+	{
+		#include "Shells_Big.hpp"
+		#include "Rifles\PKT.hpp"
+	};
 	
 	
 	/* SUBMACHINE GUNS */
@@ -220,6 +272,7 @@ class CfgWeapons
 		class Single;
 		class Burst;
 		class FullAuto;
+		#include "Shells_Pistol.hpp"
 	};	
 	class MP5A5 : MP5SD
 	{
@@ -233,6 +286,7 @@ class CfgWeapons
 	{
 		class Single;
 		class FullAuto;
+		#include "Shells_Pistol.hpp"
 	};
 	class bizon_silenced : Bizon
 	{

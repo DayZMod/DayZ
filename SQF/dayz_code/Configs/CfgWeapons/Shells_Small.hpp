@@ -1,0 +1,13 @@
+bullet1[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Small_metal (4)",1,1,30};
+bullet2[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Small_metal (3)",1,1,30};
+bullet3[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Small_metal (2)",1,1,30};
+bullet4[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Small_metal (1)",1,1,30};
+bullet5[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Small_dirt (4)",1,1,30};
+bullet6[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Small_dirt (1)",1,1,30};
+bullet7[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Small_dirt (3)",1,1,30};
+bullet8[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Small_dirt (1)",1,1,30};
+bullet9[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Small_soft (2)",1,1,30};
+bullet10[] = {"\z\addons\dayz_communityassets\sounds\Shells\Small_soft (1)",1,1,30};
+bullet11[] = {"\z\addons\dayz_communityassets\sounds\Shells\Small_soft (2)",1,1,30};
+bullet12[] = {"\z\addons\dayz_communityassets\sounds\Shells\Small_soft (3)",1,1,30};
+soundBullet[] = {"bullet1",0.083,"bullet2",0.083,"bullet3",0.083,"bullet4",0.083,"bullet5",0.083,"bullet6",0.083,"bullet7",0.083,"bullet8",0.083,"bullet9",0.083,"bullet10",0.083,"bullet11",0.083,"bullet12",0.083};
