@@ -7,6 +7,7 @@ class Pickup_PK_base: Car {
 		class MainTurret: NewTurret{};
 	};
 	class AnimationSources;
+	#include "sounds\Offroad.hpp"
 };
 
 class Pickup_PK_DZ_base : Pickup_PK_base

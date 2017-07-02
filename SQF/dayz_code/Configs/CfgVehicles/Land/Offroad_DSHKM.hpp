@@ -4,6 +4,7 @@ class Offroad_DSHKM_base : Car
 	{
 		class MainTurret;
 	};
+	#include "sounds\Offroad.hpp"
 };
 
 class Offroad_DSHKM_INS : Offroad_DSHKM_base
