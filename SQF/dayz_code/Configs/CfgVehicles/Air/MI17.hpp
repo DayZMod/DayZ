@@ -21,10 +21,14 @@ class Mi17_base: Helicopter
 			class Turrets: Turrets {};
 		};
 	};
+	#include "sounds\Mi17.hpp"
 };
+
 //"Mi17_DZ" createVehicle position player;
 //class Mi17_base_CDF: Mi17_base {};
-class Mi17_DZ: Mi17_base {
+
+class Mi17_DZ: Mi17_base 
+{
 	displayname = $STR_VEH_NAME_MI17;
 	scope = 2;
 	side = 2;
