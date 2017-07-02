@@ -1,3 +1,8 @@
+class An2_Base_EP1: Plane
+{
+	#include "sounds\An2.hpp"
+};
+
 class AN2_DZ: An2_Base_EP1
 {
 	displayname = $STR_VEH_NAME_AN2;

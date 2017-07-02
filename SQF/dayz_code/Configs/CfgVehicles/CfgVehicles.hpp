@@ -62,7 +62,7 @@ class CfgVehicles
 			class PushPlane {ACTION_PUSH;};
 		};
 	};
-	#include "Air\AN2_DZ.hpp"
+	#include "Air\AN2.hpp"
 	
 
 	/* LANDVEHICLES */
