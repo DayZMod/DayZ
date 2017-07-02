@@ -69,6 +69,7 @@ class CfgAmmo
 	class BulletBase : BulletCore
 	{
 		#include "Bullethits\BulletBase.hpp"
+		#include "Sonic_Cracks\BulletBase.hpp"
 	};
 	class B_9x18_Ball : BulletBase
 	{
@@ -81,6 +82,7 @@ class CfgAmmo
 		typicalspeed = 350;
 		visiblefire = 15;
 		#include "Bullethits\B_9x18_Ball.hpp"
+		#include "Sonic_Cracks\B_9x18_Ball.hpp"
 	};
 	class B_9x18_SD : B_9x18_Ball
 	{
@@ -91,6 +93,10 @@ class CfgAmmo
 		typicalspeed = 310;
 		visiblefire = 0.035;
 		visiblefiretime = 2;
+	};
+	class B_9x19_Ball : B_9x18_Ball
+	{
+		#include "Sonic_Cracks\B_9x19_Ball.hpp"
 	};
 	class B_45ACP_Ball : BulletBase
 	{
@@ -104,6 +110,11 @@ class CfgAmmo
 		indirecthitrange = 0;
 		typicalspeed = 260;
 		visiblefire = 16;
+		#include "Sonic_Cracks\B_45ACP_Ball.hpp"
+	};
+	class B_545x39_Ball : BulletBase
+	{
+		#include "Sonic_Cracks\B_545x39_Ball.hpp"
 	};
 	class B_545x39_SD : BulletBase
 	{
@@ -112,6 +123,7 @@ class CfgAmmo
 	class B_556x45_SD : BulletBase
 	{
 		#include "Bullethits\B_556x45_SD.hpp"
+		#include "Sonic_Cracks\B_556x45_Ball.hpp"
 	};
 	class B_556x45_Ball : BulletBase
 	{
@@ -120,18 +132,34 @@ class CfgAmmo
 	class B_762x39_Ball : BulletBase
 	{
 		#include "Bullethits\B_762x39_Ball.hpp"
+		#include "Sonic_Cracks\B_762x39_Ball.hpp"
 	};
 	class B_762x51_Ball : BulletBase
 	{
 		#include "Bullethits\B_762x51_Ball.hpp"
+		#include "Sonic_Cracks\B_762x51_Ball.hpp"
+	};
+	class B_762x51_noTracer : B_762x51_Ball
+	{
+		#include "Sonic_Cracks\B_762x51_noTracer.hpp"
 	};
 	class B_762x54_Ball : BulletBase
 	{
 		#include "Bullethits\B_762x54_Ball.hpp"
+		#include "Sonic_Cracks\B_762x54_Ball.hpp"
+	};
+	class B_762x54_noTracer : B_762x54_Ball
+	{
+		#include "Sonic_Cracks\B_762x54_noTracer.hpp"
+	};
+	class B_12Gauge_74Slug : BulletBase
+	{
+		#include "Sonic_Cracks\B_12Gauge_74Slug.hpp"
 	};
 	class B_127x107_Ball: BulletBase
 	{
 		#include "Bullethits\B_127x107_Ball.hpp"
+		#include "Sonic_Cracks\B_127x107_Ball.hpp"
 	};
 	//.44 Henry			Winchester 1866
 	class B_1866_Slug : BulletBase
@@ -164,76 +192,13 @@ class CfgAmmo
 	};*/
 	
 	
-	/* BOLT / ARROW */
-	
-	class Bolt : BulletBase
-	{
-		model = "\dayz_weapons\models\bolt";
-		soundFly[] = {"", 1, 1};
-		hit = 6;
-		cartridge = "";
-		cost = 5;
-		typicalSpeed = 100;
-		airFriction = -0.002751;
-		caliber = 0.33;
-		visibleFire = 1;
-		audibleFire = 1;
-	};
-	class WoodenArrow : Bolt
-	{
-		model = "\dayz_weapons\models\bolt";
-		hit = 8;
-	};
-	class tranquiliser_bolt : BulletBase
-	{
-		hit = 1;  					
-		indirectHit = 0;				
- 		indirectHitRange = 0;			 			
-		maxRange = 100;
-		deflecting = 5;
-		tracerColor[] = {0, 0, 0, 0};
-		tracerColorR[] = {0, 0, 0, 0};
-		model = "z\addons\community_crossbow\models\bolt.p3d";
-		typicalSpeed=75; //100
-		maxSpeed = 75;
-		airFriction=-0.007;//0.007
-		caliber=0.33000001;
-		visibleFire=0;
-		audibleFire=0;
-	};
-	class explosive_bolt : GrenadeCore   
-	{
-		hit=6;
-		indirectHit=10;
-		indirectHitRange=2.5;
-		soundHit[] = {"Ca\sounds\Weapons\explosions\AZP85_explosion1", db25, 1, 1500};
-		muzzleEffect = "BIS_Effects_Rifle";
-
-		CraterEffects = "ExploAmmoCrater";
-		explosionEffects = "ExploAmmoExplosion";
-
-		simulation = "shotShell";
-		visibleFire = 50;			// how much is visible when this weapon is fired
-		audibleFire = 50;
-		visibleFireTime = 5;			// how long is it visible
-		explosive = 0.5;			// Munition explosive.
-		cost = 25;
-		deflecting = 5;
-		airFriction=-0.02;//0.007
-		typicalSpeed=35; //100
-		maxSpeed = 35;
-
-		maxRange = 50; //100
-		maxRangeProbab = 0.2;
-		model="\ca\Weapons\Data\bullettracer\tracer_red";
-		tracerScale=10;
-		tracerStartTime=0.075000003;
-		tracerEndTime=5;
-	};	
-	
-	
 	/* THROWN */
 	
+	class Grenade : Default
+	{
+		#include "Sonic_Cracks\Grenade.hpp"
+	};
+	class GrenadeHand : Grenade {};
 	class ThrownObjects : GrenadeHand
 	{
 		hit = 0.5;
@@ -343,4 +308,72 @@ class CfgAmmo
 		//explosiontime = 1;
 		fusedistance = 0;
 	};
+	
+	
+	/* BOLT / ARROW */
+	
+	class Bolt : BulletBase
+	{
+		model = "\dayz_weapons\models\bolt";
+		soundFly[] = {"", 1, 1};
+		hit = 6;
+		cartridge = "";
+		cost = 5;
+		typicalSpeed = 100;
+		airFriction = -0.002751;
+		caliber = 0.33;
+		visibleFire = 1;
+		audibleFire = 1;
+	};
+	class WoodenArrow : Bolt
+	{
+		model = "\dayz_weapons\models\bolt";
+		hit = 8;
+	};
+	class tranquiliser_bolt : BulletBase
+	{
+		hit = 1;  					
+		indirectHit = 0;				
+ 		indirectHitRange = 0;			 			
+		maxRange = 100;
+		deflecting = 5;
+		tracerColor[] = {0, 0, 0, 0};
+		tracerColorR[] = {0, 0, 0, 0};
+		model = "z\addons\community_crossbow\models\bolt.p3d";
+		typicalSpeed=75; //100
+		maxSpeed = 75;
+		airFriction=-0.007;//0.007
+		caliber=0.33000001;
+		visibleFire=0;
+		audibleFire=0;
+	};
+	class explosive_bolt : GrenadeCore   
+	{
+		hit=6;
+		indirectHit=10;
+		indirectHitRange=2.5;
+		soundHit[] = {"Ca\sounds\Weapons\explosions\AZP85_explosion1", db25, 1, 1500};
+		muzzleEffect = "BIS_Effects_Rifle";
+
+		CraterEffects = "ExploAmmoCrater";
+		explosionEffects = "ExploAmmoExplosion";
+
+		simulation = "shotShell";
+		visibleFire = 50;			// how much is visible when this weapon is fired
+		audibleFire = 50;
+		visibleFireTime = 5;			// how long is it visible
+		explosive = 0.5;			// Munition explosive.
+		cost = 25;
+		deflecting = 5;
+		airFriction=-0.02;//0.007
+		typicalSpeed=35; //100
+		maxSpeed = 35;
+
+		maxRange = 50; //100
+		maxRangeProbab = 0.2;
+		model="\ca\Weapons\Data\bullettracer\tracer_red";
+		tracerScale=10;
+		tracerStartTime=0.075000003;
+		tracerEndTime=5;
+	};	
 };
