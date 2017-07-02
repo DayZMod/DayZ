@@ -16,12 +16,11 @@ class CfgWeapons
 	class GrenadeLauncher;
 	
 	
-	
 	/* Dummy weapons */
+	
 	#include "Throw.hpp"
+	#include "C4.hpp"
 	#include "Loot.hpp"
-	
-	
 	
 	//each include is preceded by its required external references.
 	
@@ -283,8 +282,7 @@ class CfgWeapons
 	class revolver_EP1;
 	#include "Pistols\Revolver.hpp"
 	
-	
-	
+
 	
 	
 	/* MELEE */
