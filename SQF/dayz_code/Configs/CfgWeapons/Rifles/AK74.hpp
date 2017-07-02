@@ -71,17 +71,17 @@ class AK74_Kobra_SD_DZ : AKS_74_UN_kobra
 	drySound[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_Dry",0.01,1,10};            // new sound
 	class Single : Single                                                                       // new sound
 	{                                                                                           // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\aks74u\sounds\AKS74U_sd_s1",1,1,100};      // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\aks74u\sounds\AKS74U_sd_s1",1,1,90};       // new sound
 		soundBegin[] = {"begin1",1};                                                            // new sound
 	};                                                                                          // new sound
 	class Burst : Burst                                                                         // new sound
 	{                                                                                           // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\aks74u\sounds\AKS74U_sd_s1",1,1,100};      // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\aks74u\sounds\AKS74U_sd_s1",1,1,90};       // new sound
 		soundBegin[] = {"begin1",1};                                                            // new sound
 	};                                                                                          // new sound
 	class FullAuto : FullAuto                                                                   // new sound
 	{                                                                                           // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\aks74u\sounds\AKS74U_sd_s1",1,1,100};      // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\aks74u\sounds\AKS74U_sd_s1",1,1,90};       // new sound
 		soundBegin[] = {"begin1",1};                                                            // new sound
 	};                                                                                          // new sound
 	

@@ -81,26 +81,26 @@ class M4A1_DZ : M4A1
 	drySound[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\Dry",0.01,1,10};            // new sound
 	class Single : Single                                                                  // new sound
 	{                                                                                      // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s1",5,1,1000};         // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s2",5,1,1000};         // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s3",5,1,1000};         // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s4",5,1,1000};         // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s1",5,1,1100};         // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s2",5,1,1100};         // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s3",5,1,1100};         // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s4",5,1,1100};         // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};          // new sound
 	};                                                                                     // new sound
 	class Burst : Burst                                                                    // new sound
 	{                                                                                      // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s1",5,1,1000};         // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s2",5,1,1000};         // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s3",5,1,1000};         // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s4",5,1,1000};         // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s1",5,1,1100};         // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s2",5,1,1100};         // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s3",5,1,1100};         // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s4",5,1,1100};         // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};          // new sound
 	};                                                                                     // new sound
 	class FullAuto : FullAuto                                                              // new sound
 	{                                                                                      // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s1",5,1,1000};         // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s2",5,1,1000};         // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s3",5,1,1000};         // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s4",5,1,1000};         // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s1",5,1,1100};         // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s2",5,1,1100};         // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s3",5,1,1100};         // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s4",5,1,1100};         // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};          // new sound
 	};                                                                                     // new sound
 	

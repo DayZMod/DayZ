@@ -15,28 +15,28 @@ class G36K_Camo_DZ : G36C
 	class Single : Single
 	{
 		dispersion = 0.0011;
-		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s1",5,1,1000};        // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s2",5,1,1000};        // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s3",5,1,1000};        // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s4",5,1,1000};        // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s1",5,1,1100};        // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s2",5,1,1100};        // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s3",5,1,1100};        // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s4",5,1,1100};        // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};         // new sound
 	};
 	class Burst : Burst
 	{
 		dispersion = 0.0011;
-		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s1",5,1,1000};        // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s2",5,1,1000};        // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s3",5,1,1000};        // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s4",5,1,1000};        // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s1",5,1,1100};        // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s2",5,1,1100};        // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s3",5,1,1100};        // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s4",5,1,1100};        // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};         // new sound
 	};
 	class FullAuto : FullAuto
 	{
 		dispersion = 0.0011;
-		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s1",5,1,1000};        // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s2",5,1,1000};        // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s3",5,1,1000};        // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s4",5,1,1000};        // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s1",5,1,1100};        // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s2",5,1,1100};        // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s3",5,1,1100};        // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s4",5,1,1100};        // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};         // new sound
 	};
 	

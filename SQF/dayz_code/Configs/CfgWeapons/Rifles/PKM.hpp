@@ -14,10 +14,10 @@ class PKM_DZ : PK
 	class FullAuto : Manual
 	{
 		reloadTime = 0.08;
-		begin1[] = {"\z\addons\dayz_communityweapons\PKM\sounds\PKM_s1",5,1,1500};		  // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\PKM\sounds\PKM_s2",5,1,1500};        // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\PKM\sounds\PKM_s3",5,1,1500};        // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\PKM\sounds\PKM_s4",5,1,1500};        // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\PKM\sounds\PKM_s1",5,1,1600};		  // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\PKM\sounds\PKM_s2",5,1,1600};        // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\PKM\sounds\PKM_s3",5,1,1600};        // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\PKM\sounds\PKM_s4",5,1,1600};        // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};         // new sound
 	};
 	

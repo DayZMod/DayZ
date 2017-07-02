@@ -48,10 +48,10 @@ class Mosin_Base : Rifle
 	reloadSound[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\Bolt",1,1,35};           // new sound
 	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\Reload",1,1,35}; // new sound
 	drySound[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\Dry",0.01,1,10};            // new sound
-	begin1[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s1",5,1,1500};           // new sound
-	begin2[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s2",5,1,1500};           // new sound
-	begin3[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s3",5,1,1500};           // new sound
-	begin4[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s4",5,1,1500};           // new sound
+	begin1[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s1",5,1,1600};           // new sound
+	begin2[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s2",5,1,1600};           // new sound
+	begin3[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s3",5,1,1600};           // new sound
+	begin4[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s4",5,1,1600};           // new sound
 	soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};                             // new sound
 	bullet1[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_metal (1)",1,1,50};                   // new sound
 	bullet2[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_metal (3)",1,1,50};                   // new sound
