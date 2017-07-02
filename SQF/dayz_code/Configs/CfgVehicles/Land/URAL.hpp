@@ -1,23 +1,35 @@
-class UralCivil: Ural_Base {
-	crew = "";
-	typicalCargo[] = {};
-	class TransportMagazines {};
-	class TransportWeapons {};
-};
-class Ural_CDF: Ural_Base {
-	crew = "";
-	typicalCargo[] = {};
-	class TransportMagazines {};
-	class TransportWeapons {};
-};
-class Ural_TK_CIV_EP1: Ural_Base {
+class Ural_Base_withTurret : Truck
+{
+	#include "sounds\URAL.hpp"
+}
+
+class Ural_Base;
+class UralCivil : Ural_Base 
+{
 	crew = "";
 	typicalCargo[] = {};
 	class TransportMagazines {};
 	class TransportWeapons {};
 };
 
-class UralCivil_DZ: UralCivil {
+class Ural_CDF : Ural_Base 
+{
+	crew = "";
+	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
+};
+
+class Ural_TK_CIV_EP1 : Ural_Base 
+{
+	crew = "";
+	typicalCargo[] = {};
+	class TransportMagazines {};
+	class TransportWeapons {};
+};
+
+class UralCivil_DZ : UralCivil 
+{
 	scope = public;
 	side=TCivilian;
 	faction=CIV;
