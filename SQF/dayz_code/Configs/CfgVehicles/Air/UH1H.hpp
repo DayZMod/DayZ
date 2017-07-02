@@ -15,6 +15,7 @@ class UH1H_base: Helicopter
 			class Turrets: Turrets {};
 		};
 	};
+	#include "sounds\Huey.hpp"
 };
 
 class UH1H_DZ: UH1H_base
