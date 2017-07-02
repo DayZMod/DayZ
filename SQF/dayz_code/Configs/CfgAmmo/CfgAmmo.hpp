@@ -1,8 +1,6 @@
 class CfgAmmo
 {
 	class Default;
-	class GrenadeHand;
-	class GrenadeCore;
 	
 	
 	/* MELEE */
@@ -194,11 +192,21 @@ class CfgAmmo
 	
 	/* THROWN */
 	
+	class GrenadeCore;
+	class GrenadeBase: GrenadeCore
+	{
+		#include "Explosions\GrenadeBase.hpp"
+	};
 	class Grenade : Default
 	{
 		#include "Sonic_Cracks\Grenade.hpp"
+		#include "Explosions\Grenade.hpp"
 	};
 	class GrenadeHand : Grenade {};
+	class SmokeShell : GrenadeHand 
+	{
+		#include "Explosions\SmokeGrenade.hpp"
+	};
 	class ThrownObjects : GrenadeHand
 	{
 		hit = 0.5;
@@ -210,31 +218,30 @@ class CfgAmmo
 		initTime = 0;
 		explosive = true;
 	};
-	
 	class SodaCan : ThrownObjects
 	{
 		model = "\dayz_equip\models\soda_coke_e.p3d";
 		CraterEffects = "NoCrater";
 		explosionEffects = "NoExplosion";
-		soundHit[] = {"dayz_weapons\sounds\can_hit_0", 0.5, 1, 40};
+//		soundHit[] = {"dayz_weapons\sounds\can_hit_0", 0.5, 1, 40};
+		#include "Explosions\Tincan.hpp"
 	};
-	
 	class TinCan : ThrownObjects
 	{
 		model = "\dayz_equip\models\trash_tincan.p3d";
 		CraterEffects = "NoCrater";
 		explosionEffects = "NoExplosion";
-		soundHit[] = {"dayz_weapons\sounds\can_hit_1", 0.5, 1, 30};
+//		soundHit[] = {"dayz_weapons\sounds\can_hit_1", 0.5, 1, 30};
+		#include "Explosions\Tincan.hpp"
 	};
-	
 	class JackDaniels : ThrownObjects
 	{
 		model = "\dayz_equip\models\bottle_jd.p3d";
 		CraterEffects = "NoCrater";
 		explosionEffects = "GlassSmash";
-		soundHit[] = {"dayz_weapons\sounds\bottle_break_0", 0.5, 1, 60};
+//		soundHit[] = {"dayz_weapons\sounds\bottle_break_0", 0.5, 1, 60};
+		#include "Explosions\Bottle.hpp"
 	};
-	
 	class LitObject : GrenadeHand
 	{
 		displayName = $STR_MAG_ACTION_4;
@@ -244,8 +251,8 @@ class CfgAmmo
 		explosive = false;
 		fuseDistance = 0;
 		initTime = 0;
+		#include "Explosions\Nothing.hpp"
 	};
-	
 	class RoadFlare : LitObject
 	{
 		displayName = $STR_MAG_ACTION_4;
@@ -263,7 +270,6 @@ class CfgAmmo
 		smokeColor[] = {1, 1, 1, 1};
 		effectsSmoke = "FlareSparks";
 	};
-	
 	class ChemLight : LitObject
 	{
 		displayName = $STR_MAG_ACTION_5;
@@ -279,27 +285,43 @@ class CfgAmmo
 		explosionTime = 3600;
 		timeToLive = 3600;
 	};
-	
 	class ChemGreen : ChemLight
 	{
 		model = "\dayz_weapons\models\chem_green";
 		lightColor[] = {0, 0.5, 0};
 	};
-	
 	class ChemRed : ChemLight
 	{
 		model = "\dayz_weapons\models\chem_red";
 		lightColor[] = {0.5, 0, 0};
 	};
-	
 	class ChemBlue : ChemLight
 	{
 		model = "\dayz_weapons\models\chem_blue";
 		lightColor[] = {0, 0, 0.5};
 	};
-	
-	
-	
+	class TimeBombCore;
+	class TimeBomb: TimeBombCore
+	{
+		#include "Explosions\C4.hpp"
+	};
+	class PipeBomb: TimeBomb
+	{
+		#include "Explosions\C4.hpp"
+	};
+	class FuelExplosion: Default
+	{
+		#include "Explosions\FuelExplosion.hpp"
+	};
+	class HelicopterExploSmall;
+	class HelicopterExploBig: HelicopterExploSmall
+	{
+		#include "Explosions\HelicopterExploBig.hpp"
+	};
+	class SmallSecondary: HelicopterExploSmall
+	{
+		#include "Explosions\SmallSecondary.hpp"
+	};
 
 	// used for grenade traps
 	class GrenadeHandTimedWest;
@@ -352,7 +374,7 @@ class CfgAmmo
 		hit=6;
 		indirectHit=10;
 		indirectHitRange=2.5;
-		soundHit[] = {"Ca\sounds\Weapons\explosions\AZP85_explosion1", db25, 1, 1500};
+//		soundHit[] = {"Ca\sounds\Weapons\explosions\AZP85_explosion1", db25, 1, 1500};
 		muzzleEffect = "BIS_Effects_Rifle";
 
 		CraterEffects = "ExploAmmoCrater";
@@ -375,5 +397,6 @@ class CfgAmmo
 		tracerScale=10;
 		tracerStartTime=0.075000003;
 		tracerEndTime=5;
+		#include "Explosions\GrenadeBase.hpp"
 	};	
 };

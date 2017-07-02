@@ -1,0 +1,130 @@
+soundDefault1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundDefault2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundDefault3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundDefault4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundDefault5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundDefault6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundDefault7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundDefault8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+hitFoliage[] = 	{"soundDefault1",0.125,"soundDefault2",0.125,"soundDefault3",0.125,"soundDefault4",0.125,"soundDefault5",0.125,"soundDefault6",0.125,"soundDefault7",0.125,"soundDefault8",0.125};
+hitMan[] = 		{"soundDefault1",0.125,"soundDefault2",0.125,"soundDefault3",0.125,"soundDefault4",0.125,"soundDefault5",0.125,"soundDefault6",0.125,"soundDefault7",0.125,"soundDefault8",0.125};
+hitRubber[] = 	{"soundDefault1",0.125,"soundDefault2",0.125,"soundDefault3",0.125,"soundDefault4",0.125,"soundDefault5",0.125,"soundDefault6",0.125,"soundDefault7",0.125,"soundDefault8",0.125};
+hitDefault[] = 	{"soundDefault1",0.125,"soundDefault2",0.125,"soundDefault3",0.125,"soundDefault4",0.125,"soundDefault5",0.125,"soundDefault6",0.125,"soundDefault7",0.125,"soundDefault8",0.125};
+
+soundGroundSoft1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundGroundSoft2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundGroundSoft3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundGroundSoft4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundGroundSoft5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundGroundSoft6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundGroundSoft7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundGroundSoft8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitGroundSoft[] = {"soundGroundSoft1",0.125,"soundGroundSoft2",0.125,"soundGroundSoft3",0.125,"soundGroundSoft4",0.125,"soundGroundSoft5",0.125,"soundGroundSoft6",0.125,"soundGroundSoft7",0.125,"soundGroundSoft8",0.125};
+
+soundGroundHard1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundGroundHard2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundGroundHard3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundGroundHard4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundGroundHard5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundGroundHard6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundGroundHard7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundGroundHard8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitGroundHard[] = {"soundGroundHard1",0.125,"soundGroundHard2",0.125,"soundGroundHard3",0.125,"soundGroundHard4",0.125,"soundGroundHard5",0.125,"soundGroundHard6",0.125,"soundGroundHard7",0.125,"soundGroundHard8",0.125};
+
+soundMetal1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundMetal2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundMetal3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundMetal4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundMetal5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundMetal6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundMetal7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundMetal8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitMetal[] = {"soundMetal1",0.125,"soundMetal2",0.125,"soundMetal3",0.125,"soundMetal4",0.125,"soundMetal5",0.125,"soundMetal6",0.125,"soundMetal7",0.125,"soundMetal8",0.125};
+
+soundGlass1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundGlass2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundGlass3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundGlass4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundGlass5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundGlass6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundGlass7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundGlass8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitGlass[] = {"soundGlass1",0.125,"soundGlass2",0.125,"soundGlass3",0.125,"soundGlass4",0.125,"soundGlass5",0.125,"soundGlass6",0.125,"soundGlass7",0.125,"soundGlass8",0.125};
+
+soundIron1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundIron2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundIron3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundIron4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundIron5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundIron6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundIron7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundIron8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitIron[] = {"soundIron1",0.125,"soundIron2",0.125,"soundIron3",0.125,"soundIron4",0.125,"soundIron5",0.125,"soundIron6",0.125,"soundIron7",0.125,"soundIron8",0.125};
+
+soundGlassArmored1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundGlassArmored2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundGlassArmored3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundGlassArmored4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundGlassArmored5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundGlassArmored6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundGlassArmored7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundGlassArmored8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitGlassArmored[] = {"soundGlassArmored1",0.125,"soundGlassArmored2",0.125,"soundGlassArmored3",0.125,"soundGlassArmored4",0.125,"soundGlassArmored5",0.125,"soundGlassArmored6",0.125,"soundGlassArmored7",0.125,"soundGlassArmored8",0.125};
+
+soundVehiclePlate1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundVehiclePlate2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundVehiclePlate3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundVehiclePlate4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundVehiclePlate5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundVehiclePlate6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundVehiclePlate7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundVehiclePlate8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitArmor[] = {"soundVehiclePlate1",0.125,"soundVehiclePlate2",0.125,"soundVehiclePlate3",0.125,"soundVehiclePlate4",0.125,"soundVehiclePlate5",0.125,"soundVehiclePlate6",0.125,"soundVehiclePlate7",0.125,"soundVehiclePlate8",0.125};
+
+soundWood1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundWood2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundWood3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundWood4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundWood5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundWood6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundWood7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundWood8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitWood[] = {"soundWood1",0.125,"soundWood2",0.125,"soundWood3",0.125,"soundWood4",0.125,"soundWood5",0.125,"soundWood6",0.125,"soundWood7",0.125,"soundWood8",0.125};
+
+soundMetalPlate1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundMetalPlate2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundMetalPlate3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundMetalPlate4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundMetalPlate5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundMetalPlate6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundMetalPlate7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundMetalPlate8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitMetalplate[] = {"soundMetalPlate1",0.125,"soundMetalPlate2",0.125,"soundMetalPlate3",0.125,"soundMetalPlate4",0.125,"soundMetalPlate5",0.125,"soundMetalPlate6",0.125,"soundMetalPlate7",0.125,"soundMetalPlate8",0.125};
+
+soundHitBuilding1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundHitBuilding2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundHitBuilding3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundHitBuilding4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundHitBuilding5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundHitBuilding6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundHitBuilding7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundHitBuilding8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitBuilding[] = {"soundHitBuilding1",0.125,"soundHitBuilding2",0.125,"soundHitBuilding3",0.125,"soundHitBuilding4",0.125,"soundHitBuilding5",0.125,"soundHitBuilding6",0.125,"soundHitBuilding7",0.125,"soundHitBuilding8",0.125};
+
+soundConcrete1[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb1",7.562341,1,4000};
+soundConcrete2[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb2",7.562341,1,4000};
+soundConcrete3[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb3",7.562341,1,4000};
+soundConcrete4[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb4",7.562341,1,4000};
+soundConcrete5[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb5",7.562341,1,4000};
+soundConcrete6[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb6",7.562341,1,4000};
+soundConcrete7[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb7",7.562341,1,4000};
+soundConcrete8[] = {"\z\dayz_communityassets\sounds\Explosions\impacts\Bomb8",7.562341,1,4000};
+hitConcrete[] = {"soundConcrete1",0.125,"soundConcrete2",0.125,"soundConcrete3",0.125,"soundConcrete4",0.125,"soundConcrete5",0.125,"soundConcrete6",0.125,"soundConcrete7",0.125,"soundConcrete8",0.125};
+
+bulletFly1[] = {"\z\dayz_communityassets\sounds\Explosions\ThingFly1",1,1,500};
+bulletFly2[] = {"\z\dayz_communityassets\sounds\Explosions\ThingFly2",1,1,500};
+bulletFly3[] = {"\z\dayz_communityassets\sounds\Explosions\ThingFly3",1,1,500};
+bulletFly4[] = {"\z\dayz_communityassets\sounds\Explosions\ThingFly4",1,1,500};
+bulletFly5[] = {"\z\dayz_communityassets\sounds\Explosions\ThingFly5",1,1,500};
+bulletFly6[] = {"\z\dayz_communityassets\sounds\Explosions\ThingFly6",1,1,500};
+bulletFly[] = {"bulletFly1",0.166,"bulletFly2",0.166,"bulletFly3",0.166,"bulletFly4",0.166,"bulletFly5",0.166,"bulletFly6",0.167};
