@@ -90,7 +90,7 @@ class DefaultEventhandlers {
 #include "Configs\CfgMagazines\CfgMagazines.hpp"
 #include "Configs\CfgLoot\CfgLoot.hpp"
 #include "Configs\CfgMarkers.hpp"
-#include "Configs\CfgAmmo.hpp"
+#include "Configs\CfgAmmo\CfgAmmo.hpp"
 #include "Configs\CfgObjectCompositions.hpp"
 #include "Configs\CfgTownGenerator\CfgTownGeneratorChernarus.hpp"
 #include "Configs\CfgGrid\CfgGrid.hpp"
