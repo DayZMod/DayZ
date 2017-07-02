@@ -1,4 +1,3 @@
-
 class WildZombie_Base : Zed_Base {
 	scope = public;
 	glassesEnabled = 0;
