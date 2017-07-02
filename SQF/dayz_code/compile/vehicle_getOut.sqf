@@ -51,7 +51,7 @@ if (_unit == player) then {
 	if (((speed _vehicle) > 15) or ((speed _vehicle) < -10)) then {
 		dayz_getoutTime = diag_tickTime;
 	};
-};
 
-//Debug Info
-diag_log format["%1(%4) - %2 - %3, (playerPos: %5, ExitPos: %6, IntersectsWith: %7)",_vehicle,_position,_unit,(speed _vehicle),_playerPos,_exitPosition,_intersectsWith];
+	//Debug Info
+	diag_log format["%1(%4) - %2 - %3, (playerPos: %5, ExitPos: %6, IntersectsWith: %7)",_vehicle,_position,_unit,(speed _vehicle),_playerPos,_exitPosition,_intersectsWith];
+};

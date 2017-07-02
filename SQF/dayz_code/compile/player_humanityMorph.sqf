@@ -14,6 +14,7 @@ _updates = player getVariable ["updatePlayer",[false,false,false,false,false]];
 _updates set [0,true];
 player setVariable ["updatePlayer",_updates,true];
 dayz_unsaved = true;
+
 //Logout
 _humanity = player getVariable ["humanity",0];
 _medical = player call player_sumMedical;
@@ -28,8 +29,7 @@ _ConfirmedHumanKills = player getVariable ["ConfirmedHumanKills",0];
 _ConfirmedBanditKills = player getVariable ["ConfirmedBanditKills",0];
 
 //Switch
-_switch = _model spawn player_switchModel;
-waitUntil { scriptDone _switch };
+_switch = _model call player_switchModel;
 
 //Login
 
