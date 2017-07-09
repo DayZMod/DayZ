@@ -15,11 +15,13 @@ class Residential : Default
 	lootGroup = Residential;
 };
 
+/*
 class Land_HouseV_1I4 : Residential
 {
 	zedPos[] = {{-0.400146,-3.87891,-2.7688},{-3.67651,-2.51758,-2.76544},{-0.472412,3.19824,-2.72028}};
 	lootPos[] = {{0.53,-4.53,-2.77},{-3.83,-2.5,-2.77},{-0.51,3.92,-2.72},{-1.93,-5.12,-2.17},{0.57,-1.53,-2.76}};
 };
+*/
 
 class Land_kulna : Residential
 {
@@ -64,6 +66,7 @@ class Land_HouseBlock_A1_1 : Residential
 	lootPos[] = {{-3.52881,0.15918,-4.74365},{-3.56152,-2.33496,-4.73096}};
 };
 
+/*
 class Land_HouseV_1I1 : Residential
 {
 	zedPos[] = {{0.100586,-2.34473,-2.88281}};
@@ -77,6 +80,7 @@ class Land_A_MunicipalOffice : Residential
 	lootChance = 0.4;
 	lootPos[] = {{-4.66113,-6.27246,-18.429},{3.31641,-5.77441,-18.429},{-0.20752,-6.48633,-18.429},{-9.72412,-4.8877,-3.759},{-9.57813,3.55566,-3.759},{-7.17285,11.083,-3.76901},{5.06934,11.1836,-3.74899},{9.3208,5.38574,-3.76901},{9.65283,-4.82129,-3.74899},{3.23535,-0.106445,-0.169037},{4.85156,-3.69043,-0.169037},{-0.80127,-7.88184,-0.169037},{-4.4082,-4.91797,-0.169037},{-4.90771,-2.23145,-0.169037}};
 };
+*/
 
 class Land_HouseV2_04_interier : Residential
 {
@@ -106,12 +110,14 @@ class Land_KBud : Residential
 	lootPos[] = {{-0.017334,0.0107422,-0.663696}};
 };
 
+/*
 class Land_sara_domek_zluty : Residential
 {
 	maxRoaming = 1;
 	zedPos[] = {{-6.17139,-2.33789,-2.43384},{-0.660645,2.05469,-2.43372},{6.36401,-0.236328,-2.43372},{2.95679,3.00684,-2.43365},{-3.75342,-3.54785,-2.42389},{-2.77441,0.751953,-2.42371},{-5.07666,3.04395,-2.42352},{0.627197,-0.584961,-2.41394},{7.06665,2.9541,-2.4137}};
 	lootPos[] = {{2.96,3.01,-2.43},{7.07,2.95,-2.41},{6.36,-0.24,-2.43},{0.63,-0.58,-2.44},{-0.66,2.05,-2.43},{-2.77,0.75,-2.42},{-5.08,3.04,-2.42},{-6.17,-2.34,-2.43},{-3.75,-3.55,-2.42}};
 };
+*/
 
 class Land_HouseV_3I4 : Residential
 {
@@ -120,12 +126,15 @@ class Land_HouseV_3I4 : Residential
 	lootPos[] = {{5.46387,2.80273,-2.61298}};
 };
 
+/*
+Zero Config
 class Land_Shed_W4 : Residential
 {
 	maxRoaming = 3;
 	zedPos[] = {};
 	lootPos[] = {};
 };
+*/
 
 class Land_HouseV_3I1 : Residential
 {
@@ -134,12 +143,14 @@ class Land_HouseV_3I1 : Residential
 	lootPos[] = {};
 };
 
+/*
 class Land_HouseV_1L2 : Residential
 {
 	maxRoaming = 3;
 	zedPos[] = {{-0.448242,5.29883,-3.01697}};
 	lootPos[] = {{-0.448242,5.29883,-3.01697}};
 };
+*/
 
 class Land_HouseV_1T : Residential
 {
@@ -226,12 +237,14 @@ class Land_HouseV2_03 : Residential
 	lootPos[] = {{0.812988,7.99805,-5.89618},{9.96143,-9.00488,-5.48578}};
 };
 
+/*
 class Land_Mil_Guardhouse : Residential
 {
 	maxRoaming = 3;
 	zedPos[] = {{-2.44727,0.250977,-1.70563},{-2.44873,3.00293,-1.70285}};
 	lootPos[] = {{-2.44727,0.250977,-1.70563},{-2.44873,3.00293,-1.70285}};
 };
+*/
 
 class LADAWreck : Residential
 {
@@ -767,7 +780,7 @@ class Land_House_K_6_EP1 : Residential // tak 3 story cement open door red blank
 	zedPos[] = {{-3.42285,0.123291,1.48813},{1.25244,3.29688,4.42145}};
 	lootPos[] = {{1.6333,4.93286,-1.60791},{0.728516,2.53174,1.47144},{-3.42285,0.123291,1.48813},{1.25244,3.29688,4.42145},{-3.85645,0.323242,4.3952}};
 };
-class Land_Mil_Guardhouse_EP1 : Land_Mil_Guardhouse{};	// tak 
+//class Land_Mil_Guardhouse_EP1 : Land_Mil_Guardhouse{};	// tak 
 
 class land_seb_bouda3 : Residential // nm house
 {

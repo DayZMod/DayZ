@@ -13,7 +13,7 @@ class FarmRoaming : Farm
 class Land_Shed_W03 : HouseRoaming {};
 class Land_HouseV_2T1 : HouseRoaming {};
 class Land_HouseV_3I2 : HouseRoaming {};
-class Land_HouseV_3I3 : HouseRoaming {};
+//class Land_HouseV_3I3 : HouseRoaming {};
 class Land_HouseBlock_A1_2 : HouseRoaming {};
 class Land_HouseBlock_A2 : HouseRoaming {};
 class Land_HouseBlock_B1 : HouseRoaming {};
@@ -22,7 +22,7 @@ class Land_HouseBlock_B3 : HouseRoaming {};
 class Land_HouseBlock_B4 : HouseRoaming {};
 class Land_HouseBlock_C2 : HouseRoaming {};
 class Land_HouseBlock_C3 : HouseRoaming {};
-class Land_HouseBlock_C4 : HouseRoaming {};
+//class Land_HouseBlock_C4 : HouseRoaming {};
 class Land_HouseBlock_C5 : HouseRoaming {};
 class Land_Misc_Cargo1D : HouseRoaming {};
 class Land_Ind_Shed_01_end : HouseRoaming {};

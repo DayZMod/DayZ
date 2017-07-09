@@ -139,6 +139,6 @@ class CfgLoot
 		#include "Buildings\Toilet.hpp"
 		#include "Buildings\Roaming.hpp"
 		#include "Buildings\Misc.hpp"
-		//#include "Buildings\Zero.hpp"
+		#include "Buildings\Zero.hpp"
 	};
 };

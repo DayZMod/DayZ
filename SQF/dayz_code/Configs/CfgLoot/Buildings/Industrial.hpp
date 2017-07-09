@@ -157,6 +157,8 @@ class Land_A_FuelStation_Build : Industrial
 	};
 };
 
+/*
+Zero Conifg
 class Land_Shed_Ind02 : Industrial
 {
 	zedPos[] =
@@ -195,7 +197,7 @@ class Land_Shed_W01 : Industrial
 		{-1.52832,-0.249023,-1.41138}
 	};
 };
-
+*/
 class Land_Tovarna2 : Industrial
 {
 	zedPos[] =

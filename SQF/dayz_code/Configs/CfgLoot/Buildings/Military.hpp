@@ -30,6 +30,9 @@ class MilitarySpecial : Military
 	lootGroup = MilitarySpecial;
 };
 
+/*
+
+Moved To ZeroConfig
 class Land_a_stationhouse : Military
 {
 	zedPos[] = {{-0.892578,-5.7168,-9.47058},{1.5127,1.96484,-9.47058},{18.9063,-4.06738,-9.47058},{-2.69922,-7.57422,-9.46057},{-1.35645,-8.3623,-4.6489},{-3.24219,-6.61914,-4.6489},{-1.70801,-7.85449,-0.0437927},{-3.39453,-7.88281,-0.0437927},{-1.37891,-5.79102,4.41141},{-1.39648,-7.79883,4.41141}};
@@ -43,6 +46,7 @@ class Land_Mil_ControlTower: Military
 	lootChance = 0.4;
 	lootPos[] = {{10.07,3.76,-9.63},{5.07,3.65,-5.5},{1.75,5.68,-5.51},{7.49,-1.47,-1.04},{2.46,-0.83,-1.07},{7.61,2.05,-0.35},{2.26,2.17,-1.07},{2.56,5.72,-9.63},{6.56,-3.82,-1.06},{9.87,4.04,-1.06},{7.28,-1.69,2.98}};
 };
+*/
 
 class Land_SS_hangar: Military
 {
@@ -53,17 +57,22 @@ class Land_SS_hangar: Military
 	lootGroup = Hangar;
 };
 
+/*
 class Land_A_TVTower_Base: Military
 {
 	zedPos[] = {{-0.95166,1.48047,-2.31586},{-2.01782,-4.24121,-2.30939},{-0.982422,-1.92383,-2.25586}};
 	lootPos[] = {{-0.982422,-1.92383,-2.25586},{-2.01782,-4.24121,-2.30939},{-0.95166,1.48047,-2.31586}};
 };
+*/
 
+/*
+zERO cONFIG
 class Land_Mil_House: Military
 {
 	zedPos[] = {{11.1638,4.70117,-5.67465},{12.4565,1.42383,-5.67465},{13.6672,4.42383,-5.67465}};
 	lootPos[] = {{12.4565,1.42383,-5.67465},{11.1638,4.70117,-5.67465},{13.6672,4.42383,-5.67465}};
 };
+*/
 
 class Land_Mil_Barracks_i: MilitarySpecial
 {
@@ -72,9 +81,11 @@ class Land_Mil_Barracks_i: MilitarySpecial
 	lootPos[] = {{-0.39,-2.02,-1.1},{-5.67,1.68,-1.1},{-1.95,2.58,-1.11},{5.46,2.58,-1.11},{6.37,-1.22,-0.93},{-0.24,-1.04,0.1},{-3.53,-0.38,-1.1},{-5.39,-2.23,-1.1},{-6.78,-1.34,-0.7},{-9.07,-0.53,-1.1},{2.97,-0.92,-1.1},{1.11,-2.35,-1.1}};
 };
 
+/*
 class Land_Mil_Barracks: Military
 {
 };
+*/
 
 class Camp: Military {
 	maxRoaming = 1;
@@ -253,9 +264,13 @@ class Land_smd_kostel_trosky: MilitarySpecial // church ruins
 };
 // ALT-MAP Support 
 class Land_Mil_hangar_EP1 : Land_SS_hangar{}; // tak hangar
+
+/*
 class Land_Mil_ControlTower_EP1 : Land_Mil_ControlTower{}; // tak atc
+
 class Land_Mil_Barracks_i_EP1 : Land_Mil_Barracks_i{}; // tak barracks
 class Land_Mil_House_EP1 : Land_Mil_House{}; // tak
+*/
 
 class land_st_vez: Military // nm tower
 {
