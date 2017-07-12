@@ -44,7 +44,7 @@ if (!isNull _findNearestRock) then {
 			["Working",0,[100,15,10,0]] call dayz_NutritionSystem;
 			
             _breaking = false;
-			if ([0.09] call fn_chance) then {
+			if (dayz_HarvestingChance call fn_chance) then {
                 _breaking = true;
                 if ("MeleePickaxe" in weapons player) then {
                     player removeWeapon "MeleePickaxe";

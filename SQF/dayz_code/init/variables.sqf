@@ -293,6 +293,7 @@ dayz_maxAnimals = 5;
 dayz_maxPlants = 3;
 dayz_animalDistance = 600;
 dayz_plantDistance = 600;
+dayz_HarvestingChance = [0.09];
 
 dayz_maxMaxModels = 80; // max quantity of Man models (player or Z, dead or alive) around players. Below this limit we can spawn Z // max quantity of loot piles around players. Below this limit we can spawn some loot
 dayz_cantseeDist = 150; // distance from which we can spawn a Z in front of any player without ray-tracing and angle checks
