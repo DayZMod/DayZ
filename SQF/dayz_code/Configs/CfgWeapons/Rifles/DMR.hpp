@@ -14,10 +14,10 @@ class DMR_DZ : DMR
 		reloadTime = 0.6;                                                                 
 		recoil = "recoil_single_primary_4outof10";                                        
 		recoilProne = "recoil_single_primary_prone_4outof10";                             
-		begin1[] = {"\z\addons\dayz_communityweapons\DMR\sounds\DMR_s1",5,1,1500};        // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\DMR\sounds\DMR_s2",5,1,1500};        // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\DMR\sounds\DMR_s3",5,1,1500};        // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\DMR\sounds\DMR_s4",5,1,1500};        // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\DMR\sounds\DMR_s1",5,1,1600};        // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\DMR\sounds\DMR_s2",5,1,1600};        // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\DMR\sounds\DMR_s3",5,1,1600};        // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\DMR\sounds\DMR_s4",5,1,1600};        // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};         // new sound
 	};
 	

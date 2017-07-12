@@ -10,18 +10,26 @@ class AKM_DZ : AK_47_M
 	drySound[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_Dry",0.01,1,10};            // new sound
 	class Single : Single                                                                      // new sound
 	{                                                                                          // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s1",5,1,1200};            // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s2",5,1,1200};            // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s3",5,1,1200};            // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s4",5,1,1200};            // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s1",5,1,1300};            // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s2",5,1,1300};            // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s3",5,1,1300};            // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s4",5,1,1300};            // new sound
+		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};              // new sound
+	};                                                                                         // new sound
+	class Burst : Burst                                                                        // new sound
+	{                                                                                          // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s1",5,1,1300};            // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s2",5,1,1300};            // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s3",5,1,1300};            // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s4",5,1,1300};            // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};              // new sound
 	};                                                                                         // new sound
 	class FullAuto : FullAuto                                                                  // new sound
 	{                                                                                          // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s1",5,1,1200};            // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s2",5,1,1200};            // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s3",5,1,1200};            // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s4",5,1,1200};            // new sound
+		begin1[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s1",5,1,1300};            // new sound
+		begin2[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s2",5,1,1300};            // new sound
+		begin3[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s3",5,1,1300};            // new sound
+		begin4[] = {"\z\addons\dayz_communityweapons\akm\sounds\ak47_s4",5,1,1300};            // new sound
 		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};              // new sound
 	};                                                                                         // new sound
 	

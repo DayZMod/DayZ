@@ -1,0 +1,13 @@
+bullet1[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_metal (4)",1,1,20};
+bullet2[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_metal (3)",1,1,20};
+bullet3[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_metal (2)",1,1,20};
+bullet4[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_metal (1)",1,1,20};
+bullet5[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_dirt (1)",1,1,20};
+bullet6[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_dirt (2)",1,1,20};
+bullet7[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_dirt (3)",1,1,20};
+bullet8[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_dirt (4)",1,1,20};
+bullet9[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_soft (1)",1,1,20};
+bullet10[] = {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_soft (2)",1,1,20};
+bullet11[] = {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_soft (3)",1,1,20};
+bullet12[] = {"\z\addons\dayz_communityassets\sounds\Shells\Pistol_soft (4)",1,1,20};
+soundBullet[] = {"bullet1",0.083,"bullet2",0.083,"bullet3",0.083,"bullet4",0.083,"bullet5",0.083,"bullet6",0.083,"bullet7",0.083,"bullet8",0.083,"bullet9",0.083,"bullet10",0.083,"bullet11",0.083,"bullet12",0.083};

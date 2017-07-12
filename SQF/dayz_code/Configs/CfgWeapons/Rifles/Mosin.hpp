@@ -48,11 +48,26 @@ class Mosin_Base : Rifle
 	reloadSound[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\Bolt",1,1,35};           // new sound
 	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\Reload",1,1,35}; // new sound
 	drySound[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\Dry",0.01,1,10};            // new sound
-	begin1[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s1",5,1,1500};           // new sound
-	begin2[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s2",5,1,1500};           // new sound
-	begin3[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s3",5,1,1500};           // new sound
-	begin4[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s4",5,1,1500};           // new sound
+	begin1[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s1",5,1,1600};           // new sound
+	begin2[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s2",5,1,1600};           // new sound
+	begin3[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s3",5,1,1600};           // new sound
+	begin4[] = {"\z\addons\dayz_communityweapons\models\Mosin_nagant\sounds\S12K_s4",5,1,1600};           // new sound
 	soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};                             // new sound
+	bullet1[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_metal (1)",1,1,50};                   // new sound
+	bullet2[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_metal (3)",1,1,50};                   // new sound
+	bullet3[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_metal (2)",1,1,50};                   // new sound
+	bullet4[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_metal (1)",1,1,50};                   // new sound
+	bullet5[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_dirt (1)",1,1,50};                    // new sound
+	bullet6[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_dirt (2)",1,1,50};                    // new sound
+	bullet7[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_dirt (3)",1,1,50};                    // new sound
+	bullet8[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_dirt (4)",1,1,50};                    // new sound
+	bullet9[] =  {"\z\addons\dayz_communityassets\sounds\Shells\Big_soft (1)",1,1,50};                    // new sound
+	bullet10[] = {"\z\addons\dayz_communityassets\sounds\Shells\Big_soft (2)",1,1,50};                    // new sound
+	bullet11[] = {"\z\addons\dayz_communityassets\sounds\Shells\Big_soft (3)",1,1,50};                    // new sound
+	bullet12[] = {"\z\addons\dayz_communityassets\sounds\Shells\Big_soft (4)",1,1,50};                    // new sound
+	soundBullet[] = {"bullet1",0.083,"bullet2",0.083,"bullet3",0.083,"bullet4",0.083,                     // new sound
+					 "bullet5",0.083,"bullet6",0.083,"bullet7",0.083,"bullet8",0.083,                     // new sound
+					 "bullet9",0.083,"bullet10",0.083,"bullet11",0.083,"bullet12",0.083};                 // new sound
 };
 
 
