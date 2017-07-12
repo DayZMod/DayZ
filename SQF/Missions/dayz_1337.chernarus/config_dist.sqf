@@ -35,3 +35,14 @@ if (dayz_presets == "Custom") then {
 dayz_DamageMultiplier = 2; //1 - 0 = Disabled, anything over 1 will multiply damage. Damage Multiplier for Zombies.
 dayz_maxGlobalZeds = 500; //Limit the total zeds server wide.
 dayz_temperature_override = false; // Set to true to disable all temperature changes.
+
+dayz_ServerMessages = [
+	["DayZMod", "Welcome "+(name player)],
+	["World", worldName],
+	["Teamspeak", "some TS info"],
+	["Website/Forums", "some website info"],
+	["Server Rules", "Duping, glitching or using any<br />exploit will result in a<br />permanent ban."],
+	["Server Rules", "No talking in side."],
+	["Server Rules", "Hackers will be banned permanently<br />Respect others"],
+	["News", "Some random new info!<br />Random news<br />"]
+];

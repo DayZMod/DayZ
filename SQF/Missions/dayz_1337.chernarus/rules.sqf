@@ -1,15 +1,4 @@
-private ["_messages","_timeout"];
-
-_messages = [
-	["DayZMod", "Welcome "+(name player)],
-	["World", worldName],
-	["Teamspeak", "some TS info"],
-	["Website/Forums", "some website info"],
-	["Server Rules", "Duping, glitching or using any<br />exploit will result in a<br />permanent ban."],
-	["Server Rules", "No talking in side."],
-	["Server Rules", "Hackers will be banned permanently<br />Respect others"],
-	["News", "Some random new info!<br />Random news<br />"]
-];
+private ["_timeout"];
  
 _timeout = 5;
 {
@@ -26,4 +15,4 @@ _timeout = 5;
 		0.5
 	] spawn BIS_fnc_dynamicText;
 	uiSleep (_timeout * 1.1);
-} forEach _messages;
+} forEach dayz_ServerMessages;
