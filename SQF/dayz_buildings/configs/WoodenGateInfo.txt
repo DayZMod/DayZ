@@ -1,0 +1,31 @@
+So mats to upgrade from,
+1 - 2 =  "ItemPlank","ItemPlank".
+2 - 3 = "equip_nails","ItemPlank","ItemPlank","ItemPlank".
+3 - 4 = "equip_nails","ItemPlank","ItemPlank","ItemPlank".
+4 - 5 = "ItemScrews","ItemLog","ItemLog","ItemLog","ItemLog".
+5 - 6 = "ItemLog","ItemLog","ItemLog","ItemLog","ItemPlank","ItemScrews".
+6 - 7 = "ItemScrews","ItemPlank","ItemPlank","ItemPlank","ItemLog","ItemLog".
+
+So from 1-4 nails are used from 5-7 changes to screws for all the extra braces,platform,ladders.
+
+Damage,
+[High Explosive Damage, Medium Explosive Damage, Melee Damage]].
+foundation - 4 = [1,0.5,random(0.0005)].
+5-7 = [0.5,0.25,0].
+
+Damage translates too,
+High Explosive Damage = C4, 
+Medium Explosive Damage = Expolsive Arrow,
+Melee Damage = Bladed weapons ("Hatchet_Swing_Ammo","Crowbar_Swing_Ammo","Machete_Swing_Ammo").
+
+Maintenance,
+1-7 = "ItemPlank","equip_nails".
+
+Maintance mode SQL
+1-4 = 7 days to set then foreach 3 days in MM reduce level.
+5-7 = 14 days to set then foreach 6 days in MM reduce level.
+
+Disassembly,
+Never returns [equipNails,ItemStone], all other parts are returned by chance 0.3.
+
+Then for metal fences nails wont be used 1-4 will use screws and 5-7 will be bolts but the same idea as aboue stands. (all mats for metal are found and in some cases you may have to destoy something to gain the mats)
