@@ -4,144 +4,10 @@ class Grid;	// External class reference
 class DefaultLighting;	// External class reference
 class DayLightingRainy;	// External class reference
 class Weather;	// External class reference
-class CfgEnvSounds 
-{
-	#include "CfgWorlds\Environment\jsrs_amb_forest.hpp"
-	#include "CfgWorlds\Environment\jsrs_amb_hills.hpp"
-	#include "CfgWorlds\Environment\jsrs_amb_meadows.hpp"
-	#include "CfgWorlds\Environment\jsrs_amb_rain.hpp"
-//	#include "CfgWorlds\Environment\jsrs_amb_sand.hpp" //Activate for desert like islands
-	#include "CfgWorlds\Environment\jsrs_amb_trees.hpp"
-	#include "CfgWorlds\Environment\jsrs_amb_wind.hpp"
-	#include "CfgWorlds\Environment\jsrs_amb_houses.hpp"
-	#include "CfgWorlds\Environment\jsrs_amb_sea.hpp" //sea or lake, not both
-//	#include "CfgWorlds\Environment\jsrs_amb_lake.hpp" //sea or lake, not both
 
-	#include "CfgWorlds\Environment\jsrs_sfx_forest.hpp"
-	#include "CfgWorlds\Environment\jsrs_sfx_forestwind.hpp"
-//	#include "CfgWorlds\Environment\jsrs_sfx_hills.hpp" //Activate only for hilly islands
-	#include "CfgWorlds\Environment\jsrs_sfx_meadows.hpp"
-	#include "CfgWorlds\Environment\jsrs_sfx_insects.hpp"
-	#include "CfgWorlds\Environment\jsrs_sfx_rain.hpp"
-//	#include "CfgWorlds\Environment\jsrs_sfx_sand.hpp" //Activate for desert like islands
-	#include "CfgWorlds\Environment\jsrs_sfx_trees.hpp"
-	#include "CfgWorlds\Environment\jsrs_sfx_wind.hpp"
-	#include "CfgWorlds\Environment\jsrs_sfx_housesday.hpp"
-	#include "CfgWorlds\Environment\jsrs_sfx_housesnight.hpp"
-	#include "CfgWorlds\Environment\jsrs_sfx_houseswind.hpp"
-	#include "CfgWorlds\Environment\jsrs_sfx_sea.hpp"
-
-	#include "CfgWorlds\Environment\jsrs_one_birdsing.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_chicken.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_cock.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_cow.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_crow.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_dog.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_forestlark.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_frog.hpp" //Deactivate for desert like islands
-	#include "CfgWorlds\Environment\jsrs_one_hedgesparrow.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_nightingale.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_owl.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_seagull.hpp" //Deactivate for islands without a coast
-//	#include "CfgWorlds\Environment\jsrs_one_goose1.hpp" //Deactivate for islands with a coast
-//	#include "CfgWorlds\Environment\jsrs_one_goose2.hpp" //Deactivate for islands with a coast
-	#include "CfgWorlds\Environment\jsrs_one_skylark.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_wolf.hpp"
-
-	#include "CfgWorlds\Environment\jsrs_one_forestbird.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_woodpecker.hpp" //Activate only for islands based on woods
-	#include "CfgWorlds\Environment\jsrs_one_treebird.hpp" //Activate only for islands based on woods
-	#include "CfgWorlds\Environment\jsrs_one_littlebird.hpp" //Activate only for islands based on woods
-	#include "CfgWorlds\Environment\jsrs_one_junglebird.hpp" //Activate only for islands with jungle (debug activated for Chernarus)
-//	#include "CfgWorlds\Environment\jsrs_one_desertbirds.hpp" //Activate only for islands with desert
-	#include "CfgWorlds\Environment\jsrs_one_horse.hpp"
-//	#include "CfgWorlds\Environment\jsrs_one_mountaincreature.hpp" //Activate only for islands with desert
-	#include "CfgWorlds\Environment\jsrs_one_pig.hpp"
-	#include "CfgWorlds\Environment\jsrs_one_sheep.hpp"
-};
-class DefaultWorld;
-
-class CfgWorlds 
-{
-	class CAWorld : DefaultWorld 
-	{
-		class Weather : Weather 
-		{
-			class ThunderboltNorm 
-			{
-				soundNear[] = {"\z\addons\dayz_communityassets\sounds\Environment\Thunder\Thunder",25.622801,1};
-				soundFar[]  = {"\z\addons\dayz_communityassets\sounds\Environment\Thunder\ThunderFar",10,1};
-			};
-			class ThunderboltHeavy 
-			{
-				soundNear[] = {"\z\addons\dayz_communityassets\sounds\Environment\Thunder\ThunderHeavy",20.622801,1};
-				soundFar[]  = {"\z\addons\dayz_communityassets\sounds\Environment\Thunder\ThunderHeavyFar",10,1};
-			};
-		};
-		class EnvSounds;
-	};
-	class CfgEnvSounds;
-	class Chernarus : CAWorld 
-	{
-		class EnvSounds : CfgEnvSounds 
-		{
-			#include "CfgWorlds\Environment\jsrs_amb_forest.hpp"
-			#include "CfgWorlds\Environment\jsrs_amb_combat.hpp" //Its a test still, might not work right
-			#include "CfgWorlds\Environment\jsrs_amb_hills.hpp"
-			#include "CfgWorlds\Environment\jsrs_amb_meadows.hpp"
-			#include "CfgWorlds\Environment\jsrs_amb_rain.hpp"
-//			#include "CfgWorlds\Environment\jsrs_amb_sand.hpp" //Activate for desert like islands
-			#include "CfgWorlds\Environment\jsrs_amb_trees.hpp"
-			#include "CfgWorlds\Environment\jsrs_amb_wind.hpp"
-			#include "CfgWorlds\Environment\jsrs_amb_houses.hpp"
-			#include "CfgWorlds\Environment\jsrs_amb_sea.hpp" //sea or lake, not both
-//			#include "CfgWorlds\Environment\jsrs_amb_lake.hpp" //sea or lake, not both
-			
-			#include "CfgWorlds\Environment\jsrs_sfx_forest.hpp"
-			#include "CfgWorlds\Environment\jsrs_sfx_forestwind.hpp"
-//			#include "CfgWorlds\Environment\jsrs_sfx_hills.hpp" //Activate only for hilly islands
-			#include "CfgWorlds\Environment\jsrs_sfx_meadows.hpp"
-			#include "CfgWorlds\Environment\jsrs_sfx_insects.hpp"
-			#include "CfgWorlds\Environment\jsrs_sfx_rain.hpp"
-//			#include "CfgWorlds\Environment\jsrs_sfx_sand.hpp" //Activate for desert like islands
-			#include "CfgWorlds\Environment\jsrs_sfx_trees.hpp"
-			#include "CfgWorlds\Environment\jsrs_sfx_wind.hpp"
-			#include "CfgWorlds\Environment\jsrs_sfx_housesday.hpp"
-			#include "CfgWorlds\Environment\jsrs_sfx_housesnight.hpp"
-			#include "CfgWorlds\Environment\jsrs_sfx_houseswind.hpp"
-			#include "CfgWorlds\Environment\jsrs_sfx_sea.hpp"
-			
-			#include "CfgWorlds\Environment\jsrs_one_birdsing.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_chicken.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_cock.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_cow.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_crow.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_dog.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_forestlark.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_frog.hpp" //Deactivate for desert like islands
-			#include "CfgWorlds\Environment\jsrs_one_hedgesparrow.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_nightingale.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_owl.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_seagull.hpp" //Deactivate for islands without a coast
-//			#include "CfgWorlds\Environment\jsrs_one_goose1.hpp" //Deactivate for islands with a coast
-//			#include "CfgWorlds\Environment\jsrs_one_goose2.hpp" //Deactivate for islands with a coast
-			#include "CfgWorlds\Environment\jsrs_one_skylark.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_wolf.hpp"
-			
-			#include "CfgWorlds\Environment\jsrs_one_forestbird.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_woodpecker.hpp" //Activate only for islands based on woods
-			#include "CfgWorlds\Environment\jsrs_one_treebird.hpp" //Activate only for islands based on woods
-			#include "CfgWorlds\Environment\jsrs_one_littlebird.hpp" //Activate only for islands based on woods
-			#include "CfgWorlds\Environment\jsrs_one_junglebird.hpp" //Activate only for islands with jungle (debug activated for Chernarus)
-//			#include "CfgWorlds\Environment\jsrs_one_desertbirds.hpp" //Activate only for islands with desert
-			#include "CfgWorlds\Environment\jsrs_one_horse.hpp"
-//			#include "CfgWorlds\Environment\jsrs_one_mountaincreature.hpp" //Activate only for islands with desert
-			#include "CfgWorlds\Environment\jsrs_one_pig.hpp"
-			#include "CfgWorlds\Environment\jsrs_one_sheep.hpp"
-		};
-	};
-	class DayZMod : Chernarus 
-	{
+class CfgWorlds {
+	class Chernarus;	// External class reference
+	class DayZMod : Chernarus {
 		access = 3;
 		worldId = 4;
 		cutscenes[] = {"DayZModIntro1"};
@@ -288,7 +154,6 @@ class CfgWorlds
 	demoWorld = "DayZMod";
 };
 
-class CfgWorldList 
-{
+class CfgWorldList {
 	class DayZMod {};
 };
