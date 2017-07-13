@@ -1,10 +1,7 @@
-class MR43_DZ : Rifle
+class MR43_Base : Rifle
 {
 	scope = public;
 	
-	model = "\dayz_weapons\models\mr43.p3d";
-	picture = "\dayz_weapons\textures\equip_mr43_CA.paa";
-	displayname = $STR_DZ_WPN_MR43_NAME;
 	descriptionShort = $STR_DZ_WPN_MR43_DESC;
 	
 	magazines[] =
@@ -47,3 +44,10 @@ class MR43_DZ : Rifle
 		recoilProne = "recoil_single_primary_prone_8outof10";
 	};
 };
+
+class MR43_DZ : MR43_Base
+{
+	model = "\dayz_weapons\models\mr43.p3d";
+	picture = "\dayz_weapons\textures\equip_mr43_CA.paa";
+	displayname = $STR_DZ_WPN_MR43_NAME;
+}
