@@ -1,6 +1,10 @@
 #include "CommonActions.hpp"
 
-class CfgVehicles {
+class Sounds;
+class Engine;
+
+class CfgVehicles 
+{
 	class ALL;
 	class AllVehicles : ALL
 	{
@@ -11,6 +15,10 @@ class CfgVehicles {
 			killed = "_this call BIS_Effects_EH_Killed;";
 		};
 	};
+	
+	
+	/* AIRCRAFTS */
+	
 	class Air : AllVehicles
 	{
 		class NewTurret;
@@ -34,6 +42,9 @@ class CfgVehicles {
 			class Salvage {ACTION_SALVAGE; radius = 8;};
 		};
 	};
+	#include "Air\LittleBird.hpp"
+	#include "Air\UH1H.hpp"
+	#include "Air\MI17.hpp"
 	class Plane: Air
 	{
 		class ViewPilot;
@@ -51,6 +62,11 @@ class CfgVehicles {
 			class PushPlane {ACTION_PUSH;};
 		};
 	};
+	#include "Air\AN2.hpp"
+	
+
+	/* LANDVEHICLES */
+	
 	class Land: AllVehicles
 	{
 		//class NewTurret;
@@ -65,7 +81,8 @@ class CfgVehicles {
 			class Salvage {ACTION_SALVAGE; radius = 4;};
 		};
 	};
-	class Car : LandVehicle {
+	class Car : LandVehicle 
+	{
 		class HitPoints
 		{
 			class HitLFWheel;
@@ -92,51 +109,36 @@ class CfgVehicles {
             };
         };
 	};
+	#include "Land\ATV.hpp"
+	#include "Land\Bus.hpp"
+	#include "Land\GAZ.hpp"
+	#include "Land\Hilux.hpp"
+	#include "Land\HMMWV.hpp"
+	#include "Land\Lada.hpp"
+	#include "Land\LandRover.hpp"
+	#include "Land\Offroad_DSHKM.hpp"
+	#include "Land\Pickup_PK.hpp"
+	#include "Land\S1203.hpp"
+	#include "Land\SUV.hpp"
+	#include "Land\Tractor.hpp"
+	#include "Land\UAZ.hpp"
+	#include "Land\Skoda.hpp"
+	
+	class Truck;
+	#include "Land\V3S.hpp"
+	#include "Land\URAL.hpp"
 
-
-	//External Class
-	class SkodaBase;
-	class ATV_Base_EP1 : Car
-	{
-		class HitPoints : HitPoints
-		{
-			class HitEngine {armor=2;material=-1;name="motor";visual="motor";passThrough=0;};
-			class HitFuel {armor=1;material=-1;name="palivo";passThrough=0;};
-
-			class HitLFWheel:HitLFWheel{armor=1;};
-			class HitLBWheel:HitLBWheel{armor=1;};
-
-			class HitRFWheel:HitRFWheel{armor=1;};
-			class HitRBWheel:HitRBWheel{armor=1;};
-		};
-	};
 	class Motorcycle;
-	class RubberBoat;
-	class UAZ_Unarmed_Base;
-	class HMMWV_Base;
-	class AH6_Base_EP1;
-	class An2_Base_EP1;
-	class TT650_Base;
-	class V3S_Base;
-	class SUV_Base_EP1 : Car
-	{
-		class HitPoints : HitPoints
-		{
-			class HitLFWheel;
-			class HitLBWheel;
-			class HitRFWheel;
-			class HitRBWheel;
-			class HitFuel;
-			class HitEngine;
+	#include "Land\MotorBike_M1030.hpp"
+	#include "Land\MotorBike_Old_moto.hpp"
+	#include "Land\MotorBike_TT650.hpp"
+	
+	class Bicycle;
+	#include "Land\Bicycle.hpp"	
 
-			//armored glass - hight armor value
-			class HitGlass1:HitGlass1 {armor=1;};
-			class HitGlass2:HitGlass2 {armor=1;};
-			class HitGlass3:HitGlass3 {armor=1;};
-			class HitGlass4:HitGlass4 {armor=1;};
 
-		};
-	};
+	/* BOATS */
+	
 	class Ship: AllVehicles
 	{
 		class UserActions
@@ -147,11 +149,21 @@ class CfgVehicles {
 	};
 	//class Bag_Base_EP1;
 	//class Bag_Base_BAF;
+	#include "Boat\Fishing_Boat.hpp"
+	#include "Boat\smallboat.hpp"
+	
+	class RubberBoat;
+	#include "Boat\PBX.hpp"
+	
+	
+	/* HOUSES */
+	
 	class HouseBase;
 	class House : HouseBase
 	{
 		class DestructionEffects;
 	};
+	#include "CrashSite.hpp"
 	class House_EP1;
 	class SpawnableWreck : House {};
 	class Strategic;
@@ -161,20 +173,6 @@ class CfgVehicles {
 	class BuiltItems;
 	class Building;
 	class ReammoBox;
-	
-	class Old_bike_base_EP1;
-	class Old_moto_base;
-	class Ikarus_base;
-	class Volha_TK_CIV_Base_EP1;
-	class LandRover_CZ_EP1;
-	class Ural_Base;
-	
-	class BAF_Offroad_D:LandRover_CZ_EP1 { typicalcargo[] = {}; };
-	class BAF_Offroad_W:BAF_Offroad_D { typicalcargo[] = {}; };
-	class SkodaBlue:SkodaBase { typicalcargo[] = {}; };
-	class SkodaGreen:SkodaBase { typicalcargo[] = {}; };
-	class Volha_1_TK_CIV_EP1:Volha_TK_CIV_Base_EP1 { typicalcargo[] = {}; };
-	class Volha_2_TK_CIV_EP1:Volha_TK_CIV_Base_EP1 { typicalcargo[] = {}; };
 
 	#include "RepairParts.hpp" //names for all reapir parts. Needs moving to hitpoints
 	//ZEDS
@@ -188,41 +186,6 @@ class CfgVehicles {
 	#include "Bags.hpp"
 	//DZAnimal and DZ_Fin
 	#include "Animal.hpp"
-
-	//Includes all DayZ Vehilces
-	//Car's
-	#include "Car\HMMWV.hpp"
-	#include "Car\Ikarus.hpp"
-	#include "Car\S1203.hpp"
-	#include "Car\Tractor.hpp"
-	#include "Car\CAR_HATCHBACK.hpp"
-	#include "Car\UAZ.hpp"
-	#include "Car\CAR_SEDAN.hpp"
-	#include "Car\V3S_Civ.hpp"
-	#include "Car\SUV_DZ.hpp"
-	#include "Car\Pickup_PK_INS.hpp"
-	#include "Car\Offroad_DSHKM_INS.hpp"
-	#include "Car\UralCivil_DZ.hpp"
-	//Helicopter's
-	#include "Helicopter\MI17.hpp"
-	#include "Helicopter\UH1H.hpp"
-	#include "Helicopter\AH6X.hpp"
-	#include "Helicopter\MH6J_DZ.hpp"
-	#include "CrashSite.hpp"
-	//Planes
-	#include "Plane\AN2_DZ.hpp"
-	//Bikes
-	#include "Bikes\ATV_US_EP1.hpp"
-	#include "Bikes\ATV_CZ_EP1.hpp"
-	#include "Bikes\Old_bike.hpp"
-	#include "Bikes\Old_moto.hpp"
-	#include "Bikes\TT650_Ins.hpp"
-	#include "Bikes\TT650_Civ.hpp"
-	#include "Bikes\M1030.hpp"
-	//Boat
-	#include "Boat\PBX.hpp"
-	#include "Boat\Fishing_Boat.hpp"
-	#include "Boat\smallboat.hpp"
 
 	//Includes all Building Stuff
 	// This parent class is made to make referring to these objects easier later with allMissionObjects

@@ -1,0 +1,24 @@
+class Offroad_DSHKM_base : Car
+{
+	class Turrets : Turrets
+	{
+		class MainTurret;
+	};
+	#include "sounds\Offroad.hpp"
+};
+
+class Offroad_DSHKM_INS : Offroad_DSHKM_base
+{
+	typicalcargo[] = {};
+	class Turrets : Turrets
+	{
+		class MainTurret : MainTurret
+		{
+			magazines[] =
+			{
+				50Rnd_127x107_DSHKM,
+				50Rnd_127x107_DSHKM
+			};
+		};
+	};
+};
