@@ -114,4 +114,22 @@ class Throw : GrenadeLauncher
 			"ItemSodaSmashtEmpty"
 		};
 	};
+	class HandGrenadeMuzzle : ThrowMuzzle                                                          //new sounds
+	{                                                                                              //new sounds
+		reloadMagazineSound[] = {"\z\dayz_communityweapons\Grenades\HandGrenade\Reload",1,1,35};   //new sounds
+		begin1[] = 				{"\z\dayz_communityweapons\Grenades\HandGrenade\pin_s1",5,1,130};  //new sounds
+		begin2[] = 				{"\z\dayz_communityweapons\Grenades\HandGrenade\pin_s2",5,1,130};  //new sounds
+		begin3[] = 				{"\z\dayz_communityweapons\Grenades\HandGrenade\pin_s3",5,1,130};  //new sounds
+		begin4[] = 				{"\z\dayz_communityweapons\Grenades\HandGrenade\pin_s4",5,1,130};  //new sounds
+		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};                  //new sounds
+	};                                                                                             //new sounds
+	class SmokeShellMuzzle : ThrowMuzzle                                                           //new sounds
+	{                                                                                              //new sounds
+		reloadMagazineSound[] = {"\z\dayz_communityweapons\Grenades\Smoke\Reload",1,1,35}; 		   //new sounds
+		begin1[] = 				{"\z\dayz_communityweapons\Grenades\Smoke\pin_s1",2,1,20}; 		   //new sounds
+		begin2[] = 				{"\z\dayz_communityweapons\Grenades\Smoke\pin_s2",2,1,20}; 		   //new sounds
+		begin3[] = 				{"\z\dayz_communityweapons\Grenades\Smoke\pin_s3",2,1,20}; 		   //new sounds
+		begin4[] = 				{"\z\dayz_communityweapons\Grenades\Smoke\pin_s4",2,1,20}; 		   //new sounds
+		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};                  //new sounds
+	};                                                                                             //new sounds
 };
