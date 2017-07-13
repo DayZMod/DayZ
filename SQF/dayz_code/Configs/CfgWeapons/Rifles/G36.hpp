@@ -10,27 +10,6 @@ class G36K_Camo_DZ : G36C
 		30Rnd_556x45_G36SD
 	};
 	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\G36\sounds\Reload",1,1,35}; // new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\G36\sounds\Dry",0.01,1,10};            // new sound
-	class Single : Single
-	{
-		dispersion = 0.0011;
-		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s1",5,1,1000};        // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s2",5,1,1000};        // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s3",5,1,1000};        // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s4",5,1,1000};        // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};         // new sound
-	};
-	class FullAuto : FullAuto
-	{
-		dispersion = 0.0011;
-		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s1",5,1,1000};        // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s2",5,1,1000};        // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s3",5,1,1000};        // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36_s4",5,1,1000};        // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};         // new sound
-	};
-	
 	//G36 Optic
 	optics = true;
 	opticsDisablePeripherialVision = true;
@@ -40,6 +19,21 @@ class G36K_Camo_DZ : G36C
 	distanceZoomMin=100; distanceZoomMax=100;
 	
 	dexterity = 1.8;
+	
+	class Single : Single
+	{
+		dispersion = 0.0011;
+	};
+	
+	class Burst : Burst
+	{
+		dispersion = 0.0011;
+	};
+	
+	class FullAuto : FullAuto
+	{
+		dispersion = 0.0011;
+	};
 
 	class OpticsModes
 	{
@@ -97,21 +91,6 @@ class G36K_Camo_SD_DZ : G36_C_SD_eotech
 		30Rnd_556x45_G36SD
 	};
 	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\G36\sounds\Reload",1,1,35}; // new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\G36\sounds\Dry",0.01,1,10};	          // new sound
-	class Single : Single                                                                 
-	{                                                                                     
-		dispersion = 0.0011;                                                              
-		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36SD_s1",1,1,100};       // new sound
-		soundBegin[] = {"begin1",1};                                                      // new sound
-	};                                                                                    
-	class FullAuto : FullAuto                                                             
-	{                                                                                     
-		dispersion = 0.0011;                                                              
-		begin1[] = {"\z\addons\dayz_communityweapons\G36\sounds\G36SD_s1",1,1,100};       // new sound
-		soundBegin[] = {"begin1",1};                                                      // new sound
-	};
-	
 	//G36 Optic
 	optics = true;
 	opticsDisablePeripherialVision = true;
@@ -121,6 +100,21 @@ class G36K_Camo_SD_DZ : G36_C_SD_eotech
 	distanceZoomMin=100; distanceZoomMax=100;
 	
 	dexterity = 1.7;
+	
+	class Single : Single
+	{
+		dispersion = 0.0011;
+	};
+	
+	class Burst : Burst
+	{
+		dispersion = 0.0011;
+	};
+	
+	class FullAuto : FullAuto
+	{
+		dispersion = 0.0011;
+	};
 
 	class OpticsModes
 	{
@@ -181,7 +175,13 @@ class G36A_Camo_DZ : G36K_Camo_DZ
 	class Single : Single
 	{
 		dispersion = 0.0007;
-	};	
+	};
+	
+	class Burst : Burst
+	{
+		dispersion = 0.0007;
+	};
+	
 	class FullAuto : FullAuto
 	{
 		dispersion = 0.0007;

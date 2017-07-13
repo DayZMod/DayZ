@@ -13,25 +13,6 @@ class RPK74_Kobra_DZ : RPK_74
 	
 	modes[] = {FullAuto,Single};
 	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_Reload",1,1,35}; // new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_Dry",0.01,1,10};            // new sound
-	class Single : Single                                                                       // new sound
-	{                                                                                           // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_s1",5,1,1000};            // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_s2",5,1,1000};            // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_s3",5,1,1000};            // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_s4",5,1,1000};            // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};               // new sound
-	};                                                                                          // new sound
-	class FullAuto : FullAuto                                                                   // new sound
-	{                                                                                           // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_s1",5,1,1000};            // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_s2",5,1,1000};            // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_s3",5,1,1000};            // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\ak74\sounds\AK74_s4",5,1,1000};            // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};               // new sound
-	};                                                                                          // new sound
-	
 	class ItemActions
 	{
 		class RemoveKobra

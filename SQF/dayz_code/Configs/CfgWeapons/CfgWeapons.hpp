@@ -25,133 +25,51 @@ class CfgWeapons
 	
 	//each include is preceded by its required external references.
 	
-	
-	/* ASSAULT RIFLES */
-	
-	class AK_BASE : Rifle
-	{
-		class GP25Muzzle;
-	};
-	class AK_74 : AK_BASE
-	{
-		class Single;
-		class FullAuto;	
-	};
-	class RPK_74 : AK_74
-	{
-		class Single;
-		class FullAuto;
-	};
-	#include "Rifles\RPK74.hpp"
-	
-	class AKS_BASE : AK_BASE
-	{
-		class Single;
-		class FullAuto;
-	};
-		class AKS_74_UN_kobra : AKS_BASE
-	{
-		class Single;
-		class FullAuto;
-	};
-	#include "Rifles\AK74.hpp"
-	
-	class AKS_74_U : AKS_BASE {};	
-	#include "Rifles\AKS74U.hpp"
-	
-	class AK_47_M : AK_BASE
-	{
-		class Single;
-		class FullAuto;
-	};
-	#include "Rifles\AKM.hpp"
-	#include "Rifles\RPK.hpp"
-	
-	class L85A2_base_BAF;
-	class BAF_L85A2_RIS_Holo : L85A2_base_BAF
-	{
-		class Single;
-		class FullAuto;
-	};
-	#include "Rifles\L85.hpp"
-	
-	class G36C : Rifle
-	{
-		class Single;
-		class FullAuto;
-	};
-	class G36_C_SD_eotech : G36C
-	{
-		class Single;
-		class FullAuto;
-	};
-	#include "Rifles\G36.hpp"
-	#include "Rifles\G36C.hpp"
-	
-	class M16_base : Rifle
-	{
-		class Single;
-		class Burst;
-		class M203Muzzle;
-	};
-	class M16A2 : M16_base {};
-	class M16A2GL : M16A2 {};
-	#include "Rifles\M16A2.hpp"
-	#include "Rifles\M16A4.hpp"
-	
-	class M4A1 : M16_base
-	{
-		class Single;
-		class FullAuto;
-	};
-	class M4A1_Aim;
-	class M4A1_AIM_SD_camo : M4A1_Aim
-	{
-		class Single;
-		class FullAuto;
-	};
-	#include "Rifles\M4A1.hpp"
-	
-	class Sa58P_EP1 : Rifle
-	{
-		class Single;
-		class FullAuto;
-	};	
-	class Sa58V_EP1 : Sa58P_EP1 {};
-	#include "Rifles\SA58.hpp"
-	
-	
 	/* RIFLES */
 	
-	class FN_FAL : M16A2
-	{
-		class Single;
-	};
-	class FN_FAL_ANPVS4 : FN_FAL
-	{
-		class Single;
-	};
-	#include "Rifles\FNFAL.hpp"
+	class AK_74;
+	class AKS_74_UN_kobra;
+	#include "Rifles\AK74.hpp"
 	
-	class M14_EP1 : Rifle
-	{
-		class Single;
-	};
-	#include "Rifles\M14.hpp"
+	class AKS_74_U;
+	#include "Rifles\AKS74U.hpp"
 	
-	class LeeEnfield;
-	#include "Rifles\LeeEnfield.hpp"
+	class AK_47_M;
+	#include "Rifles\AKM.hpp"
 	
-	#include "Rifles\Mosin.hpp"
-	
-	
-	/* SNIPER RIFLES */
+	#include "Rifles\RPK.hpp"
 	
 	class DMR : Rifle
 	{
 		class Single;
 	};
 	#include "Rifles\DMR.hpp"
+	
+	class FN_FAL;
+	class FN_FAL_ANPVS4;
+	#include "Rifles\FNFAL.hpp"
+	
+	class G36C : Rifle
+	{
+		class Single;
+		class Burst;
+		class FullAuto;
+	};
+	class G36_C_SD_eotech : G36C
+	{
+		class Single;
+		class Burst;
+		class FullAuto;
+	};
+	#include "Rifles\G36.hpp"
+	#include "Rifles\G36C.hpp"
+	
+	class M4A1;
+	class M4A1_AIM_SD_camo;
+	#include "Rifles\M4A1.hpp"
+	
+	class M14_EP1;
+	#include "Rifles\M14.hpp"
 	
 	class M24 : Rifle
 	{
@@ -162,87 +80,17 @@ class CfgWeapons
 	};
 	#include "Rifles\M24.hpp"
 	
-	class huntingrifle : M24 {};
-	#include "Rifles\CZ550.hpp"
-	
 	class M40A3;
 	#include "Rifles\M40A3.hpp"
 	
-	class SVD : Rifle
-	{
-		class OpticsModes
-		{
-			class Scope;
-			class Ironsights;
-		};
-	};
-	#include "Rifles\SVD.hpp"
-	
-	
-	/* MACHINE GUNS */
-	
-	class M249 : Rifle
-	{
-		class Manual;
-	};
+	class M249;
 	#include "Rifles\M249.hpp"
 	
-	class BAF_L110A1_Aim : Rifle
-	{
-		class Manual;
-	};
+	class BAF_L110A1_Aim;
 	#include "Rifles\L110A1.hpp"
 	
-	class M240 : Rifle
-	{
-		class Manual;
-	};
+	class M240;
 	#include "Rifles\M240.hpp"
-	
-	class Mk_48 : M240
-	{
-		class Manual;
-	};
-	#include "Rifles\Mk48.hpp"
-	
-	class PK : Rifle
-	{
-		class Manual;
-	};
-	#include "Rifles\PKM.hpp"
-	#include "Rifles\UK59.hpp"
-	
-	
-	/* SUBMACHINE GUNS */
-	
-	class MP5SD : Rifle
-	{
-		class Single;
-		class Burst;
-		class FullAuto;
-	};	
-	class MP5A5 : MP5SD
-	{
-		class Single;
-		class Burst;
-		class FullAuto;
-	};
-	#include "Rifles\MP5.hpp"
-	
-	class Bizon : Rifle
-	{
-		class Single;
-		class FullAuto;
-	};
-	class bizon_silenced : Bizon
-	{
-		class Single;
-		class FullAuto;
-	};
-	#include "Rifles\Bizon.hpp"
-	
-	
-	/* SHOTGUNS */
 	
 	class M1014 : Rifle
 	{
@@ -250,11 +98,55 @@ class CfgWeapons
 	};
 	#include "Rifles\M1014.hpp"
 	
+	class Mk_48;
+	#include "Rifles\Mk48.hpp"
+	
+	class PK : Rifle
+	{
+		class manual;
+	};
+	#include "Rifles\PKM.hpp"
+	
+	#include "Rifles\UK59.hpp"
+	
+	class RPK_74;
+	#include "Rifles\RPK74.hpp"
+	
+	class SVD;
+	#include "Rifles\SVD.hpp"
+	
+	#include "Rifles\Mosin.hpp"
+	
+	class MP5A5;
+	class MP5SD;
+	#include "Rifles\MP5.hpp"
+	
+	class M16A2;
+	class M16A2GL;
+	#include "Rifles\M16A2.hpp"
+	#include "Rifles\M16A4.hpp"
+	
+	class Sa58V_EP1;
+	#include "Rifles\SA58.hpp"
+	
+	class BAF_L85A2_RIS_Holo;
+	#include "Rifles\L85.hpp"
+	
+	class bizon;
+	class bizon_silenced;
+	#include "Rifles\Bizon.hpp"
+	
+	class huntingrifle : M24 {};
+	#include "Rifles\CZ550.hpp"
+	
+	class LeeEnfield;
+	#include "Rifles\LeeEnfield.hpp"
+	
 	#include "Rifles\MR43.hpp"
 	#include "Rifles\Winchester1866.hpp"
 	#include "Rifles\Remington870.hpp"
-	
 	#include "Rifles\Crossbow.hpp"
+	
 	
 	
 	/* PISTOLS */
@@ -273,11 +165,7 @@ class CfgWeapons
 	class MakarovSD;
 	#include "Pistols\Makarov.hpp"
 	
-	class UZI_EP1 : Pistol
-	{
-		class Single;
-		class FullAuto;
-	};
+	class UZI_EP1;
 	#include "Pistols\PDW.hpp"
 	
 	class revolver_EP1;

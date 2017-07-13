@@ -77,25 +77,6 @@ class M4A1_DZ : M4A1
 		30Rnd_556x45_StanagSD
 	};
 	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\Reload",1,1,35}; // new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\Dry",0.01,1,10};            // new sound
-	class Single : Single                                                                  // new sound
-	{                                                                                      // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s1",5,1,1000};         // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s2",5,1,1000};         // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s3",5,1,1000};         // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s4",5,1,1000};         // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};          // new sound
-	};                                                                                     // new sound
-	class FullAuto : FullAuto                                                              // new sound
-	{                                                                                      // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s1",5,1,1000};         // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s2",5,1,1000};         // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s3",5,1,1000};         // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4_s4",5,1,1000};         // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};          // new sound
-	};                                                                                     // new sound
-	
 	class Attachments
 	{
 		Attachment_CCO = "M4A1_CCO_DZ";
@@ -181,25 +162,12 @@ class M4A1_SD_DZ : M4A1_AIM_SD_camo
 	displayName = $STR_DZ_WPN_M4A1_SD_NAME;
 	
 	handAnim[]={"OFP2_ManSkeleton","\Ca\weapons_E\SCAR\Data\Anim\SCAR.rtm"};
-
+	
 	magazines[] =
 	{
 	//	30Rnd_556x45_Stanag,
 		30Rnd_556x45_StanagSD
 	};
-	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\Reload",1,1,35}; // new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\Dry",0.01,1,10};            // new sound
-	class Single : Single                                                                  // new sound
-	{                                                                                      // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4SD_s1",1,1,100};        // new sound
-		soundBegin[] = {"begin1",1};                                                       // new sound
-	};	                                                                                   // new sound
-	class FullAuto : FullAuto                                                              // new sound
-	{                                                                                      // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M4SD_s1",1,1,100};        // new sound
-		soundBegin[] = {"begin1",1};                                                       // new sound
-	};                                                                                     // new sound
 	
 	class Attachments
 	{
@@ -290,17 +258,6 @@ class M4A1_GL_DZ : M4A1_DZ
 	model = "z\addons\dayz_communityweapons\m4a1\m4a1_gl.p3d";
 	picture = "\z\addons\dayz_communityweapons\m4a1\data\w_m4a1_gl_ca.paa";
 	displayName = $STR_DZ_WPN_M4A1_GL_NAME;
-	
-	class M203Muzzle : M203Muzzle                                                                        // new sound
-	{                                                                                                    // new sound
-		reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M203\M203_Reload",1,1,35}; // new sound
-		drySound[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M203\M203_Dry",0.01,1,10};            // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M203\M203_s1",0.1,1,400};               // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M203\M203_s2",0.1,1,400};               // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M203\M203_s3",0.1,1,400};               // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\M4A1\sounds\M203\M203_s4",0.1,1,400};               // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};                        // new sound
-	};                                                                                                   // new sound
 	
 	M4A1_M203;
 	

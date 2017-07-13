@@ -10,14 +10,6 @@ class G17_DZ : glock17_EP1
 		17Rnd_9x19_glock17SD
 	};
 	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\G17\sounds\Reload",1,1,35}; // new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\G17\sounds\Dry",0.01,1,10};            // new sound
-	begin1[] = {"\z\addons\dayz_communityweapons\G17\sounds\Glock17_s1",5,1,700};         // new sound
-	begin2[] = {"\z\addons\dayz_communityweapons\G17\sounds\Glock17_s2",5,1,700};         // new sound
-	begin3[] = {"\z\addons\dayz_communityweapons\G17\sounds\Glock17_s3",5,1,700};         // new sound
-	begin4[] = {"\z\addons\dayz_communityweapons\G17\sounds\Glock17_s4",5,1,700};         // new sound
-	soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};             // new sound
-	
 	delete FlashLight;
 	
 	class Attachments
@@ -104,13 +96,10 @@ class G17_SD_DZ : M9SD
 		17Rnd_9x19_glock17
 	};
 	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\G17\sounds\Reload",1,1,35}; // new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\G17\sounds\Dry",0.01,1,10};            // new sound
-	begin1[] = {"\z\addons\dayz_communityweapons\M9\sounds\M9SD_s1",1,1,50};              // new sound
-	soundBegin[] = {"begin1",1};                                                          // new sound
+	reloadMagazineSound[]={"Ca\Sounds_E\Weapons_E\Glock17\reload1",db0,1, 20};
 
-	recoil = "recoil_single_pistol_2outof3";
-	recoilProne = "recoil_single_pistol_prone_2outof3";
+	recoil =          "recoil_single_pistol_2outof3";
+	recoilProne =     "recoil_single_pistol_prone_2outof3";
 
 	class Library {libTextDesc = $STR_EP1_LIB_glock17;};
 	descriptionShort = $STR_EP1_DSS_glock17_EP1;

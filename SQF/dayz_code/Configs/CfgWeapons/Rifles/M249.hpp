@@ -2,7 +2,8 @@ class M249_CCO_DZ : M249
 {
 	model = "z\addons\dayz_communityweapons\m249\m249_cco.p3d";
 	picture = "\z\addons\dayz_communityweapons\m249\data\w_m249_cco_ca.paa";
-	displayName = $STR_DZ_WPN_M249_CCO_NAME;	
+	displayName = $STR_DZ_WPN_M249_CCO_NAME;
+	
 	type = WeaponSlotPrimary;
 	
 	magazines[] =
@@ -12,19 +13,6 @@ class M249_CCO_DZ : M249
 		30Rnd_556x45_Stanag,
 		30Rnd_556x45_StanagSD
 	};
-	
-	modes[] = {FullAuto};
-	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\M249\sounds\Reload",1,1,35};	// new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\M249\sounds\Dry",0.01,1,10};             // new sound
-	class FullAuto : Manual                                                                 // new sound
-	{                                                                                       // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\M249\sounds\M249_s1",5,1,1000};        // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\M249\sounds\M249_s2",5,1,1000};        // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\M249\sounds\M249_s3",5,1,1000};        // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\M249\sounds\M249_s4",5,1,1000};        // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};           // new sound
-	};                                                                                      // new sound
 	
 	class ItemActions
 	{

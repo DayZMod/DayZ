@@ -20,18 +20,15 @@ class MR43_DZ : Rifle
 	
 	modes[] = {"Single","Double"};
 	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\M1014\sounds\Reload",1,1,35}; // new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\M1014\sounds\Dry",0.01,1,10};            // new sound
 	class Single : Mode_SemiAuto
 	{
 		dispersion = 0.003;
 		soundContinuous = 0;
 		reloadTime = 0.01;
-		begin1[] = {"\z\addons\dayz_communityweapons\M1014\sounds\M1014_s1",5,1,1000};		// new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\M1014\sounds\M1014_s2",5,1,1000};      // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\M1014\sounds\M1014_s3",5,1,1000};      // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\M1014\sounds\M1014_s4",5,1,1000};      // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};           // new sound
+		reloadMagazineSound[] = {"\ca\sounds\weapons\rifles\M1014-reload", 0.316228, 1, 20};
+		DB_shotgun_1[] = {"dayz_weapons\sounds\DB_shotgun_1", 1.77828, 1, 1000};
+		soundBegin[] = {"DB_shotgun_1", 1};
+		drySound[] = {"ca\sounds\weapons\rifles\dry", 0.01, 1, 10};
 		recoil = "recoil_single_primary_9outof10";
 		recoilProne = "recoil_single_primary_prone_8outof10";
 	};
@@ -42,11 +39,10 @@ class MR43_DZ : Rifle
 		soundContinuous = 0;
 		reloadTime = 0.001;
 		ffCount = 2;
-		begin1[] = {"\z\addons\dayz_communityweapons\M1014\sounds\M1014_s1",5,1,1000};		// new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\M1014\sounds\M1014_s2",5,1,1000};      // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\M1014\sounds\M1014_s3",5,1,1000};      // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\M1014\sounds\M1014_s4",5,1,1000};      // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};           // new sound
+		reloadMagazineSound[] = {"\ca\sounds\weapons\rifles\M1014-reload", 0.316228, 1, 20};
+		DB_shotgun_1[] = {"dayz_weapons\sounds\DB_shotgun_1", 1.77828, 1, 1000};
+		soundBegin[] = {"DB_shotgun_1", 1};
+		drySound[] = {"ca\sounds\weapons\rifles\dry", 0.01, 1, 10};
 		recoil = "recoil_single_primary_9outof10";
 		recoilProne = "recoil_single_primary_prone_8outof10";
 	};

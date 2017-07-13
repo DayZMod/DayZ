@@ -11,14 +11,6 @@ class SVD_DZ : SVD
 	
 	magazines[] = {10Rnd_762x54_SVD};
 	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\SVD\sounds\Reload",1,1,35}; // new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\SVD\sounds\Dry",0.01,1,10};            // new sound
-	begin1[] = {"\z\addons\dayz_communityweapons\SVD\sounds\SVD_s1",5,1,1500};            // new sound
-	begin2[] = {"\z\addons\dayz_communityweapons\SVD\sounds\SVD_s2",5,1,1500};            // new sound
-	begin3[] = {"\z\addons\dayz_communityweapons\SVD\sounds\SVD_s3",5,1,1500};            // new sound
-	begin4[] = {"\z\addons\dayz_communityweapons\SVD\sounds\SVD_s4",5,1,1500};            // new sound
-	soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};             // new sound
-	
 	reloadTime = 0.06;
 	
 	recoil = "recoil_single_primary_4outof10";

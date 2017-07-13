@@ -8,21 +8,10 @@ class M14_DZ : M14_EP1
 	
 	magazines[] = {20Rnd_762x51_DMR};
 	
-	modes[] = {Single};
-	
-	reloadMagazineSound[] = {"\z\addons\dayz_communityweapons\M14\sounds\Reload",1,1,35}; // new sound
-	drySound[] = {"\z\addons\dayz_communityweapons\M14\sounds\Dry",0.01,1,10};            // new sound
-	class Single : Single                                                                 // new sound
-	{                                                                                     // new sound
-		begin1[] = {"\z\addons\dayz_communityweapons\M14\sounds\M14_s1",5,1,1600};        // new sound
-		begin2[] = {"\z\addons\dayz_communityweapons\M14\sounds\M14_s2",5,1,1600};        // new sound
-		begin3[] = {"\z\addons\dayz_communityweapons\M14\sounds\M14_s3",5,1,1600};        // new sound
-		begin4[] = {"\z\addons\dayz_communityweapons\M14\sounds\M14_s4",5,1,1600};        // new sound
-		soundBegin[] = {"begin1",0.25,"begin2",0.25,"begin3",0.25,"begin4",0.25};         // new sound
-	};                                                                                    // new sound
-	
 	distanceZoomMin = 300;
 	distanceZoomMax = 300;
+	
+	modes[] = {Single};
 	
 	class Attachments
 	{
