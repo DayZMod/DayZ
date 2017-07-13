@@ -50,4 +50,4 @@ class MR43_DZ : MR43_Base
 	model = "\dayz_weapons\models\mr43.p3d";
 	picture = "\dayz_weapons\textures\equip_mr43_CA.paa";
 	displayname = $STR_DZ_WPN_MR43_NAME;
-}
+};
