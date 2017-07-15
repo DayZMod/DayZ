@@ -1,5 +1,5 @@
 private ["_brokein","_isOk","_hasSledgeHammer","_gps","_vars","_hasToolbox","_hasCrowbar","_limit","_proceed","_counter",
-"_dis","_sfx","_roll","_finished","_isGate","_values"];
+"_dis","_sfx","_roll","_finished","_isGate","_values","_woodenChance","_metalChance","_breakinChance"];
 
 _target = _this select 3;
 _pos = getPos _target;
@@ -28,11 +28,16 @@ _brokein = false;
 //[ChanceToBreakin,SledgeChance,CowbarChance]
 _values = switch (1==1) do {
     case (_isWoodenGate): { [0.04,0.30,0.20] };
-    case (_isMetalGate): { [0.02,0.60,0.40] };
+    case (_isMetalGate): { [0.02,0.15,0.10] };
     default { [] };
 };
 
 if ( (count _values) == 0 ) exitwith {};
+
+//check chance before loop, for a maximum amount of 5 loops allowing 5 possiable chances to breakin  
+_breakinChance = [(_values select 0)] call fn_chance);
+_woodenChance = [(_values select 1)] call fn_chance);
+_metalChance = [(_values select 2)] call fn_chance);
 
 while {_isOk} do {
 //Check if we have the tools to start
@@ -72,7 +77,7 @@ while {_isOk} do {
 		_counter = _counter + 1;
 		
 		//start chance to gain access.
-		if ([(_values select 0)] call fn_chance) then {
+		if (_breakinChance) then {
 			_isOk = false;
 			_proceed = true;
 			_brokein = true;
@@ -81,14 +86,14 @@ while {_isOk} do {
 	};
 	
 	//Chances to damage tools
-	if ([(_values select 1)] call fn_chance) then {
+	if (_woodenChance) then {
 		player removeWeapon "ItemSledgeHammer";
 		player addWeapon "ItemSledgeHammerBroken";
 
 		localize "STR_BLD_BREAKIN_BROKEN_SLEDGE" call dayz_rollingMessages;
 	};
 
-	if ([(_values select 2)] call fn_chance) then {
+	if (_metalChance) then {
 		player removeWeapon "ItemCrowbar";
 		player addWeapon "ItemCrowbarBent";
 		
@@ -128,4 +133,7 @@ if (_proceed and _brokein) then {
 	//Open Gate.
 	_target animate ["DoorR", 1];
 	_target animate ["DoorL", 1];
+	
+	PVDZ_Server_LogIt = format["WARNING - BROKEIN: Player %1 Broke into(%2) at %3",player, (typeof _target), _pos];
+    publicVariableServer "PVDZ_Server_LogIt";
 };
