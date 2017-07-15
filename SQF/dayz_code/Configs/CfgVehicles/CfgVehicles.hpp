@@ -10,6 +10,17 @@ class CfgVehicles {
 		{
 			killed = "_this call BIS_Effects_EH_Killed;";
 		};
+		class Reflectors
+		{
+			class Left
+			{
+				angle = 120;
+			};
+			class Right
+			{
+				angle = 120;
+			};
+		};
 	};
 	class Air : AllVehicles
 	{
@@ -110,7 +121,16 @@ class CfgVehicles {
 			class HitRBWheel:HitRBWheel{armor=1;};
 		};
 	};
-	class Motorcycle;
+	class Motorcycle : LandVehicle
+	{
+		class Reflectors
+		{
+			class Right
+			{
+				angle = 90;
+			};
+		};
+	};
 	class RubberBoat;
 	class UAZ_Unarmed_Base;
 	class HMMWV_Base;
@@ -161,8 +181,24 @@ class CfgVehicles {
 	class BuiltItems;
 	class Building;
 	class ReammoBox;
-	
-	class Old_bike_base_EP1;
+	class Bicycle;
+	class Old_bike_base_EP1 : Bicycle
+	{
+		class Reflectors 
+		{
+			class Right
+			{
+				color[] = {0.9,0.8,0.8,1};
+				ambient[] = {0.1,0.1,0.1,1};
+				position = "P svetlo";
+				direction = "konec P svetla";
+				hitpoint = "P svetlo";
+				selection = "P svetlo";
+				brightness = 0.4;
+				size = 1;
+			};
+		};
+	};
 	class Old_moto_base;
 	class Ikarus_base;
 	class Volha_TK_CIV_Base_EP1;
