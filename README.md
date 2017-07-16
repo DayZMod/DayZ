@@ -7,7 +7,7 @@ Current Version
  
  Current License
 =================================
-https://steamcommunity.com/linkfilter/?url=https://www.bistudio.com/community/licenses/dayz-mod-license-share-alike
+ - https://steamcommunity.com/linkfilter/?url=https://www.bistudio.com/community/licenses/dayz-mod-license-share-alike
  
 Files updated
 ------------
@@ -123,7 +123,7 @@ feature.
 Bugs/Issues
 -----------
 
-	* Please report any bugs/issues by submitting a Issue [here] (https://github.com/DayZMod/DayZ/issues).
+* Please report any bugs/issues by submitting an Issue [HERE](https://github.com/DayZMod/DayZ/issues).
 
 Special thanks
 -----------
