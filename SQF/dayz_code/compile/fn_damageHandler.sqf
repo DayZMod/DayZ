@@ -11,7 +11,8 @@ _hit = _this select 1;
 _damage = _this select 2;
 _source = _this select 3;
 _ammo = _this select 4;
-//diag_log format["%1 HandleDamage: Unit:%2 Hit:%3 Damage:%4 Source:%5 Ammo:%6",diag_tickTime,_unit,_hit,_damage,_source,_ammo];
+diag_log format["%1 HandleDamage: Unit:%2 Hit:%3 Damage:%4 Source:%5 Ammo:%6",diag_tickTime,_unit,_hit,_damage,_source,_ammo];
+
 _unconscious = _unit getVariable ["NORRN_unconscious", false];
 _model = typeOf player;
 _sourceType = typeOf _source;
@@ -337,6 +338,7 @@ if (_damage > 0.4) then {
         if (!_isHit) then {
             //Create Wound
             _unit setVariable["hit_"+_wound,true,true];
+			
             PVDZ_hlt_Bleed = [_unit,_wound,_damage];
             publicVariable "PVDZ_hlt_Bleed";  // draw blood stream on character, on all gameclients
             [_unit,_wound,_hit] spawn fnc_usec_damageBleed;  // draw blood stream on character, locally
@@ -377,18 +379,15 @@ if (_hit in USEC_MinorWounds) then {
                         "height:", (Dayz_freefall select 1), "blood loss", (_nrj2 * 25) ];
                     [_unit,_hit,_damage] call object_processHit;
             } else {
-                    [_unit,"arms",(_damage / 6)] call object_processHit; // prevent broken legs due to arma bugs
+                    [_unit,"arms",(_damage / 6)] call object_processHit; // prevent broken arms due to arma bugs
             };
             if (_nrj2 > 30) then {
                 (3 min (_nrj2/100)) call fnc_usec_bulletHit; // red flash
                 r_player_blood = 0 max (r_player_blood - (_nrj2 * 25));
             };
         } else {
-            [_unit,_hit,_damage] call object_processHit;
+			[_unit,_hit,(_damage / 2)] call object_processHit;
         };
-		
-		//Stop process hit running twice. its set aboue in the if else statement.
-		//[_unit,_hit,(_damage / 2)] call object_processHit;
 	};
 };
 
