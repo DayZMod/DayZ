@@ -106,7 +106,7 @@ MilitarySpecial[] =
 	{Loot_TOOL,			4,		ItemMap},
 	{Loot_TOOL,			2,		ItemEtool},
 	{Loot_TOOL,			0.5,	Binocular_Vector},
-	{Loot_MAGAZINE,		0.5,	PipeBomb},
+	{Loot_MAGAZINE,		0.1,	PipeBomb},
 	
 	//Backpacks
 	{Loot_BACKPACK,		3,		DZ_BP_Alice},
