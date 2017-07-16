@@ -1,4 +1,4 @@
-class V3S_Civ: V3S_Base 
+class V3S_Civ : V3S_Base 
 {
 	crew = "";
 	faction = "CIV";
@@ -11,16 +11,5 @@ class V3S_Civ: V3S_Base
 	class Library 
 	{
 		libtextdesc = $STR_EP1_LIB_V3S;
-	};
-	class Reflectors
-	{
-		class Left
-		{
-			angle = 120;
-		};
-		class Right
-		{
-			angle = 120;
-		};
 	};
 };
