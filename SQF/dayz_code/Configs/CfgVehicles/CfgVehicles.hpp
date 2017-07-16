@@ -1,6 +1,7 @@
 #include "CommonActions.hpp"
 
-class CfgVehicles {
+class CfgVehicles 
+{
 	class ALL;
 	class AllVehicles : ALL
 	{
@@ -9,17 +10,6 @@ class CfgVehicles {
 		class EventHandlers: DefaultEventhandlers
 		{
 			killed = "_this call BIS_Effects_EH_Killed;";
-		};
-		class Reflectors
-		{
-			class Left
-			{
-				angle = 120;
-			};
-			class Right
-			{
-				angle = 120;
-			};
 		};
 	};
 	class Air : AllVehicles
@@ -74,6 +64,17 @@ class CfgVehicles {
 		{
 			class Repair {ACTION_REPAIR; radius = 4;};
 			class Salvage {ACTION_SALVAGE; radius = 4;};
+		};
+		class Reflectors
+		{
+			class Left
+			{
+				angle = 120;
+			};
+			class Right
+			{
+				angle = 120;
+			};
 		};
 	};
 	class Car : LandVehicle {
@@ -137,7 +138,21 @@ class CfgVehicles {
 	class AH6_Base_EP1;
 	class An2_Base_EP1;
 	class TT650_Base;
-	class V3S_Base;
+	class Truck;
+	class V3S_Base : Truck
+	{
+		class Reflectors
+		{
+			class Left
+			{
+				angle = 120;
+			};
+			class Right
+			{
+				angle = 120;
+			};
+		};
+	};
 	class SUV_Base_EP1 : Car
 	{
 		class HitPoints : HitPoints
