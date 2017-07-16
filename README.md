@@ -56,72 +56,69 @@ GitHub Contributors
 These contributors have made specific changes for a particular bug fix or
 feature.
 
- * [Dienark7] ( https://github.com/Dienark7)
- * [Skaronator](https://github.com/Skaronator)
- * [ziellos2k](https://github.com/ziellos2k)
- * [JoeysLucky22](https://github.com/JoeysLucky22)
- * [AlexAFlorov](https://github.com/AlexAFlorov)
- * [facoptere](https://github.com/facoptere)
- * [icomrade](https://github.com/icomrade)
- * [thevisad](https://github.com/thevisad)
- * [DDesmond] (https://github.com/ddesmond)
- * [Sharkiller](https://github.com/Sharkiller) (Spanish Tranlations)
- * [Defwen](https://github.com/Defwen) (Czech Translations)
- * [[VB]AWOL](https://github.com/vbawol)
- * [Paul Tomany](https://github.com/Sequisha)
- * [M1lkM8n](https://github.com/M1lkm8n)
- * [JST](https://github.com/Cybersam248)
- * [NonovUrbizniz](https://github.com/NonovUrbizniz)
- * [MattzFiber](https://github.com/MattzFiber)
- * [Elvaron](https://github.com/Elvaron)
- * [Silentspy](https://github.com/Silentspy)
- * [EHDSeven](https://github.com/EHDSeven)
- * [Tansien](https://github.com/Tansien)
- * [wriley](https://github.com/wriley)
- * [fred41](https://github.com/fred41)
- * [Killzone_kid](https://github.com/Killzonekid)
- * [Alex Grosse (Inch)](http://opendayz.net/...bers/inch.1011/)
- * [Sumrak](http://www.nightstal...en_index_nc.php)
- * [f0rt](https://github.com/ashfor03)
- * [Ayan4m1](https://github.com/Ayan4m1)
- * [Rajko](https://github.com/rajkosto)
- * [Venthos](https://github.com/Venthos)
- * [VRShiva](https://github.com/VRShiva)
- * [DasAttorney](https://github.com/DasAttorney)
- * [ddesmond](https://github.com/ddesmond)
- * [dayz10k (Harlan)](https://github.com/dayz10k)
- * [Ingasmeeg](https://github.com/Ingasmeeg)
- * [caleywoods](https://github.com/caleywoods)
- * [Markolie](https://github.com/Markolie) (Dutch Translations)
- * [LordGoF](https://github.com/LordGoF)
- * [soapmak3r](https://github.com/soapmak3r) (Background Music)
- * [Hangender](https://github.com/hangender)
- * Aj (Leadz)
- * Ander
- * Shauneh
- * [Nick Chow] (https://github.com/Purplish)
- * bittedanke (https://github.com/bittedanke) - fixing a problem with chances.
- * [ebayShopper](https://github.com/ebayShopper)
- * xyberviri (https://github.com/xyberviri) - ((action_open_backpack_0.ogg - action_open_backpack_4.ogg), (action_open_inventory_0.ogg - action_open_inventory_4.ogg)) License Info - https://github.com/DayZMod/DayZ/issues/696
- * AsFoxy
- * Flamberg
- * skigoggles
- * kichilron
- * nsonP
- * CoftSock
- * Streatman
- * Bruce-LXXVI
- * HeroSmurf
- * romanongit
- * dayzjarhead
- * Adaptivity
- * NPG-Soul
- * Joe Horan
- * Defwen
- * Elvaron
- * AlbyBDPK
- * Aleks * Des
-
+* [aBARICHELLO](https://github.com/aBARICHELLO)
+* Adaptivity
+* Aj (Leadz)
+* AlbyBDPK
+* Alek
+* [Alex Grosse (Inch)](http://opendayz.net/...bers/inch.1011/)
+* [AlexAFlorov](https://github.com/AlexAFlorov)
+* Ander
+* AsFoxy
+* [Ayan4m1](https://github.com/Ayan4m1)
+* [bittedanke](https://github.com/bittedanke) - fixing a problem with chances.
+* Bruce-LXXVI
+* [caleywoods](https://github.com/caleywoods)
+* CoftSock
+* [DasAttorney](https://github.com/DasAttorney)
+* [dayz10k (Harlan)](https://github.com/dayz10k)
+* dayzjarhead
+* [DDesmond](https://github.com/ddesmond)
+* [Defwen](https://github.com/Defwen) (Czech Translations)
+* [Dienark7](https://github.com/Dienark7)
+* [ebayShopper](https://github.com/ebayShopper)
+* [EHDSeven](https://github.com/EHDSeven)
+* [Elvaron](https://github.com/Elvaron)
+* [f0rt](https://github.com/ashfor03)
+* [facoptere](https://github.com/facoptere)
+* Flamberg
+* [fred41](https://github.com/fred41)
+* [Hangender](https://github.com/hangender)
+* HeroSmurf
+* [icomrade](https://github.com/icomrade)
+* [Ingasmeeg](https://github.com/Ingasmeeg)
+* Joe Horan
+* [JoeysLucky22](https://github.com/JoeysLucky22)
+* [JST](https://github.com/Cybersam248)
+* [Killzone_kid](https://github.com/Killzonekid)
+* kichilron
+* [LordGoF](https://github.com/LordGoF)
+* [M1lkM8n](https://github.com/M1lkm8n)
+* [Markolie](https://github.com/Markolie) (Dutch Translations)
+* [MattzFiber](https://github.com/MattzFiber)
+* [Nick Chow](https://github.com/Purplish)
+* [NonovUrbizniz](https://github.com/NonovUrbizniz)
+* NPG-Soul
+* nsonP
+* [Paul Tomany](https://github.com/Sequisha)
+* [Rajko](https://github.com/rajkosto)
+* romanongit
+* [Sharkiller](https://github.com/Sharkiller) (Spanish Tranlations)
+* Shauneh
+* [Silentspy](https://github.com/Silentspy)
+* [Skaronator](https://github.com/Skaronator)
+* skigoggles
+* [soapmak3r](https://github.com/soapmak3r) (Background Music)
+* Streatman
+* [Sumrak](http://www.nightstal...en_index_nc.php)
+* [Tansien](https://github.com/Tansien)
+* [thevisad](https://github.com/thevisad)
+* [[VB]AWOL](https://github.com/vbawol)
+* [Venthos](https://github.com/Venthos)
+* [VRShiva](https://github.com/VRShiva)
+* [wriley](https://github.com/wriley)
+* [xyberviri](https://github.com/xyberviri) - ((action_open_backpack_0.ogg - action_open_backpack_4.ogg), (action_open_inventory_0.ogg - action_open_inventory_4.ogg)) [License Info](https://github.com/DayZMod/DayZ/issues/696)
+* [ziellos2k](https://github.com/ziellos2k)
 
 Bugs/Issues
 -----------
