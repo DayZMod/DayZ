@@ -7,13 +7,12 @@ class RPK_DZ : AK_47_M
 	displayName = $STR_DZ_WPN_RPK_NAME;
 	descriptionShort = $STR_DZ_WPN_RPK_DESC;
 	
+	modes[] = {"FullAuto","Single"};
 	magazines[] =
 	{
 		75Rnd_762x39_RPK,
 		30Rnd_762x39_AK47
 	};
-	
-	modes[] = {FullAuto,Single};
 	
 	//iron sight zeroing
 	weaponInfoType = "RscWeaponZeroing";

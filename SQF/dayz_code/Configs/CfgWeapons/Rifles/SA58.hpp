@@ -26,7 +26,7 @@ class SA58_DZ : Sa58V_EP1
 	picture = "\z\addons\dayz_communityweapons\sa58\data\w_sa58_ca.paa";
 	displayName = $STR_DZ_WPN_SA58_NAME;
 	
-	modes[] = {Single, FullAuto};
+	modes[] = {"FullAuto","Single"};
 	magazines[] = {30Rnd_762x39_SA58};
 	
 	weaponInfoType = "RscWeaponZeroing";
