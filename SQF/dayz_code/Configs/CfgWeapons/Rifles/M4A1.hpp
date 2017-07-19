@@ -71,6 +71,7 @@ class M4A1_DZ : M4A1
 	
 	handAnim[]={"OFP2_ManSkeleton","\Ca\weapons_E\SCAR\Data\Anim\SCAR.rtm"};
 	
+	modes[] = {"FullAuto","Single"};
 	magazines[] =
 	{
 		30Rnd_556x45_Stanag,
@@ -163,6 +164,7 @@ class M4A1_SD_DZ : M4A1_AIM_SD_camo
 	
 	handAnim[]={"OFP2_ManSkeleton","\Ca\weapons_E\SCAR\Data\Anim\SCAR.rtm"};
 	
+	modes[] = {"FullAuto","Single"};
 	magazines[] =
 	{
 	//	30Rnd_556x45_Stanag,

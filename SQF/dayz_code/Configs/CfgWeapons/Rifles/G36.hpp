@@ -4,6 +4,7 @@ class G36K_Camo_DZ : G36C
 	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36k_camo_ca.paa";
 	displayName = $STR_DZ_WPN_G36K_CAMO_NAME;
 	
+	modes[] = {"FullAuto","Single"};
 	magazines[] =
 	{
 		30Rnd_556x45_G36,
@@ -85,6 +86,7 @@ class G36K_Camo_SD_DZ : G36_C_SD_eotech
 	picture = "\z\addons\dayz_communityweapons\g36\data\w_g36k_camo_sd_ca.paa";
 	displayName = $STR_DZ_WPN_G36K_CAMO_SD_NAME;
 	
+	modes[] = {"FullAuto","Single"};
 	magazines[] =
 	{
 	//	30Rnd_556x45_G36,
