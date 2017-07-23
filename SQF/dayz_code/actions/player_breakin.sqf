@@ -35,9 +35,9 @@ _values = switch (1==1) do {
 if ( (count _values) == 0 ) exitwith {};
 
 //check chance before loop, for a maximum amount of 5 loops allowing 5 possiable chances to breakin  
-_breakinChance = [(_values select 0)] call fn_chance);
-_woodenChance = [(_values select 1)] call fn_chance);
-_metalChance = [(_values select 2)] call fn_chance);
+_breakinChance = [(_values select 0)] call fn_chance;
+_woodenChance = [(_values select 1)] call fn_chance;
+_metalChance = [(_values select 2)] call fn_chance;
 
 while {_isOk} do {
 //Check if we have the tools to start
