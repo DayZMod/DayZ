@@ -1,4 +1,4 @@
-private ["_hunger","_thirst","_timeOut","_result","_randomSpot","_distance","_mylastPos","_lastTemp","_rnd","_messTimer","_PlayerNearby","_ZedsNearby","_saveTime"];
+private ["_playerHumanity","_playerHumanityCHK","_playerNotInCombat","_hunger","_thirst","_timeOut","_result","_randomSpot","_distance","_mylastPos","_lastTemp","_rnd","_messTimer","_PlayerNearby","_ZedsNearby","_saveTime"];
 disableSerialization;
 _timeOut = 0;
 _messTimer = 0;
@@ -9,6 +9,7 @@ _timer1 = diag_tickTime;
 _timer30 = diag_Ticktime;
 _timer150 = diag_ticktime;
 _timerMonitor = diag_ticktime;
+_playerHumanityCHK = 0;
 
 player setVariable ["temperature",dayz_temperatur,true];
 
@@ -288,6 +289,18 @@ while {1 == 1} do {
 			player setVariable["startcombattimer", 0, false];
 		};
 	};
+	
+	
+	//If player is not in combat and humanity differs from the last time it ran run humanityCheck(skin change check)
+	if (_startcombattimer == 0) then {
+		_playerHumanity = (player getVariable "humanity");
+		
+		if ((_playerHumanity != _playerHumanityCHK) and (vehicle player == player)) then {
+			[_playerHumanity] call player_humanityCheck;
+			_playerHumanityCHK = _playerHumanity;
+		};
+	};
+	
 
 	uiSleep 2;
 
