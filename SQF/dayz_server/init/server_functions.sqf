@@ -158,10 +158,28 @@ server_getDiff2 = {
 	private ["_variable","_object","_vNew","_vOld","_result"];
 	_variable = _this select 0;
 	_object = _this select 1;
+	
 	_vNew = _object getVariable [_variable,0];
-	_vOld = _object getVariable [(_variable + "_CHK"),_vNew];
+	_vOld = _object getVariable (_variable + "_CHK");
+	_oldSettings = _vOld;
+	//_bypass = false;
+	
+	//Player changing skins can cause you to loose this var
+	if (isNil "_vOld") then {
+		_vOld = missionNamespace getVariable [(getPlayerUID _object),[_vNew]];
+		_vOld = _vOld select 0;
+		//_bypass = true;
+	};
+		
 	_result = _vNew - _vOld;
+	
+	//diag_log format["WARNING:: GetDiff2 - Object:%1, [O:%3/%6,N:%2] Diff: %4 - Bypass:%5",_object,_vNew,_vOld,_result,_bypass,_oldSettings];
+	
 	_object setVariable [(_variable + "_CHK"),_vNew];
+	
+	_currentHumanity = _object getVariable ["humanity",0];
+	missionNamespace setVariable [(getPlayerUID _object),[_currentHumanity]];
+	
 	_result
 };
 

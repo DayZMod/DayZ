@@ -96,6 +96,9 @@ if (_characterID != "?") then {
 	{[_x,"gear"] call server_updateObject} count (nearestObjects [_playerPos,DayZ_GearedObjects,10]);
 };
 
+//Remove players namespace setting for humanity
+missionNamespace setVariable [_playerUID,nil];
+
 if (alive _playerObj) then {
 	_playerObj call sched_co_deleteVehicle;
 };
