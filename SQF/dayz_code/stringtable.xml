@@ -1102,7 +1102,7 @@
 			<Czech>Chybějí vám následující věci: %1 %2</Czech>
 		</Key>
 		<Key ID="str_crafting_failed">
-			<English>Failed to create a %1.</English>
+			<English>Failed to create %1.</English>
 			<German>%1 konnte nicht erstellt werden.</German>
 			<Russian>Не удалось создать %1.</Russian>
 			<Spanish>Se falló al crear: %1</Spanish>
@@ -1110,11 +1110,11 @@
 			<Czech>Nepodařilo se vytvořit %1.</Czech>
 		</Key>
 		<Key ID="str_crafting_space">
-			<English>Not enough inventory space to make items.</English>
-			<German>Du hast nicht genug Platz im Inventar, um den Gegenstand herzustellen.</German>
+			<English>Not enough inventory space to make the items.</English>
+			<German>Du hast nicht genug Platz im Inventar, um die Gegenstände herzustellen.</German>
 			<Russian>В инвентаре уже нет места.</Russian>
 			<Spanish>No hay espacio suficiente en tu inventario para crear objetos.</Spanish>
-			<French>Espace insuffisant pour créer les éléments.</French>
+			<French>Espace insuffisant pour créer les objets.</French>
 			<Czech>Nemáte dostatek místa v inventáři pro vyrobení předmětu.</Czech>
 		</Key>
 		<Key ID="str_crafting_success">
@@ -1137,11 +1137,11 @@
 		</Key>
 		<Key ID="str_salvage_removed">
 			<!-- %1 part name %2 veh name -->
-			<English>You have successfully removed %1 from the %2</English>
-			<Spanish>Retiraste exitosamente %1 del %2</Spanish>
-			<Russian>Вы успешно демонтировали %1 с %2</Russian>
-			<Czech>Úspěšně jste odmontovali %1 z %2</Czech>
-			<French>Vous avez retiré %1 de %2</French>
+			<English>You have successfully removed %1 from the %2.</English>
+			<Spanish>Retiraste exitosamente %1 del %2.</Spanish>
+			<Russian>Вы успешно демонтировали %1 с %2.</Russian>
+			<Czech>Úspěšně jste odmontovali %1 z %2.</Czech>
+			<French>Vous avez retiré %1 de %2.</French>
 			<German>%1 wurde erfolgreich aus %2 ausgebaut.</German>
 			<Dutch>Je hebt met succes de %1 van de %2 verwijderd.</Dutch>
 		</Key>
@@ -1266,7 +1266,7 @@
 		</Key>
 		<Key ID="str_siphon_drained">
 			<!-- %1 vehicle name -->
-			<English>%1 has been drained for %2 litres of Fuel.</English>
+			<English>%1 has been drained for %2 litres of fuel.</English>
 			<Russian>Из %1 слито %2л топлива.</Russian>
 			<Spanish>Se le sustrajo %2 litros de combustible al %1.</Spanish>
 			<Czech>Z %1 bylo přečerpáno %2 litrů paliva.</Czech>
@@ -1581,7 +1581,7 @@
 			<Russian>Вы должны смотреть на предмет, чтобы взаимодействовать с ним.</Russian>
 			<French>Vous devez également regarder l'élément avec lui.</French>
 			<Czech>Musíte se dívat na tento produkt příliš komunikovat s ním.</Czech>
-			<German>Sie müssen das Objekt anschauen, um es zu benutzen.</German>
+			<German>Du musst das Objekt anschauen, um es zu benutzen.</German>
 		</Key>
 		<Key ID="str_CannotUpgrade">
 			<English>Unable to upgrade at this time.</English>
@@ -6573,7 +6573,7 @@
 			<Czech>Úspěšně jste připevnili %1 k %2</Czech>
 		</Key>
 		<Key ID="str_player_05">
-			<English>%1 has been filled with %2 litres of Fuel</English>
+			<English>%1 has been filled with %2 litres of fuel</English>
 			<German>%1 wurde mit %2 Litern Treibstoff betankt.</German>
 			<Russian>В %1 было залито %2 литров топлива.</Russian>
 			<Spanish>El %1 fue cargado con %2 litros de combustible.</Spanish>
@@ -6791,7 +6791,7 @@
 			<Czech>Pro naplnění láhve na vodu je nutné být poblíž studny nebo rybníka.</Czech>
 		</Key>
 		<Key ID="str_player_21">
-			<English>You cannot do this while you are on a ladder</English>
+			<English>You cannot do this while you are on a ladder.</English>
 			<German>Das kannst du nicht, während du dich an einer Leiter festhältst.</German>
 			<Russian>Вы не можете этого делать, пока поднимаетесь по лестнице.</Russian>
 			<Spanish>No puedes hacer esto mientras estás en una escalera</Spanish>
@@ -7147,7 +7147,7 @@
 
 		<Key ID="str_player_build_rotate">
 			<English>Use Q and E to rotate the object, and V to tilt it.</English>
-			<German>Benutze Q und E, um das Objekt zu drehen. Wähle dann die gewünschte Aktion.</German>
+			<German>Benutze Q und E um das Objekt zu drehen und V um es zu neigen.</German>
 			<Russian>Используйте Q и E чтобы повернуть объект и V для наклона.</Russian>
 			<Spanish>Use Q y E para rotar el objeto y entonces seleccione la acción deseada</Spanish>
 			<French>Utilisez A et E pour tourner l&apos;objet, et V pour le pencher.</French>
@@ -7171,27 +7171,27 @@
 		</Key>
 		<Key ID="str_pickup_limit_1">
 			<English>You need to be within 3 meters to pick up this item!</English>
-			<German>Du musst dich im Umkreis von drei Metern befinden, um das aufzunehmen.</German>
+			<German>Du musst dich im Umkreis von drei Metern befinden, um das aufzunehmen!</German>
 			<Russian>Чтобы поднять предмет, вы должны быть ближе 3х метров!</Russian>
 			<Spanish>¡Necesitas estar a menos de 3 metros para tomarlo!</Spanish>
 			<French>Vous devez être à moins de 3 mètres pour ramasser!</French>
-			<Czech>Abyste předmět sebrali, musíte být do vzdálenosti 3 metrů.</Czech>
+			<Czech>Abyste předmět sebrali, musíte být do vzdálenosti 3 metrů!</Czech>
 		</Key>
 		<Key ID="str_pickup_limit_2">
 			<English>You must wait to pick up this item!</English>
-			<German>Du musst noch etwas warten, um das aufzunehmen.</German>
+			<German>Du musst noch etwas warten, um das aufzunehmen!</German>
 			<Russian>Чтобы поднять этот предмет, нужно подождать!</Russian>
 			<Spanish>¡Necesitas esperar para tomar este objeto!</Spanish>
 			<French>Vous devez attendre pour ramasser l&apos;objet!</French>
-			<Czech>Abyste sebrali předmět, musíte počkat.</Czech>
+			<Czech>Abyste sebrali předmět, musíte počkat!</Czech>
 		</Key>
 		<Key ID="str_pickup_limit_3">
 			<English>You may only pick up one item at a time!</English>
-			<German>Du kannst immer nur einen Gegenstand gleichzeitig aufheben.</German>
+			<German>Du kannst immer nur einen Gegenstand gleichzeitig aufheben!</German>
 			<Russian>Можно поднимать только один предмет за раз!</Russian>
 			<Spanish>¡Solo puedes tomar un objeto a la vez!</Spanish>
 			<French>Vous ne pouvez prendre qu&apos;un objet à la fois!</French>
-			<Czech>Lze sebrat pouze jeden předmět zároveň.</Czech>
+			<Czech>Lze sebrat pouze jeden předmět zároveň!</Czech>
 		</Key>
 		<Key ID="str_pickup_limit_4">
 			<English>Another Player is nearby. Only one player can be within 5 meters of a bag to pick up.</English>
