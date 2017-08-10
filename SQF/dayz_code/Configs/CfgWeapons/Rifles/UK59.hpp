@@ -7,7 +7,7 @@ class UK59_Base : PKM_DZ
 	class FullAuto : FullAuto
 	{
 		reloadTime = 0.10;
-		begin1[] = {"\z\addons\dayz_communityweapons\uk59\data\uk_single_1", db8, 1, 1400};
+		begin1[] = {"\z\addons\dayz_communityweapons\uk59\data\uk_single_1", db8, 1, 1600};
 		soundBegin[] = {begin1,1};
 	};
 };
