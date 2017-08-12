@@ -419,7 +419,11 @@ class CfgWeapons
 	#include "Pistols\M1911.hpp"
 	
 	class Makarov;
-	class MakarovSD;
+	class MakarovSD : Makarov
+	{
+		begin1[] = {"ca\sounds\weapons\pistols\makarovSD_single1",0.316228,1,50};
+		soundBegin[] = {"begin1",1};
+	};
 	#include "Pistols\Makarov.hpp"
 	
 	class UZI_EP1 : Pistol
