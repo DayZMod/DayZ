@@ -152,7 +152,7 @@ class WoodenFence_4: WoodenFence_3
 		displayName = $STR_BLD_name_WoodenFence_4;//"Wooden Fence Level 4"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"ItemScrews","ItemScrews","ItemLog","ItemLog","ItemLog","ItemLog"};
+		requiredParts[] = {"ItemScrews","ItemLog","ItemLog","ItemLog","ItemLog"};
 		create = "WoodenFence_5";
 	};
 }; 
@@ -164,7 +164,7 @@ class WoodenFence_5: WoodenFence_4
 		displayName = $STR_BLD_name_WoodenFence_5;//"Wooden Fence Level 5"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"ItemLog","ItemLog","ItemLog","ItemLog","ItemPlank","ItemScrews","ItemScrews"};
+		requiredParts[] = {"ItemLog","ItemLog","ItemLog","ItemLog","ItemPlank","ItemScrews"};
 		create = "WoodenFence_6";
 	};
 	class eventHandlers {
@@ -181,7 +181,7 @@ class WoodenFence_6: WoodenFence_5
 		displayName = $STR_BLD_name_WoodenFence_6;//"Wooden Fence Level 6"
 	class Upgrade {
 		requiredTools[] = {"ItemToolbox"};
-		requiredParts[] = {"ItemScrews","ItemScrews","ItemPlank","ItemPlank","ItemPlank","ItemLog","ItemLog"};
+		requiredParts[] = {"ItemScrews","ItemPlank","ItemPlank","ItemPlank","ItemLog","ItemLog"};
 		create = "WoodenFence_7";
 	};
 };
