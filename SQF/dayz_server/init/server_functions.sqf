@@ -158,10 +158,11 @@ server_getDiff2 = {
 	private ["_variable","_object","_vNew","_vOld","_result"];
 	_variable = _this select 0;
 	_object = _this select 1;
+	_select = _this select 2;
 	
 	_vNew = _object getVariable [_variable,0];
 	_vOld = _object getVariable (_variable + "_CHK");
-	_oldSettings = _vOld;
+	//_oldSettings = _vOld;
 	//_bypass = false;
 	
 	//Player changing skins can cause you to loose this var
