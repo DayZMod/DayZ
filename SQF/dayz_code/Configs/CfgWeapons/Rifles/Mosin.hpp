@@ -44,7 +44,7 @@ class Mosin_Base : Rifle
 	dispersion = 0.00091;
 	reloadTime = 1.4;
 	//sound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\Mosin.ogg,1.778279,1,1000};
-	sound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\Mosin.ogg,db-20,1,800};
+	sound[] = {z\addons\dayz_communityweapons\models\mosin_nagant\sound\Mosin.ogg,db-20,1,1600};
 };
 
 
