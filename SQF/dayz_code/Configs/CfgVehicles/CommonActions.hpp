@@ -37,5 +37,5 @@
 	showWindow = 0;\
 	onlyForPlayer = 1;\
 	shortcut = "reloadMagazine";\
-	condition = "(vehicle player != player) && (((assignedVehicleRole player) select 0) == 'Turret') && (alive this)";\
+	condition = "(['AddAmmo',this] call userActionConditions)";\
 	hideOnUse = 1

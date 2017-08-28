@@ -28,6 +28,9 @@ _camera camSetTarget _deathPos;
 _camera camSetPos [_deathPos select 0, (_deathPos select 1) + 2, 5];
 _camera camCommit 0;
 
+//SetDamage immediately so Arma registers the player as dead and respawns them into new unit
+player setDamage 1;
+
 if (!_killed) then {
 	//Kill the player if they are not already dead so they respawn into new unit
 	_body setHit ["body",1];

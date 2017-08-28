@@ -218,6 +218,8 @@ _playerObj setVariable ["humanity",_humanity,true];
 _playerObj setVariable ["humanity_CHK",_humanity];
 _playerObj setVariable ["lastPos",getPosATL _playerObj];
 
+missionNamespace setVariable [_playerID,[_humanity]];
+
 PVCDZ_plr_Login2 = [_worldspace,_state];
 _clientID = owner _playerObj;
 _clientID publicVariableClient "PVCDZ_plr_Login2";

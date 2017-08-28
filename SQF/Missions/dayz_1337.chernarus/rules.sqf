@@ -1,4 +1,6 @@
 private ["_timeout"];
+
+call compile preprocessFileLineNumbers "config.sqf";
  
 _timeout = 5;
 {

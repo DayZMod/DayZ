@@ -2,11 +2,14 @@ private ["_class","_position","_dir","_currentAnim","_currentCamera","_playerUID
 _class = _this;
 
 disableSerialization;
+
 //Old location system causes issues with players getting damaged during movement.
 //_position = getPosATL player;
 //New system testing needed.
 _position = player modeltoWorld [0,0,0];
 _dir = getDir player;
+
+//get current player stats
 _currentAnim = animationState player;
 _currentCamera = cameraView;
 _playerUID = getPlayerUID player;
@@ -38,13 +41,6 @@ if (_newBackpackType != "") then {
 _currentWpn = currentWeapon player;
 _muzzles = getArray(configFile >> "cfgWeapons" >> _currentWpn >> "muzzles");
 if (count _muzzles > 1) then {_currentWpn = currentMuzzle player;};
-
-//Debug Message
-//	diag_log "Attempting to switch model";
-//	diag_log str(_weapons);
-//	diag_log str(_magazines);
-//	diag_log (str(_backpackWpn));
-//	diag_log (str(_backpackMag));
 
 //Secure Player for Transformation
 //player setPosATL dayz_spawnPos;
@@ -127,30 +123,26 @@ if (!isNil "_newBackpackType") then {
 };
 
 //Debug Message
+/*
 diag_log "Swichtable Unit Created. Equipment:";
 diag_log format["Weapons: %1",weapons _newUnit];
 diag_log format["Magazines: %1",magazines _newUnit];
 diag_log format["Backpack weapons: %1",getWeaponCargo unitBackpack _newUnit];
 diag_log format["Backpack magazines: %1",getMagazineCargo unitBackpack _newUnit];
-
-//Make New Unit Playable (1 of these 3 commands causes crashes with gear dialog open)
-//_oldUnit setPosATL [_position select 0 + cos(_dir) * 2, _position select 1 + sin(_dir) * 2, _position select 2];
-addSwitchableUnit _newUnit;
-setPlayable _newUnit;
-selectPlayer _newUnit;
+*/
+//Move new unit to correct location
+_newUnit setPosATL _position;
 
 //Switch the units
 _rndx = floor(random 100);
 _rndy = floor(random 100);
 _oldUnit setPosATL [(respawn_west_original select 0) + _rndx, (respawn_west_original select 1) + _rndy, 0];
-_newUnit setPosATL _position;
+
 if (surfaceIsWater respawn_west_original) then {_newUnit call fn_exitSwim;};
 
 //Clear and delete old Unit
 removeAllWeapons _oldUnit;
 {_oldUnit removeMagazine _x;} count magazines _oldUnit;
-if !(isNull _oldUnit) then {deleteVehicle _oldUnit;};
-if (count (units _oldGroup) == 0) then {deleteGroup _oldGroup;};
 
 player switchCamera _currentCamera;
 if (_currentWpn != "") then {_newUnit selectWeapon _currentWpn;};
@@ -166,3 +158,16 @@ player setVariable ["BIS_noCoreConversations",true];
 
 call dayz_meleeMagazineCheck;
 {player reveal _x} count (nearestObjects [_position,["AllVehicles","WeaponHolder","Land_A_tent","BuiltItems"],75]);
+
+//Make New Unit Playable (1 of these 3 commands causes crashes with gear dialog open)
+//_oldUnit setPosATL [_position select 0 + cos(_dir) * 2, _position select 1 + sin(_dir) * 2, _position select 2];
+addSwitchableUnit _newUnit;
+setPlayable _newUnit;
+selectPlayer _newUnit;
+
+diag_log format["WARNING --- SWITCH UNIT: old[%1,%2] - new[%3,%4]",_oldUnit,_oldGroup,player,group player];
+
+if !(isNull _oldUnit) then {deleteVehicle _oldUnit; diag_log format["SwitchModel - Removing Player %1",_oldUnit]; };
+if (count (units _oldGroup) == 0) then {deleteGroup _oldGroup; diag_log format["SwitchModel - Removing group %1",_oldGroup];};
+
+_oldUnit
