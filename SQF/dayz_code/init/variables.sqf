@@ -523,4 +523,5 @@ if (!isDedicated) then {
 	dayz_hitByTime = 0;
 	skipGearSound = false;
 	TimeOutDisplayed = false;
+	playerHumanityCHK = 0;
 };

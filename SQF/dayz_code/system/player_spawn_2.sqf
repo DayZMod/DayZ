@@ -289,18 +289,6 @@ while {1 == 1} do {
 			player setVariable["startcombattimer", 0, false];
 		};
 	};
-	
-	
-	//If player is not in combat and humanity differs from the last time it ran run humanityCheck(skin change check)
-	if (_startcombattimer == 0) then {
-		_playerHumanity = (player getVariable "humanity");
-		
-		if ((_playerHumanity != _playerHumanityCHK) and (vehicle player == player)) then {
-			[_playerHumanity] call player_humanityCheck;
-			_playerHumanityCHK = _playerHumanity;
-		};
-	};
-	
 
 	uiSleep 2;
 

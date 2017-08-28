@@ -1,8 +1,7 @@
-private ["_charID","_newmodel","_old","_updates","_humanity","_medical","_worldspace","_zombieKills","_headShots","_humanKills","_banditKills","_fractures","_wpnType","_ismelee","_survivalTime"];
+private ["_playersOldUnit","_charID","_newmodel","_old","_updates","_humanity","_medical","_worldspace","_zombieKills","_headShots","_humanKills","_banditKills","_fractures","_wpnType","_ismelee","_survivalTime"];
 //_playerUID = _this select 0;
 _charID = _this select 1;
 _model = _this select 2;
-_old = player;
 
 player allowDamage false;
 player removeEventHandler ["FiredNear",eh_player_killed];
@@ -29,7 +28,7 @@ _ConfirmedHumanKills = player getVariable ["ConfirmedHumanKills",0];
 _ConfirmedBanditKills = player getVariable ["ConfirmedBanditKills",0];
 
 //Switch
-_switch = _model call player_switchModel;
+_playersOldUnit = _model call player_switchModel;
 
 //Login
 
@@ -89,8 +88,10 @@ player setVariable ["ConfirmedBanditKills",_ConfirmedBanditKills,true];
 
 call dayz_resetSelfActions; //New unit has no self actions yet. Reset variables so actions can be added back.
 dayz_actionInProgress = false; //Allow self actions to run now.
+
 eh_player_killed = player addeventhandler ["FiredNear",{_this call player_weaponFiredNear;}];
 [player] call fnc_usec_damageHandle;
+
 player allowDamage true;
 
 player addWeapon "Loot";
@@ -98,4 +99,4 @@ uiSleep 0.1;
 call dayz_meleeMagazineCheck;
 
 uiSleep 0.1;
-if !(isNull _old) then {deleteVehicle _old;};
+if !(isNull _playersOldUnit) then { deleteVehicle _playersOldUnit; diag_log format["HumanityMorph - Removing Player %1",_playersOldUnit]; };
