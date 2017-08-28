@@ -17,7 +17,7 @@ class AH6X_DZ_Base: AH6_Base_EP1
 
 class AH6X_DZ: AH6_Base_EP1
 {
-	model = "\z\dayz_Communityassets\Vehicles\Air\GreyBird\GreyBird.p3d";
+	model = "\z\dayz_Communityassets\Vehicles\GreyBird.p3d";
 	displayname = $STR_VEH_NAME_AH6X;
 	displaynameshort = $STR_EP1_DN_AH6X;
 	audible = 6;
