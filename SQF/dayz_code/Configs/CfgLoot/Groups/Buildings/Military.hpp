@@ -96,7 +96,8 @@ MilitarySpecial[] =
 	{Loot_WEAPON,		0.5,	M249_DZ},
 	
 //Sniper Rifles
-	{Loot_WEAPON,		0.2,	SVD_DZ},
+	{Loot_WEAPON,		0.3,	SVD_DZ},
+	{Loot_WEAPON,		0.1,	BAF_LRR_DZ},
 	
 	//Tools
 	{Loot_TOOL,			4,		Binocular},

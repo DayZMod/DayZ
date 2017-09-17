@@ -27,6 +27,7 @@ CrashSiteRU[] =
 	{Loot_WEAPON,		0.7,	SVD_DZ},
 	{Loot_WEAPON,		1,		M40A3_DZ},
 	{Loot_WEAPON,		0.7,	FNFAL_DZ},
+	{Loot_WEAPON,		0.5,	BAF_LRR_DZ},
 	
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},

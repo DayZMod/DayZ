@@ -171,6 +171,8 @@ class CfgWeapons
 	class revolver_EP1;
 	#include "Pistols\Revolver.hpp"
 	
+	#include "Rifles\BAF_LRR_DZ.hpp"
+	
 	
 	
 	

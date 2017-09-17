@@ -17,7 +17,8 @@ AmmoBoxRU2[] =
 AmmoBoxRU3[] =
 {
 	{Loot_MAGAZINE,		9,		10Rnd_762x54_SVD},
-	{Loot_MAGAZINE,		1,		100Rnd_762x54_PK}
+	{Loot_MAGAZINE,		1,		100Rnd_762x54_PK},
+	{Loot_MAGAZINE,		4,		1Rnd_86x70_L115A1},
 };
 
 //5.56x45mm
