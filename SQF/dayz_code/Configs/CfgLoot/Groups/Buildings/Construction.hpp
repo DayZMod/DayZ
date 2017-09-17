@@ -4,7 +4,7 @@ Construction[] =
 	{Loot_MAGAZINE,		9,		ItemPlank},
 	{Loot_MAGAZINE,		5,		ItemStone},
 	{Loot_MAGAZINE,		4,		equip_nails},
-	{Loot_MAGAZINE,		1.5,		ItemScrews},
+	{Loot_MAGAZINE,		4,		ItemScrews},
 	{Loot_MAGAZINE,		9,		equip_metal_sheet_rusted},
 	{Loot_MAGAZINE,		9,		equip_metal_sheet},
 	{Loot_MAGAZINE,		1,		equip_lever},
