@@ -144,7 +144,6 @@ if (surfaceIsWater respawn_west_original) then {_newUnit call fn_exitSwim;};
 removeAllWeapons _oldUnit;
 {_oldUnit removeMagazine _x;} count magazines _oldUnit;
 
-player switchCamera _currentCamera;
 if (_currentWpn != "") then {_newUnit selectWeapon _currentWpn;};
 [objNull, player, rSwitchMove, _currentAnim] call RE;
 //dayz_originalPlayer attachTo [_newUnit];
@@ -164,6 +163,7 @@ call dayz_meleeMagazineCheck;
 addSwitchableUnit _newUnit;
 setPlayable _newUnit;
 selectPlayer _newUnit;
+player switchCamera _currentCamera;
 
 diag_log format["WARNING --- SWITCH UNIT: old[%1,%2] - new[%3,%4]",_oldUnit,_oldGroup,player,group player];
 

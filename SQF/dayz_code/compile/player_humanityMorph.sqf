@@ -4,10 +4,18 @@ _charID = _this select 1;
 _model = _this select 2;
 
 player allowDamage false;
-player removeEventHandler ["FiredNear",eh_player_killed];
-player removeEventHandler ["HandleDamage",mydamage_eh1];
-player removeEventHandler ["Killed",mydamage_eh3];
-player removeEventHandler ["Fired",mydamage_eh2];
+if(!isNil "eh_player_killed") then {
+	player removeEventHandler ["FiredNear",eh_player_killed];
+};
+if(!isNil "mydamage_eh1") then {
+	player removeEventHandler ["HandleDamage",mydamage_eh1];
+};
+if(!isNil "mydamage_eh3") then {
+	player removeEventHandler ["Killed",mydamage_eh3];
+};
+if(!isNil "mydamage_eh2") then {
+	player removeEventHandler ["Fired",mydamage_eh2];
+};
 
 _updates = player getVariable ["updatePlayer",[false,false,false,false,false]];
 _updates set [0,true];
