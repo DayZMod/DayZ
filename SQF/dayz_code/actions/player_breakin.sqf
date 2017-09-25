@@ -7,16 +7,21 @@ _isWoodenGate = (typeOf cursorTarget) in ["WoodenGate_2","WoodenGate_3","WoodenG
 _isMetalGate = (typeOf cursorTarget) in ["MetalGate_2","MetalGate_3","MetalGate_4"];
 _limit = 2 + round(random 3);
 
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
+dayz_actionInProgress = true;
+
 _hasSledgeHammer = "ItemSledgeHammer" in items player;
 _hasCrowbar = "ItemCrowbar" in items player;
 
 if (!_hasSledgeHammer) exitWith {
 	localize "STR_BLD_BREAKIN_NEED_SLEDGE" call dayz_rollingMessages;
+	dayz_actionInProgress = false;
 	uiSleep 1;
 };
 
 if (!_hasCrowbar) exitWith { 
 	localize "STR_BLD_BREAKIN_NEED_CROWBAR" call dayz_rollingMessages;
+	dayz_actionInProgress = false;
 	uiSleep 1;
 };
 
@@ -32,7 +37,7 @@ _values = switch (1==1) do {
     default { [] };
 };
 
-if ( (count _values) == 0 ) exitwith {};
+if ( (count _values) == 0 ) exitwith { dayz_actionInProgress = false; };
 
 //check chance before loop, for a maximum amount of 5 loops allowing 5 possiable chances to breakin  
 _breakinChance = [(_values select 0)] call fn_chance;
@@ -111,7 +116,7 @@ while {_isOk} do {
 	uiSleep 0.03;
 };
 //Tool issues
-if (isnil "_proceed") exitwith {};
+if (isnil "_proceed") exitwith { dayz_actionInProgress = false; };
 
 //Interrupted for some reason
 if (!_proceed) then {
@@ -137,3 +142,5 @@ if (_proceed and _brokein) then {
 	PVDZ_Server_LogIt = format["WARNING - BROKEIN: Player %1 Broke into(%2) at %3",player, (typeof _target), _pos];
     publicVariableServer "PVDZ_Server_LogIt";
 };
+
+dayz_actionInProgress = false;
