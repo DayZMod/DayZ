@@ -41,12 +41,14 @@ _values = switch (1==1) do {
 
 if ( (count _values) == 0 ) exitwith { _target setVariable ["actionInProgress",false,true]; };
 
-while {_isOk} do {
-//check chance, for a maximum amount of 5 loops allowing 5 possiable chances to breakin  
-	_breakinChance = [(_values select 0)] call fn_chance;
-	_sledgeChance = [(_values select 1)] call fn_chance;
-	_crowBarChance = [(_values select 2)] call fn_chance;
+//Move breakin chance outside the loop we only test for breakin at the very end of _limit
+_breakinChance = [(_values select 0)] call fn_chance;
 
+while {_isOk} do {
+//check chance, for a maximum amount of 5 loops allowing 5 possiable chances to breakin we also now divide the max chance by the amount of trys. 
+	_sledgeChance = [((_values select 1) / _limit)] call fn_chance;
+	_crowBarChance = [((_values select 2) / _limit)] call fn_chance;
+	
 //Check if we have the tools to start
 	_hasSledgeHammer = "ItemSledgeHammer" in items player;
 	_hasCrowbar = "ItemCrowbar" in items player;
@@ -72,35 +74,32 @@ while {_isOk} do {
 //Run animation loop
 	_finished = ["Medic",1] call fn_loopAction;
 	
-//Interrupt and end
-	if(!_finished) exitWith {
+//Everything happened as it should
+	if(_finished) then {
+		//Add to Counter
+		_counter = _counter + 1;
+	} else {
 		_isOk = false;
 		_proceed = false;
 		_sledgeChance = false;
 		_crowBarChance = false;
 	};
 	
-//Everything happened as it should
-	if(_finished) then {
-		//Add to Counter
-		_counter = _counter + 1;
-		
-		//start chance to gain access. Bloody subsequent inner scopes  
-		if (_breakinChance) then {
-			_end = true;
-		};
-	};
-	
-	if (_end) exitWith {
-		_proceed = true;
-		_brokein = true;
-		_isOk = false;
-	};
+	//some debug
+	diag_log format["breakinChance: %1(%7%9), sledgeChance: %2(%5%9), crowBarChance: %3(%6%9), Attempt: %8 of %4",_breakinChance,_sledgeChance,_crowBarChance,_limit,(((_values select 1) / _limit) * 100),(((_values select 2) / _limit) * 100),(((_values select 0) / _limit) * 100),_counter,"%"];
+
 	
 //Chances to damage tools
 	if (_sledgeChance or _crowBarChance) exitWith { _proceed = false; };
 
-	if(_counter == _limit) exitWith {
+//End when _counter hits _limit decide if the breakin has been successful	
+	if(_counter == _limit) exitWith {	
+		//start chance to gain access.  
+		if (_breakinChance) then {
+			_proceed = true;
+			_brokein = true;
+		};
+		
 		//stop loop
 		_isOk = false;
 		//Set Done var
@@ -122,7 +121,7 @@ if (isnil "_proceed") then {
 if (_proceed) then {
 	//Completed but no success.
 	if (!_brokein) then {
-		PVDZ_Server_LogIt = format["WARNING - BROKEIN: Player %1 Broke into Failed(%2) at %3[%4,%5]",player, (typeof _target), _pos, _sledgeChance, _crowBarChance];
+		PVDZ_Server_LogIt = format["WARNING - BROKEINFAILED: Player %1 Broke into Failed(%2) at %3[%4,%5]",player, (typeof _target), (mapGridPosition _pos) , _sledgeChance, _crowBarChance];
 		
 		_msg = "STR_BLD_BREAKIN_COMPLETE_FAIL";
 	};
@@ -136,7 +135,7 @@ if (_proceed) then {
 		_target animate ["DoorL", 1];
 		
 		
-		PVDZ_Server_LogIt = format["WARNING - BROKEIN: Player %1 Broke into(%2) at %3",player, (typeof _target), _pos];
+		PVDZ_Server_LogIt = format["WARNING - BROKEINSUCCESSFUL: Player %1 Broke into(%2) at %3",player, (typeof _target), (mapGridPosition _pos)];
 		
 		_msg = "STR_BLD_BREAKIN_COMPLETE";
 	};
