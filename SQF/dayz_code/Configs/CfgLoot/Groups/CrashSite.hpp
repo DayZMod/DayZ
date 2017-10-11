@@ -142,7 +142,7 @@ CrashSiteEU[] =
 	{Loot_WEAPON,		4,		G17_DZ},
 	{Loot_WEAPON,		6,		MP5_DZ},
 	{Loot_WEAPON,		5,		G36C_DZ},
-	{Loot_WEAPON,		5,		L85_Holo_DZ},
+	{Loot_WEAPON,		5,		L85A2_DZ},
 	{Loot_WEAPON,		1.5,	G36K_Camo_DZ},
 	{Loot_WEAPON,		2.5,	G36A_Camo_DZ},
 	{Loot_WEAPON,		1,		FNFAL_DZ},
@@ -210,7 +210,7 @@ CrashSiteUN[] =
 	{Loot_WEAPON,		2,		M4A1_DZ},
 	{Loot_WEAPON,		3,		M16A4_DZ},
 	{Loot_WEAPON,		3,		G36C_DZ},
-	{Loot_WEAPON,		2,		L85_Holo_DZ},
+	{Loot_WEAPON,		2,		L85A2_DZ},
 	{Loot_WEAPON,		1,		RPK74_DZ},
 	
 	//Tools
