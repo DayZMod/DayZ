@@ -10269,13 +10269,21 @@
 		</Key>
 		
 		<!-- SVD -->
-		<Key ID="STR_DZ_WPN_SVD_NAME">
+		<Key ID="$STR_DZ_WPN_SVD_NAME">
 			<English>SVD</English>
 			<Russian>СВД</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_SVD_GH_NAME">
 			<English>SVD Camo</English>
 			<Russian>СВД (камуфляж)</Russian>
+		</Key>
+		<Key ID="$STR_DZ_WPN_SVD_PSO1_NAME">
+			<English>SVD PSO-1</English>
+			<Russian>СВД ПСО-1</Russian>
+		</Key>
+		<Key ID="$STR_DZ_WPN_SVD_PSO1_GH_NAME">
+			<English>SVD PSO-1 Camo</English>
+			<Russian>СВД ПСО-1 (камуфляж)</Russian>
 		</Key>
 		
 		<!-- Mosin -->
