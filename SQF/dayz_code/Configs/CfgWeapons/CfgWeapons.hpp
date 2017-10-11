@@ -130,7 +130,7 @@ class CfgWeapons
 	#include "Rifles\SA58.hpp"
 	
 	class BAF_L85A2_RIS_Holo;
-	#include "Rifles\L85.hpp"
+	#include "Rifles\L85A2.hpp"
 	
 	class bizon;
 	class bizon_silenced;
