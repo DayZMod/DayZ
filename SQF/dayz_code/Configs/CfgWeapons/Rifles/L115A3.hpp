@@ -1,7 +1,7 @@
 class L115A3_Base : Rifle
 {
 	scope = 2;
-	descriptionShort = $STR_BAF_CFGWEAPONS_BAF_LRR_SCOPED0_0;
+	descriptionShort = $STR_DZ_WPN_L115A3_DESC;
 	
 	magazines[] = {1Rnd_86x70_L115A1};
 	
@@ -50,5 +50,5 @@ class L115A3_DZ : L115A3_Base
 {
 	model = "\ca\weapons_BAF\LRR_scoped_BAF";
 	picture = "\CA\weapons_baf\data\UI\LRR_scoped_ca.paa";  
-	displayname = $STR_BAF_CFGWEAPONS_BAF_LRR_SCOPED0;
+	displayname = $STR_DZ_WPN_L115A3_NAME;
 };

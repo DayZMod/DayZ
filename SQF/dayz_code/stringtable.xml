@@ -9548,6 +9548,14 @@
 			<English>DMR Camo</English>
 			<Russian>DMR (камуфляж)</Russian>
 		</Key>
+		<Key ID="STR_DZ_WPN_L115A3_NAME">
+			<English>L115A3 LRR</English>
+		</Key>
+		<Key ID="STR_DZ_WPN_L115A3_DESC">
+			<English>Sniper rifle   &lt;br/&gt;Caliber: .338 Lapua Magnum</English>
+			<Russian>Снайперская винтовка &lt;br/&gt;Патрон: .338 Lapua Magnum</Russian>
+			<German>Scharfschützengewehr  &lt;br/&gt;Kaliber: .338 Lapua Magnum</German>			
+		</Key>
 		
 		<!-- M4A1 -->
 		<Key ID="STR_DZ_WPN_M4A1_NAME">
