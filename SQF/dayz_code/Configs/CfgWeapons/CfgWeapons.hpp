@@ -146,6 +146,7 @@ class CfgWeapons
 	#include "Rifles\Winchester1866.hpp"
 	#include "Rifles\Remington870.hpp"
 	#include "Rifles\Crossbow.hpp"
+	#include "Rifles\L115A3.hpp"
 	
 	
 	
@@ -170,8 +171,6 @@ class CfgWeapons
 	
 	class revolver_EP1;
 	#include "Pistols\Revolver.hpp"
-	
-	#include "Rifles\BAF_LRR_DZ.hpp"
 	
 	
 	
