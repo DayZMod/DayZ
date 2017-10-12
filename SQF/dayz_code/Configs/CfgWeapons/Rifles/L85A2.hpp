@@ -138,18 +138,13 @@ class L85A2_MFL_DZ : L85A2_DZ
 	};
 };
 
-class L85A2_SD_DZ : L85A2_DZ
+class L85A2_SD_Base : L85A2_DZ
 {
-	model = "z\addons\dayz_communityweapons\L85A2\L85A2_SD.p3d";
-	picture = "\z\addons\dayz_communityweapons\L85A2\data\w_L85A2_SD_ca.paa";
-	displayName = $STR_DZ_WPN_L85A2_SD_NAME;
-
 	magazines[] =
 	{
 	//	30Rnd_556x45_Stanag,
 		30Rnd_556x45_StanagSD
 	};
-	
 	fireLightDuration = 0;
 	fireLightIntensity = 0;
 	modes[] = {"Single","FullAuto"};
@@ -179,6 +174,13 @@ class L85A2_SD_DZ : L85A2_DZ
 		maxRange = 40;
 		maxRangeProbab = 0.05;
 	};
+};
+	
+class L85A2_SD_DZ : L85A2_SD_Base
+{
+	model = "z\addons\dayz_communityweapons\L85A2\L85A2_SD.p3d";
+	picture = "\z\addons\dayz_communityweapons\L85A2\data\w_L85A2_SD_ca.paa";
+	displayName = $STR_DZ_WPN_L85A2_SD_NAME;
 	
 	class Attachments
 	{
