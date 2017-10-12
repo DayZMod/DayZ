@@ -1,0 +1,171 @@
+ambient[]={1,1,1,1};
+diffuse[]={1,1,1,1};
+forcedDiffuse[]={0,0,0,0};
+emmisive[]={0,0,0,1};
+specular[]={1,1,1,1};
+specularPower=120;
+PixelShaderID="Multi";
+VertexShaderID="Multi";
+class TexGen0
+{
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class TexGen1
+{
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class TexGen2
+{
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class TexGen3
+{
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class TexGen4
+{
+	uvSource="tex1";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class TexGen5
+{
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class TexGen6
+{
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class TexGen7
+{
+	uvSource="tex";
+	class uvTransform
+	{
+		aside[]={1,0,0};
+		up[]={0,1,0};
+		dir[]={0,0,1};
+		pos[]={0,0,0};
+	};
+};
+class Stage0
+{
+	texture="z\addons\dayz_buildings\textures\doors\wood_doors_co.tga";
+	texGen="0";
+};
+class Stage1
+{
+	texture="z\addons\dayz_buildings\textures\doors\housev_1i2_door_co.tga";
+	texGen="1";
+};
+class Stage2
+{
+	texture="z\addons\dayz_buildings\textures\doors\housev2_02_misc_co.tga";
+	texGen="2";
+};
+class Stage3
+{
+	texture="z\addons\dayz_buildings\textures\doors\housev2_04-2_co.tga";
+	texGen="3";
+};
+class Stage4
+{
+	texture="z\addons\dayz_buildings\textures\universal_mask.paa";
+	texGen="4";
+};
+class Stage5
+{
+	texture="#(argb,8,8,3)color(0.5,0,1,1,DTSMDI)";
+	texGen="5";
+};
+class Stage6
+{
+	texture="#(argb,8,8,3)color(0.5,0,1,1,DTSMDI)";
+	texGen="6";
+};
+class Stage7
+{
+	texture="#(argb,8,8,3)color(0.5,0,1,1,DTSMDI)";
+	texGen="7";
+};
+class Stage8
+{
+	texture="#(argb,8,8,3)color(0.5,0,1,1,DTSMDI)";
+	texGen="3";
+};
+class Stage9
+{
+	texture="#(argb,8,8,3)color(0,0,0,0,MC)";
+	texGen="4";
+};
+class Stage10
+{
+	texture="#(argb,8,8,3)color(1,1,1,1,AS)";
+	texGen="4";
+};
+class Stage11
+{
+	texture="z\addons\dayz_buildings\textures\A2_textures\doors\wood_doors_nohq.paa";
+	texGen="0";
+};
+class Stage12
+{
+	texture="z\addons\dayz_buildings\textures\doors\housev_1i2_door_nohq.paa";
+	texGen="1";
+};
+class Stage13
+{
+	texture="z\addons\dayz_buildings\textures\doors\housev2_02_misc_nohq.paa";
+	texGen="2";
+};
+class Stage14
+{
+	texture="z\addons\dayz_buildings\textures\doors\housev2_04-2_nohq.paa";
+	texGen="3";
+};
