@@ -116,7 +116,7 @@ class Stage3
 };
 class Stage4
 {
-	texture="z\addons\dayz_buildings\textures\universal_mask.paa";
+	texture="z\addons\dayz_buildings\textures\universal_mask.tga";
 	texGen="4";
 };
 class Stage5

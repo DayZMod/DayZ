@@ -96,7 +96,7 @@ class TexGen7
 };
 class Stage0
 {
-	texture="z\addons\dayz_buildings\textures\doors\wood_doors_co.tga";
+	texture="z\addons\dayz_buildings\textures\A2_textures\doors\wood_doors_co.tga";
 	texGen="0";
 };
 class Stage1
@@ -116,7 +116,7 @@ class Stage3
 };
 class Stage4
 {
-	texture="z\addons\dayz_buildings\textures\universal_mask.paa";
+	texture="z\addons\dayz_buildings\textures\universal_mask.tga";
 	texGen="4";
 };
 class Stage5
