@@ -98,7 +98,7 @@ MilitarySpecial[] =
 	
 //Sniper Rifles
 	{Loot_WEAPON,		0.3,	SVD_DZ},
-	{Loot_WEAPON,		0.1,	BAF_LRR_DZ},
+	{Loot_WEAPON,		0.1,	L115A3_DZ},
 	{Loot_WEAPON,       0.2,    DMR_DZ},
 	
 //Moved from Crashsites, Move to categories later
