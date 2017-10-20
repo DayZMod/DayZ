@@ -52,3 +52,9 @@ class L115A3_DZ : L115A3_Base
 	picture = "\CA\weapons_baf\data\UI\LRR_scoped_ca.paa";  
 	displayname = $STR_DZ_WPN_L115A3_NAME;
 };
+
+class L115A3_2_DZ : L115A3_DZ
+{
+    model = "\ca\weapons_BAF\LRR_scoped_w_BAF";
+    displayname = $STR_BAF_CFGWEAPONS_BAF_LRR_SCOPED_W0;
+};
