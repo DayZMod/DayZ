@@ -10285,6 +10285,14 @@
 			<English>SVD Camo</English>
 			<Russian>СВД (камуфляж)</Russian>
 		</Key>
+		<Key ID="STR_DZ_WPN_SVD_PSO1_NAME">
+			<English>SVD PSO-1</English>
+			<Russian>СВД ПСО-1</Russian>
+		</Key>
+		<Key ID="STR_DZ_WPN_SVD_PSO1_GH_NAME">
+			<English>SVD PSO-1 Camo</English>
+			<Russian>СВД ПСО-1 (камуфляж)</Russian>
+		</Key>
 		
 		<!-- Mosin -->
 		<Key ID="STR_DZ_WPN_MOSIN_NAME">

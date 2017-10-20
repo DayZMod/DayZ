@@ -112,7 +112,14 @@ class CfgWeapons
 	class RPK_74;
 	#include "Rifles\RPK74.hpp"
 	
-	class SVD;
+	class SVD : Rifle
+	{
+		class OpticsModes
+		{
+			class Scope;
+			class Ironsights;
+		};
+	};
 	#include "Rifles\SVD.hpp"
 	
 	#include "Rifles\Mosin.hpp"
