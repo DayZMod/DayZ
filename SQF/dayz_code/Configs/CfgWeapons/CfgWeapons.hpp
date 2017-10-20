@@ -112,7 +112,14 @@ class CfgWeapons
 	class RPK_74;
 	#include "Rifles\RPK74.hpp"
 	
-	class SVD;
+	class SVD : Rifle
+	{
+		class OpticsModes
+		{
+			class Scope;
+			class Ironsights;
+		};
+	};
 	#include "Rifles\SVD.hpp"
 	
 	#include "Rifles\Mosin.hpp"
@@ -146,6 +153,7 @@ class CfgWeapons
 	#include "Rifles\Winchester1866.hpp"
 	#include "Rifles\Remington870.hpp"
 	#include "Rifles\Crossbow.hpp"
+	#include "Rifles\L115A3.hpp"
 	
 	
 	
@@ -170,8 +178,6 @@ class CfgWeapons
 	
 	class revolver_EP1;
 	#include "Pistols\Revolver.hpp"
-	
-	#include "Rifles\BAF_LRR_DZ.hpp"
 	
 	
 	

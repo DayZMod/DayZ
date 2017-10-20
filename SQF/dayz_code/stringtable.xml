@@ -9548,6 +9548,15 @@
 			<English>DMR Camo</English>
 			<Russian>DMR (камуфляж)</Russian>
 		</Key>
+    <Key ID="STR_DZ_WPN_L115A3_NAME">
+			<English>L115A3 LRR</English>
+		</Key>
+		<Key ID="STR_DZ_WPN_L115A3_DESC">
+			<English>Sniper rifle   &lt;br/&gt;Caliber: .338 Lapua Magnum</English>
+			<Russian>Снайперская винтовка &lt;br/&gt;Патрон: .338 Lapua Magnum</Russian>
+			<German>Scharfschützengewehr  &lt;br/&gt;Kaliber: .338 Lapua Magnum</German>			
+		</Key>
+
 		<!-- L85A2 -->
 		<Key ID="STR_DZ_WPN_L85A2_NAME">
 			<English>L85A2</English>
@@ -9644,6 +9653,7 @@
 			<English>L85A2 ACOG SD MFL</English>
 			<Russian>L85A2 ACOG ПБС вФ</Russian>
 		</Key>
+
 		<!-- M4A1 -->
 		<Key ID="STR_DZ_WPN_M4A1_NAME">
 			<English>M4A1</English>
@@ -10371,6 +10381,14 @@
 		<Key ID="STR_DZ_WPN_SVD_GH_NAME">
 			<English>SVD Camo</English>
 			<Russian>СВД (камуфляж)</Russian>
+		</Key>
+		<Key ID="STR_DZ_WPN_SVD_PSO1_NAME">
+			<English>SVD PSO-1</English>
+			<Russian>СВД ПСО-1</Russian>
+		</Key>
+		<Key ID="STR_DZ_WPN_SVD_PSO1_GH_NAME">
+			<English>SVD PSO-1 Camo</English>
+			<Russian>СВД ПСО-1 (камуфляж)</Russian>
 		</Key>
 		
 		<!-- Mosin -->

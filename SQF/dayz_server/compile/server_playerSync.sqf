@@ -81,8 +81,18 @@ if (_characterID != "0") then {
 		_killsB = 		["banditKills",_character] call server_getDiff;
 		_killsH = 		["humanKills",_character] call server_getDiff;
 		_headShots = 	["headShots",_character] call server_getDiff;
+		
 		_humanity = 	["humanity",_character] call server_getDiff2;
-		//_humanity = 	_character getVariable ["humanity",0];
+		
+		/*
+		//[0-Humanity,1-ZombieKills,2-HeadShots,3-humanKills,4-banditKills]
+		_humanity = 	["humanity",_character,0] call server_getDiff3;
+		_kills = 		["zombieKills",_character,1] call server_getDiff3;
+		_headShots = 	["headShots",_character,2] call server_getDiff3;
+		_killsH = 		["humanKills",_character,3] call server_getDiff3;
+		_killsB = 		["banditKills",_character,4] call server_getDiff3;
+		*/
+
 		_character addScore _kills;		
 		/*
 			Assess how much time has passed, for recording total time on server

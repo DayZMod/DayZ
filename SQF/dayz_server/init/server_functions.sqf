@@ -158,7 +158,6 @@ server_getDiff2 = {
 	private ["_variable","_object","_vNew","_vOld","_result"];
 	_variable = _this select 0;
 	_object = _this select 1;
-	_select = _this select 2;
 	
 	_vNew = _object getVariable [_variable,0];
 	_vOld = _object getVariable (_variable + "_CHK");
@@ -181,6 +180,43 @@ server_getDiff2 = {
 	_currentHumanity = _object getVariable ["humanity",0];
 	missionNamespace setVariable [(getPlayerUID _object),[_currentHumanity]];
 	
+	_result
+};
+
+//Used to save and reteve variables lost during skin change on the server.
+//[0-Humanity,1-ZombieKills,2-HeadShots,3-humanKills,4-banditKills]
+server_getDiff3 = {
+	private ["_variable","_object","_vNew","_vOld","_result","_index","_bypass"];
+	_variable = _this select 0;
+	_object = _this select 1;
+	_index = _this select 2;
+	_oldSettings = _vOld;
+	_bypass = false;
+	
+	_vNew = _object getVariable [_variable,0];
+	_vOld = _object getVariable (_variable + "_CHK");
+	
+	//Player changing skins can cause you to loose these vars
+	if (isNil "_vOld") then {
+		private["_statsArray"];
+		//Fetch mission bassed stats array.
+		_statsArray = missionNamespace getVariable (getPlayerUID _object);
+		//Fetech index from array
+		_vOld = _statsArray select _index;
+		//Reset index to new value
+		_statsArray set [_index,_vNew];
+		//resave mission bassed array for later use.
+		missionNamespace setVariable [(getPlayerUID _object),_statsArray];
+		
+		_bypass = true;
+	};
+		
+	_result = _vNew - _vOld;
+	
+	diag_log format["WARNING:: GetDiff2 - Object:%1, [O:%3/%6,N:%2] Diff: %4 - Bypass:%5",_object,_vNew,_vOld,_result,_bypass,_oldSettings];
+	
+	_object setVariable [(_variable + "_CHK"),_vNew];
+
 	_result
 };
 
