@@ -111,7 +111,7 @@ MilitarySpecial[] =
     {Loot_WEAPON,        0.12,    DMR_DZ},
     {Loot_WEAPON,        0.25,    M24_DZ},
     {Loot_WEAPON,        1.25,    G36C_DZ},
-    {Loot_WEAPON,        1.25,    L85_Holo_DZ},
+    {Loot_WEAPON,        1.25,    L85A2_DZ},
     {Loot_WEAPON,        0.37,    G36K_Camo_DZ},
     {Loot_WEAPON,        0.62,    G36A_Camo_DZ},
     //{Loot_WEAPON,        0.12,    FNFAL_ANPVS4_DZ},

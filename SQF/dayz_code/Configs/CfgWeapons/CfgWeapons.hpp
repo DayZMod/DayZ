@@ -112,7 +112,14 @@ class CfgWeapons
 	class RPK_74;
 	#include "Rifles\RPK74.hpp"
 	
-	class SVD;
+	class SVD : Rifle
+	{
+		class OpticsModes
+		{
+			class Scope;
+			class Ironsights;
+		};
+	};
 	#include "Rifles\SVD.hpp"
 	
 	#include "Rifles\Mosin.hpp"
@@ -130,7 +137,7 @@ class CfgWeapons
 	#include "Rifles\SA58.hpp"
 	
 	class BAF_L85A2_RIS_Holo;
-	#include "Rifles\L85.hpp"
+	#include "Rifles\L85A2.hpp"
 	
 	class bizon;
 	class bizon_silenced;
