@@ -111,7 +111,7 @@ class Stage2
 };
 class Stage3
 {
-	texture="z\addons\dayz_buildings\textures\roof\white_roof_01_co.tga";
+	texture="z\addons\dayz_buildings\textures\a2_textures\floor\uvybor_podlaha_koberec_co.tga";
 	texGen="3";
 };
 class Stage4
@@ -166,6 +166,6 @@ class Stage13
 };
 class Stage14
 {
-	texture="z\addons\dayz_buildings\textures\roof\white_roof_01_nohq.tga";
+	texture="z\addons\dayz_buildings\textures\a2_textures\floor\uvybor_podlaha_koberec_nohq.paa";
 	texGen="3";
 };
