@@ -5,7 +5,7 @@
 _vehicle_28 = objNull;
 if (true) then
 {
-  _this = "Land_d_HouseV_2t2" createVehicle [10623.161, 2599.4487, 7.6293945e-005];
+  _this = "Land_houseV_2T2" createVehicle [10623.161, 2599.4487, 7.6293945e-005];
   _vehicle_28 = _this;
   _this setDir 88.551949;
   _this setVehicleInit "this setVectorUp [0,0,1];";

@@ -1,4 +1,9 @@
-class Land_d_HouseV_2t2 : House
+class House_F: House
+{
+	class DestructionEffects;
+};
+	
+class Land_houseV_2T2 : House_F
 {
 	vehicleclass="DS_houses";
 	scope=2;
