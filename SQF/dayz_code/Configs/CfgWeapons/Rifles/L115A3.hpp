@@ -3,7 +3,7 @@ class L115A3_Base : Rifle
 	scope = 2;
 	descriptionShort = $STR_DZ_WPN_L115A3_DESC;
 	
-	magazines[] = {1Rnd_86x70_L115A1};
+	magazines[] = {5Rnd_86x70_L115A1};
 	
 	handAnim[] = {"OFP2_ManSkeleton","\Ca\weapons\data\Anim\M24.rtm"};
 	
