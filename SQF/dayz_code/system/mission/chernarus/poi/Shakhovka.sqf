@@ -2,9 +2,6 @@
 //Created by Nox 2017-02-01. Contact: DayZ Europa, Dayz mod discord or by email: niklas.dennerstahl@gmail.com
 //Copyright by the DayZ Mod dev team. 
 
-if (isServer) then {
-
-
 _vehicle_1 = objNull;
 if (true) then
 {
@@ -187,7 +184,7 @@ _vehicle_135 = objNull;
 if (true) then
 {
   // Output from missionParser
-  _this = "MAP_Hlidac_budka" createVehicle [9561.8809, 6664.4717, 0.00010681152];
+  _this = "Land_Hlidac_budka" createVehicle [9561.8809, 6664.4717, 0.00010681152];
   _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
 
   _vehicle_135 = _this;
@@ -1628,5 +1625,4 @@ if (true) then
 
   _vehicle_621 = _this;
   _this setPos [9548.0605, 6651.9556, -9.1552734e-005];
-};
 };
