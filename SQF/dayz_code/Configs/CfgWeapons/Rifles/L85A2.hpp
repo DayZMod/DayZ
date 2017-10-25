@@ -233,8 +233,8 @@ class L85A2_SD_FL_DZ : L85A2_SD_DZ
 
 class L85A2_SD_MFL_DZ : L85A2_SD_DZ
 {
-	model = "z\addons\dayz_communityweapons\L85\L85A2_SD_FL.p3d";
-	picture = "\z\addons\dayz_communityweapons\L85A2\data\w_L85A2_cco_fl_ca.paa";
+	model = "z\addons\dayz_communityweapons\L85A2\L85A2_SD_FL.p3d";
+	picture = "\z\addons\dayz_communityweapons\L85A2\data\w_L85A2_sd_fl_ca.paa";
 	displayName = $STR_DZ_WPN_L85A2_sd_MFL_NAME;
 	
 	L85A2_MFLASHLIGHT;
