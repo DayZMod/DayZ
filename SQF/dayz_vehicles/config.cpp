@@ -22,15 +22,24 @@ class CfgPatches
 
 class CfgVehicles {
 	class car_sedan;	// External class reference
-	
 	class policecar : car_sedan {
 		scope = public;
 		displayName = "Police Car";
-		model = "dayz_vehicles\models\policecar.p3d";
+		model = "z\addons\dayz_vehicles\Policecar\models\policecar.p3d";
 		
 		class Damage {
 			tex[] = {};
-			mat[] = {"dayz_vehicles\textures\police1.rvmat", "dayz_vehicles\textures\police1_damage.rvmat", "dayz_vehicles\textures\police1_destruct.rvmat", "ca\data\data\default.rvmat", "ca\wheeled\data\detailmapy\uaz_main_metal_damage.rvmat", "ca\wheeled\data\detailmapy\uaz_main_metal_destruct.rvmat", "dayz_vehicles\textures\cockpit_glass.rvmat", "ca\wheeled\data\detailmapy\uaz_skla_damage.rvmat", "ca\wheeled\data\detailmapy\uaz_skla_destruct.rvmat"};
+			mat[] = {
+				"z\addons\dayz_vehicles\Policecar\textures\police1.rvmat",
+				"z\addons\dayz_vehicles\Policecar\textures\police1_damage.rvmat",
+				"z\addons\dayz_vehicles\Policecar\textures\police1_destruct.rvmat",
+				"ca\data\data\default.rvmat",
+				"ca\wheeled\data\detailmapy\uaz_main_metal_damage.rvmat",
+				"ca\wheeled\data\detailmapy\uaz_main_metal_destruct.rvmat",
+				"z\addons\dayz_vehicles\Policecar\textures\cockpit_glass.rvmat",
+				"ca\wheeled\data\detailmapy\uaz_skla_damage.rvmat",
+				"ca\wheeled\data\detailmapy\uaz_skla_destruct.rvmat"
+			};
 		};
 		
 		class AnimationSources {
