@@ -1,27 +1,20 @@
-private ["_playersOldUnit","_charID","_newmodel","_old","_updates","_humanity","_medical","_worldspace","_zombieKills","_headShots","_humanKills","_banditKills","_fractures","_wpnType","_ismelee","_survivalTime"];
+private ["_charID","_newmodel","_old","_updates","_humanity","_medical","_worldspace","_zombieKills","_headShots","_humanKills","_banditKills","_fractures","_wpnType","_ismelee","_survivalTime"];
 //_playerUID = _this select 0;
 _charID = _this select 1;
 _model = _this select 2;
+_old = player;
 
-player allowDamage false;
-if(!isNil "eh_player_killed") then {
-	player removeEventHandler ["FiredNear",eh_player_killed];
-};
-if(!isNil "mydamage_eh1") then {
-	player removeEventHandler ["HandleDamage",mydamage_eh1];
-};
-if(!isNil "mydamage_eh3") then {
-	player removeEventHandler ["Killed",mydamage_eh3];
-};
-if(!isNil "mydamage_eh2") then {
-	player removeEventHandler ["Fired",mydamage_eh2];
-};
+_old removeAllEventHandlers "FiredNear";
+_old removeAllEventHandlers "HandleDamage";
+_old removeAllEventHandlers "Killed";
+_old removeAllEventHandlers "Fired";
+_old allowDamage false;
+_old AddEventHandler ["HandleDamage", {False}];
 
 _updates = player getVariable ["updatePlayer",[false,false,false,false,false]];
 _updates set [0,true];
 player setVariable ["updatePlayer",_updates,true];
 dayz_unsaved = true;
-
 //Logout
 _humanity = player getVariable ["humanity",0];
 _medical = player call player_sumMedical;
@@ -36,7 +29,7 @@ _ConfirmedHumanKills = player getVariable ["ConfirmedHumanKills",0];
 _ConfirmedBanditKills = player getVariable ["ConfirmedBanditKills",0];
 
 //Switch
-_playersOldUnit = _model call player_switchModel;
+[_model, _charID, _humanity] call player_switchModel;
 
 //Login
 
@@ -79,12 +72,12 @@ if (count _medical > 0) then {
 };
 
 //General Stats
-player setVariable ["humanity",_humanity,true];
+//player setVariable ["humanity",_humanity,true]; //Moved to player_switchModel
 player setVariable ["zombieKills",_zombieKills,true];
 player setVariable ["headShots",_headShots,true];
 player setVariable ["humanKills",_humanKills,true];
 player setVariable ["banditKills",_banditKills,true];
-player setVariable ["characterID",_charID,true];
+//player setVariable ["characterID",_charID,true]; //Moved to player_switchModel
 player setVariable ["worldspace",_worldspace];
 //player setVariable ["Achievements",_achievements];
 player setVariable ["SurvivalTime",_survivalTime,false];
@@ -97,14 +90,11 @@ player setVariable ["ConfirmedBanditKills",_ConfirmedBanditKills,true];
 call dayz_resetSelfActions; //New unit has no self actions yet. Reset variables so actions can be added back.
 dayz_actionInProgress = false; //Allow self actions to run now.
 
+player removeAllEventHandlers "HandleDamage";
 eh_player_killed = player addeventhandler ["FiredNear",{_this call player_weaponFiredNear;}];
 [player] call fnc_usec_damageHandle;
-
 player allowDamage true;
 
-player addWeapon "Loot";
 uiSleep 0.1;
-call dayz_meleeMagazineCheck;
-
-uiSleep 0.1;
-if !(isNull _playersOldUnit) then { deleteVehicle _playersOldUnit; diag_log format["HumanityMorph - Removing Player %1",_playersOldUnit]; };
+if !(isNull _old) then {deleteVehicle _old; diag_log format["HumanityMorph - Removing Player %1",_old];};
+call player_forceSave;
