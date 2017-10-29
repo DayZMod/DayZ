@@ -34,7 +34,6 @@ class RscDisplayEmpty;
 
 class RscDisplayMission: RscDisplayEmpty
 {
-	access = 0;
 	idd = 46;
 	onKeyDown = "_handled = if (isNil 'DZ_KeyDown_EH') then {false} else {_this call DZ_KeyDown_EH}; _handled"; //assigned much quicker than spawning init_keyboard
 };
@@ -92,7 +91,6 @@ class RscDisplayGameOptions {
 
 class RscPictureGUI
 {
-	access = 0;
 	type = 0;
 	idc = -1;
 	colorBackground[] = {0,0,0,0};
@@ -158,7 +156,7 @@ class RscDisplayGetReady;
 class RscDisplayClientGetReady : RscDisplayGetReady
 {
 	// could probably add a check in the spawn but couldn't test with multiple players
-	onload = "[_this,'onload'] call compile preprocessfile '\ca\ui\scripts\server_interface.sqf'; _this spawn { while { !isNull (findDisplay 53) } do { ctrlActivate ((_this select 0) displayCtrl 1); sleep 0.1; }; };"; /*diag_log[diag_tickTime,'RscDisplayClientGetReady'];*/
+	onload = "[_this,'onload'] call compile preprocessfile '\ca\ui\scripts\server_interface.sqf'; _this spawn { while { !isNull (findDisplay 53) } do { ctrlActivate ((_this select 0) displayCtrl 1); uiSleep 0.1; }; };"; /*diag_log[diag_tickTime,'RscDisplayClientGetReady'];*/
 };
 
 class RscDisplayDebriefing: RscStandardDisplay
@@ -192,183 +190,8 @@ class RscDisplayDebriefing: RscStandardDisplay
 };
 class RscShortcutButtonMain;
 
-
-class RscDisplayMultiplayerSetup: RscStandardDisplay
-{
-	west = "ca\ui\data\flag_none_ca.paa";
-	east = "ca\ui\data\flag_none_ca.paa";
-	guer = "ca\ui\data\flag_none_ca.paa";
-	civl = "ca\ui\data\flag_none_ca.paa";
-	none = "ca\ui\data\flag_none_ca.paa";
-	westUnlocked = "ca\ui\data\flag_none_ca.paa";
-	westLocked = "ca\ui\data\flag_none_ca.paa";
-	eastUnlocked = "ca\ui\data\flag_none_ca.paa";
-	eastLocked = "ca\ui\data\flag_none_ca.paa";
-	guerUnlocked = "ca\ui\data\flag_none_ca.paa";
-	guerLocked = "ca\ui\data\flag_none_ca.paa";
-	civlUnlocked = "ca\ui\data\flag_none_ca.paa";
-	civlLocked = "ca\ui\data\flag_none_ca.paa";
-	colorNotAssigned[] = {0, 1, 0, 1};
-	colorAssigned[] = {0, 1, 0, 1};
-	colorConfirmed[] = {0, 1, 0, 1};
-	
-	onload = "with uiNameSpace do{RscDisplayMultiplayerSetup=_this select 0};"; //#70
-	onMouseHolding = "with uiNameSpace do { switch (1 == 1) do { case(isNil 'RscDMSLoad'): { RscDMSLoad = diag_tickTime; }; case(RscDMSLoad == -1): {}; case(RscDMSLoad == -2): {}; case(diag_tickTime - RscDMSLoad > 7): { RscDMSLoad = diag_tickTime; }; case(diag_tickTime - RscDMSLoad > 5): { ctrlActivate ((_this select 0) displayCtrl 1); RscDMSLoad = -1; }; }; };";
-	/*
-		with uiNameSpace do
-		{
-			switch (1 == 1) do
-			{
-				case(isNil 'RscDMSLoad'): { RscDMSLoad = diag_tickTime; };
-				case(RscDMSLoad == -1): {};
-				case(RscDMSLoad == -2): {};
-				case(diag_tickTime - RscDMSLoad > 7): { RscDMSLoad = diag_tickTime; };
-				case(diag_tickTime - RscDMSLoad > 5): { ctrlActivate ((_this select 0) displayCtrl 1); RscDMSLoad = -1; };
-			};
-		};
-	*/
-	onButtonClick = "with uiNameSpace do{RscDMSLoad=-1};false";
-	onButtonDblClick = "with uiNameSpace do{RscDMSLoad=-1};false";
-	onKeyDown = "with uiNameSpace do{RscDMSLoad=-1};false";
-  
-	class controlsbackground
-	{
-		class dayz_black: RscText
-		{
-			idc=1017;
-			colorBackground[] = {0,0,0,1};
-			x = "SafeZoneX";
-			y = "SafeZoneY";
-			w = "SafeZoneW";
-			h = "SafeZoneH";
-		};
-		class MP_roles_TitleBorder: RscText
-		{
-			idc=1008;
-		};
-		class TextBack: RscText
-		{
-			idc=1009;
-		};
-		class TextBorder: RscText
-		{
-			idc=1010;
-		};
-		class SidesBack: RscText
-		{
-			idc=1011;
-			y = "(120/100) * SafeZoneH + SafeZoneY";
-		};
-		class SidesBorder: RscText
-		{
-			idc=1012;
-			y = "(120/100) * SafeZoneH + SafeZoneY";
-		};		
-		class ValueRolesBack: RscText
-		{
-			idc=1013;
-			y = "(120/100) * SafeZoneH + SafeZoneY";
-		};
-		class ValueRolesBorder: RscText
-		{
-			idc=1014;
-			y = "(120/100) * SafeZoneH + SafeZoneY";
-		};
-		class ValuePoolBack: RscText
-		{
-			idc=1015;
-			y = "(120/100) * SafeZoneH + SafeZoneY";
-		};
-		class ValuePoolBorder: RscText
-		{
-			idc=1016;
-			y = "(120/100) * SafeZoneH + SafeZoneY";
-		};
-	};
-	class controls
-	{
-		class CA_MP_roles_Title : CA_Title {
-			idc = 1001;
-			style = 2;
-			x = "(02/100)	* SafeZoneW + SafeZoneX";
-			y = "(02/100)	* SafeZoneH + SafeZoneY";
-			w = "(96/100)	* SafeZoneW";
-			h = "(06/100)	* SafeZoneH";
-			colorBackground[] = {49/255, 36/255, 25/255, 173/255};
-			text = $STR_UI_LOBBY;
-		};
-		class TextIsland: RscText
-		{
-			idc = 1003;
-			y = "(109.5/100) * SafeZoneH + SafeZoneY"; //hide
-		};
-		class ValueIsland: RscText
-		{
-			idc = 102;
-			y = "(109.5/100) * SafeZoneH + SafeZoneY"; //hide
-		};
-		class TextSide: RscText
-		{
-			idc = 1005;
-			y = "(116.5/100) * SafeZoneH + SafeZoneY"; //hide
-		};
-		class TextRoles: RscText
-		{
-			idc = 1007; // new, idc was missed by BI
-			y = "(116.5/100) * SafeZoneH + SafeZoneY"; // hide
-		};
-		class CA_B_West: RscActiveText
-		{
-			idc = 104;
-			y = "(121/100) * SafeZoneH + SafeZoneY"; //hide
-		};
-		class CA_B_East: CA_B_West
-		{
-			idc = 105;
-			y = "(131/100) * SafeZoneH + SafeZoneY"; //hide
-		};
-		class CA_B_Guerrila: CA_B_West
-		{
-			idc = 106;
-			y = "(141/100) * SafeZoneH + SafeZoneY"; //hide
-		};
-		class CA_B_Civilian: CA_B_West
-		{
-			idc = 107;
-			y = "(151/100) * SafeZoneH + SafeZoneY"; //hide
-		};
-		class CA_ValueRoles: RscIGUIListBox
-		{
-			idc = 109;
-			style = 16;
-			y = "(120.5/100) * SafeZoneH + SafeZoneY"; //hide
-		};
-		class TextPool: RscText
-		{
-			idc = 1006;
-			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
-			w = "(96/100) * SafeZoneW"; //wide (was: 38/100)
-			text = "";
-		};
-		class CA_ValuePool: RscIGUIListBox
-		{
-			idc = 114;
-			text = $STR_MP_PLAYERS;
-			x = "(2/100) * SafeZoneW + SafeZoneX"; // to left
-			w = "(96/100) * SafeZoneW"; // wide
-		};
-		class CA_ButtonCancel: RscShortcutButton {
-			idc = 2;
-			default = 0;
-			shortcuts[] = {0x00050000 + 1};
-			x = "(68/100)	* SafeZoneW + SafeZoneX";
-			y = "(93/100)	* SafeZoneH + SafeZoneY";
-			w = 0.203825;
-			text = $STR_DISP_BACK;
-			onButtonClick = "with uiNameSpace do {RscDMSLoad=nil;};"; // autologon at logon on next server
-		};		
-	};
-};
+// RscDisplayMultiplayerSetup moved here:
+#include "RscDisplay\RscLobby.hpp"
 
 class RscPendingInvitation
 {
@@ -929,3 +752,52 @@ class bloodTest
 };
 
 #include "RscDisplay\includes.hpp"
+class RscDisplayDSinterface: RscStandardDisplay
+{
+	idd = 155;
+	movingEnable = 0;
+	onLoad = "";
+	class ControlsBackground
+	{
+		delete Mainback;
+		delete EditProfileTitleBorder;
+		delete PlayersListBorder;
+		delete MissionsListBorder;
+		delete CA_PasswordText;
+		delete CA_EditPassword;
+		delete CA_B_Login;
+		delete CA_MissionListText;
+		delete CA_B_Vote_kick;
+		delete CA_B_Vote_admin;
+		delete CA_B_Play_Vote_Mission;
+		delete CA_B_Vote_Missions;
+		delete CA_B_Vote_Reassign;
+		delete CA_B_Vote_Restart;
+	};
+	class Controls
+	{
+		delete CA_B_Logout;
+		delete CA_B_Kick;
+		delete CA_B_Ban;
+		delete CA_B_Shutdown;
+		delete CA_B_Play_Mission;
+		delete CA_B_Missions;
+		delete CA_B_Reassign;
+		delete CA_B_Restart;
+		delete CA_AdminText;
+		delete MovingBar;
+		delete DummyBar;
+		delete CA_EditProfileTitle;
+		delete CA_Playerslist;
+		delete CA_MissionsList;
+		class CA_B_Cancel: RscShortcutButton
+		{
+			idc = 2;
+			x = "(77/100)	* SafeZoneW + SafeZoneX";
+			y = "(93/100)	* SafeZoneH + SafeZoneY";
+			w = "(20/100)	* SafeZoneW";
+			default = 0;
+			text = $STR_UI_CLOSE;
+		};
+	};
+};

@@ -194,6 +194,8 @@ if (isNil "keyboard_keys") then {
         DIK_F8,DIK_F7,DIK_F6,DIK_F5,
         DIK_F3,DIK_F2,DIK_0,DIK_9,
         DIK_8,DIK_7,DIK_6,DIK_5,DIK_4], _block] call _addArray;
+	[actionKeys "DSInterface", _block] call _addArray;
+	[[DIK_P], {if (_shiftState) then {_handled = true;};}] call _addArray;
 	diag_log "keyboard_keys reset";
 };
 
