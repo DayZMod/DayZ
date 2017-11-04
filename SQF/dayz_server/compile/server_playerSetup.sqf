@@ -177,7 +177,7 @@ if (count _stats > 0) then {
 if (_randomSpot) then {
 	private ["_counter","_position","_isNear","_isZero","_mkr"];
 	if (!isDedicated) then {endLoadingScreen;};
-	_IslandMap = (toLower worldName in ["caribou","cmr_ovaron","dayznogova","dingor","dzhg","fallujah","fapovo","fdf_isle1_a","isladuala","lingor","mbg_celle2","namalsk","napf","oring","panthera2","sara","sauerland","smd_sahrani_a2","tasmania2010","tavi","trinity","utes"]);
+	_IslandMap = (toLower worldName in ["caribou","cmr_ovaron","dayznogova","dingor","dzhg","fallujah","fapovo","fdf_isle1_a","isladuala","lingor","mbg_celle2","namalsk","napf","oring","panthera2","ruegen","sara","sauerland","smd_sahrani_a2","tasmania2010","tavi","trinity","utes"]);
 
 	//spawn into random
 	_findSpot = true;
@@ -231,8 +231,22 @@ _playerObj setVariable ["banditKills_CHK",_banditKills_CHK];
 //[0-Humanity,1-ZombieKills,2-HeadShots,3-humanKills,4-banditKills]
 missionNamespace setVariable [_playerID,[_humanity,_zombieKills_CHK,_headShots_CHK,_humanKills_CHK,_banditKills_CHK]];
 
-PVCDZ_plr_Login2 = [_worldspace,_state];
 _clientID = owner _playerObj;
+_randomKey = [];
+_randomInput = toArray "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$^*";
+for "_i" from 0 to 12 do {
+	_randomKey set [count _randomKey, (_randomInput call BIS_fnc_selectRandom)];
+};
+_randomKey = toString _randomKey;
+_findIndex = dayz_serverPUIDArray find _playerID;
+if (_findIndex > -1) then {
+	dayz_serverClientKeys set [_findIndex, [_clientID,_randomKey]];
+} else {
+	dayz_serverPUIDArray set [(count dayz_serverPUIDArray), _playerID];
+	dayz_serverClientKeys set [(count dayz_serverClientKeys), [_clientID,_randomKey]];
+};
+
+PVCDZ_plr_Login2 = [_worldspace,_state,_randomKey];
 _clientID publicVariableClient "PVCDZ_plr_Login2";
 if (dayz_townGenerator) then {
 	_clientID publicVariableClient "PVCDZ_plr_plantSpawner";
@@ -242,7 +256,7 @@ if (dayz_townGenerator) then {
 _playerObj setVariable ["lastTime",diag_ticktime];
 
 //Record Player Login/LogOut
-[(getPlayerUID _playerObj),_characterID,1,(_playerObj call fa_plr2str),((_worldspace select 1) call fa_coor2str)] call dayz_recordLogin;
+[_playerID,_characterID,1,(_playerObj call fa_plr2str),((_worldspace select 1) call fa_coor2str)] call dayz_recordLogin;
 
 PVDZ_plr_Login1 = null;
 PVDZ_plr_Login2 = null;

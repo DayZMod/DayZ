@@ -173,7 +173,7 @@ _object_killed = {
 	diag_log format["DELETE: Deleted by KEY: %1",_key];
 	#endif
 	
-	if ((typeOf _object) in DayZ_removableObjects) then {[_objectID,_objectUID] call server_deleteObj;};
+	if ((typeOf _object) in DayZ_removableObjects) then {[_objectID,_objectUID] call server_deleteObjDirect;};
 };
 
 _object_maintenance = {

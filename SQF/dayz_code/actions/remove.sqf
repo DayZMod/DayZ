@@ -20,10 +20,8 @@ if (!_finished) exitWith {
 	dayz_actionInProgress = false;
 };
 
-//["PVDZ_obj_Delete",[_objectID,_objectUID]] call callRpcProcedure;
-PVDZ_obj_Destroy = [_objectID,_objectUID];
+PVDZ_obj_Destroy = [_objectID,_objectUID,player,_obj,dayz_authKey];
 publicVariableServer "PVDZ_obj_Destroy";
-deleteVehicle _obj;
-dayz_actionInProgress = false;
+//deleteVehicle _obj; //Moved to server to verify before delete
 
-_obj
+dayz_actionInProgress = false;

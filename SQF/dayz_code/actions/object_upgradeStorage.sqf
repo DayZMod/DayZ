@@ -128,7 +128,7 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	_backpacks = getBackpackCargo _cursorTarget;
 	
 	//remove old tent
-	PVDZ_obj_Destroy = [_objectID,_objectUID];
+	PVDZ_obj_Destroy = [_objectID,_objectUID,player,_pos,dayz_authKey,false];
 	publicVariableServer "PVDZ_obj_Destroy";
 	deleteVehicle _cursorTarget;
 	
@@ -181,7 +181,7 @@ if ((_startUpgrade) AND (isClass(_upgradeConfig))) then {
 	} count _objWpnTypes;
 	
 	//publish new tent
-	PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],[_weapons,_magazines,_backpacks]];
+	PVDZ_obj_Publish = [dayz_characterID,_object,[_dir,_pos],[_weapons,_magazines,_backpacks],player,dayz_authKey];
 	publicVariableServer "PVDZ_obj_Publish";
     diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
 

@@ -692,6 +692,7 @@ class FSM
        "" \n
        "_worldspace = 	PVCDZ_plr_Login2 select 0;" \n
        "_state =			PVCDZ_plr_Login2 select 1;" \n
+	   "dayz_authKey = PVCDZ_plr_Login2 select 2;" \n
        "" \n
        "player setVariable [""Achievements"",[],false];" \n
        "" \n
