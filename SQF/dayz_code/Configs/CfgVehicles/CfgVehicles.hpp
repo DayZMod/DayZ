@@ -188,6 +188,7 @@ class CfgVehicles
 		class DestructionEffects;
 	};
 	class House_EP1;
+	class Land_HouseV_1I2;
 	class SpawnableWreck : House {};
 	class Strategic;
 	class NonStrategic;
