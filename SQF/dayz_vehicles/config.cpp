@@ -7,8 +7,8 @@ class CfgPatches
 		requiredVersion = 0.1;
 		requiredAddons[] = {"dayz_anim"};
 	};
-};
 
+};
 class CfgVehicles 
 {	
 	class UH1H_base;
