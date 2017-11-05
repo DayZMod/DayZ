@@ -914,7 +914,7 @@ _vehicle_501 = objNull;
 if (true) then
 {
   // Output from missionParser
-  _this = "MAP_zavora_2" createVehicle [7690.6299, 12483.554, 0.00019073486];
+  _this = "ZavoraAnim" createVehicle [7690.6299, 12483.554, 0.00019073486];
   _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
 
   _vehicle_501 = _this;
