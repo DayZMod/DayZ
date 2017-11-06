@@ -6,6 +6,8 @@
 
 {
 	call compile preprocessFileLineNumbers ("\z\addons\dayz_code\system\mission\chernarus\poi\" + _x + ".sqf");
+	
+	processInitCommands;
 } forEach [
 	"NWATentCamp",
 	"ElektroWells",
