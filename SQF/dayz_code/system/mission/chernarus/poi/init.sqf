@@ -7,6 +7,10 @@
 {
 	call compile preprocessFileLineNumbers ("\z\addons\dayz_code\system\mission\chernarus\poi\" + _x + ".sqf");
 } forEach [
+	"NWATentCamp",
+	"ElektroWells",
+	"GvozdnoMilitaryBase",
+	"Shakhovka",
 	"Trains",
 	"DevilsFarm",
 	"NEA",
@@ -15,9 +19,5 @@
 	"DeadForest",
 	"KomyshovoRoadblock",
 	"MilitaryAirpoort",
-	"ZelenogorskBuildings",
-	"NWATentCamp",
-	"ElektroWells",
-	"GvozdnoMilitaryBase",
-	"Shakhovka"
+	"ZelenogorskBuildings"
 ];
