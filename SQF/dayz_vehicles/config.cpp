@@ -20,6 +20,5 @@ class CfgVehicles
 	class AH6X_DZ : AH6_Base_EP1
 	{
 		model = "z\addons\dayz_vehicles\helicopters\greybird\greybird.p3d";
-		cargoAction[] = {"AH6j_Cargo_EP1","UH1Y_Cargo01","UH1Y_Cargo01"};
 	};
 };
