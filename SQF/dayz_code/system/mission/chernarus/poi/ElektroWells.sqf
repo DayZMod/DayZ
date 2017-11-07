@@ -535,5 +535,3 @@ if (true) then
   _vehicle_272 = _this;
   _this setPos [10637.703, 2579.2161, 2.0980835e-005];
 };
-
-processInitCommands;
