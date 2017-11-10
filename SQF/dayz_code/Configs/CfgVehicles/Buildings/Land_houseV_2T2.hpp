@@ -126,13 +126,13 @@ class Land_houseV_2T2 : Land_HouseV_1I2
 		class OpenDoors9 : OpenDoors1
 		{
 			position=akce_dvere910;
-			condition="this animationPhase ""dvere9"" < 0.5";
+			condition="this animationPhase ""dvere9"" < 0.5 or this animationPhase ""dvere10"" < 0.5";
 			statement="this animate [""dvere9"", 1];this animate [""dvere10"", 1]";
 		};
 		class CloseDoors9 : CloseDoors1
 		{
 			position=akce_dvere910;
-			condition="this animationPhase ""dvere9"" >= 0.5";
+			condition="this animationPhase ""dvere9"" >= 0.5 or this animationPhase ""dvere10"" >= 0.5";
 			statement="this animate [""dvere9"", 0];this animate [""dvere10"", 0]";
 		};
 	/*	class OpenDoors10 : OpenDoors1
