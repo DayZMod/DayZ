@@ -127,15 +127,15 @@ class Land_houseV_2T2 : Land_HouseV_1I2
 		{
 			position=akce_dvere910;
 			condition="this animationPhase ""dvere9"" < 0.5 && ((this getVariable ['bis_disabled_Door_9',0]) != 1)";
-			statement="this animate [""dvere9"", 1]";
+			statement="this animate [""dvere9"", 1];this animate [""dvere10"", 1]";
 		};
 		class CloseDoors9 : CloseDoors1
 		{
 			position=akce_dvere910;
 			condition="this animationPhase ""dvere9"" >= 0.5 && ((this getVariable ['bis_disabled_Door_9',0]) != 1)";
-			statement="this animate [""dvere9"", 0]";
+			statement="this animate [""dvere9"", 0];this animate [""dvere10"", 0]";
 		};
-		class OpenDoors10 : OpenDoors1
+	/*	class OpenDoors10 : OpenDoors1
 		{
 			position=akce_dvere910;
 			condition="this animationPhase ""dvere10"" < 0.5 && ((this getVariable ['bis_disabled_Door_10',0]) != 1)";
@@ -147,6 +147,7 @@ class Land_houseV_2T2 : Land_HouseV_1I2
 			condition="this animationPhase ""dvere10"" >= 0.5 && ((this getVariable ['bis_disabled_Door_10',0]) != 1)";
 			statement="this animate [""dvere10"", 0]";
 		};
+	*/	
 	};
 	actionBegin1 = "OpenDoors1";
 	actionEnd1   = "OpenDoors1";
@@ -166,6 +167,6 @@ class Land_houseV_2T2 : Land_HouseV_1I2
 	actionEnd8   = "OpenDoors8";
 	actionBegin9 = "OpenDoors9";
 	actionEnd9   = "OpenDoors9";
-	actionBegin10= "OpenDoors10";
-	actionEnd10  = "OpenDoors10";
+//	actionBegin10= "OpenDoors10";
+//	actionEnd10  = "OpenDoors10";
 };
