@@ -24,7 +24,7 @@ if ([_object, "Server"] call check_publishobject) then {
 	// we can't use getVariable because only the object creation is known from the server (position,direction,variables are not sync'ed yet)
 	//_characterID = _object getVariable [ "characterID", 0 ];
 	//_ownerArray = _object getVariable [ "ownerArray", [] ];
-	_key = format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:", dayZ_instance, _type, 0, _characterID, _worldspace, _inventory, [], 0,_objectUID ];
+	_key = str formatText["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _type, 0, _characterID, _worldspace, _inventory, [], 0,_objectUID];
 
 	_key call server_hiveWrite;
 
@@ -38,7 +38,7 @@ if ([_object, "Server"] call check_publishobject) then {
 	dayz_serverObjectMonitor set [count dayz_serverObjectMonitor,_object];
 
 	#ifdef OBJECT_DEBUG
-	diag_log format["PUBLISH: Player %1(%2) created %3 with UID:%4 CID:%5 @%6 inventory:%7",_player,_playerUID,_type,_objectUID,_characterID,((_worldspace select 1) call fa_coor2str),_inventory];
+	diag_log format["PUBLISH: Player %1(%2) created %3 with UID:%4 CID:%5 @%6 inventory:%7",(_player call fa_plr2str),_playerUID,_type,_objectUID,_characterID,((_worldspace select 1) call fa_coor2str),_inventory];
 	#endif
 }
 else {
