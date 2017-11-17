@@ -299,3 +299,14 @@ class Land_AII_upper_part: Military
 {
 	lootPos[] = {{-0.616211, -3.80762, -2.31434}, {-2.62158, -1.05127, -2.32196}, {-2.30322, 2.0415, -2.32196}};
 };
+
+class Land_Mil_Guardhouse_EP1: Military //Not enterable, Takistan version
+{
+	zombieClass[] =
+	{
+		"z_soldier",
+		"z_soldier",
+		"z_policeman"
+	};
+	lootPos[] = {{-3.05859,1.76514,-1.59003},{-3.16895,3.45361,-1.59003},{-3.19922,-0.323242,-1.59003}};
+};
