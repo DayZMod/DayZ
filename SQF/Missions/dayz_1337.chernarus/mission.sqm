@@ -12,7 +12,8 @@ class Mission
 		"dayz_weapons",
 		"dayz_equip",
 		"cacharacters_pmc",
-		"ca_modules_functions"
+		"ca_modules_functions",
+		"zero_buildings"
 	};
 	addOnsAuto[]=
 	{
