@@ -7,7 +7,7 @@ _isWoodenGate = (typeOf cursorTarget) in ["WoodenGate_2","WoodenGate_3","WoodenG
 _isMetalGate = (typeOf cursorTarget) in ["MetalGate_2","MetalGate_3","MetalGate_4"];
 _limit = 2 + round(random 3);
 
-if (_target getVariable "actionInProgress") exitWith { "Action is already underway" call dayz_rollingMessages;};
+if (_target getVariable ["actionInProgress",false]) exitWith { "Action is already underway" call dayz_rollingMessages;};
 _target setVariable ["actionInProgress",true,true];
 
 _hasSledgeHammer = "ItemSledgeHammer" in items player;
@@ -121,13 +121,11 @@ if (isnil "_proceed") then {
 if (_proceed) then {
 	//Completed but no success.
 	if (!_brokein) then {
-		PVDZ_Server_LogIt = format["WARNING - BROKEINFAILED: Player %1 Broke into Failed(%2) at %3[%4,%5]",player, (typeof _target), (mapGridPosition _pos) , _sledgeChance, _crowBarChance];
+		PVDZ_Server_LogIt = format["BROKEINFAILED: Player %1 Broke into Failed %2 at %3 chances:%4,%5",player, (typeof _target), (mapGridPosition _pos) , _sledgeChance, _crowBarChance];
 		
 		_msg = "STR_BLD_BREAKIN_COMPLETE_FAIL";
-	};
-
-	//Completed and successful
-	if (_brokein) then {
+	} else {
+		//Completed and successful
 		//Unlock gate
 		_target setVariable ["isOpen", "1", true];
 		//Open Gate.
@@ -135,10 +133,12 @@ if (_proceed) then {
 		_target animate ["DoorL", 1];
 		
 		
-		PVDZ_Server_LogIt = format["WARNING - BROKEINSUCCESSFUL: Player %1 Broke into(%2) at %3",player, (typeof _target), (mapGridPosition _pos)];
+		PVDZ_Server_LogIt = format["BROKEINSUCCESSFUL: Player %1 Broke into %2 at %3",player, (typeof _target), (mapGridPosition _pos)];
 		
 		_msg = "STR_BLD_BREAKIN_COMPLETE";
 	};
+	//Send info to server for admins
+	publicVariableServer "PVDZ_Server_LogIt";
 };
 
 //Interrupted for some reason
@@ -165,9 +165,6 @@ if (!_proceed) then {
 
 //Reset action switch
 _target setVariable ["actionInProgress",false,true];
-
-//Send info to server for admins
-publicVariableServer "PVDZ_Server_LogIt";
 
 // Working-Factor.
 ["Working",0,[100,15,10,0]] call dayz_NutritionSystem;

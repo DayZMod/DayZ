@@ -177,9 +177,7 @@ if (isServer) then {
 	};
 	
 	"PVDZ_Server_LogIt" addPublicVariableEventHandler {
-		_unitSending = _this select 0;
 		_info = _this select 1;
-		
 		diag_log format["WARNING: %1",_info];
 	};
 	
