@@ -2,8 +2,8 @@
 {\
 	color[] = {0.9, 0.9, 0.7, 0.9};\
 	ambient[] = {0.1, 0.1, 0.1, 1.0};\
-	position = "flash";\
-	direction = "flash dir";\
+	position = "flash dir";\
+	direction = "flash";\
 	angle = 30;\
 	scale[] = {1, 1, 0.5};\
 	brightness = 0.1;\
@@ -13,8 +13,8 @@
 {\
 	color[] = {0.9, 0.0, 0.0, 0.9};\
 	ambient[] = {0.1, 0.0, 0.0, 1.0};\
-	position = "flash";\
-	direction = "flash dir";\
+	position = "flash dir";\
+	direction = "flash";\
 	angle = 30;\
 	scale[] = {1, 1, 0.5};\
 	brightness = 0.08;\
