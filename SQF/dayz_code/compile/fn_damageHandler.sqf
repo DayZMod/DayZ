@@ -167,17 +167,16 @@ if (_unit == player) then {
 		_sourceDist = round(_unit distance _source);
 		_sourceWeap = switch (true) do {
 			case (_ammo in ["PipeBomb","Mine","MineE"]): { format["with %1",_ammo] };
-			case (_isVehicle) : { format ["in %1",getText(configFile >> "CfgVehicles" >> _sourceVehicleType >> "displayName")] };
+			case (_isVehicle) : { format ["with %1",getText(configFile >> "CfgVehicles" >> _sourceVehicleType >> "displayName")] };
 			case (_ammo in MeleeAmmo) : { format ["with %2%1",_wpst select 0, if (_sourceDist>6) then {"suspicious weapon "} else {""}] };
 			case (_wpst select 0 == "Throw") : { format ["with %1 thrown", _wpst select 3] };
-			case (["Horn", currentWeapon _source] call fnc_inString) : {"with suspicious vehicle "+str((getposATL _source) nearEntities [["Air", "LandVehicle", "Ship"],5])};
+			case (["Horn",currentWeapon _source] call fnc_inString) : { format ["with %1 suspicious", currentWeapon _source]};
 			case ((_wpst select 0 == "") AND {_wpst select 4 == 0}) : { format ["with %1/%2 suspicious", primaryWeapon _source, _ammo] };
 			case (_wpst select 0 != "") : { format ["with %1/%2 <ammo left:%3>", _wpst select 0, _ammo, _wpst select 4] };
 			default { "with suspicious weapon" };
 		};
 		
-		//Damage values over 999,999 will kick for PV value restriction (e+). These should not be possible for legitimate players.
-		PVDZ_sec_atp = [_unit, _source, toArray _sourceWeap, _sourceDist, _hit, str _damage]; //Send arbitrary string as array to allow stricter publicVariableVal.txt filter
+		PVDZ_sec_atp = [_unit, _source, _sourceWeap, _sourceDist, _hit, (_damage min 999999)];
 		publicVariableServer "PVDZ_sec_atp";
     };
 	
