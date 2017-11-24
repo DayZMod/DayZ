@@ -28,7 +28,7 @@
 #define ACTION_OPEN_DOORS displayName = $STR_DN_OUT_O_DOOR;\
 	displayNameDefault = $STR_DN_OUT_O_DOOR_DEFAULT;\
 	radius = 3;\
-	position = "DoorL";\
+	position = "Door";\
 	onlyForPlayer = 1;\
 	priority = 6;\
 	condition = "this animationPhase 'DoorR' < 0.5";\
@@ -37,7 +37,7 @@
 #define ACTION_CLOSE_DOORS displayName = $STR_DN_OUT_C_DOOR;\
 	displayNameDefault = $STR_DN_OUT_C_DOOR_DEFAULT;\
 	radius = 3;\
-	position = "DoorL";\
+	position = "Door";\
 	onlyForPlayer = 1;\
 	priority = 6;\
 	condition = "this animationPhase 'DoorR' >= 0.5";\
