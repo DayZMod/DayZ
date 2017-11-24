@@ -1,4 +1,4 @@
-private ["_banditKills_CHK","_humanKills_CHK","_zombieKills_CHK","_headShots_CHK","_characterID","_playerObj","_spawnSelection","_playerID","_dummy","_worldspace","_state","_doLoop","_key","_primary","_medical","_stats","_humanity","_randomSpot","_position","_distance","_fractures","_score","_findSpot","_mkr","_j","_isIsland","_w","_clientID"];
+private ["_characterID","_playerObj","_spawnSelection","_playerID","_dummy","_worldspace","_state","_doLoop","_key","_primary","_medical","_stats","_humanity","_randomSpot","_position","_distance","_fractures","_score","_findSpot","_mkr","_j","_isIsland","_w","_clientID"];
 
 _characterID = _this select 0;
 _playerObj = _this select 1;
@@ -145,17 +145,7 @@ if (count _stats > 0) then {
 	_score = score _playerObj;
 	_playerObj addScore ((_stats select 0) - _score);
 
-	//record for Server JIP checks
-	_zombieKills_CHK = (_stats select 0);
-	_headShots_CHK = (_stats select 1);
-	_humanKills_CHK = (_stats select 2);
-	_banditKills_CHK = (_stats select 3);
-
-	if (count _stats > 4) then {
-		if !(_stats select 3) then {_playerObj setVariable ["selectSex",true,true];};
-	} else {
-		_playerObj setVariable ["selectSex",true,true];
-	};
+	missionNamespace setVariable [_playerID,[_humanity,(_stats select 0),(_stats select 1),(_stats select 2),(_stats select 3)]];
 } else {
 	//register stats
 	_playerObj setVariable ["zombieKills",0,true];
@@ -167,11 +157,7 @@ if (count _stats > 0) then {
 	_playerObj setVariable ["ConfirmedHumanKills",0,true];
 	_playerObj setVariable ["ConfirmedBanditKills",0,true];
 
-	//record for Server JIP checks
-	_zombieKills_CHK = 0;
-	_headShots_CHK = 0;
-	_humanKills_CHK = 0;
-	_banditKills_CHK = 0;
+	missionNamespace setVariable [_playerID,[_humanity,0,0,0,0]];
 };
 
 if (_randomSpot) then {
@@ -220,16 +206,6 @@ if (_randomSpot) then {
 _playerObj setVariable ["characterID",_characterID,true];
 _playerObj setVariable ["humanity",_humanity,true];
 _playerObj setVariable ["lastPos",getPosATL _playerObj];
-
-//Skin Change Vars
-_playerObj setVariable ["humanity_CHK",_humanity];
-_playerObj setVariable ["zombieKills_CHK",_zombieKills_CHK];
-_playerObj setVariable ["headShots_CHK",_headShots_CHK];
-_playerObj setVariable ["humanKills_CHK",_humanKills_CHK];
-_playerObj setVariable ["banditKills_CHK",_banditKills_CHK];
-
-//[0-Humanity,1-ZombieKills,2-HeadShots,3-humanKills,4-banditKills]
-missionNamespace setVariable [_playerID,[_humanity,_zombieKills_CHK,_headShots_CHK,_humanKills_CHK,_banditKills_CHK]];
 
 _clientID = owner _playerObj;
 _randomKey = [];
