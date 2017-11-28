@@ -17,3 +17,9 @@ UPDATE object_data SET Inventory = REPLACE(Inventory, '"SVD_DZ"', '"SVD_PSO1_DZ"
 UPDATE character_data SET Backpack = REPLACE(Backpack, '"SVD_Gh_DZ"', '"SVD_PSO1_Gh_DZ"') WHERE INSTR(Backpack, '"SVD_Gh_DZ"') > 0;
 UPDATE character_data SET Inventory = REPLACE(Inventory, '"SVD_Gh_DZ"', '"SVD_PSO1_Gh_DZ"') WHERE INSTR(Inventory, '"SVD_Gh_DZ"') > 0;
 UPDATE object_data SET Inventory = REPLACE(Inventory, '"SVD_Gh_DZ"', '"SVD_PSO1_Gh_DZ"') WHERE INSTR(Inventory, '"SVD_Gh_DZ"') > 0;
+
+
+/* PoliceCar was removed from dayz_vehicles */
+UPDATE `object_data` SET `Classname` = 'car_sedan' WHERE `Classname` = 'policecar';
+UPDATE `object_spawns` SET `Classname` = 'car_sedan' WHERE `Classname` = 'policecar';
+UPDATE `vehicle_spawns` SET `Classname` = 'car_sedan' WHERE `Classname` = 'policecar';
