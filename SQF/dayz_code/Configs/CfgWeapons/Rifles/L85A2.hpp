@@ -66,6 +66,8 @@ class L85A2_DZ : BAF_L85A2_RIS_Holo
 	picture = "\z\addons\dayz_communityweapons\L85A2\data\w_L85A2_ca.paa";
 	displayName = $STR_DZ_WPN_L85A2_NAME;
 	
+	irDistance = 0;
+	
 	magazines[] =
 	{
 		30Rnd_556x45_Stanag,
