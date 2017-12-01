@@ -299,3 +299,27 @@ class Land_AII_upper_part: Military
 {
 	lootPos[] = {{-0.616211, -3.80762, -2.31434}, {-2.62158, -1.05127, -2.32196}, {-2.30322, 2.0415, -2.32196}};
 };
+
+class Land_a_stationhouse_EP1: Land_a_stationhouse {}; // zg version - firehouse
+
+class Land_A_Mosque_big_wall_corner_EP1: Military // zg  mosque wall
+{
+	lootPos[] = {{2.74707,3.51416,5.15344},{1.8501,3.54883,5.16268}};
+};
+class Land_A_Mosque_big_wall_EP1: Military // zg  mosque wall
+{
+	lootPos[] = {{-0.878906,3.40576,5.18165}};
+};
+class Land_A_Mosque_big_wall_gate_EP1: Military // zg  mosque wall
+{
+	lootPos[] = {{-16.6138,1.75244,1.35048}};
+};
+class Land_A_Mosque_big_addon_EP1: Military // zg  mosque wall
+{
+	lootPos[] = {{4.2915,-0.00878906,-6.38554},{4.00732,0.630371,-6.38554}};
+};
+class Land_A_Mosque_big_hq_EP1: Military // zg mosque
+{
+	lootPos[] = {{-9.08545,-10.8838,-4.04752},{3.94678,-7.11523,-4.04752},{9.58691,-10.7075,-4.04752},{9.43604,11.0352,-4.04752},{-8.63184,11.0376,-4.04752},
+		{10.8452,10.5513,0.567291},{-9.87207,9.87305,0.567284},{-9.85303,-10.7256,0.567287}};
+};

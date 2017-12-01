@@ -161,3 +161,5 @@ class Land_smd_hospoda_mesto : Office // pub HOSTINEC
 //class LAND_Hotel: Land_smd_hotel{};  // for white Tavi variant
 
 // ALT-MAP Support
+class Land_A_Office01_EP1: Land_A_Office01 {}; // zg version - school
+

@@ -899,3 +899,7 @@ class land_seb_mine_near: Industrial { // nm
 	lootPos[] = {{8.26221, -6.49414, -8.8979}, {4.95752, -5.74219, -8.8979}, {6.75049, 9.6665, -11.9873}};
 };
 
+class Land_A_BuildingWIP_EP1: Land_A_BuildingWIP {}; // zg version - construction site/factory
+class Land_Ind_FuelStation_Build_EP1 : Land_A_FuelStation_Build {}; // zg version - gas station
+
+
