@@ -1,4 +1,4 @@
-private ["_isArray","_class","_position","_dir","_currentAnim","_currentCamera","_playerUID","_weapons","_magazines","_primweapon","_secweapon","_newBackpackType","_backpackWpn","_backpackMag","_currentWpn","_muzzles","_display","_oldUnit","_newUnit","_oldBackpack","_backpackWpnTypes","_backpackWpnQtys","_countr","_backpackmagTypes","_backpackmagQtys","_backpackmag","_rndx","_rndy","_playerObjName","_wpnType","_ismelee","_oldGroup"];
+private ["_isArray","_class","_position","_dir","_currentAnim","_currentCamera","_playerUID","_weapons","_magazines","_primweapon","_secweapon","_newBackpackType","_backpackWpn","_backpackMag","_currentWpn","_muzzles","_display","_oldUnit","_newUnit","_oldBackpack","_backpackmag","_rndx","_rndy","_playerObjName","_wpnType","_ismelee","_oldGroup"];
 _isArray = typeName _this == "ARRAY";
 _class = if (_isArray) then {_this select 0} else {_this};
 
@@ -97,36 +97,12 @@ if (_secweapon != (secondaryWeapon _newUnit) && _secweapon != "") then {
 };
 
 //Add and Fill BackPack
-if (!isNil "_newBackpackType") then {
-	if (_newBackpackType != "") then {
-		_newUnit addBackpack _newBackpackType;
-		//_oldBackpack = dayz_myBackpack;
-		dayz_myBackpack = unitBackpack _newUnit;
-
-		_backpackWpnTypes = [];
-		_backpackWpnQtys = [];
-		if (count _backpackWpn > 0) then {
-			_backpackWpnTypes = _backpackWpn select 0;
-			_backpackWpnQtys = _backpackWpn select 1;
-		};
-		_countr = 0;
-		{
-			dayz_myBackpack addWeaponCargoGlobal [_x,(_backpackWpnQtys select _countr)];
-			_countr = _countr + 1;
-		} count _backpackWpnTypes;
-
-		_backpackmagTypes = [];
-		_backpackmagQtys = [];
-		if (count _backpackmag > 0) then {
-			_backpackmagTypes = _backpackMag select 0;
-			_backpackmagQtys = _backpackMag select 1;
-		};
-		_countr = 0;
-		{
-			dayz_myBackpack addmagazineCargoGlobal [_x,(_backpackmagQtys select _countr)];
-			_countr = _countr + 1;
-		} count _backpackmagTypes;
-	};
+if (!isNil "_newBackpackType" && {_newBackpackType != ""}) then {
+	_newUnit addBackpack _newBackpackType;
+	//_oldBackpack = dayz_myBackpack;
+	dayz_myBackpack = unitBackpack _newUnit;
+	
+	[_backpackWpn,_backpackmag,[],dayz_myBackpack] call fn_addCargo;
 };
 
 //Debug Message
