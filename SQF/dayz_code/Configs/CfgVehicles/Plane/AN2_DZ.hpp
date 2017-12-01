@@ -30,14 +30,3 @@ class AN2_2_DZ : AN2_DZ
 		"ca\Air_E\An2\Data\an2_wings_A_CO"
 	};
 };
-
-class AN2_3_DZ : AN2_DZ
-{
-    hiddenSelections[] = {"Camo1","Camo2","Camo3"};
-    hiddenSelectionsTextures[] = 
-    {
-        "ca\Air_E\An2\Data\an2_1_B_CO",
-        "ca\Air_E\An2\Data\an2_2_B_CO",
-        "ca\Air_E\An2\Data\an2_wings_B_CO"
-    };
-};
