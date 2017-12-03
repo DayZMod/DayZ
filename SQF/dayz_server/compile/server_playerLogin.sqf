@@ -138,6 +138,19 @@ if (_endMission) exitwith {
 //Sync chopped trees for JIP player
 {_x setDamage 1} count dayz_choppedTrees;
 
+if (toLower worldName == "chernarus") then {
+	//Destroy glitched map objects which can not be deleted or hidden
+	{(_x select 0) nearestObject (_x select 1) setDamage 1} count [
+		//Clipped benches in barracks hallway
+		[[4654,9595,0],145259],
+		[[4654,9595,0],145260],		
+		//Clip into Land_houseV_2T2
+		[[3553,2563,0],327203], //popelnice.p3d trash can		
+		//Clip into zero_building Land_HouseV_3I3
+		[[2800,5202,0],187548] //popelnice.p3d trash can
+	];
+};
+
 //Record Player Login/LogOut
 [_playerID,_charID,2,(_playerObj call fa_plr2str),((getPosATL _playerObj) call fa_coor2str)] call dayz_recordLogin;
 

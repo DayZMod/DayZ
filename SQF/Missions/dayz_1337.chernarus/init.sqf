@@ -56,19 +56,13 @@ if (isServer) then {
 };
 
 if (!isDedicated) then {
-	if (dayz_antiWallHack != 0) then {
-		//Enables Map Plug items
-		if (toLower worldName == "chernarus") then { execVM "\z\addons\dayz_code\system\mission\chernarus\antiwallhack.sqf"; };
+	if (toLower worldName == "chernarus") then {
+		if (dayz_antiWallHack == 1) then {execVM "\z\addons\dayz_code\system\mission\chernarus\antiwallhack.sqf";};
+		execVM "\z\addons\dayz_code\system\mission\chernarus\hideGlitchObjects.sqf";
 	};
 	
 	//Enables Plant lib fixes
 	execVM "\z\addons\dayz_code\system\antihack.sqf";
-	
-	if (toLower(worldName) == "chernarus") then {
-		diag_log "WARNING: Clearing annoying benches from Chernarus";
-		([4654,9595,0] nearestObject 145259) setDamage 1;
-		([4654,9595,0] nearestObject 145260) setDamage 1;
-	};
 	
 	if (dayz_townGenerator) then { execVM "\z\addons\dayz_code\compile\client_plantSpawner.sqf"; };
 	execFSM "\z\addons\dayz_code\system\player_monitor.fsm";
