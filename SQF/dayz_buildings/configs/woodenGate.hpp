@@ -68,7 +68,7 @@ class WoodenGate_foundation: WoodenGate_Base
 {	
 	scope = 2;
 	displayName = $STR_BLD_name_WoodenGate_Foundation;//"Wooden Gate Level foundation"
-	model = "z\addons\dayz_buildings\models\fence1_ground.p3d";
+	model = "z\addons\dayz_buildings\models\gates\gate0_dzam.p3d";
 	
 	class Upgrade { //to next stage
 		requiredTools[] = {"ItemEtool","ItemToolbox"}; 
