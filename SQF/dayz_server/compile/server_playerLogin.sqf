@@ -153,7 +153,9 @@ if (toLower worldName == "chernarus") then {
 		[[3656,2429,0],328107], //plot_rust_draty.p3d fence
 		[[3656,2429,0],328108], //plot_rust_draty.p3d fence
 		[[3656,2429,0],328109], //plot_rust_draty.p3d fence
-		[[3656,2429,0],328110] //plot_rust_draty.p3d fence
+		[[3656,2429,0],328110], //plot_rust_draty.p3d fence
+		//Floating stump misc_stub1.p3d
+		[[9084,8654,0],244480]
 	];
 };
 
