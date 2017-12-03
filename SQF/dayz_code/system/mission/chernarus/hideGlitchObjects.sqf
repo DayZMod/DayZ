@@ -10,5 +10,8 @@
 	
 	//Clip into zero_building Land_HouseV_3I3
 	[[2799,5209,0],187483], //fuel_tank_small.p3d //still visible and inflamed after setDam
-	[[2800,5200,0],187495] //psi_bouda.p3d dog house //smoke after setDam
+	[[2800,5200,0],187495], //psi_bouda.p3d dog house //smoke after setDam
+	
+	//Clip into zero_building Land_HouseV_1L2
+	[[3672,2435,0],327675] //kbud.p3d outhouse
 ];
