@@ -14,7 +14,7 @@ class ItemCamoNet : CA_Magazine
 		class Build
 		{
 			text = $STR_BUILD_CAMONET;
-			script = "; [_id,'Build'] spawn player_build;";
+			script = "; [_id,'Build'] spawn player_buildPlaceables;";
 			require[] = {"ItemToolbox"};
 			consume[] = {"ItemCamoNet"};
 			create = "CamoNet_DZ";
@@ -34,7 +34,7 @@ class ItemCamoNet : CA_Magazine
 		class Build
 		{
 			text = $STR_BUILD_CAMONET;
-			script = "; ['ItemCamoNetGrey','Build'] spawn player_build;";
+			script = "; ['ItemCamoNetGrey','Build'] spawn player_buildPlaceables;";
 			require[] = {"ItemToolbox"};
 			consume[] = {"ItemCamoNetGrey"};
 			create = "CamoNet_DZ";

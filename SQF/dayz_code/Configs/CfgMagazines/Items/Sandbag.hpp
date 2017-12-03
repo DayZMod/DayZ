@@ -14,7 +14,7 @@ class ItemSandbag : CA_Magazine
 		class Build
 		{
 			text = $STR_ACTION_BUILD;
-			script = "; [_id,'Build'] spawn player_build;";
+			script = "; [_id,'Build'] spawn player_buildPlaceables;";
 			require[] = {"ItemShovel"};
 			consume[] = {"ItemSandbag"};
 			create = "Sandbag1_DZ";
@@ -25,7 +25,7 @@ class ItemSandbag : CA_Magazine
 		class Build2
 		{
 			text = $STR_CREATE_STASH;
-			script = "; [_id,'Build2'] spawn player_build;";
+			script = "; [_id,'Build2'] spawn player_buildPlaceables;";
 			require[] = {"ItemShovel"};
 			consume[] = {"ItemSandbag"};
 			create = "StashSmall";

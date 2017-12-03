@@ -80,6 +80,7 @@ if (!isDedicated) then {
 	player_chopWood = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_chopWood.sqf";
 	player_mineStone = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_mineStone.sqf";
 	player_build = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_build.sqf";
+	player_buildPlaceables = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_buildPlaceables.sqf";
 	fn_buildCamera = compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_buildCamera.sqf";
 	object_build = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\object_build.sqf";
 	object_upgradeFireplace = compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\object_upgradeFireplace.sqf";

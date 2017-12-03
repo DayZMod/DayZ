@@ -14,7 +14,7 @@ class ItemTankTrap : CA_Magazine
 		class Build
 		{
 			text = $STR_ACTION_BUILD;
-			script = "; [_id,'Build'] spawn player_build;";
+			script = "; [_id,'Build'] spawn player_buildPlaceables;";
 			require[] = {"ItemToolbox"};
 			consume[] = {"ItemTankTrap"};
 			create = "Hedgehog_DZ";
