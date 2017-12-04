@@ -1,6 +1,4 @@
-
-//private ["_display","_ctrlBloodOuter","_ctrlBlood","_ctrlBleed","_bloodVal","_ctrlFood","_ctrlThirst","_thirstVal","_foodVal","_ctrlTemp","_ctrlFoodBorder","_ctrlThirstBorder","_ctrlTempBorder","_tempVal","_array","_ctrlEar","_ctrlEye","_ctrlFracture","_visual","_audible","_uiNumber","_bloodText","_blood","_thirstLvl","_foodLvl","_tempImg","_bloodLvl","_tempLvl","_thirst","_food","_temp"];
-private ["_flash","_array","_bloodText","_tempText","_tempImg","_uiNumber","_blood","_foodLvl","_thirstLvl","_audible","_visual","_bloodType","_rhFactor","_ctrlBloodType", "_bloodTestdone"];
+private ["_flash","_bloodText","_tempText","_tempImg","_uiNumber","_blood","_foodLvl","_thirstLvl","_audible","_visual","_bloodType","_rhFactor","_ctrlBloodType", "_bloodTestdone"];
 
 _flash = {
     if (ctrlShown _this) then {
@@ -16,13 +14,8 @@ _foodVal = 1 - (dayz_hunger / SleepFood);
 _thirstVal = 1 - (dayz_thirst / SleepWater);
 _tempVal = 1 - ((dayz_temperatur - dayz_temperaturmin)/(dayz_temperaturmax - dayz_temperaturmin));  // Normalise to [0,1]
 
-if (uiNamespace getVariable ['DZ_displayUI', 0] == 1) exitWith {
-    _array = [_foodVal,_thirstVal];
-    _array
-};
-
 _display = uiNamespace getVariable 'DAYZ_GUI_display';
-if (isNil "_display") exitWith { [_foodVal,_thirstVal] }; // not ready
+if (isNil "_display") exitWith {}; // not ready
 
 _ctrlBloodOuter = _display displayCtrl 1200;
 _ctrlFoodBorder = _display displayCtrl 1201;
@@ -47,7 +40,10 @@ _ctrlFracture = _display displayCtrl 1203;
 _ctrlMuteBackground = _display displayCtrl 1904;
 _ctrlMuteIcon = _display displayCtrl 1204;
 
-if (!dayz_soundMuted) then {
+if (dayz_soundMuted) then {
+	_ctrlMuteBackground ctrlShow true;
+	_ctrlMuteIcon ctrlShow true;
+} else {
 	_ctrlMuteBackground ctrlShow false;
 	_ctrlMuteIcon ctrlShow false;
 };
@@ -220,6 +216,3 @@ if (r_player_injured) then {
 else {
     _ctrlBleed ctrlShow false;
 };
-
-_array = [_foodVal,_thirstVal];
-_array

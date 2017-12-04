@@ -9,7 +9,9 @@ sched_gui = {
 	_initDone = _this select 0;
 
 	if ((!_initDone and !isNil 'Dayz_loginCompleted') and {(Dayz_loginCompleted)}) then {
-       3 cutRsc ['playerStatusGUI', 'PLAIN',3]; // show the whole HUD
+		if (profileNamespace getVariable ["statusUI",1] == 1) then {
+			3 cutRsc ["playerStatusGUI","PLAIN",3]; // show the whole HUD
+		};
        _initDone = true;
 	};
 	//else {
@@ -20,7 +22,7 @@ sched_gui = {
 		dayz_surfaceNoise = _array select 1;
 		dayz_surfaceType = _array select 0;
 		call player_checkStealth;
-		dayz_statusArray = call player_updateGui;
+		call player_updateGui;
 	};
 
 	// move this elsewhere, it deals with the menu
