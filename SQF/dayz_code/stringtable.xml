@@ -2538,7 +2538,19 @@
 			<Spanish>Una abrazadera de plástico para cables</Spanish>
 			<French>Un serre-câble en plastique</French>
 			<Czech>Svazek plastových kabelů.</Czech>
+		</Key>		
+		<Key ID="STR_ITEM_NAME_equip_carbomb">
+			<English>Car Bomb</English>
+			<German>Autobombe</German>
 		</Key>
+		<Key ID="STR_ITEM_DESC_equip_carbomb">
+			<English>Can be attached to a vehicle's engine and then automatically explode when the next player enters the driver's seat!</English>
+			<German>Kann an einem Fahrzeugmotor angebracht werden. Die Bombe explodiert automatisch, wenn sich ein Spieler auf den Fahrersitz setzt.</German>
+		</Key>
+		<Key ID="STR_ACTIONS_attach_carbomb">
+			<English>Attach Car Bomb</English>
+			<German>Autobombe anbringen</German>
+		</Key>		
 		<Key ID="STR_ITEM_NAME_equip_aa_battery">
 			<English>AA Battery</English>
 			<German>AA-Batterie</German>
@@ -2674,7 +2686,7 @@
 			<German>Antiseptische Bandage</German>
 		</Key>
 		<Key ID="STR_CRAFT_DESC_SEPSISBandage">
-			<English>Blueprint to create an Sepsis cure and Bandage. Required - 3 Rags, 2 gauze, 1 string, 2 Comfrey Leafs.</English>
+			<English>Blueprint to create a sepsis cure and bandage. Required - 3 rags, 2 gauze, 1 string, 2 comfrey leaves.</English>
 			<Spanish>Plano para crear un vendaje que combate la septicemia. Requerido: - 3 trapos, 2 gasas, 1 cuerda, 2 hojas de consuelda.</Spanish>
 			<Russian>Инструкция по созданию антисептических бинтов. Нужно: три тряпки, пара марль, шнур и пара листков живокоста.</Russian>
 			<Czech>Návod pro vyrobení antiseptického obvazu. Potřeba: 3x hadr, 2x gáza, 1x provázek, 2x listy kostivalu.</Czech>
@@ -6533,7 +6545,7 @@
 			<Czech>Naplnili jste vodou %1 láhve.</Czech>
 		</Key>
 		<Key ID="str_player_boiledwater">
-			<English>You have boiled %1 bottles with water.</English>
+			<English>You have boiled %1 bottles of water.</English>
 			<German>Du hast %1 Flasche(n) mit Wasser abgekocht.</German>
 			<Russian>Наполнено чистой кипяченой водой бутылок: %1</Russian>
 			<Spanish>Llenaste %1 cantimplora(s) con agua</Spanish>
@@ -7613,6 +7625,7 @@
 		</Key>
 		<Key ID="STR_UI_STATUS_ICONS_TOOLTIP">
 			<English>Show status icons (F3 hotkey)</English>
+			<German>Zeige Status Icons (F3 Hotkey)</German>
 		</Key>
 	</Package>
 	<Package name="playerstats">
@@ -9575,10 +9588,12 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_FL_NAME">
 			<English>L85A2 FL</English>
+			<German>L85A2 TL</German>
 			<Russian>L85A2 Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_MFL_NAME">
 			<English>L85A2 MFL</English>
+			<German>L85A2 MTL</German>
 			<Russian>L85A2 вФ</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_SD_NAME">
@@ -9587,10 +9602,12 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_SD_FL_NAME">
 			<English>L85A2 SD FL</English>
+			<German>L85A2 SD TL</German>
 			<Russian>L85A2 ПБС Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_SD_MFL_NAME">
 			<English>L85A2 SD MFL</English>
+			<German>L85A2 SD MTL</German>
 			<Russian>L85A2 ПБС вФ</Russian>
 		</Key>
 		<!-- L85A2 CCO-->
@@ -9599,10 +9616,12 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_CCO_FL_NAME">
 			<English>L85A2 CCO FL</English>
+			<German>L85A2 CCO TL</German>
 			<Russian>L85A2 CCO Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_CCO_MFL_NAME">
 			<English>L85A2 CCO MFL</English>
+			<German>L85A2 CCO MTL</German>
 			<Russian>L85A2 CCO вФ</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_CCO_SD_NAME">
@@ -9611,10 +9630,12 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_CCO_SD_FL_NAME">
 			<English>L85A2 CCO SD FL</English>
+			<German>L85A2 CCO SD TL</German>
 			<Russian>L85A2 CCO ПБС Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_CCO_SD_MFL_NAME">
 			<English>L85A2 CCO SD MFL</English>
+			<German>L85A2 CCO SD MTL</German>
 			<Russian>L85A2 CCO ПБС вФ</Russian>
 		</Key>
 		<!-- L85A2 Holo -->
@@ -9623,10 +9644,12 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_HOLO_FL_NAME">
 			<English>L85A2 Holo FL</English>
+			<German>L85A2 Holo TL</German>
 			<Russian>L85A2 Holo Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_HOLO_MFL_NAME">
 			<English>L85A2 Holo MFL</English>
+			<German>L85A2 Holo MTL</German>
 			<Russian>L85A2 Holo вФ</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_HOLO_SD_NAME">
@@ -9635,10 +9658,12 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_HOLO_SD_FL_NAME">
 			<English>L85A2 Holo SD FL</English>
+			<German>L85A2 Holo SD TL</German>
 			<Russian>L85A2 Holo ПБС Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_HOLO_SD_MFL_NAME">
 			<English>L85A2 Holo SD MFL</English>
+			<German>L85A2 Holo SD MTL</German>
 			<Russian>L85A2 Holo ПБС вФ</Russian>
 		</Key>
 		<!-- L85A2 ACOG -->
@@ -9647,10 +9672,12 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_ACOG_FL_NAME">
 			<English>L85A2 ACOG FL</English>
+			<German>L85A2 ACOG TL</German>
 			<Russian>L85A2 ACOG Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_ACOG_MFL_NAME">
 			<English>L85A2 ACOG MFL</English>
+			<German>L85A2 ACOG MTL</German>
 			<Russian>L85A2 ACOG вФ</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_ACOG_SD_NAME">
@@ -9659,10 +9686,12 @@
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_ACOG_SD_FL_NAME">
 			<English>L85A2 ACOG SD FL</English>
+			<German>L85A2 ACOG SD TL</German>
 			<Russian>L85A2 ACOG ПБС Ф</Russian>
 		</Key>
 		<Key ID="STR_DZ_WPN_L85A2_ACOG_SD_MFL_NAME">
 			<English>L85A2 ACOG SD MFL</English>
+			<German>L85A2 ACOG SD MTL</German>
 			<Russian>L85A2 ACOG ПБС вФ</Russian>
 		</Key>
 		
