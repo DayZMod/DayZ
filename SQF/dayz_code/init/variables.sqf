@@ -293,7 +293,6 @@ dayz_maxAnimals = 5;
 dayz_maxPlants = 3;
 dayz_animalDistance = 600;
 dayz_plantDistance = 600;
-dayz_HarvestingChance = [0.09];
 
 dayz_maxMaxModels = 80; // max quantity of Man models (player or Z, dead or alive) around players. Below this limit we can spawn Z // max quantity of loot piles around players. Below this limit we can spawn some loot
 dayz_cantseeDist = 150; // distance from which we can spawn a Z in front of any player without ray-tracing and angle checks
@@ -400,6 +399,7 @@ respawn_west_original = getMarkerPos "respawn_west"; //Prevent problems caused b
 
 switch (toLower worldName) do {
 	case "napf";
+	case "ruegen";
 	case "sauerland" : {dayz_minpos = -1000; dayz_maxpos = 26000;};
 	case "tavi" : {dayz_minpos = -26000; dayz_maxpos = 26000;};
 	case "chernarus" : {dayz_minpos = -1; dayz_maxpos = 16000;};
@@ -410,6 +410,8 @@ switch (toLower worldName) do {
 //call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\achievements_init.sqf";
 
 if (isServer) then {
+	dayz_serverPUIDArray = [];
+	dayz_serverClientKeys = [];
 	dayz_traps = [];
 	dead_bodyCleanup = [];
 	needUpdate_objects = [];
@@ -430,6 +432,7 @@ if (isServer) then {
 };
 
 if (!isDedicated) then {
+	dayz_authKey = "";
 	dayz_buildingBubbleMonitor = [];
 	DayZ_fuelCans = ["ItemJerrycan","ItemFuelcan"];
 	DayZ_fuelCansEmpty = ["ItemJerrycanEmpty","ItemFuelcanEmpty"];
@@ -445,6 +448,8 @@ if (!isDedicated) then {
 
 	//player special variables
 	dayz_bloodBagHumanity = 300;
+	dayz_HarvestingChance = [0.09];
+	dayz_lastCheckBit = 0;
 	dayz_lastDamageSourceNull = false;
 	dayz_lastDamageSource = "none";
 	dayz_lastDamageTime = 0;
@@ -460,7 +465,6 @@ if (!isDedicated) then {
 	dayz_nutrition = 0;
 	dayz_preloadFinished = true;
 	dayz_soundMuted = false;
-	dayz_statusArray = [1,1];
 	dayz_disAudial = 0;
 	dayz_disVisual = 0;
 	dayz_firedCooldown = 0;
@@ -505,17 +509,11 @@ if (!isDedicated) then {
 	dayz_inVehicle = false;
 	dayz_unsaved = false;
 	dayz_scaleLight = 0;
-	dayzDebug = false;
-	dayzState = -1;
 	dayz_onBack = "";
 	dayz_fishingInprogress = false;
 	lastSpawned = diag_tickTime;
 	lastSepsis = 0;
 	NORRN_dropAction = -1;
-	//uiNamespace setVariable ['DAYZ_GUI_display',displayNull];
-	//if (uiNamespace getVariable ['DZ_displayUI', 0] == 2) then {
-	//	dayzDebug = true;
-	//};
 	dayz_dodge = false;
 	Dayz_constructionContext = [];
 	Dayz_freefall = [ time, 0, 0.1 ];

@@ -165,7 +165,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		//Allow player to fill vehicle 20L
 		if (_hasFuel20 && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1}) then {
 			if (s_player_fillfuel20 < 0) then {
-				s_player_fillfuel20 = player addAction [format[localize "str_actions_medical_10",_text,"20"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemJerrycan",_cursorTarget], 0, true, true, "", "'ItemJerrycan' in magazines player"];
+				s_player_fillfuel20 = player addAction [format[localize "str_actions_medical_10",_text,"20"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemJerrycan",_cursorTarget], 0, true, true];
 			};
 		} else {
 			player removeAction s_player_fillfuel20;
@@ -175,7 +175,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		//Allow player to fill vehicle 5L
 		if (_hasFuel5 && {!_isMan} && {_isVehicle or _isGenerator} && {fuel _cursorTarget < 1}) then {
 			if (s_player_fillfuel5 < 0) then {
-				s_player_fillfuel5 = player addAction [format[localize "str_actions_medical_10",_text,"5"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemFuelcan",_cursorTarget], 0, true, true, "", "'ItemFuelcan' in magazines player"];
+				s_player_fillfuel5 = player addAction [format[localize "str_actions_medical_10",_text,"5"], "\z\addons\dayz_code\actions\refuel.sqf",["ItemFuelcan",_cursorTarget], 0, true, true];
 			};
 		} else {
 			player removeAction s_player_fillfuel5;
@@ -329,6 +329,8 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 	//Only the owners can lock the gates
 	_isLockableGate = _typeOfCursorTarget in ["WoodenGate_2","WoodenGate_3","WoodenGate_4","MetalGate_2","MetalGate_3","MetalGate_4"];
 	_isUnlocked = _cursorTarget getVariable ["isOpen","0"] == "1";
+	
+	_isActionInProgress = _cursorTarget getVariable ["actionInProgress",false];
 
 	//Allow the gates to be opened when not locked by anyone
 	_isOpen = ((_cursorTarget animationPhase "DoorL") == 1) || ((_cursorTarget animationPhase "DoorR") == 1);
@@ -403,7 +405,7 @@ if (!isNull _cursorTarget && !_inVehicle && (player distance _cursorTarget < _al
 		s_player_lockhouse = -1;
 	};
 	//Break In
-	if ((_isHouse or _isLockableGate) && (_ownerPID != _uid) && !_isUnlocked) then {
+	if ((_isHouse or _isLockableGate) && (_ownerPID != _uid) && !_isUnlocked && !_isActionInProgress) then {
 		if (s_player_breakinhouse < 0) then {
 			s_player_breakinhouse = player addAction [localize "STR_BLD_ACTIONS_BREAKIN", "\z\addons\dayz_code\actions\player_breakin.sqf",_cursorTarget, 1, true, true];
 		};

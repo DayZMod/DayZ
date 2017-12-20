@@ -24,7 +24,7 @@ Dayz_constructionContext set [ 4, false ]; // Stop the construction mode, cf. pl
 if (_build) then {
     _location = getPosATL _ghost;
     _direction = getDir _ghost;
-    _object = createVehicle [_classname, getMarkerpos "respawn_west", [], 0, "CAN_COLLIDE"];
+    _object = createVehicle [_classname, getMarkerpos "respawn_west", [], 0, "NONE"];
 	
     _object setDir _direction;
 	
@@ -90,7 +90,7 @@ if (_build) then {
 */
 
     _object setVariable ["characterID",dayz_characterID,true];
-    PVDZ_obj_Publish = [dayz_characterID,_object,[round _direction, _location], _variables];
+    PVDZ_obj_Publish = [dayz_characterID,_object,[round _direction,_location],_variables,player,dayz_authKey];
     publicVariableServer "PVDZ_obj_Publish";
 	
     diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];

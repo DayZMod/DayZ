@@ -2,15 +2,12 @@
 //Created by Nox 2017-02-01. Contact: DayZ Europa, Dayz mod discord or by email: niklas.dennerstahl@gmail.com
 //Copyright by the DayZ Mod dev team. 
 
-if (isServer) then {
-
-
 _vehicle_1 = objNull;
 if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier1" createVehicle [9564.4189, 6669.1694, -0.14846949];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_1 = _this;
   _this setDir 10.147971;
@@ -22,7 +19,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier3" createVehicle [9587.4854, 6635.1445, -0.050388746];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_2 = _this;
   _this setDir -0.39430982;
@@ -34,7 +31,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9591.1563, 6635.1587, -0.0066405814];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_3 = _this;
   _this setPos [9591.1563, 6635.1587, -0.0066405814];
@@ -45,7 +42,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9597.0078, 6635.248, -0.056754377];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_5 = _this;
   _this setDir -6.3392906;
@@ -57,7 +54,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9605.1309, 6639.5796, 4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_9 = _this;
   _this setDir 85.560028;
@@ -69,7 +66,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9603.9854, 6645.2671, 0.00024414063];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_11 = _this;
   _this setDir 77.910789;
@@ -81,7 +78,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9599.2832, 6656.8955, -0.11580816];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_15 = _this;
   _this setDir 60.731491;
@@ -93,7 +90,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9597.96, 6662.6465];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_17 = _this;
   _this setDir 79.075653;
@@ -105,7 +102,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9588.4473, 6668.6147, -0.1803387];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_21 = _this;
   _this setDir 17.034077;
@@ -117,7 +114,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9582.5986, 6669.1958, -0.17976369];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_23 = _this;
   _this setDir 4.2656097;
@@ -129,7 +126,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9576.7637, 6669.3252, -0.13527918];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_25 = _this;
   _this setPos [9576.7637, 6669.3252, -0.13527918];
@@ -140,7 +137,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9571.4014, 6667.1328, -0.38446707];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_27 = _this;
   _this setDir -21.997446;
@@ -152,7 +149,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9565.7803, 6668.667, -0.13188381];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_29 = _this;
   _this setDir 21.087645;
@@ -164,7 +161,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9581.6533, 6634.7861, 6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_33 = _this;
   _this setDir -6.1612172;
@@ -176,7 +173,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier5" createVehicle [9576.1631, 6633.0225, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_35 = _this;
   _this setDir -15.163078;
@@ -187,8 +184,8 @@ _vehicle_135 = objNull;
 if (true) then
 {
   // Output from missionParser
-  _this = "MAP_Hlidac_budka" createVehicle [9561.8809, 6664.4717, 0.00010681152];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+  _this = "Land_Hlidac_budka" createVehicle [9561.8809, 6664.4717, 0.00010681152];
+ 
 
   _vehicle_135 = _this;
   _this setDir 45.308399;
@@ -200,7 +197,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_CamoNet_EAST" createVehicle [9554.376, 6651.6055, 0.29174802];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_140 = _this;
   _this setDir -120.51927;
@@ -212,7 +209,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_CamoNet_EAST_var1" createVehicle [9582.8672, 6651.4824, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_141 = _this;
   _this setDir 253.05736;
@@ -224,7 +221,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9558.3535, 6657.1187, 9.1552734e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_155 = _this;
   _this setDir 49.942844;
@@ -236,7 +233,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_corner" createVehicle [9563.3633, 6661.6514, -0.16050753];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_156 = _this;
   _this setDir -45.279251;
@@ -248,7 +245,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9554.2617, 6661.1357, 4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_157 = _this;
   _this setDir 44.137775;
@@ -260,7 +257,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Concrete_Wall_EP1" createVehicle [9558.7773, 6667.0723, 4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_238 = _this;
   _this setDir -33.107681;
@@ -273,7 +270,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Concrete_Wall_EP1" createVehicle [9560.7432, 6668.6226, 9.1552734e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_240 = _this;
   _this setDir -45.540707;
@@ -286,7 +283,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Concrete_Wall_EP1" createVehicle [9562.5859, 6669.4194, -0.025939517];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_243 = _this;
   _this setDir -2.655802;
@@ -299,7 +296,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Concrete_Wall_EP1" createVehicle [9552.1152, 6661.8584, -3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_246 = _this;
   _this setDir -44.170742;
@@ -312,7 +309,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Concrete_Wall_EP1" createVehicle [9550.5186, 6659.9424, -1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_249 = _this;
   _this setDir -55.849533;
@@ -325,7 +322,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Concrete_Wall_EP1" createVehicle [9550.6924, 6658.0742, -6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_252 = _this;
   _this setDir -113.51531;
@@ -338,7 +335,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Concrete_Wall_EP1" createVehicle [9550.54, 6656.1211, 4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_255 = _this;
   _this setDir -53.455177;
@@ -351,7 +348,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Concrete_Wall_EP1" createVehicle [9549.1328, 6654.1563, -0.26590762];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_259 = _this;
   _this setDir -53.127342;
@@ -364,7 +361,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9560.2314, 6654.7266, 7.6293945e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_265 = _this;
   _this setDir 54.37431;
@@ -376,7 +373,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9561.873, 6652.1802, -0.013850577];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_268 = _this;
   _this setDir 59.53756;
@@ -388,7 +385,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_Toilet" createVehicle [9563.5449, 6638.3589, 0.00010681152];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_270 = _this;
   _this setDir 168.35199;
@@ -400,7 +397,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Notice_board" createVehicle [9557.5332, 6656.249, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_279 = _this;
   _this setDir -319.83801;
@@ -412,7 +409,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Paleta1" createVehicle [9565.8955, 6661.0801, -4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_280 = _this;
   _this setPos [9565.8955, 6661.0801, -4.5776367e-005];
@@ -423,7 +420,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Paleta2" createVehicle [9565.8076, 6661.8823, -4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_281 = _this;
   _this setPos [9565.8076, 6661.8823, -4.5776367e-005];
@@ -434,7 +431,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_Barrel_empty" createVehicle [9565.2832, 6661.8164, -0.0092395376];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_282 = _this;
   _this setPos [9565.2832, 6661.8164, -0.0092395376];
@@ -445,7 +442,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "PowerGenerator" createVehicle [9600.1602, 6641.9648, -3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_283 = _this;
   _this setDir 171.97923;
@@ -457,7 +454,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "LADAWreck" createVehicle [9551.9131, 6667.7915, -1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_300 = _this;
   _this setDir 8.7121878;
@@ -469,7 +466,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "datsun01Wreck" createVehicle [9547.9668, 6671.7925, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_302 = _this;
   _this setDir -19.136129;
@@ -481,7 +478,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "datsun02Wreck" createVehicle [9531.4277, 6674.2891, -0.11088796];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_303 = _this;
   _this setDir -53.174622;
@@ -493,7 +490,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "SKODAWreck" createVehicle [9545.2852, 6670.5156, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_304 = _this;
   _this setDir -70.602058;
@@ -505,7 +502,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "UAZWreck" createVehicle [9540.1377, 6673.8403, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_305 = _this;
   _this setDir -48.801605;
@@ -517,7 +514,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "UAZWreck" createVehicle [9548.6455, 6667.8022, 0.00010681152];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_310 = _this;
   _this setDir -103.4128;
@@ -529,7 +526,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "SKODAWreck" createVehicle [9539.6318, 6676.7148];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_314 = _this;
   _this setDir -59.982613;
@@ -541,7 +538,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "SKODAWreck" createVehicle [9536.4746, 6674.5669, -1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_316 = _this;
   _this setDir -91.279297;
@@ -553,7 +550,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "UralWreck" createVehicle [9543.9141, 6675.4058, -9.1552734e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_319 = _this;
   _this setDir -25.459192;
@@ -565,7 +562,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_Fort_Barricade" createVehicle [9554.0947, 6665.3696, 0.00022888184];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_328 = _this;
   _this setDir -40.827724;
@@ -577,7 +574,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier1" createVehicle [9594.3467, 6666.8633, -0.029752402];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_329 = _this;
   _this setPos [9594.3467, 6666.8633, -0.029752402];
@@ -588,7 +585,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier1" createVehicle [9597.2109, 6664.0557, -0.00010681152];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_331 = _this;
   _this setDir 36.390491;
@@ -600,7 +597,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier1" createVehicle [9597.3438, 6667.6211, -0.10654662];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_333 = _this;
   _this setDir 2.5504274;
@@ -612,7 +609,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier1" createVehicle [9603.1104, 6632.9893, 0.013236066];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_336 = _this;
   _this setDir 13.66839;
@@ -624,7 +621,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fortified_nest_small" createVehicle [9602.4727, 6648.5898];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_338 = _this;
   _this setDir -105.53274;
@@ -636,7 +633,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_vez" createVehicle [9559.0762, 6666.4556, 7.6293945e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_341 = _this;
   _this setDir -49.514622;
@@ -648,7 +645,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_vez" createVehicle [9550.0957, 6658.5698];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_343 = _this;
   _this setDir -48.679432;
@@ -660,7 +657,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier1" createVehicle [9602.25, 6651.9214, 0.031809881];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_345 = _this;
   _this setDir 56.632462;
@@ -672,7 +669,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_HBarrier1" createVehicle [9603.8193, 6646.5625, 6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_347 = _this;
   _this setDir 82.395638;
@@ -684,7 +681,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_Toilet" createVehicle [9565.0459, 6638.7808, 6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_361 = _this;
   _this setDir 168.35199;
@@ -696,7 +693,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_Toilet" createVehicle [9566.4922, 6639.1211, -1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_364 = _this;
   _this setDir 168.35199;
@@ -708,7 +705,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "PowerGenerator" createVehicle [9597.7041, 6653.5708, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_368 = _this;
   _this setDir 167.20656;
@@ -720,7 +717,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "AmmoCrates_NoInteractive_Large" createVehicle [9555.7715, 6652.0767, 3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_385 = _this;
   _this setDir 57.611809;
@@ -732,7 +729,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "AmmoCrates_NoInteractive_Medium" createVehicle [9561.0449, 6650.1855, 0.172525];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_386 = _this;
   _this setDir -1.1921819;
@@ -744,7 +741,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "AmmoCrates_NoInteractive_Small" createVehicle [9562.1582, 6649.9614, 0.20693633];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_387 = _this;
   _this setDir 92.06385;
@@ -756,7 +753,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "AmmoCrate_NoInteractive_" createVehicle [9561.9268, 6650.0732, 0.48922709];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_388 = _this;
   _this setDir -95.787567;
@@ -768,7 +765,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "PowGen_Big" createVehicle [9571.1943, 6664.5737, 0.00021362305];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_405 = _this;
   _this setDir -73.068626;
@@ -780,7 +777,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "RU_WarfareBVehicleServicePoint" createVehicle [9579.5283, 6636.791, -0.11657652];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_411 = _this;
   _this setDir -11.671355;
@@ -792,7 +789,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "UAZWreck" createVehicle [9571.8799, 6651.4185, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_413 = _this;
   _this setDir -209.37212;
@@ -804,7 +801,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9554.1777, 6669.5962, -0.05801864];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_420 = _this;
   _this setDir -140.9301;
@@ -816,7 +813,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_Stripes" createVehicle [9550.4746, 6670.8467, 3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_421 = _this;
   _this setDir -52.539318;
@@ -828,7 +825,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Garbage_can" createVehicle [9592.3857, 6644.8188, 3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_423 = _this;
   _this setPos [9592.3857, 6644.8188, 3.0517578e-005];
@@ -839,7 +836,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9566.1094, 6656.9019, 6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_427 = _this;
   _this setDir 55.446556;
@@ -851,7 +848,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9567.7451, 6654.2485, 7.6293945e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_429 = _this;
   _this setDir 59.338245;
@@ -863,7 +860,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9569.2324, 6651.5771, -0.037321635];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_431 = _this;
   _this setDir 61.510441;
@@ -875,7 +872,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9570.6484, 6648.8379, -0.016594641];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_434 = _this;
   _this setDir 63.102085;
@@ -887,7 +884,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "AmmoCrates_NoInteractive_Large" createVehicle [9565.7764, 6635.7402, 2.7623479];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_437 = _this;
   _this setPos [9565.7764, 6635.7402, 2.7623479];
@@ -898,7 +895,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9541.9199, 6669.1045, 0.12908489];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_440 = _this;
   _this setDir 21.954151;
@@ -910,7 +907,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9545.5498, 6666.981, 6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_443 = _this;
   _this setDir 31.707098;
@@ -922,7 +919,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9548.6289, 6664.9312, 3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_446 = _this;
   _this setDir 31.707098;
@@ -934,7 +931,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9538.4775, 6670.3501, 0.00024414063];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_449 = _this;
   _this setDir 21.954151;
@@ -946,7 +943,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9535.2002, 6671.7432, 9.1552734e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_451 = _this;
   _this setDir 21.954151;
@@ -958,7 +955,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9531.7695, 6673.1455, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_453 = _this;
   _this setDir 21.954151;
@@ -970,7 +967,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9551.1621, 6672.248, 6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_456 = _this;
   _this setDir -140.9301;
@@ -982,7 +979,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9547.4941, 6675.1948, 0.00019836426];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_458 = _this;
   _this setDir -140.9301;
@@ -994,7 +991,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9542.2471, 6678.5527, 6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_460 = _this;
   _this setDir -148.51549;
@@ -1006,7 +1003,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_Stripes" createVehicle [9542.2266, 6671.8242, 0.00015258789];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_467 = _this;
   _this setDir -62.960697;
@@ -1018,7 +1015,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "UAZWreck" createVehicle [9514.5908, 6677.3384, -1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_471 = _this;
   _this setDir -15.435764;
@@ -1030,7 +1027,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9538.6426, 6680.8267, 0.0001373291];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_475 = _this;
   _this setDir -150.3896;
@@ -1042,7 +1039,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_D" createVehicle [9535.5078, 6682.3853, 0.00010681152];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_477 = _this;
   _this setDir -150.3896;
@@ -1054,7 +1051,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9571.8691, 6646.0469, -0.021534169];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_480 = _this;
   _this setDir 67.286621;
@@ -1066,7 +1063,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Paleta1" createVehicle [9560.9629, 6649.9414, 0.0042284383];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_483 = _this;
   _this setPos [9560.9629, 6649.9414, 0.0042284383];
@@ -1077,7 +1074,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_Stripes" createVehicle [9536.0547, 6680.624, 4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_486 = _this;
   _this setDir -62.960697;
@@ -1089,7 +1086,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_Stripes" createVehicle [9535.083, 6678.6719, 6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_488 = _this;
   _this setDir -62.960697;
@@ -1101,7 +1098,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_Stripes" createVehicle [9526.2236, 6676.5981, 3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_490 = _this;
   _this setDir -67.463562;
@@ -1113,7 +1110,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_CncBlock_Stripes" createVehicle [9527.2686, 6678.9888, 4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_492 = _this;
   _this setDir -65.179108;
@@ -1125,7 +1122,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "FoldTable" createVehicle [9558.0928, 6654.5732];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_497 = _this;
   _this setPos [9558.0928, 6654.5732];
@@ -1136,7 +1133,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "FoldChair" createVehicle [9559.666, 6651.0098, 3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_498 = _this;
   _this setPos [9559.666, 6651.0098, 3.0517578e-005];
@@ -1147,7 +1144,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "SmallTable" createVehicle [9560.6641, 6651.6777, -3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_500 = _this;
   _this setDir -55.706463;
@@ -1159,7 +1156,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "FoldTable" createVehicle [9560.0322, 6653.1812, -1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_504 = _this;
   _this setDir 54.962189;
@@ -1171,7 +1168,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "FoldTable" createVehicle [9581.5957, 6652.8267];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_506 = _this;
   _this setDir 64.290703;
@@ -1183,7 +1180,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "FoldTable" createVehicle [9583.2275, 6649.4487, 0.00056053419];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_508 = _this;
   _this setDir 63.702538;
@@ -1195,7 +1192,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "FoldChair" createVehicle [9557.9619, 6653.48, -1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_511 = _this;
   _this setDir -160.03514;
@@ -1207,7 +1204,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "FoldChair" createVehicle [9559.4805, 6652, -1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_513 = _this;
   _this setDir -129.82602;
@@ -1219,7 +1216,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "FoldChair" createVehicle [9584.4492, 6649.894, -4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_515 = _this;
   _this setDir 92.774452;
@@ -1231,7 +1228,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "FoldChair" createVehicle [9583.8535, 6652.7349, 3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_517 = _this;
   _this setDir 58.719639;
@@ -1243,7 +1240,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Sign_Checkpoint" createVehicle [9545.6172, 6665.4727, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_522 = _this;
   _this setDir -55.664108;
@@ -1255,7 +1252,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Sign_Checkpoint_EP1" createVehicle [9527.9072, 6677.3281, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_523 = _this;
   _this setDir -61.952232;
@@ -1267,7 +1264,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Info_Board_EP1" createVehicle [9565.9785, 6657.957, 4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_533 = _this;
   _this setDir 53.251987;
@@ -1279,7 +1276,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "EvMap" createVehicle [9560.5049, 6652.9126, 0.79876357];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_539 = _this;
   _this setPos [9560.5049, 6652.9126, 0.79876357];
@@ -1290,7 +1287,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Laptop_EP1" createVehicle [9559.7871, 6653.4927, 0.79212636];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_540 = _this;
   _this setPos [9559.7871, 6653.4927, 0.79212636];
@@ -1301,7 +1298,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Loudspeaker" createVehicle [9563.0859, 6660.8022, 2.8771956];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_541 = _this;
   _this setPos [9563.0859, 6660.8022, 2.8771956];
@@ -1312,7 +1309,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Loudspeaker" createVehicle [9552.6563, 6660.8535, 4.3402476];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_543 = _this;
   _this setDir -170.91331;
@@ -1324,7 +1321,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "UralWreck" createVehicle [9577.8174, 6642.8354, 3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_547 = _this;
   _this setDir -102.39157;
@@ -1336,7 +1333,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_misc_amplion_wood" createVehicle [9601.1328, 6636.9312, 0.0001373291];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_554 = _this;
   _this setPos [9601.1328, 6636.9312, 0.0001373291];
@@ -1347,7 +1344,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_PowLines_WoodL" createVehicle [9576.8691, 6634.3936];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_556 = _this;
   _this setPos [9576.8691, 6634.3936];
@@ -1358,7 +1355,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_PowLines_WoodL" createVehicle [9557.376, 6657.7007, 9.1552734e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_558 = _this;
   _this setPos [9557.376, 6657.7007, 9.1552734e-005];
@@ -1369,7 +1366,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_PowLines_WoodL" createVehicle [9569.1816, 6628.543, -4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_560 = _this;
   _this setPos [9569.1816, 6628.543, -4.5776367e-005];
@@ -1380,7 +1377,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_misc_amplion_wood" createVehicle [9593.4365, 6665.8452, 0.00012207031];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_563 = _this;
   _this setDir -135.32204;
@@ -1392,7 +1389,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_t_fagus2s" createVehicle [9594.6006, 6632.9507, 9.1552734e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_573 = _this;
   _this setPos [9594.6006, 6632.9507, 9.1552734e-005];
@@ -1403,7 +1400,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_b_corylus" createVehicle [9601, 6658.0098];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_574 = _this;
   _this setPos [9601, 6658.0098];
@@ -1414,7 +1411,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_b_craet1" createVehicle [9604.4541, 6653.4487, 6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_576 = _this;
   _this setPos [9604.4541, 6653.4487, 6.1035156e-005];
@@ -1425,7 +1422,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_b_craet1" createVehicle [9593.5938, 6669.3931, 0.0001373291];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_578 = _this;
   _this setPos [9593.5938, 6669.3931, 0.0001373291];
@@ -1436,7 +1433,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_b_craet2" createVehicle [9583.2393, 6633.0801, 0.00057983398];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_580 = _this;
   _this setPos [9583.2393, 6633.0801, 0.00057983398];
@@ -1447,7 +1444,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Camp" createVehicle [9578.2979, 6663.8979, -1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_582 = _this;
   _this setDir 186.11646;
@@ -1459,7 +1456,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Camp" createVehicle [9584.7686, 6663.2505, -4.5776367e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_585 = _this;
   _this setDir 190.53137;
@@ -1471,7 +1468,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Camp" createVehicle [9591.4375, 6661.9688, 9.1552734e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_587 = _this;
   _this setDir 192.35356;
@@ -1483,7 +1480,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "CampEast" createVehicle [9595.9287, 6641.2271, 6.1035156e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_590 = _this;
   _this setDir 82.859413;
@@ -1495,7 +1492,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "CampEast" createVehicle [9593.4873, 6652.4766, 1.5258789e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_594 = _this;
   _this setDir 78.299477;
@@ -1507,7 +1504,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9564.9609, 6646.4536, -0.10362446];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_596 = _this;
   _this setDir 65.603111;
@@ -1519,7 +1516,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9566.1699, 6643.5518, -0.10758121];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_599 = _this;
   _this setDir 69.278519;
@@ -1531,7 +1528,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9568.1006, 6636.8955, -0.11261839];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_602 = _this;
   _this setDir 74.708069;
@@ -1543,7 +1540,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9569.1953, 6632.1792, -0.095271848];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_605 = _this;
   _this setDir 76.41642;
@@ -1555,7 +1552,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9575.2412, 6635.0933, -0.095222868];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_608 = _this;
   _this setDir 74.354935;
@@ -1567,7 +1564,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_fort_bagfence_long" createVehicle [9574.4844, 6637.9609, -0.089696713];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_611 = _this;
   _this setDir 75.552841;
@@ -1579,7 +1576,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "Land_Fort_Watchtower" createVehicle [9565.5977, 6632.3076, -0.0041821287];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_612 = _this;
   _this setDir -13.909041;
@@ -1591,7 +1588,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_pumpa" createVehicle [9678.9531, 6536.8862, -0.029886188];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_615 = _this;
   _this setPos [9678.9531, 6536.8862, -0.029886188];
@@ -1602,7 +1599,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_b_craet1" createVehicle [9568.7949, 6627.3477];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_617 = _this;
   _this setPos [9568.7949, 6627.3477];
@@ -1613,7 +1610,7 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_b_craet1" createVehicle [9559.2266, 6670.1221, -3.0517578e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_619 = _this;
   _this setPos [9559.2266, 6670.1221, -3.0517578e-005];
@@ -1624,9 +1621,8 @@ if (true) then
 {
   // Output from missionParser
   _this = "MAP_b_craet1" createVehicle [9548.0605, 6651.9556, -9.1552734e-005];
-  _this setVariable ["", true]; // prevent network SV by loot/zeds spawner 
+ 
 
   _vehicle_621 = _this;
   _this setPos [9548.0605, 6651.9556, -9.1552734e-005];
-};
 };

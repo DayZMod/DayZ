@@ -129,7 +129,7 @@ if (count _medical > 0) then {
 };
 
 if (count _stats > 0) then {
-	//register stats
+	//register stats Global
 	_playerObj setVariable ["zombieKills",(_stats select 0),true];
 	_playerObj setVariable ["headShots",(_stats select 1),true];
 	_playerObj setVariable ["humanKills",(_stats select 2),true];
@@ -145,15 +145,7 @@ if (count _stats > 0) then {
 	_score = score _playerObj;
 	_playerObj addScore ((_stats select 0) - _score);
 
-	//record for Server JIP checks
-	_playerObj setVariable ["zombieKills_CHK",(_stats select 0)];
-	_playerObj setVariable ["headShots_CHK",(_stats select 1)];
-
-	if (count _stats > 4) then {
-		if !(_stats select 3) then {_playerObj setVariable ["selectSex",true,true];};
-	} else {
-		_playerObj setVariable ["selectSex",true,true];
-	};
+	missionNamespace setVariable [_playerID,[_humanity,(_stats select 0),(_stats select 1),(_stats select 2),(_stats select 3)]];
 } else {
 	//register stats
 	_playerObj setVariable ["zombieKills",0,true];
@@ -165,15 +157,13 @@ if (count _stats > 0) then {
 	_playerObj setVariable ["ConfirmedHumanKills",0,true];
 	_playerObj setVariable ["ConfirmedBanditKills",0,true];
 
-	//record for Server JIP checks
-	_playerObj setVariable ["zombieKills_CHK",0];
-	_playerObj setVariable ["headShots_CHK",0];
+	missionNamespace setVariable [_playerID,[_humanity,0,0,0,0]];
 };
 
 if (_randomSpot) then {
 	private ["_counter","_position","_isNear","_isZero","_mkr"];
 	if (!isDedicated) then {endLoadingScreen;};
-	_IslandMap = (toLower worldName in ["caribou","cmr_ovaron","dayznogova","dingor","dzhg","fallujah","fapovo","fdf_isle1_a","isladuala","lingor","mbg_celle2","namalsk","napf","oring","panthera2","sara","sauerland","smd_sahrani_a2","tasmania2010","tavi","trinity","utes"]);
+	_IslandMap = (toLower worldName in ["caribou","cmr_ovaron","dayznogova","dingor","dzhg","fallujah","fapovo","fdf_isle1_a","isladuala","lingor","mbg_celle2","namalsk","napf","oring","panthera2","ruegen","sara","sauerland","smd_sahrani_a2","tasmania2010","tavi","trinity","utes"]);
 
 	//spawn into random
 	_findSpot = true;
@@ -210,18 +200,32 @@ if (_randomSpot) then {
 		diag_log format["%1: Error, failed to find a suitable spawn spot for player. area:%2",__FILE__, _mkr];
 	};
 	_worldspace = [0,_position];
+	
+	//Fresh spawn, clear animationState so anim from last sync does not play on login
+	_state = ["","reset"];
 };
 
 //record player pos locally for server checking
 _playerObj setVariable ["characterID",_characterID,true];
 _playerObj setVariable ["humanity",_humanity,true];
-_playerObj setVariable ["humanity_CHK",_humanity];
 _playerObj setVariable ["lastPos",getPosATL _playerObj];
 
-missionNamespace setVariable [_playerID,[_humanity]];
-
-PVCDZ_plr_Login2 = [_worldspace,_state];
 _clientID = owner _playerObj;
+_randomKey = [];
+_randomInput = toArray "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$^*";
+for "_i" from 0 to 12 do {
+	_randomKey set [count _randomKey, (_randomInput call BIS_fnc_selectRandom)];
+};
+_randomKey = toString _randomKey;
+_findIndex = dayz_serverPUIDArray find _playerID;
+if (_findIndex > -1) then {
+	dayz_serverClientKeys set [_findIndex, [_clientID,_randomKey]];
+} else {
+	dayz_serverPUIDArray set [(count dayz_serverPUIDArray), _playerID];
+	dayz_serverClientKeys set [(count dayz_serverClientKeys), [_clientID,_randomKey]];
+};
+
+PVCDZ_plr_Login2 = [_worldspace,_state,_randomKey];
 _clientID publicVariableClient "PVCDZ_plr_Login2";
 if (dayz_townGenerator) then {
 	_clientID publicVariableClient "PVCDZ_plr_plantSpawner";
@@ -231,7 +235,7 @@ if (dayz_townGenerator) then {
 _playerObj setVariable ["lastTime",diag_ticktime];
 
 //Record Player Login/LogOut
-[(getPlayerUID _playerObj),_characterID,1,(_playerObj call fa_plr2str),((_worldspace select 1) call fa_coor2str)] call dayz_recordLogin;
+[_playerID,_characterID,1,(_playerObj call fa_plr2str),((_worldspace select 1) call fa_coor2str)] call dayz_recordLogin;
 
 PVDZ_plr_Login1 = null;
 PVDZ_plr_Login2 = null;

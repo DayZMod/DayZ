@@ -2222,7 +2222,6 @@ class Zelenogorsk {
 	class Object24 { type = "SKODAWreck"; position[] = {2761.44, 5442.06, 0}; direction = 196; onFire = 0; };
 	class Object25 { type = "Fort_Barricade"; position[] = {2215.06, 5154.03, 0}; direction = 129; onFire = 0; };
 	class Object26 { type = "Rubbish1"; position[] = {2831.18, 5463.18, 0}; direction = 204; onFire = 0; };
-	class Object27 { type = "datsun01Wreck"; position[] = {2214.82, 5153.37, 0}; direction = 122; onFire = 0; };
 	class Object28 { type = "Fort_Barricade"; position[] = {2722.08, 5128.01, 0}; direction = 112; onFire = 0; };
 	class Object29 { type = "datsun02Wreck"; position[] = {2731.03, 5062.87, 0}; direction = 110; onFire = 0; };
 	class Object30 { type = "Land_Misc_Rubble_EP1"; position[] = {3202.4, 5156.94, 0}; direction = 300; onFire = 0; };
@@ -2234,7 +2233,6 @@ class Zelenogorsk {
 	class Object36 { type = "Rubbish5"; position[] = {2759.29, 5326.47, 0}; direction = 19; onFire = 0; };
 	class Object37 { type = "SKODAWreck"; position[] = {2626.12, 5118.43, 0}; direction = 140; onFire = 0; };
 	class Object38 { type = "Rubbish3"; position[] = {2646.66, 5926.84, 0}; direction = 327; onFire = 0; };
-	class Object39 { type = "RoadBarrier_long"; position[] = {2236.18, 5146.44, 0}; direction = 275; onFire = 0; };
 	class Object40 { type = "Fort_Barricade"; position[] = {2874.81, 5256.3, 0}; direction = 105; onFire = 0; };
 	class Object41 { type = "datsun02Wreck"; position[] = {2991.58, 5561.9, 0}; direction = 34; onFire = 0; };
 	class Object42 { type = "Land_Misc_Garb_Heap_EP1"; position[] = {2257.37, 5151.29, 0}; direction = 21; onFire = 0; };
@@ -2244,7 +2242,6 @@ class Zelenogorsk {
 	class Object46 { type = "Land_Misc_Rubble_EP1"; position[] = {2661.45, 5575.91, 0}; direction = 8; onFire = 0; };
 	class Object47 { type = "datsun02Wreck"; position[] = {2589.71, 4850.21, 0}; direction = 165; onFire = 0; };
 	class Object48 { type = "Rubbish3"; position[] = {3129.71, 5196.39, 0}; direction = 283; onFire = 0; };
-	class Object49 { type = "Fort_Barricade"; position[] = {2224.11, 5152.66, 0}; direction = 122; onFire = 0; };
 	class Object50 { type = "RoadBarrier_long"; position[] = {3407.76, 4908.85, 0}; direction = 227; onFire = 0; };
 	class Object51 { type = "Rubbish1"; position[] = {2731.81, 5353.15, 0}; direction = 336; onFire = 0; };
 	class Object52 { type = "Fort_Barricade"; position[] = {2262.95, 5374.37, 0}; direction = 178; onFire = 0; };
@@ -2257,11 +2254,9 @@ class Zelenogorsk {
 	class Object59 { type = "Rubbish3"; position[] = {2266.61, 5161.07, 0}; direction = 36; onFire = 0; };
 	class Object60 { type = "HMMWVWreck"; position[] = {2812.47, 5270.69, 0}; direction = 97; onFire = 0; };
 	class Object61 { type = "Fort_Barricade"; position[] = {2753.43, 5325.69, 0}; direction = 279; onFire = 0; };
-	class Object62 { type = "SKODAWreck"; position[] = {2234.22, 5141.31, 0}; direction = 288; onFire = 0; };
 	class Object63 { type = "Rubbish5"; position[] = {2625.31, 5070.09, 0}; direction = 242; onFire = 0; };
 	class Object64 { type = "datsun01Wreck"; position[] = {3397.79, 4906.4, 0}; direction = 308; onFire = 0; };
 	class Object65 { type = "Land_Misc_Rubble_EP1"; position[] = {2820.04, 5243.38, 0}; direction = 4; onFire = 0; };
-	class Object66 { type = "hiluxWreck"; position[] = {2225.07, 5151.34, 0}; direction = 113; onFire = 0; };
 	class Object67 { type = "Land_Misc_Garb_Heap_EP1"; position[] = {2724.28, 5192.38, 0}; direction = 18; onFire = 0; };
 	class Object68 { type = "Land_CncBlock_D"; position[] = {2820.7, 5453.61, 0}; direction = 39; onFire = 0; };
 	class Object69 { type = "Rubbish4"; position[] = {3370.46, 4931.3, 0}; direction = 305; onFire = 0; };
@@ -2270,7 +2265,6 @@ class Zelenogorsk {
 	class Object72 { type = "Rubbish1"; position[] = {3551.27, 5070.84, 0}; direction = 26; onFire = 0; };
 	class Object73 { type = "UralWreck"; position[] = {2730.68, 5202.66, 0}; direction = 18; onFire = 0; };
 	class Object74 { type = "Land_Misc_Garb_Heap_EP1"; position[] = {2813.97, 5230.95, 0}; direction = 179; onFire = 0; };
-	class Object75 { type = "Fort_Barricade"; position[] = {2244.23, 5144.63, 0}; direction = 209; onFire = 0; };
 	class Object76 { type = "RoadBarrier_long"; position[] = {2706.65, 5277.55, 0}; direction = 291; onFire = 0; };
 	class Object77 { type = "UAZWreck"; position[] = {2531.19, 6250.84, 0}; direction = 354; onFire = 0.833768; };
 	class Object78 { type = "hiluxWreck"; position[] = {2716.33, 5463.63, 0}; direction = 23; onFire = 0; };
@@ -4352,21 +4346,13 @@ class Berezino {
 	class Object173 { type = "Rubbish1"; position[] = {11978, 9090.7, 0}; direction = 264; onFire = 0; };
 	class Object174 { type = "Body"; position[] = {11981, 9141.68, 0}; direction = 130; onFire = 0; };
 	class Object175 { type = "Body2"; position[] = {12000.9, 9066, 0}; direction = 330; onFire = 0; };
-	class Object176 { type = "Land_BagFenceLong"; position[] = {11989.1, 9154.88, 0}; direction = 312; onFire = 0; };
 	class Object177 { type = "Land_Misc_Rubble_EP1"; position[] = {12027.1, 9056.95, 0}; direction = 142; onFire = 0; };
 	class Object178 { type = "HMMWVWreck"; position[] = {12019.1, 9169.68, 0}; direction = 96; onFire = 0.259646; };
-	class Object179 { type = "Land_BagFenceLong"; position[] = {11985, 9152.74, 0}; direction = 42; onFire = 0; };
 	class Object180 { type = "Rubbish5"; position[] = {12012.9, 9170.08, 0}; direction = 264; onFire = 0; };
-	class Object181 { type = "Land_BagFenceLong"; position[] = {11988.7, 9158.63, 0}; direction = 224; onFire = 0; };
-	class Object182 { type = "Land_BagFenceLong"; position[] = {11983.6, 9153.96, 0}; direction = 42; onFire = 0; };
 	class Object183 { type = "Land_Misc_Rubble_EP1"; position[] = {12074.2, 9079.12, 0}; direction = 142; onFire = 0; };
 	class Object184 { type = "Land_Misc_Rubble_EP1"; position[] = {12027.7, 9173.92, 0}; direction = 259; onFire = 0; };
-	class Object185 { type = "Land_BagFenceLong"; position[] = {11982.2, 9155.23, 0}; direction = 42; onFire = 0; };
 	class Object186 { type = "Body1"; position[] = {12000.7, 9057.93, 0}; direction = 59; onFire = 0; };
 	class Object187 { type = "Land_ladder_half"; position[] = {11987.6, 9160.85, 0}; direction = 223; onFire = 0; };
-	class Object188 { type = "Land_BagFenceLong"; position[] = {11981.7, 9158.49, 0}; direction = 134; onFire = 0; };
-	class Object189 { type = "Land_BagFenceLong"; position[] = {11983.1, 9159.85, 0}; direction = 134; onFire = 0; };
-	class Object190 { type = "Land_BagFenceLong"; position[] = {11984.4, 9161.2, 0}; direction = 134; onFire = 0; };
 	class Object191 { type = "Fort_RazorWire"; position[] = {11970.5, 9147.41, 0}; direction = 131; onFire = 0; };
 	class Object192 { type = "Rubbish4"; position[] = {11979.6, 9159.24, 0}; direction = 226; onFire = 0; };
 	class Object193 { type = "Hedgehog"; position[] = {11994.3, 9170.49, 0}; direction = 0; onFire = 0; };

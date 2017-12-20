@@ -5,7 +5,7 @@
 _vehicle_28 = objNull;
 if (true) then
 {
-  _this = "MAP_HouseV_2T2" createVehicle [10623.161, 2599.4487, 7.6293945e-005];
+  _this = "Land_houseV_2T2" createVehicle [10623.161, 2599.4487, 7.6293945e-005];
   _vehicle_28 = _this;
   _this setDir 88.551949;
   _this setVehicleInit "this setVectorUp [0,0,1];";
@@ -535,5 +535,3 @@ if (true) then
   _vehicle_272 = _this;
   _this setPos [10637.703, 2579.2161, 2.0980835e-005];
 };
-
-processInitCommands;

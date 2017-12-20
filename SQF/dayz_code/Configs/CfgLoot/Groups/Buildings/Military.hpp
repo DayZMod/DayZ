@@ -78,12 +78,13 @@ MilitarySpecial[] =
 	//{Loot_WEAPON,		2,		M16A2_GL_DZ},  //added to attachments system
 	{Loot_WEAPON,		2,		M16A4_DZ},
 	{Loot_WEAPON,		1,		M4A1_DZ},
-//	{Loot_WEAPON,		3,		G36C_DZ},
+	{Loot_WEAPON,		2.5,	G36C_DZ},
 	{Loot_WEAPON,		2,		AK74_DZ},
 	{Loot_WEAPON,		2,		AKS74U_DZ},
 	{Loot_WEAPON,		2,		AKM_DZ},
 	{Loot_WEAPON,		2,		SA58_DZ},
 	{Loot_WEAPON,		1,		SA58_RIS_DZ},
+	{Loot_WEAPON,		0.5,	M24_DZ},
 	
 	//Shotguns
 	{Loot_WEAPON,		2,		Remington870_DZ},
@@ -96,7 +97,26 @@ MilitarySpecial[] =
 	{Loot_WEAPON,		0.5,	M249_DZ},
 	
 //Sniper Rifles
-	{Loot_WEAPON,		0.2,	SVD_DZ},
+	{Loot_WEAPON,		0.3,	SVD_DZ},
+	{Loot_WEAPON,		0.1,	L115A3_DZ},
+	{Loot_WEAPON,       0.2,    DMR_DZ},
+	
+//Moved from Crashsites, Move to categories later
+	{Loot_WEAPON,        0.17,    RPK_DZ},
+    //{Loot_WEAPON,        0.17,    PKM_DZ},
+    {Loot_WEAPON,        0.25,    M40A3_DZ},
+    {Loot_WEAPON,        0.17,    FNFAL_DZ},
+    //{Loot_WEAPON,        0.17,    Mk48_DZ},
+    {Loot_WEAPON,        0.25,    M14_DZ},
+    {Loot_WEAPON,        0.12,    DMR_DZ},
+    {Loot_WEAPON,        0.25,    M24_DZ},
+    {Loot_WEAPON,        1.25,    G36C_DZ},
+    {Loot_WEAPON,        1.25,    L85A2_DZ},
+    {Loot_WEAPON,        0.37,    G36K_Camo_DZ},
+    {Loot_WEAPON,        0.62,    G36A_Camo_DZ},
+    //{Loot_WEAPON,        0.12,    FNFAL_ANPVS4_DZ},
+    //{Loot_WEAPON,        0.17,    M240_DZ},
+    {Loot_WEAPON,        0.22,    L110A1_DZ},
 	
 	//Tools
 	{Loot_TOOL,			4,		Binocular},

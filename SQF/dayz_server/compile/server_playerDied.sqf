@@ -10,7 +10,7 @@ _playerID = _this select 3;
 _playerName = toString (_this select 4); //Sent as array to avoid publicVariable value restrictions
 _infected = _this select 5;
 _sourceName = toString (_this select 6);
-_sourceWeapon = toString (_this select 7);
+_sourceWeapon = _this select 7;
 _distance = _this select 8;
 _method = _this select 9;
 
@@ -32,13 +32,11 @@ if (_characterID != "0") then {
 	_key call server_hiveWrite;
 };
 
-#ifdef PLAYER_DEBUG
 diag_log format ["Player UID#%3 CID#%4 %1 as %5 died at %2", 
 	_newObject call fa_plr2str, _pos call fa_coor2str,
 	_playerID, _characterID,
 	typeOf _newObject
 ];
-#endif
 
 // DEATH MESSAGES
 _suicide = ((_sourceName == _playerName) or (_method == "suicide"));

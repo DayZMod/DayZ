@@ -114,7 +114,7 @@ if (!_isNew) then {
 	_bcpk = getText (_config >> "backpack");
 
 	//Wait for HIVE to be free
-	_key = format["CHILD:203:%1:%2:%3:",_charID,[_wpns,_mags],[_bcpk,[],[]]];
+	_key = str formatText["CHILD:203:%1:%2:%3:",_charID,[_wpns,_mags],[_bcpk,[],[]]];
 	_key call server_hiveWrite;
 
 };
@@ -129,7 +129,7 @@ if (_endMission) exitwith {
 	_remaining = dayz_ghostTimer - _timeleft;
 	
 	//Log For GhostMode
-	diag_log format["INFO - Player:%1(UID:%2/CID%3) Status: LOGIN CANCELLED, GHOSTMODE. Time remianing: %4",_playerName,_playerID,_charID,_remaining]; 
+	diag_log format["INFO - Player:%1(UID:%2/CID%3) Status: LOGIN CANCELLED, GHOSTMODE. Time remianing: %4",_playerName,_playerID,_charID,_remaining];
 	
 	PVCDZ_plr_Ghost = [_remaining];
 	(owner _playerObj) publicVariableClient "PVCDZ_plr_Ghost";
@@ -137,6 +137,27 @@ if (_endMission) exitwith {
 
 //Sync chopped trees for JIP player
 {_x setDamage 1} count dayz_choppedTrees;
+
+if (toLower worldName == "chernarus") then {
+	//Destroy glitched map objects which can not be deleted or hidden
+	{(_x select 0) nearestObject (_x select 1) setDamage 1} count [
+		//Clipped benches in barracks hallway
+		[[4654,9595,0],145259],
+		[[4654,9595,0],145260],
+		//Clip into Land_houseV_2T2
+		[[3553,2563,0],327203], //popelnice.p3d trash can
+		//Clip into zero_building Land_HouseV_3I3
+		[[2800,5202,0],187548], //popelnice.p3d trash can
+		//Clip into zero_building Land_HouseV_1L2
+		[[3656,2429,0],327885], //plot_rust_draty.p3d fence
+		[[3656,2429,0],328107], //plot_rust_draty.p3d fence
+		[[3656,2429,0],328108], //plot_rust_draty.p3d fence
+		[[3656,2429,0],328109], //plot_rust_draty.p3d fence
+		[[3656,2429,0],328110], //plot_rust_draty.p3d fence
+		//Floating stump misc_stub1.p3d
+		[[9084,8654,0],244480]
+	];
+};
 
 //Record Player Login/LogOut
 [_playerID,_charID,2,(_playerObj call fa_plr2str),((getPosATL _playerObj) call fa_coor2str)] call dayz_recordLogin;

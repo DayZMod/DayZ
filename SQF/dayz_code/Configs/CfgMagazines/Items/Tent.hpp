@@ -13,11 +13,11 @@ class ItemTent : CA_Magazine
 		class Build
 		{
 			text = $STR_PITCH_TENT;
-			script = "; [_id,'Build'] spawn player_build;";
+			script = "; [_id,'Build'] spawn player_buildPlaceables;";
 			require[] = {};
 			consume[] = {"ItemTent"};
 			create = "TentStorage";
-			ghost = "TentStorage_Ghost";
+			//ghost = "TentStorage_Ghost";
 			//Bypass collision test
 			bypassCollision = "true";
 		};
@@ -40,11 +40,11 @@ class ItemDomeTent : CA_Magazine
 		class Build
 		{
 			text = $STR_PITCH_DOME_TENT;
-			script = "; [_id,'Build'] spawn player_build;";
+			script = "; [_id,'Build'] spawn player_buildPlaceables;";
 			require[] = {};
 			consume[] = {"ItemDomeTent"};
 			create = "DomeTentStorage";
-			ghost = "DomeTentStorage_Ghost";
+			//ghost = "DomeTentStorage_Ghost";
 			//Bypass collision test
 			bypassCollision = "true";
 		};

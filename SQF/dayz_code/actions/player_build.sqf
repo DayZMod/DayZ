@@ -39,14 +39,8 @@ _classname = getText (configFile >> _isClass >> _item >> _classType >> _action >
 _requiredTools = getArray (configFile >> _isClass >> _item >> _classType >> _action >> "require");
 _requiredParts   = getArray (configFile >> _isClass >> _item >> _classType >> _action >> "consume");
 _ghost = getText (configFile >> _isClass >> _item >> _classType >> _action >> "ghost");
-//need to move to array and separate what checks need to be done.
-_byPassChecks = getText (configFile >> _isClass >> _item >> _classType >> _action >> "byPass");
 
-if (_byPassChecks == "") then { _byPassChecks = "BaseItems" };
 if (_ghost == "") then { _ghost = _classname; };
-
-//Remove tents and stashes from new collision system until we find a better way then build tent for hiding items.
-_isCollisionBypass = (isText (configFile >> _isClass >> _item >> _classType >> _action >> "bypassCollision"));
 
 _text = getText (configFile >> "CfgVehicles" >> _classname >> "displayName");
 _keepOnSlope = 0 == (getNumber (configFile >> "CfgVehicles" >> _classname >> "canbevertical"));
@@ -328,10 +322,7 @@ while {Dayz_constructionContext select 4} do {
 	};
 	
 	//Need to add config based bypass checks array.
-	if (!_isCollisionBypass) then {
-		// check now that ghost is not colliding
-		call _checkBuildingCollision;
-	};
+	call _checkBuildingCollision;
 	
 	// try to dock a beam from current ghost to another beams nearby
 	call _checkBeam2Magnet;
@@ -348,8 +339,7 @@ while {Dayz_constructionContext select 4} do {
 	if (Dayz_constructionContext select 5 or _keepOnSlope) then {
 		_maxplanting = 0;
 		_position set [2, 0];
-	}
-	else {
+	} else {
 		// adjust the elevation of the object according to slope and beams to keep them visible (straight placement only)
 		call _checkNotBuried;
 	};
@@ -359,37 +349,19 @@ while {Dayz_constructionContext select 4} do {
 		[[],[],[],[_object, _requiredParts  , _classname, _text, false, 0, "none"]] call object_build;
 	};
 	
-	if (_byPassChecks == "byPassRoadCheck") then {
-		if (isNull _objColliding and _maxplanting <= _emergingLevel) then { // placement is fine, enable "Build" in the menu
-			if (_actionBuildHidden) then {
-				_actionBuildHidden = false;
-				player removeAction _actionCancel;
-				_sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
-				_actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
-				_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
-		   };
-		} else {
-			if (!_actionBuildHidden) then {
-				_actionBuildHidden = true;
-				player removeAction _actionBuild;
-			};
-		};
-	};
-	
-	if (_byPassChecks == "BaseItems") then {
-		if (isNull _objColliding and _maxplanting <= _emergingLevel and !(call _checkOnRoad)) then { // placement is fine, enable "Build" in the menu
-			if (_actionBuildHidden) then {
-				_actionBuildHidden = false;
-				player removeAction _actionCancel;
-				_sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
-				_actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
-				_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
-		   };
-		} else {
-			if (!_actionBuildHidden) then {
-				_actionBuildHidden = true;
-				player removeAction _actionBuild;
-			};
+	if (isNull _objColliding and _maxplanting <= _emergingLevel and !(call _checkOnRoad)) then { 
+		// placement is fine, enable "Build" in the menu
+		if (_actionBuildHidden) then {
+			_actionBuildHidden = false;
+			player removeAction _actionCancel;
+			_sfx = if (_object isKindOf "Land_A_tent") then {"tentunpack"} else {"repair"};
+			_actionBuild = player addAction [localize "str_player_build_complete", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts , _classname, _text, true, 20, _sfx], 1, true, true, "", "0 != count Dayz_constructionContext"];
+			_actionCancel = player addAction [localize "str_player_build_cancel", "\z\addons\dayz_code\actions\object_build.sqf", [_object, _requiredParts  , _classname, _text, false, 0, "none"], 1, true, true, "", "0 != count Dayz_constructionContext"];
+	   };
+	} else {
+		if (!_actionBuildHidden) then {
+			_actionBuildHidden = true;
+			player removeAction _actionBuild;
 		};
 	};
 	uiSleep 0.03;

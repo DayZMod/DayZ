@@ -31,7 +31,7 @@ CrashSiteRU[] =
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
 	{Loot_WEAPON,		1,		Binocular_Vector},
-	{Loot_MAGAZINE,		0.5,	PipeBomb},
+	//{Loot_MAGAZINE,		0.5,	PipeBomb},
 	
 	//Backpacks
 	
@@ -92,7 +92,7 @@ CrashSiteUS[] =
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
 	{Loot_WEAPON,		1,		Binocular_Vector},
-	{Loot_MAGAZINE,		0.7,	PipeBomb},
+	//{Loot_MAGAZINE,		0.7,	PipeBomb},
 	
 	//Backpacks
 	
@@ -141,7 +141,7 @@ CrashSiteEU[] =
 	{Loot_WEAPON,		4,		G17_DZ},
 	{Loot_WEAPON,		6,		MP5_DZ},
 	{Loot_WEAPON,		5,		G36C_DZ},
-	{Loot_WEAPON,		5,		L85_Holo_DZ},
+	{Loot_WEAPON,		5,		L85A2_DZ},
 	{Loot_WEAPON,		1.5,	G36K_Camo_DZ},
 	{Loot_WEAPON,		2.5,	G36A_Camo_DZ},
 	{Loot_WEAPON,		1,		FNFAL_DZ},
@@ -149,11 +149,12 @@ CrashSiteEU[] =
 	{Loot_WEAPON,		0.7,	M240_DZ},
 	{Loot_WEAPON,		0.9,	L110A1_DZ},
 	{Loot_WEAPON,		1,		M24_DZ},
+	{Loot_WEAPON,		0.5,	L115A3_2_DZ},
 	
 	//Tools
 	{Loot_WEAPON,		1.5,	ItemGPS},
 	{Loot_WEAPON,		1,		Binocular_Vector},
-	{Loot_MAGAZINE,		0.8,	PipeBomb},
+	//{Loot_MAGAZINE,		0.8,	PipeBomb},
 	
 	//Backpacks
 	
@@ -209,12 +210,12 @@ CrashSiteUN[] =
 	{Loot_WEAPON,		2,		M4A1_DZ},
 	{Loot_WEAPON,		3,		M16A4_DZ},
 	{Loot_WEAPON,		3,		G36C_DZ},
-	{Loot_WEAPON,		2,		L85_Holo_DZ},
+	{Loot_WEAPON,		2,		L85A2_DZ},
 	{Loot_WEAPON,		1,		RPK74_DZ},
 	
 	//Tools
 	{Loot_WEAPON,		2,		ItemGPS},
-	{Loot_MAGAZINE,		1,		PipeBomb},
+	//{Loot_MAGAZINE,		1,		PipeBomb},
 	
 	//Clothing
 	{Loot_MAGAZINE,		2,		Skin_Camo1_DZ},

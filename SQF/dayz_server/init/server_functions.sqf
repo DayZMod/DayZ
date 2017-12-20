@@ -13,6 +13,11 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\loot\compile.sqf";
 
 BIS_Effects_Burn = {};
 dayz_disconnectPlayers = [];
+dayz_serverKey = [];
+for "_i" from 0 to 12 do {
+	dayz_serverKey set [_i, ceil(random 128)];
+};
+dayz_serverKey = toString dayz_serverKey;
 server_playerLogin = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerLogin.sqf";
 server_playerSetup = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerSetup.sqf";
 server_onPlayerDisconnect = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_onPlayerDisconnect.sqf";
@@ -20,6 +25,7 @@ server_updateObject = compile preprocessFileLineNumbers "\z\addons\dayz_server\c
 server_playerDied = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerDied.sqf";
 server_publishObj = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_publishObject.sqf";	//Creates the object in DB
 server_deleteObj = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_deleteObj.sqf"; 	//Removes the object from the DB
+server_deleteObjDirect = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_deleteObjDirect.sqf"; 	//Removes the object from the DB, NO AUTH, ONLY CALL FROM SERVER, NO PV ACCESS
 server_playerSync = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_playerSync.sqf";
 zombie_findOwner = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\zombie_findOwner.sqf";
 server_Wildgenerate = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\zombie_Wildgenerate.sqf";
@@ -27,6 +33,7 @@ base_fireMonitor = compile preprocessFileLineNumbers "\z\addons\dayz_code\system
 //server_systemCleanup = compile preprocessFileLineNumbers "\z\addons\dayz_server\system\server_cleanup.sqf";
 spawnComposition = compile preprocessFileLineNumbers "ca\modules\dyno\data\scripts\objectMapper.sqf"; //"\z\addons\dayz_code\compile\object_mapper.sqf";
 server_sendToClient = compile preprocessFileLineNumbers "\z\addons\dayz_server\eventHandlers\server_sendToClient.sqf";
+server_verifySender = compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_verifySender.sqf";
 
 server_sendKey = compile preprocessFileLineNumbers "\z\addons\dayz_server\eventHandlers\server_sendKey.sqf";
 
@@ -64,23 +71,47 @@ dayz_Achievements = {
 
 //Send fences to this array to be synced to db, should prove to be better performaince wise rather then updaing each time they take damage.
 server_addtoFenceUpdateArray = {
-	//Potential problem no current way to say what is setting the damage.
-	if ((_this select 0) isKindOf "DZ_buildables") then {
-		(_this select 0) setDamage (_this select 1);
+	private ["_class","_clientKey","_damage","_exitReason","_index","_object","_playerUID"];
+	_object = _this select 0;
+	_damage = _this select 1;
+	_playerUID = _this select 2;
+	_clientKey = _this select 3;
+	_index = dayz_serverPUIDArray find _playerUID;
+	_class = typeOf _object;
 
-		if !((_this select 0) in needUpdate_FenceObjects) then {
-			needUpdate_FenceObjects set [count needUpdate_FenceObjects, (_this select 0)];
+	_exitReason = switch true do {
+		//Can't use owner because player may already be dead, can't use distance because player may be far from fence
+		case (_clientKey == dayz_serverKey): {""};
+		case (_index < 0): {
+			format["Server_AddToFenceUpdateArray error: PUID NOT FOUND ON SERVER. PV ARRAY: %1",_this]
+		};
+		case ((dayz_serverClientKeys select _index) select 1 != _clientKey): {
+			format["Server_AddToFenceUpdateArray error: CLIENT AUTH KEY INCORRECT OR UNRECOGNIZED. PV ARRAY: %1",_this]
+		};
+		case !(_class isKindOf "DZ_buildables"): {
+			format["Server_AddToFenceUpdateArray error: setDamage request on non DZ_buildable. PV ARRAY: %1",_this]
+		};
+		default {""};
+	};
+	
+	if (_exitReason != "") exitWith {diag_log _exitReason};	
+	
+	_object setDamage _damage;
+
+	if !(_object in needUpdate_FenceObjects) then {
+		needUpdate_FenceObjects set [count needUpdate_FenceObjects, _object];
+		if (_playerUID != "SERVER") then {
+			diag_log format["DAMAGE: PUID(%1) requested setDamage %2 on fence %3 ID:%4 UID:%5",_playerUID,_damage,_class,(_object getVariable["ObjectID","0"]),(_object getVariable["ObjectUID","0"])];
 		};
 	};
 };
-
 
 vehicle_handleServerKilled = {
 	private ["_unit","_killer"];
 	_unit = _this select 0;
 	_killer = _this select 1;
 		
-	[_unit, "killed"] call server_updateObject;	
+	[_unit,"killed",false,false,"SERVER",dayz_serverKey] call server_updateObject;
 	_unit removeAllMPEventHandlers "MPKilled";
 	_unit removeAllEventHandlers "Killed";
 	_unit removeAllEventHandlers "HandleDamage";
@@ -136,50 +167,28 @@ server_hiveReadWrite = {
 
 onPlayerDisconnected "[_uid,_name] call server_onPlayerDisconnect;";
 
-server_getDiff = {
-	private ["_variable","_object","_vNew","_vOld","_result"];
-	_variable = _this select 0;
-	_object = _this select 1;
-	_vNew = _object getVariable [_variable,0];
-	_vOld = _object getVariable [(_variable + "_CHK"),_vNew];
-	_result = 0;
-	if (_vNew < _vOld) then {
-		//JIP issues
-		_vNew = _vNew + _vOld;
-		_object getVariable [(_variable + "_CHK"),_vNew];
-	} else {
-		_result = _vNew - _vOld;
-		_object setVariable [(_variable + "_CHK"),_vNew];
+server_getStatsDiff = {
+	private ["_player","_playerUID","_new","_old","_result","_statsArray"];
+	_player = _this select 0;
+	_playerUID = _this select 1;
+	_result = [];
+	_statsArray = missionNamespace getVariable _playerUID;
+	
+	if (isNil "_statsArray") exitWith {
+		diag_log format["Server_getStatsDiff error: playerUID %1 not found on server",_playerUID];
+		[0,0,0,0,0]
 	};
-	_result
-};
-
-server_getDiff2 = {
-	private ["_variable","_object","_vNew","_vOld","_result"];
-	_variable = _this select 0;
-	_object = _this select 1;
-	_select = _this select 2;
 	
-	_vNew = _object getVariable [_variable,0];
-	_vOld = _object getVariable (_variable + "_CHK");
-	//_oldSettings = _vOld;
-	//_bypass = false;
+	{
+		_new = _player getVariable [_x,0];
+		_old = _statsArray select _forEachIndex;
+		_result set [_forEachIndex, (_new - _old)];
+		_statsArray set [_forEachIndex, _new]; //updates original var too
+	} forEach ["humanity","zombieKills","headShots","humanKills","banditKills"];
 	
-	//Player changing skins can cause you to loose this var
-	if (isNil "_vOld") then {
-		_vOld = missionNamespace getVariable [(getPlayerUID _object),[_vNew]];
-		_vOld = _vOld select 0;
-		//_bypass = true;
-	};
-		
-	_result = _vNew - _vOld;
-	
-	//diag_log format["WARNING:: GetDiff2 - Object:%1, [O:%3/%6,N:%2] Diff: %4 - Bypass:%5",_object,_vNew,_vOld,_result,_bypass,_oldSettings];
-	
-	_object setVariable [(_variable + "_CHK"),_vNew];
-	
-	_currentHumanity = _object getVariable ["humanity",0];
-	missionNamespace setVariable [(getPlayerUID _object),[_currentHumanity]];
+	#ifdef PLAYER_DEBUG
+	diag_log format["Server_getStatsDiff - Object:%1 Diffs:%2 New:%3",_player,_result,_statsArray];
+	#endif
 	
 	_result
 };

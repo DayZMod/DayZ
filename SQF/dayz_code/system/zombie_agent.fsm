@@ -201,7 +201,7 @@ link112[] = {83,60};
 link113[] = {61,83};
 link114[] = {83,61};
 globals[] = {25.000000,1,0,0,0,640,480,1,189,6316128,1,-713.213928,288.267639,611.326172,-131.708481,806,598,1};
-window[] = {2,-1,-1,-1,-1,831,130,1338,130,3,824};
+window[] = {2,-1,-1,-32000,-32000,831,130,1338,130,3,824};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -500,7 +500,8 @@ class FSM
       init = /*%FSM<STATEINIT""">*/"_timeN = diag_tickTime;" \n
        "" \n
        "_target = _agent call zombie_findTargetAgent;" \n
-       "_targetPos = _target modelToWorld [0,-1,0];" \n
+       "//_targetPos = _target modelToWorld [0,-1,0];" \n
+       "_targetPos = getPosATL _target;" \n
        "_isAlive = alive _agent;" \n
        "_isTargetAlive = alive _target;" \n
        "" \n

@@ -16,7 +16,7 @@ _action = _this select 0;
 _object = _this select 1;
 
 _show = switch _action do {
-	case "Butcher": {!IS_ALIVE && !IN_VEHICLE && CAN_DO && !(_object getVariable["meatHarvested",false])};
+	case "Butcher": {!alive _object && !IN_VEHICLE && CAN_DO && !(_object getVariable["meatHarvested",false])};
 	case "Drink": {!IN_VEHICLE && CAN_DO && !dayz_isSwimming};
 	case "PushPlane": {!IN_VEHICLE && {IS_ALIVE} && {CAN_DO} && {count crew _object == 0} && {!isEngineOn _object}};
 	case "Repair"; // same as salvage

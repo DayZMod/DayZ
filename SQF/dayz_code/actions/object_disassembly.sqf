@@ -67,16 +67,16 @@ for "_i" from 1 to 20 do {
         waitUntil {getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "disableWeapons") == 1};
     };
 
-
-    // remove object
-    deleteVehicle _cursorTarget;
-    _cursorTarget = objNull;
     if (_realObjectStillThere) then { // send to server the destroy request
         _realObjectStillThere = false;
-        PVDZ_obj_Destroy = [_objectID,_objectUID];
+        PVDZ_obj_Destroy = [_objectID,_objectUID,player,_cursorTarget,dayz_authKey];
         publicVariableServer "PVDZ_obj_Destroy";
         diag_log [diag_ticktime, __FILE__, "Networked object, request to destroy", PVDZ_obj_Destroy];
-    };
+    } else {
+		// remove object
+		deleteVehicle _cursorTarget;
+	};
+    _cursorTarget = objNull;
 
     ["Working",0,[20,40,15,0]] call dayz_NutritionSystem;
 
@@ -147,7 +147,7 @@ if (!_realObjectStillThere) then {
 			_object setVariable ["ownerArray",_ownerArray,true];
 			_variables = [[ "ownerArray", _ownerArray]];
 			_object setVariable ["characterID",_characterID,true];
-			PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],_variables];
+			PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],_variables,player,dayz_authKey];
 			publicVariableServer "PVDZ_obj_Publish";
 			diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
 			/*

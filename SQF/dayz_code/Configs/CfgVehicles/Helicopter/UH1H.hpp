@@ -19,10 +19,10 @@ class UH1H_base: Helicopter
 
 class UH1H_DZ: UH1H_base
 {
-	model = "\z\dayz_Communityassets\Vehicles\Huey.p3d";
 	scope = 2;
 	side = 2;
 	crew = "";
+	model = "dayz_vehicles\helicopters\huey\huey.p3d";
 	typicalCargo[] = {};
 	hiddenSelections[] = {};
 	class TransportMagazines{};

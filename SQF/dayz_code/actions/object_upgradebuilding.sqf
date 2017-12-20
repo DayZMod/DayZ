@@ -8,7 +8,7 @@
 */
 
 private ["_nearByChoppers","_cursorTarget","_type","_class","_requiredTools","_requiredParts","_upgradeType","_producedParts","_randomCreate",
-	"_upgradeClass","_onLadder","_isWater","_ok","_missing","_upgradeParts","_dis","_characterID","_objectID","_objectUID",
+	"_upgradeClass","_onLadder","_isWater","_ok","_missing","_upgradeParts","_dis","_characterID","_objectID","_objectUID","_playerNear",
 	"_ownerArray","_ownerPasscode","_dir","_vector","_object","_puid","_clanArray","_wh","_variables","_finished"];
 
 _cursorTarget = _this;
@@ -41,6 +41,9 @@ if (!isClass _upgradeClass) exitWith { localize "str_upgradeNoOption" call dayz_
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _isWater = (surfaceIsWater (getPosATL player)) or dayz_isSwimming;
 if(_isWater or _onLadder) exitWith { localize "str_water_ladder_cant_do" call dayz_rollingMessages; };
+
+_playerNear = {isPlayer _x} count (([_cursorTarget] call fnc_getPos) nearEntities ["CAManBase",10]) > 1;
+if (_playerNear) exitWith { localize "str_pickup_limit_5" call dayz_rollingMessages; };
 
 // lets check player has requiredTools for upgrade
 _ok = true;
@@ -123,8 +126,8 @@ _object setVariable ["padlockCombination",_ownerPasscode,true];
 _object setVariable ["characterID",_characterID,true];
 
 //remove old object
-deleteVehicle _cursorTarget;
-PVDZ_obj_Destroy = [_objectID,_objectUID];
+//deleteVehicle _cursorTarget;
+PVDZ_obj_Destroy = [_objectID,_objectUID,player,_cursorTarget,dayz_authKey];
 publicVariableServer "PVDZ_obj_Destroy";
 
 // create a weaponholder with dismissed parts
@@ -137,7 +140,7 @@ _wh = "WeaponHolder" createVehicle (getPosATL player);
 
 //publish new object
 _variables = [["ownerArray", _ownerArray],["padlockCombination", _ownerPasscode]];
-PVDZ_obj_Publish = [dayz_characterID,_object,[_dir, _pos],_variables];
+PVDZ_obj_Publish = [dayz_characterID,_object,[_dir,_pos],_variables,player,dayz_authKey];
 publicVariableServer "PVDZ_obj_Publish";
 diag_log [diag_ticktime, __FILE__, "New Networked object, request to save to hive. PVDZ_obj_Publish:", PVDZ_obj_Publish];
 /*

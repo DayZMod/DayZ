@@ -85,17 +85,12 @@ _damage = switch (1==1) do {
 //Server running or client
 if (_damage > 0) then {
 	if (isServer) then {
-		if !(_obj in needUpdate_FenceObjects) then {
-			needUpdate_FenceObjects set [count needUpdate_FenceObjects, _obj];
-		};
-		
-		//TotalDamage Set by the server
-		_obj setDamage (damage _obj) + _damage;
+		[_obj,(damage _obj) + _damage,"SERVER",dayz_serverKey] call server_addtoFenceUpdateArray;
 		
 		//diag_log format["Server Reporting - %1",needUpdate_FenceObjects];
 	} else {
 		//If its a client send to server for saving and damage setting.
-		PVDZ_fence_Update = [_obj,(damage _obj) + _damage];
+		PVDZ_fence_Update = [_obj,(damage _obj) + _damage,dayz_playerUID,dayz_authKey];
 		publicVariableServer "PVDZ_fence_Update";
 		
 		//diag_log ("Client Reporting");

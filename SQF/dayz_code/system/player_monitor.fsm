@@ -692,6 +692,7 @@ class FSM
        "" \n
        "_worldspace = 	PVCDZ_plr_Login2 select 0;" \n
        "_state =			PVCDZ_plr_Login2 select 1;" \n
+	   "dayz_authKey = PVCDZ_plr_Login2 select 2;" \n
        "" \n
        "player setVariable [""Achievements"",[],false];" \n
        "" \n
@@ -700,8 +701,8 @@ class FSM
        "" \n
        "{" \n
        "	if (player getVariable[""hit_""+_x,false]) then { " \n
-       "		[player,_x,_x] spawn fnc_usec_damageBleed; " \n
-       "		PVDZ_hlt_Bleed = [player,_x,_x];" \n
+       "		[player,_x] spawn fnc_usec_damageBleed; " \n
+       "		PVDZ_hlt_Bleed = [player,_x];" \n
        "		publicVariable ""PVDZ_hlt_Bleed""; // draw blood stream on character, on all gameclients" \n
        "	};" \n
        "} forEach USEC_typeOfWounds;" \n
@@ -962,8 +963,6 @@ class FSM
       name = "Preload_Display";
       init = /*%FSM<STATEINIT""">*/"if (_debug == 1) then {diag_log [diag_tickTime,'Preload_Display'];};" \n
        "" \n
-       "dayz_lastCheckBit = 0;" \n
-       "" \n
        "player disableConversation true;" \n
        "" \n
        "eh_player_killed = player addeventhandler [""FiredNear"",{_this call player_weaponFiredNear;} ];" \n
@@ -971,7 +970,7 @@ class FSM
        "//_state = player getVariable[""state"",[]];" \n
        "_currentWpn = """";" \n
        "_currentAnim = """";" \n
-       "if ((!isNil ""_state"") AND {(count _state > 1)}) then {" \n
+       "if (!isNil '_state' && {count _state > 1} && {_state select 1 != 'reset'}) then {" \n
        "	//Reload players state" \n
        "	_currentWpn		=	_state select 0;" \n
        "	_currentAnim	=	_state select 1;" \n
@@ -982,6 +981,12 @@ class FSM
        "} else {" \n
        "	_currentWpn	=	""Makarov"";" \n
        "	_currentAnim	=	""aidlpercmstpsraswpstdnon_player_idlesteady02"";" \n
+	   "	//Prevent fresh spawns running on login when they died running, switchMove does not stop it" \n
+	   "	disableUserInput true;" \n
+	   "	player playActionNow 'Stop';" \n
+	   "	disableUserInput false;" \n
+	   "	disableUserInput true;" \n
+	   "	disableUserInput false;" \n
        "};" \n
        "" \n
        "reload player;" \n

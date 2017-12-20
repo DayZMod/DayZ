@@ -185,19 +185,15 @@ class Land_Misc_PowerStation : Industrial
 		{4.22803,-1.19922,-1.28812}
 	};
 };
-
+*/
 class Land_Shed_W01 : Industrial
 {
-	zedPos[] =
-	{
-		{-1.52832,-0.249023,-1.41138}
-	};
 	lootPos[] =
 	{
-		{-1.52832,-0.249023,-1.41138}
+		{-1.46289,-0.12207,-1.41129}
 	};
 };
-*/
+
 class Land_Tovarna2 : Industrial
 {
 	zedPos[] =

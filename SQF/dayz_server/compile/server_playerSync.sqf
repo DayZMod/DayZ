@@ -1,12 +1,15 @@
+#include "\z\addons\dayz_server\compile\server_toggle_debug.hpp"
+
 private ["_characterID","_temp","_currentWpn","_magazines","_humanity","_currentModel","_modelChk",
 		"_playerPos","_playerGear","_playerBackp","_backpack","_killsB","_killsH","_medical","_character","_exitReason",
 		"_timeSince","_charPos","_isInVehicle","_distanceFoot","_lastPos","_kills","_headShots","_timeGross","_timeLeft","_onLadder",
-		"_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_name","_inDebug","_Achievements"];
+		"_isTerminal","_currentAnim","_muzzles","_array","_key","_lastTime","_config","_currentState","_name","_inDebug","_Achievements","_playerUID","_statsDiff"];
 //[player,array]
 
 _character = _this select 0;
 _magazines = _this select 1;
 _characterID = _character getVariable ["characterID","0"];
+_playerUID = getPlayerUID _character;
 _charPos = getPosATL _character;
 _isInVehicle = vehicle _character != _character;
 _timeSince = 0;
@@ -69,20 +72,15 @@ if (_characterID != "0") then {
 	_character setVariable ["medForceUpdate",false,true];
 	
 	//Process update
-	if (_characterID != "0") then {		
-		//Record stats while we're here		
-		/*
-			Check previous stats against what client had when they logged in
-			this helps prevent JIP issues, where a new player wouldn't have received
-			the old players updates. Only valid for stats where clients could have
-			be recording results from their local objects (such as agent zombies)
-		*/
-		_kills = 		["zombieKills",_character] call server_getDiff;
-		_killsB = 		["banditKills",_character] call server_getDiff;
-		_killsH = 		["humanKills",_character] call server_getDiff;
-		_headShots = 	["headShots",_character] call server_getDiff;
-		_humanity = 	["humanity",_character] call server_getDiff2;
-		//_humanity = 	_character getVariable ["humanity",0];
+	if (_characterID != "0") then {
+		//Get difference between current stats and stats at last sync
+		_statsDiff = [_character,_playerUID] call server_getStatsDiff;
+		_humanity = _statsDiff select 0;
+		_kills = _statsDiff select 1;
+		_headShots = _statsDiff select 2;
+		_killsH = _statsDiff select 3;
+		_killsB = _statsDiff select 4;
+		
 		_character addScore _kills;		
 		/*
 			Assess how much time has passed, for recording total time on server
@@ -150,10 +148,10 @@ if (_characterID != "0") then {
 		if (!isNull _character) then {
 			if (alive _character) then {
 				//Wait for HIVE to be free and send request
-				_key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:",_characterID,_playerPos,_playerGear,_playerBackp,_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity];
-				
-				diag_log str formatText["INFO - %2(UID:%4,CID:%3) PlayerSync, %1",_key,_name,_characterID,(getPlayerUID _character)];
-				
+				_key = str formatText["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:",_characterID,_playerPos,_playerGear,_playerBackp,_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity];
+				#ifdef PLAYER_DEBUG
+				diag_log str formatText["INFO - %2(UID:%4,CID:%3) PlayerSync, %1",_key,_name,_characterID,_playerUID];
+				#endif
 				_key call server_hiveWrite;
 			};
 		};
