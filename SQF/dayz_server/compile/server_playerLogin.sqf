@@ -143,9 +143,14 @@ if (toLower worldName == "chernarus") then {
 	{(_x select 0) nearestObject (_x select 1) setDamage 1} count [
 		//Clipped benches in barracks hallway
 		[[4654,9595,0],145259],
-		[[4654,9595,0],145260],		
+		[[4654,9595,0],145260],
 		//Clip into Land_houseV_2T2
-		[[3553,2563,0],327203], //popelnice.p3d trash can		
+		[[3553,2563,0],327203], //popelnice.p3d trash can
+		[[9649,10412,0],240641], //popelnice.p3d trash can
+		[[12085,3581,0],373017], //popelnice.p3d trash can
+		[[2632,5064,0],188661], //popelnice.p3d trash can
+		[[11772,12195,0],251224], //lavicka_1.p3d bench
+		[[2581,3456,0],1019127], //lavicka_2.p3d bench
 		//Clip into zero_building Land_HouseV_3I3
 		[[2800,5202,0],187548], //popelnice.p3d trash can
 		//Clip into zero_building Land_HouseV_1L2
