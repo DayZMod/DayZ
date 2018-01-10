@@ -2542,14 +2542,17 @@
 		<Key ID="STR_ITEM_NAME_equip_carbomb">
 			<English>Car Bomb</English>
 			<German>Autobombe</German>
+			<Russian>Автомобильная бомба</Russian>
 		</Key>
 		<Key ID="STR_ITEM_DESC_equip_carbomb">
 			<English>Can be attached to a vehicle's engine and then automatically explode when the next player enters the driver's seat!</English>
 			<German>Kann an einem Fahrzeugmotor angebracht werden. Die Bombe explodiert automatisch, wenn sich ein Spieler auf den Fahrersitz setzt.</German>
+			<Russian>Может быть прикреплена к двигателю транспортного средства, затем автоматически взрывается, когда игрок садится на место водителя!</Russian>
 		</Key>
 		<Key ID="STR_ACTIONS_attach_carbomb">
 			<English>Attach Car Bomb</English>
 			<German>Autobombe anbringen</German>
+			<Russian>Прикрепить бомбу</Russian>
 		</Key>		
 		<Key ID="STR_ITEM_NAME_equip_aa_battery">
 			<English>AA Battery</English>
@@ -7626,6 +7629,7 @@
 		<Key ID="STR_UI_STATUS_ICONS_TOOLTIP">
 			<English>Show status icons (F3 hotkey)</English>
 			<German>Zeige Status Icons (F3 Hotkey)</German>
+			<Russian>Показать иконки статуса (F3)</Russian>
 		</Key>
 	</Package>
 	<Package name="playerstats">
