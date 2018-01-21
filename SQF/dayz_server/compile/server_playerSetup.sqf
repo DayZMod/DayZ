@@ -212,9 +212,8 @@ _playerObj setVariable ["lastPos",getPosATL _playerObj];
 
 _clientID = owner _playerObj;
 _randomKey = [];
-_randomInput = toArray "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$^*";
 for "_i" from 0 to 12 do {
-	_randomKey set [count _randomKey, (_randomInput call BIS_fnc_selectRandom)];
+	_randomKey set [_i, (ceil(random 128)) + 256]; //Latin Extended-A characters not filtered in publicvariableval.txt
 };
 _randomKey = toString _randomKey;
 _findIndex = dayz_serverPUIDArray find _playerID;

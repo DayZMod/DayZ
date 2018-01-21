@@ -13,8 +13,8 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\loot\compile.sqf";
 
 BIS_Effects_Burn = {};
 dayz_disconnectPlayers = [];
-dayz_serverKey = [];
-for "_i" from 0 to 12 do {
+dayz_serverKey = [59]; //makes sure client is kicked by publicvariableval.txt if they try to send it
+for "_i" from 1 to 12 do {
 	dayz_serverKey set [_i, ceil(random 128)];
 };
 dayz_serverKey = toString dayz_serverKey;
