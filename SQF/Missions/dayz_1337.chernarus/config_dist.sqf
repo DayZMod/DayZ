@@ -12,6 +12,7 @@ dayz_POIs = true;
 dayz_infectiousWaterholes = true;
 dayz_ForcefullmoonNights = false; // Forces night time to be full moon.
 dayz_randomMaxFuelAmount = 250; //Puts a random amount of fuel in all fuel stations.
+dayz_updatedGunnerViewUH1H = false // Changes uh1h to the new model, with a diffrent gunner view.
 
 //DayZMod presets
 dayz_presets = "Vanilla"; //"Custom","Classic","Vanilla","Elite"

@@ -332,6 +332,9 @@ if(isNil "dayz_townGenerator") then {
 if(isNil "dayz_townGeneratorBlackList") then {
 	dayz_townGeneratorBlackList = []; // Town generator will not spawn junk within 150m of these positions.
 };
+if(isNil "dayz_updatedGunnerViewUH1H") then {
+	dayz_updatedGunnerViewUH1H = false // Changes uh1h to the new model, with a diffrent gunner view.
+};
 
 if (toLower worldName != "chernarus") then {
 	//Currently only compatible with Chernarus

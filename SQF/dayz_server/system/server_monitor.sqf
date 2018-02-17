@@ -113,6 +113,23 @@ if (_status == "ObjectStreamStart") then {
 			//Pending change to new fence models\Layout
 		};
 		
+		/*
+			This is to change the UH1H chopper to the changed gunner view.
+		*/
+		if (_type in ["UH1H_DZ","UH1H_2_DZ","UH1H_GUN_DZ","UH1H2_GUN_DZ"]) then {
+			if (dayz_updatedGunnerViewUH1H) then {
+				switch (_type) do {
+					case "UH1H_GUN_DZ": { _type = "UH1H_DZ"; };
+					case "UH1H2_GUN_DZ": { _type = "UH1H_2_DZ"; };
+				};
+			} else {
+				switch (_type) do {
+					case "UH1H_DZ": { _type = "UH1H_GUN_DZ"; };
+					case "UH1H_2_DZ": { _type = "UH1H2_GUN_DZ"; };
+				};
+			};
+		};
+		
 		//Create it
 		_object = createVehicle [_type, _pos, [], 0, if (_type in DayZ_nonCollide) then {"NONE"} else {"CAN_COLLIDE"}];
 		
