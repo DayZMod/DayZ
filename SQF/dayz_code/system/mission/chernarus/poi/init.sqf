@@ -22,5 +22,6 @@
 	"DeadForest",
 	"KomyshovoRoadblock",
 	"MilitaryAirpoort",
-	"ZelenogorskBuildings"
+	"ZelenogorskBuildings",
+	"the_junkyard"
 ];
