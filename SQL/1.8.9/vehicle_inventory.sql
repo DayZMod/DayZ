@@ -45,7 +45,7 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* TT650_Ins, TT650_TK_CIV_EP1 - parts */
+/* M1030, TT650_Ins, TT650_TK_CIV_EP1, Old_moto_TK_Civ_EP1 - parts */
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (2, 'Magazine', 'PartGeneric', 1, 1, 0.2500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (2, 'Magazine', 'ItemSodaRabbit', 1, 1, 1.0000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (2, 'Magazine', 'PartWheel', 1, 1, 0.4000000000);
@@ -156,7 +156,7 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* BAF_Offroad_D, BAF_Offroad_W */
+/* BAF_Offroad_D, BAF_Offroad_W, LandRover_TK_CIV_EP1, LandRover_CZ_EP1 */
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (10, 'Weapon', 'SA58_Holo_DZ', 1, 1, 0.1000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (10, 'Magazine', 'FoodMRE', 1, 2, 0.5000000000);
@@ -169,7 +169,7 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*  hilux1_civil_3_open(pickup), - hunter  */
+/*  hilux1_civil_3_open(pickup),datsun1_civil_2_covered,datsun1_civil_3_open, hilux1_civil_1_open, hilux1_civil_2_covered - hunter  */
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (11, 'Weapon', 'CZ550_DZ', 1, 2, 0.4500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (11, 'Weapon', 'ItemKnife', 1, 1, 0.5000000000);
@@ -206,12 +206,12 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* PLANE AN2_DZ - parts transport */
+/* AN2_DZ - parts transport */
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (14, 'Weapon', 'PKM_DZ', 1, 2, 0.2500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (14, 'Magazine', 'PartFueltank', 1, 1, 0.2500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (14, 'Magazine', 'PartGlass', 1, 2, 0.4000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (14, 'Magazine', 'PartWheel', 1, 2, 0.2500000000);
-INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (80, 'Magazine', 'PartEngine', 1, 1, 0.0500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (14, 'Magazine', 'PartEngine', 1, 1, 0.0500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (14, 'Magazine', '100Rnd_762x54_PK', 2, 4, 1.0000000000);
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -228,7 +228,7 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* Fishing_Boat*/
+/* Fishing_Boat,Smallboat_1 */
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (16, 'Weapon', 'ItemFishingPole', 1, 1, 0.2500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (16, 'Weapon', 'ItemMachete', 1, 1, 0.7500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (16, 'Weapon', 'ItemCrowbar', 1, 1, 0.7500000000);
@@ -241,7 +241,7 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* V3S_Civ - building supplies */
+/* UralCivil, UralCivil2, Ural_CDF - building supplies */
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (17, 'Weapon', 'ItemShovel', 1, 1, 0.7500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (17, 'Weapon', 'ItemPickaxe', 1, 1, 0.2500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (17, 'Weapon', 'ItemPickaxeBroken', 1, 1, 0.7500000000);
@@ -258,20 +258,22 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* UralCivil - random supplies */
-INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Weapon', 'Bizon_DZ', 1, 1, 0.2500000000);
-INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Weapon', 'Makarov_DZ', 1, 2, 0.2500000000);
+/* V3S_Civ, V3S_Open_TK_CIV_EP1, UralSupply_TK_EP1 - few weapons and parts */
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Weapon', 'Bizon_DZ', 1, 2, 0.2500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Weapon', 'Makarov_DZ', 1, 1, 0.2500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Magazine', '64Rnd_9x19_Bizon', 2, 4, 1.0000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Magazine', '8Rnd_9x18_Makarov', 2, 4, 1.0000000000);
 
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Magazine', 'PartEngine', 1, 1, 0.0500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Magazine', 'PartWheel', 1, 1, 0.1500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Magazine', 'PartFueltank', 1, 1, 0.4500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Magazine', 'PartGeneric', 1, 2, 0.6500000000);
-INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Magazine', 'FoodCanSardines', 1, 1, 0.7500000000);
-INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Magazine', 'ItemSodaPeppsy', 2, 2, 0.7500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Magazine', 'FoodCanSardines', 1, 2, 0.7500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (18, 'Magazine', 'ItemSodaPeppsy', 1, 2, 0.7500000000);
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* car_sedan, car_hatchback - kidnapping */
+/* car_sedan, car_hatchback,LADA2_TK_CIV_EP1,lada1_tk_civ_ep1 - kidnapping */
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (19, 'Weapon', 'Crossbow_DZ', 1, 1, 0.2500000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (19, 'Magazine', 'equip_duct_tape', 1, 1, 1.0000000000);
@@ -328,5 +330,71 @@ INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmo
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (22, 'Magazine', '2Rnd_12Gauge_Buck', 2, 4, 0.5000000000);
 INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (22, 'Magazine', 'ItemWire', 1, 2, 0.6500000000);
 /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Ural_UN_EP1, Ural_TK_CIV_EP1,V3S_TK_EP1 - relief supplies */
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (23, 'Magazine', 'ItemWaterBottleBoiled', 1, 2, 0.9500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (23, 'Magazine', 'FoodNutmix', 2, 4, 1.0000000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (23, 'Magazine', 'FoodMRE', 1, 2, 0.5000000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (23, 'Magazine', 'ItemBandage', 2, 4, 0.7500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (23, 'Magazine', 'ItemAntibiotic1', 1, 2, 0.6500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (23, 'Magazine', 'equip_duct_tape', 1, 2, 0.2500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (23, 'Magazine', 'ItemHatchet', 1, 2, 0.5000000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (23, 'Magazine', 'ItemDomeTent', 1, 1, 0.1500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (23, 'Magazine', 'ItemMatchbox', 1, 1, 0.1500000000);
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* V3S_Open_TK_EP1, UralOpen_CDF, Ural_INS - hunter */
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Weapon', 'CZ550_DZ', 1, 1, 0.2500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Weapon', 'Crossbow_DZ', 1, 2, 0.9500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Weapon', 'ItemMachete', 1, 1, 0.2500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', '5Rnd_17HMR', 1, 2, 0.9500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', '1Rnd_Arrow_Wood', 1, 2, 1.0000000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', '12Rnd_Quiver_Wood', 1, 2, 0.2500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', 'ItemWaterBottleInfected', 1, 1, 0.5500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', 'ItemSandbag', 2, 4, 0.3500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', 'TrapBear', 2, 4, 1.0000000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', 'equip_rope', 1, 1, 1.0000000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', 'ItemKnife', 1, 1, 1.0000000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', 'ItemMatchbox', 1, 1, 0.4500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', 'FoodBeefRaw', 2, 4, 0.3500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (24, 'Magazine', 'FoodRabbitRaw', 2, 4, 0.3500000000);
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* V3S_TK_GUE_EP1, UralOpen_INS - weapons */
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Weapon', 'M16A2_DZ', 1, 1, 0.6500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Weapon', 'RPK74_DZ', 1, 1, 0.0500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Weapon', 'ItemCrowbar', 1, 1, 0.8500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Magazine', '30Rnd_556x45_Stanag', 1, 2, 0.4500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Magazine', '75Rnd_545x39_RPK', 1, 2, 0.7500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Magazine', 'FoodCanPasta', 1, 2, 1.0000000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Magazine', 'ItemSodaRocketFuel', 1, 1, 0.7500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Magazine', 'HandGrenade_west', 1, 1, 0.1500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Magazine', 'SmokeShellGreen', 1, 1, 1.0000000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Backpack', 'DZ_BP_VestPouch', 1, 1, 0.8500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (25, 'Backpack', 'DZ_BP_Alice', 1, 1, 0.2500000000);
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*  AN2_3_DZ - weapons smuggling */
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Weapon', 'Mosin_DZ', 1, 1, 0.6500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Weapon', 'AKS74U_DZ', 1, 1, 0.5500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Weapon', 'M1911_DZ', 1, 1, 0.6500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Weapon', 'M16A2_DZ', 1, 1, 0.3500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Magazine', '30Rnd_545x39_AK', 1, 2, 0.6500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Magazine', '30Rnd_556x45_Stanag', 1, 2, 0.4500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Magazine', '5Rnd_762x54_Mosin', 1, 2, 0.7500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Magazine', '7Rnd_45ACP_1911', 1, 2, 0.6500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Magazine', '5Rnd_17HMR', 1, 2, 0.5500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Magazine', '10Rnd_303British', 1, 2, 0.5500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Magazine', 'HandGrenade_east', 1, 1, 0.2500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Magazine', 'HandGrenade_west', 1, 1, 0.1500000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Magazine', 'ItemJerrycan', 1, 2, 0.5000000000);
+INSERT INTO `vehicle_inventory` (`ID`, `Type`, `Classname`, `MinAmount`, `MaxAmount`, `Chance`) VALUES (26, 'Magazine', 'ItemJerrycanEmpty', 1, 2, 0.5000000000);
+/* -----------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
 /*!40000 ALTER TABLE `vehicle_inventory` ENABLE KEYS */;
 UNLOCK TABLES;
