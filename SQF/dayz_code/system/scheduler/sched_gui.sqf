@@ -11,6 +11,8 @@ sched_gui = {
 	if ((!_initDone and !isNil 'Dayz_loginCompleted') and {(Dayz_loginCompleted)}) then {
 		if (profileNamespace getVariable ["statusUI",1] == 1) then {
 			3 cutRsc ["playerStatusGUI","PLAIN",3]; // show the whole HUD
+		} else {
+			[] spawn {uiSleep 2; systemChat (localize "STR_UI_STATUS_ICONS_TOOLTIP");};
 		};
        _initDone = true;
 	};

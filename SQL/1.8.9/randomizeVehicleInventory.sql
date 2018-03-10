@@ -11,8 +11,8 @@ DELIMITER ;;
 CREATE DEFINER=`dayzhivemind`@`%` FUNCTION `randomizeVehicleInventory`(`c` varchar(255)) RETURNS longtext CHARSET latin1
     READS SQL DATA
 BEGIN
-	DECLARE WeaponClasses		VARCHAR(255);
-	DECLARE WeaponAmounts		VARCHAR(255);
+	DECLARE WeaponClasses		VARCHAR(512); #changed to 512 since vehicle inventory can be large
+	DECLARE WeaponAmounts		VARCHAR(512); #changed to 512 since vehicle inventory can be large
 	DECLARE MagazineClasses		VARCHAR(512); #changed to 512 since vehicle inventory can be large
 	DECLARE MagazineAmounts		VARCHAR(255);
 	DECLARE BackpackClasses		VARCHAR(255);

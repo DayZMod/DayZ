@@ -549,7 +549,7 @@ class CfgVehicles {
 	class HMMWV: Banned {};
 	class UAZ_MG_CDF: Banned {};
 	class UAZ_AGS30_CDF: Banned {};
-	class UralOpen_CDF: Banned {};
+	//class UralOpen_CDF: Banned {}; // new variety for 191
 	class UralRepair_CDF: Banned {};
 	class UralReammo_CDF: Banned {};
 	class UralRefuel_CDF: Banned {};
@@ -625,13 +625,13 @@ class CfgVehicles {
 	class V3S_Gue: Banned {};
 	class UAZ_MG_TK_EP1: Banned {};
 	class UAZ_AGS30_TK_EP1: Banned {};
-	class Ural_UN_EP1: Banned {};
+	// class Ural_UN_EP1: Banned {}; // new variety for 191
 	class UralRepair_TK_EP1: Banned {};
 	class UralReammo_TK_EP1: Banned {};
 	class UralRefuel_TK_EP1: Banned {};
 	class Ural_ZU23_TK_EP1: Banned {};
 	class Ural_ZU23_TK_GUE_EP1: Banned {};
-	class UralSupply_TK_EP1: Banned {};
+	//class UralSupply_TK_EP1: Banned {}; // new variety for 191
 	class UralSalvage_TK_EP1: Banned {};
 	class Pickup_PK_TK_GUE_EP1: Banned {};
 	class Offroad_DSHKM_TK_GUE_EP1: Banned {};
@@ -780,12 +780,12 @@ class CfgVehicles {
 	class AGS_CZ_EP1: Banned {};
 	class 2b14_82mm_CZ_EP1: Banned {};
 	class DSHKM_CZ_EP1: Banned {};
-	class V3S_TK_EP1: Banned {};
-	class V3S_Open_TK_EP1: Banned {};
-	class V3S_Open_TK_CIV_EP1: Banned {};
-	class V3S_TK_GUE_EP1: Banned {};
+	// class V3S_TK_EP1: Banned {}; // new variety for 191
+	//class V3S_Open_TK_EP1: Banned {};	// new variety for 191
+	//class V3S_Open_TK_CIV_EP1: Banned {};	// new variety for 191
+	// class V3S_TK_GUE_EP1: Banned {}; // new variety for 191
 	class V3S_Refuel_TK_GUE_EP1: Banned {};
-	class V3S_Repair_TK_GUE_EP1: Banned {};
+	//class V3S_Repair_TK_GUE_EP1: Banned {}; // V3S_Salvage_TK_GUE_EP1 is a subclass
 	class V3S_Reammo_TK_GUE_EP1: Banned {};
 	class V3S_Supply_TK_GUE_EP1: Banned {};
 	class V3S_Salvage_TK_GUE_EP1: Banned {};
@@ -809,7 +809,7 @@ class CfgVehicles {
 	class AH6X_EP1: Banned {};
 	class MH6J_EP1: Banned {};
 	class An2_1_TK_CIV_EP1: Banned {};
-	class An2_2_TK_CIV_EP1: Banned {};
+	//class An2_2_TK_CIV_EP1: Banned {}; // new variety for 191
 	class An2_TK_EP1: Banned {};
 	class CH_47F_EP1: Banned {};
 	class Steerable_Parachute_EP1: Banned {};

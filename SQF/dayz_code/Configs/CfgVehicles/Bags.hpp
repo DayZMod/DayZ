@@ -109,7 +109,7 @@ class DZ_British_ACU : Bag_Base_EP1
 	displayName = $STR_BACKPACK_NAME_BRITISH;
 	descriptionShort = $STR_BACKPACK_DESC_BRITISH;
 	mapSize = 2;
-	model = "\ca\weapons_baf\Backpack_Small_BAF";
+	model = "\z\addons\dayz_communityassets\models\Backpack_Small_BAF";
 	picture = "\ca\weapons_baf\data\UI\backpack_BAF_CA.paa";
 	icon = "\ca\weapons_e\data\icons\mapIcon_backpack_CA.paa";
 	transportMaxWeapons = 3;

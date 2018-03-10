@@ -227,7 +227,11 @@ class Mosin_PU_DZ : Mosin_Base
 	displayName = $STR_DZ_WPN_MOSIN_PU_NAME;
 	descriptionShort = $STR_DZ_WPN_MOSIN_DESC;
 	
-	opticsPPEffects[] = {"OpticsCHAbera2","OpticsBlur2"};
+	modelOptics = "\ca\weapons\optika_snpiere";
+	opticsPPEffects[]={"OpticsCHAbera3","OpticsBlur3"};
+	//opticsPPEffects[] = {"OpticsCHAbera2","OpticsBlur2"};
+	opticsFlare = true;
+	opticsDisablePeripherialVision = true;
 	opticsZoomInit = 0.083;
 	opticsZoomMin = 0.071945;
 	opticsZoomMax = 0.071945;

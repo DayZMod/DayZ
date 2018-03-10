@@ -22,7 +22,6 @@ class UH1H_DZ: UH1H_base
 	scope = 2;
 	side = 2;
 	crew = "";
-	model = "dayz_vehicles\helicopters\huey\huey.p3d";
 	typicalCargo[] = {};
 	hiddenSelections[] = {};
 	class TransportMagazines{};
@@ -66,4 +65,15 @@ class UH1H_2_DZ : UH1H_DZ
 		"ca\air_E\UH1H\data\UH1D_in_TKA_CO.paa",
 		"ca\air_E\UH1H\data\default_TKA_co.paa"
 	};
+};
+
+//Same as aboue but changed gun views
+class UH1H_GUN_DZ : UH1H_DZ
+{
+	model = "dayz_vehicles\helicopters\huey\huey.p3d";
+};
+
+class UH1H2_GUN_DZ : UH1H_2_DZ 
+{
+	model = "dayz_vehicles\helicopters\huey\huey.p3d";
 };
