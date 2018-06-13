@@ -1,9 +1,5 @@
 if (isServer) then {
 
-_unit_3 = objNull;
-if (true) then
-{
-
 _vehicle_16 = objNull;
 if (true) then
 {
@@ -297,7 +293,7 @@ if (true) then
 
   _vehicle_108 = _this;
   _this setDir -37.441479;
-  _this setVehicleInit "setVectorUp surfaceNormal position _obj;";
+  _this setVehicleInit "this setVectorUp surfaceNormal position _obj;";
   _this setPos [4476.9297, 8111.7847, 2.5754809];
 };
 
@@ -371,7 +367,7 @@ if (true) then
 
   _vehicle_125 = _this;
   _this setDir 49.033825;
-  _this setVehicleInit "setVectorUp surfaceNormal position _this;";
+  _this setVehicleInit "this setVectorUp surfaceNormal position this;";
   _this setPos [4490.1113, 8304.2666, 0.063798822];
 };
 
@@ -397,7 +393,7 @@ if (true) then
 
   _vehicle_130 = _this;
   _this setDir 49.033825;
-  _this setVehicleInit "setVectorUp surfaceNormal position _this;";
+  _this setVehicleInit "this setVectorUp surfaceNormal position this;";
   _this setPos [4469.7007, 8286.6357, 0.26457766];
 };
 
