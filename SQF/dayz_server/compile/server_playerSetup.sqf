@@ -244,7 +244,7 @@ dayz_players set [count dayz_players,_playerObj];
 _playerObj setVariable["characterID",_characterID,true];
 _playerObj setVariable["humanity",_humanity,true];
 _playerObj setVariable["humanity_CHK",_humanity];
-_playerObj setVariable["lastPos",getPosATL _playerObj];
+_playerObj setVariable["lastPos",_position];
 
 if (!isNil "faco_hook_playerSetup") then {
 	[_worldspace,_state,_playerObj, _characterID] call faco_hook_playerSetup;
