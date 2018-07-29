@@ -55,9 +55,6 @@ while {1 == 1} do {
 		_mylastPos = _tempPos;
 	};
 
-	if (!isNil "_mylastPos") then {
-		dayz_mylastPos = _mylastPos;
-	};
 	dayz_areaAffect = _size;
 
 	if (_speed > 0.1) then {
