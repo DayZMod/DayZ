@@ -150,6 +150,8 @@ class L85A2_SD_Base : L85A2_DZ
 	fireLightDuration = 0;
 	fireLightIntensity = 0;
 	modes[] = {"Single","FullAuto"};
+	distanceZoomMin = 100;
+	distanceZoomMax = 100;
 	class Single : Single
 	{
 		begin1[] = {"ca\sounds\weapons\rifles\rifle-silence-single2",1,1,300};
