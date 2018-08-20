@@ -20,6 +20,27 @@
 	brightness = 0.08;\
 };
 
+#define Mosin_PU modelOptics = "\z\addons\dayz_communityweapons\models\mosin_nagant\PU_optic.p3d";\
+class OpticsModes\
+{\
+	class PU\
+	{\
+		opticsID = 1;\
+		useModelOptics = true;\
+		opticsFlare = true;\
+		opticsDisablePeripherialVision = true;\
+		opticsZoomMin = 0.0623;\
+		opticsZoomMax = 0.0623;\
+		opticsZoomInit = 0.0623;\
+		distanceZoomMin = 300;\
+		distanceZoomMax = 300;\
+		memoryPointCamera = "opticView";\
+		visionMode[] = {"Normal"};\
+		opticsPPEffects[] = {"OpticsCHAbera3","OpticsBlur3"};\
+		cameraDir = "";\
+	};\
+}
+
 #define MOSIN_BELT magazineReloadTime = 4.7;
 
 #define MOSIN_BROKEN magazines[] = {};
@@ -221,20 +242,12 @@ class Mosin_Belt_MFL_DZ : Mosin_MFL_DZ
 class Mosin_PU_DZ : Mosin_Base
 {
 	scope = public;
+	Mosin_PU;
 	
 	model = "z\addons\dayz_communityweapons\models\mosin_nagant\mosin_1891_scoped_animated";
 	picture = "\z\addons\dayz_communityweapons\models\mosin_nagant\images\1891S.paa";
 	displayName = $STR_DZ_WPN_MOSIN_PU_NAME;
 	descriptionShort = $STR_DZ_WPN_MOSIN_DESC;
-	
-	modelOptics = "\ca\weapons\optika_snpiere";
-	opticsPPEffects[]={"OpticsCHAbera3","OpticsBlur3"};
-	//opticsPPEffects[] = {"OpticsCHAbera2","OpticsBlur2"};
-	opticsFlare = true;
-	opticsDisablePeripherialVision = true;
-	opticsZoomInit = 0.083;
-	opticsZoomMin = 0.071945;
-	opticsZoomMax = 0.071945;
 	
 	weaponInfoType = "RscWeaponZeroing";
 	discreteDistance[] = {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300};
@@ -417,3 +430,4 @@ class Mosin_PU_Belt_MFL_DZ :  Mosin_PU_MFL_DZ
 #undef MOSIN_FLASHLIGHT
 #undef MOSIN_MFLASHLIGHT
 #undef MOSIN_BELT
+#undef Mosin_PU
