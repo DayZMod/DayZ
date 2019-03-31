@@ -265,12 +265,13 @@ class Land_smd_kostel_trosky: MilitarySpecial // church ruins
 // ALT-MAP Support 
 class Land_Mil_hangar_EP1 : Land_SS_hangar{}; // tak hangar
 
-/*
-class Land_Mil_ControlTower_EP1 : Land_Mil_ControlTower{}; // tak atc
-
-class Land_Mil_Barracks_i_EP1 : Land_Mil_Barracks_i{}; // tak barracks
-class Land_Mil_House_EP1 : Land_Mil_House{}; // tak
-*/
+class Land_Mil_ControlTower_EP1: Military // takistan atc based on pre-dayzero atc
+{
+    zedPos[] = {{10.0703,3.76367,-9.62869},{1.75195,5.68164,-5.51373},{3.85254,3.53516,-5.50372},{6.66113,-0.625488,-1.0787},{6.72266,3.23389,-1.0787},{2.63965,-0.191406,-1.0687}};
+    lootChance = 0.4;
+    lootPos[] = {{10.07,3.76,-9.63},{5.07,3.65,-5.5},{1.75,5.68,-5.51},{7.49,-1.47,-1.04},{2.46,-0.83,-1.07},{7.61,2.05,-0.35},{2.26,2.17,-1.07},{2.56,5.72,-9.63},{6.56,-3.82,-1.06},{9.87,4.04,-1.06},{7.28,-1.69,2.98}};
+};
+class Land_Mil_Barracks_i_EP1 : Land_Mil_Barracks_i{}; // takistan barracks
 
 class land_st_vez: Military // nm tower
 {
